@@ -40,8 +40,8 @@ const inflationPresets=[
 {id:"custom",label:"Custom / enter my own inflation rate",rate:null,note:"Use your own inflation assumption.",source:"User-entered assumption"},
 {id:"IMF-BD-2026",label:"Bangladesh — 2026 IMF estimate (8.7%)",rate:8.7,note:"2026 annual average consumer-price inflation estimate; this is a macroeconomic projection, not a personal cost-of-living rate.",source:"https://www.imf.org/external/datamapper/profile/BGD"},
 {id:"IMF-US-2026",label:"United States — 2026 IMF estimate (3.6%)",rate:3.6,note:"2026 annual average consumer-price inflation estimate; this is a macroeconomic projection, not a personal cost-of-living rate.",source:"https://www.imf.org/external/datamapper/profile/USA"},
-{id:"IMF-CA-2026",label:"Canada — 2026 IMF estimate (2.8%)",rate:2.8,note:"2026 annual average consumer-price inflation estimate; this is a macroeconomic projection, not a personal cost-of-living rate.",source:"https://www.imf.org/external/datamapper/PCPIPCH%40WEO/ZAF"},
-{id:"IMF-GB-2026",label:"United Kingdom — 2026 IMF estimate (3.3%)",rate:3.3,note:"2026 annual average consumer-price inflation estimate; this is a macroeconomic projection, not a personal cost-of-living rate.",source:"https://www.imf.org/external/datamapper/PCPIPCH%40WEO/ZAF"}
+{id:"IMF-CA-2026",label:"Canada — 2026 IMF estimate (2.8%)",rate:2.8,note:"2026 annual average consumer-price inflation estimate; this is a macroeconomic projection, not a personal cost-of-living rate.",source:"https://www.imf.org/external/datamapper/PCPIPCH%40WEO/WEOWORLD"},
+{id:"IMF-GB-2026",label:"United Kingdom — 2026 IMF estimate (3.3%)",rate:3.3,note:"2026 annual average consumer-price inflation estimate; this is a macroeconomic projection, not a personal cost-of-living rate.",source:"https://www.imf.org/external/datamapper/profile/GBR"}
 ];
 const countryPresets={"sales-tax":presets,"vat-gst":presets,"inflation":inflationPresets};
 function getCountryPreset(tool,id){const p=(countryPresets[tool]||[]).find(x=>x.id===id);return p?{...p,checkedOn}:null}
