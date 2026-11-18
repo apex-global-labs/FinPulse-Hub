@@ -32,6 +32,7 @@ const bd={
  "BD-2026-third-gender-disability":{label:"Bangladesh — Third gender / disability · AY 2026–27",currency:"BDT",allowance:500000,bands:bands([[300000,10],[700000,15],[1200000,20],[3200000,25],[Infinity,30]]),minimumTax:5000},
  "BD-2026-freedom-fighter":{label:"Bangladesh — Gazetted freedom fighter / July fighter · AY 2026–27",currency:"BDT",allowance:525000,bands:bands([[300000,10],[700000,15],[1200000,20],[3200000,25],[Infinity,30]]),minimumTax:5000}
 };
+canada["CA-2026-QC"]={label:"Canada — Federal + Québec · 2026",currency:"CAD",components:[{name:"Federal",bands:caFederal},{name:"Québec",bands:bands([[54345,14],[108680,19],[132245,24],[Infinity,25.75]]),credit:18952*0.14}]};
 const profiles={...us,...uk,...canada,...bd};
 const sources={
  US:"https://www.irs.gov/pub/irs-pdf/p505.pdf",
@@ -40,5 +41,6 @@ const sources={
  CA:"https://www.canada.ca/en/revenue-agency/services/tax/individuals/tax-rates-brackets/current-year.html",
  BD:"https://nbr.gov.bd/uploads/paripatra/Income-tax_Paripatra_2025-2026-1.pdf"
 };
+sources.US_STATES="https://statewisenews.com/state-income-tax-rates/";sources.QUEBEC="https://www.revenuquebec.ca/en/citizens/income-tax-return/completing-your-income-tax-return/income-tax-rates/";sources.FICA="https://www.irs.gov/publications/p15";sources.UK_NI="https://www.gov.uk/government/publications/budget-2026-overview-of-tax-legislation-and-rates-ootlar/annex-a-rates-and-allowances";sources.CA_PAYROLL="https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4032-payroll-deductions-tables/t4032oc-jan/t4032oc-january-general-information.html";sources.QC_PAYROLL="https://www.revenuquebec.ca/en/businesses/source-deductions-and-employer-contributions/employers-principal-changes-for-2026/";
 window.FinPulseTaxData={profiles,sources,checkedOn:"2026-11-18"};
 })();
