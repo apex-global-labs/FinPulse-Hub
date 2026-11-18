@@ -1,0 +1,71 @@
+name: Lighthouse Performance Audit
+
+on:
+  workflow_run:
+    workflows: ["Deploy FinPulse Hub to GitHub Pages"]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lighthouse-audit
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - name: Checkout production source
+        uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install Lighthouse and Chromium
+        run: |
+          npm install --no-save --no-package-lock lighthouse@12.8.2 playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Run mobile Lighthouse audit
+        env:
+          SITE_URL: https://apex-global-labs.github.io/FinPulse-Hub/
+        run: |
+          mkdir -p lighthouse-reports
+          CHROME_PATH="$(node -p "require('playwright').chromium.executablePath()")"
+          npx lighthouse "$SITE_URL" --chrome-path="$CHROME_PATH" --chrome-flags="--headless --no-sandbox" --only-categories=performance,accessibility,best-practices,seo --output=json --output-path=./lighthouse-reports/mobile.report.json
+      - name: Run desktop Lighthouse audit
+        env:
+          SITE_URL: https://apex-global-labs.github.io/FinPulse-Hub/
+        run: |
+          CHROME_PATH="$(node -p "require('playwright').chromium.executablePath()")"
+          npx lighthouse "$SITE_URL" --chrome-path="$CHROME_PATH" --chrome-flags="--headless --no-sandbox" --preset=desktop --only-categories=performance,accessibility,best-practices,seo --output=json --output-path=./lighthouse-reports/desktop.report.json
+      - name: Print Lighthouse score summary
+        run: |
+          node <<'NODE'
+          const fs = require('node:fs');
+          for (const device of ['mobile', 'desktop']) {
+            const report = JSON.parse(fs.readFileSync(`lighthouse-reports/${device}.report.json`, 'utf8'));
+            const scores = Object.fromEntries(Object.entries(report.categories).map(([key, value]) => [key, value.score === null ? 'n/a' : Math.round(value.score * 100)]));
+            const audits = report.audits;
+            console.log(device.toUpperCase(), JSON.stringify({
+              scores,
+              LCP_ms: audits['largest-contentful-paint']?.numericValue,
+              CLS: audits['cumulative-layout-shift']?.numericValue,
+              TBT_ms: audits['total-blocking-time']?.numericValue,
+              FCP_ms: audits['first-contentful-paint']?.numericValue,
+              SpeedIndex_ms: audits['speed-index']?.numericValue
+            }, null, 2));
+          }
+          NODE
+      - name: Upload Lighthouse reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: finpulse-lighthouse-reports
+          path: lighthouse-reports/*.report.json
+          if-no-files-found: error
+          retention-days: 30
