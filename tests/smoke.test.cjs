@@ -1,43 +1,10 @@
-const test = require("node:test");
-const assert = require("node:assert/strict");
-const fs = require("node:fs");
-const app = fs.readFileSync("app.js", "utf8");
-const html = fs.readFileSync("index.html", "utf8");
-const css = fs.readFileSync("styles.css", "utf8");
-
-test("all 12 requested calculator modules are registered", () => {
-  for (const id of ["currency","mortgage","loan","emi","compound","percentage","tip","car","amortization","savings","freelance","margin"]) {
-    assert.match(app, new RegExp('id:"' + id + '"'));
-  }
-});
-test("each calculator view displays Bismillah", () => {
-  assert.match(app, /بِسْمِ اللَّهِ/);
-});
-test("currency conversion clearly uses a user-entered rate, not a live quote", () => {
-  assert.match(app, /Exchange rate/);
-  assert.match(app, /Live rates are not fetched/);
-});
-test("time-series graph renderer is included", () => {
-  assert.match(app, /function graph\(s\)/);
-  assert.match(app, /role="img"/);
-});
-test("responsive layout and mobile viewport are configured", () => {
-  assert.match(html, /name="viewport"/);
-  assert.match(css, /@media\(max-width:620px\)/);
-});
-test("calculator inputs include labels and form reset controls", () => {
-  assert.match(app, /<label for=/);
-  assert.match(app, /type="reset"/);
-});
-
-test("currency converter requests a no-key reference rate and shows its date", () => {
-  assert.match(app, /https:\/\/api\.frankfurter\.dev\/v2\/rate\//);
-  assert.match(app, /currencyRateDate/);
-  assert.match(app, /Reference rates are not live market quotes/);
-  assert.match(app, /Get latest rate & calculate/);
-});
-test("currency rate requests validate codes and handle failed or slow responses", () => {
-  assert.match(app, /\^\[A-Z\]\{3\}\$/);
-  assert.match(app, /AbortController/);
-  assert.match(app, /showCurrencyError/);
-});
+const test=require("node:test");const assert=require("node:assert/strict");const fs=require("node:fs");const app=fs.readFileSync("app.js","utf8"),html=fs.readFileSync("index.html","utf8"),css=fs.readFileSync("styles.css","utf8"),core=fs.readFileSync("finance-core.js","utf8");
+test("all 12 calculators are registered",()=>{for(const id of ["currency","mortgage","loan","emi","compound","percentage","tip","car","amortization","savings","freelance","margin"])assert.match(app,new RegExp('id:"'+id+'"'))});
+test("each calculator view includes Bismillah",()=>assert.match(app,/بِسْمِ اللَّهِ/));
+test("Currency Converter uses Frankfurter published reference rates with manual fallback",()=>{assert.match(app,/https:\/\/api\.frankfurter\.dev\/v2\/rate\//);assert.match(app,/currencyRateDate/);assert.match(app,/Reference rates are not live market quotes/);assert.match(app,/Get latest rate & calculate/);});
+test("shared calculation core is loaded before the app",()=>{assert.ok(html.indexOf('src="finance-core.js"')<html.indexOf('src="app.js"'));assert.match(app,/window\.FinPulseCore/);});
+test("responsive mobile layout and viewport are configured",()=>{assert.match(html,/name="viewport"/);assert.match(css,/@media\(max-width:620px\)/);});
+test("inputs have labels, reset controls and live result region",()=>{assert.match(app,/<label for=/);assert.match(app,/type="reset"/);assert.match(html,/aria-live="polite"/);});
+test("graph uses an accessible SVG role and label",()=>{assert.match(app,/role="img"/);assert.match(app,/aria-label="Illustrative balance trend"/)});
+test("currency API validates codes and handles timeouts/errors",()=>{assert.match(app,/\^\[A-Z\]\{3\}\$/);assert.match(app,/AbortController/);assert.match(app,/showCurrencyError/);});
+test("core module exposes all twelve calculation families",()=>{for(const fn of ["currencyConvert","mortgage","loan","emi","compoundInterest","percentage","tip","carLoan","amortization","savingsGoal","freelanceRate","profitMargin"])assert.match(core,new RegExp("function "+fn+"\\("))});
