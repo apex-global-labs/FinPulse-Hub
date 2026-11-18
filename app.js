@@ -89,7 +89,8 @@ function render(d){
  form.addEventListener("change",e=>{
   const t=e.target;
   if(t.id==="display-currency"){activeCurrency=t.value;if(d.id==="currency"){$("#f-to").value=t.value;refreshCurrencyRate()}else calculate(d);return;}
-  if(t.id==="country-preset"){applyCountryPreset(d,t.value);return;}\n  if(t.id==="tax-profile"){calculate(d);return;}
+  if(t.id==="country-preset"){applyCountryPreset(d,t.value);return;}
+  if(t.id==="tax-profile"){calculate(d);return;}
   if(t.id==="f-from"||t.id==="f-to"){if(d.id==="currency"){if(t.id==="f-to"){activeCurrency=t.value;$("#display-currency").value=t.value;}refreshCurrencyRate()}else calculate(d);return;}
   if(t.tagName==="SELECT")calculate(d);
  });
