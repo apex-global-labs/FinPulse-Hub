@@ -95,3 +95,13 @@ The remaining list is a planning inventory and can be refined to avoid overlap o
 - Progressive income tax and personal income-tax withholding are intentionally not assigned simplistic country defaults: their values depend on tax year, filing status, income bands and other jurisdictional rules. User-configurable inputs remain.
 - Crypto asset selector options (BTC, ETH, USDT) are registered for future crypto tools; no live prices are claimed or embedded.
 - Migration is not production-ready until CI, Playwright desktop/mobile, axe accessibility and formula regression all pass. Remaining future work includes currency formatting in every metric/chart edge case, presets for other relevant calculators, and crypto calculator implementation.
+
+
+## Smart UI production migration update (2026-11-18)
+
+- **PR #14 merged:** `4ef77e62ccde2e2b4a80ef47e2b6bd7554fa33af`.
+- PR #14 branch CI #44296831348 passed; main CI #44296925160 passed; GitHub Pages deployment #44296925118 passed.
+- Shared currency dropdown, number + range slider controls, instant recalculation, currency-aware result/metric/chart formatting and currency pair dropdowns are now in the production renderer for all 36 existing calculators.
+- Country/region starting presets are active for Sales Tax and VAT/GST; 2026 IMF average-CPI estimates are being added for the Inflation Calculator in the follow-up branch.
+- Remaining country-specific income-tax presets are not hard-coded until tax year, filing status, national/provincial scope and official bracket sources are modelled correctly.
+- No current calculator is a crypto calculator. BTC, ETH and USDT are registered as future asset selector choices only; no live/mock price feed is claimed.
