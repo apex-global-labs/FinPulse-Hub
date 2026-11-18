@@ -1,97 +1,121 @@
-# FinPulse Hub — Finance Calculator Master Registry
+# FinPulse Hub — Traffic-Focused Finance Calculator Registry
 
-- **Version:** 1.0
-- **Date:** 2026-11-18
-- **Status:** Proposed inventory; none of these calculators are implemented yet
+- **Version:** 1.1
+- **Updated:** 2026-11-18
+- **Status:** Proposed traffic-led 45-tool product set; no calculators are implemented yet
+- **Repository:** `apex-global-labs/FinPulse-Hub`
 
-## Priority definitions
+## Selection strategy
 
-- **P0:** Core high-intent tools to validate and build first.
-- **P1:** High-value supporting tools for the first public release or immediate follow-up.
-- **P2:** Expansion tools; publish only when formula and search-intent research support them.
-- **HOLD:** Requires country-specific evidence, a trustworthy data source or additional product review.
+This version replaces the earlier broad 45-tool draft. The selection aims to maximise realistic organic-search opportunity, not to promise a specific traffic result.
 
-Priority is a planning label, not a verified search-volume ranking. Keyword demand and competition must be independently validated by target country before final sequencing.
+The portfolio combines:
+1. Large global English search-demand topics.
+2. Country-specific high-intent finance tools.
+3. Distinct professional and small-business tasks from the Business & Professional Suite.
+4. A deliberately small, educational currency/crypto utility section.
 
-## Planned calculator inventory
+Search volume estimates are third-party estimates, not exact Google search counts. Competition is substantial for several high-volume terms. Do not create duplicate pages for spelling variations or near-identical intent; use one strong page with modes where appropriate.
 
-| # | Category | Calculator / page | Priority | Main user task and notes |
-|---:|---|---|---|---|
-| 1 | Loans & EMI | Loan EMI Calculator | P0 | Estimate regular payment from principal, rate and term |
-| 2 | Loans & EMI | Personal Loan Calculator | P0 | Payment and total-cost estimate; no lender recommendations |
-| 3 | Loans & EMI | Car Loan Calculator | P0 | Vehicle financing payment estimate |
-| 4 | Loans & EMI | Education Loan Calculator | P1 | Education borrowing scenarios; disclose assumptions |
-| 5 | Loans & EMI | Loan Amortization Schedule | P0 | Principal/interest schedule by period |
-| 6 | Loans & EMI | Total Loan Interest Calculator | P0 | Total interest and total paid |
-| 7 | Loans & EMI | Extra Payment Impact Calculator | P1 | Illustrate effect of additional repayments; contract terms may vary |
-| 8 | Mortgage & Property | Mortgage Calculator | P0 | Payment estimate from loan, rate and term |
-| 9 | Mortgage & Property | Mortgage Affordability Calculator | P1 | Scenario estimate, not a lending decision |
-| 10 | Mortgage & Property | Down Payment Calculator | P1 | Upfront contribution and remaining principal |
-| 11 | Mortgage & Property | Refinance Comparison Calculator | P2 | Compare user-entered scenarios and costs |
-| 12 | Mortgage & Property | Rent vs Buy Calculator | P2 | Scenario model with explicit assumptions |
-| 13 | Savings & Planning | Compound Interest Calculator | P0 | Growth under user-defined rate and compounding |
-| 14 | Savings & Planning | Simple Interest Calculator | P1 | Simple interest and maturity amount |
-| 15 | Savings & Planning | Savings Goal Calculator | P0 | Periodic saving required to reach a target |
-| 16 | Savings & Planning | Monthly Savings Plan | P1 | Contributions and projected balance |
-| 17 | Savings & Planning | Recurring Deposit Growth Calculator | P2 | Product-specific assumptions must be stated |
-| 18 | Savings & Planning | Inflation Calculator | P1 | Illustrate purchasing-power change using an input rate |
-| 19 | Savings & Planning | CAGR Calculator | P1 | Historical annualised growth arithmetic; not a forecast |
-| 20 | Savings & Planning | Budget Planner | P0 | Categorise income and planned expenses |
-| 21 | Currency & FX | Currency Converter | P0 | Convert amounts using a clearly sourced or user-entered reference rate |
-| 22 | Currency & FX | Exchange Fee & Markup Calculator | P1 | Compare user-entered fees and exchange-rate markup |
-| 23 | Currency & FX | International Transfer Cost Calculator | P1 | Estimate send/receive amount from entered fee and rate |
-| 24 | Crypto Education | Crypto Unit & Fiat Value Converter | P2 | Educational unit/value conversion using a manually entered or attributed reference rate |
-| 25 | Crypto Education | Crypto Fee Percentage Calculator | P2 | Explain percentage-based fee arithmetic; no wallet or exchange connection |
-| 26 | Freelancer | Freelance Hourly Rate Calculator | P0 | Estimate a sustainable target rate from costs, hours and target income |
-| 27 | Freelancer | Freelance Project Pricing Calculator | P1 | Price estimate from work hours, overhead and contingency |
-| 28 | Freelancer | Billable Hours Income Calculator | P1 | Income arithmetic from rate and billable hours |
-| 29 | Freelancer | Freelance Income After Costs Calculator | P1 | Revenue less user-entered operating costs and optional tax estimate |
-| 30 | Business Finance | Profit Margin Calculator | P0 | Gross/net margin from revenue and costs |
-| 31 | Business Finance | Markup Calculator | P1 | Price from cost and markup percentage |
-| 32 | Business Finance | Break-even Calculator | P0 | Units or revenue required to cover fixed and variable costs |
-| 33 | Business Finance | Gross & Net Profit Calculator | P0 | Revenue-cost breakdown |
-| 34 | Business Finance | Revenue Growth Calculator | P1 | Compare revenue between periods |
-| 35 | Business Finance | Cash Flow Projection Calculator | P1 | User-entered inflows/outflows; not accounting software |
-| 36 | Business Finance | Business Loan EMI Calculator | P1 | Repayment arithmetic for a user-entered loan |
-| 37 | Tax & Salary | VAT/GST Calculator | HOLD | Separate country/rate modes only after source verification |
-| 38 | Tax & Salary | Salary Take-home Calculator | HOLD | Country, tax year and deductions must be researched |
-| 39 | Tax & Salary | Income Tax Estimate Calculator | HOLD | Jurisdiction-specific rules and sources required |
-| 40 | Tax & Salary | Overtime Pay Calculator | P1 | General arithmetic; legal overtime multipliers vary by jurisdiction |
-| 41 | Tax & Salary | Contractor/Withholding Estimate | HOLD | Country-specific and clearly non-advisory |
-| 42 | Property | Rental Yield Calculator | P2 | Gross/net yield with cost assumptions |
-| 43 | Property | Property Purchase Cost Calculator | P2 | User-entered fees and taxes; country rules must be verified |
-| 44 | Accounting | Financial Ratio Calculator | P2 | Definitions and formulas for selected ratios |
-| 45 | Business Finance | Return on Investment (ROI) Calculator | P1 | General project/business arithmetic, not an investment recommendation |
+## Tier A — Largest validated search-demand opportunities
 
-## First-build shortlist (subject to keyword and formula validation)
+These are the first topics to research and build, subject to formula readiness and keyword/competitor validation.
 
-1. Loan EMI Calculator
-2. Personal Loan Calculator
-3. Car Loan Calculator
-4. Loan Amortization Schedule
-5. Total Loan Interest Calculator
-6. Mortgage Calculator
-7. Compound Interest Calculator
-8. Savings Goal Calculator
-9. Budget Planner
-10. Currency Converter
-11. Exchange Fee & Markup Calculator
-12. Freelance Hourly Rate Calculator
-13. Profit Margin Calculator
-14. Break-even Calculator
-15. Gross & Net Profit Calculator
-16. Markup Calculator
-17. ROI Calculator
-18. Inflation Calculator
-19. Simple Interest Calculator
-20. Billable Hours Income Calculator
+| # | Calculator | Primary intent / implementation note | Evidence signal |
+|---:|---|---|---|
+| 1 | Mortgage Calculator | Estimate monthly repayment, total interest and total paid | About 4.8m worldwide monthly searches; very high competition |
+| 2 | Currency Converter | Convert between fiat currencies using a sourced or manual rate | About 4.3m worldwide monthly searches; very high competition |
+| 3 | EMI Calculator | Monthly instalment calculator with term and rate conventions clearly stated | About 2.74m worldwide English searches in one keyword dataset |
+| 4 | Compound Interest Calculator | Show growth from principal, contributions, rate and compounding frequency | About 2.5m worldwide monthly searches; high competition |
+| 5 | Loan Calculator | General loan repayment calculator with payment breakdown | About 1.9m worldwide monthly searches; high competition |
+| 6 | Percentage Calculator | Percentage of, increase/decrease, difference and reverse percentage modes | About 1.9m worldwide monthly searches; competitive |
+| 7 | Tax Calculator | Country/year selector leading to the supported tax calculator, not a universal tax formula | About 1.2m worldwide monthly searches; very high competition |
+| 8 | Retirement Calculator | Educational savings/retirement scenario calculator with explicit assumptions | About 1.0m worldwide monthly searches; high competition |
+| 9 | Tip Calculator | Tip amount, total bill and split amount; configurable jurisdiction/currency | About 1.0m worldwide monthly searches; moderate competition |
+| 10 | Auto / Car Loan Calculator | Vehicle loan payment and total-cost scenarios | About 0.83m worldwide monthly searches; high competition |
+| 11 | Investment Growth Scenario Calculator | Mathematical scenario calculator using user-entered assumptions; no product suggestions or forecasts | About 0.63m worldwide monthly searches for “investment calculator”; high competition |
+| 12 | Paycheck Calculator | Country/state-specific gross-to-net estimate only where payroll rules are sourced | About 0.56m worldwide monthly searches; demand is highly concentrated in the US |
+| 13 | Interest Calculator | One page with simple-interest and compound-interest modes; avoid duplicate thin pages | About 0.43m worldwide monthly searches; moderate competition |
+| 14 | Loan Amortization Calculator | Period-by-period principal/interest schedule | About 0.28m worldwide monthly searches; moderate/high competition |
+| 15 | Sales Tax Calculator | Add/remove tax using a user-selected verified jurisdiction/rate | About 0.11m worldwide monthly searches; moderate competition |
 
-This shortlist is not permission to publish unsupported country-specific tax or legal calculations. Country-sensitive tools remain gated until their rules are sourced and reviewed.
+Volume and difficulty figures are directional estimates observed in third-party reports during November 2026; they are not guaranteed traffic and should be rechecked before publishing.
 
-## Forex and crypto safety / scope boundary
+## Tier B — High-intent supporting and country-specific tools
 
-The website may teach ordinary currency conversion and fee arithmetic. It must not include forex trade execution, broker integration, trading signals, leverage/margin, pip/lot/position sizing, liquidation or buy/sell recommendations. Crypto content is limited to educational unit/value and fee arithmetic with user-supplied or attributed reference inputs; no exchange/wallet integration, trading signals, investment recommendations or speculative return forecasts.
+| # | Calculator | Main task | Priority note |
+|---:|---|---|---|
+| 16 | Personal Loan Calculator | Repayment and total borrowing cost | Strong loan-intent cluster; country-specific fees must be explicit |
+| 17 | Student Loan Repayment Calculator | Repayment timeline and cost under user-entered terms | Local repayment systems vary; no eligibility advice |
+| 18 | Mortgage Affordability Calculator | Explore home-cost scenarios using entered income/expenses | Educational estimate, not a lending decision |
+| 19 | Mortgage Payoff & Extra Payment Calculator | Compare payoff schedules with optional extra payments | Contract terms and fees must be disclosed |
+| 20 | Mortgage Refinance Comparison Calculator | Compare entered old/new rate, fees and terms | No recommendation to refinance |
+| 21 | Savings Calculator | Estimate savings growth from starting balance and deposits | Assumptions and rate convention shown |
+| 22 | Savings Goal Calculator | Estimate regular saving needed for a target | Mathematical planning only |
+| 23 | Recurring Savings Calculator | Project periodic contributions under a user-entered rate | No product or yield recommendation |
+| 24 | Inflation Calculator | Show purchasing-power change using a selected historical or assumed rate | Data source/date shown when historical data is used |
+| 25 | Budget Planner | Organise income, expenses and remaining balance | Keep inputs local; do not collect personal finance data |
+| 26 | Income Tax Calculator | Jurisdiction- and tax-year-specific estimate | Hold until official rules and tests are documented |
+| 27 | VAT / GST Calculator | Add/remove VAT/GST for a supported jurisdiction | Hold until rate and effective date are verified |
+| 28 | Tax Refund Estimator | Estimate refund/amount due from supported tax inputs | Country and tax-year rules required |
+| 29 | Salary Take-Home Calculator | Gross-to-net salary scenarios for supported countries | Do not imply one global tax rule |
+| 30 | Payroll Calculator | Employer payroll-cost or payslip arithmetic for a supported jurisdiction | Scope and statutory deductions must be sourced |
+| 31 | Overtime Pay Calculator | Calculate pay under a user-entered multiplier/rule | Statutory rules vary by jurisdiction |
+| 32 | Discount Calculator | Discount amount, final price and stacked-discount arithmetic | Useful consumer/business math; validate demand by market |
 
-## Registry governance
+## Tier C — Currency, crypto education, freelancer and business differentiation
 
-Each calculator must have a unique slug, owner, formula specification, source/assumption record, input validation, expected test vectors, SEO intent and release status before development. Do not create duplicate pages merely by changing a keyword. Keep this registry in sync with the actual implementation and sitemap.
+| # | Calculator | Main task | Product boundary |
+|---:|---|---|---|
+| 33 | Exchange Fee & Markup Calculator | Calculate the effect of a user-entered exchange fee or rate markup | Ordinary currency exchange only; no forex trade tools |
+| 34 | International Transfer Cost Calculator | Estimate send amount, fees and recipient amount from manual/sourced inputs | No money-transfer provider integration |
+| 35 | Crypto Unit & Fiat Value Converter | Educational unit/value conversion from manual or attributed reference values | No asset recommendations, trading prompts or portfolio advice |
+| 36 | Crypto Network Fee Calculator | Explain percentage/flat fee arithmetic using user-entered values | Education only; no wallet, exchange or transaction integration |
+| 37 | Freelance Hourly Rate Calculator | Estimate a target hourly rate from work hours, overhead and target income | No income guarantees or market-rate claims without evidence |
+| 38 | Freelance Project Pricing Calculator | Estimate a project quote from hours, overhead and contingency | User-defined assumptions only |
+| 39 | Freelancer Net Income After Costs Calculator | Revenue less entered expenses and optional supported tax estimate | Tax output remains jurisdiction-gated |
+| 40 | Profit Margin Calculator | Gross/net margin from revenue and costs | State margin vs markup clearly |
+| 41 | Markup Calculator | Calculate selling price from cost and markup | Avoid confusing markup with margin |
+| 42 | Break-even Calculator | Estimate units/revenue needed to cover fixed and variable cost | Document assumptions |
+| 43 | Business ROI Calculator | Basic historical/project ROI arithmetic | No investment recommendations or future-return claims |
+| 44 | Cash Flow Projection Calculator | Project entered inflows and outflows over periods | Not accounting or financial advice software |
+| 45 | Rental Yield Calculator | Gross/net rental yield from user-entered rent, price and costs | No property investment recommendations |
+
+## Scope exclusions
+
+To keep the product educational and non-advisory, the website will not include:
+- Crypto DCA/investment planners or crypto portfolio allocation tools.
+- Crypto buy/sell, profit-prediction or trade-timing tools.
+- Forex pip/lot/position sizing, leverage/margin, trading signals or trade execution.
+- Broker, exchange or wallet connections.
+- Tax/legal outputs for jurisdictions that have not been researched and verified.
+
+The Forex-related scope is limited to ordinary currency conversion, exchange fees/markup and international transfer arithmetic. Crypto is limited to basic unit/value and fee education.
+
+## Recommended first build (12 tools)
+
+1. Currency Converter
+2. Mortgage Calculator
+3. Loan Calculator
+4. EMI Calculator
+5. Compound Interest Calculator
+6. Percentage Calculator
+7. Tip Calculator
+8. Auto / Car Loan Calculator
+9. Loan Amortization Calculator
+10. Savings Goal Calculator
+11. Freelance Hourly Rate Calculator
+12. Profit Margin Calculator
+
+This is a build order, not a statement that all tools have the same keyword difficulty. High-demand pages require exceptional usefulness, technical quality, distinctive content and patience.
+
+## Publication gates
+
+A calculator may be released only when:
+- Its user intent and canonical URL are distinct.
+- Formula and assumptions are documented.
+- Normal, edge, boundary and invalid-input tests pass.
+- Representative outputs are cross-checked independently.
+- Country-specific rules/data have an authoritative source and effective date.
+- The page has useful unique explanatory content.
+- Its status, source and test evidence are recorded in `docs/PROJECT_STATE.md`.
