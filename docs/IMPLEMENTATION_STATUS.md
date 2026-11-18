@@ -122,9 +122,12 @@ The remaining list is a planning inventory and can be refined to avoid overlap o
 - The next architecture tasks are: add suitable asset-class/token selectors when a crypto or investment-specific calculator is added; extend verified country presets only where official data is sufficiently scoped; and run a fresh Lighthouse audit after the UI migration.
 
 
-## Jurisdiction tax engine — implementation in review (2026-11-18)
+## Jurisdiction tax engine — merged and deployed (2026-11-18)
 
-- Branch: `feat/jurisdiction-tax-engine`; pending pull request and CI validation.
+- **PR #17 merged:** https://github.com/apex-global-labs/FinPulse-Hub/pull/17
+- Production commit: `9a54d81c8ca39943fbe9e12666d60eafc461309b`.
+- PR branch CI #44299275113 passed; main CI #44299408097 passed; GitHub Pages deployment #44299408080 passed.
+- Syntax checks passed; formula/smoke tests 72/72, Frankfurter API test 1/1, Playwright/axe desktop/mobile suite 3/3 passed.
 - Added a shared, browser-only tax data registry and progressive calculation engine.
 - Income Tax Calculator and Salary Take-Home Calculator now use a selectable 2026 jurisdiction profile rather than the previous generic four-band example / flat tax percentage.
 - Initial 2026 profiles: US federal (single, married filing jointly, married filing separately, head of household); UK England/Wales/Northern Ireland and Scotland; Canada federal plus 12 provinces/territories with published 2026 marginal brackets; Bangladesh AY 2026–27 general and selected higher tax-free allowance categories.
