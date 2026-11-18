@@ -3,83 +3,70 @@
 - **Last updated:** 2026-11-18
 - **Repository:** https://github.com/apex-global-labs/FinPulse-Hub
 - **Production branch:** `main`
-- **Calculator implementation PR:** [#4 — merged](https://github.com/apex-global-labs/FinPulse-Hub/pull/4)
-- **Pages deployment PR:** [#5 — merged](https://github.com/apex-global-labs/FinPulse-Hub/pull/5)
-- **Current stage:** 18 calculators implemented and merged; GitHub Pages deployment and post-deployment Lighthouse audit are running
 - **Live website:** https://apex-global-labs.github.io/FinPulse-Hub/
-- **GitHub Pages:** Enabled; latest deployment workflow run [#44287351937](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44287351937) completed successfully on 2026-11-18
-- **Latest main CI:** [#44287352087](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44287352087) completed successfully on 2026-11-18
+- **Current stage:** 30 calculators merged and deployed; calculators 31–36 are in feature development on `feat/payroll-money-transfer-tools`.
+- **Latest merge:** PR #11 — tax and salary calculators; commit `c24b2929ebe8f324bdfcd8ea7e477e523f56cba5`.
+- **PR #11 validation:** branch CI #44294149951 passed syntax, formula/smoke, live API, Playwright desktop/mobile and axe checks. Main CI #44294693366 passed. Pages deployment #44294693380 succeeded. An external HTTP fetch of the published site could not be completed from the tool environment, so the deployment workflow is confirmed but independent live-page fetch remains unverified.
 
-## First 12 calculators
+## Calculator inventory
 
-1. Currency Converter — Frankfurter v2 latest published reference rate, date display, one-hour in-memory cache and manual-rate action
+1. Currency Converter
 2. Mortgage Calculator
 3. Loan Calculator
 4. EMI Calculator
 5. Compound Interest Calculator
-6. Percentage Calculator — percentage-of, percentage-change and reverse-percentage modes
+6. Percentage Calculator
 7. Tip Calculator
-8. Auto / Car Loan Calculator — down payment, trade-in and financed fees
+8. Auto / Car Loan Calculator
 9. Loan Amortization Calculator
-10. Savings Goal Calculator — includes future value of existing savings and required monthly deposits
+10. Savings Goal Calculator
 11. Freelance Hourly Rate Calculator
-12. Profit Margin Calculator — reports margin and markup separately
+12. Profit Margin Calculator
+13. Mortgage Affordability Calculator
+14. Mortgage Payoff & Extra Payment Calculator
+15. Mortgage Refinance Comparison
+16. Personal Loan Calculator
+17. Student Loan Repayment Calculator
+18. Simple Interest Calculator
+19. Retirement Savings Calculator
+20. 401(k) Contribution Calculator
+21. Roth vs Traditional IRA Comparison
+22. Inflation Calculator
+23. CD Calculator
+24. APY Calculator
+25. Tax Calculator
+26. Income Tax Calculator
+27. Sales Tax Calculator
+28. VAT / GST Calculator
+29. Tax Refund Estimator
+30. Salary Take-Home Calculator
 
-Each calculator view includes **بِسْمِ اللَّهِ**. Calculations run in the browser. Time-series views include SVG charts; one-step calculators explain when a chart is unnecessary.
+## Next six calculators — in development
 
-## Calculators 13–18 (merged)
+31. Paycheck Calculator — gross pay from hourly work, overtime, bonus and entered deductions
+32. Payroll Calculator — employer monthly and annual payroll cost, including user-entered employer contributions and benefits
+33. Overtime Pay Calculator — regular and overtime earnings using a user-entered multiplier
+34. Discount Calculator — sequential discount/coupon, estimated tax and shipping
+35. Exchange Fee & Markup Calculator — exchange-rate markup and fixed/percentage transfer fees
+36. International Money Transfer Cost Calculator — compare two hypothetical providers by recipient amount
 
-13. Mortgage Affordability Calculator — estimates a maximum loan/home-price range using housing-cost and total-debt ratios, taxes, insurance, HOA and down payment
-14. Mortgage Payoff & Extra Payment Calculator — compares baseline and extra-principal repayment schedules, interest saved and time saved
-15. Mortgage Refinance Comparison — compares existing and refinanced payment, fees, simple break-even and full-term interest
-16. Personal Loan Calculator — includes origination-fee deduction, net proceeds, repayment schedule and fee-adjusted annualized cost estimate
-17. Student Loan Repayment Calculator — compares standard and extra-payment scenarios; excludes jurisdiction-specific forgiveness and income-driven rules
-18. Simple Interest Calculator — selectable 360/365/366 day-count basis and comparison chart
+All new calculators use user-entered assumptions and generic educational estimates. They do not infer jurisdiction-specific payroll, tax, overtime or transfer rules.
 
-All six tools have passed the current branch CI checks and PR #7 has been merged into `main`; confirm the latest Pages deployment before treating them as live.
+## Implementation and validation
 
-## Calculators 19–24 (feature branch; pending CI and review)\n\n19. Retirement Savings Calculator — monthly deposits, assumed return and inflation-adjusted value\n20. 401(k) Contribution Calculator — employee contributions, employer match and projected balance; limits and vesting excluded\n21. Roth vs Traditional IRA Comparison — simplified after-tax projections using current/future tax assumptions\n22. Inflation Calculator — future cost and purchasing-power scenarios\n23. CD Calculator — fixed-APY maturity estimate\n24. APY Calculator — nominal rate converted by compounding frequency\n\nThese six calculators are implemented on `feat/next-six-calculators`; they are not live until CI passes, PR is merged and Pages deployment succeeds.\n\n## Calculators 25–30 (feature branch; pending CI and review)\n\n25. Tax Calculator — flat-rate estimate with credits\n26. Income Tax Calculator — customizable progressive tax bands, avoiding hard-coded jurisdictional brackets\n27. Sales Tax Calculator — discount-before-tax and tax-inclusive modes\n28. VAT / GST Calculator — add or extract tax\n29. Tax Refund Estimator — compare liability, withholding and credits\n30. Salary Take-Home Calculator — annual, monthly and per-paycheck net pay after entered deductions\n\nThese six calculators are implemented on `feat/tax-salary-calculators`; they are not live until CI passes, PR is merged and Pages deployment succeeds.\n\n## Implementation structure
+- Static HTML, CSS and vanilla JavaScript; no paid service, backend or runtime framework.
+- `finance-core.js` contains pure calculation functions.
+- `app.js` contains the calculator registry, accessible inputs, result rendering and SVG graphs.
+- `tests/formula.test.cjs` covers numeric reference and edge cases.
+- `tests/smoke.test.cjs` checks registration, structure, CSP and security contracts.
+- `tests/browser.test.cjs` uses Playwright and axe for desktop/mobile behavior and WCAG 2.1 A/AA checks.
+- GitHub Actions runs syntax, formula/smoke, Frankfurter API, browser and accessibility checks.
+- GitHub Pages deploys automatically after successful main-branch updates.
 
-- `index.html` — page shell, metadata and restrictive Content Security Policy
-- `styles.css` — responsive layout, system fonts and mobile-first refinements
-- `finance-core.js` — shared pure calculation functions used by the UI and numeric reference tests
-- `app.js` — calculator registry, input validation, currency API, results and chart rendering
-- `tests/smoke.test.cjs` — UI, API, structure and security smoke checks
-- `tests/formula.test.cjs` — numeric reference and edge-case tests covering all 30 calculators
-- `tests/api.test.cjs` — live Frankfurter USD/EUR API integration test
-- `tests/browser.test.cjs` — Playwright desktop/mobile interaction tests and axe WCAG checks on all 30 calculator views
-- `.github/workflows/ci.yml` — syntax, formula, smoke, live API, Chromium browser and accessibility checks
-- `.github/workflows/deploy.yml` — automatic GitHub Pages deployment after main-branch updates
-- `.github/workflows/lighthouse.yml` — Lighthouse mobile/desktop audit after successful Pages deployment (being added)
+## Scope and accuracy notes
 
-## Verification evidence
-
-- [x] All 12 calculator implementations merged into `main`.
-- [x] Formula and smoke tests passed; latest recorded combined run reported 23 passed, 0 failed.
-- [x] Live Frankfurter USD/EUR API integration test passed.
-- [x] Desktop browser interaction test passed.
-- [x] Mobile browser viewport and horizontal-overflow test passed.
-- [x] axe WCAG checks passed on all 12 calculator views with 0 reported violations.
-- [x] Static security checks passed; CSP limits scripts, styles, fonts and network access.
-- [x] Latest main CI run #44287352087 succeeded.
-- [x] GitHub Pages deployment run #44287351937 succeeded.
-- [x] Lighthouse audit run #44289758044 completed for the 12-tool baseline. Mobile: Performance 88, Accessibility 100, Best Practices 93, SEO 100; LCP/FCP 891 ms, TBT 13 ms, CLS 0.241. Desktop: Performance 100, Accessibility 100, Best Practices 96, SEO 100; LCP 253 ms, FCP 216 ms, TBT 0 ms, CLS 0. The mobile layout shift is the main measured optimization target; calculator app space is now reserved to reduce first-render movement. Re-run Lighthouse after this CSS change and after all 45 tools are built.
-- [ ] Optional manual checks on physical iOS/Android devices and Firefox/Safari.
-
-## Quick performance review
-
-- The page uses local HTML, custom CSS, and deferred local JavaScript; no Tailwind CDN, external font request, front-end framework, or image-heavy hero asset is present.
-- The current CSS and JavaScript are modest static assets for the first 12 calculators. Avoid adding a framework or a runtime CDN dependency just for speed.
-- The two JavaScript files use `defer`, so they do not block HTML parsing.
-- The currency-rate API is called only when the user requests a rate; no unnecessary API request is made on initial page load.
-- The first measured Lighthouse baseline (12 tools) shows strong load and responsiveness but mobile CLS 0.241 is above the 0.1 good threshold. A reserved initial app viewport (760px desktop / 1000px mobile) was added to reduce layout movement while the calculator UI initializes. Verify the effect with a new Lighthouse run; do not assume the CLS fix worked until measured.
-- After the 45-tool library is complete, repeat Lighthouse and optimize based on measured bottlenecks rather than premature code splitting or framework changes.
-
-## Accuracy and scope notes
-
-- Frankfurter provides latest published reference rates, not real-time market quotes or bank transaction rates.
-- Loan, mortgage and EMI use fixed-rate monthly reducing-balance estimates. Lender fees, day-count conventions and payment dates may change actual results.
-- Compound-growth and savings-goal results assume a constant user-entered rate and end-of-month deposits; these are scenarios, not guaranteed returns.
-- Freelance hourly rate is a planning estimate; tax rules vary by location.
-- No trading, leverage, investment recommendations, crypto trading, payments or financial-provider execution is included.
-- Treat calculator outputs as educational estimates, not personalized financial advice.
+- Frankfurter supplies published reference rates, not live market quotes or bank transaction rates.
+- Tax, payroll, overtime and transfer tools use values entered by the user; no country-specific tax tables, statutory overtime thresholds or provider fee schedules are embedded.
+- Loan and savings projections are estimates based on stated assumptions, not guaranteed outcomes.
+- All outputs are educational estimates, not personalized financial advice.
+- Lighthouse baseline for the original 12-tool site: mobile Performance 88, Accessibility 100, Best Practices 93, SEO 100; desktop Performance 100, Accessibility 100, Best Practices 96, SEO 100. A fresh 36-tool Lighthouse audit is still required.

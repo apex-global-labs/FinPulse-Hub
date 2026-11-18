@@ -45,3 +45,12 @@ test("VAT GST adds or extracts the entered rate",()=>{near(F.vatGst(100,15,"add"
 test("Tax refund estimator distinguishes refund and amount due",()=>{near(F.taxRefund(9000,10500,0).refund,1500);near(F.taxRefund(10000,9000,500).amountDue,500)});
 test("Salary take-home calculates annual, monthly and paycheck net",()=>{const x=F.salaryTakeHome(60000,20,5,200,50,26);near(x.netAnnual,42000);near(x.netMonthly,3500);near(x.netPerPaycheck,1615.3846,0.001)});
 test("Tax and salary calculators reject invalid rates and brackets",()=>{assert.throws(()=>F.taxEstimate(1000,101,0));assert.throws(()=>F.progressiveIncomeTax(50000,1000,20000,10,10000,12,30000,20,25));assert.throws(()=>F.salesTax(100,101,5));assert.throws(()=>F.vatGst(100,101));assert.throws(()=>F.salaryTakeHome(1000,101,0,0,0,12))});
+
+
+test("Paycheck calculator separates regular, overtime and deductions",()=>{const x=F.paycheck(20,40,5,1.5,100,10,5,20,10);near(x.regularPay,800);near(x.overtimePay,150);near(x.gross,1050);near(x.net,862.5)});
+test("Payroll calculator estimates monthly and annual employer costs",()=>{const x=F.payroll(5,3000,10,200,100);near(x.grossMonthly,15000);near(x.employerTaxesMonthly,1500);near(x.benefitsMonthly,1000);near(x.totalMonthly,17600);near(x.totalAnnual,211200)});
+test("Overtime calculator applies the entered multiplier",()=>{const x=F.overtimePay(20,40,5,1.5);near(x.regular,800);near(x.overtime,150);near(x.gross,950);near(x.blendedRate,950/45)});
+test("Discount calculator applies sequential discounts before tax",()=>{const x=F.discountCalculator(100,20,10,10,5);near(x.totalDiscount,28);near(x.discountedSubtotal,72);near(x.tax,7.2);near(x.total,84.2)});
+test("Exchange fee calculator applies fixed and percentage fees plus rate markup",()=>{const x=F.exchangeFeeMarkup(1000,1.1,2,1,5);near(x.fee,15);near(x.customerRate,1.078);near(x.convertedAmount,1061.83);near(x.effectiveRate,1.06183)});
+test("International transfer comparison identifies higher recipient amount",()=>{const x=F.internationalTransferCompare(1000,1.1,5,1,2,2,1.5,1);assert.equal(x.bestProvider,"B");assert.ok(x.providerB.convertedAmount>x.providerA.convertedAmount)});
+test("Payroll and transfer calculators reject invalid values",()=>{assert.throws(()=>F.payroll(1.5,1000,5,0,0));assert.throws(()=>F.payroll(2,1000,101,0,0));assert.throws(()=>F.overtimePay(20,40,5,0));assert.throws(()=>F.discountCalculator(100,101,0,0));assert.throws(()=>F.exchangeFeeMarkup(10,1,0,100,1));assert.throws(()=>F.internationalTransferCompare(10,1,0,100,0,0,0,0))});
