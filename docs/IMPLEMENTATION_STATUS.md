@@ -63,7 +63,7 @@ These six tools are in development and are not live until merged and deployed.
 - [x] Static security checks passed; CSP limits scripts, styles, fonts and network access.
 - [x] Latest main CI run #44287352087 succeeded.
 - [x] GitHub Pages deployment run #44287351937 succeeded.
-- [ ] Lighthouse mobile and desktop scores: pending automated audit workflow; do not claim a measured score until its artifact is available.
+- [x] Lighthouse audit run #44289758044 completed for the 12-tool baseline. Mobile: Performance 88, Accessibility 100, Best Practices 93, SEO 100; LCP/FCP 891 ms, TBT 13 ms, CLS 0.241. Desktop: Performance 100, Accessibility 100, Best Practices 96, SEO 100; LCP 253 ms, FCP 216 ms, TBT 0 ms, CLS 0. The mobile layout shift is the main measured optimization target; calculator app space is now reserved to reduce first-render movement. Re-run Lighthouse after this CSS change and after all 45 tools are built.
 - [ ] Optional manual checks on physical iOS/Android devices and Firefox/Safari.
 
 ## Quick performance review
@@ -72,7 +72,7 @@ These six tools are in development and are not live until merged and deployed.
 - The current CSS and JavaScript are modest static assets for the first 12 calculators. Avoid adding a framework or a runtime CDN dependency just for speed.
 - The two JavaScript files use `defer`, so they do not block HTML parsing.
 - The currency-rate API is called only when the user requests a rate; no unnecessary API request is made on initial page load.
-- No verified critical rendering or asset-size defect was found in source inspection. Actual Core Web Vitals/Lighthouse performance scores are not yet measured.
+- The first measured Lighthouse baseline (12 tools) shows strong load and responsiveness but mobile CLS 0.241 is above the 0.1 good threshold. A reserved initial app viewport (760px desktop / 1000px mobile) was added to reduce layout movement while the calculator UI initializes. Verify the effect with a new Lighthouse run; do not assume the CLS fix worked until measured.
 - After the 45-tool library is complete, repeat Lighthouse and optimize based on measured bottlenecks rather than premature code splitting or framework changes.
 
 ## Accuracy and scope notes
