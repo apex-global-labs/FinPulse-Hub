@@ -119,3 +119,8 @@ A calculator may be released only when:
 - Country-specific rules/data have an authoritative source and effective date.
 - The page has useful unique explanatory content.
 - Its status, source and test evidence are recorded in `docs/PROJECT_STATE.md`.
+
+
+## Production 45-tool portfolio — PR #21 (2026-11-18)
+
+The final production portfolio replaces the two crypto-only placeholders from the earlier draft with a broader set of practical calculators. The active app registry contains exactly 45 unique tools. The last nine additions are Freelance Project Pricing, Freelancer Net Income After Costs, Markup, Break-even, Business ROI, Cash Flow Projection, Rental Yield, Emergency Fund and Net Worth. Crypto remains limited to hypothetical unit/value and fee education; no crypto DCA, trading, allocation or return forecasting features are introduced.
