@@ -4,7 +4,8 @@
   "private": true,
   "description": "Free finance calculators",
   "scripts": {
-    "check": "node --check app.js",
-    "test": "node --test"
+    "check": "node --check finance-core.js && node --check app.js",
+    "test": "node --test tests/smoke.test.cjs tests/formula.test.cjs",
+    "test:browser": "node --test tests/browser.test.cjs"
   }
 }
