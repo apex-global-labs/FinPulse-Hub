@@ -5,6 +5,7 @@ test("Currency Converter uses Frankfurter published reference rates with manual 
 test("shared calculation core is loaded before the app",()=>{assert.ok(html.indexOf('src="finance-core.js"')<html.indexOf('src="app.js"'));assert.match(app,/window\.FinPulseCore/);});
 test("responsive mobile layout and viewport are configured",()=>{assert.match(html,/name="viewport"/);assert.match(css,/@media\(max-width:620px\)/);});
 test("inputs have labels, reset controls and live result region",()=>{assert.match(app,/<label for=/);assert.match(app,/type="reset"/);assert.match(html,/aria-live="polite"/);});
+test("security policy blocks untrusted scripts and limits network destinations",()=>{assert.match(html,/Content-Security-Policy/);assert.match(html,/script-src \'self\'/);assert.match(html,/connect-src \'self\' https:\/\/api\.frankfurter\.dev/);assert.doesNotMatch(app,/\beval\s*\(/);assert.doesNotMatch(app,/new Function\s*\(/);});
 test("graph uses an accessible SVG role and label",()=>{assert.match(app,/role="img"/);assert.match(app,/aria-label="Illustrative balance trend"/)});
 test("currency API validates codes and handles timeouts/errors",()=>{assert.match(app,/\^\[A-Z\]\{3\}\$/);assert.match(app,/AbortController/);assert.match(app,/showCurrencyError/);});
 test("core module exposes all twelve calculation families",()=>{for(const fn of ["currencyConvert","mortgage","loan","emi","compoundInterest","percentage","tip","carLoan","amortization","savingsGoal","freelanceRate","profitMargin"])assert.match(core,new RegExp("function "+fn+"\\("))});
