@@ -38,16 +38,16 @@ Each calculator view includes **بِسْمِ اللَّهِ**. Calculations run 
 
 All six tools have passed the current branch CI checks and PR #7 has been merged into `main`; confirm the latest Pages deployment before treating them as live.
 
-## Calculators 19–24 (feature branch; pending CI and review)\n\n19. Retirement Savings Calculator — monthly deposits, assumed return and inflation-adjusted value\n20. 401(k) Contribution Calculator — employee contributions, employer match and projected balance; limits and vesting excluded\n21. Roth vs Traditional IRA Comparison — simplified after-tax projections using current/future tax assumptions\n22. Inflation Calculator — future cost and purchasing-power scenarios\n23. CD Calculator — fixed-APY maturity estimate\n24. APY Calculator — nominal rate converted by compounding frequency\n\nThese six calculators are implemented on `feat/next-six-calculators`; they are not live until CI passes, PR is merged and Pages deployment succeeds.\n\n## Implementation structure
+## Calculators 19–24 (feature branch; pending CI and review)\n\n19. Retirement Savings Calculator — monthly deposits, assumed return and inflation-adjusted value\n20. 401(k) Contribution Calculator — employee contributions, employer match and projected balance; limits and vesting excluded\n21. Roth vs Traditional IRA Comparison — simplified after-tax projections using current/future tax assumptions\n22. Inflation Calculator — future cost and purchasing-power scenarios\n23. CD Calculator — fixed-APY maturity estimate\n24. APY Calculator — nominal rate converted by compounding frequency\n\nThese six calculators are implemented on `feat/next-six-calculators`; they are not live until CI passes, PR is merged and Pages deployment succeeds.\n\n## Calculators 25–30 (feature branch; pending CI and review)\n\n25. Tax Calculator — flat-rate estimate with credits\n26. Income Tax Calculator — customizable progressive tax bands, avoiding hard-coded jurisdictional brackets\n27. Sales Tax Calculator — discount-before-tax and tax-inclusive modes\n28. VAT / GST Calculator — add or extract tax\n29. Tax Refund Estimator — compare liability, withholding and credits\n30. Salary Take-Home Calculator — annual, monthly and per-paycheck net pay after entered deductions\n\nThese six calculators are implemented on `feat/tax-salary-calculators`; they are not live until CI passes, PR is merged and Pages deployment succeeds.\n\n## Implementation structure
 
 - `index.html` — page shell, metadata and restrictive Content Security Policy
 - `styles.css` — responsive layout, system fonts and mobile-first refinements
 - `finance-core.js` — shared pure calculation functions used by the UI and numeric reference tests
 - `app.js` — calculator registry, input validation, currency API, results and chart rendering
 - `tests/smoke.test.cjs` — UI, API, structure and security smoke checks
-- `tests/formula.test.cjs` — numeric reference and edge-case tests covering all 24 calculators
+- `tests/formula.test.cjs` — numeric reference and edge-case tests covering all 30 calculators
 - `tests/api.test.cjs` — live Frankfurter USD/EUR API integration test
-- `tests/browser.test.cjs` — Playwright desktop/mobile interaction tests and axe WCAG checks on all 24 calculator views
+- `tests/browser.test.cjs` — Playwright desktop/mobile interaction tests and axe WCAG checks on all 30 calculator views
 - `.github/workflows/ci.yml` — syntax, formula, smoke, live API, Chromium browser and accessibility checks
 - `.github/workflows/deploy.yml` — automatic GitHub Pages deployment after main-branch updates
 - `.github/workflows/lighthouse.yml` — Lighthouse mobile/desktop audit after successful Pages deployment (being added)
