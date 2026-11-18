@@ -39,7 +39,7 @@ test("New retirement, inflation and deposit tools reject invalid inputs",()=>{as
 test("CD term and APY compounding frequency require whole months and periods",()=>{assert.throws(()=>F.certificateDeposit(1000,4,2.5));assert.throws(()=>F.apyCalculator(1000,4,2.5))});
 
 test("Tax calculator applies credits without allowing negative tax",()=>{const x=F.taxEstimate(50000,20,15000);near(x.grossTax,10000);near(x.tax,0);near(x.afterTax,50000)});
-test("Progressive income tax applies marginal rates to each band only",()=>{const x=F.progressiveIncomeTax(80000,10000,10000,10,40000,12,90000,22,24);near(x.taxableIncome,70000);near(x.tax,9400);near(x.marginalRate,22)});
+test("Progressive income tax applies marginal rates to each band only",()=>{const x=F.progressiveIncomeTax(80000,10000,10000,10,40000,12,90000,22,24);near(x.taxableIncome,70000);near(x.tax,11200);near(x.marginalRate,22)});
 test("Sales tax calculates discount before tax",()=>{const x=F.salesTax(100,10,10);near(x.taxableAmount,90);near(x.tax,9);near(x.finalTotal,99)});
 test("VAT GST adds or extracts the entered rate",()=>{near(F.vatGst(100,15,"add").total,115);near(F.vatGst(115,15,"remove").base,100);near(F.vatGst(115,15,"remove").tax,15)});
 test("Tax refund estimator distinguishes refund and amount due",()=>{near(F.taxRefund(9000,10500,0).refund,1500);near(F.taxRefund(10000,9000,500).amountDue,500)});
