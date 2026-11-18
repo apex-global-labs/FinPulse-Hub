@@ -136,3 +136,15 @@ The remaining list is a planning inventory and can be refined to avoid overlap o
 - Asset registry added for BTC, ETH and USDT plus generic asset-class scenarios. Prices are intentionally null and user-entered only; there is no live exchange feed or fabricated market quote. Registry marks every baseline as hypothetical and non-real-time. No crypto-specific calculator exists yet, so the selector is not presented as a trading feature.
 - Official tax references: IRS Publication 505 (2026); GOV.UK 2026–27 income tax rates and Scottish rates; CRA 2026 tax brackets; Bangladesh NBR 2025–26 income-tax circular covering AY 2026–27 and 2027–28.
 - New formula, integration-contract and Playwright coverage is included in the branch. Merge only after CI, browser E2E and axe checks pass.
+
+
+## PR #19 — 2026 state tax and payroll work (in review)
+
+- Branch: `feat/us-state-quebec-payroll-2026`.
+- Added a 50-state US state tax registry with single and married-filing-jointly schedules; nine states with no wage income tax are explicitly marked.
+- State estimates are layered on top of the selected US federal profile. State standard deductions are included where published in the comparative dataset; local taxes, personal exemptions/credits, tax-benefit recapture and special surtaxes are not comprehensively modeled. Several 2026 rate changes were announced after the early-year comparative bracket publication; rate/threshold pairs must be checked against the linked official state publications before claiming filing-grade accuracy. This is an educational estimate only.
+- Added 2026 Québec progressive tax profile using Revenu Québec brackets and its basic personal amount credit.
+- Added employee payroll deductions: US Social Security (6.2% to $184,500), Medicare (1.45%) and Additional Medicare (0.9% above filing-status threshold); UK Class 1 NI (8% between £12,570 and £50,270; 2% above); Canada CPP/CPP2/EI; Québec QPP/QPP2/EI/QPIP.
+- Payroll is annualized and does not model prior-employer year-to-date earnings, pay-period rounding, exemptions or employer-side contributions.
+- Sources: Tax Foundation 2026 state brackets (threshold reference), StateWise 2026 state change audit (official state sources linked per state), IRS Publication 15, HMRC Budget 2026 Annex A, CRA T4032 2026, Revenu Québec 2026 rates and employer changes.
+- Formula, smoke and Playwright checks added. Do not merge until branch CI, browser/axe and regression suites pass.
