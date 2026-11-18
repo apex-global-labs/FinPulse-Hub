@@ -16,6 +16,8 @@ jobs:
           node-version: 22
       - run: npm run check
       - run: npm test
+      - name: Verify live Frankfurter reference-rate API
+        run: npm run test:api
       - name: Install Playwright Chromium
         run: |
           npm install --no-save playwright@1.56.1 axe-core@4.10.3
