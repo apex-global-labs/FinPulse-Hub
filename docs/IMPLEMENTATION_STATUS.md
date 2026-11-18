@@ -138,16 +138,16 @@ The remaining list is a planning inventory and can be refined to avoid overlap o
 - New formula, integration-contract and Playwright coverage is included in the branch. Merge only after CI, browser E2E and axe checks pass.
 
 
-## PR #19 — 2026 state tax and payroll work (in review)
+## PR #19 — 2026 state tax and payroll work (merged and deployed)
 
-- Branch: `feat/us-state-quebec-payroll-2026`.
+- Merged commit: `39282e286100b48aaf742ed7b987d2c17e96427c` (2026-11-18).
 - Added a 50-state US state tax registry with single and married-filing-jointly schedules; nine states with no wage income tax are explicitly marked. The state dataset incorporates 2026 changes verified from official sources for Arkansas, South Carolina and West Virginia; Arkansas high-income transition adjustment is disclosed as not modeled.
 - State estimates are layered on top of the selected US federal profile. State standard deductions are included where published in the comparative dataset; local taxes, personal exemptions/credits, tax-benefit recapture and special surtaxes are not comprehensively modeled. Several 2026 rate changes were announced after the early-year comparative bracket publication; rate/threshold pairs must be checked against the linked official state publications before claiming filing-grade accuracy. This is an educational estimate only.
 - Added 2026 Québec progressive tax profile using Revenu Québec brackets and its basic personal amount credit.
 - Added employee payroll deductions: US Social Security (6.2% to $184,500), Medicare (1.45%) and Additional Medicare (0.9% above filing-status threshold); UK Class 1 NI (8% between £12,570 and £50,270; 2% above); Canada CPP/CPP2/EI; Québec QPP/QPP2/EI/QPIP.
 - Payroll is annualized and does not model prior-employer year-to-date earnings, pay-period rounding, exemptions or employer-side contributions.
 - Sources: Tax Foundation 2026 state brackets (threshold reference), StateWise 2026 state change audit (official state sources linked per state), IRS Publication 15, HMRC Budget 2026 Annex A, CRA T4032 2026, Revenu Québec 2026 rates and employer changes.
-- Formula, smoke and Playwright checks added. Do not merge until branch CI, browser/axe and regression suites pass.
+- Formula, smoke and Playwright checks passed; PR branch CI #44301506753, main CI #44301661186 and Pages deployment #44301661310 succeeded.
 
 
 ## PR #20 — Crypto and investment asset selector (in progress, 2026-11-18)
@@ -157,4 +157,5 @@ The remaining list is a planning inventory and can be refined to avoid overlap o
 - When a valid baseline is entered, the selected calculator result also shows a hypothetical asset-unit equivalent and its chart series switches to that unit basis. Without a baseline, the ordinary currency projection remains visible and no quote is fabricated.
 - Every investment selector visibly states: “Hypothetical / Baseline Input — Not Live Exchange Data.” No exchange API, market feed, or automatic price is used.
 - Asset selection changes only the illustrative unit denomination, not the assumed return. Outputs remain educational scenarios.
-- Validation: pending PR branch CI, formula/smoke tests, desktop/mobile Playwright and axe checks.
+- PR #20 branch CI #44305310477 passed: syntax checks, formula/smoke tests 87/87, Frankfurter API 1/1, Playwright desktop/mobile 3/3. The desktop suite runs axe WCAG 2.1 A/AA audits across all 36 calculator views, including the investment selector.
+- Current PR head before this documentation update: `e8a55ad8c676829cf86836a5d53fddf74eea1ed4`. Merge and post-merge deployment verification remain pending.
