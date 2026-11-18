@@ -159,3 +159,13 @@ The remaining list is a planning inventory and can be refined to avoid overlap o
 - Asset selection changes only the illustrative unit denomination, not the assumed return. Outputs remain educational scenarios.
 - PR #20 branch CI #44305310477 passed: syntax checks, formula/smoke tests 87/87, Frankfurter API 1/1, Playwright desktop/mobile 3/3. The desktop suite runs axe WCAG 2.1 A/AA audits across all 36 calculator views, including the investment selector.
 - Current PR head before this documentation update: `e8a55ad8c676829cf86836a5d53fddf74eea1ed4`. Merge and post-merge deployment verification remain pending.
+
+
+## PR #21 — 45 calculator completion (in progress, 2026-11-18)
+
+- Added the final nine calculators: Freelance Project Pricing, Freelancer Net Income After Costs, Markup, Break-even, Business ROI, Cash Flow Projection, Rental Yield, Emergency Fund and Net Worth.
+- Added independent calculation-core formulas with explicit assumptions and boundary validation, synchronized numeric/range inputs, display currency selection and instant recalculation through the shared renderer.
+- Added Chart.js-based responsive charts (with a local SVG fallback when the CDN is unavailable) and unique explanatory SEO content plus three FAQs per new calculator.
+- Updated the homepage directory and query-based tool routes to expose all 45 calculators. Added 45 tool URLs to `sitemap.xml` and `robots.txt` discovery.
+- Corrected the GitHub Pages deployment artifact to include every runtime module (`smart-ui.js`, tax data/engine and asset registry), not only the original four files.
+- Formula, smoke, desktop/mobile browser and accessibility checks are being expanded to cover all 45 tools. Merge and final Lighthouse audit remain pending.
