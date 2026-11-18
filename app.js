@@ -59,7 +59,7 @@ function fieldMarkup(f){
  }
  if(type==="text")return '<div class="field"><label for="'+id+'">'+f[1]+'</label><input id="'+id+'" name="'+f[0]+'" type="text" maxlength="3" value="'+f[2]+'" required></div>';
  const cfg=Smart.sliderConfig(f);
- return '<div class="field"><label for="'+id+'">'+f[1]+'</label><div class="input-with-slider"><input id="'+id+'" name="'+f[0]+'" type="number" min="0" max="'+cfg.max+'" step="any" value="'+f[2]+'" required><input class="range-control" id="'+id+'-range" type="range" min="0" max="'+cfg.max+'" step="'+cfg.step+'" value="'+f[2]+'" aria-label="Adjust '+f[1]+'" data-for="'+id+'"></div></div>';
+ return '<div class="field"><label for="'+id+'">'+f[1]+'</label><div class="input-with-slider"><input id="'+id+'" name="'+f[0]+'" type="number" min="0" step="any" value="'+f[2]+'" required><input class="range-control" id="'+id+'-range" type="range" min="0" max="'+cfg.max+'" step="'+cfg.step+'" value="'+f[2]+'" aria-label="Adjust '+f[1]+'" data-for="'+id+'"></div></div>';
 }
 function countryPresetMarkup(d){
  const presets=Smart.countryPresets[d.id];
@@ -81,7 +81,7 @@ function render(d){
  form.addEventListener("input",e=>{
   const t=e.target;
   if(t.type==="range"){const n=$("#"+t.dataset.for);if(n)n.value=t.value;}
-  else if(t.type==="number"){const s=$("#"+t.id+"-range");if(s)s.value=String(Math.min(Number(t.value)||0,Number(s.max)));}
+  else if(t.type==="number"){const s=$("#"+t.id+"-range");if(s){const n=Math.max(0,Number(t.value)||0);if(n>Number(s.max))s.max=String(Math.ceil(n*1.5));s.value=String(n);}}
   if(d.id==="currency"&&t.id==="f-rate")currencyRateDate="";
   if(t.type==="number"||t.type==="range"||t.type==="text")calculate(d);
  });
