@@ -150,7 +150,7 @@ The remaining list is a planning inventory and can be refined to avoid overlap o
 - Formula, smoke and Playwright checks passed; PR branch CI #44301506753, main CI #44301661186 and Pages deployment #44301661310 succeeded.
 
 
-## PR #20 — Crypto and investment asset selector (in progress, 2026-11-18)
+## PR #20 — Crypto and investment asset selector (merged and deployed, 2026-11-18)
 
 - Integrates the existing `asset-data.js` shared registry into Retirement Savings, 401(k), and Roth vs Traditional IRA calculators.
 - Adds BTC, ETH, USDT and generic asset-class selectors. Crypto selections reveal an optional user-entered hypothetical baseline price in the selected display currency.
@@ -158,7 +158,7 @@ The remaining list is a planning inventory and can be refined to avoid overlap o
 - Every investment selector visibly states: “Hypothetical / Baseline Input — Not Live Exchange Data.” No exchange API, market feed, or automatic price is used.
 - Asset selection changes only the illustrative unit denomination, not the assumed return. Outputs remain educational scenarios.
 - PR #20 branch CI #44305310477 passed: syntax checks, formula/smoke tests 87/87, Frankfurter API 1/1, Playwright desktop/mobile 3/3. The desktop suite runs axe WCAG 2.1 A/AA audits across all 36 calculator views, including the investment selector.
-- Current PR head before this documentation update: `e8a55ad8c676829cf86836a5d53fddf74eea1ed4`. Merge and post-merge deployment verification remain pending.
+- Merged commit: `4cb47e8411dec059f5ec25af5a79b5509df89803`. Main CI #44305761335 and Pages deployment #44305761259 succeeded.
 
 
 ## PR #21 — 45 calculator completion (in progress, 2026-11-18)
@@ -168,4 +168,5 @@ The remaining list is a planning inventory and can be refined to avoid overlap o
 - Added Chart.js-based responsive charts (with a local SVG fallback when the CDN is unavailable) and unique explanatory SEO content plus three FAQs per new calculator.
 - Updated the homepage directory and query-based tool routes to expose all 45 calculators. Added 45 tool URLs to `sitemap.xml` and `robots.txt` discovery.
 - Corrected the GitHub Pages deployment artifact to include every runtime module (`smart-ui.js`, tax data/engine and asset registry), not only the original four files.
-- Formula, smoke, desktop/mobile browser and accessibility checks are being expanded to cover all 45 tools. Merge and final Lighthouse audit remain pending.
+- PR #21 branch CI #44311781048 succeeded: syntax checks; formula/smoke suite 99/99; Frankfurter API 1/1; desktop/mobile Playwright 3/3. The desktop test runs axe WCAG 2.1 A/AA audits across all 45 calculator views, then checks SEO FAQ and chart rendering for the final nine.
+- Current PR head: `c5d7c9a53fbc455105b0c48ff5b253e009192214`. Merge and post-merge Pages/Lighthouse verification remain pending.
