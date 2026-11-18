@@ -82,3 +82,13 @@ The following files were committed to `main` and then fetched again from GitHub 
 - All six paths returned readable content from GitHub.
 - GitHub Actions still reports zero workflow runs; no CI exists yet.
 - This verification confirms that the documentation is stored in the repository. It is not a formula test, site build, browser test or deployment verification.
+
+
+## Traffic-focused 45-tool selection update — 2026-11-18
+
+- Replaced the earlier broad 45-tool draft with a traffic-focused candidate portfolio in `docs/FINANCE_TOOL_MASTER_REGISTRY.md` v1.1.
+- Updated `docs/KEYWORD_RESEARCH.md` v1.1 with current directional head-term estimates, difficulty warnings and source URLs.
+- Directional validated head-term examples include mortgage (~4.8m), currency converter (~4.3m), EMI (~2.74m), compound interest (~2.5m), loan (~1.9m), percentage (~1.9m), tax (~1.2m), retirement (~1.0m), tip (~1.0m), car loan (~0.83m), investment (~0.63m), paycheck (~0.56m), interest (~0.43m), amortization (~0.28m) and sales tax (~0.11m) worldwide monthly estimated searches, depending on source methodology.
+- These are third-party estimates, not exact Google counts or expected visits. Mortgage/currency/tax are especially competitive; the per-country SERP and keyword audit is not complete.
+- Crypto remains limited to basic educational unit/value conversion and fee arithmetic. Crypto DCA/investment/portfolio features and forex trade-oriented calculators are excluded.
+- No calculator implementation, formula testing, CI or deployment was completed by this selection update.
