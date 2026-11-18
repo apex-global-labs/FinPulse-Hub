@@ -3,15 +3,15 @@
 - **Last updated:** 2026-11-18
 - **Repository:** https://github.com/apex-global-labs/FinPulse-Hub
 - **Production branch:** `main`
-- **Implementation branch:** `feat/first-12-calculators`
-- **Pull request:** https://github.com/apex-global-labs/FinPulse-Hub/pull/1 (validation refresh pending)
-- **Current stage:** First 12 calculators implemented; automated verification added; final CI/browser result pending
-- **Live website:** Not deployed / not verified
-- **GitHub Pages:** Deployment workflow added; activation and public URL verification pending
+- **Calculator implementation PR:** [#4 — merged](https://github.com/apex-global-labs/FinPulse-Hub/pull/4)
+- **Pages deployment PR:** [#5 — merged](https://github.com/apex-global-labs/FinPulse-Hub/pull/5)
+- **Current stage:** First 12 calculators implemented, tested and merged; waiting for one-time GitHub Pages source setting
+- **Live website:** Not yet deployed / public URL not verified
+- **GitHub Pages:** Deployment workflow merged; GitHub currently reports Pages is not enabled for this repository
 
 ## First 12 calculators
 
-1. Currency Converter — Frankfurter v2 latest published reference rate, rate date, one-hour in-memory cache and manual-rate action
+1. Currency Converter — Frankfurter v2 latest published reference rate, date display, one-hour in-memory cache and manual-rate action
 2. Mortgage Calculator
 3. Loan Calculator
 4. EMI Calculator
@@ -24,7 +24,7 @@
 11. Freelance Hourly Rate Calculator
 12. Profit Margin Calculator — reports margin and markup separately
 
-Each calculator view includes **بِسْمِ اللَّهِ**. Calculations are performed in the browser. Time-series views include SVG charts; one-step calculators explain when a chart is unnecessary.
+Each calculator view includes **بِسْمِ اللَّهِ**. Calculations run in the browser. Time-series views include SVG charts; one-step calculators explain when a chart is unnecessary.
 
 ## Implementation structure
 
@@ -34,30 +34,31 @@ Each calculator view includes **بِسْمِ اللَّهِ**. Calculations are 
 - `app.js` — calculator registry, input validation, currency API, results and chart rendering
 - `tests/smoke.test.cjs` — UI, API, structure and security smoke checks
 - `tests/formula.test.cjs` — 13 numeric reference and edge-case tests covering all 12 calculators
-- `tests/browser.test.cjs` — Playwright desktop/mobile interaction tests and axe WCAG checks on all calculator views
-- `.github/workflows/ci.yml` — syntax, formula, smoke, Chromium browser and accessibility checks
-- `.github/workflows/deploy.yml` — GitHub Pages deployment after main-branch updates
+- `tests/api.test.cjs` — live Frankfurter USD/EUR API integration test
+- `tests/browser.test.cjs` — Playwright desktop/mobile interaction tests and axe WCAG checks on all 12 calculator views
+- `.github/workflows/ci.yml` — syntax, formula, smoke, live API, Chromium browser and accessibility checks
+- `.github/workflows/deploy.yml` — automatic GitHub Pages deployment after main-branch updates
 
 ## Verification evidence
 
-- [x] All 12 calculator implementations and the shared calculation core committed to the feature branch.
-- [x] Numeric reference vectors and edge cases added for all 12 calculators.
-- [x] Manual exchange-rate entry is an explicit action; currency codes are validated before display.
-- [x] Static security checks and a restrictive CSP added; external font dependency removed.
-- [x] Desktop/mobile Playwright test and axe WCAG audit added.
-- [x] Latest observed Node CI stage: syntax check passed and all 22 Node smoke/formula tests passed on commit `456b97b6794606efbaf1598e274fe8a89808f836`.
-- [x] CI runner changed from unsupported `ubuntu-latest` image (Ubuntu 26.04) to `ubuntu-24.04`.
-- [x] Node syntax, smoke and formula tests: 23 passed, 0 failed on the current implementation snapshot.
+- [x] All 12 calculator implementations merged into `main`.
+- [x] Formula Reference Tests: 13 passed, 0 failed.
+- [x] Smoke + formula CI tests: 23 passed, 0 failed.
 - [x] Live Frankfurter USD/EUR API integration test: 1 passed, 0 failed.
-- [x] Previous Playwright run completed all 12 WCAG scans and the mobile overflow test without reported violations; its desktop flow stopped only because the date assertion matched two visible elements.
-- [ ] Re-run complete CI after narrowing the date assertion to the rate metrics panel.
-- [ ] Confirm live Frankfurter API request in a real browser (browser test currently uses a deterministic mocked API response).
-- [ ] Final manual visual check in additional browsers (Firefox/Safari) and real mobile devices.
-- [ ] Review GitHub Actions final logs and confirm no outstanding failures.
-- [ ] Merge the validated PR to `main`.
-- [ ] Merge the GitHub Pages deployment workflow.
-- [ ] Confirm Pages configuration and deployment succeed.
+- [x] Desktop browser interaction test passed.
+- [x] Mobile browser viewport and horizontal-overflow test passed.
+- [x] axe WCAG checks passed on all 12 calculator views with 0 reported violations.
+- [x] Static security checks passed; CSP limits scripts, styles, fonts and network access.
+- [x] Calculator implementation CI run #73 passed; deployment-workflow PR CI run #78 passed.
+- [x] Both implementation and deployment workflow PRs merged.
+- [ ] GitHub Pages source setting: repository Settings → Pages → Build and deployment → Source → GitHub Actions.
+- [ ] Re-run/confirm the Pages deployment workflow after Pages is enabled.
 - [ ] Verify the public URL: https://apex-global-labs.github.io/FinPulse-Hub/
+- [ ] Optional manual checks on physical iOS/Android devices and Firefox/Safari; current automated browser coverage is Chromium desktop/mobile viewports.
+
+## Current deployment blocker
+
+The deployment workflow started after PR #5 merged, but `actions/configure-pages@v5` returned 404 because the repository has no Pages site enabled yet. The repository metadata reports `has_pages: false`. The GitHub connector available in this session can read repository settings but cannot change the Pages source setting. Once the source is set to **GitHub Actions** in repository Settings → Pages, the workflow can be rerun and the public URL verified.
 
 ## Accuracy and scope notes
 
@@ -66,4 +67,4 @@ Each calculator view includes **بِسْمِ اللَّهِ**. Calculations are 
 - Compound-growth and savings-goal results assume a constant user-entered rate and end-of-month deposits; they are scenarios, not guaranteed returns.
 - Freelance hourly rate is a planning estimate; tax rules vary by location.
 - No trading, leverage, investment recommendations, crypto trading, payments or financial-provider execution is included.
-- Do not call the release production-ready until final CI, browser, accessibility, deployment and public URL checks are verified.
+- Do not call the website live or production-ready until GitHub Pages deployment and the public URL are verified.
