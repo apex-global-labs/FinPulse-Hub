@@ -5,7 +5,7 @@
 - **Production branch:** `main`
 - **Calculator implementation PR:** [#4 — merged](https://github.com/apex-global-labs/FinPulse-Hub/pull/4)
 - **Pages deployment PR:** [#5 — merged](https://github.com/apex-global-labs/FinPulse-Hub/pull/5)
-- **Current stage:** First 12 calculators implemented, tested, merged and deployed; quick performance audit instrumentation is being added before expanding the calculator library
+- **Current stage:** First 12 calculators deployed; next six calculators are under development on a feature branch
 - **Live website:** https://apex-global-labs.github.io/FinPulse-Hub/
 - **GitHub Pages:** Enabled; latest deployment workflow run [#44287351937](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44287351937) completed successfully on 2026-11-18
 - **Latest main CI:** [#44287352087](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44287352087) completed successfully on 2026-11-18
@@ -26,6 +26,17 @@
 12. Profit Margin Calculator — reports margin and markup separately
 
 Each calculator view includes **بِسْمِ اللَّهِ**. Calculations run in the browser. Time-series views include SVG charts; one-step calculators explain when a chart is unnecessary.
+
+## Next six calculators (in development)
+
+13. Mortgage Affordability Calculator — estimates a maximum loan/home-price range using housing-cost and total-debt ratios, taxes, insurance, HOA and down payment
+14. Mortgage Payoff & Extra Payment Calculator — compares baseline and extra-principal repayment schedules, interest saved and time saved
+15. Mortgage Refinance Comparison — compares existing and refinanced payment, fees, simple break-even and full-term interest
+16. Personal Loan Calculator — includes origination-fee deduction, net proceeds, repayment schedule and fee-adjusted annualized cost estimate
+17. Student Loan Repayment Calculator — compares standard and extra-payment scenarios; excludes jurisdiction-specific forgiveness and income-driven rules
+18. Simple Interest Calculator — selectable 360/365/366 day-count basis and comparison chart
+
+These six tools are in development and are not live until merged and deployed.
 
 ## Implementation structure
 
