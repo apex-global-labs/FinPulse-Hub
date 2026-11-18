@@ -1,7 +1,7 @@
 const test=require("node:test");const assert=require("node:assert/strict");const fs=require("node:fs");const app=fs.readFileSync("app.js","utf8"),html=fs.readFileSync("index.html","utf8"),css=fs.readFileSync("styles.css","utf8"),core=fs.readFileSync("finance-core.js","utf8");
 test("all 12 calculators are registered",()=>{for(const id of ["currency","mortgage","loan","emi","compound","percentage","tip","car","amortization","savings","freelance","margin"])assert.match(app,new RegExp('id:"'+id+'"'))});
 test("each calculator view includes Bismillah",()=>assert.match(app,/بِسْمِ اللَّهِ/));
-test("Currency Converter uses Frankfurter published reference rates with manual fallback",()=>{assert.match(app,/https:\/\/api\.frankfurter\.dev\/v2\/rate\//);assert.match(app,/currencyRateDate/);assert.match(app,/Reference rates are not live market quotes/);assert.match(app,/Get latest rate & calculate/);});
+test("Currency Converter uses Frankfurter published reference rates with manual fallback",()=>{assert.match(app,/https:\/\/api\.frankfurter\.dev\/v2\/rate\//);assert.match(app,/currencyRateDate/);assert.match(app,/Reference rates are not live market quotes/);assert.match(app,/Get latest rate & calculate/);assert.match(app,/Use manual rate/);});
 test("shared calculation core is loaded before the app",()=>{assert.ok(html.indexOf('src="finance-core.js"')<html.indexOf('src="app.js"'));assert.match(app,/window\.FinPulseCore/);});
 test("responsive mobile layout and viewport are configured",()=>{assert.match(html,/name="viewport"/);assert.match(css,/@media\(max-width:620px\)/);});
 test("inputs have labels, reset controls and live result region",()=>{assert.match(app,/<label for=/);assert.match(app,/type="reset"/);assert.match(html,/aria-live="polite"/);});
