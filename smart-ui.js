@@ -35,6 +35,6 @@ const integer=/year|month|term|day|hour|week|people|employee|period|frequency|co
 const percent=/rate|percent|tax|discount|markup|margin|inflation|apy|return|dti|withholding|contribution/.test(key+" "+label);
 return{max,step:integer?"1":percent?"0.01":"0.01"}}
 function currencyLabel(code){const c=currencies.find(x=>x.code===code);return c?c.symbol+" "+c.code+" — "+c.name:code}
-function getCountryPreset(tool,id){return presets.find(x=>x.id===id)}
+function getCountryPreset(tool,id){const p=presets.find(x=>x.id===id);return p?{...p,checkedOn}:null}
 window.FinPulseSmartUI={currencies,cryptoAssets:[{symbol:"BTC",name:"Bitcoin"},{symbol:"ETH",name:"Ethereum"},{symbol:"USDT",name:"Tether"}],sliderConfig,currencyLabel,countryPresets:{"sales-tax":presets,"vat-gst":presets},getCountryPreset};
 })();
