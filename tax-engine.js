@@ -8,13 +8,13 @@ let allowance=p.allowance||0;if(p.taperAllowanceAbove&&gross>p.taperAllowanceAbo
 const taxable=Math.max(0,gross-deductions-allowance);let tax=0,breakdown=[],marginalRate=0;
 if(p.components){for(const c of p.components){const componentTaxable=Math.max(0,gross-deductions-(c.allowance||0));const x=progressive(componentTaxable,c.bands);const due=Math.max(0,x.tax-(c.credit||0));tax+=due;marginalRate+=x.marginalRate;breakdown.push({component:c.name,tax:due,marginalRate:x.marginalRate,taxableIncome:componentTaxable,credit:c.credit||0});}}
 else{const x=progressive(taxable,p.bands);tax=x.tax;marginalRate=x.marginalRate;breakdown=x.breakdown;}
-let stateTax=0,stateTaxableIncome=0,stateName="";
+let stateTax=0,stateTaxableIncome=0,stateName="",stateNote="";
 if(profileId.startsWith("US-")&&stateId&&stateId!=="none"){
 const st=window.FinPulseStateData.states[stateId];if(!st)throw Error("Choose a supported US state.");
-const config=st[stateStatus==="joint"?"joint":"single"];stateName=st.name;stateTaxableIncome=Math.max(0,gross-deductions-config.standardDeduction);const sx=progressive(stateTaxableIncome,config.bands);stateTax=sx.tax;tax+=stateTax;breakdown.push({component:st.name+" state income tax",tax:stateTax,marginalRate:sx.marginalRate,taxableIncome:stateTaxableIncome});
+const config=st[stateStatus==="joint"?"joint":"single"];stateName=st.name;stateTaxableIncome=Math.max(0,gross-deductions-config.standardDeduction);const special=stateId==="AR"&&stateTaxableIncome>94700?st.highIncomeSchedule:null,sx=progressive(stateTaxableIncome,special?special.bands:config.bands);stateTax=sx.tax;stateNote=special?special.note:(st.specialNote||"");tax+=stateTax;breakdown.push({component:st.name+" state income tax",tax:stateTax,marginalRate:sx.marginalRate,taxableIncome:stateTaxableIncome});
 }
 const beforeMinimum=tax;if(p.minimumTax&&gross>allowance)tax=Math.max(tax,p.minimumTax);
-return{profile:p.label,currency:p.currency,grossIncome:gross,deductions,personalAllowance:allowance,taxableIncome:taxable,stateTaxableIncome,stateTax,stateName,tax,effectiveRate:gross?tax/gross*100:0,marginalRate,breakdown,minimumTaxApplied:tax>beforeMinimum,note:"Educational estimate using selected 2026 brackets and standard deductions only. State-specific exemptions, credits, recapture, local taxes and special surtaxes may change US state liability. Payroll contributions are calculated separately; credits, reliefs and individual eligibility rules may change actual liability."};
+return{profile:p.label,currency:p.currency,grossIncome:gross,deductions,personalAllowance:allowance,taxableIncome:taxable,stateTaxableIncome,stateTax,stateName,tax,effectiveRate:gross?tax/gross*100:0,marginalRate,breakdown,minimumTaxApplied:tax>beforeMinimum,note:"Educational estimate using selected 2026 brackets and standard deductions only. State-specific exemptions, credits, recapture, local taxes and special surtaxes may change US state liability. Payroll contributions are calculated separately; credits, reliefs and individual eligibility rules may change actual liability. "+stateNote};
 }
 function payroll(profileId,gross,filingStatus="single"){
 if(!Number.isFinite(gross)||gross<0)throw Error("Gross income must be a valid non-negative amount.");
