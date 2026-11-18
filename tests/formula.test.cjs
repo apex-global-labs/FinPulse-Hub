@@ -27,3 +27,13 @@ test("New finance tools reject invalid inputs",()=>{assert.throws(()=>F.mortgage
 
 test("Refinance cost comparison does not count financed closing costs twice",()=>{const x=F.mortgageRefinance(200000,7,20,5.5,20,4000);near(x.interestCostDifference,x.newInterest-x.currentInterest)});
 test("Personal loan fee-adjusted annualized cost is independent of optional prepayment",()=>{const a=F.personalLoan(15000,11.5,4,3,0),b=F.personalLoan(15000,11.5,4,3,150);near(a.effectiveAnnualCost,b.effectiveAnnualCost,0.0001);assert.ok(b.totalInterest<a.totalInterest)});
+
+test("Retirement savings projects growth and inflation-adjusted value",()=>{const x=F.retirementSavings(10000,200,5,10,2);assert.ok(x.futureValue>x.totalContributions);assert.ok(x.inflationAdjustedValue<x.futureValue)});
+test("401k calculator applies employer match up to salary cap",()=>{const x=F.retirement401k(60000,10,50,6,5000,5,10);near(x.employerMatchAnnual,1800);near(x.employeeContributions,60000);near(x.employerContributions,18000)});
+test("IRA comparison returns simplified after-tax scenarios",()=>{const x=F.iraComparison(7000,20,6,22,22);assert.ok(x.traditionalAfterTax>0);assert.ok(x.rothAfterTax>0);near(x.difference,x.rothAfterTax-x.traditionalAfterTax)});
+test("Inflation calculator estimates future cost and purchasing power",()=>{const x=F.inflationCalculator(1000,3,10);near(x.futureCost,1343.916379,0.001);near(x.purchasingPower,744.0939,0.01)});
+test("CD calculator calculates fixed-APY maturity value",()=>{const x=F.certificateDeposit(10000,4.5,12);near(x.futureValue,10450);near(x.interestEarned,450)});
+test("APY calculator converts nominal rate by compounding frequency",()=>{const x=F.apyCalculator(10000,12,12);near(x.apy,12.682503,0.001);near(x.interestEarned,1268.25,0.02)});
+test("New retirement, inflation and deposit tools reject invalid inputs",()=>{assert.throws(()=>F.retirementSavings(-1,100,5,10));assert.throws(()=>F.retirement401k(60000,10,50,6,0,5,0));assert.throws(()=>F.iraComparison(7000,20,6,101,22));assert.throws(()=>F.inflationCalculator(1000,3,101));assert.throws(()=>F.certificateDeposit(1000,4,0));assert.throws(()=>F.apyCalculator(1000,4,0))});
+
+test("CD term and APY compounding frequency require whole months and periods",()=>{assert.throws(()=>F.certificateDeposit(1000,4,2.5));assert.throws(()=>F.apyCalculator(1000,4,2.5))});
