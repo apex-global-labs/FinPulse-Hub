@@ -57,6 +57,7 @@ test("Payroll and transfer calculators reject invalid values",()=>{assert.throws
 
 global.window = global.window || {};
 require("../tax-data.js");
+require("../tax-state-data.js");
 require("../tax-engine.js");
 const Tax = global.window.FinPulseTaxEngine;
 test("2026 US federal single brackets apply the standard deduction and marginal rates",()=>{const x=Tax.estimate("US-2026-single",100000,0);near(x.taxableIncome,83900);near(x.tax,13170);near(x.effectiveRate,13.17);});
@@ -68,3 +69,17 @@ test("Bangladesh AY 2026-27 applies general tax-free threshold and minimum tax",
 test("Bangladesh special taxpayer profiles use their distinct tax-free allowances",()=>{const a=Tax.estimate("BD-2026-general",500000,0),b=Tax.estimate("BD-2026-women-senior",500000,0);assert.ok(b.tax<a.tax);});
 test("Canada 2026 combines federal and selected provincial marginal brackets",()=>{const x=Tax.estimate("CA-2026-AB",100000,0);near(x.taxableIncome,100000);near(x.tax,25472.005,0.02);assert.equal(x.breakdown.length,2);});
 test("Tax engine rejects unknown profiles and invalid income/deductions",()=>{assert.throws(()=>Tax.estimate("US-unknown",10000,0));assert.throws(()=>Tax.estimate("US-2026-single",-1,0));assert.throws(()=>Tax.estimate("US-2026-single",1000,2000));});
+
+test("2026 US state registry covers all 50 states and distinguishes no-wage-tax states",()=>{assert.equal(Object.keys(global.window.FinPulseStateData.states).length,50);assert.equal(global.window.FinPulseStateData.states.TX.noWageIncomeTax,true);assert.equal(global.window.FinPulseStateData.states.CA.noWageIncomeTax,false);});
+test("US state tax estimate adds California tax but no state wage tax for Texas",()=>{const ca=Tax.estimate("US-2026-single",100000,0,"CA","single"),tx=Tax.estimate("US-2026-single",100000,0,"TX","single");assert.ok(ca.tax>tx.tax);assert.ok(ca.stateTax>0);assert.equal(tx.stateTax,0);assert.equal(ca.stateName,"California");});
+test("US state tax increases with income and respects state filing schedule",()=>{const low=Tax.estimate("US-2026-single",50000,0,"CA","single"),high=Tax.estimate("US-2026-single",150000,0,"CA","single"),joint=Tax.estimate("US-2026-joint",150000,0,"CA","joint");assert.ok(high.stateTax>low.stateTax);assert.ok(Number.isFinite(joint.stateTax));});
+test("2026 Quebec income tax uses published brackets and basic personal tax credit",()=>{const x=Tax.estimate("CA-2026-QC",100000,0);near(x.tax,30325.475,0.03);assert.equal(x.currency,"CAD");});
+test("2026 US FICA applies wage base and additional Medicare threshold",()=>{const x=Tax.payroll("US-2026-single",250000);near(x.items[0].amount,11439);near(x.items[1].amount,3625);near(x.items[2].amount,450);near(x.total,15514);});
+test("2026 UK employee Class 1 National Insurance uses primary and upper thresholds",()=>{const x=Tax.payroll("UK-2026-eng",60000);near(x.total,3210.6);});
+test("2026 Canada CPP, CPP2 and EI use annual ceilings",()=>{const x=Tax.payroll("CA-2026-AB",100000);near(x.total,5769.52);});
+test("2026 Quebec QPP, QPP2, EI and QPIP use Quebec-specific limits",()=>{const x=Tax.payroll("CA-2026-QC",100000);near(x.total,6221);});
+test("Payroll engine rejects invalid gross salary",()=>{assert.throws(()=>Tax.payroll("US-2026-single",-1));});
+
+test("2026 South Carolina two-rate schedule uses the $30,000 breakpoint and adjusted deduction",()=>{const x=Tax.estimate("US-2026-single",50000,0,"SC","single");near(x.stateTax,857.5);});
+test("2026 West Virginia updated 2.11%, 2.81%, 3.16%, 4.22% and 4.58% brackets apply",()=>{const x=Tax.estimate("US-2026-single",50000,0,"WV","single");near(x.stateTax,1528.5);});
+test("Arkansas high-income table is selected and its unmodeled transition adjustment is disclosed",()=>{const x=Tax.estimate("US-2026-single",100000,0,"AR","single");assert.ok(x.stateTax>0);assert.match(x.note,/transitional adjustment is not modeled/i);});
