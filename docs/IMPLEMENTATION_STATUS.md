@@ -102,6 +102,21 @@ The remaining list is a planning inventory and can be refined to avoid overlap o
 - **PR #14 merged:** `4ef77e62ccde2e2b4a80ef47e2b6bd7554fa33af`.
 - PR #14 branch CI #44296831348 passed; main CI #44296925160 passed; GitHub Pages deployment #44296925118 passed.
 - Shared currency dropdown, number + range slider controls, instant recalculation, currency-aware result/metric/chart formatting and currency pair dropdowns are now in the production renderer for all 36 existing calculators.
-- Country/region starting presets are active for Sales Tax and VAT/GST; 2026 IMF average-CPI estimates are being added for the Inflation Calculator in the follow-up branch.
+- Country/region starting presets are active for Sales Tax, VAT/GST and Inflation. The inflation presets use IMF October 2026 WEO estimates for Bangladesh, United States, Canada and United Kingdom.
 - Remaining country-specific income-tax presets are not hard-coded until tax year, filing status, national/provincial scope and official bracket sources are modelled correctly.
 - No current calculator is a crypto calculator. BTC, ETH and USDT are registered as future asset selector choices only; no live/mock price feed is claimed.
+
+
+## Smart UI migration — latest verified state (2026-11-18)
+
+- **PR #14** introduced the shared renderer and was merged as `4ef77e62ccde2e2b4a80ef47e2b6bd7554fa33af`.
+- **PR #15** added country inflation presets and was merged as `5746b0c8f850c35332c14bb4eca8822734b04b32`.
+- PR #14 CI #44296831348 passed; main CI #44296925160 passed; Pages deployment #44296925118 passed.
+- PR #15 CI #44297450264 passed; main CI #44297552509 passed; Pages deployment #44297552650 passed.
+- The shared renderer now gives all 36 existing calculators a display-currency dropdown, currency-aware monetary formatting, synchronized number/range controls and instant recalculation.
+- Currency Converter uses From/To currency dropdowns and automatically requests published Frankfurter reference rates when the pair changes.
+- Money-transfer comparison tools include a recipient-currency selector.
+- Country presets are active for Sales Tax and VAT/GST (UK, Bangladesh, Canadian provinces/territories; US explicitly requires local rates) and Inflation (2026 IMF annual average CPI estimates for Bangladesh 8.7%, US 3.6%, Canada 2.8%, UK 3.3%). These are editable starting assumptions, not personalized rates.
+- Progressive income-tax and salary-withholding presets remain manual because a valid country preset requires tax year, filing status, province/state, deductions and current official tax-band rules. Do not insert a single flat rate as if it represented a country's full income-tax system.
+- The current 36-tool inventory has no dedicated crypto calculator. BTC, ETH and USDT are present in the shared asset option registry for future tool work; there is no live price feed or mock price claim. Existing retirement/401(k)/IRA tools continue to use user-entered return assumptions and do not yet expose asset-class selectors.
+- The next architecture tasks are: add suitable asset-class/token selectors when a crypto or investment-specific calculator is added; extend verified country presets only where official data is sufficiently scoped; and run a fresh Lighthouse audit after the UI migration.
