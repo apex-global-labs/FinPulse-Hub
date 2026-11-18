@@ -141,7 +141,7 @@ The remaining list is a planning inventory and can be refined to avoid overlap o
 ## PR #19 — 2026 state tax and payroll work (in review)
 
 - Branch: `feat/us-state-quebec-payroll-2026`.
-- Added a 50-state US state tax registry with single and married-filing-jointly schedules; nine states with no wage income tax are explicitly marked.
+- Added a 50-state US state tax registry with single and married-filing-jointly schedules; nine states with no wage income tax are explicitly marked. The state dataset incorporates 2026 changes verified from official sources for Arkansas, South Carolina and West Virginia; Arkansas high-income transition adjustment is disclosed as not modeled.
 - State estimates are layered on top of the selected US federal profile. State standard deductions are included where published in the comparative dataset; local taxes, personal exemptions/credits, tax-benefit recapture and special surtaxes are not comprehensively modeled. Several 2026 rate changes were announced after the early-year comparative bracket publication; rate/threshold pairs must be checked against the linked official state publications before claiming filing-grade accuracy. This is an educational estimate only.
 - Added 2026 Québec progressive tax profile using Revenu Québec brackets and its basic personal amount credit.
 - Added employee payroll deductions: US Social Security (6.2% to $184,500), Medicare (1.45%) and Additional Medicare (0.9% above filing-status threshold); UK Class 1 NI (8% between £12,570 and £50,270; 2% above); Canada CPP/CPP2/EI; Québec QPP/QPP2/EI/QPIP.
