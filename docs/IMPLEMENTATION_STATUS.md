@@ -5,9 +5,10 @@
 - **Production branch:** `main`
 - **Calculator implementation PR:** [#4 — merged](https://github.com/apex-global-labs/FinPulse-Hub/pull/4)
 - **Pages deployment PR:** [#5 — merged](https://github.com/apex-global-labs/FinPulse-Hub/pull/5)
-- **Current stage:** First 12 calculators implemented, tested and merged; waiting for one-time GitHub Pages source setting
-- **Live website:** Not yet deployed / public URL not verified
-- **GitHub Pages:** Deployment workflow merged; GitHub currently reports Pages is not enabled for this repository
+- **Current stage:** First 12 calculators implemented, tested, merged and deployed; quick performance audit instrumentation is being added before expanding the calculator library
+- **Live website:** https://apex-global-labs.github.io/FinPulse-Hub/
+- **GitHub Pages:** Enabled; latest deployment workflow run [#44287351937](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44287351937) completed successfully on 2026-11-18
+- **Latest main CI:** [#44287352087](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44287352087) completed successfully on 2026-11-18
 
 ## First 12 calculators
 
@@ -29,42 +30,45 @@ Each calculator view includes **بِسْمِ اللَّهِ**. Calculations run 
 ## Implementation structure
 
 - `index.html` — page shell, metadata and restrictive Content Security Policy
-- `styles.css` — responsive layout, mobile action-button wrapping, system fonts and improved text contrast
+- `styles.css` — responsive layout, system fonts and mobile-first refinements
 - `finance-core.js` — shared pure calculation functions used by the UI and numeric reference tests
 - `app.js` — calculator registry, input validation, currency API, results and chart rendering
 - `tests/smoke.test.cjs` — UI, API, structure and security smoke checks
-- `tests/formula.test.cjs` — 13 numeric reference and edge-case tests covering all 12 calculators
+- `tests/formula.test.cjs` — numeric reference and edge-case tests covering all 12 calculators
 - `tests/api.test.cjs` — live Frankfurter USD/EUR API integration test
 - `tests/browser.test.cjs` — Playwright desktop/mobile interaction tests and axe WCAG checks on all 12 calculator views
 - `.github/workflows/ci.yml` — syntax, formula, smoke, live API, Chromium browser and accessibility checks
 - `.github/workflows/deploy.yml` — automatic GitHub Pages deployment after main-branch updates
+- `.github/workflows/lighthouse.yml` — Lighthouse mobile/desktop audit after successful Pages deployment (being added)
 
 ## Verification evidence
 
 - [x] All 12 calculator implementations merged into `main`.
-- [x] Formula Reference Tests: 13 passed, 0 failed.
-- [x] Smoke + formula CI tests: 23 passed, 0 failed.
-- [x] Live Frankfurter USD/EUR API integration test: 1 passed, 0 failed.
+- [x] Formula and smoke tests passed; latest recorded combined run reported 23 passed, 0 failed.
+- [x] Live Frankfurter USD/EUR API integration test passed.
 - [x] Desktop browser interaction test passed.
 - [x] Mobile browser viewport and horizontal-overflow test passed.
 - [x] axe WCAG checks passed on all 12 calculator views with 0 reported violations.
 - [x] Static security checks passed; CSP limits scripts, styles, fonts and network access.
-- [x] Calculator implementation CI run #73 passed; deployment-workflow PR CI run #78 passed.
-- [x] Both implementation and deployment workflow PRs merged.
-- [ ] GitHub Pages source setting: repository Settings → Pages → Build and deployment → Source → GitHub Actions.
-- [ ] Re-run/confirm the Pages deployment workflow after Pages is enabled.
-- [ ] Verify the public URL: https://apex-global-labs.github.io/FinPulse-Hub/
-- [ ] Optional manual checks on physical iOS/Android devices and Firefox/Safari; current automated browser coverage is Chromium desktop/mobile viewports.
+- [x] Latest main CI run #44287352087 succeeded.
+- [x] GitHub Pages deployment run #44287351937 succeeded.
+- [ ] Lighthouse mobile and desktop scores: pending automated audit workflow; do not claim a measured score until its artifact is available.
+- [ ] Optional manual checks on physical iOS/Android devices and Firefox/Safari.
 
-## Current deployment blocker
+## Quick performance review
 
-The deployment workflow started after PR #5 merged, but `actions/configure-pages@v5` returned 404 because the repository has no Pages site enabled yet. The repository metadata reports `has_pages: false`. The GitHub connector available in this session can read repository settings but cannot change the Pages source setting. Once the source is set to **GitHub Actions** in repository Settings → Pages, the workflow can be rerun and the public URL verified.
+- The page uses local HTML, custom CSS, and deferred local JavaScript; no Tailwind CDN, external font request, front-end framework, or image-heavy hero asset is present.
+- The current CSS and JavaScript are modest static assets for the first 12 calculators. Avoid adding a framework or a runtime CDN dependency just for speed.
+- The two JavaScript files use `defer`, so they do not block HTML parsing.
+- The currency-rate API is called only when the user requests a rate; no unnecessary API request is made on initial page load.
+- No verified critical rendering or asset-size defect was found in source inspection. Actual Core Web Vitals/Lighthouse performance scores are not yet measured.
+- After the 45-tool library is complete, repeat Lighthouse and optimize based on measured bottlenecks rather than premature code splitting or framework changes.
 
 ## Accuracy and scope notes
 
 - Frankfurter provides latest published reference rates, not real-time market quotes or bank transaction rates.
 - Loan, mortgage and EMI use fixed-rate monthly reducing-balance estimates. Lender fees, day-count conventions and payment dates may change actual results.
-- Compound-growth and savings-goal results assume a constant user-entered rate and end-of-month deposits; they are scenarios, not guaranteed returns.
+- Compound-growth and savings-goal results assume a constant user-entered rate and end-of-month deposits; these are scenarios, not guaranteed returns.
 - Freelance hourly rate is a planning estimate; tax rules vary by location.
 - No trading, leverage, investment recommendations, crypto trading, payments or financial-provider execution is included.
-- Do not call the website live or production-ready until GitHub Pages deployment and the public URL are verified.
+- Treat calculator outputs as educational estimates, not personalized financial advice.
