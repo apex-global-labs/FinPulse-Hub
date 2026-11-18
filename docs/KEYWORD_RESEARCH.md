@@ -1,129 +1,85 @@
 # FinPulse Hub — Keyword Research & SEO Validation Plan
 
-- **Version:** 1.0
-- **Date:** 2026-11-18
-- **Status:** Research plan; no keyword volume in this document is approved as a verified metric
+- **Version:** 1.1
+- **Updated:** 2026-11-18
+- **Status:** Initial traffic review completed for a limited set of head terms; detailed country-by-country audit still required
 
-## 1. Purpose
+## 1. Target market assumption
 
-Select calculators based on demonstrable search demand, clear user intent, achievable competition, usefulness and formula reliability. The phrase “high traffic” is a research goal, not a guaranteed outcome.
+Until a market decision is made, research is based on **global English search demand**, with country-specific validation planned for the United States, United Kingdom, Canada, Australia, India and Bangladesh. Search intent and tax/payroll conventions are not interchangeable across these markets.
 
-Search-volume providers estimate demand using different datasets, country settings and time windows. Their numbers must not be described as exact Google searches or guaranteed visitors.
+## 2. Selected search-demand evidence
 
-## 2. Initial market hypotheses
+The following are directional third-party keyword estimates observed in November 2026. They are not an official Google statement or a promise of traffic. Providers use different datasets, country/language filters and estimation methods, so figures may differ substantially.
 
-These are research hypotheses to validate, not final rankings:
+| Keyword | Approx. worldwide monthly searches | Competition signal | Notes |
+|---|---:|---|---|
+| mortgage calculator | 4.8m | Very high; one report gives SEO difficulty 92/100 | Large demand, entrenched financial publishers |
+| currency converter | 4.3m | Very high; one report gives difficulty 98/100 | Huge demand but strong incumbent competition |
+| EMI calculator | 2.74m | Not comparable in same dataset | Worldwide English estimate from a separate source |
+| compound interest calculator | 2.5m | High; one report gives difficulty 82/100 | Large educational/personal-finance intent |
+| loan calculator | 1.9m | High; one report gives difficulty 76/100 | Includes several related loan intents |
+| percentage calculator | 1.9m | Moderate/high; one report gives difficulty 65/100 | Broad utility intent; page must remain finance-focused |
+| tax calculator | 1.2m | Very high; one report gives difficulty 92/100 | Country and tax-year localisation essential |
+| retirement calculator | 1.0m | High; one report gives difficulty 80/100 | Strong US concentration |
+| tip calculator | 1.0m | Moderate; one report gives difficulty 42/100 | About 91% of volume in the cited dataset came from the US |
+| car loan calculator | 0.83m | High; one report gives difficulty 81/100 | Strong vehicle-finance intent |
+| investment calculator | 0.63m | High; one report gives difficulty 72/100 | Educational scenario math only |
+| paycheck calculator | 0.56m | High; one report gives difficulty 70/100 | About 98% of reported volume in cited data came from the US |
+| interest calculator | 0.43m | Moderate; one report gives difficulty 42/100 | One calculator can include simple and compound modes |
+| amortization calculator | 0.28m | Moderate/high; one report gives difficulty 68/100 | Good supporting loan topic |
+| sales tax calculator | 0.11m | Moderate; one report gives difficulty 59/100 | Strongly jurisdiction-specific |
+| profit margin calculator | 0.033m | Moderate; one report gives difficulty 59/100 | Smaller demand, useful business intent |
+| crypto calculator | 0.023m | Moderate/high; one report gives difficulty 61/100 | Small versus core finance terms; keep crypto scope educational only |
 
-- Loan EMI, mortgage, loan repayment and compound-interest terms appear likely to be major demand clusters.
-- Savings, salary, tax/VAT and currency-conversion queries may be highly country-dependent.
-- Freelance hourly-rate, profit-margin, markup and break-even queries may have smaller but more task-specific audiences.
-- Forex and cryptocurrency terms must be split between ordinary conversion/fee education and speculative trading intent. FinPulse Hub targets only the former.
-- Search demand alone is insufficient: a calculator must be accurate, useful, distinguishable and maintainable.
+### Sources for the observed values
 
-## 3. Keyword clusters to audit
+- RGB Loans & Banking keyword trends, last measured 27 Oct 2026: https://rgb.ir/en/trends/lending/
+- KWS Trends, mortgage calculator: https://www.kwstrends.com/keywords/us/mortgage-calculator
+- KWS Trends, currency converter: https://www.kwstrends.com/keywords/us/currency-converter
+- KWS Trends, compound interest calculator: https://www.kwstrends.com/keywords/us/compound-interest-calculator
+- KWS Trends, loan calculator: https://www.kwstrends.com/keywords/us/loan-calculator
+- KWS Trends, percentage calculator: https://www.kwstrends.com/keywords/us/percentage-calculator
+- KWS Trends, tax calculator: https://www.kwstrends.com/keywords/us/tax-calculator
+- KWS Trends, retirement calculator: https://www.kwstrends.com/keywords/us/retirement-calculator
+- KWS Trends, tip calculator: https://www.kwstrends.com/keywords/us/tip-calculator
+- KWS Trends, car loan calculator: https://www.kwstrends.com/keywords/us/car-loan-calculator
+- KWS Trends, investment calculator: https://www.kwstrends.com/keywords/us/investment-calculator
+- KWS Trends, paycheck calculator: https://www.kwstrends.com/keywords/us/paycheck-calculator
+- KWS Trends, interest calculator: https://www.kwstrends.com/keywords/us/interest-calculator
+- KWS Trends, amortization calculator: https://www.kwstrends.com/keywords/us/amortization-calculator
+- KWS Trends, sales tax calculator: https://www.kwstrends.com/keywords/us/sales-tax-calculator
+- KWS Trends, profit margin calculator: https://www.kwstrends.com/keywords/us/profit-margin-calculator
+- KWS Trends, crypto calculator: https://www.kwstrends.com/keywords/us/crypto-calculator
 
-| Cluster | Primary phrase candidates | Related intents | Notes |
-|---|---|---|---|
-| Loan & EMI | loan calculator, EMI calculator, personal loan calculator | monthly payment, total interest, amortization | Audit by country and loan type |
-| Mortgage | mortgage calculator, home loan calculator | affordability, down payment, refinance | High competition likely; analyse SERP features |
-| Savings & interest | compound interest calculator, savings calculator | simple interest, savings goal, inflation | Good formula transparency opportunities |
-| Salary & tax | salary calculator, take home pay calculator, income tax calculator | gross-to-net, tax brackets, VAT/GST | Must be localized and tax-year tagged |
-| Currency | currency converter, exchange rate calculator | transfer fee, exchange markup, received amount | Distinguish reference conversion from live quotes |
-| Freelancer | freelance hourly rate calculator | project pricing, billable hours, day rate | Strong task intent; research each wording |
-| Business | profit margin calculator, break even calculator | markup, gross profit, ROI, cash flow | Avoid duplicate pages for near-identical intent |
-| Property | rental yield calculator, mortgage affordability | purchase costs, rent vs buy | Country assumptions matter |
-| Crypto education | crypto converter, crypto fee calculator | amount-to-fiat, fee percentage | Exclude trading/profit/signal queries |
+## 3. Interpretation
 
-## 4. Countries and language
+- High search volume does not mean easy ranking. Mortgage, currency conversion, compound interest and tax terms have very strong competitors.
+- Country-specific terms may look large in a US report but have much lower global reach; paycheck is a good example.
+- A smaller, precise query can be more achievable than a broad head term, provided the tool answers a real user need.
+- “Calculator” keyword volume must not be treated as expected website visitors.
+- CPC and ad competition are secondary signals, not proof of organic traffic or revenue.
+- Tax, salary, VAT/GST and payroll tools require jurisdiction and effective-date controls.
+- Crypto query demand is much smaller than major finance calculator terms in the cited source; keep this section compact and educational.
 
-First research pass:
-- Global English as a directional overview.
-- United States, United Kingdom, Canada and Australia.
-- India and Bangladesh as separate country opportunities.
+## 4. Research workflow before final URL/content freeze
 
-Do not combine country volumes without recording the underlying country and language filters. Bangla-language terms may need their own research and content plan; do not infer them from English keyword volumes.
+For each of the 45 registry entries:
+1. Record exact keyword, country, language, source and date.
+2. Collect volume range, keyword difficulty, trend, SERP features and intent.
+3. Inspect at least the first-page competitors and note their calculator features.
+4. Identify a real feature or content gap FinPulse Hub can satisfy.
+5. Map one primary intent to one canonical URL; combine synonyms and overlapping modes.
+6. Check formula confidence, data dependencies and localization costs.
+7. Score search opportunity, intent clarity, competition, usefulness, formula confidence and free maintenance feasibility.
+8. Recheck before release; keep unverified values marked as “not checked”.
 
-## 5. Research workflow
+## 5. SEO page requirements
 
-For every candidate keyword:
+Every published page needs unique, helpful content: title, meta description, H1, formula explanation, variable definitions, unit conventions, worked example, assumptions, limits, FAQs and internal links. Do not create thin near-duplicate pages for keyword variants.
 
-1. Record exact query, country, language, device (if available), source and date checked.
-2. Collect monthly volume range/estimate, keyword difficulty or competition, CPC only as a secondary commercial signal, and trend.
-3. Inspect the live search results page: dominant intent, calculator features, content depth, brands, snippets and competing formats.
-4. Identify whether the page can provide a materially better or more transparent answer.
-5. Map one primary intent to one canonical URL.
-6. Reject or combine overlapping queries that do not justify separate calculators.
-7. Record formula complexity, localization needs, data dependencies and ongoing maintenance cost.
-8. Score each candidate using the rubric below.
-9. Recheck the shortlist before release; search demand changes.
+For tax/payroll tools, show jurisdiction, tax year, source, effective date and last review date. Keep unsupported country modes unpublished.
 
-## 6. Suggested scoring rubric
+## 6. Analytics and measurement
 
-Score each dimension from 1 (weak) to 5 (strong):
-
-- Search demand evidence — 25%
-- User intent clarity — 15%
-- Competition / achievable differentiation — 15%
-- User value and frequency — 15%
-- Formula confidence and source quality — 15%
-- Free implementation and maintenance feasibility — 10%
-- Internal-linking / topical fit — 5%
-
-The weighted score informs prioritisation; it does not predict rank or traffic. Any tool with unresolved formula or legal-data risk is blocked regardless of score.
-
-## 7. Data sources and evidence rules
-
-Use free sources where practical:
-- Google Keyword Planner, where account access and available estimates permit.
-- Google Trends for relative interest over time, not absolute search volume.
-- Google Search Console after launch for actual site impressions and clicks.
-- Search engine result pages for intent and competitor inspection.
-- Free tiers of reputable keyword tools only as secondary estimates.
-
-Every recorded metric must include source, date, country, language and methodology note. If access to a source is unavailable, mark the field “not checked”; never invent a volume, difficulty or CPC.
-
-## 8. SEO page specification
-
-Each calculator page should contain:
-- Unique title, meta description, H1 and canonical URL.
-- A concise explanation of who the calculator is for.
-- Inputs and units with useful examples.
-- Formula and explanation of variables.
-- At least one independently checked worked example.
-- Assumptions, limitations and country/version notes.
-- Short FAQs that answer real user questions.
-- Contextual links to related calculators.
-- Structured data only where accurate and eligible.
-
-Do not publish spun, repetitive or thin pages generated only to target keyword variations. Do not claim “best”, “official”, “guaranteed”, exact savings or precise market demand without evidence.
-
-## 9. Initial URL intent map
-
-Proposed patterns (final slugs may change during implementation):
-
-- `/calculators/loan-emi/`
-- `/calculators/personal-loan/`
-- `/calculators/car-loan/`
-- `/calculators/loan-amortization/`
-- `/calculators/mortgage/`
-- `/calculators/compound-interest/`
-- `/calculators/savings-goal/`
-- `/calculators/budget-planner/`
-- `/calculators/currency-converter/`
-- `/calculators/exchange-fee/`
-- `/calculators/freelance-hourly-rate/`
-- `/calculators/profit-margin/`
-- `/calculators/break-even/`
-- `/calculators/markup/`
-- `/calculators/roi/`
-
-## 10. Launch measurement
-
-After deployment, measure:
-- Indexed pages versus eligible submitted pages.
-- Search impressions, clicks, CTR and average position by page/query.
-- Organic landing-page engagement and calculator interaction completion.
-- Core Web Vitals / page performance.
-- Errors, abandoned forms and user feedback.
-
-Do not collect or send users' financial input values to analytics. Traffic, rankings, AdSense approval and revenue are not guaranteed.
+After launch, measure actual Search Console impressions/clicks, index coverage, query/page CTR, performance and calculator interaction completion. Never send entered financial values to analytics. Traffic, ranking, AdSense approval and income cannot be guaranteed.
