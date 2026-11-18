@@ -4,9 +4,12 @@
 - **Repository:** https://github.com/apex-global-labs/FinPulse-Hub
 - **Production branch:** `main`
 - **Live website:** https://apex-global-labs.github.io/FinPulse-Hub/
-- **Current stage:** 30 calculators merged and deployed; calculators 31–36 are in feature development on `feat/payroll-money-transfer-tools`.
-- **Latest merge:** PR #11 — tax and salary calculators; commit `c24b2929ebe8f324bdfcd8ea7e477e523f56cba5`.
-- **PR #11 validation:** branch CI #44294149951 passed syntax, formula/smoke, live API, Playwright desktop/mobile and axe checks. Main CI #44294693366 passed. Pages deployment #44294693380 succeeded. An external HTTP fetch of the published site could not be completed from the tool environment, so the deployment workflow is confirmed but independent live-page fetch remains unverified.
+- **Current stage:** 36 of 45 calculators merged into `main`.
+- **PR #11:** Tax and salary calculators merged as `c24b2929ebe8f324bdfcd8ea7e477e523f56cba5`.
+- **PR #12:** Payroll, pricing and money-transfer calculators merged as `6545530e651c36f37632ab29f68344655dfee18f`.
+- **PR #12 branch CI:** Run #44295089541 succeeded, including formula/smoke, live API, desktop/mobile browser and axe accessibility checks.
+- **PR #12 main CI:** Run #44295168596 succeeded.
+- **PR #12 Pages deployment:** Run #44295168569 succeeded. The deployment workflow is confirmed; independent HTTP retrieval from the assistant environment was blocked by a DNS/network resolution error.
 
 ## Calculator inventory
 
@@ -40,33 +43,42 @@
 28. VAT / GST Calculator
 29. Tax Refund Estimator
 30. Salary Take-Home Calculator
+31. Paycheck Calculator
+32. Payroll Calculator
+33. Overtime Pay Calculator
+34. Discount Calculator
+35. Exchange Fee & Markup Calculator
+36. International Money Transfer Cost Calculator
 
-## Next six calculators — in development
+## Remaining 9 planned calculators
 
-31. Paycheck Calculator — gross pay from hourly work, overtime, bonus and entered deductions
-32. Payroll Calculator — employer monthly and annual payroll cost, including user-entered employer contributions and benefits
-33. Overtime Pay Calculator — regular and overtime earnings using a user-entered multiplier
-34. Discount Calculator — sequential discount/coupon, estimated tax and shipping
-35. Exchange Fee & Markup Calculator — exchange-rate markup and fixed/percentage transfer fees
-36. International Money Transfer Cost Calculator — compare two hypothetical providers by recipient amount
+37. Crypto Unit & Fiat Value Converter
+38. Crypto Network Fee Calculator
+39. Freelance Project Pricing Calculator
+40. Freelancer Net Income After Costs Calculator
+41. Markup Calculator
+42. Break-even Calculator
+43. Business ROI Calculator
+44. Cash Flow Projection Calculator
+45. Rental Yield Calculator
 
-All new calculators use user-entered assumptions and generic educational estimates. They do not infer jurisdiction-specific payroll, tax, overtime or transfer rules.
+The remaining list is a planning inventory and can be refined to avoid overlap or low-value tools before implementation.
 
 ## Implementation and validation
 
 - Static HTML, CSS and vanilla JavaScript; no paid service, backend or runtime framework.
 - `finance-core.js` contains pure calculation functions.
 - `app.js` contains the calculator registry, accessible inputs, result rendering and SVG graphs.
-- `tests/formula.test.cjs` covers numeric reference and edge cases.
+- `tests/formula.test.cjs` covers numeric reference values and edge cases.
 - `tests/smoke.test.cjs` checks registration, structure, CSP and security contracts.
-- `tests/browser.test.cjs` uses Playwright and axe for desktop/mobile behavior and WCAG 2.1 A/AA checks.
-- GitHub Actions runs syntax, formula/smoke, Frankfurter API, browser and accessibility checks.
+- `tests/browser.test.cjs` uses Playwright and axe for desktop/mobile behavior and WCAG 2.1 A/AA checks across all 36 calculators.
+- GitHub Actions runs syntax, formula/smoke, Frankfurter API, Chromium browser and accessibility checks.
 - GitHub Pages deploys automatically after successful main-branch updates.
 
 ## Scope and accuracy notes
 
 - Frankfurter supplies published reference rates, not live market quotes or bank transaction rates.
-- Tax, payroll, overtime and transfer tools use values entered by the user; no country-specific tax tables, statutory overtime thresholds or provider fee schedules are embedded.
+- Tax, payroll, overtime and provider-fee tools use values entered by the user; no country-specific tax tables, statutory overtime thresholds or provider fee schedules are embedded.
 - Loan and savings projections are estimates based on stated assumptions, not guaranteed outcomes.
 - All outputs are educational estimates, not personalized financial advice.
-- Lighthouse baseline for the original 12-tool site: mobile Performance 88, Accessibility 100, Best Practices 93, SEO 100; desktop Performance 100, Accessibility 100, Best Practices 96, SEO 100. A fresh 36-tool Lighthouse audit is still required.
+- Lighthouse baseline for the original 12-tool site: mobile Performance 88, Accessibility 100, Best Practices 93, SEO 100; desktop Performance 100, Accessibility 100, Best Practices 96, SEO 100. A fresh audit of the 36-tool site remains a performance follow-up.
