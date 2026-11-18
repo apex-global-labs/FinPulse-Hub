@@ -66,7 +66,7 @@ function assetSelectorMarkup(d){
  if(!["retirement","401k","ira"].includes(d.id))return "";
  const registry=window.FinPulseAssetData;
  const tokenOptions=registry.assets.map(a=>'<option value="crypto:'+a.symbol+'">'+a.symbol+' — '+a.name+'</option>').join("");
- const classOptions=registry.assetClasses.map(a=>'<option value="class:'+a.id+'">'+a.label+'</option>').join("");
+ const classOptions=registry.assetClasses.map(a=>'<option value="class:'+a.id+'" '+(a.id==="diversified"?"selected":"")+'">'+a.label+'</option>').join("");
  return '<div class="field"><label for="asset-selector">Asset / scenario selector</label><select id="asset-selector"><optgroup label="Crypto assets">'+tokenOptions+'</optgroup><optgroup label="Traditional / custom scenarios">'+classOptions+'</optgroup></select></div><div class="field" id="asset-baseline-wrap" hidden><label for="asset-baseline-price">Hypothetical baseline price (in selected display currency)</label><input id="asset-baseline-price" type="number" min="0" step="any" inputmode="decimal" placeholder="Enter a baseline price" aria-describedby="asset-baseline-help"><small id="asset-baseline-help" class="preset-hint">User-entered baseline only. No exchange quote is fetched or implied.</small></div><p class="preset-hint asset-disclaimer">Hypothetical / Baseline Input — Not Live Exchange Data. Asset selection is for educational unit-equivalent scenarios only; it does not predict returns or recommend an asset.</p>';
 }
 function countryPresetMarkup(d){
