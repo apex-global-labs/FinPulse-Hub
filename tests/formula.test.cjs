@@ -37,3 +37,11 @@ test("APY calculator converts nominal rate by compounding frequency",()=>{const 
 test("New retirement, inflation and deposit tools reject invalid inputs",()=>{assert.throws(()=>F.retirementSavings(-1,100,5,10));assert.throws(()=>F.retirement401k(60000,10,50,6,0,5,0));assert.throws(()=>F.iraComparison(7000,20,6,101,22));assert.throws(()=>F.inflationCalculator(1000,3,101));assert.throws(()=>F.certificateDeposit(1000,4,0));assert.throws(()=>F.apyCalculator(1000,4,0))});
 
 test("CD term and APY compounding frequency require whole months and periods",()=>{assert.throws(()=>F.certificateDeposit(1000,4,2.5));assert.throws(()=>F.apyCalculator(1000,4,2.5))});
+
+test("Tax calculator applies credits without allowing negative tax",()=>{const x=F.taxEstimate(50000,20,15000);near(x.grossTax,10000);near(x.tax,0);near(x.afterTax,50000)});
+test("Progressive income tax applies marginal rates to each band only",()=>{const x=F.progressiveIncomeTax(80000,10000,10000,10,40000,12,90000,22,24);near(x.taxableIncome,70000);near(x.tax,9400);near(x.marginalRate,22)});
+test("Sales tax calculates discount before tax",()=>{const x=F.salesTax(100,10,10);near(x.taxableAmount,90);near(x.tax,9);near(x.finalTotal,99)});
+test("VAT GST adds or extracts the entered rate",()=>{near(F.vatGst(100,15,"add").total,115);near(F.vatGst(115,15,"remove").base,100);near(F.vatGst(115,15,"remove").tax,15)});
+test("Tax refund estimator distinguishes refund and amount due",()=>{near(F.taxRefund(9000,10500,0).refund,1500);near(F.taxRefund(10000,9000,500).amountDue,500)});
+test("Salary take-home calculates annual, monthly and paycheck net",()=>{const x=F.salaryTakeHome(60000,20,5,200,50,26);near(x.netAnnual,42000);near(x.netMonthly,3500);near(x.netPerPaycheck,1615.3846,0.001)});
+test("Tax and salary calculators reject invalid rates and brackets",()=>{assert.throws(()=>F.taxEstimate(1000,101,0));assert.throws(()=>F.progressiveIncomeTax(50000,1000,20000,10,10000,12,30000,20,25));assert.throws(()=>F.salesTax(100,101,5));assert.throws(()=>F.vatGst(100,101));assert.throws(()=>F.salaryTakeHome(1000,101,0,0,0,12))});
