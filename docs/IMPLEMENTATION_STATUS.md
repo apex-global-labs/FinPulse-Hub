@@ -46,7 +46,7 @@ Each calculator view includes **بِسْمِ اللَّهِ**. Calculations are 
 - [x] Desktop/mobile Playwright test and axe WCAG audit added.
 - [x] Latest observed Node CI stage: syntax check passed and all 22 Node smoke/formula tests passed on commit `456b97b6794606efbaf1598e274fe8a89808f836`.
 - [x] CI runner changed from unsupported `ubuntu-latest` image (Ubuntu 26.04) to `ubuntu-24.04`.
-- [ ] Re-run complete CI against the final branch head, including Chromium and all 12 accessibility views.
+- [ ] Re-run complete CI against the final branch head, including live API, Chromium and all 12 accessibility views.
 - [ ] Confirm live Frankfurter API request in a real browser (browser test currently uses a deterministic mocked API response).
 - [ ] Final manual visual check in additional browsers (Firefox/Safari) and real mobile devices.
 - [ ] Review GitHub Actions final logs and confirm no outstanding failures.
