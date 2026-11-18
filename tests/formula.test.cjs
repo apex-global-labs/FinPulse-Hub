@@ -79,3 +79,7 @@ test("2026 UK employee Class 1 National Insurance uses primary and upper thresho
 test("2026 Canada CPP, CPP2 and EI use annual ceilings",()=>{const x=Tax.payroll("CA-2026-AB",100000);near(x.total,5769.52);});
 test("2026 Quebec QPP, QPP2, EI and QPIP use Quebec-specific limits",()=>{const x=Tax.payroll("CA-2026-QC",100000);near(x.total,6233.9);});
 test("Payroll engine rejects invalid gross salary",()=>{assert.throws(()=>Tax.payroll("US-2026-single",-1));});
+
+test("2026 South Carolina two-rate schedule uses the $30,000 breakpoint and adjusted deduction",()=>{const x=Tax.estimate("US-2026-single",50000,0,"SC","single");near(x.stateTax,857.5);});
+test("2026 West Virginia updated 2.11%, 2.81%, 3.16%, 4.22% and 4.58% brackets apply",()=>{const x=Tax.estimate("US-2026-single",50000,0,"WV","single");near(x.stateTax,1528.5);});
+test("Arkansas high-income table is selected and its unmodeled transition adjustment is disclosed",()=>{const x=Tax.estimate("US-2026-single",100000,0,"AR","single");assert.ok(x.stateTax>0);assert.match(x.note,/transitional adjustment is not modeled/i);});
