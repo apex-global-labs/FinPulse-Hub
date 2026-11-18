@@ -46,7 +46,10 @@ Each calculator view includes **بِسْمِ اللَّهِ**. Calculations are 
 - [x] Desktop/mobile Playwright test and axe WCAG audit added.
 - [x] Latest observed Node CI stage: syntax check passed and all 22 Node smoke/formula tests passed on commit `456b97b6794606efbaf1598e274fe8a89808f836`.
 - [x] CI runner changed from unsupported `ubuntu-latest` image (Ubuntu 26.04) to `ubuntu-24.04`.
-- [ ] Re-run complete CI against the final branch head, including live API, Chromium and all 12 accessibility views.
+- [x] Node syntax, smoke and formula tests: 23 passed, 0 failed on the current implementation snapshot.
+- [x] Live Frankfurter USD/EUR API integration test: 1 passed, 0 failed.
+- [x] Previous Playwright run completed all 12 WCAG scans and the mobile overflow test without reported violations; its desktop flow stopped only because the date assertion matched two visible elements.
+- [ ] Re-run complete CI after narrowing the date assertion to the rate metrics panel.
 - [ ] Confirm live Frankfurter API request in a real browser (browser test currently uses a deterministic mocked API response).
 - [ ] Final manual visual check in additional browsers (Firefox/Safari) and real mobile devices.
 - [ ] Review GitHub Actions final logs and confirm no outstanding failures.
