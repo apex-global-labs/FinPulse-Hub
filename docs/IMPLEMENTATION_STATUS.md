@@ -52,15 +52,15 @@
 
 ## Remaining 9 planned calculators
 
-37. Crypto Unit & Fiat Value Converter
-38. Crypto Network Fee Calculator
-39. Freelance Project Pricing Calculator
-40. Freelancer Net Income After Costs Calculator
-41. Markup Calculator
-42. Break-even Calculator
-43. Business ROI Calculator
-44. Cash Flow Projection Calculator
-45. Rental Yield Calculator
+37. Freelance Project Pricing Calculator
+38. Freelancer Net Income After Costs Calculator
+39. Markup Calculator
+40. Break-even Calculator
+41. Business ROI Calculator
+42. Cash Flow Projection Calculator
+43. Rental Yield Calculator
+44. Emergency Fund Calculator
+45. Net Worth Calculator
 
 The remaining list is a planning inventory and can be refined to avoid overlap or low-value tools before implementation.
 
