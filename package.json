@@ -1,0 +1,12 @@
+{
+  "name": "finpulse-hub",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Free finance calculators",
+  "scripts": {
+    "check": "node --check finance-core.js && node --check app.js",
+    "test": "node --test tests/smoke.test.cjs tests/formula.test.cjs",
+    "test:browser": "node --test tests/browser.test.cjs",
+    "test:api": "node --test tests/api.test.cjs"
+  }
+}
