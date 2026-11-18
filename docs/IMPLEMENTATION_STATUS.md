@@ -120,3 +120,16 @@ The remaining list is a planning inventory and can be refined to avoid overlap o
 - Progressive income-tax and salary-withholding presets remain manual because a valid country preset requires tax year, filing status, province/state, deductions and current official tax-band rules. Do not insert a single flat rate as if it represented a country's full income-tax system.
 - The current 36-tool inventory has no dedicated crypto calculator. BTC, ETH and USDT are present in the shared asset option registry for future tool work; there is no live price feed or mock price claim. Existing retirement/401(k)/IRA tools continue to use user-entered return assumptions and do not yet expose asset-class selectors.
 - The next architecture tasks are: add suitable asset-class/token selectors when a crypto or investment-specific calculator is added; extend verified country presets only where official data is sufficiently scoped; and run a fresh Lighthouse audit after the UI migration.
+
+
+## Jurisdiction tax engine — implementation in review (2026-11-18)
+
+- Branch: `feat/jurisdiction-tax-engine`; pending pull request and CI validation.
+- Added a shared, browser-only tax data registry and progressive calculation engine.
+- Income Tax Calculator and Salary Take-Home Calculator now use a selectable 2026 jurisdiction profile rather than the previous generic four-band example / flat tax percentage.
+- Initial 2026 profiles: US federal (single, married filing jointly, married filing separately, head of household); UK England/Wales/Northern Ireland and Scotland; Canada federal plus 12 provinces/territories with published 2026 marginal brackets; Bangladesh AY 2026–27 general and selected higher tax-free allowance categories.
+- Bangladesh profile includes the BDT 5,000 minimum tax floor when income exceeds the applicable basic exemption.
+- Important scope limits: US state income tax is not yet calculated from state-specific progressive brackets; the salary tool exposes an optional manual state/local withholding percentage. Quebec is not yet included in the Canadian provincial bracket dataset. Canadian personal credits, surtaxes and payroll deductions are excluded. UK National Insurance and US Social Security/Medicare are not included in take-home estimates. The UI and notes disclose these exclusions.
+- Asset registry added for BTC, ETH and USDT plus generic asset-class scenarios. Prices are intentionally null and user-entered only; there is no live exchange feed or fabricated market quote. Registry marks every baseline as hypothetical and non-real-time. No crypto-specific calculator exists yet, so the selector is not presented as a trading feature.
+- Official tax references: IRS Publication 505 (2026); GOV.UK 2026–27 income tax rates and Scottish rates; CRA 2026 tax brackets; Bangladesh NBR 2025–26 income-tax circular covering AY 2026–27 and 2027–28.
+- New formula, integration-contract and Playwright coverage is included in the branch. Merge only after CI, browser E2E and axe checks pass.
