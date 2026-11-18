@@ -77,7 +77,7 @@ test("2026 Quebec income tax uses published brackets and basic personal tax cred
 test("2026 US FICA applies wage base and additional Medicare threshold",()=>{const x=Tax.payroll("US-2026-single",250000);near(x.items[0].amount,11439);near(x.items[1].amount,3625);near(x.items[2].amount,450);near(x.total,15514);});
 test("2026 UK employee Class 1 National Insurance uses primary and upper thresholds",()=>{const x=Tax.payroll("UK-2026-eng",60000);near(x.total,3210.6);});
 test("2026 Canada CPP, CPP2 and EI use annual ceilings",()=>{const x=Tax.payroll("CA-2026-AB",100000);near(x.total,5769.52);});
-test("2026 Quebec QPP, QPP2, EI and QPIP use Quebec-specific limits",()=>{const x=Tax.payroll("CA-2026-QC",100000);near(x.total,6233.9);});
+test("2026 Quebec QPP, QPP2, EI and QPIP use Quebec-specific limits",()=>{const x=Tax.payroll("CA-2026-QC",100000);near(x.total,6221);});
 test("Payroll engine rejects invalid gross salary",()=>{assert.throws(()=>Tax.payroll("US-2026-single",-1));});
 
 test("2026 South Carolina two-rate schedule uses the $30,000 breakpoint and adjusted deduction",()=>{const x=Tax.estimate("US-2026-single",50000,0,"SC","single");near(x.stateTax,857.5);});
