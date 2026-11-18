@@ -7,7 +7,7 @@
 - **Pull request:** https://github.com/apex-global-labs/FinPulse-Hub/pull/1 (validation refresh pending)
 - **Current stage:** First 12 calculators implemented; automated verification added; final CI/browser result pending
 - **Live website:** Not deployed / not verified
-- **GitHub Pages:** Not yet configured or verified
+- **GitHub Pages:** Deployment workflow added; activation and public URL verification pending
 
 ## First 12 calculators
 
@@ -36,6 +36,7 @@ Each calculator view includes **بِسْمِ اللَّهِ**. Calculations are 
 - `tests/formula.test.cjs` — 13 numeric reference and edge-case tests covering all 12 calculators
 - `tests/browser.test.cjs` — Playwright desktop/mobile interaction tests and axe WCAG checks on all calculator views
 - `.github/workflows/ci.yml` — syntax, formula, smoke, Chromium browser and accessibility checks
+- `.github/workflows/deploy.yml` — GitHub Pages deployment after main-branch updates
 
 ## Verification evidence
 
@@ -54,7 +55,9 @@ Each calculator view includes **بِسْمِ اللَّهِ**. Calculations are 
 - [ ] Final manual visual check in additional browsers (Firefox/Safari) and real mobile devices.
 - [ ] Review GitHub Actions final logs and confirm no outstanding failures.
 - [ ] Merge the validated PR to `main`.
-- [ ] Enable/configure GitHub Pages and verify the public URL.
+- [ ] Merge the GitHub Pages deployment workflow.
+- [ ] Confirm Pages configuration and deployment succeed.
+- [ ] Verify the public URL: https://apex-global-labs.github.io/FinPulse-Hub/
 
 ## Accuracy and scope notes
 
