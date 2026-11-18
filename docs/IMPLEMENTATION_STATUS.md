@@ -82,3 +82,16 @@ The remaining list is a planning inventory and can be refined to avoid overlap o
 - Loan and savings projections are estimates based on stated assumptions, not guaranteed outcomes.
 - All outputs are educational estimates, not personalized financial advice.
 - Lighthouse baseline for the original 12-tool site: mobile Performance 88, Accessibility 100, Best Practices 93, SEO 100; desktop Performance 100, Accessibility 100, Best Practices 96, SEO 100. A fresh audit of the 36-tool site remains a performance follow-up.
+
+
+## Smart Calculator Architecture migration (started 2026-11-18)
+
+- Migration branch: `feat/smart-calculator-architecture`.
+- Central UI configuration module: `smart-ui.js` (currency list, currency labels, slider bounds, tax preset registry, common asset selector list).
+- Shared calculator renderer: currency selector, numeric input + range slider, instant input-driven recalculation, country/region VAT/GST preset selector where a defensible standard rate exists, and currency-aware result/chart formatting.
+- Currency Converter uses selectable currency codes rather than free-text ISO codes; selecting a pair fetches a published Frankfurter reference rate.
+- Initial official consumption-tax presets are limited to clearly scoped standard rates: UK standard VAT, Bangladesh standard VAT, and Canadian province/territory GST/HST/PST combinations. US is explicitly a local-rate-required placeholder, not a nationwide tax claim.
+- Presets are starting estimates only. Product exemptions, reduced rates, place-of-supply, fiscal-year and local rules can differ; manual override remains available.
+- Progressive income tax and personal income-tax withholding are intentionally not assigned simplistic country defaults: their values depend on tax year, filing status, income bands and other jurisdictional rules. User-configurable inputs remain.
+- Crypto asset selector options (BTC, ETH, USDT) are registered for future crypto tools; no live prices are claimed or embedded.
+- Migration is not production-ready until CI, Playwright desktop/mobile, axe accessibility and formula regression all pass. Remaining future work includes currency formatting in every metric/chart edge case, presets for other relevant calculators, and crypto calculator implementation.
