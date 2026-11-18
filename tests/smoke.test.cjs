@@ -29,3 +29,15 @@ test("calculator inputs include labels and form reset controls", () => {
   assert.match(app, /<label for=/);
   assert.match(app, /type="reset"/);
 });
+
+test("currency converter requests a no-key reference rate and shows its date", () => {
+  assert.match(app, /https:\/\/api\.frankfurter\.dev\/v2\/rate\//);
+  assert.match(app, /currencyRateDate/);
+  assert.match(app, /Reference rates are not live market quotes/);
+  assert.match(app, /Get latest rate & calculate/);
+});
+test("currency rate requests validate codes and handle failed or slow responses", () => {
+  assert.match(app, /\^\[A-Z\]\{3\}\$/);
+  assert.match(app, /AbortController/);
+  assert.match(app, /showCurrencyError/);
+});
