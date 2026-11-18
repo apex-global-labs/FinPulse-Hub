@@ -12,7 +12,7 @@
 ## First 12 calculator implementation
 
 The implementation branch adds:
-1. Currency Converter (manual exchange rate; not live data)
+1. Currency Converter (Frankfurter v2 latest published reference rate; manual fallback; not a live market quote)
 2. Mortgage Calculator
 3. Loan Calculator
 4. EMI Calculator
@@ -43,7 +43,7 @@ Each calculator view includes the requested **بِسْمِ اللَّهِ** head
 - [x] JavaScript syntax parse check passed in the development tool.
 - [x] Pull request opened.
 - [x] Smoke tests and GitHub Actions workflow added to the PR.
-- [ ] GitHub Actions CI green.
+- [ ] GitHub Actions CI green (including the new currency API smoke checks).
 - [ ] Formula reference-vector and edge-case verification.
 - [ ] Browser interaction tests across desktop and mobile.
 - [ ] Accessibility and security review.
@@ -52,7 +52,7 @@ Each calculator view includes the requested **بِسْمِ اللَّهِ** head
 
 ## Important accuracy notes
 
-- Currency conversion requires a user-supplied rate. No live FX data provider is connected.
+- Currency conversion now fetches the latest published reference rate from the free, no-key Frankfurter v2 API. The rate date is displayed and same-pair responses are cached in memory for one hour. Manual rate entry remains available. These are reference rates, not real-time market quotes or bank transaction rates.
 - Loan, mortgage and EMI figures are estimates using fixed-rate monthly amortization; lender-specific fees and payment conventions may differ.
 - Tax, investment recommendations, trading execution, leverage and crypto trading features are out of scope.
 - Savings and compound growth use user-entered assumptions and are not guaranteed returns.
