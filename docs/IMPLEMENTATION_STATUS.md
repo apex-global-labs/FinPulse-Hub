@@ -148,3 +148,13 @@ The remaining list is a planning inventory and can be refined to avoid overlap o
 - Payroll is annualized and does not model prior-employer year-to-date earnings, pay-period rounding, exemptions or employer-side contributions.
 - Sources: Tax Foundation 2026 state brackets (threshold reference), StateWise 2026 state change audit (official state sources linked per state), IRS Publication 15, HMRC Budget 2026 Annex A, CRA T4032 2026, Revenu Québec 2026 rates and employer changes.
 - Formula, smoke and Playwright checks added. Do not merge until branch CI, browser/axe and regression suites pass.
+
+
+## PR #20 — Crypto and investment asset selector (in progress, 2026-11-18)
+
+- Integrates the existing `asset-data.js` shared registry into Retirement Savings, 401(k), and Roth vs Traditional IRA calculators.
+- Adds BTC, ETH, USDT and generic asset-class selectors. Crypto selections reveal an optional user-entered hypothetical baseline price in the selected display currency.
+- When a valid baseline is entered, the selected calculator result also shows a hypothetical asset-unit equivalent and its chart series switches to that unit basis. Without a baseline, the ordinary currency projection remains visible and no quote is fabricated.
+- Every investment selector visibly states: “Hypothetical / Baseline Input — Not Live Exchange Data.” No exchange API, market feed, or automatic price is used.
+- Asset selection changes only the illustrative unit denomination, not the assumed return. Outputs remain educational scenarios.
+- Validation: pending PR branch CI, formula/smoke tests, desktop/mobile Playwright and axe checks.
