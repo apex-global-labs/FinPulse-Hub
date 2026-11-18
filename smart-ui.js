@@ -4,7 +4,7 @@ const currencies=[
 ];
 const checkedOn="2026-11-18";
 const presets=[
-{id:"custom",label:"Custom / enter my local rate",rate:0,note:"No country-wide rate is assumed; enter the applicable local or product-specific rate.",source:"User-entered local rate"},
+{id:"custom",label:"Custom / enter my local rate",rate:null,note:"No country-wide rate is assumed; enter the applicable local or product-specific rate.",source:"User-entered local rate"},
 {id:"US",label:"United States — local rate required",rate:0,note:"The United States has no single nationwide general sales-tax rate; state and local rules vary. Zero is only a starting placeholder, not a claim that the sale is tax-free.",source:"State and local rate must be confirmed for the place of supply"},
 {id:"GB",label:"United Kingdom — standard VAT",rate:20,note:"Standard VAT rate. Reduced, zero-rated and exempt supplies exist.",source:"https://www.gov.uk/vat-rates"},
 {id:"BD",label:"Bangladesh — standard VAT",rate:15,note:"Standard VAT rate for taxable supplies; exemptions, reduced or product-specific treatments may apply.",source:"https://nbr.gov.bd/faq/vat-faq"},
@@ -36,6 +36,14 @@ const percent=/rate|percent|tax|discount|markup|margin|inflation|apy|return|dti|
 return{max,step:integer?"1":percent?"0.01":"0.01"}}
 function currencySymbol(code){const c=currencies.find(x=>x.code===code);return c?c.symbol:code+" "}
 function currencyLabel(code){const c=currencies.find(x=>x.code===code);return c?c.symbol+" "+c.code+" — "+c.name:code}
-function getCountryPreset(tool,id){const p=presets.find(x=>x.id===id);return p?{...p,checkedOn}:null}
-window.FinPulseSmartUI={currencies,cryptoAssets:[{symbol:"BTC",name:"Bitcoin"},{symbol:"ETH",name:"Ethereum"},{symbol:"USDT",name:"Tether"}],sliderConfig,currencyLabel,currencySymbol,countryPresets:{"sales-tax":presets,"vat-gst":presets},getCountryPreset};
+const inflationPresets=[
+{id:"custom",label:"Custom / enter my own inflation rate",rate:null,note:"Use your own inflation assumption.",source:"User-entered assumption"},
+{id:"IMF-BD-2026",label:"Bangladesh — 2026 IMF estimate (8.7%)",rate:8.7,note:"2026 annual average consumer-price inflation estimate; this is a macroeconomic projection, not a personal cost-of-living rate.",source:"https://www.imf.org/external/datamapper/profile/BGD"},
+{id:"IMF-US-2026",label:"United States — 2026 IMF estimate (3.6%)",rate:3.6,note:"2026 annual average consumer-price inflation estimate; this is a macroeconomic projection, not a personal cost-of-living rate.",source:"https://www.imf.org/external/datamapper/profile/USA"},
+{id:"IMF-CA-2026",label:"Canada — 2026 IMF estimate (2.8%)",rate:2.8,note:"2026 annual average consumer-price inflation estimate; this is a macroeconomic projection, not a personal cost-of-living rate.",source:"https://www.imf.org/external/datamapper/PCPIPCH%40WEO/WEOWORLD"},
+{id:"IMF-GB-2026",label:"United Kingdom — 2026 IMF estimate (3.3%)",rate:3.3,note:"2026 annual average consumer-price inflation estimate; this is a macroeconomic projection, not a personal cost-of-living rate.",source:"https://www.imf.org/external/datamapper/profile/GBR"}
+];
+const countryPresets={"sales-tax":presets,"vat-gst":presets,"inflation":inflationPresets};
+function getCountryPreset(tool,id){const p=(countryPresets[tool]||[]).find(x=>x.id===id);return p?{...p,checkedOn}:null}
+window.FinPulseSmartUI={currencies,cryptoAssets:[{symbol:"BTC",name:"Bitcoin"},{symbol:"ETH",name:"Ethereum"},{symbol:"USDT",name:"Tether"}],sliderConfig,currencyLabel,currencySymbol,countryPresets,getCountryPreset};
 })();
