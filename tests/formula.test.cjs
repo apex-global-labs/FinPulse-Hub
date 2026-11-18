@@ -54,3 +54,17 @@ test("Discount calculator applies sequential discounts before tax",()=>{const x=
 test("Exchange fee calculator applies fixed and percentage fees plus rate markup",()=>{const x=F.exchangeFeeMarkup(1000,1.1,2,1,5);near(x.fee,15);near(x.customerRate,1.078);near(x.convertedAmount,1061.83);near(x.effectiveRate,1.06183)});
 test("International transfer comparison identifies higher recipient amount",()=>{const x=F.internationalTransferCompare(1000,1.1,5,1,2,2,1.5,1);assert.equal(x.bestProvider,"B");assert.ok(x.providerB.convertedAmount>x.providerA.convertedAmount)});
 test("Payroll and transfer calculators reject invalid values",()=>{assert.throws(()=>F.payroll(1.5,1000,5,0,0));assert.throws(()=>F.payroll(2,1000,101,0,0));assert.throws(()=>F.overtimePay(20,40,5,0));assert.throws(()=>F.discountCalculator(100,101,0,0));assert.throws(()=>F.exchangeFeeMarkup(10,1,0,100,1));assert.throws(()=>F.internationalTransferCompare(10,1,0,100,0,0,0,0))});
+
+global.window = global.window || {};
+require("../tax-data.js");
+require("../tax-engine.js");
+const Tax = global.window.FinPulseTaxEngine;
+test("2026 US federal single brackets apply the standard deduction and marginal rates",()=>{const x=Tax.estimate("US-2026-single",100000,0);near(x.taxableIncome,83900);near(x.tax,13170);near(x.effectiveRate,13.17);});
+test("2026 US federal married filing jointly uses its own bracket schedule",()=>{const x=Tax.estimate("US-2026-joint",150000,0);near(x.taxableIncome,117800);near(x.tax,15340);});
+test("2026 UK England tax includes personal allowance and progressive bands",()=>{const x=Tax.estimate("UK-2026-eng",60000,0);near(x.taxableIncome,47430);near(x.tax,11432);});
+test("2026 UK personal allowance tapers above GBP 100000",()=>{const x=Tax.estimate("UK-2026-eng",110000,0);near(x.personalAllowance,7570);near(x.tax,33432);});
+test("2026 Scotland uses separate Scottish marginal bands",()=>{const x=Tax.estimate("UK-2026-sct",60000,0);near(x.taxableIncome,47430);near(x.tax,13182.05,0.02);});
+test("Bangladesh AY 2026-27 applies general tax-free threshold and minimum tax",()=>{const x=Tax.estimate("BD-2026-general",1000000,0);near(x.taxableIncome,625000);near(x.tax,78750);});
+test("Bangladesh special taxpayer profiles use their distinct tax-free allowances",()=>{const a=Tax.estimate("BD-2026-general",500000,0),b=Tax.estimate("BD-2026-women-senior",500000,0);assert.ok(b.tax<a.tax);});
+test("Canada 2026 combines federal and selected provincial marginal brackets",()=>{const x=Tax.estimate("CA-2026-AB",100000,0);near(x.taxableIncome,100000);near(x.tax,25472.005,0.02);assert.equal(x.breakdown.length,2);});
+test("Tax engine rejects unknown profiles and invalid income/deductions",()=>{assert.throws(()=>Tax.estimate("US-unknown",10000,0));assert.throws(()=>Tax.estimate("US-2026-single",-1,0));assert.throws(()=>Tax.estimate("US-2026-single",1000,2000));});
