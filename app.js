@@ -64,11 +64,11 @@ function fieldMarkup(f){
 function countryPresetMarkup(d){
  const presets=Smart.countryPresets[d.id];
  if(!presets)return "";
- return '<div class="field"><label for="country-preset">Country / region tax preset</label><select id="country-preset">'+presets.map(p=>'<option value="'+p.id+'">'+p.label+'</option>').join("")+'</select><p class="preset-hint">Choose a standard-rate starting point, then override the rate if your product or region differs.</p></div>';
+ return '<div class="field"><label for="country-preset">Country / region preset</label><select id="country-preset">'+presets.map(p=>'<option value="'+p.id+'">'+p.label+'</option>').join("")+'</select><p class="preset-hint">Choose a standard-rate starting point, then override the rate if your product or region differs.</p></div>';
 }
 function applyCountryPreset(d,id){
  const p=Smart.getCountryPreset(d.id,id);if(!p)return;
- const rate=$("#f-rate");if(rate){rate.value=String(p.rate);const slider=$("#f-rate-range");if(slider)slider.value=String(Math.min(Number(p.rate),Number(slider.max)));}
+ const rate=$("#f-rate");if(rate&&p.rate!==null&&Number.isFinite(Number(p.rate))){rate.value=String(p.rate);const slider=$("#f-rate-range");if(slider){if(Number(p.rate)>Number(slider.max))slider.max=String(Math.ceil(Number(p.rate)*1.5));slider.value=String(p.rate);}}
  countryPresetNote=p.note+" Source: "+p.source+" (checked "+p.checkedOn+").";
  calculate(d);
 }
