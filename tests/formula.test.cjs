@@ -35,3 +35,5 @@ test("Inflation calculator estimates future cost and purchasing power",()=>{cons
 test("CD calculator calculates fixed-APY maturity value",()=>{const x=F.certificateDeposit(10000,4.5,12);near(x.futureValue,10450);near(x.interestEarned,450)});
 test("APY calculator converts nominal rate by compounding frequency",()=>{const x=F.apyCalculator(10000,12,12);near(x.apy,12.682503,0.001);near(x.interestEarned,1268.25,0.02)});
 test("New retirement, inflation and deposit tools reject invalid inputs",()=>{assert.throws(()=>F.retirementSavings(-1,100,5,10));assert.throws(()=>F.retirement401k(60000,10,50,6,0,5,0));assert.throws(()=>F.iraComparison(7000,20,6,101,22));assert.throws(()=>F.inflationCalculator(1000,3,101));assert.throws(()=>F.certificateDeposit(1000,4,0));assert.throws(()=>F.apyCalculator(1000,4,0))});
+
+test("CD term and APY compounding frequency require whole months and periods",()=>{assert.throws(()=>F.certificateDeposit(1000,4,2.5));assert.throws(()=>F.apyCalculator(1000,4,2.5))});
