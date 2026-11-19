@@ -56,3 +56,13 @@ The current 115-tool release completes 70 of the approved 175 expansion tools. T
 - 55 developer, education & lifestyle tools
 
 These are roadmap items, not active production tools. Each must pass implementation, formula/behavior, browser/accessibility, sitemap and deployment checks before being counted as delivered.
+
+
+## Batch 6 — Unit, Measurement & Data Converters
+
+- **Feature branch:** `feat/batch-6-unit-measurement-converters`
+- **Target:** 115 → 135 tools; 20 converter tools are registered in the release candidate.
+- **Modules:** `unit-converter-core.js` and `unit-converter-tools.js`; static Pages deployment and sitemap include both modules and all 20 routes.
+- **Coverage added:** deterministic conversion factors, reverse direction, quick presets, numeric/domain validation, formula plus five-step guides, four FAQs per tool, detailed breakdowns where useful, local processing, shared copy/export/share/history/theme utilities.
+- **Status:** CI and PR review pending. Production count remains 115 until merge and successful Pages deployment.
+- **Latest Lighthouse:** run #44483331679 succeeded — Mobile 98/100/96/100, Desktop 100/100/96/100 (Performance/Accessibility/Best Practices/SEO); CLS 0.000 on both.
