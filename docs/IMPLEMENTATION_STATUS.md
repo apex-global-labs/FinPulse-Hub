@@ -4,8 +4,8 @@
 - **Repository:** https://github.com/apex-global-labs/FinPulse-Hub
 - **Production branch:** `main`
 - **Production URL:** https://apex-global-labs.github.io/FinPulse-Hub/
-- **Current production inventory:** 155 / 155 tools; Batch 8 candidate 175
-- **Runtime commit:** `f32466ba801dd993a1d1efbe4c8bd513f2421326`
+- **Current production inventory:** 175 / 175 tools; Batch 9 candidate 190
+- **Runtime commit:** `ee06c524c7f4ce77109881d6fa877991c5d7851a`
 
 ## Completed implementation batches
 
@@ -107,3 +107,18 @@ These are roadmap items, not active production tools. Each must pass implementat
 - Branch: `feat/batch-8-education-everyday-lifestyle-release`.
 - New module: `education-lifestyle-tools.js`, containing five Developer wrap-up tools, twelve Education & Study tools and three Home & Construction estimators.
 - Candidate homepage, sitemap, docs and Pages manifest target 175. Full test and PR evidence pending.
+
+
+## Batch 8 — Production release verified
+
+- PR #39 merged as `ee06c524c7f4ce77109881d6fa877991c5d7851a`.
+- Feature Browser CI #44496833798 succeeded; main CI #44497401581 succeeded; Pages deployment #44497401612 succeeded; production Lighthouse #44497465485 succeeded.
+- Homepage directory: 175 tools. Sitemap: 175 unique tool routes.
+- All 20 Batch 8 tools retain formula disclosure, five-step guide, four FAQs, three presets, shared utilities and automated axe coverage.
+
+## Batch 9 — Candidate 175 → 190
+
+- Branch: `feat/batch-9-lifestyle-construction-remaining`.
+- Adds 15 approved unique tools in `lifestyle-tools.js`; vendored QRCode.js is MIT licensed and processed locally.
+- Includes numeric/domain validation, formula and step guides, four FAQs, three presets, relevant breakdown charts, shared copy/export/print/share/history/Escape-reset behavior and Playwright/axe coverage.
+- Electricity tariff remains user-entered; construction outputs are estimates; Study Topic Organizer selects only from user-supplied study topics.

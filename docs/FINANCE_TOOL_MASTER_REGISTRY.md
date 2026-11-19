@@ -2,8 +2,8 @@
 
 - **Version:** 3.0
 - **Updated:** 2026-11-19
-- **Production portfolio:** 155 active tools (Batch 8 candidate: 175)
-- **Runtime release:** `f32466ba801dd993a1d1efbe4c8bd513f2421326`
+- **Production portfolio:** 175 active tools (Batch 8 merged; Batch 9 candidate: 190)
+- **Runtime release:** `ee06c524c7f4ce77109881d6fa877991c5d7851a`
 - **Repository:** apex-global-labs/FinPulse-Hub
 
 > This file retains its historical filename for compatibility. It is now the master registry for all FinPulse Hub tools, not only finance calculators.
@@ -21,8 +21,8 @@
 | Batch 8 Developer wrap-up | 5 | `education-lifestyle-tools.js` |
 | Education & Study | 12 | `education-lifestyle-tools.js` |
 | Home & Construction | 3 | `education-lifestyle-tools.js` |
-| **Production total** | **155** | |
-| **Release-candidate total** | **175** | |
+| **Production total** | **175** | |
+| **Release-candidate total** | **190** | |
 
 Every tool has a stable registry ID used by the `?tool=` route, homepage directory and sitemap. Do not rename an ID without an explicit migration and route regression.
 
@@ -248,7 +248,7 @@ These 20 tools are on `feat/batch-7-developer-text-utilities`, based on producti
 
 PR #35 merged and deployed. Production count is 155, including 20 Developer & Text utilities registered by `developer-tools.js`.
 
-## Batch 8 — Developer wrap-up + Education & Everyday Lifestyle Part 1 (candidate)
+## Batch 8 — Developer wrap-up + Education & Everyday Lifestyle Part 1 (production)
 
 | # | Tool | Stable ID |
 |---:|---|---|
@@ -273,4 +273,27 @@ PR #35 merged and deployed. Production count is 155, including 20 Developer & Te
 | 19 | Brick Quantity Estimator | `brick-quantity-estimator` |
 | 20 | Cement / Sand / Aggregate Estimator | `cement-sand-aggregate-estimator` |
 
-Batch 8 adds exactly 20 unique IDs in `education-lifestyle-tools.js`: 5 developer wrap-up tools, 12 education/study tools and 3 construction estimators. Candidate total is 175; production count changes only after approval, merge, main CI and Pages deployment.
+Batch 8 adds exactly 20 unique IDs in `education-lifestyle-tools.js`: 5 developer wrap-up tools, 12 education/study tools and 3 construction estimators. PR #39 merged as `ee06c524c7f4ce77109881d6fa877991c5d7851a`; main CI #44497401581 and Pages deployment #44497401612 succeeded. Production total is 175.
+
+
+## Batch 9 — Lifestyle, Construction, Energy & Misc Part 2 (candidate)
+
+| # | Tool | Stable ID |
+|---:|---|---|
+| 1 | Paint Quantity Calculator | `paint-quantity-calculator` |
+| 2 | Tile Quantity Calculator | `tile-quantity-calculator` |
+| 3 | Flooring Material Estimator | `flooring-material-estimator` |
+| 4 | Roofing Area Calculator | `roofing-area-calculator` |
+| 5 | Room Area Calculator | `room-area-calculator` |
+| 6 | Wall Area Calculator | `wall-area-calculator` |
+| 7 | Gravel Volume Calculator | `gravel-volume-calculator` |
+| 8 | Fence Material Estimator | `fence-material-estimator` |
+| 9 | Fuel Cost Calculator | `fuel-cost-calculator` |
+| 10 | Electricity Bill Estimator (manual tariff) | `electricity-bill-estimator` |
+| 11 | Bill Split Calculator | `bill-split-calculator` |
+| 12 | Unit Price Comparator | `unit-price-comparator` |
+| 13 | Sales Commission Calculator | `sales-commission-calculator` |
+| 14 | Study Topic Organizer (classroom use) | `study-topic-organizer` |
+| 15 | QR Code Generator | `qr-code-generator` |
+
+Batch 9 adds 15 unique IDs through `lifestyle-tools.js`; the QR generator uses the vendored MIT-licensed qrcodejs library and produces the image locally. Electricity pricing is manual only; construction quantities are estimates; random selection is explicitly limited to ordinary non-gambling use. Candidate total: 190.
