@@ -4,8 +4,8 @@
   "private": true,
   "description": "Free finance calculators",
   "scripts": {
-    "check": "node --check finance-core.js && node --check smart-ui.js && node --check tax-data.js && node --check tax-state-data.js && node --check tax-engine.js && node --check asset-data.js && node --check app.js",
-    "test": "node --test tests/smoke.test.cjs tests/formula.test.cjs",
+    "check": "node --check math-core.js && node --check math-tools.js && node --check finance-core.js && node --check smart-ui.js && node --check tax-data.js && node --check tax-state-data.js && node --check tax-engine.js && node --check asset-data.js && node --check app.js",
+    "test": "node --test tests/smoke.test.cjs tests/formula.test.cjs tests/math-batch-1.test.cjs",
     "test:browser": "node --test tests/browser.test.cjs",
     "test:api": "node --test tests/api.test.cjs"
   }
