@@ -18,7 +18,7 @@ transfer:{bps:1,Kbps:1e3,Mbps:1e6,Gbps:1e9,Bps:8,KBps:8e3,MBps:8e6,GBps:8e9},
 cooking:{mL:1,L:1000,tspUS:4.92892159375,tbspUS:14.78676478125,cupUS:236.5882365,flOzUS:29.5735295625,pintUS:473.176473,quartUS:946.352946,cupMetric:250,tspMetric:5,tbspMetric:15}
 };
 function convert(kind,value,from,to){if(!Number.isFinite(value))throw Error("Enter a finite numeric value.");
-if(kind==="temperature"){if(from==="K"&&value<0)throw Error("Kelvin cannot be below absolute zero.");const c=from==="F"?(value-32)*5/9:from==="K"?value-273.15:value;if(to==="K"&&c+273.15<0)throw Error("Temperature is below absolute zero.");return to==="F"?c*9/5+32:to==="K"?c+273.15:c}
+if(kind==="temperature"){if(from==="K"&&value<0)throw Error("Kelvin cannot be below absolute zero.");const c=from==="F"?(value-32)*5/9:from==="K"?value-273.15:value;if(c< -273.15)throw Error("Temperature is below absolute zero.");return to==="F"?c*9/5+32:to==="K"?c+273.15:c}
 if(kind==="fuel"){if(value<=0)throw Error("Fuel economy must be greater than zero.");const kmL=from==="L100"?100/value:from==="mpgUS"?value*.425143707:from==="mpgUK"?value*.354006:value;return to==="L100"?100/kmL:to==="mpgUS"?kmL/.425143707:to==="mpgUK"?kmL/.354006:kmL}
 const t=tables[kind];if(!t||!(from in t)||!(to in t))throw Error("Choose supported units for this conversion.");return value*t[from]/t[to]}
 function format(n){if(!Number.isFinite(n))throw Error("The converted result is outside the supported numeric range.");return new Intl.NumberFormat("en-US",{maximumFractionDigits:10,maximumSignificantDigits:12}).format(n)}
