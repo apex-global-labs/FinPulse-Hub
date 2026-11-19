@@ -99,7 +99,7 @@ npm run test:browser
 | `tests/api.test.cjs` | Live Frankfurter v2 reference-rate response contract |
 | `tests/browser.test.cjs` | Playwright desktop/mobile interactions, routes, accessibility and family-specific visual/guide rendering |
 
-The latest completed main run recorded 198/198 formula/smoke/regression assertions and 1/1 API assertion. The Batch 5 browser coverage change iterates all 25 Date & Time views in addition to the 45 Finance and 45 Math & Statistics views.
+The final Batch 5 CI run recorded 198/198 formula/smoke/regression assertions, 1/1 API assertion and 6/6 browser tests. The Playwright/axe suite iterates all 45 Finance, 45 Math & Statistics and 25 Date & Time views.
 
 ### CI workflow
 
