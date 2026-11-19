@@ -1,14 +1,14 @@
 # FinPulse Hub
 
-FinPulse Hub is a free-first, browser-based library targeting **220 calculators and tools**; the current production baseline is 115 and Batch 6 proposes 20 more converters for finance, mathematics, statistics, dates and time. Calculations run locally in the browser wherever possible; the site is hosted on GitHub Pages.
+FinPulse Hub is a free-first, browser-based library targeting **220 calculators and tools**; the current production release contains 135 tools after Batch 6; Batch 7 proposes 20 Developer & Text utilities for finance, mathematics, statistics, dates and time. Calculations run locally in the browser wherever possible; the site is hosted on GitHub Pages.
 
 ## Production status
 
-- **Production baseline:** 115 tools (main)
-- **Batch 6 release candidate:** 135 tools (115 existing + 20 converter tools; awaiting PR checks and merge approval)
-- **Inventory:** 45 Finance + 25 Basic Math + 20 Advanced Math & Statistics + 25 Date & Time + 20 Unit & Data Converters (Batch 6 candidate)
+- **Production release:** 135 tools (main; Batch 6 merged and deployed)
+- **Batch 7 release candidate:** 155 tools (135 existing + 20 Developer & Text utilities; [PR #35 CI green](https://github.com/apex-global-labs/FinPulse-Hub/pull/35), awaiting merge approval)
+- **Inventory:** 45 Finance + 25 Basic Math + 20 Advanced Math & Statistics + 25 Date & Time + 20 Unit & Data Converters + 20 Developer & Text utilities (Batch 7 candidate)
 - **Production branch:** `main`
-- **Runtime release commit:** `da94f90328c80f557a98b08fa889d4c429046348`
+- **Runtime release commit:** `54539bb522743a627f154708d496c87233619334`
 - **Website:** https://apex-global-labs.github.io/FinPulse-Hub/
 - **Hosting:** GitHub Pages (free static hosting)
 - **Stack:** semantic HTML, CSS, vanilla JavaScript, Node.js built-in tests, GitHub Actions
@@ -33,15 +33,15 @@ FinPulse Hub is a free-first, browser-based library targeting **220 calculators 
 - Copy, CSV/JSON export, print, shareable URL state and reset
 - Local calculation history with restore, light/dark theme and keyboard shortcuts
 - Related tools, embed-code generator and reserved ad-safe slots
-- Searchable directory with 135 unique tool links in the Batch 6 branch (main remains at 115 until merge)
+- Searchable directory with 155 unique tool links in the Batch 7 branch (main contains 135)
 - Accessible labels, semantic tables/diagrams and browser accessibility checks
 
 Features are applied where relevant; no artificial finance charts or amortization schedules are added to unrelated tools.
 
 ## Architecture
 
-- `finance-core.js`, `math-core.js`, `advanced-math-core.js`, `date-time-core.js`, `unit-converter-core.js`: calculation logic
-- `math-tools.js`, `advanced-math-tools.js`, `date-time-tools.js`, `unit-converter-tools.js`: tool registries and metadata
+- `finance-core.js`, `math-core.js`, `advanced-math-core.js`, `date-time-core.js`, `unit-converter-core.js`: conversion logic; `developer-tools.js`: local text and code utilities
+- `math-tools.js`, `advanced-math-tools.js`, `date-time-tools.js`, `unit-converter-tools.js`, `developer-tools.js`: tool registries and metadata
 - `app.js`: finance registry, shared rendering, routing and workspace orchestration
 - `smart-ui.js`, tax and asset data modules: shared controls and jurisdiction/selector data
 - `tests/`: formula, smoke, API and Playwright browser/regression tests

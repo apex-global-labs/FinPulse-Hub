@@ -4,7 +4,7 @@
 - **Baseline:** Preserve all 45 existing financial calculators without renaming or removing their stable route IDs
 - **Expansion:** 175 new tools across four new top-level categories
 - **Hosting / stack:** GitHub Pages, static HTML/CSS/Vanilla JS, free-first, no paid backend or mandatory paid APIs
-- **Status:** In progress — 70 of 175 expansion tools are implemented and deployed; 105 planned additions remain
+- **Status:** In progress — 90 of 175 expansion tools are implemented and deployed; 85 planned additions remain
 
 ## 1. Target portfolio
 
@@ -17,7 +17,7 @@
 | Developer, Education & Lifestyle | 0 | 55 | 55 |
 | **Total** | **45** | **175** | **220** |
 
-The 45 financial calculators remain the production baseline. A further 70 tools are implemented and deployed (25 Basic Mathematics, 20 Advanced Mathematics & Statistics, 25 Date & Time). The remaining 105 expansion tools are planned additions only. A tool is counted as delivered only after implementation, formula/behavior tests, browser and accessibility checks, SEO metadata, sitemap registration and successful production deployment.
+The 45 financial calculators remain the production baseline. A further 90 tools are implemented and deployed (25 Basic Mathematics, 20 Advanced Mathematics & Statistics, 25 Date & Time, 20 Unit & Data Converters). The remaining 85 expansion tools are planned additions only. A tool is counted as delivered only after implementation, formula/behavior tests, browser and accessibility checks, SEO metadata, sitemap registration and successful production deployment.
 
 ## 2. Existing 45 — preserve exactly
 
@@ -393,7 +393,7 @@ Every batch uses a dedicated feature branch and PR. Do not merge without the use
 
 ### Batch 7–11 — Exact remaining 85-tool allocation
 
-The Batch 6 converter list above accounts for 20 of the original 105 planned additions. Once Batch 6 is merged and deployed, the remaining 85 tools below are divided into five batches of 15–20. Each roadmap item appears exactly once; IDs are to be assigned and checked against the live registry before implementation.
+Batch 6 is now deployed and the 20-tool Batch 7 candidate below accounts for the next 20 of the remaining 85 planned additions. Once Batch 6 is merged and deployed, the remaining 85 tools below are divided into five batches of 15–20. Each roadmap item appears exactly once; IDs are to be assigned and checked against the live registry before implementation.
 
 **Batch 7 — Developer & Text/Encoding Utilities (20; target total 155)**
 

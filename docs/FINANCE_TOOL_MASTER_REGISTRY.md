@@ -2,8 +2,8 @@
 
 - **Version:** 3.0
 - **Updated:** 2026-11-19
-- **Production portfolio:** 115 active tools
-- **Runtime release:** `da94f90328c80f557a98b08fa889d4c429046348`
+- **Production portfolio:** 135 active tools
+- **Runtime release:** `54539bb522743a627f154708d496c87233619334`
 - **Repository:** apex-global-labs/FinPulse-Hub
 
 > This file retains its historical filename for compatibility. It is now the master registry for all FinPulse Hub tools, not only finance calculators.
@@ -209,4 +209,32 @@ Every tool has a stable registry ID used by the `?tool=` route, homepage directo
 | 19 | Roman Numeral Converter | `roman-numeral-converter` |
 | 20 | Paper Size Converter | `paper-size-converter` |
 
-These 20 entries are a Batch 6 release candidate on `feat/batch-6-unit-measurement-converters`; they become active production tools only after merge and deployment. Release-candidate total: 135; current production main remains 115 until release.
+These 20 entries were merged in PR #34 as `54539bb522743a627f154708d496c87233619334` and are active in production. Main CI #44492089059 and Pages deployment #44492088958 succeeded.
+
+
+## 6. Developer & Text Utilities — 20 (Batch 7 PR candidate)
+
+| # | Tool | Stable ID |
+|---:|---|---|
+| 1 | Word Counter | `word-counter` |
+| 2 | Character Counter | `character-counter` |
+| 3 | Sentence Counter | `sentence-counter` |
+| 4 | Paragraph Counter | `paragraph-counter` |
+| 5 | Reading Time Calculator | `reading-time-calculator` |
+| 6 | Case Converter | `case-converter` |
+| 7 | Text Reverser | `text-reverser` |
+| 8 | Duplicate Line Remover | `duplicate-line-remover` |
+| 9 | Text Compare / Diff Tool | `text-compare-diff` |
+| 10 | Whitespace Cleaner | `whitespace-cleaner` |
+| 11 | Line Sorter | `line-sorter` |
+| 12 | Text-to-Slug Generator | `text-to-slug-generator` |
+| 13 | HTML Entity Encoder / Decoder | `html-entity-encoder-decoder` |
+| 14 | URL Encoder / Decoder | `url-encoder-decoder` |
+| 15 | Base64 Encoder / Decoder | `base64-encoder-decoder` |
+| 16 | JSON Formatter & Validator | `json-formatter-validator` |
+| 17 | HTML Formatter | `html-formatter` |
+| 18 | CSS Formatter | `css-formatter` |
+| 19 | JavaScript Formatter | `javascript-formatter` |
+| 20 | HTML/CSS/JS Minifier | `html-css-js-minifier` |
+
+These 20 tools are on `feat/batch-7-developer-text-utilities`, based on production commit `54539bb522743a627f154708d496c87233619334`. They are a PR candidate only until checks, merge and deployment succeed. They do not overlap with the existing date/time timestamp converters or Batch 6 converter IDs.

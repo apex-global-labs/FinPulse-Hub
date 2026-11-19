@@ -9,13 +9,13 @@
 
 FinPulse Hub is a static-first single-page calculator library hosted on GitHub Pages. The production application uses semantic HTML, CSS and vanilla JavaScript. Calculation logic is separated from the DOM and tool presentation. There is no required backend, database, account service or paid runtime dependency.
 
-The production baseline registers 115 tools; the Batch 6 release candidate registers 135 tools:
+The production release registers 135 tools; the Batch 7 release candidate registers 155 tools:
 
 - 45 financial calculators
 - 25 basic mathematics tools
 - 20 advanced mathematics and statistics tools
 - 25 date and time tools
-- 20 unit, measurement and data converters (Batch 6 branch candidate)
+- 20 unit, measurement and data converters (Batch 6 production)\n- 20 developer and text utilities (Batch 7 branch candidate)
 
 ## 2. Runtime modules
 
@@ -32,7 +32,7 @@ The production baseline registers 115 tools; the Batch 6 release candidate regis
 | `date-time-core.js` | Gregorian date, calendar, recurrence and time-zone calculation logic |
 | `date-time-tools.js` | 25 date/time tool definitions and formula/step metadata |
 | `unit-converter-core.js` | SI/imperial, temperature, fuel economy, storage, throughput, Roman numeral, base and paper-size conversion functions |
-| `unit-converter-tools.js` | 20 converter definitions, reverse direction, presets, formulas, steps and FAQs |
+| `unit-converter-tools.js` | 20 converter definitions, reverse direction, presets, formulas, steps and FAQs |\n| `developer-tools.js` | 20 local text, encoding, formatting and minification utilities with validation and guides |
 | `smart-ui.js` | Shared currency metadata, synchronized controls, presets and UI helpers |
 | `tax-data.js`, `tax-state-data.js`, `tax-engine.js` | Versioned jurisdiction data and tax/payroll calculations |
 | `asset-data.js` | User-selected hypothetical asset/scenario labels and baseline-only metadata |
@@ -68,7 +68,7 @@ Chart.js is loaded asynchronously from a pinned jsDelivr distribution with subre
 
 - Stable tool IDs are used by the `?tool=` query route.
 - Each tool has its own metadata and explanatory content where implemented.
-- The Batch 6 branch homepage directory and sitemap contain 135 unique tool routes; production main remains at 115 until merge.
+- Production main homepage directory and sitemap contain 135 unique tool routes. Batch 7 candidate branch contains 155.
 - Canonical/title metadata is updated for selected tool routes.
 - `robots.txt` points to the XML sitemap.
 - The production deployment copies every runtime module and discovery file into the Pages artifact.
@@ -102,7 +102,7 @@ npm run test:browser
 | `tests/api.test.cjs` | Live Frankfurter v2 reference-rate response contract |
 | `tests/browser.test.cjs` | Playwright desktop/mobile interactions, routes, accessibility and family-specific visual/guide rendering |
 
-The final Batch 5 CI run recorded 198/198 formula/smoke/regression assertions, 1/1 API assertion and 6/6 browser tests. Batch 6 adds a dedicated deterministic converter formula suite and a Playwright/axe loop over all 20 converter views; Run #44491064031 passed: 214/214 formula/smoke/regression assertions, 1/1 API assertion and 7/7 browser tests. The Batch 6 browser loop opens all 20 converter views and each passed axe WCAG 2.1 A/AA. Main CI and deployment await merge. The Playwright/axe suite iterates all 45 Finance, 45 Math & Statistics and 25 Date & Time views.
+The final Batch 5 CI run recorded 198/198 formula/smoke/regression assertions, 1/1 API assertion and 6/6 browser tests. Batch 6 adds a dedicated deterministic converter formula suite and a Playwright/axe loop over all 20 converter views; Run #44491064031 passed: 214/214 formula/smoke/regression assertions, 1/1 API assertion and 7/7 browser tests. The Batch 6 browser loop opens all 20 converter views and each passed axe WCAG 2.1 A/AA. Main CI and Pages deployment for Batch 6 succeeded; Batch 7 PR #35 CI is green (Run #44493842731); merge and production deployment await approval. The Playwright/axe suite iterates all 45 Finance, 45 Math & Statistics and 25 Date & Time views.
 
 ### CI workflow
 
