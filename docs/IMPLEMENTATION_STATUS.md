@@ -16,7 +16,7 @@
 | Finance Batch 2 | Projections, schedules, breakdowns, scenario comparisons and formula/FAQ coverage | Complete |
 | Math & Statistics | 25 Basic Math + 20 Advanced Math & Statistics tools, guides, validation and relevant diagrams/charts | Complete |
 | Date & Time | 25 tools, guides, Gregorian/DST/time-zone validation, recurrence and calendar grid | Complete |
-| Batch 5 | Full verification, Lighthouse/CLS remediation and documentation sync | In progress until final verification PR is merged |
+| Batch 5 | Full verification, Lighthouse/CLS remediation and documentation sync | Complete |
 
 ## Production inventory
 
@@ -38,7 +38,7 @@ The exact names and route IDs are maintained in `docs/FINANCE_TOOL_MASTER_REGIST
 - Lighthouse mobile: Performance 97, Accessibility 100, Best Practices 96, SEO 100, CLS 0.000.
 - Lighthouse desktop: Performance 100, Accessibility 100, Best Practices 96, SEO 100, CLS 0.0102.
 
-The Batch 5 verification PR adds a browser iteration for all 25 Date & Time tools, including formula-step presence and axe WCAG 2.1 A/AA checks. Its CI result is the release gate for this final documentation update.
+The final browser suite iterates all 45 Finance, 45 Math & Statistics and 25 Date & Time tools; all Date & Time views assert formula-step presence and axe WCAG 2.1 A/AA compliance.
 
 ## Architecture and quality
 
