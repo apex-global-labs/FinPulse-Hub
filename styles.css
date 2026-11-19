@@ -64,3 +64,6 @@ body.tool-view .home-calculator,body.tool-view .hero,body.tool-view .ad-slot-top
 /* Apply direct-tool route layout before the first paint, then keep it in sync after in-app navigation. */
 html.tool-view .home-calculator,html.tool-view .hero,html.tool-view .ad-slot-top,html.tool-view .tool-directory,html.tool-view .about,html.tool-view footer,html.tool-view main>aside{display:none!important}
 @media(max-width:700px){body.tool-view #app .grid{display:flex;flex-direction:column}body.tool-view #app .result{order:-1}}
+
+html.tool-view main{display:block;max-width:1120px;margin:18px auto;padding:0 22px}html.tool-view #app{min-height:0}html.tool-view #app .heading{margin-top:0}
+@media(max-width:700px){html.tool-view #app .grid{display:flex;flex-direction:column}html.tool-view #app .result{order:-1}}
