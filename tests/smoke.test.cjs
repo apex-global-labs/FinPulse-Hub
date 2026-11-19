@@ -52,3 +52,7 @@ test("reserved advertising slots have fixed dimensions to avoid layout shifts",(
 test("homepage About counter matches the 115-tool directory",()=>{assert.ok(html.includes("<div><b>115</b><span>free calculators &amp; tools</span></div>"));});
 
 test("history snapshots preserve and restore smart UI selections",()=>{assert.ok(app.includes("ui:{displayCurrency:"));assert.ok(app.includes("if(ui.countryPreset"));assert.ok(app.includes("if(ui.taxProfile"));assert.ok(app.includes("if(ui.assetSelector"));});
+
+test("Batch 1 priority finance tools render monthly and yearly amortization schedule support",()=>{for(const id of ["mortgage","amortization","payoff","refinance","student-loan"])assert.match(app,new RegExp('id:"'+id+'"'));for(const x of ["schedule-panel","schedule-table","function renderSchedule","data-mode","data-preset","function presetMarkup","Quick scenarios"])assert.ok(app.includes(x),x);});
+test("Batch 1 priority finance tools have dedicated FAQs and verified formula guides",()=>{for(const id of ["mortgage","amortization","payoff","refinance","student-loan"])assert.match(app,new RegExp('"'+id+'":\\[\\[',"s"));for(const x of ["Financed principal = home price minus down payment","Monthly interest = opening balance","accelerated payment","closing costs / positive monthly payment savings"])assert.ok(app.includes(x),x);});
+test("Batch 1 schedule table styling remains horizontally scrollable on small screens",()=>{assert.match(css,/\.schedule-scroll\{max-width:100%;overflow-x:auto/);assert.match(css,/\.schedule-scroll table\{[^}]*min-width:650px/);});
