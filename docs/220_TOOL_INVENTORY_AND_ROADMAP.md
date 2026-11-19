@@ -372,3 +372,21 @@ These are documentation inconsistencies, not evidence that the production calcul
 - Existing inventory: 45
 - Planned new inventory: 175
 - Planned final portfolio: 220
+
+
+## 13. Updated execution order approved 2026-11-19
+
+The following batch boundaries supersede the earlier batch numbering for execution. Keep all 115 current tools unchanged. Count each new tool only after its PR is approved, merged, main CI succeeds and Pages deployment is verified.
+
+| New execution batch | Scope | New tools | Running total |
+|---|---|---:|---:|
+| Batch 6 | Unit, Measurement & Data Converters | 20 | 135 |
+| Batch 7 | Developer & Text/Encoding Utilities | 20 | 155 |
+| Batch 8 | Education & Everyday Lifestyle — Part 1 | 20 | 175 |
+| Batch 9 | Lifestyle, Construction, Energy & Misc — Part 2 | 15 | 190 |
+| Batch 10 | Health & Wellness — Part 1 | 15 | 205 |
+| Batch 11 | Health & Wellness — Part 2 + final verification and doc sync | 15 | 220 |
+
+**Batch 6 candidate IDs:** `length-converter`, `mass-converter`, `temperature-converter`, `area-converter`, `volume-converter`, `speed-converter`, `pressure-converter`, `energy-converter`, `power-converter`, `frequency-converter`, `angle-converter`, `fuel-economy-converter`, `density-converter`, `cooking-measurement-converter`, `data-storage-converter`, `data-transfer-speed-converter`, `download-time-estimator`, `number-base-converter`, `roman-numeral-converter`, `paper-size-converter`.
+
+Every batch uses a dedicated feature branch and PR. Do not merge without the user's explicit approval. No unrelated side tasks or experiments are in scope until the 220-tool production release is complete.
