@@ -79,5 +79,6 @@ await page.locator("#f-text").fill("   ");
 assert.match(await page.locator(".result .sub").innerText(),/cannot be empty/);
 await page.close();
 });
+});
 
 test.after(async()=>{if(browser)await browser.close();if(server)await new Promise(r=>server.close(r))});
