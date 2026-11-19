@@ -61,7 +61,8 @@ const D=[
 ...window.FinPulseDeveloperTools.registry,
 ...window.FinPulseEducationTools.registry,
 ...window.FinPulseLifestyleTools.registry,
-...window.FinPulseHealthTools.registry
+...window.FinPulseHealthTools.registry,
+...window.FinPulseHealthTools2.registry
 ];
 const requestedTool=new URLSearchParams(location.search).get("tool");let active=D.some(x=>x.id===requestedTool)?requestedTool:D[0].id,category="All",activeCurrency="USD",currencyRateDate="",currencyRateCache=new Map(),countryPresetNote="",activeChart=null;
 function ensureToolSeo(d){if(d.seo||!["freelance-project","freelancer-net-income","markup","break-even","business-roi","cash-flow","rental-yield","emergency-fund","net-worth"].includes(d.id))return;const v={};d.f.forEach(field=>{v[field[0]]=Number(field[2])});try{d.seo=d.run(v).seo||null}catch{d.seo=null}}
