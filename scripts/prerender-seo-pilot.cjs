@@ -97,7 +97,7 @@ async function main() {
       await page.locator("#app .heading h2").waitFor();
       await page.locator("#formula-panel").waitFor();
       await page.locator(".seo-content details").first().waitFor();
-      await page.locator("#tool-structured-data").waitFor();
+      await page.locator("#tool-structured-data").waitFor({ state: "attached" });
       await page.waitForFunction(() => {
         const node = document.getElementById("tool-structured-data");
         try { return !!node && JSON.parse(node.textContent)["@graph"]?.length >= 2; } catch { return false; }
