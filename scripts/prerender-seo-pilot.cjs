@@ -50,10 +50,13 @@ function canonicalFor(id) {
   return url.href;
 }
 function staticRouteHtml(source, id, canonical) {
-  let html = source.replace("<head>", '<head><base href="../../"><script src="../../seo-prerender-bootstrap.js"></script>');
+  let html = source.replace("<html lang=\"en\">", '<html lang="en" data-static-prerender="true" data-static-canonical="' + canonical + '" data-tool-id="' + id + '">');
+  if (html === source) throw new Error(id + ": could not add static route markers");
+  html = html.replace("<head>", '<head><base href="../../"><script src="../../seo-prerender-bootstrap.js"></script>');
   html = html.replace(/<link rel="canonical" href="[^"]*">/, '<link rel="canonical" href="' + canonical + '">');
   html = html.replace("<h1>Online Math Calculator</h1>", '<div class="calc-home-title">Online Math Calculator</div>');
   html = html.replace("<h1>Make better sense<br><em>of your money.</em></h1>", '<div class="hero-title">Make better sense<br><em>of your money.</em></div>');
+  html = html.replace(/(<div class="heading">[\\s\\S]*?)<h2>([\\s\\S]*?)<\\/h2>/, "$1<h1>$2</h1>");
   if (!html.includes('data-static-prerender="true"')) throw new Error(id + ": static marker missing");
   if (!html.includes('data-tool-id="' + id + '"')) throw new Error(id + ": tool marker missing");
   return html;
@@ -88,14 +91,8 @@ async function main() {
     for (const tool of PILOTS) {
       const canonical = canonicalFor(tool.id);
       const page = await browser.newPage({ viewport: { width: 1365, height: 900 } });
-      await page.addInitScript(({ id, canonical }) => {
-        document.documentElement.dataset.staticPrerender = "true";
-        document.documentElement.dataset.staticCanonical = canonical;
-        document.documentElement.dataset.toolId = id;
-        document.documentElement.classList.add("static-prerender");
-      }, { id: tool.id, canonical });
       await page.goto(base + "/?tool=" + encodeURIComponent(tool.id), { waitUntil: "domcontentloaded" });
-      await page.locator("#app .heading h1").waitFor();
+      await page.locator("#app .heading h2").waitFor();
       await page.locator("#formula-panel").waitFor();
       await page.locator(".seo-content details").first().waitFor();
       await page.locator("#tool-structured-data").waitFor();
