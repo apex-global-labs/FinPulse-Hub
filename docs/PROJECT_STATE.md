@@ -86,3 +86,13 @@ The dedicated branch adds five Developer wrap-up tools, twelve Education & Study
 - Production portfolio: 190 tools; homepage, registry and sitemap aligned at 190 routes.
 - Batch 10 branch: `feat/batch-10-health-wellness-part-1`; adds the first 15 approved sleep and activity/pace tools and targets 205 tools. Candidate only until CI, PR review, merge and deployment.
 - Batch 10 tools are informational time/distance/pace/speed/schedule calculations only. Every tool carries a medical disclaimer and disclosed model limitations; no diagnosis, weight/calorie goals or treatment advice.
+
+
+## Batch 10 merge and Batch 11 final candidate — 2026-11-19
+
+- PR #41 (Batch 10, 15 tools) merged by squash as `f7eaf356971523f8e6dda2d30278cdc972ef4836`.
+- Before merge, PR commit `6a4996492ddd482544d67665127f87b46744e470` CI #44503379859 succeeded: 261/261 Node formula/smoke/regression tests, API 1/1, Browser 11/11, and all 15 Batch 10 views passed WCAG 2.1 A/AA.
+- Main source now contains 205 tools; homepage counter and sitemap each show 205. The post-merge main CI and Pages deployment have not yet been independently confirmed; do not claim the public site is at 205 until both succeed and live routes are checked.
+- Batch 11 branch: `feat/batch-11-health-wellness-final-220`; candidate target 220 tools, adding the remaining 15 unique Health & Wellness items from the approved roadmap.
+- Batch 11 keeps calculations informational and user-entered only. No recommended activity, breathing or hydration target; no medical diagnosis, treatment, or exercise prescription. Goal tracking requires a user-entered goal; hydration logs summarize records only.
+- Final acceptance requires 220 unique registry IDs, 220 sitemap routes, all 115 legacy + 105 expansion tools in formula/smoke/regression/browser/accessibility checks, API 1/1, and production Lighthouse/CLS evidence.
