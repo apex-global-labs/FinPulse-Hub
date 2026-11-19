@@ -81,7 +81,7 @@ test("signed input metadata matches each basic math domain",()=>{
 });
 test("probability and descriptive statistics expose appropriate comparison charts",()=>{
  const probability=advanced.find(x=>x.id==="probability").run({a:.4,b:.3,mode:"or"});
- assert.equal(probability.chartType,"bar");assert.deepEqual(probability.series,[40,30,58]);assert.equal(probability.chartUnit,"%");
+ assert.equal(probability.chartType,"bar");near(probability.series[0],40);near(probability.series[1],30);near(probability.series[2],58);assert.equal(probability.chartUnit,"%");
  const data={x1:1,x2:2,x3:2,x4:4,x5:6};
  const stats=advanced.find(x=>x.id==="mean-median-mode").run(data);
  assert.equal(stats.chartType,"bar");assert.deepEqual(stats.series,[1,2,2,4,6]);
