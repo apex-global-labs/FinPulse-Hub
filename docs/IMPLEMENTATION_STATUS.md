@@ -161,17 +161,20 @@ The remaining list is a planning inventory and can be refined to avoid overlap o
 - Merged commit: `4cb47e8411dec059f5ec25af5a79b5509df89803`. Main CI #44305761335 and Pages deployment #44305761259 succeeded.
 
 
-## PR #21 — 45 calculator completion (implementation and branch QA verified, 2026-11-19)
+## PR #21 — 45 calculator completion (merged and deployed, 2026-11-19)
 
 - PR: https://github.com/apex-global-labs/FinPulse-Hub/pull/21
-- Production base before merge: `4cb47e8411dec059f5ec25af5a79b5509df89803`.
-- Added the final nine calculators: Freelance Project Pricing, Freelancer Net Income After Costs, Markup, Break-even, Business ROI, Cash Flow Projection, Rental Yield, Emergency Fund and Net Worth.
-- Each new calculator uses the shared display-currency selector, synchronized number/range inputs and instant recalculation.
-- All nine expose relevant Chart.js datasets (bar or line); the UI falls back to accessible SVG if the Chart.js CDN is unavailable.
-- Each new calculator includes a distinct explanatory SEO introduction and three FAQs.
-- Homepage directory links are generated from the 45-entry registry. Query routes update the document title, description and canonical URL.
-- `sitemap.xml` contains exactly 45 unique `?tool=` routes matching the calculator registry; `robots.txt` references the sitemap.
-- GitHub Pages deployment now publishes every runtime dependency (`finance-core.js`, `smart-ui.js`, tax datasets/engine, `asset-data.js`) plus `sitemap.xml` and `robots.txt`.
-- Branch CI run #44312169199 passed on the previously verified PR head: syntax; formula/smoke 99/99; Frankfurter API 1/1; Playwright desktop/mobile 3/3. The desktop Playwright loop runs axe WCAG 2.1 A/AA checks against all 45 calculator views and verifies the nine new SEO/chart blocks.
-- Additional QA assertions are now being added for exact sitemap-to-registry parity, 45 unique homepage links and direct query-route canonical metadata. A fresh branch CI run is required for these latest test additions.
-- Merge, production deployment and final Lighthouse mobile/desktop audit remain pending. Do not describe PR #21 as production-complete until the merge, Pages deployment and Lighthouse report are verified.
+- Production merge commit: `57bd8dbcc013b338cd5c1c543c5498bc0654f070`.
+- Added Freelance Project Pricing, Freelancer Net Income After Costs, Markup, Break-even, Business ROI, Cash Flow Projection, Rental Yield, Emergency Fund and Net Worth calculators.
+- All nine use the shared display-currency selector, synchronized number/range inputs and instant recalculation.
+- All nine include relevant Chart.js chart data with accessible SVG fallback and unique explanatory SEO content with three FAQs each.
+- Homepage directory/navigation exposes 45 unique tools. Query routes update title, description and canonical URL.
+- Sitemap contains exactly 45 unique `?tool=` routes matching the 45 calculator IDs; robots.txt points to the sitemap.
+- GitHub Pages deployment publishes all runtime modules and discovery files, including smart UI, tax/asset data and engines, sitemap.xml and robots.txt.
+- Added formula validation for zero-contribution break-even edge cases.
+- Branch CI #44454130627 passed; main CI #44454242514 passed: syntax checks, formula/smoke 100/100, Frankfurter API 1/1 and Playwright desktop/mobile 3/3. Desktop axe WCAG 2.1 A/AA checks passed across all 45 calculator views.
+- Pages deployment #44454242457 succeeded for production commit `57bd8dbcc013b338cd5c1c543c5498bc0654f070`.
+- Lighthouse #44454284201 succeeded. Mobile: Performance 90, Accessibility 100, Best Practices 96, SEO 100. Desktop: Performance 100, Accessibility 100, Best Practices 96, SEO 100.
+- Mobile LCP 1,458.7 ms, CLS 0, TBT 408.5 ms; desktop LCP 254.1 ms, CLS 0.0607, TBT 0 ms.
+- Reports: https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44454284201/artifacts/14497012676
+- Remaining optimization opportunity: mobile Performance (90) and Best Practices (96); no blocking release failures remain.
