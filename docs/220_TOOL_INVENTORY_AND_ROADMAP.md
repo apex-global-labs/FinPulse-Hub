@@ -4,7 +4,7 @@
 - **Baseline:** Preserve all 45 existing financial calculators without renaming or removing their stable route IDs
 - **Expansion:** 175 new tools across four new top-level categories
 - **Hosting / stack:** GitHub Pages, static HTML/CSS/Vanilla JS, free-first, no paid backend or mandatory paid APIs
-- **Status:** Planning baseline; none of the 175 new tools is claimed implemented by this document
+- **Status:** In progress — 70 of 175 expansion tools are implemented and deployed; 105 planned additions remain
 
 ## 1. Target portfolio
 
@@ -17,7 +17,7 @@
 | Developer, Education & Lifestyle | 0 | 55 | 55 |
 | **Total** | **45** | **175** | **220** |
 
-The current 45 financial calculators are retained as the production baseline. The 175 new tools are planned additions only. A tool is counted as delivered only after implementation, formula/behavior tests, browser and accessibility checks, SEO metadata, sitemap registration and successful production deployment.
+The 45 financial calculators remain the production baseline. A further 70 tools are implemented and deployed (25 Basic Mathematics, 20 Advanced Mathematics & Statistics, 25 Date & Time). The remaining 105 expansion tools are planned additions only. A tool is counted as delivered only after implementation, formula/behavior tests, browser and accessibility checks, SEO metadata, sitemap registration and successful production deployment.
 
 ## 2. Existing 45 — preserve exactly
 
@@ -71,7 +71,7 @@ The current 45 financial calculators are retained as the production baseline. Th
 - Keep all current IDs/routes stable, including `?tool=` route keys.
 - Do not replace or silently rename an existing calculator.
 - Avoid counting overlapping modes as separate tools. For example, Tip, Discount, Percentage, Currency Converter and the existing financial calculators remain single existing entries.
-- Any future refactor must pass the full 45-tool regression suite.
+- Any future refactor must pass the full 115-tool formula, smoke, browser and regression suite.
 
 ## 3. New 175-tool inventory by batch
 
