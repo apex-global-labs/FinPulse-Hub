@@ -176,6 +176,14 @@ Every tool has a stable registry ID used by the `?tool=` route, homepage directo
 - Main CI, Pages deployment and Lighthouse are recorded in `docs/PROJECT_STATE.md`.
 
 
+## Verification state
+
+- Production registry remains 115 tools on `main` until PR #34 is merged and deployed.
+- Batch 6 candidate registry contains 20 additional unique IDs; the candidate homepage and sitemap each contain 135 unique tool routes.
+- PR #34 CI Run #44488033568: Formula + Smoke + Regression 213/213 passed; API 1/1 passed; Playwright Browser 7/7 passed.
+- Browser/axe audit covered all 20 converter views against WCAG 2.1 A/AA; no violations were reported by the automated suite.
+- This is PR-candidate evidence, not production deployment evidence.
+
 ## 5. Unit, Measurement & Data Converters — 20 (Batch 6 PR candidate)
 
 | # | Tool | Stable ID |
