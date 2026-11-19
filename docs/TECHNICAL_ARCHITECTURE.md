@@ -102,7 +102,7 @@ npm run test:browser
 | `tests/api.test.cjs` | Live Frankfurter v2 reference-rate response contract |
 | `tests/browser.test.cjs` | Playwright desktop/mobile interactions, routes, accessibility and family-specific visual/guide rendering |
 
-The final Batch 5 CI run recorded 198/198 formula/smoke/regression assertions, 1/1 API assertion and 6/6 browser tests. Batch 6 adds a dedicated deterministic converter formula suite and a Playwright/axe loop over all 20 converter views; Run #44491064031 passed: 214/214 formula/smoke/regression assertions, 1/1 API assertion and 7/7 browser tests. The Batch 6 browser loop opens all 20 converter views and each passed axe WCAG 2.1 A/AA. Main CI and Pages deployment for Batch 6 succeeded; Batch 7 PR CI is pending. The Playwright/axe suite iterates all 45 Finance, 45 Math & Statistics and 25 Date & Time views.
+The final Batch 5 CI run recorded 198/198 formula/smoke/regression assertions, 1/1 API assertion and 6/6 browser tests. Batch 6 adds a dedicated deterministic converter formula suite and a Playwright/axe loop over all 20 converter views; Run #44491064031 passed: 214/214 formula/smoke/regression assertions, 1/1 API assertion and 7/7 browser tests. The Batch 6 browser loop opens all 20 converter views and each passed axe WCAG 2.1 A/AA. Main CI and Pages deployment for Batch 6 succeeded; Batch 7 PR #35 CI is green (Run #44493842731); merge and production deployment await approval. The Playwright/axe suite iterates all 45 Finance, 45 Math & Statistics and 25 Date & Time views.
 
 ### CI workflow
 
