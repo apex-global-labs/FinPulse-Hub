@@ -6,7 +6,7 @@
   "scripts": {
     "check": "node --check math-core.js && node --check math-tools.js && node --check advanced-math-core.js && node --check advanced-math-tools.js && node --check date-time-core.js && node --check date-time-tools.js && node --check unit-converter-core.js && node --check unit-converter-tools.js && node --check finance-core.js && node --check smart-ui.js && node --check tax-data.js && node --check tax-state-data.js && node --check tax-engine.js && node --check asset-data.js && node --check developer-tools.js && node --check education-lifestyle-tools.js && node --check qrcode.js && node --check lifestyle-tools.js && node --check health-activity-tools.js && node --check health-wellness-tools.js && node --check home-calculator-core.js && node --check home-calculator.js && node --check app.js && node --check scripts/serve-static-gzip.cjs",
     "test": "node --test tests/smoke.test.cjs tests/formula.test.cjs tests/math-batch-1.test.cjs tests/advanced-math-batch-2.test.cjs tests/date-time-batch-3.test.cjs tests/unit-converter.test.cjs tests/developer-tools.test.cjs tests/education-lifestyle.test.cjs tests/lifestyle-tools.test.cjs tests/math-batch-3.test.cjs tests/health-activity-tools.test.cjs tests/health-wellness-tools.test.cjs tests/home-calculator.test.cjs",
-    "test:browser": "node --test tests/browser.test.cjs && node --test tests/home-calculator.browser.test.cjs",
+    "test:browser": "node --test tests/browser.test.cjs tests/home-calculator.browser.test.cjs tests/embed-modal.browser.test.cjs tests/tool-page-layout.browser.test.cjs",
     "test:api": "node --test tests/api.test.cjs"
   }
 }
