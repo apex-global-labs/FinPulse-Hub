@@ -169,6 +169,6 @@ Every tool has a stable registry ID used by the `?tool=` route, homepage directo
 - Active registry counts: 45 + 25 + 20 + 25 = 115.
 - Formula/smoke/regression suite: 198/198 passed on the runtime release.
 - Frankfurter API contract: 1/1 passed.
-- Browser suite: all 45 Finance and 45 Math & Statistics tool views are iterated; Batch 5 adds all 25 Date & Time views to the Playwright/axe audit.
+- Browser suite: all 115 Finance, Math & Statistics and Date & Time views are iterated; all Date & Time views assert guide presence and axe WCAG 2.1 A/AA compliance. Latest result: 6/6 browser tests passed.
 - Homepage directory and sitemap parity are enforced by smoke tests.
 - Main CI, Pages deployment and Lighthouse are recorded in `docs/PROJECT_STATE.md`.
