@@ -44,10 +44,17 @@ async function serveFile(req, res) {
   }
 }
 function canonicalFor(id) {
-  const url = new URL(SITE_URL);
-  url.searchParams.set("tool", id);
-  url.hash = "";
-  return url.href;
+  const slugs = {
+    mortgage: "mortgage-calculator",
+    percentage: "percentage-calculator",
+    "age-calculator": "age-calculator",
+    "length-converter": "length-converter",
+    "word-counter": "word-counter"
+  };
+  const slug = slugs[id];
+  if (!slug) throw new Error("Unknown static SEO pilot route: " + id);
+  const base = SITE_URL.endsWith("/") ? SITE_URL : SITE_URL + "/";
+  return new URL("tools/" + slug + "/", base).href;
 }
 function staticRouteHtml(source, id, canonical) {
   let html = source.replace(/<html lang="en"([^>]*)>/i, '<html lang="en"$1 data-static-prerender="true" data-static-canonical="' + canonical + '" data-tool-id="' + id + '">');
@@ -75,8 +82,12 @@ async function checkStaticSource(id, name, canonical) {
   const jsonLd = html.match(/<script id="tool-structured-data" type="application\/ld\+json">([\s\S]*?)<\/script>/i);
   assert.ok(jsonLd, id + ": JSON-LD missing");
   const graph = JSON.parse(jsonLd[1]);
-  assert.ok(graph["@graph"].some(item => item["@type"] === "SoftwareApplication"), id + ": SoftwareApplication missing");
-  assert.ok(graph["@graph"].some(item => item["@type"] === "FAQPage"), id + ": FAQPage missing");
+  const software = graph["@graph"].find(item => item["@type"] === "SoftwareApplication");
+  const faq = graph["@graph"].find(item => item["@type"] === "FAQPage");
+  assert.ok(software, id + ": SoftwareApplication missing");
+  assert.ok(faq, id + ": FAQPage missing");
+  assert.equal(software.url, canonical, id + ": SoftwareApplication canonical mismatch");
+  assert.equal(faq.url, canonical, id + ": FAQPage canonical mismatch");
   assert.equal((html.match(/<h1\b/gi) || []).length, 1, id + ": static page should have exactly one H1");
   return { id, name, bytes: Buffer.byteLength(html), title: html.match(/<title>([^<]+)<\/title>/i)[1], canonical };
 }
@@ -128,6 +139,15 @@ async function main() {
       const page = await browser.newPage({ viewport: { width: 1280, height: 800 } });
       await page.goto(base + "/seo-prerender-pilot/" + tool.id + "/", { waitUntil: "domcontentloaded" });
       await page.locator("#app .heading h1").waitFor();
+      assert.equal(await page.locator("#app .heading h1").count(), 1, tool.id + ": hydrated static route must retain exactly one H1");
+      assert.equal(await page.locator("#app .heading h2").count(), 0, tool.id + ": hydrated static route must not downgrade H1 to H2");
+      const expectedCanonical = canonicalFor(tool.id);
+      assert.equal(await page.locator('link[rel="canonical"]').getAttribute("href"), expectedCanonical, tool.id + ": canonical changed during hydration");
+      const hydratedGraph = await page.locator("#tool-structured-data").evaluate(node => JSON.parse(node.textContent));
+      const hydratedSoftware = hydratedGraph["@graph"].find(item => item["@type"] === "SoftwareApplication");
+      const hydratedFaq = hydratedGraph["@graph"].find(item => item["@type"] === "FAQPage");
+      assert.equal(hydratedSoftware?.url, expectedCanonical, tool.id + ": hydrated SoftwareApplication URL mismatch");
+      assert.equal(hydratedFaq?.url, expectedCanonical, tool.id + ": hydrated FAQPage URL mismatch");
       assert.equal(await page.locator("#form").count(), 1, tool.id + ": form did not hydrate");
       const textarea = page.locator("#form textarea").first();
       const number = page.locator('#form input[type="number"]').first();
