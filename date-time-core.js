@@ -1,12 +1,12 @@
 (()=>{"use strict";
 const DAY=86400000, pad=n=>String(n).padStart(2,"0");
-function date(s){if(!(typeof s==="string"&&/^\\d{4}-\\d{2}-\\d{2}$/.test(s)))throw Error("Enter a valid date.");const [y,m,d]=s.split("-").map(Number),t=Date.UTC(y,m-1,d),x=new Date(t);if(x.getUTCFullYear()!==y||x.getUTCMonth()!==m-1||x.getUTCDate()!==d)throw Error("That calendar date does not exist.");return t}
+function date(s){if(!(typeof s==="string"&&/^\\d{4}-\\d{2}-\\d{2}$/.test(s)))throw Error("Enter a valid date.");const [y,m,d]=s.split("-").map(Number),x=new Date(0);x.setUTCHours(0,0,0,0);x.setUTCFullYear(y,m-1,d);const t=x.getTime();if(x.getUTCFullYear()!==y||x.getUTCMonth()!==m-1||x.getUTCDate()!==d)throw Error("That calendar date does not exist.");return t}
 function dateString(t){const x=new Date(t);return x.getUTCFullYear()+"-"+pad(x.getUTCMonth()+1)+"-"+pad(x.getUTCDate())}
 function addDays(s,n){if(!Number.isInteger(n)||Math.abs(n)>1000000)throw Error("Day offset must be a whole number within ±1,000,000.");return dateString(date(s)+n*DAY)}
 function parts(s){const x=new Date(date(s));return{year:x.getUTCFullYear(),month:x.getUTCMonth()+1,day:x.getUTCDate(),weekday:x.getUTCDay()}}
 function daysBetween(a,b){return Math.round((date(b)-date(a))/DAY)}
 function leap(y){return Number.isInteger(y)&&y>=1&&y<=9999&&(y%4===0&&(y%100!==0||y%400===0))}
-function monthDays(y,m){if(!Number.isInteger(y)||y<1||y>9999||!Number.isInteger(m)||m<1||m>12)throw Error("Enter a valid year and month.");return new Date(Date.UTC(y,m,0)).getUTCDate()}
+function monthDays(y,m){y=Number(y);m=Number(m);if(!Number.isInteger(y)||y<1||y>9999||!Number.isInteger(m)||m<1||m>12)throw Error("Enter a valid year and month.");const x=new Date(0);x.setUTCHours(0,0,0,0);x.setUTCFullYear(y,m,0);return x.getUTCDate()}
 function isoWeek(s){const t=date(s),x=new Date(t);x.setUTCDate(x.getUTCDate()+4-(x.getUTCDay()||7));const y=x.getUTCFullYear(),start=Date.UTC(y,0,1);return{week:Math.ceil((((x-start)/DAY)+1)/7),year:y}}
 function dayOfYear(s){const p=parts(s);return Math.round((date(s)-Date.UTC(p.year,0,1))/DAY)+1}
 function businessDays(a,b,weekend=[0,6],holidays=[]){let n=daysBetween(a,b),step=n<0?-1:1,count=0;for(let i=0;i!==n;i++){let t=date(a)+i*step*DAY,d=new Date(t).getUTCDay(),key=dateString(t);if(!weekend.includes(d)&&!holidays.includes(key))count+=step}return count}
