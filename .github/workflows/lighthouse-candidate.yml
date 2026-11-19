@@ -1,0 +1,59 @@
+name: Candidate Lighthouse and CLS Audit
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  lighthouse:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install Lighthouse and Chromium
+        run: |
+          npm install --no-save lighthouse@12.8.2 playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Serve candidate static site
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/finpulse-http.log 2>&1 &
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent http://127.0.0.1:4173/ > /dev/null; then break; fi
+            sleep 1
+          done
+          curl --fail --silent http://127.0.0.1:4173/ > /dev/null
+      - name: Audit mobile homepage and final tool route
+        run: |
+          mkdir -p lighthouse-reports
+          CHROME_PATH="$(node -p "require('playwright').chromium.executablePath()")"
+          npx lighthouse "http://127.0.0.1:4173/" --chrome-path="$CHROME_PATH" --chrome-flags="--headless --no-sandbox" --only-categories=performance,accessibility,best-practices,seo --output=json --output-path=./lighthouse-reports/mobile-home.report.json
+          npx lighthouse "http://127.0.0.1:4173/?tool=hydration-log-tracker" --chrome-path="$CHROME_PATH" --chrome-flags="--headless --no-sandbox" --only-categories=performance,accessibility,best-practices,seo --output=json --output-path=./lighthouse-reports/mobile-tool.report.json
+      - name: Audit desktop homepage and final tool route
+        run: |
+          CHROME_PATH="$(node -p "require('playwright').chromium.executablePath()")"
+          npx lighthouse "http://127.0.0.1:4173/" --chrome-path="$CHROME_PATH" --chrome-flags="--headless --no-sandbox" --preset=desktop --only-categories=performance,accessibility,best-practices,seo --output=json --output-path=./lighthouse-reports/desktop-home.report.json
+          npx lighthouse "http://127.0.0.1:4173/?tool=hydration-log-tracker" --chrome-path="$CHROME_PATH" --chrome-flags="--headless --no-sandbox" --preset=desktop --only-categories=performance,accessibility,best-practices,seo --output=json --output-path=./lighthouse-reports/desktop-tool.report.json
+      - name: Print scores and enforce CLS budget
+        run: |
+          node <<'NODE'
+          const fs = require('node:fs');
+          for (const name of ['mobile-home','mobile-tool','desktop-home','desktop-tool']) {
+            const report = JSON.parse(fs.readFileSync(`lighthouse-reports/${name}.report.json`, 'utf8'));
+            const a = report.audits;
+            const cls = a['cumulative-layout-shift']?.numericValue;
+            const scores = Object.fromEntries(Object.entries(report.categories).map(([key, value]) => [key, value.score === null ? 'n/a' : Math.round(value.score * 100)]));
+            console.log(name.toUpperCase(), JSON.stringify({scores,CLS:cls,LCP_ms:a['largest-contentful-paint']?.numericValue,TBT_ms:a['total-blocking-time']?.numericValue}, null, 2));
+            if (!Number.isFinite(cls) || cls > 0.1) throw new Error(name + ' CLS exceeds 0.10 budget: ' + cls);
+          }
+          NODE
+      - name: Upload candidate Lighthouse reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: finpulse-batch-11-lighthouse-reports
+          path: lighthouse-reports/*.report.json
+          if-no-files-found: error
+          retention-days: 30
