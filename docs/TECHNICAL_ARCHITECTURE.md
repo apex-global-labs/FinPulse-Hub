@@ -17,10 +17,12 @@ The verified production release registers 220 tools (Batches 1–11):
 - 25 date and time tools
 - 20 unit, measurement and data converters
 - 20 developer and text utilities
-- 20 education and home tools
+- 5 developer wrap-up tools
+- 12 education and study tools
+- 3 home and construction tools
 - 15 lifestyle and construction tools
-- 15 Health & Wellness tools (Batch 10 production)
-- 15 additional Health & Wellness tools (Batch 11 candidate)
+- 15 Health & Wellness tools (Batch 10 deployed)
+- 15 Health & Wellness tools (Batch 11 deployed)
 
 ## 2. Runtime modules
 

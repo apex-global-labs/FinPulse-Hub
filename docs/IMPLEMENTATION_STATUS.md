@@ -26,11 +26,13 @@
 - Date & Time: 25
 - Unit & Data Converters: 20
 - Developer & Text Utilities: 20
-- Education & Home: 20
+- Developer wrap-up: 5
+- Education & Study: 12
+- Home & Construction: 3
 - Lifestyle & Construction: 15
 - Health & Wellness (Batch 10): 15
-- **Production total: 205**
-- **Batch 11 candidate: 220**
+- Health & Wellness (Batch 11): 15
+- **Production total: 220**
 
 The exact names and route IDs are maintained in `docs/FINANCE_TOOL_MASTER_REGISTRY.md`.
 
