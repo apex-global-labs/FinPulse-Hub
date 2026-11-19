@@ -141,6 +141,6 @@ The following list is extracted from the current application registry. IDs are t
 - Formula and smoke suite: 99/99 passed.
 - Frankfurter API check: 1/1 passed.
 - Playwright desktop/mobile suite: 3/3 passed; desktop test audits all 45 calculator views with axe WCAG 2.1 A/AA tags.
-- Branch CI: run #44311781048 succeeded.
-- PR #21 merge and post-merge GitHub Pages deployment: pending at the time of this document update.
+- Earlier branch CI run #44312169199 succeeded (99/99 formula/smoke, API 1/1, browser 3/3); a fresh run is required after the latest navigation/sitemap regression assertions.
+- PR #21 merge and post-merge GitHub Pages deployment: pending; current PR head is being revalidated after additional route/sitemap tests.
 - Final Lighthouse audit: pending after deployment.
