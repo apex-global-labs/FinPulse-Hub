@@ -8,7 +8,7 @@ function fraction(n,d){integer(n,"Numerator");integer(d,"Denominator");if(d===0)
 function mixed(w,n,d){integer(w,"Whole number");integer(n,"Numerator");positive(d,"Denominator");integer(d,"Denominator");if(n>=d)throw Error("Numerator must be smaller than denominator");return fraction(w*d+(w<0?-n:n),d)}
 function decimalFraction(x,maxDen=10000){finite(x);positive(maxDen);integer(maxDen);if(maxDen>1000000)throw Error("Maximum denominator is too large");let bestN=Math.round(x),bestD=1,best=Math.abs(x-bestN);for(let d=1;d<=maxDen;d++){const n=Math.round(x*d),e=Math.abs(x-n/d);if(e<best){best=e;bestN=n;bestD=d}if(best<1e-12)break}return fraction(bestN,bestD)}
 function ratio(a,b){nonnegative(a,"First term");nonnegative(b,"Second term");if(a===0&&b===0)throw Error("At least one ratio term must be non-zero");let x=a,y=b;while(y){const t=x%y;x=y;y=t}const g=x||1;return{first:a/g,second:b/g}}
-function proportion(a,b,c){nonnegative(a,"A");positive(b,"B");nonnegative(c,"C");return{value:c*b/a}}
+function proportion(a,b,c){positive(a,"A");positive(b,"B");nonnegative(c,"C");return{value:c*b/a}}
 function average(values){if(!Array.isArray(values)||!values.length)throw Error("Enter at least one value");values.forEach((v)=>finite(v));return values.reduce((s,v)=>s+v,0)/values.length}
 function percentageChange(oldValue,newValue){finite(oldValue,"Original value");finite(newValue,"New value");if(oldValue===0)throw Error("Percentage change is undefined when the original value is zero");return(newValue-oldValue)/Math.abs(oldValue)*100}
 function percentError(actual,expected){finite(actual,"Actual value");finite(expected,"Expected value");if(expected===0)throw Error("Percent error is undefined when the expected value is zero");return Math.abs(actual-expected)/Math.abs(expected)*100}
@@ -20,8 +20,8 @@ function nthRoot(value,n=2){finite(value);integer(n,"Root index");if(n<1||n>99)t
 function factorial(n){integer(n,"Number");if(n<0||n>170)throw Error("Factorial input must be an integer from 0 to 170");let x=1;for(let i=2;i<=n;i++)x*=i;return x}
 function gcd(a,b){integer(a,"First integer");integer(b,"Second integer");a=Math.abs(a);b=Math.abs(b);while(b){const t=a%b;a=b;b=t}return a}
 function lcm(a,b){integer(a,"First integer");integer(b,"Second integer");if(a===0||b===0)return 0;const x=Math.abs(a/gcd(a,b)*b);if(!Number.isSafeInteger(x))throw Error("Result exceeds safe integer range");return x}
-function isPrime(n){integer(n,"Number");if(n<2)return false;if(n%2===0)return n===2;for(let i=3;i<=Math.sqrt(n);i+=2)if(n%i===0)return false;return true}
-function primeFactors(n){integer(n,"Number");if(n<2)throw Error("Enter an integer of at least 2");if(n>Number.MAX_SAFE_INTEGER)throw Error("Number exceeds safe integer range");const out=[];let x=n;for(let p=2;p<=Math.sqrt(x);p+=(p===2?1:2)){let e=0;while(x%p===0){x/=p;e++}if(e)out.push([p,e])}if(x>1)out.push([x,1]);return out}
+function isPrime(n){integer(n,"Number");if(n>1e12)throw Error("Number exceeds the supported primality-check limit");if(n<2)return false;if(n%2===0)return n===2;for(let i=3;i<=Math.sqrt(n);i+=2)if(n%i===0)return false;return true}
+function primeFactors(n){integer(n,"Number");if(n<2)throw Error("Enter an integer of at least 2");if(n>1e12)throw Error("Number exceeds the supported factorization limit");const out=[];let x=n;for(let p=2;p<=Math.sqrt(x);p+=(p===2?1:2)){let e=0;while(x%p===0){x/=p;e++}if(e)out.push([p,e])}if(x>1)out.push([x,1]);return out}
 function modulo(a,b){finite(a,"Dividend");finite(b,"Divisor");if(b===0)throw Error("Divisor cannot be zero");return((a%b)+Math.abs(b))%Math.abs(b)}
 function pythagorean(a,b){nonnegative(a,"Side A");nonnegative(b,"Side B");if(a===0&&b===0)throw Error("At least one side must be positive");return Math.hypot(a,b)}
 function circle(r){nonnegative(r,"Radius");return{diameter:2*r,circumference:2*Math.PI*r,area:Math.PI*r*r}}
