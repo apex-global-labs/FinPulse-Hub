@@ -23,13 +23,13 @@ FinPulse Hub is a free-first, browser-based library with **220 calculators and t
 | Advanced mathematics & statistics | 20 |
 | Date & time | 25 |
 | Unit & data converters | 20 |
-| Developer & Text utilities | 20 |
+| Developer & Text utilities | 20 |\n| Developer wrap-up | 5 |
 | Education & Study | 12 |
 | Home & Construction | 3 |
-| Health & Wellness — Batch 10 deployed | 15 |
-| Health & Wellness — Batch 11 candidate | 15 |
-| **Production total** | **205** |
-| **Batch 11 candidate total** | **220** |
+| Health & Wellness — Batch 10 | 15 |
+| Health & Wellness — Batch 11 | 15 |
+| **Production total** | **220** |
+
 
 ## Shared capabilities
 

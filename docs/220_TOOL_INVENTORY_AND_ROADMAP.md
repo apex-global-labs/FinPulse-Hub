@@ -343,17 +343,17 @@ For each batch:
 
 ## 10. Acceptance checklist
 
-- [ ] Exactly 220 active, unique tool IDs (45 preserved + 175 new).
-- [ ] No duplicate tool or near-duplicate canonical search intent.
-- [ ] Every tool has a documented calculation/behavior specification.
-- [ ] Every formula/algorithm has expected-value and edge-case tests.
-- [ ] Homepage, category navigation, search and direct routes work.
-- [ ] Sitemap has exactly the published canonical tool routes.
-- [ ] Desktop/mobile browser tests pass.
-- [ ] Accessibility checks pass across all tool views.
-- [ ] No serious console errors, broken links or unsafe external data handling.
-- [ ] GitHub Pages deployment succeeds and public routes are verified.
-- [ ] Project state and implementation records include exact commit and workflow evidence.
+- [x] Exactly 220 active, unique tool IDs (45 preserved + 175 new).
+- [x] No duplicate tool or near-duplicate canonical search intent.
+- [x] Every tool has a documented calculation/behavior specification.
+- [x] Every formula/algorithm has expected-value and edge-case tests.
+- [x] Homepage, category navigation, search and direct routes work.
+- [x] Sitemap has exactly the published canonical tool routes.
+- [x] Desktop/mobile browser tests pass.
+- [x] Accessibility checks pass across all tool views.
+- [x] No serious console errors, broken links or unsafe external data handling.
+- [x] GitHub Pages deployment succeeds and public routes are verified.
+- [x] Project state and implementation records include exact commit and workflow evidence.
 
 ## 11. Baseline audit notes (2026-11-19)
 
