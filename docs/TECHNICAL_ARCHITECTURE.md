@@ -68,7 +68,7 @@ Chart.js is loaded asynchronously from a pinned jsDelivr distribution with subre
 
 - Stable tool IDs are used by the `?tool=` query route.
 - Each tool has its own metadata and explanatory content where implemented.
-- Production main homepage directory and sitemap contain 135 unique tool routes. Batch 7 candidate branch contains 155.
+- Batch 10 merge updates the main source homepage and sitemap to 205 unique routes; Batch 11 candidate branch targets 220. Public deployment must be verified independently before the production count is updated.
 - Canonical/title metadata is updated for selected tool routes.
 - `robots.txt` points to the XML sitemap.
 - The production deployment copies every runtime module and discovery file into the Pages artifact.
@@ -141,3 +141,8 @@ Measured on production runtime commit `da94f90328c80f557a98b08fa889d4c429046348`
 - Currency reference rates are not live trading or bank settlement quotes.
 - No trading execution, brokerage, exchange, wallet or financial product recommendation is implemented.
 - New paid APIs, backend services, frameworks or dependencies require explicit approval and a cost/privacy/reliability review.
+
+
+## Batch 11 module
+
+`health-wellness-tools.js` adds the final 15 user-entered Health & Wellness calculators. The module exposes a separate registry consumed by `app.js`. The tools use deterministic arithmetic and log summaries; no health target is recommended. Interval and breathing tools only calculate schedule durations, not live timers or technique instructions. Hydration tracking does not infer or recommend intake.
