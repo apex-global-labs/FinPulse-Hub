@@ -498,3 +498,8 @@ Batch 6 is now deployed and the 20-tool Batch 7 candidate below accounts for the
 **Allocation check:** Batch 7 = 20, Batch 8 = 20, Batch 9 = 15, Batch 10 = 15, Batch 11 = 15; total remaining = 85. Together with the 20 Batch 6 converters, this reconciles the original 105-tool backlog. Health tools retain the safety exclusions in Section 7; no diagnosis, medication dosing, weight-loss or calorie-restriction tools may be introduced.
 
 **Duplicate-intent guard:** The planned Unix Timestamp Unit Helper is limited to seconds↔milliseconds scaling and epoch-unit validation. It must not duplicate the existing Date to Unix Timestamp or Unix Timestamp to Date tools; if the distinction cannot be maintained, absorb it into the existing date/time tools and replace it only with an unused roadmap item after a documented duplicate audit.
+
+
+## Release status update — 2026-11-19
+
+Batch 7 (PR #35) is merged and deployed; current production count is 155. Batch 8 feature branch `feat/batch-8-education-everyday-lifestyle-release` implements the 20 approved items in Section 13 and targets 175. It remains a release candidate until automated CI and PR review complete.

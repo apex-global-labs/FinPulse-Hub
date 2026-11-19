@@ -1,12 +1,12 @@
 # FinPulse Hub
 
-FinPulse Hub is a free-first, browser-based library targeting **220 calculators and tools**; the current production release contains 135 tools after Batch 6; Batch 7 proposes 20 Developer & Text utilities for finance, mathematics, statistics, dates and time. Calculations run locally in the browser wherever possible; the site is hosted on GitHub Pages.
+FinPulse Hub is a free-first, browser-based library targeting **220 calculators and tools**; the current production release contains 155 tools after Batch 7; Batch 8 proposes 20 developer wrap-up, education and everyday tools for finance, mathematics, statistics, dates and time. Calculations run locally in the browser wherever possible; the site is hosted on GitHub Pages.
 
 ## Production status
 
-- **Production release:** 135 tools (main; Batch 6 merged and deployed)
-- **Batch 7 release candidate:** 155 tools (135 existing + 20 Developer & Text utilities; [PR #35 CI green](https://github.com/apex-global-labs/FinPulse-Hub/pull/35), awaiting merge approval)
-- **Inventory:** 45 Finance + 25 Basic Math + 20 Advanced Math & Statistics + 25 Date & Time + 20 Unit & Data Converters + 20 Developer & Text utilities (Batch 7 candidate)
+- **Production release:** 155 tools (main; Batch 7 merged and deployed)
+- **Batch 7 release:** 155 tools (PR #35 merged and deployed) · **Batch 8 candidate:** 175 tools (20 additional tools; PR pending)
+- **Inventory:** 45 Finance + 25 Basic Math + 20 Advanced Math & Statistics + 25 Date & Time + 20 Unit & Data Converters + 20 Developer & Text utilities (Batch 7 production)
 - **Production branch:** `main`
 - **Runtime release commit:** `54539bb522743a627f154708d496c87233619334`
 - **Website:** https://apex-global-labs.github.io/FinPulse-Hub/
@@ -23,7 +23,10 @@ FinPulse Hub is a free-first, browser-based library targeting **220 calculators 
 | Advanced mathematics & statistics | 20 |
 | Date & time | 25 |
 | Unit & data converters (Batch 6 candidate) | 20 |
-| **Release-candidate total** | **135** |
+| Developer & Text utilities | 20 |
+| Education & Study | 12 |
+| Home & Construction | 3 |
+| **Release-candidate total** | **175** |
 
 ## Shared capabilities
 
@@ -33,7 +36,7 @@ FinPulse Hub is a free-first, browser-based library targeting **220 calculators 
 - Copy, CSV/JSON export, print, shareable URL state and reset
 - Local calculation history with restore, light/dark theme and keyboard shortcuts
 - Related tools, embed-code generator and reserved ad-safe slots
-- Searchable directory with 155 unique tool links in the Batch 7 branch (main contains 135)
+- Searchable directory with 175 unique tool links in the Batch 8 branch (main contains 155)
 - Accessible labels, semantic tables/diagrams and browser accessibility checks
 
 Features are applied where relevant; no artificial finance charts or amortization schedules are added to unrelated tools.
@@ -77,3 +80,13 @@ npm run test:browser
 ```
 
 GitHub Actions runs these checks on pull requests and pushes to `main`. A successful Pages workflow is required before a change is described as deployed. Lighthouse runs after successful production deployment and records mobile/desktop reports as an artifact.
+
+
+## Batch 8 — Education & Everyday Lifestyle Part 1 (PR candidate)
+
+- 20 tools: five Developer wrap-up tools, twelve Education & Study tools, and three Home & Construction estimators.
+- Dedicated module: `education-lifestyle-tools.js`.
+- Each tool includes a documented formula/rule, five explanation steps, four FAQs, three presets, strict validation and shared export/history/accessibility behavior.
+- Markdown preview escapes raw HTML; regex tester uses bounded inputs and conservative pattern rejection; timestamp helper only scales seconds and milliseconds.
+- Construction estimators disclose nominal assumptions and are not structural design tools.
+- Candidate target: 155 → 175; production count remains 155 until PR approval, merge, main CI and Pages deployment.

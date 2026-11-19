@@ -4,16 +4,24 @@
 - **Repository:** https://github.com/apex-global-labs/FinPulse-Hub
 - **Production branch:** `main`
 - **Production website:** https://apex-global-labs.github.io/FinPulse-Hub/
-- **Production release commit:** `54539bb522743a627f154708d496c87233619334`
-- **Production inventory:** 135 unique tools (45 Finance + 25 Basic Math + 20 Advanced Math & Statistics + 25 Date & Time + 20 Unit & Data Converters)
+- **Production release commit:** `f32466ba801dd993a1d1efbe4c8bd513f2421326` (Batch 7 plus mobile TBT optimization)
+- **Production inventory:** 155 unique tools (45 Finance + 25 Basic Math + 20 Advanced Math & Statistics + 25 Date & Time + 20 Unit & Data Converters)
 - **Batch 6 PR #34:** merged; [main CI #44492089059](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44492089059) success; [Pages deployment #44492088958](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44492088958) success
 - **Batch 6 feature CI:** [Run #44491456053](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44491456053) — 214/214 formula/smoke/regression, 1/1 API, 7/7 browser; all 20 converter views passed axe WCAG 2.1 A/AA
 - **Production Lighthouse:** [Run #44492151775](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44492151775) — success; reports attached as artifact
 
+## Latest release update — Batch 7 and performance optimization
+
+- PR #35 merged as `82d8e4b8b5e30bb33bd97aeb5ea0c089c2f57953`; GitHub Pages deployment #44494813995 succeeded.
+- Main CI #44494813886 succeeded after Batch 7.
+- PR #36 mobile performance optimization merged as `f32466ba801dd993a1d1efbe4c8bd513f2421326`; feature CI #44495042246 succeeded. It removes eager SEO calculations for nine finance tools and defers Chart.js until a bar/scatter chart is requested.
+- A new production Lighthouse run is required to quantify post-optimization TBT; 951.5 ms remains the pre-fix baseline.
+- Batch 8 feature branch `feat/batch-8-education-everyday-lifestyle-release` targets 175 tools; PR and full CI pending.
+
 ## Production verification
 
-- Main homepage directory count: 135.
-- Sitemap: 135 unique tool routes.
+- Main homepage directory count: 155.
+- Sitemap: 155 unique tool routes.
 - Main CI: syntax checks passed; Formula + Smoke + Regression 214/214; API 1/1; Playwright Browser 7/7; all 20 converter views passed WCAG 2.1 A/AA.
 - Pages deployment completed successfully for production commit `54539bb522743a627f154708d496c87233619334`.
 - Direct live site navigation was not separately inspected by the browser tool in this session; Pages workflow and main source/route inventory provide deployment evidence.
@@ -64,3 +72,8 @@ Remaining after Batch 6: 85 planned tools. The approved detailed names and dupli
 - Text/code inputs are processed locally; no pasted developer content is sent to a third-party service.
 - User calculation history remains in browser-local storage.
 - Financial outputs remain educational estimates; no trading execution, brokerage, wallet or investment recommendation.
+
+
+## Batch 8 candidate — 155 → 175
+
+The dedicated branch adds five Developer wrap-up tools, twelve Education & Study tools and three Home & Construction estimators. Each has a five-step guide, formula/rule disclosure, four FAQs, three presets, validation and shared copy/CSV/JSON/print/share/history/Escape-reset controls. Markdown output is escaped; regex matching is bounded and conservative; the Unix helper only converts seconds and milliseconds. Construction quantities are approximate and do not replace engineering specifications. PR and CI evidence will be appended after checks complete.

@@ -4,8 +4,8 @@
 - **Repository:** https://github.com/apex-global-labs/FinPulse-Hub
 - **Production branch:** `main`
 - **Production URL:** https://apex-global-labs.github.io/FinPulse-Hub/
-- **Current production inventory:** 115 / 115 tools
-- **Runtime commit:** `da94f90328c80f557a98b08fa889d4c429046348`
+- **Current production inventory:** 155 / 155 tools; Batch 8 candidate 175
+- **Runtime commit:** `f32466ba801dd993a1d1efbe4c8bd513f2421326`
 
 ## Completed implementation batches
 
@@ -89,3 +89,21 @@ These are roadmap items, not active production tools. Each must pass implementat
 - **PR:** [#35](https://github.com/apex-global-labs/FinPulse-Hub/pull/35), open and mergeable; awaiting explicit merge approval.
 - **CI:** [Run #44493842731](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44493842731) succeeded — syntax check passed, Formula + Smoke + Regression 226/226, API 1/1, Playwright Browser 8/8; all 20 new views passed axe WCAG 2.1 A/AA.
 - **Status:** PR candidate QA green. Production remains 135 until PR merge, main CI and Pages deployment succeed.
+
+
+## Batch 7 — Production release verified
+
+- PR #35 merged as `82d8e4b8b5e30bb33bd97aeb5ea0c089c2f57953`; Pages deployment #44494813995 succeeded; main CI #44494813886 succeeded.
+- Production inventory: 155 unique tools, including 20 Developer & Text utilities.
+
+## Mobile performance remediation
+
+- Lighthouse baseline #44492151775: mobile TBT 951.5 ms. The report identified an `app.js` 618 ms task, eager SEO calculations for nine finance tools and an unconditional Chart.js transfer of about 61 KB.
+- PR #36 merged as `f32466ba801dd993a1d1efbe4c8bd513f2421326`; feature CI #44495042246 succeeded.
+- Fix: lazy SEO initialization and Chart.js only for bar/scatter charts. Post-fix production Lighthouse is still required before claiming a measured TBT improvement.
+
+## Batch 8 — Candidate 155 → 175
+
+- Branch: `feat/batch-8-education-everyday-lifestyle-release`.
+- New module: `education-lifestyle-tools.js`, containing five Developer wrap-up tools, twelve Education & Study tools and three Home & Construction estimators.
+- Candidate homepage, sitemap, docs and Pages manifest target 175. Full test and PR evidence pending.

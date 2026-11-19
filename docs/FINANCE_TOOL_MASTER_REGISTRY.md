@@ -2,8 +2,8 @@
 
 - **Version:** 3.0
 - **Updated:** 2026-11-19
-- **Production portfolio:** 135 active tools
-- **Runtime release:** `54539bb522743a627f154708d496c87233619334`
+- **Production portfolio:** 155 active tools (Batch 8 candidate: 175)
+- **Runtime release:** `f32466ba801dd993a1d1efbe4c8bd513f2421326`
 - **Repository:** apex-global-labs/FinPulse-Hub
 
 > This file retains its historical filename for compatibility. It is now the master registry for all FinPulse Hub tools, not only finance calculators.
@@ -16,9 +16,13 @@
 | Basic mathematics | 25 | `math-tools.js` |
 | Advanced mathematics & statistics | 20 | `advanced-math-tools.js` |
 | Date & time | 25 | `date-time-tools.js` |
-| Unit & data converters (PR #34 candidate) | 20 | `unit-converter-tools.js` |
-| **Production total** | **115** | |
-| **Release-candidate total** | **135** | |
+| Unit & data converters | 20 | `unit-converter-tools.js` |
+| Developer & Text utilities | 20 | `developer-tools.js` |
+| Batch 8 Developer wrap-up | 5 | `education-lifestyle-tools.js` |
+| Education & Study | 12 | `education-lifestyle-tools.js` |
+| Home & Construction | 3 | `education-lifestyle-tools.js` |
+| **Production total** | **155** | |
+| **Release-candidate total** | **175** | |
 
 Every tool has a stable registry ID used by the `?tool=` route, homepage directory and sitemap. Do not rename an ID without an explicit migration and route regression.
 
@@ -238,3 +242,35 @@ These 20 entries were merged in PR #34 as `54539bb522743a627f154708d496c87233619
 | 20 | HTML/CSS/JS Minifier | `html-css-js-minifier` |
 
 These 20 tools are on `feat/batch-7-developer-text-utilities`, based on production commit `54539bb522743a627f154708d496c87233619334`. They are a PR candidate only until checks, merge and deployment succeed. They do not overlap with the existing date/time timestamp converters or Batch 6 converter IDs.
+
+
+## Batch 7 — Developer & Text Utilities (production)
+
+PR #35 merged and deployed. Production count is 155, including 20 Developer & Text utilities registered by `developer-tools.js`.
+
+## Batch 8 — Developer wrap-up + Education & Everyday Lifestyle Part 1 (candidate)
+
+| # | Tool | Stable ID |
+|---:|---|---|
+| 1 | UUID Generator | `uuid-generator` |
+| 2 | Regex Tester (safe local matching) | `regex-tester` |
+| 3 | Color Code Converter (HEX/RGB/HSL) | `color-code-converter` |
+| 4 | Unix Timestamp Unit Helper | `unix-timestamp-unit-helper` |
+| 5 | Markdown Previewer | `markdown-previewer` |
+| 6 | GPA Calculator | `gpa-calculator` |
+| 7 | CGPA Calculator | `cgpa-calculator` |
+| 8 | Grade Calculator | `grade-calculator` |
+| 9 | Exam Percentage Calculator | `exam-percentage-calculator` |
+| 10 | Marks Required Calculator | `marks-required-calculator` |
+| 11 | Weighted Grade Calculator | `weighted-grade-calculator` |
+| 12 | Final Exam Grade Calculator | `final-exam-grade-calculator` |
+| 13 | Semester GPA Planner | `semester-gpa-planner` |
+| 14 | Attendance Percentage Calculator | `attendance-percentage-calculator` |
+| 15 | Study Time Planner | `study-time-planner` |
+| 16 | Reading Schedule Planner | `reading-schedule-planner` |
+| 17 | Assignment Grade Tracker | `assignment-grade-tracker` |
+| 18 | Concrete Volume Calculator | `concrete-volume-calculator` |
+| 19 | Brick Quantity Estimator | `brick-quantity-estimator` |
+| 20 | Cement / Sand / Aggregate Estimator | `cement-sand-aggregate-estimator` |
+
+Batch 8 adds exactly 20 unique IDs in `education-lifestyle-tools.js`: 5 developer wrap-up tools, 12 education/study tools and 3 construction estimators. Candidate total is 175; production count changes only after approval, merge, main CI and Pages deployment.
