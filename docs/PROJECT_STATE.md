@@ -89,7 +89,7 @@ The final Batch 5 browser suite iterates all 45 Finance, 45 Math & Statistics an
 - **New IDs:** `length-converter`, `mass-converter`, `temperature-converter`, `area-converter`, `volume-converter`, `speed-converter`, `pressure-converter`, `energy-converter`, `power-converter`, `frequency-converter`, `angle-converter`, `fuel-economy-converter`, `density-converter`, `cooking-measurement-converter`, `data-storage-converter`, `data-transfer-speed-converter`, `download-time-estimator`, `number-base-converter`, `roman-numeral-converter`, `paper-size-converter`.
 - **Sitemap candidate:** 135 unique tool routes.
 - **PR:** [#34](https://github.com/apex-global-labs/FinPulse-Hub/pull/34), open and mergeable; awaiting explicit user approval.
-- **CI:** [Run #44487617949](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44487617949) — success; syntax passed, Formula + Smoke + Regression 213/213, API 1/1, Browser 7/7. All 20 converter views passed WCAG 2.1 A/AA axe checks.
+- **CI:** [Run #44488033568](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44488033568) — success; syntax passed, Formula + Smoke + Regression 213/213, API 1/1, Browser 7/7. All 20 converter views passed WCAG 2.1 A/AA axe checks.
 - **QA state:** PR CI green; main CI and Pages deployment remain pending merge. Do not count these tools as production-delivered until merge and deployment succeed.
 
 ## Latest Lighthouse rerun — production baseline commit 219399ed
