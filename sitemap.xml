@@ -155,4 +155,24 @@
   <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=css-formatter</loc></url>
   <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=javascript-formatter</loc></url>
   <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=html-css-js-minifier</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=uuid-generator</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=regex-tester</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=color-code-converter</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=unix-timestamp-unit-helper</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=markdown-previewer</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=gpa-calculator</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=cgpa-calculator</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=grade-calculator</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=exam-percentage-calculator</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=marks-required-calculator</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=weighted-grade-calculator</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=final-exam-grade-calculator</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=semester-gpa-planner</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=attendance-percentage-calculator</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=study-time-planner</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=reading-schedule-planner</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=assignment-grade-tracker</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=concrete-volume-calculator</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=brick-quantity-estimator</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=cement-sand-aggregate-estimator</loc></url>
 </urlset>
