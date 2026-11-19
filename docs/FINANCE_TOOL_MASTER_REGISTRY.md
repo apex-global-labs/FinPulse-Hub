@@ -2,8 +2,8 @@
 
 - **Version:** 3.0
 - **Updated:** 2026-11-19
-- **Production portfolio:** 190 active tools (Batch 9 merged; Batch 10 candidate: 205)
-- **Runtime release:** `4f7909018f04b8ae9a994b21827fd48acdb80a79`
+- **Last verified production portfolio:** 190 active tools (Batch 9); Batch 10 is merged to main source (205; deployment pending verification); Batch 11 candidate: 220
+- **Latest main source commit:** `f7eaf356971523f8e6dda2d30278cdc972ef4836` (Batch 10; Pages verification pending)
 - **Repository:** apex-global-labs/FinPulse-Hub
 
 > This file retains its historical filename for compatibility. It is now the master registry for all FinPulse Hub tools, not only finance calculators.
@@ -322,3 +322,26 @@ Batch 9 adds 15 unique IDs through `lifestyle-tools.js`; the QR generator uses t
 | 15 | Swimming Pace Calculator | `swimming-pace-calculator` |
 
 All Batch 10 tools provide informational time, distance, pace, speed and schedule arithmetic only. Each page discloses assumptions, scientific limitations and a medical disclaimer; no diagnosis, treatment, weight goal or calorie target is provided.
+
+
+## Batch 11 — Health & Wellness Part 2 (candidate; 15)
+
+| # | Tool | Stable ID |
+|---:|---|---|
+| 1 | Swimming Interval Planner | `swimming-interval-planner` |
+| 2 | Rowing Pace Calculator | `rowing-pace-calculator` |
+| 3 | Exercise Session Duration Calculator | `exercise-session-duration-calculator` |
+| 4 | Interval Training Timer (schedule calculation only) | `interval-training-timer` |
+| 5 | Rest Interval Planner | `rest-interval-planner` |
+| 6 | Workout Session Planner (Time Only) | `workout-session-planner-time-only` |
+| 7 | Weekly Activity Minutes Tracker | `weekly-activity-minutes-tracker` |
+| 8 | Activity Goal Progress Tracker | `activity-goal-progress-tracker` |
+| 9 | Step-to-Distance Converter | `step-to-distance-converter` |
+| 10 | Distance-to-Step Estimator | `distance-to-step-estimator` |
+| 11 | Elevation Gain Rate Calculator | `elevation-gain-rate-calculator` |
+| 12 | Hiking Elevation Pace Calculator | `hiking-elevation-pace-calculator` |
+| 13 | Breathing Exercise Timer (timing arithmetic only) | `breathing-exercise-timer` |
+| 14 | Meditation Session Planner | `meditation-session-planner` |
+| 15 | Hydration Log Tracker (user-entered records only) | `hydration-log-tracker` |
+
+Batch 11 tools use user-entered values only. No activity, breathing or hydration target is recommended; no medical assessment is provided. The interval and breathing tools calculate a schedule duration and do not operate a live timer or provide technique instructions.
