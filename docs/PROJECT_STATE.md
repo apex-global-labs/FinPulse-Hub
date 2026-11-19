@@ -4,8 +4,8 @@
 - **Repository:** https://github.com/apex-global-labs/FinPulse-Hub
 - **Production branch:** `main`
 - **Production website:** https://apex-global-labs.github.io/FinPulse-Hub/
-- **Production release commit:** `ee06c524c7f4ce77109881d6fa877991c5d7851a` (Batch 8)
-- **Production inventory:** 175 unique tools (45 Finance + 25 Basic Math + 20 Advanced Math & Statistics + 25 Date & Time + 20 Unit & Data Converters + 20 Developer/Text + 20 Batch 8)
+- **Latest main source commit:** `f7eaf356971523f8e6dda2d30278cdc972ef4836` (Batch 10; deployment verification pending)
+- **Last verified production inventory:** 190 unique tools (45 Finance + 25 Basic Math + 20 Advanced Math & Statistics + 25 Date & Time + 20 Unit & Data Converters + 20 Developer/Text + 20 Batch 8)
 - **Batch 8 PR #39:** merged as `ee06c524c7f4ce77109881d6fa877991c5d7851a`; main CI #44497401581 and Pages deployment #44497401612 succeeded; homepage and sitemap each show 175 unique routes.\n- **Batch 6 PR #34:** merged; [main CI #44492089059](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44492089059) success; [Pages deployment #44492088958](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44492088958) success
 - **Batch 6 feature CI:** [Run #44491456053](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44491456053) — 214/214 formula/smoke/regression, 1/1 API, 7/7 browser; all 20 converter views passed axe WCAG 2.1 A/AA
 - **Production Lighthouse:** [Run #44492151775](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44492151775) — success; reports attached as artifact
