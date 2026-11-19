@@ -9,7 +9,7 @@
 - Final calculator inventory: 45/45 registered, unique and linked from the homepage; sitemap contains 45 unique calculator routes.
 - Latest verified main CI: #44454242514 — success.
 - GitHub Pages deployment: #44454242457 — success.
-- Lighthouse audit: #44454284201 — success; mobile and desktop reports uploaded as artifact.
+- Lighthouse audit: #44454538007 — success; mobile and desktop reports uploaded as artifact.
 
 ## Final nine calculators
 
@@ -42,7 +42,7 @@
 
 | Category | Mobile | Desktop |
 |---|---:|---:|
-| Performance | 90 | 100 |
+| Performance | 99 | 100 |
 | Accessibility | 100 | 100 |
 | Best Practices | 96 | 96 |
 | SEO | 100 | 100 |
@@ -55,8 +55,8 @@
 | FCP | 972.7 ms | 216.0 ms |
 | Speed Index | 1,377.1 ms | 236.8 ms |
 
-- Lighthouse workflow #44454284201 completed successfully and uploaded both JSON reports.
-- Report artifact: https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44454284201/artifacts/14497012676
+- Lighthouse workflow #44454538007 completed successfully and uploaded both JSON reports.
+- Report artifact: https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44454538007/artifacts/14495964666
 - Mobile Performance 90 and Best Practices 96 remain optimization opportunities; accessibility and SEO scored 100 on both profiles.
 
 ## Product boundaries

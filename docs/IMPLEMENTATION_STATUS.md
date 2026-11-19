@@ -174,7 +174,7 @@ The remaining list is a planning inventory and can be refined to avoid overlap o
 - Added formula validation for zero-contribution break-even edge cases.
 - Branch CI #44454130627 passed; main CI #44454242514 passed: syntax checks, formula/smoke 100/100, Frankfurter API 1/1 and Playwright desktop/mobile 3/3. Desktop axe WCAG 2.1 A/AA checks passed across all 45 calculator views.
 - Pages deployment #44454242457 succeeded for production commit `57bd8dbcc013b338cd5c1c543c5498bc0654f070`.
-- Lighthouse #44454284201 succeeded. Mobile: Performance 90, Accessibility 100, Best Practices 96, SEO 100. Desktop: Performance 100, Accessibility 100, Best Practices 96, SEO 100.
-- Mobile LCP 1,458.7 ms, CLS 0, TBT 408.5 ms; desktop LCP 254.1 ms, CLS 0.0607, TBT 0 ms.
-- Reports: https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44454284201/artifacts/14497012676
+- Lighthouse #44454538007 succeeded. Mobile: Performance 99, Accessibility 100, Best Practices 96, SEO 100. Desktop: Performance 100, Accessibility 100, Best Practices 96, SEO 100.
+- Mobile LCP 1,362.5 ms, CLS 0, TBT 123 ms; desktop LCP 264.4 ms, CLS 0.0607, TBT 0 ms.
+- Reports: https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44454538007/artifacts/14495964666
 - Remaining optimization opportunity: mobile Performance (90) and Best Practices (96); no blocking release failures remain.
