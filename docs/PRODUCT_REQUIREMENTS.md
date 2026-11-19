@@ -2,12 +2,12 @@
 
 - **Document version:** 1.0
 - **Date:** 2026-11-18
-- **Status:** Initial product blueprint; implementation not started
+- **Status:** Production product requirements; 115-tool implementation baseline verified 2026-11-19
 - **Repository:** `apex-global-labs/FinPulse-Hub`
 
 ## 1. Product definition
 
-FinPulse Hub is a free-first, finance-only website that helps people understand common personal, household, freelance and small-business calculations. It will combine the former **Financial Intelligence Hub** and **Business & Professional Suite** concepts into one coherent product.
+FinPulse Hub is a free-first, browser-based library of 115 finance, mathematics, statistics, date and time calculators/tools. It combines financial planning with practical learning and everyday calculation tasks.
 
 The former **Universal Online Tools** division is removed. Generic PDF, image, QR, developer, file-conversion and unrelated utility tools are not part of this product.
 
