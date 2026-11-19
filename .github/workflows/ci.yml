@@ -25,3 +25,10 @@ jobs:
           npx playwright install chromium
       - name: Desktop and mobile browser tests
         run: npm run test:browser
+      - name: Upload static SEO prerender pilot pages
+        uses: actions/upload-artifact@v4
+        with:
+          name: finpulse-static-seo-prerender-pilot
+          path: .prerender-pilot/**
+          if-no-files-found: error
+          retention-days: 14
