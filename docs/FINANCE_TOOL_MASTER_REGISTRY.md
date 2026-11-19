@@ -23,8 +23,10 @@
 | Home & Construction | 3 | `education-lifestyle-tools.js` |
 | Lifestyle & Construction Part 2 | 15 | `lifestyle-tools.js` |
 | Health & Wellness Part 1 | 15 | `health-activity-tools.js` |
-| **Production total** | **190** | |
-| **Release-candidate total** | **205** | |
+| Health & Wellness Part 2 | 15 | `health-wellness-tools.js` |
+| **Last verified production total** | **190** | |
+| **Main source total** | **205** | |
+| **Batch 11 candidate total** | **220** | |
 
 Every tool has a stable registry ID used by the `?tool=` route, homepage directory and sitemap. Do not rename an ID without an explicit migration and route regression.
 
