@@ -100,5 +100,5 @@ test("shared renderer supports math formula guides and accessible scatter plots"
  assert.match(app,/d\.formula&&Array\.isArray\(d\.steps\)/);
  assert.match(app,/function scatterGraph/);assert.match(app,/function geometryGraph/);
  assert.match(app,/role="img" aria-label="Scatter plot of paired observations and fitted line"/);
- assert.match(app,/graph\(r\.series,r\.chartUnit\|\|chartUnit,r\.chartLabels,r\.chartType,r\.fitSeries,r\.geometry\)/);
+ assert.match(app,/graph\(r\.series,r\.chartUnit\|\|chartUnit,r\.chartLabels,r\.chartType,r\.fitSeries,r\.geometry,r\.calendar\)/);
 });
