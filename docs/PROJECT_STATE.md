@@ -77,3 +77,12 @@ Remaining after Batch 6: 85 planned tools. The approved detailed names and dupli
 ## Batch 8 candidate — 155 → 175
 
 The dedicated branch adds five Developer wrap-up tools, twelve Education & Study tools and three Home & Construction estimators. Each has a five-step guide, formula/rule disclosure, four FAQs, three presets, validation and shared copy/CSV/JSON/print/share/history/Escape-reset controls. Markdown output is escaped; regex matching is bounded and conservative; the Unix helper only converts seconds and milliseconds. Construction quantities are approximate and do not replace engineering specifications. PR and CI evidence will be appended after checks complete.
+
+
+## Batch 9 production and Batch 10 candidate — 2026-11-19
+
+- Batch 9 PR #40 merged as `4f7909018f04b8ae9a994b21827fd48acdb80a79`; Pages deployment #44501066258 succeeded.
+- Post-merge main CI #44501066316 completed successfully, including desktop/mobile Playwright browser tests.
+- Production portfolio: 190 tools; homepage, registry and sitemap aligned at 190 routes.
+- Batch 10 branch: `feat/batch-10-health-wellness-part-1`; adds the first 15 approved sleep and activity/pace tools and targets 205 tools. Candidate only until CI, PR review, merge and deployment.
+- Batch 10 tools are informational time/distance/pace/speed/schedule calculations only. Every tool carries a medical disclaimer and disclosed model limitations; no diagnosis, weight/calorie goals or treatment advice.
