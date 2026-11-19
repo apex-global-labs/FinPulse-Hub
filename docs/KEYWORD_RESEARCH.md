@@ -2,9 +2,9 @@
 
 - **Version:** 1.1
 - **Updated:** 2026-11-18
-- **Status:** Initial traffic review completed for a limited set of head terms; detailed country-by-country audit still required
+- **Status:** Finance keyword evidence retained; separate search-demand validation remains required for the added math/statistics and date/time tool families
 
-## 1. Target market assumption
+## Scope note (2026-11-19)\n\nThe production portfolio now contains 115 tools: 45 finance, 45 math/statistics and 25 date/time. The keyword figures below remain a finance-focused directional sample; they do not validate demand or traffic potential for every one of the 115 tools. Research the math/statistics and date/time families separately before making traffic forecasts.\n\n## 1. Target market assumption
 
 Until a market decision is made, research is based on **global English search demand**, with country-specific validation planned for the United States, United Kingdom, Canada, Australia, India and Bangladesh. Search intent and tax/payroll conventions are not interchangeable across these markets.
 

@@ -1,191 +1,140 @@
-# FinPulse Hub — Technical Architecture
+# FinPulse Hub — Technical Architecture (As Built)
 
-- **Version:** 1.0
-- **Date:** 2026-11-18
-- **Status:** Proposed architecture; implementation not started
+- **Version:** 2.0
+- **Verified:** 2026-11-19
+- **Status:** Implemented production architecture
+- **Production:** https://apex-global-labs.github.io/FinPulse-Hub/
 
-## 1. Architecture decision
+## 1. Architecture summary
 
-Use a static-first website hosted on GitHub Pages. Initial stack:
+FinPulse Hub is a static-first single-page calculator library hosted on GitHub Pages. The production application uses semantic HTML, CSS and vanilla JavaScript. Calculation logic is separated from the DOM and tool presentation. There is no required backend, database, account service or paid runtime dependency.
 
-- Semantic HTML
-- Modern CSS
-- Vanilla JavaScript (ES modules)
-- JSON for static calculator metadata and test fixtures
-- Node.js built-in test runner for formula and data tests
-- GitHub Actions for automated checks and deployment
+The application currently registers 115 tools:
 
-Avoid a required backend, paid database, paid framework, paid build service or paid API. A framework may be reconsidered only if measured needs justify it and the free deployment path remains reliable.
+- 45 financial calculators
+- 25 basic mathematics tools
+- 20 advanced mathematics and statistics tools
+- 25 date and time tools
 
-## 2. Proposed project structure
+## 2. Runtime modules
 
-```text
-/
-├── index.html
-├── calculators/
-│   ├── loan-emi/
-│   ├── mortgage/
-│   └── ...
-├── assets/
-│   ├── css/
-│   ├── icons/
-│   └── images/
-├── src/
-│   ├── app/
-│   ├── core/
-│   │   ├── finance/
-│   │   ├── money/
-│   │   └── validation/
-│   ├── calculators/
-│   ├── data/
-│   └── ui/
-├── tests/
-│   ├── unit/
-│   ├── fixtures/
-│   └── browser/
-├── docs/
-└── .github/
-    └── workflows/
+| File | Responsibility |
+|---|---|
+| `index.html` | Static shell, metadata, navigation, calculator workspace, directory and script loading |
+| `styles.css` | Responsive layout, shared components, theme tokens, calculator and table styles |
+| `app.js` | Finance tool registry, routing, shared renderer, input handling, results and workspace orchestration |
+| `finance-core.js` | Finance calculation functions and schedules |
+| `math-core.js` | Basic math calculation functions |
+| `math-tools.js` | 25 basic math tool definitions, input metadata and SEO/guide content |
+| `advanced-math-core.js` | Advanced equation, matrix, statistics and probability functions |
+| `advanced-math-tools.js` | 20 advanced math/statistics tool definitions |
+| `date-time-core.js` | Gregorian date, calendar, recurrence and time-zone calculation logic |
+| `date-time-tools.js` | 25 date/time tool definitions and formula/step metadata |
+| `smart-ui.js` | Shared currency metadata, synchronized controls, presets and UI helpers |
+| `tax-data.js`, `tax-state-data.js`, `tax-engine.js` | Versioned jurisdiction data and tax/payroll calculations |
+| `asset-data.js` | User-selected hypothetical asset/scenario labels and baseline-only metadata |
+
+Tool registries carry stable IDs, names, categories, field definitions, calculation functions and relevant explanatory content. The central renderer composes the registries into one searchable application and homepage directory.
+
+## 3. Calculation and validation design
+
+- Core calculation modules expose deterministic functions that accept numeric/date inputs and return structured results.
+- Input boundaries validate finite numbers, allowed ranges, supported date/time formats, IANA time-zone identifiers and domain-specific constraints.
+- Unsupported or undefined operations return clear validation errors rather than plausible-looking invalid values.
+- Rounding is applied for display at the presentation layer where possible; calculations retain intermediate precision.
+- Financial schedules expose monthly rows and yearly aggregates only where a schedule is meaningful.
+- Calendar and date tools use semantic tables/grids; charts are not forced onto non-chart tasks.
+- Date/time behavior includes leap-day handling, month-end anchored recurrence, timestamp bounds and rejection of nonexistent DST spring-forward local times.
+
+## 4. Shared user interface
+
+The shared workspace provides, where relevant:
+
+- Live input-driven calculation and synchronized numeric/range controls
+- Formula and step-by-step calculation panels
+- Relevant graph, geometry diagram, calendar grid, schedule and breakdown renderers
+- Strict empty/invalid numeric input handling
+- Copy, CSV/JSON export, print, shareable URL parameters and reset
+- Local recent-calculation history with restore
+- Light/dark theme and keyboard shortcuts
+- Related tools, embed-code generation and reserved ad-safe slots
+
+Chart.js is loaded asynchronously from a pinned jsDelivr distribution with subresource integrity where applicable; an accessible SVG fallback keeps the relevant visual output available when the CDN is unavailable.
+
+## 5. Routing, SEO and directory
+
+- Stable tool IDs are used by the `?tool=` query route.
+- Each tool has its own metadata and explanatory content where implemented.
+- The homepage directory contains 115 unique links and the sitemap contains the corresponding published tool routes.
+- Canonical/title metadata is updated for selected tool routes.
+- `robots.txt` points to the XML sitemap.
+- The production deployment copies every runtime module and discovery file into the Pages artifact.
+
+## 6. Privacy and security
+
+- No account system or backend is required.
+- Calculator inputs are processed in the browser; recent calculation history is local to the device.
+- Content Security Policy restricts script, style, font, connection, image and frame sources.
+- External network access is limited to the published currency reference-rate source and pinned chart library where used.
+- Untrusted text is escaped before being inserted into the UI.
+- No API keys or private credentials are shipped in browser code.
+
+## 7. Automated verification
+
+### Commands
+
+```bash
+npm run check
+npm test
+npm run test:api
+npm run test:browser
 ```
 
-This is a target structure, not a statement that these paths already exist. Final routing and structure will be chosen before code implementation.
+### Current suites
 
-## 3. Calculation engine
+| Suite | Purpose |
+|---|---|
+| `tests/formula.test.cjs` | Finance formulas, schedules, math/statistics and date/time boundaries |
+| `tests/smoke.test.cjs` | Registry uniqueness, tool count, runtime loading, directory/sitemap parity, CSP and deployment contract |
+| `tests/api.test.cjs` | Live Frankfurter v2 reference-rate response contract |
+| `tests/browser.test.cjs` | Playwright desktop/mobile interactions, routes, accessibility and family-specific visual/guide rendering |
 
-Keep formulas separate from the DOM and page layout. A formula module should accept validated plain data and return a predictable result object.
+The final Batch 5 CI run recorded 198/198 formula/smoke/regression assertions, 1/1 API assertion and 6/6 browser tests. The Playwright/axe suite iterates all 45 Finance, 45 Math & Statistics and 25 Date & Time views.
 
-Illustrative result shape:
+### CI workflow
 
-```js
-{
-  value: 1234.56,
-  currency: "USD",
-  period: "month",
-  breakdown: {},
-  assumptions: [],
-  warnings: []
-}
-```
+`.github/workflows/ci.yml` runs syntax checks, Node tests, the live reference-rate API check and Playwright/axe Chromium tests on pull requests and main pushes.
 
-Rules:
-- Formula functions must be deterministic and side-effect free.
-- Validate types, finite numbers, ranges and units at the boundary.
-- Never parse locale-formatted display strings as calculation inputs.
-- Keep intermediate precision; round only at documented display or contractual steps.
-- Treat currency, rate period and payment frequency as explicit values.
-- Do not assume all currencies have two decimal places.
-- Do not silently convert annual rates to monthly rates without specifying the convention.
-- Handle zero interest, zero term, zero principal and boundary conditions intentionally.
-- Reject unsupported combinations rather than returning plausible-looking numbers.
-- Each formula must have documented examples and independent test vectors.
+## 8. Deployment and performance
 
-For amortizing loans, document the payment convention and compounding assumptions. If periodic rate is zero, payment is principal divided by number of periods. For positive periodic rate (r), principal (P), and number of payments (n), the standard fixed-payment formula is:
+- `.github/workflows/deploy.yml` publishes the static site to GitHub Pages on pushes to `main`.
+- The deployment artifact includes `index.html`, CSS, all runtime JavaScript modules, `sitemap.xml`, `robots.txt` and `.nojekyll`.
+- `.github/workflows/lighthouse.yml` runs mobile and desktop Lighthouse after successful Pages deployment and uploads JSON reports.
+- The desktop calculator workspace reserves initial layout height to prevent the deferred first-tool render from shifting the directory below it.
 
-`payment = P * r / (1 - (1 + r)^(-n))`
+## 9. Latest measured Lighthouse results
 
-The formula is valid only when the stated fixed-rate, equal-period assumptions apply. Fees, taxes, variable rates, lender rules and payment timing can change real contracts.
+Measured on production runtime commit `da94f90328c80f557a98b08fa889d4c429046348`:
 
-## 4. Money and rounding
+| Category | Mobile | Desktop |
+|---|---:|---:|
+| Performance | 97 | 100 |
+| Accessibility | 100 | 100 |
+| Best Practices | 96 | 96 |
+| SEO | 100 | 100 |
 
-Use a deliberate precision policy. Prefer integer minor units for final currency posting-style arithmetic where the currency's minor unit is known, or a decimal-safe approach where intermediate precision matters. Do not rely on repeated binary floating-point rounding for financial ledgers. For general estimates, document the precision and final rounding convention.
+| Metric | Mobile | Desktop |
+|---|---:|---:|
+| LCP | 1,261.4 ms | 351.1 ms |
+| CLS | 0.000 | 0.0102 |
+| TBT | 182 ms | 0 ms |
+| FCP | 819.4 ms | 311.1 ms |
+| Speed Index | 1,040.7 ms | 311.1 ms |
 
-Currency metadata must include currency code and minor-unit precision where applicable. Display formatting must be locale-aware but must not change the underlying numerical value.
+## 10. Product boundaries
 
-## 5. Market data and external dependencies
-
-Core calculators must work without live external data. Rates or tax tables may be optional enhancements only.
-
-- Currency converter: allow manual reference rate entry as a reliable fallback. If a free public rate source is added, display provider, timestamp, update frequency and limitations.
-- Do not scrape exchanges or financial websites.
-- Do not embed exchange/broker/wallet connectivity.
-- Do not promise real-time rates unless the source actually provides them.
-- Do not put private API keys in browser code or commit secrets.
-- A failed or stale data request must show a clear warning and preserve manual calculation mode.
-
-Free API tiers may change or impose limits; the core product must not fail when an optional endpoint is unavailable.
-
-## 6. Country-specific tax and salary data
-
-Tax, payroll, VAT/GST and statutory overtime rules must be data-driven and versioned by jurisdiction and effective date. Each rule set needs:
-- Country/region and tax year.
-- Official or authoritative source URL.
-- Effective date and last-checked date.
-- Formula notes and test examples.
-- Reviewer/status and known exclusions.
-
-Do not launch an unsupported country. A generic percentage example must be labelled as an illustration, not that country's tax calculation.
-
-## 7. User interface and routing
-
-- Mobile-first, responsive layouts.
-- Shared header, navigation, category cards, search and calculator template.
-- Each calculator has a stable, readable route and canonical URL.
-- Labels, help, errors and result summaries are accessible.
-- Prefer progressive enhancement; calculator logic should remain understandable without a large client framework.
-- Avoid layout shifts and unnecessary animation.
-- Provide a visible disclaimer and link to methodology/assumptions.
-
-## 8. SEO and metadata
-
-- Static, crawlable HTML content for important calculator pages.
-- Unique title, description, H1 and canonical URL.
-- XML sitemap generated from actual published pages.
-- Correct robots directives.
-- Open Graph metadata for sharing.
-- Structured data only when it matches visible, eligible page content.
-- No duplicate canonical variants, empty calculator pages or auto-generated thin content.
-
-## 9. Testing strategy
-
-### Unit tests
-Test formula outputs, rounding, zero-rate cases, boundaries, invalid values and currency precision.
-
-### Cross-checks
-Compare selected examples with an independently calculated expected result. Preserve source and calculation notes in fixtures.
-
-### UI tests
-Test form labels, error states, reset, result display, mobile layouts, keyboard use and screen-reader announcements.
-
-### Regression tests
-Every formula defect becomes a permanent test. Run the complete suite on each pull request and before deployment.
-
-### Browser and accessibility checks
-Verify current Chromium-based browser and at least one additional browser where free automation is available. Check keyboard navigation, contrast, headings, labels and responsive behavior.
-
-## 10. Security and privacy
-
-- No account system or collection of sensitive financial information in the MVP.
-- Do not log input values, full calculation payloads or personal data.
-- Escape untrusted strings before rendering.
-- Validate and constrain every input.
-- Use restrictive, reviewed external-script policy; minimise third-party scripts.
-- Keep dependencies minimal and review any introduced dependency.
-- Never commit tokens, passwords, private keys or personal information.
-- Add a privacy notice explaining any analytics or external data requests before enabling them.
-
-## 11. Performance
-
-- Keep initial page payload small.
-- Load calculator-specific code only where needed.
-- Optimise images and use modern formats.
-- Avoid unnecessary libraries and network requests.
-- Measure actual performance after the UI exists; do not claim a score before measurement.
-
-## 12. CI and deployment
-
-GitHub Actions should, at minimum:
-1. Check repository structure and required files.
-2. Run formula/unit tests.
-3. Run lint or static checks if configured.
-4. Build/validate the static site.
-5. Deploy only from the approved production branch after required checks pass.
-
-The deployment workflow and GitHub Pages source must be verified before announcing a live site. The target URL is `https://apex-global-labs.github.io/FinPulse-Hub/`; it is not live until a successful deployment and public URL check are recorded.
-
-## 13. Free-service policy
-
-Initial launch must not depend on paid hosting, a paid domain, paid API, paid analytics, premium package, or subscription. GitHub Pages is the intended free hosting route for a public static repository. Service terms, limits and availability may change, so verify them at the time of deployment.
-
-## 14. Architecture change control
-
-Any new framework, backend, API or data provider requires a short written justification covering user value, cost, privacy, reliability, maintenance and whether the project can remain fully free. Do not introduce a paid dependency without explicit user approval.
+- Financial tools are educational estimates and scenario calculators, not individualized financial advice.
+- Tax/payroll calculations are limited to the data and jurisdiction profiles explicitly shown.
+- Currency reference rates are not live trading or bank settlement quotes.
+- No trading execution, brokerage, exchange, wallet or financial product recommendation is implemented.
+- New paid APIs, backend services, frameworks or dependencies require explicit approval and a cost/privacy/reliability review.

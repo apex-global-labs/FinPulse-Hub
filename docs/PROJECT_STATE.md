@@ -1,67 +1,80 @@
 # FinPulse Hub — Project State
 
-- Last verified: 2026-11-19
-- Repository: https://github.com/apex-global-labs/FinPulse-Hub
-- Production branch: main
-- Production commit for the 45-calculator release: 57bd8dbcc013b338cd5c1c543c5498bc0654f070
-- Production website: https://apex-global-labs.github.io/FinPulse-Hub/
-- PR #21: https://github.com/apex-global-labs/FinPulse-Hub/pull/21 — merged 2026-11-19.
-- Final calculator inventory: 45/45 registered, unique and linked from the homepage; sitemap contains 45 unique calculator routes.
-- Latest verified main CI: #44454242514 — success.
-- GitHub Pages deployment: #44454242457 — success.
-- Lighthouse audit: #44454538007 — success; mobile and desktop reports uploaded as artifact.
+- **Last verified:** 2026-11-19
+- **Repository:** https://github.com/apex-global-labs/FinPulse-Hub
+- **Production branch:** `main`
+- **Production website:** https://apex-global-labs.github.io/FinPulse-Hub/
+- **Runtime release commit:** `da94f90328c80f557a98b08fa889d4c429046348`
+- **Batch 4 PR #30:** merged as `af4abacd21f80be3b14c05a4e8d8f8b838e8dfbf`
+- **Batch 5 CLS correction PR #32:** merged as `da94f90328c80f557a98b08fa889d4c429046348`
+- **Main CI:** [Run #44482378369](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44482378369) — success
+- **Pages deployment:** [Run #44482378411](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44482378411) — success
+- **Lighthouse:** [Run #44482429197](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44482429197) — success; report artifact retained by GitHub Actions
 
-## Final nine calculators
+## Production inventory
 
-37. Freelance Project Pricing Calculator
-38. Freelancer Net Income After Costs Calculator
-39. Markup Calculator
-40. Break-even Calculator
-41. Business ROI Calculator
-42. Cash Flow Projection Calculator
-43. Rental Yield Calculator
-44. Emergency Fund Calculator
-45. Net Worth Calculator
+| Family | Active tools | Registry module |
+|---|---:|---|
+| Financial calculators | 45 | `app.js` |
+| Basic mathematics | 25 | `math-tools.js` |
+| Advanced mathematics & statistics | 20 | `advanced-math-tools.js` |
+| Date & time | 25 | `date-time-tools.js` |
+| **Total** | **115** | |
 
-## Final QA results
+All 115 tools are registered, the homepage directory contains 115 unique links, and the sitemap has a corresponding unique route for each tool.
 
-| Check | Result |
+## Final verification evidence
+
+| Check | Latest result |
 |---|---:|
-| Syntax checks | Passed |
-| Formula + smoke suite | 100/100 passed |
-| Frankfurter API check | 1/1 passed |
-| Playwright desktop/mobile | 3/3 passed |
-| axe WCAG 2.1 A/AA | Passed across all 45 calculator views |
-| Unique calculator IDs | 45/45 |
-| Homepage directory links | 45 unique |
-| Sitemap routes | 45 unique; exact registry parity |
-| Direct query route | Net Worth route/title/canonical verified |
-| Pages deployment artifact | All runtime modules + sitemap + robots published |
+| JavaScript syntax checks | Passed |
+| Formula + smoke + regression suite | 198 / 198 passed |
+| Frankfurter reference-rate API test | 1 / 1 passed |
+| Playwright browser suite (all 115 tool views) | 6 / 6 passed |
+| Formula/default-value and guide coverage | All 115 tools covered by registry/smoke/formula assertions |
+| WCAG browser checks | 45 Finance + 45 Math & Statistics views; full 25 Date & Time browser audit added in Batch 5 verification PR |
+| GitHub Pages deployment | Success |
+| Lighthouse mobile + desktop | Success |
 
-## Lighthouse (production commit 57bd8db)
+The final Batch 5 browser suite iterates all 45 Finance, 45 Math & Statistics and 25 Date & Time views. Each Date & Time view must render its formula/step guide and pass axe WCAG 2.1 A/AA checks.
+
+## Lighthouse — runtime commit da94f903
 
 | Category | Mobile | Desktop |
 |---|---:|---:|
-| Performance | 99 | 100 |
+| Performance | 97 | 100 |
 | Accessibility | 100 | 100 |
 | Best Practices | 96 | 96 |
 | SEO | 100 | 100 |
 
 | Metric | Mobile | Desktop |
 |---|---:|---:|
-| LCP | 1,458.7 ms | 254.1 ms |
-| CLS | 0.000 | 0.0607 |
-| Total Blocking Time | 408.5 ms | 0 ms |
-| FCP | 972.7 ms | 216.0 ms |
-| Speed Index | 1,377.1 ms | 236.8 ms |
+| LCP | 1,261.4 ms | 351.1 ms |
+| CLS | **0.000** | **0.0102** |
+| Total Blocking Time | 182 ms | 0 ms |
+| First Contentful Paint | 819.4 ms | 311.1 ms |
+| Speed Index | 1,040.7 ms | 311.1 ms |
 
-- Lighthouse workflow #44454538007 completed successfully and uploaded both JSON reports.
-- Report artifact: https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44454538007/artifacts/14495964666
-- Mobile Performance 90 and Best Practices 96 remain optimization opportunities; accessibility and SEO scored 100 on both profiles.
+### CLS investigation and correction
 
-## Product boundaries
+- Initial desktop Lighthouse run identified `body > section#tool-directory` as the shifted element (CLS 0.142).
+- A directory-grid-only height reservation did not address the cause and was superseded.
+- The root cause was the first calculator view expanding `#app` after deferred JavaScript initialization, moving the directory below it.
+- PR #32 reserves the desktop calculator workspace before that render and removes the unnecessary directory-grid workaround.
+- Re-audit after deployment measured mobile CLS 0.000 and desktop CLS 0.0102.
 
-- Browser-side static app; free-first, no paid backend.
-- Tax/payroll calculations are educational estimates with explicit exclusions, not filing-grade results.
-- Crypto asset selectors use hypothetical user-entered baseline values, not live prices or exchange feeds.
-- ROI, cash-flow, rental-yield, emergency-fund and net-worth tools perform arithmetic on user-entered assumptions; they do not make financial product recommendations.
+## Test coverage notes
+
+- `npm test` runs 198 Node.js formula, smoke and regression assertions across finance, basic math, advanced math/statistics and date/time.
+- The smoke suite checks the 115-tool registry, unique IDs, homepage links, sitemap parity, security contract, required runtime modules and deployment files.
+- Date & Time formula tests verify that all 25 tools calculate from defaults and expose formula/step metadata.
+- The API test applies only to the Currency Converter's optional Frankfurter rate source; other tools are browser-side and do not require external APIs.
+- Browser tests use Playwright and axe. Finance and Math tool families are iterated across their full registries; Batch 5 adds the same full-view browser/accessibility loop for all 25 Date & Time tools.
+
+## Product and privacy boundaries
+
+- Static browser-side application; no required backend, paid service or account system.
+- User-entered calculator values are processed locally; the app's calculation history is stored on the user's device.
+- Currency reference rates are published rates, not live transaction quotes.
+- Tax/payroll outputs are estimates with explicit jurisdiction and scope limitations.
+- Financial projections are scenario illustrations, not guarantees or personal financial advice.
