@@ -132,12 +132,12 @@ async function main() {
       const textarea = page.locator("#form textarea").first();
       const number = page.locator('#form input[type="number"]').first();
       if (await textarea.count()) await textarea.fill("FinPulse Hub static SEO prerender test text.");
-      else if (await number.count()) await number.fill("12345");
+      else if (await number.count()) await number.fill(tool.id === "mortgage" ? "275000" : "12345");
       await page.locator("#form").evaluate(form => form.requestSubmit());
       await page.waitForFunction(() => {
         const value = document.querySelector("#app .result .value")?.textContent?.trim();
         return !!value && value !== "—";
-      });
+      }, { timeout: 15000 }, tool.id + ": calculator result did not update after submit");
       await page.close();
     }
 
