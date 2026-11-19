@@ -42,7 +42,7 @@ Mobile Performance/TBT is materially worse than the prior baseline and should be
 - Branch: `feat/batch-7-developer-text-utilities`
 - Base: production commit `54539bb522743a627f154708d496c87233619334`
 - Target: 135 → 155; 20 unique developer/text tools added to `developer-tools.js`.
-- The candidate homepage and sitemap are being updated to 155; CI and PR verification remain pending.
+- Candidate homepage and sitemap contain 155 unique tool routes. PR #35 is open and mergeable; final CI [#44493842731](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44493842731) succeeded: 226/226 formula/smoke/regression, API 1/1, Browser 8/8, including all 20 new views passing WCAG 2.1 A/AA. Production remains 135 until merge and Pages deployment.
 - New tools process text locally. Formatting/minification is intentionally conservative and is not represented as a complete language compiler or security sanitizer.
 
 ## Remaining approved roadmap
