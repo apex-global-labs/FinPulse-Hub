@@ -4,7 +4,7 @@
 - **Baseline:** Preserve all 45 existing financial calculators without renaming or removing their stable route IDs
 - **Expansion:** 175 new tools across four new top-level categories
 - **Hosting / stack:** GitHub Pages, static HTML/CSS/Vanilla JS, free-first, no paid backend or mandatory paid APIs
-- **Status:** Batch 10 is merged to `main` (205-tool source inventory); post-merge main CI and Pages deployment verification pending. Batch 11 implements the final 15 roadmap tools (220-tool candidate).
+- **Status:** Batch 10 is deployed to production (205 tools); main CI, Pages deployment and production Lighthouse succeeded. Batch 11 PR #42 implements the final 15 roadmap tools (220-tool candidate).
 
 ## 1. Target portfolio
 
@@ -17,7 +17,7 @@
 | Developer, Education & Lifestyle | 0 | 55 | 55 |
 | **Total** | **45** | **175** | **220** |
 
-The 45 financial calculators remain the production baseline. A further 130 tools are implemented and deployed (25 Basic Mathematics, 20 Advanced Mathematics & Statistics, 25 Date & Time, 20 Unit & Data Converters, 20 Developer & Text and 20 Batch 8 Education/Lifestyle). The remaining 45 expansion tools are planned additions only. A tool is counted as delivered only after implementation, formula/behavior tests, browser and accessibility checks, SEO metadata, sitemap registration and successful production deployment.
+The 45 financial calculators remain the production baseline. A further 160 expansion tools are implemented and deployed, bringing production to 205. Batch 11 contains the final 15 tools and brings the candidate portfolio to 220. A tool is counted as delivered only after implementation, formula/behavior tests, browser and accessibility checks, SEO metadata, sitemap registration and successful production deployment.
 
 ## 2. Existing 45 — preserve exactly
 
@@ -521,6 +521,6 @@ Batch 10 implements the first 15 approved Health & Wellness items: Sleep Duratio
 
 ## Batch 10 merge and Batch 11 final candidate — 2026-11-19
 
-Batch 10 PR #41 merged as `f7eaf356971523f8e6dda2d30278cdc972ef4836`. The pre-merge feature CI passed 261/261 tests, API 1/1, Browser 11/11 and WCAG 2.1 A/AA across all 15 new views. Main source now has 205 tool routes in the homepage and sitemap. Main CI, Pages deployment and live route verification remain required before calling 205 tools production-deployed.
+Batch 10 PR #41 merged as `f7eaf356971523f8e6dda2d30278cdc972ef4836`. The pre-merge feature CI passed 261/261 tests, API 1/1, Browser 11/11 and WCAG 2.1 A/AA across all 15 new views. Main CI #44504320519 and Pages deployment #44504320744 succeeded. The deployed Pages artifact contains 205 homepage entries and 205 sitemap URLs. Production Lighthouse #44504380240 succeeded (mobile Performance 83, desktop 100, CLS 0.000 / 0.0089). Direct external HTTP probing was unavailable due DNS resolution, so deployment and artifact evidence are recorded.
 
 Batch 11 branch `feat/batch-11-health-wellness-final-220` implements the exact final 15 items in Section 13. The final portfolio must contain 220 unique tool IDs and exactly 220 canonical sitemap routes. Activity targets and hydration amounts remain user-entered; no health targets, exercise prescriptions, breathing technique instructions, diagnosis or treatment are provided. The interval and breathing tools are duration calculators only, not live timers.
