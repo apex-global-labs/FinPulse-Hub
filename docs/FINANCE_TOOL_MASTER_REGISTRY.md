@@ -2,8 +2,8 @@
 
 - **Version:** 3.0
 - **Updated:** 2026-11-19
-- **Last verified production portfolio:** 190 active tools (Batch 9); Batch 10 is merged to main source (205; deployment pending verification); Batch 11 candidate: 220
-- **Latest main source commit:** `f7eaf356971523f8e6dda2d30278cdc972ef4836` (Batch 10; Pages verification pending)
+- **Verified production portfolio:** 205 active tools (Batch 10 deployed); Batch 11 candidate: 220
+- **Latest production commit:** `f7eaf356971523f8e6dda2d30278cdc972ef4836` (Batch 10 deployed)
 - **Repository:** apex-global-labs/FinPulse-Hub
 
 > This file retains its historical filename for compatibility. It is now the master registry for all FinPulse Hub tools, not only finance calculators.
@@ -347,3 +347,10 @@ All Batch 10 tools provide informational time, distance, pace, speed and schedul
 | 15 | Hydration Log Tracker (user-entered records only) | `hydration-log-tracker` |
 
 Batch 11 tools use user-entered values only. No activity, breathing or hydration target is recommended; no medical assessment is provided. The interval and breathing tools calculate a schedule duration and do not operate a live timer or provide technique instructions.
+
+
+## Batch 10 production evidence — 2026-11-19
+
+- Main CI #44504320519: 261/261 formula/smoke/regression, API 1/1, Browser 11/11.
+- Pages deployment #44504320744: success. Its published artifact has homepage count 205 and 205 sitemap URLs.
+- Production Lighthouse #44504380240: mobile Performance 83, desktop 100, Accessibility 100, SEO 100, CLS 0.000 / 0.0089.
