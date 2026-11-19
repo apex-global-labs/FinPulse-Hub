@@ -35,8 +35,6 @@ for(const name of names){
 }
 assert.equal(names.length,25);
 await page.close()});
-});
-
 await t.test("Batch 6 all 20 Unit & Data Converter views render guides, presets, FAQs and pass WCAG 2.1 A/AA",async()=>{
 const page=await browser.newPage({viewport:{width:1280,height:800},bypassCSP:true});
 await page.goto(base);await page.addScriptTag({content:axeSource});
@@ -48,5 +46,6 @@ await page.goto(base+"?tool=number-base-converter");await page.locator("#f-value
 await page.goto(base+"?tool=roman-numeral-converter");await page.locator("#f-value").fill("MMXXVI");await page.locator("#f-mode").selectOption("decode");assert.equal(await page.locator(".result .value").innerText(),"2026");
 await page.goto(base+"?tool=paper-size-converter");await page.locator("#f-orientation").selectOption("landscape");assert.match(await page.locator(".result .value").innerText(),/297 × 210 mm/);
 await page.close();
+});
 });
 test.after(async()=>{if(browser)await browser.close();if(server)await new Promise(r=>server.close(r))});
