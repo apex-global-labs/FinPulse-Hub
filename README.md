@@ -1,14 +1,14 @@
 # FinPulse Hub
 
-FinPulse Hub is a free-first, browser-based library targeting **220 calculators and tools**. Batch 10 is merged into `main` (205-tool source inventory); its post-merge CI and GitHub Pages deployment are pending verification. Batch 11 is the final 15-tool release candidate (220 total). Calculations run locally in the browser wherever possible; the site is hosted on GitHub Pages.
+FinPulse Hub is a free-first, browser-based library targeting **220 calculators and tools**. Batch 10 is merged and deployed from `main` (205 production tools); main CI, Pages deployment and production Lighthouse all succeeded. Batch 11 is the final 15-tool release candidate (220 total). Calculations run locally in the browser wherever possible; the site is hosted on GitHub Pages.
 
 ## Production status
 
-- **Last verified production release:** 190 tools (Batch 9); Batch 10 merge commit `f7eaf356971523f8e6dda2d30278cdc972ef4836` updates `main` source to 205; Pages deployment verification pending
+- **Production release:** 205 tools (Batch 10 deployed); merge commit `f7eaf356971523f8e6dda2d30278cdc972ef4836`; main CI #44504320519, Pages #44504320744, Lighthouse #44504380240 all succeeded
 - **Batch 10:** PR #41 merged; main source 205 tools · **Batch 11:** dedicated feature branch adds 15 tools; PR candidate 220
 - **Inventory:** 45 Finance + 25 Basic Math + 20 Advanced Math & Statistics + 25 Date & Time + 20 Unit & Data Converters + 20 Developer/Text + 20 Education/Home + 15 Lifestyle/Construction + 15 Health & Wellness (Batch 10 main source)
 - **Production branch:** `main`
-- **Latest main commit:** `f7eaf356971523f8e6dda2d30278cdc972ef4836` (Batch 10; deployment pending verification)
+- **Latest main commit:** `f7eaf356971523f8e6dda2d30278cdc972ef4836` (Batch 10 deployed)
 - **Website:** https://apex-global-labs.github.io/FinPulse-Hub/
 - **Hosting:** GitHub Pages (free static hosting)
 - **Stack:** semantic HTML, CSS, vanilla JavaScript, Node.js built-in tests, GitHub Actions
@@ -26,8 +26,9 @@ FinPulse Hub is a free-first, browser-based library targeting **220 calculators 
 | Developer & Text utilities | 20 |
 | Education & Study | 12 |
 | Home & Construction | 3 |
-| Health & Wellness (Batches 10–11) | 30 |
-| **Main source total** | **205** |
+| Health & Wellness — Batch 10 deployed | 15 |
+| Health & Wellness — Batch 11 candidate | 15 |
+| **Production total** | **205** |
 | **Batch 11 candidate total** | **220** |
 
 ## Shared capabilities
@@ -38,7 +39,7 @@ FinPulse Hub is a free-first, browser-based library targeting **220 calculators 
 - Copy, CSV/JSON export, print, shareable URL state and reset
 - Local calculation history with restore, light/dark theme and keyboard shortcuts
 - Related tools, embed-code generator and reserved ad-safe slots
-- Searchable directory with 205 unique links in main source; Batch 11 candidate adds 15 unique links
+- Searchable production directory with 205 unique links; Batch 11 candidate adds 15 unique links
 - Accessible labels, semantic tables/diagrams and browser accessibility checks
 
 Features are applied where relevant; no artificial finance charts or amortization schedules are added to unrelated tools.
@@ -100,3 +101,10 @@ GitHub Actions runs these checks on pull requests and pushes to `main`. A succes
 - The activity goal is blank until the user enters their own goal; no recommended target is prefilled. Hydration is a record summary only; no intake target is suggested.
 - Interval and breathing pages calculate user-entered timing values only; no live countdown, activity prescription, breath-holding pattern or medical guidance is provided.
 - Candidate homepage and sitemap target 220 unique routes. Formula, smoke, regression, API, browser, accessibility and Lighthouse/CLS verification are required before release.
+
+
+### Batch 10 production verification
+
+- Main CI: [#44504320519](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44504320519) — 261/261 tests, API 1/1 and Browser 11/11 passed.
+- GitHub Pages deployment: [#44504320744](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44504320744) — success; deployed artifact contains 205 homepage entries and 205 sitemap URLs.
+- Production Lighthouse: [#44504380240](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44504380240) — mobile Performance 83, desktop 100; Accessibility 100, SEO 100; CLS 0.000 mobile / 0.0089 desktop.
