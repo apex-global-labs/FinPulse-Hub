@@ -122,3 +122,18 @@ These are roadmap items, not active production tools. Each must pass implementat
 - Adds 15 approved unique tools in `lifestyle-tools.js`; vendored QRCode.js is MIT licensed and processed locally.
 - Includes numeric/domain validation, formula and step guides, four FAQs, three presets, relevant breakdown charts, shared copy/export/print/share/history/Escape-reset behavior and Playwright/axe coverage.
 - Electricity tariff remains user-entered; construction outputs are estimates; Study Topic Organizer selects only from user-supplied study topics.
+
+
+## Batch 10 — merged; deployment verification pending
+
+- PR #41 merged as `f7eaf356971523f8e6dda2d30278cdc972ef4836`.
+- Pre-merge CI #44503379859 succeeded: 261/261 formula/smoke/regression tests, API 1/1, Browser 11/11; all 15 Batch 10 views passed WCAG 2.1 A/AA.
+- Main source homepage and sitemap now contain 205 unique routes. Post-merge main CI, Pages deployment and live route checks still need evidence before production status is upgraded.
+
+## Batch 11 — final 205 → 220 candidate
+
+- Branch: `feat/batch-11-health-wellness-final-220`.
+- Adds the remaining 15 approved Health & Wellness items through `health-wellness-tools.js`; app registry, homepage, Pages manifest, package scripts and sitemap are updated for 220.
+- Adds deterministic formula/validation tests, registry/sitemap parity checks and Playwright/axe coverage for all 15 new views.
+- Safety boundaries: user-entered goals only; no recommended activity or hydration targets; breathing and interval tools are timing arithmetic only; no medical advice, diagnosis or treatment.
+- Final full-portfolio release gate: 220 unique tools, all formula/smoke/regression/API/browser/accessibility checks green, Lighthouse mobile/desktop and CLS recorded, then merge, main CI and Pages/live-route verification.
