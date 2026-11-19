@@ -4,8 +4,8 @@
 - **Repository:** https://github.com/apex-global-labs/FinPulse-Hub
 - **Production branch:** `main`
 - **Production URL:** https://apex-global-labs.github.io/FinPulse-Hub/
-- **Current production inventory:** 175 / 175 tools; Batch 9 candidate 190
-- **Runtime commit:** `ee06c524c7f4ce77109881d6fa877991c5d7851a`
+- **Current production inventory:** 205 / 205 tools; Batch 11 candidate 220
+- **Runtime commit:** `f7eaf356971523f8e6dda2d30278cdc972ef4836`
 
 ## Completed implementation batches
 
@@ -24,7 +24,13 @@
 - Basic Mathematics: 25
 - Advanced Mathematics & Statistics: 20
 - Date & Time: 25
-- **Total: 115**
+- Unit & Data Converters: 20
+- Developer & Text Utilities: 20
+- Education & Home: 20
+- Lifestyle & Construction: 15
+- Health & Wellness (Batch 10): 15
+- **Production total: 205**
+- **Batch 11 candidate: 220**
 
 The exact names and route IDs are maintained in `docs/FINANCE_TOOL_MASTER_REGISTRY.md`.
 
@@ -122,3 +128,32 @@ These are roadmap items, not active production tools. Each must pass implementat
 - Adds 15 approved unique tools in `lifestyle-tools.js`; vendored QRCode.js is MIT licensed and processed locally.
 - Includes numeric/domain validation, formula and step guides, four FAQs, three presets, relevant breakdown charts, shared copy/export/print/share/history/Escape-reset behavior and Playwright/axe coverage.
 - Electricity tariff remains user-entered; construction outputs are estimates; Study Topic Organizer selects only from user-supplied study topics.
+
+
+## Batch 10 — merged; deployment verification pending
+
+- PR #41 merged as `f7eaf356971523f8e6dda2d30278cdc972ef4836`.
+- Pre-merge CI #44503379859 succeeded: 261/261 formula/smoke/regression tests, API 1/1, Browser 11/11; all 15 Batch 10 views passed WCAG 2.1 A/AA.
+- Main source homepage and sitemap now contain 205 unique routes. Post-merge main CI, Pages deployment and live route checks still need evidence before production status is upgraded.
+
+## Batch 11 — final 205 → 220 candidate
+
+- Branch: `feat/batch-11-health-wellness-final-220`.
+- Adds the remaining 15 approved Health & Wellness items through `health-wellness-tools.js`; app registry, homepage, Pages manifest, package scripts and sitemap are updated for 220.
+- Adds deterministic formula/validation tests, registry/sitemap parity checks and Playwright/axe coverage for all 15 new views.
+- Safety boundaries: user-entered goals only; no recommended activity or hydration targets; breathing and interval tools are timing arithmetic only; no medical advice, diagnosis or treatment.
+- Final full-portfolio release gate: 220 unique tools, all formula/smoke/regression/API/browser/accessibility checks green, Lighthouse mobile/desktop and CLS recorded, then merge, main CI and Pages/live-route verification.
+
+
+## Batch 10 — production release verified
+
+- PR #41 merged as `f7eaf356971523f8e6dda2d30278cdc972ef4836`.
+- Main CI [#44504320519](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44504320519): 261/261 tests, API 1/1, Browser 11/11; all 15 Batch 10 views passed WCAG 2.1 A/AA.
+- GitHub Pages deployment [#44504320744](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44504320744): success. Published artifact verified at 205 homepage entries and 205 sitemap URLs.
+- Production Lighthouse [#44504380240](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44504380240): mobile Performance 83, desktop 100, Accessibility 100, SEO 100, CLS 0.000 / 0.0089.
+
+## Batch 11 — final 205 → 220 candidate
+
+- PR #42 open; branch `feat/batch-11-health-wellness-final-220`.
+- 15 remaining roadmap tools implemented in `health-wellness-tools.js`; registry, homepage, deployment manifest and sitemap target 220.
+- Formula/validation, 220-route parity, Playwright/axe full-route sweep and compressed-server Lighthouse/CLS workflows are included. Candidate CI is pending final completion.

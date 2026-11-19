@@ -9,13 +9,18 @@
 
 FinPulse Hub is a static-first single-page calculator library hosted on GitHub Pages. The production application uses semantic HTML, CSS and vanilla JavaScript. Calculation logic is separated from the DOM and tool presentation. There is no required backend, database, account service or paid runtime dependency.
 
-The production release registers 135 tools; the Batch 7 release candidate registers 155 tools:
+The production release now registers 205 tools (Batch 10); the final Batch 11 release candidate registers 220:
 
 - 45 financial calculators
 - 25 basic mathematics tools
 - 20 advanced mathematics and statistics tools
 - 25 date and time tools
-- 20 unit, measurement and data converters (Batch 6 production)\n- 20 developer and text utilities (Batch 7 branch candidate)
+- 20 unit, measurement and data converters
+- 20 developer and text utilities
+- 20 education and home tools
+- 15 lifestyle and construction tools
+- 15 Health & Wellness tools (Batch 10 production)
+- 15 additional Health & Wellness tools (Batch 11 candidate)
 
 ## 2. Runtime modules
 
@@ -68,7 +73,7 @@ Chart.js is loaded asynchronously from a pinned jsDelivr distribution with subre
 
 - Stable tool IDs are used by the `?tool=` query route.
 - Each tool has its own metadata and explanatory content where implemented.
-- Production main homepage directory and sitemap contain 135 unique tool routes. Batch 7 candidate branch contains 155.
+- Batch 10 merge updates the main source homepage and sitemap to 205 unique routes; Batch 11 candidate branch targets 220. Public deployment must be verified independently before the production count is updated.
 - Canonical/title metadata is updated for selected tool routes.
 - `robots.txt` points to the XML sitemap.
 - The production deployment copies every runtime module and discovery file into the Pages artifact.
@@ -102,7 +107,7 @@ npm run test:browser
 | `tests/api.test.cjs` | Live Frankfurter v2 reference-rate response contract |
 | `tests/browser.test.cjs` | Playwright desktop/mobile interactions, routes, accessibility and family-specific visual/guide rendering |
 
-The final Batch 5 CI run recorded 198/198 formula/smoke/regression assertions, 1/1 API assertion and 6/6 browser tests. Batch 6 adds a dedicated deterministic converter formula suite and a Playwright/axe loop over all 20 converter views; Run #44491064031 passed: 214/214 formula/smoke/regression assertions, 1/1 API assertion and 7/7 browser tests. The Batch 6 browser loop opens all 20 converter views and each passed axe WCAG 2.1 A/AA. Main CI and Pages deployment for Batch 6 succeeded; Batch 7 PR #35 CI is green (Run #44493842731); merge and production deployment await approval. The Playwright/axe suite iterates all 45 Finance, 45 Math & Statistics and 25 Date & Time views.
+The previous Batch 5 CI run recorded 198/198 formula/smoke/regression assertions, 1/1 API assertion and 6/6 browser tests. Batch 6 adds a dedicated deterministic converter formula suite and a Playwright/axe loop over all 20 converter views; Run #44491064031 passed: 214/214 formula/smoke/regression assertions, 1/1 API assertion and 7/7 browser tests. The Batch 6 browser loop opens all 20 converter views and each passed axe WCAG 2.1 A/AA. Main CI and Pages deployment for Batch 6 succeeded; Batch 7 PR #35 CI is green (Run #44493842731); merge and production deployment await approval. The Playwright/axe suite iterates the registered tool families, including Batch 10 and the final Batch 11 candidate views.
 
 ### CI workflow
 
@@ -141,3 +146,13 @@ Measured on production runtime commit `da94f90328c80f557a98b08fa889d4c429046348`
 - Currency reference rates are not live trading or bank settlement quotes.
 - No trading execution, brokerage, exchange, wallet or financial product recommendation is implemented.
 - New paid APIs, backend services, frameworks or dependencies require explicit approval and a cost/privacy/reliability review.
+
+
+## Batch 11 module
+
+`health-wellness-tools.js` adds the final 15 user-entered Health & Wellness calculators. The module exposes a separate registry consumed by `app.js`. The tools use deterministic arithmetic and log summaries; no health target is recommended. Interval and breathing tools only calculate schedule durations, not live timers or technique instructions. Hydration tracking does not infer or recommend intake.
+
+
+## Batch 10 production verification
+
+Main CI #44504320519 passed 261/261 tests, API 1/1 and Browser 11/11. Pages deployment #44504320744 succeeded; its published artifact contains 205 homepage entries and 205 sitemap URLs. Production Lighthouse #44504380240 measured mobile Performance 83 / desktop 100, Accessibility 100, SEO 100, CLS 0.000 / 0.0089, LCP 1,534.7 ms / 384.1 ms and TBT 699 ms / 0 ms.

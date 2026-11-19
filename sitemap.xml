@@ -205,4 +205,19 @@
   <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=cycling-speed-calculator</loc></url>
   <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=cycling-time-distance-calculator</loc></url>
   <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=swimming-pace-calculator</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=swimming-interval-planner</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=rowing-pace-calculator</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=exercise-session-duration-calculator</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=interval-training-timer</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=rest-interval-planner</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=workout-session-planner-time-only</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=weekly-activity-minutes-tracker</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=activity-goal-progress-tracker</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=step-to-distance-converter</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=distance-to-step-estimator</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=elevation-gain-rate-calculator</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=hiking-elevation-pace-calculator</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=breathing-exercise-timer</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=meditation-session-planner</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=hydration-log-tracker</loc></url>
 </urlset>
