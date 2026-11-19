@@ -137,7 +137,7 @@ async function main() {
       await page.waitForFunction(() => {
         const value = document.querySelector("#app .result .value")?.textContent?.trim();
         return !!value && value !== "—";
-      }, { timeout: 15000 }, tool.id + ": calculator result did not update after submit");
+      }, null, { timeout: 15000 });
       await page.close();
     }
 
