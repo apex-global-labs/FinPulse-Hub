@@ -4,7 +4,7 @@
 - **Baseline:** Preserve all 45 existing financial calculators without renaming or removing their stable route IDs
 - **Expansion:** 175 new tools across four new top-level categories
 - **Hosting / stack:** GitHub Pages, static HTML/CSS/Vanilla JS, free-first, no paid backend or mandatory paid APIs
-- **Status:** In progress — 90 of 175 expansion tools are implemented and deployed; 85 planned additions remain
+- **Status:** In progress — 130 of 175 expansion tools are implemented and deployed; 45 planned additions remain
 
 ## 1. Target portfolio
 
@@ -17,7 +17,7 @@
 | Developer, Education & Lifestyle | 0 | 55 | 55 |
 | **Total** | **45** | **175** | **220** |
 
-The 45 financial calculators remain the production baseline. A further 90 tools are implemented and deployed (25 Basic Mathematics, 20 Advanced Mathematics & Statistics, 25 Date & Time, 20 Unit & Data Converters). The remaining 85 expansion tools are planned additions only. A tool is counted as delivered only after implementation, formula/behavior tests, browser and accessibility checks, SEO metadata, sitemap registration and successful production deployment.
+The 45 financial calculators remain the production baseline. A further 130 tools are implemented and deployed (25 Basic Mathematics, 20 Advanced Mathematics & Statistics, 25 Date & Time, 20 Unit & Data Converters, 20 Developer & Text and 20 Batch 8 Education/Lifestyle). The remaining 45 expansion tools are planned additions only. A tool is counted as delivered only after implementation, formula/behavior tests, browser and accessibility checks, SEO metadata, sitemap registration and successful production deployment.
 
 ## 2. Existing 45 — preserve exactly
 
@@ -268,7 +268,7 @@ The 45 financial calculators remain the production baseline. A further 90 tools 
 - Bill Split Calculator
 - Unit Price Comparator
 - Sales Commission Calculator
-- Random Number Generator (non-gambling use)
+- Study Topic Organizer (classroom use)
 - QR Code Generator
 
 ## 4. Batch schedule
@@ -456,7 +456,7 @@ Batch 6 is now deployed and the 20-tool Batch 7 candidate below accounts for the
 11. Bill Split Calculator
 12. Unit Price Comparator
 13. Sales Commission Calculator
-14. Random Number Generator (non-gambling use)
+14. Study Topic Organizer (classroom use)
 15. QR Code Generator
 
 **Batch 10 — Health & Wellness Part 1 (15; target total 205)**
@@ -502,4 +502,13 @@ Batch 6 is now deployed and the 20-tool Batch 7 candidate below accounts for the
 
 ## Release status update — 2026-11-19
 
-Batch 7 (PR #35) is merged and deployed; current production count is 155. Batch 8 feature branch `feat/batch-8-education-everyday-lifestyle-release` implements the 20 approved items in Section 13 and targets 175. It remains a release candidate until automated CI and PR review complete.
+Batch 7 (PR #35) and Batch 8 (PR #39) are merged and deployed; current production count is 175. Batch 8 production commit is `ee06c524c7f4ce77109881d6fa877991c5d7851a`; main CI #44497401581 and Pages deployment #44497401612 succeeded. Batch 9 feature branch `feat/batch-9-lifestyle-construction-remaining` implements the 15 approved items in Section 13 and targets 190.
+
+
+## Batch 8 release evidence — 2026-11-19
+
+PR #39 merged to production as `ee06c524c7f4ce77109881d6fa877991c5d7851a`. Browser CI #44496833798, main CI #44497401581, Pages deployment #44497401612 and production Lighthouse #44497465485 all succeeded. Production homepage count and sitemap parity are 175/175 unique routes.
+
+## Batch 9 execution — 2026-11-19
+
+Dedicated branch: `feat/batch-9-lifestyle-construction-remaining`. The 15 approved tools in this batch are the exact Section 13 allocation: Paint Quantity, Tile Quantity, Flooring Material, Roofing Area, Room Area, Wall Area, Gravel Volume, Fence Material, Fuel Cost, Electricity Bill (manual tariff), Bill Split, Unit Price Comparator, Sales Commission, Study Topic Organizer (classroom and everyday selection) and QR Code Generator. Target count: 190. The QR tool uses a local MIT-licensed library; no paid service or QR API is required.
