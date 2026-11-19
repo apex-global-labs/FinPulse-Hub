@@ -423,7 +423,7 @@ The Batch 6 converter list above accounts for 20 of the original 105 planned add
 1. UUID Generator
 2. Regex Tester (safe local matching)
 3. Color Code Converter (HEX/RGB/HSL)
-4. Unix Timestamp Helper
+4. Unix Timestamp Unit Helper (seconds ↔ milliseconds only; no date-string conversion)
 5. Markdown Previewer
 6. GPA Calculator
 7. CGPA Calculator
@@ -496,3 +496,5 @@ The Batch 6 converter list above accounts for 20 of the original 105 planned add
 15. Hydration Log Tracker (user-entered records only)
 
 **Allocation check:** Batch 7 = 20, Batch 8 = 20, Batch 9 = 15, Batch 10 = 15, Batch 11 = 15; total remaining = 85. Together with the 20 Batch 6 converters, this reconciles the original 105-tool backlog. Health tools retain the safety exclusions in Section 7; no diagnosis, medication dosing, weight-loss or calorie-restriction tools may be introduced.
+
+**Duplicate-intent guard:** The planned Unix Timestamp Unit Helper is limited to seconds↔milliseconds scaling and epoch-unit validation. It must not duplicate the existing Date to Unix Timestamp or Unix Timestamp to Date tools; if the distinction cannot be maintained, absorb it into the existing date/time tools and replace it only with an unused roadmap item after a documented duplicate audit.
