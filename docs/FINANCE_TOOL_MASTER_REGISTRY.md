@@ -16,7 +16,9 @@
 | Basic mathematics | 25 | `math-tools.js` |
 | Advanced mathematics & statistics | 20 | `advanced-math-tools.js` |
 | Date & time | 25 | `date-time-tools.js` |
-| **Total** | **115** | |
+| Unit & data converters (PR #34 candidate) | 20 | `unit-converter-tools.js` |
+| **Production total** | **115** | |
+| **Release-candidate total** | **135** | |
 
 Every tool has a stable registry ID used by the `?tool=` route, homepage directory and sitemap. Do not rename an ID without an explicit migration and route regression.
 
