@@ -71,7 +71,7 @@ async function checkStaticSource(id, name, canonical) {
   const safeName = name.replace(/[-/\\^$*+?.()|[\]{}]/g, "\\$&");
   assert.match(html, new RegExp("<h1[^>]*>" + safeName + "</h1>", "i"), id + ": H1 missing");
   assert.match(html, /id="formula-panel"[\s\S]*?<\/section>/i, id + ": formula/guide missing");
-  assert.match(html, /class="seo-content"[\s\S]*?<details/i, id + ": FAQ missing");
+  assert.match(html, /class="[^"]*\bseo-content\b[^"]*"[^>]*>[\s\S]*?<details/i, id + ": FAQ missing");
   const jsonLd = html.match(/<script id="tool-structured-data" type="application\/ld\+json">([\s\S]*?)<\/script>/i);
   assert.ok(jsonLd, id + ": JSON-LD missing");
   const graph = JSON.parse(jsonLd[1]);
