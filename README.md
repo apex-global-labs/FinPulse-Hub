@@ -22,7 +22,8 @@ FinPulse Hub is a free-first, browser-based library targeting **220 calculators 
 | Basic mathematics | 25 |
 | Advanced mathematics & statistics | 20 |
 | Date & time | 25 |
-| **Total** | **115** |
+| Unit & data converters (Batch 6 candidate) | 20 |
+| **Release-candidate total** | **135** |
 
 ## Shared capabilities
 
