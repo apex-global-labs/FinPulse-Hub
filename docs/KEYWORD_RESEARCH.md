@@ -4,7 +4,21 @@
 - **Updated:** 2026-11-18
 - **Status:** Finance keyword evidence retained; separate search-demand validation remains required for the added math/statistics and date/time tool families
 
-## Scope note (2026-11-19)\n\nThe production portfolio now contains 115 tools: 45 finance, 45 math/statistics and 25 date/time. The keyword figures below remain a finance-focused directional sample; they do not validate demand or traffic potential for every one of the 115 tools. Research the math/statistics and date/time families separately before making traffic forecasts.\n\n## 1. Target market assumption
+## Scope note (2026-11-19)
+
+The current FinPulse Hub portfolio contains **220 tools**. The earlier 115-tool inventory and its 45/45/25 category breakdown are historical and must not be used as the current portfolio description.
+
+The keyword figures below remain a **finance-focused directional sample**. They do not validate demand, ranking difficulty or traffic potential for all 220 tools, nor should they be treated as traffic forecasts. Complete keyword validation across the full 220-tool registry, grouped by each tool's actual category and search intent, before making portfolio-wide traffic or SEO prioritization claims. Keep unresearched tools explicitly marked as “not checked”; do not extrapolate the finance sample to other tool families.
+
+## Portfolio-wide research scope
+
+- **Inventory baseline:** all 220 active tool registry entries.
+- **Research unit:** one tool's primary search intent and canonical URL; combine close synonyms and overlapping modes rather than creating thin duplicate pages.
+- **Evidence status:** the third-party figures in this document are finance keyword examples only. They are not a completed 220-tool keyword audit.
+- **Next validation:** reconcile the current registry against the keyword map, record category, primary keyword, country, language, source, collection date, volume range, difficulty, trend, SERP features and intent for every tool. Mark missing evidence “not checked”.
+- **Release rule:** do not claim full-portfolio search-demand coverage until all 220 entries have a traceable evidence status.
+  
+## 1. Target market assumption
 
 Until a market decision is made, research is based on **global English search demand**, with country-specific validation planned for the United States, United Kingdom, Canada, Australia, India and Bangladesh. Search intent and tax/payroll conventions are not interchangeable across these markets.
 
@@ -64,7 +78,7 @@ The following are directional third-party keyword estimates observed in November
 
 ## 4. Research workflow before final URL/content freeze
 
-For each of the 45 registry entries:
+For each of the 220 active registry entries:
 1. Record exact keyword, country, language, source and date.
 2. Collect volume range, keyword difficulty, trend, SERP features and intent.
 3. Inspect at least the first-page competitors and note their calculator features.
