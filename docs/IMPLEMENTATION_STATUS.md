@@ -104,6 +104,6 @@ These are roadmap items, not active production tools. Each must pass implementat
 
 ## Batch 8 — Candidate 155 → 175
 
-- Branch: `feat/batch-8-education-everyday-lifestyle`.
+- Branch: `feat/batch-8-education-everyday-lifestyle-release`.
 - New module: `education-lifestyle-tools.js`, containing five Developer wrap-up tools, twelve Education & Study tools and three Home & Construction estimators.
 - Candidate homepage, sitemap, docs and Pages manifest target 175. Full test and PR evidence pending.

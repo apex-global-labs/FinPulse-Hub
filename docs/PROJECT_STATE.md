@@ -16,7 +16,7 @@
 - Main CI #44494813886 succeeded after Batch 7.
 - PR #36 mobile performance optimization merged as `f32466ba801dd993a1d1efbe4c8bd513f2421326`; feature CI #44495042246 succeeded. It removes eager SEO calculations for nine finance tools and defers Chart.js until a bar/scatter chart is requested.
 - A new production Lighthouse run is required to quantify post-optimization TBT; 951.5 ms remains the pre-fix baseline.
-- Batch 8 feature branch `feat/batch-8-education-everyday-lifestyle` targets 175 tools; PR and full CI pending.
+- Batch 8 feature branch `feat/batch-8-education-everyday-lifestyle-release` targets 175 tools; PR and full CI pending.
 
 ## Production verification
 

@@ -502,4 +502,4 @@ Batch 6 is now deployed and the 20-tool Batch 7 candidate below accounts for the
 
 ## Release status update — 2026-11-19
 
-Batch 7 (PR #35) is merged and deployed; current production count is 155. Batch 8 feature branch `feat/batch-8-education-everyday-lifestyle` implements the 20 approved items in Section 13 and targets 175. It remains a release candidate until automated CI and PR review complete.
+Batch 7 (PR #35) is merged and deployed; current production count is 155. Batch 8 feature branch `feat/batch-8-education-everyday-lifestyle-release` implements the 20 approved items in Section 13 and targets 175. It remains a release candidate until automated CI and PR review complete.
