@@ -86,4 +86,6 @@ These are roadmap items, not active production tools. Each must pass implementat
 - **Validation:** empty input, malformed JSON/Base64/URL, unsupported modes, invalid numeric reading speed and unbalanced code delimiters return clear errors. Text operations remain browser-local.
 - **Duplicate audit:** new IDs checked against date-time and unit-converter IDs; no timestamp helper or overlapping converter was added.
 - **Guides:** 5-step guide, formula/algorithm note, four FAQs and three presets per utility; shared copy/export/print/share/history/reset/theme controls.
-- **Status:** implementation and automated test updates are on the feature branch. CI, browser/axe and PR verification are pending.
+- **PR:** [#35](https://github.com/apex-global-labs/FinPulse-Hub/pull/35), open and mergeable; awaiting explicit merge approval.
+- **CI:** [Run #44493842731](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44493842731) succeeded — syntax check passed, Formula + Smoke + Regression 226/226, API 1/1, Playwright Browser 8/8; all 20 new views passed axe WCAG 2.1 A/AA.
+- **Status:** PR candidate QA green. Production remains 135 until PR merge, main CI and Pages deployment succeed.
