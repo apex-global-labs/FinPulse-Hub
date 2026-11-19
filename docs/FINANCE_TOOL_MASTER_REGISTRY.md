@@ -298,7 +298,7 @@ Batch 8 adds exactly 20 unique IDs in `education-lifestyle-tools.js`: 5 develope
 | 14 | Study Topic Organizer (classroom use) | `study-topic-organizer` |
 | 15 | QR Code Generator | `qr-code-generator` |
 
-Batch 9 adds 15 unique IDs through `lifestyle-tools.js`; the QR generator uses the vendored MIT-licensed qrcodejs library and produces the image locally. Electricity pricing is manual only; construction quantities are estimates; random selection is explicitly limited to ordinary non-gambling use. Candidate total: 190.
+Batch 9 adds 15 unique IDs through `lifestyle-tools.js`; the QR generator uses the vendored MIT-licensed qrcodejs library and produces the image locally. Electricity pricing is manual only; construction quantities are estimates; Study Topic Organizer groups topics deterministically without random selection. Production total after Batch 9: 190; Batch 10 candidate total: 205.
 
 
 ## Batch 10 — Health & Wellness Part 1 (15)
