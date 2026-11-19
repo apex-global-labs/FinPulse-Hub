@@ -47,7 +47,6 @@ await page.goto(base+"?tool=roman-numeral-converter");await page.locator("#f-val
 await page.goto(base+"?tool=paper-size-converter");await page.locator("#f-orientation").selectOption("landscape");assert.match(await page.locator(".result .value").innerText(),/297 × 210 mm/);
 await page.close();
 });
-});
 
 await t.test("Batch 7 all 20 Developer & Text utility views render guides, presets, FAQs and pass WCAG 2.1 A/AA",async()=>{
 const page=await browser.newPage({viewport:{width:1280,height:800},bypassCSP:true});
