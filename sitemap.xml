@@ -135,4 +135,24 @@
   <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=number-base-converter</loc></url>
   <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=roman-numeral-converter</loc></url>
   <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=paper-size-converter</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=word-counter</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=character-counter</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=sentence-counter</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=paragraph-counter</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=reading-time-calculator</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=case-converter</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=text-reverser</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=duplicate-line-remover</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=text-compare-diff</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=whitespace-cleaner</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=line-sorter</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=text-to-slug-generator</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=html-entity-encoder-decoder</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=url-encoder-decoder</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=base64-encoder-decoder</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=json-formatter-validator</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=html-formatter</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=css-formatter</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=javascript-formatter</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=html-css-js-minifier</loc></url>
 </urlset>
