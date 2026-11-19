@@ -50,3 +50,5 @@ test("theme toggle persists a user-selected light or dark theme",()=>{assert.ok(
 test("all calculator views expose formula, related tools and embed code panels",()=>{for(const x of ["formula-panel","related-tools","embed-code","copy-embed","function formulaMarkup","function relatedMarkup","embed-mode"])assert.ok(app.includes(x),x);assert.ok(css.includes(".embed-mode"));});
 test("reserved advertising slots have fixed dimensions to avoid layout shifts",()=>{assert.ok(html.includes('class="ad-slot ad-slot-top"'));assert.ok(app.includes('class="ad-slot ad-slot-bottom"'));assert.ok(css.includes("height:90px;min-height:90px"));});
 test("homepage About counter matches the 115-tool directory",()=>{assert.ok(html.includes("<div><b>115</b><span>free calculators &amp; tools</span></div>"));});
+
+test("history snapshots preserve and restore smart UI selections",()=>{assert.ok(app.includes("ui:{displayCurrency:"));assert.ok(app.includes("if(ui.countryPreset"));assert.ok(app.includes("if(ui.taxProfile"));assert.ok(app.includes("if(ui.assetSelector"));});
