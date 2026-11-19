@@ -50,7 +50,7 @@ The final browser suite iterates all 45 Finance, 45 Math & Statistics and 25 Dat
 
 ## Remaining roadmap
 
-The current 115-tool release completes 70 of the approved 175 expansion tools. The remaining 105 planned additions are:
+The current 135-tool production release completes 90 of the approved 175 expansion tools. The remaining 85 planned additions are:
 - 20 unit/measurement/data converters
 - 30 health & wellness tools
 - 55 developer, education & lifestyle tools
@@ -68,3 +68,22 @@ These are roadmap items, not active production tools. Each must pass implementat
 - **CI:** Run #44491064031 succeeded — Formula + Smoke + Regression 214/214, API 1/1, Browser 7/7; all 20 converter views passed axe WCAG 2.1 A/AA.
 - **Status:** PR CI green. Main CI and Pages deployment remain pending merge; production count remains 115 until merge and deployment.
 - **Latest Lighthouse:** run #44483331679 succeeded — Mobile 98/100/96/100, Desktop 100/100/96/100 (Performance/Accessibility/Best Practices/SEO); CLS 0.000 on both.
+
+
+## Batch 6 — Production release verified
+
+- PR #34 merged as `54539bb522743a627f154708d496c87233619334`.
+- Main CI [#44492089059](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44492089059) succeeded: 214/214 formula/smoke/regression, 1/1 API, 7/7 browser; all 20 converter views passed axe WCAG 2.1 A/AA.
+- GitHub Pages deployment [#44492088958](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44492088958) succeeded.
+- Lighthouse [#44492151775](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44492151775): mobile Performance 79, Accessibility 100, Best Practices 96, SEO 100, CLS 0.000, TBT 951.5 ms; desktop Performance 100, Accessibility 100, Best Practices 96, SEO 100, CLS 0.0111, TBT 0 ms. Mobile main-thread cost is flagged for follow-up.
+- Main homepage count and sitemap parity verified at 135/135 unique routes.
+
+## Batch 7 — Developer & Text Utilities (PR candidate)
+
+- **Branch:** `feat/batch-7-developer-text-utilities`; base commit `54539bb522743a627f154708d496c87233619334`.
+- **Target:** 135 → 155, 20 unique tools from the approved Batch 7 allocation.
+- **Runtime module:** `developer-tools.js`; added to `index.html` and Pages deployment artifact.
+- **Validation:** empty input, malformed JSON/Base64/URL, unsupported modes, invalid numeric reading speed and unbalanced code delimiters return clear errors. Text operations remain browser-local.
+- **Duplicate audit:** new IDs checked against date-time and unit-converter IDs; no timestamp helper or overlapping converter was added.
+- **Guides:** 5-step guide, formula/algorithm note, four FAQs and three presets per utility; shared copy/export/print/share/history/reset/theme controls.
+- **Status:** implementation and automated test updates are on the feature branch. CI, browser/axe and PR verification are pending.
