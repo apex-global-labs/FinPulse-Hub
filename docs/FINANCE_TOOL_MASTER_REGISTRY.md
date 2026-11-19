@@ -1,121 +1,146 @@
-# FinPulse Hub — Traffic-Focused Finance Calculator Registry
+# FinPulse Hub — Production Calculator Registry
 
-- **Version:** 1.1
-- **Updated:** 2026-11-18
-- **Status:** Proposed traffic-led 45-tool product set; no calculators are implemented yet
-- **Repository:** `apex-global-labs/FinPulse-Hub`
+- Version: 2.0
+- Updated: 2026-11-18
+- Portfolio: 45 active calculators
+- Repository: apex-global-labs/FinPulse-Hub
+- Release: PR #21 (branch verification passed; merge/deployment pending)
 
-## Selection strategy
+## Active calculator inventory
 
-This version replaces the earlier broad 45-tool draft. The selection aims to maximise realistic organic-search opportunity, not to promise a specific traffic result.
+The following list is extracted from the current application registry. IDs are the stable query-route keys used by the homepage directory and sitemap. Each calculator uses the shared display-currency selector, synchronized numeric/range controls and instant recalculation.
 
-The portfolio combines:
-1. Large global English search-demand topics.
-2. Country-specific high-intent finance tools.
-3. Distinct professional and small-business tasks from the Business & Professional Suite.
-4. A deliberately small, educational currency/crypto utility section.
+### Everyday finance
 
-Search volume estimates are third-party estimates, not exact Google search counts. Competition is substantial for several high-volume terms. Do not create duplicate pages for spelling variations or near-identical intent; use one strong page with modes where appropriate.
+| # | Calculator | Route key |
+|---:|---|---|
+| 1 | Currency Converter | currency |
+| 6 | Percentage Calculator | percentage |
+| 7 | Tip Calculator | tip |
+| 22 | Inflation Calculator | inflation |
 
-## Tier A — Largest validated search-demand opportunities
+### Loans & housing
 
-These are the first topics to research and build, subject to formula readiness and keyword/competitor validation.
+| # | Calculator | Route key |
+|---:|---|---|
+| 2 | Mortgage Calculator | mortgage |
+| 3 | Loan Calculator | loan |
+| 4 | EMI Calculator | emi |
+| 8 | Auto / Car Loan Calculator | car |
+| 9 | Loan Amortization Calculator | amortization |
+| 13 | Mortgage Affordability Calculator | affordability |
+| 14 | Mortgage Payoff & Extra Payment Calculator | payoff |
+| 15 | Mortgage Refinance Comparison | refinance |
+| 16 | Personal Loan Calculator | personal-loan |
+| 17 | Student Loan Repayment Calculator | student-loan |
 
-| # | Calculator | Primary intent / implementation note | Evidence signal |
-|---:|---|---|---|
-| 1 | Mortgage Calculator | Estimate monthly repayment, total interest and total paid | About 4.8m worldwide monthly searches; very high competition |
-| 2 | Currency Converter | Convert between fiat currencies using a sourced or manual rate | About 4.3m worldwide monthly searches; very high competition |
-| 3 | EMI Calculator | Monthly instalment calculator with term and rate conventions clearly stated | About 2.74m worldwide English searches in one keyword dataset |
-| 4 | Compound Interest Calculator | Show growth from principal, contributions, rate and compounding frequency | About 2.5m worldwide monthly searches; high competition |
-| 5 | Loan Calculator | General loan repayment calculator with payment breakdown | About 1.9m worldwide monthly searches; high competition |
-| 6 | Percentage Calculator | Percentage of, increase/decrease, difference and reverse percentage modes | About 1.9m worldwide monthly searches; competitive |
-| 7 | Tax Calculator | Country/year selector leading to the supported tax calculator, not a universal tax formula | About 1.2m worldwide monthly searches; very high competition |
-| 8 | Retirement Calculator | Educational savings/retirement scenario calculator with explicit assumptions | About 1.0m worldwide monthly searches; high competition |
-| 9 | Tip Calculator | Tip amount, total bill and split amount; configurable jurisdiction/currency | About 1.0m worldwide monthly searches; moderate competition |
-| 10 | Auto / Car Loan Calculator | Vehicle loan payment and total-cost scenarios | About 0.83m worldwide monthly searches; high competition |
-| 11 | Investment Growth Scenario Calculator | Mathematical scenario calculator using user-entered assumptions; no product suggestions or forecasts | About 0.63m worldwide monthly searches for “investment calculator”; high competition |
-| 12 | Paycheck Calculator | Country/state-specific gross-to-net estimate only where payroll rules are sourced | About 0.56m worldwide monthly searches; demand is highly concentrated in the US |
-| 13 | Interest Calculator | One page with simple-interest and compound-interest modes; avoid duplicate thin pages | About 0.43m worldwide monthly searches; moderate competition |
-| 14 | Loan Amortization Calculator | Period-by-period principal/interest schedule | About 0.28m worldwide monthly searches; moderate/high competition |
-| 15 | Sales Tax Calculator | Add/remove tax using a user-selected verified jurisdiction/rate | About 0.11m worldwide monthly searches; moderate competition |
+### Savings & growth
 
-Volume and difficulty figures are directional estimates observed in third-party reports during November 2026; they are not guaranteed traffic and should be rechecked before publishing.
+| # | Calculator | Route key |
+|---:|---|---|
+| 5 | Compound Interest Calculator | compound |
+| 10 | Savings Goal Calculator | savings |
+| 18 | Simple Interest Calculator | simple-interest |
+| 23 | CD Calculator | cd |
+| 24 | APY Calculator | apy |
+| 44 | Emergency Fund Calculator | emergency-fund |
 
-## Tier B — High-intent supporting and country-specific tools
+### Freelance & business
 
-| # | Calculator | Main task | Priority note |
-|---:|---|---|---|
-| 16 | Personal Loan Calculator | Repayment and total borrowing cost | Strong loan-intent cluster; country-specific fees must be explicit |
-| 17 | Student Loan Repayment Calculator | Repayment timeline and cost under user-entered terms | Local repayment systems vary; no eligibility advice |
-| 18 | Mortgage Affordability Calculator | Explore home-cost scenarios using entered income/expenses | Educational estimate, not a lending decision |
-| 19 | Mortgage Payoff & Extra Payment Calculator | Compare payoff schedules with optional extra payments | Contract terms and fees must be disclosed |
-| 20 | Mortgage Refinance Comparison Calculator | Compare entered old/new rate, fees and terms | No recommendation to refinance |
-| 21 | Savings Calculator | Estimate savings growth from starting balance and deposits | Assumptions and rate convention shown |
-| 22 | Savings Goal Calculator | Estimate regular saving needed for a target | Mathematical planning only |
-| 23 | Recurring Savings Calculator | Project periodic contributions under a user-entered rate | No product or yield recommendation |
-| 24 | Inflation Calculator | Show purchasing-power change using a selected historical or assumed rate | Data source/date shown when historical data is used |
-| 25 | Budget Planner | Organise income, expenses and remaining balance | Keep inputs local; do not collect personal finance data |
-| 26 | Income Tax Calculator | Jurisdiction- and tax-year-specific estimate | Hold until official rules and tests are documented |
-| 27 | VAT / GST Calculator | Add/remove VAT/GST for a supported jurisdiction | Hold until rate and effective date are verified |
-| 28 | Tax Refund Estimator | Estimate refund/amount due from supported tax inputs | Country and tax-year rules required |
-| 29 | Salary Take-Home Calculator | Gross-to-net salary scenarios for supported countries | Do not imply one global tax rule |
-| 30 | Payroll Calculator | Employer payroll-cost or payslip arithmetic for a supported jurisdiction | Scope and statutory deductions must be sourced |
-| 31 | Overtime Pay Calculator | Calculate pay under a user-entered multiplier/rule | Statutory rules vary by jurisdiction |
-| 32 | Discount Calculator | Discount amount, final price and stacked-discount arithmetic | Useful consumer/business math; validate demand by market |
+| # | Calculator | Route key |
+|---:|---|---|
+| 11 | Freelance Hourly Rate Calculator | freelance |
+| 12 | Profit Margin Calculator | margin |
+| 37 | Freelance Project Pricing Calculator | freelance-project |
+| 38 | Freelancer Net Income After Costs Calculator | freelancer-net-income |
+| 39 | Markup Calculator | markup |
+| 40 | Break-even Calculator | break-even |
+| 41 | Business ROI Calculator | business-roi |
+| 42 | Cash Flow Projection Calculator | cash-flow |
 
-## Tier C — Currency, crypto education, freelancer and business differentiation
+### Retirement & investing
 
-| # | Calculator | Main task | Product boundary |
-|---:|---|---|---|
-| 33 | Exchange Fee & Markup Calculator | Calculate the effect of a user-entered exchange fee or rate markup | Ordinary currency exchange only; no forex trade tools |
-| 34 | International Transfer Cost Calculator | Estimate send amount, fees and recipient amount from manual/sourced inputs | No money-transfer provider integration |
-| 35 | Crypto Unit & Fiat Value Converter | Educational unit/value conversion from manual or attributed reference values | No asset recommendations, trading prompts or portfolio advice |
-| 36 | Crypto Network Fee Calculator | Explain percentage/flat fee arithmetic using user-entered values | Education only; no wallet, exchange or transaction integration |
-| 37 | Freelance Hourly Rate Calculator | Estimate a target hourly rate from work hours, overhead and target income | No income guarantees or market-rate claims without evidence |
-| 38 | Freelance Project Pricing Calculator | Estimate a project quote from hours, overhead and contingency | User-defined assumptions only |
-| 39 | Freelancer Net Income After Costs Calculator | Revenue less entered expenses and optional supported tax estimate | Tax output remains jurisdiction-gated |
-| 40 | Profit Margin Calculator | Gross/net margin from revenue and costs | State margin vs markup clearly |
-| 41 | Markup Calculator | Calculate selling price from cost and markup | Avoid confusing markup with margin |
-| 42 | Break-even Calculator | Estimate units/revenue needed to cover fixed and variable cost | Document assumptions |
-| 43 | Business ROI Calculator | Basic historical/project ROI arithmetic | No investment recommendations or future-return claims |
-| 44 | Cash Flow Projection Calculator | Project entered inflows and outflows over periods | Not accounting or financial advice software |
-| 45 | Rental Yield Calculator | Gross/net rental yield from user-entered rent, price and costs | No property investment recommendations |
+| # | Calculator | Route key |
+|---:|---|---|
+| 19 | Retirement Savings Calculator | retirement |
+| 20 | 401k Contribution Calculator | 401k |
+| 21 | Roth vs Traditional IRA Comparison | ira |
 
-## Scope exclusions
+### Tax & income
 
-To keep the product educational and non-advisory, the website will not include:
-- Crypto DCA/investment planners or crypto portfolio allocation tools.
-- Crypto buy/sell, profit-prediction or trade-timing tools.
-- Forex pip/lot/position sizing, leverage/margin, trading signals or trade execution.
-- Broker, exchange or wallet connections.
-- Tax/legal outputs for jurisdictions that have not been researched and verified.
+| # | Calculator | Route key |
+|---:|---|---|
+| 25 | Tax Calculator | tax |
+| 26 | Income Tax Calculator | income-tax |
+| 27 | Sales Tax Calculator | sales-tax |
+| 28 | VAT / GST Calculator | vat-gst |
+| 29 | Tax Refund Estimator | tax-refund |
+| 30 | Salary Take-Home Calculator | salary |
 
-The Forex-related scope is limited to ordinary currency conversion, exchange fees/markup and international transfer arithmetic. Crypto is limited to basic unit/value and fee education.
+### Payroll & pay
 
-## Recommended first build (12 tools)
+| # | Calculator | Route key |
+|---:|---|---|
+| 31 | Paycheck Calculator | paycheck |
+| 32 | Payroll Calculator | payroll |
+| 33 | Overtime Pay Calculator | overtime |
 
-1. Currency Converter
-2. Mortgage Calculator
-3. Loan Calculator
-4. EMI Calculator
-5. Compound Interest Calculator
-6. Percentage Calculator
-7. Tip Calculator
-8. Auto / Car Loan Calculator
-9. Loan Amortization Calculator
-10. Savings Goal Calculator
-11. Freelance Hourly Rate Calculator
-12. Profit Margin Calculator
+### Shopping & pricing
 
-This is a build order, not a statement that all tools have the same keyword difficulty. High-demand pages require exceptional usefulness, technical quality, distinctive content and patience.
+| # | Calculator | Route key |
+|---:|---|---|
+| 34 | Discount Calculator | discount |
 
-## Publication gates
+### Currency & transfers
 
-A calculator may be released only when:
-- Its user intent and canonical URL are distinct.
-- Formula and assumptions are documented.
-- Normal, edge, boundary and invalid-input tests pass.
-- Representative outputs are cross-checked independently.
-- Country-specific rules/data have an authoritative source and effective date.
-- The page has useful unique explanatory content.
-- Its status, source and test evidence are recorded in `docs/PROJECT_STATE.md`.
+| # | Calculator | Route key |
+|---:|---|---|
+| 35 | Exchange Fee & Markup Calculator | exchange-fees |
+| 36 | International Money Transfer Cost Calculator | transfer-compare |
+
+### Property & planning
+
+| # | Calculator | Route key |
+|---:|---|---|
+| 43 | Rental Yield Calculator | rental-yield |
+
+### Personal finance
+
+| # | Calculator | Route key |
+|---:|---|---|
+| 45 | Net Worth Calculator | net-worth |
+
+## Shared implementation and boundaries
+
+- Currency and input behavior: shared display currency, responsive numeric/range pairs and instant calculation.
+- Charts: Chart.js 4.5.1 loads asynchronously from the pinned jsDelivr distribution with subresource integrity. The calculator remains usable and falls back to accessible SVG if the CDN is unavailable.
+- SEO: the final nine calculators include individual explanatory text and three FAQs. Query routes update the title, description and canonical URL. sitemap.xml contains exactly 45 tool URLs and robots.txt points to the sitemap.
+- Deployment: GitHub Pages publishes all runtime files (finance-core.js, smart-ui.js, tax data/engine and asset-data.js) together with index.html, styles, sitemap and robots.
+- Tax: 2026 US state and Quebec calculations are estimates with disclosed exclusions; they are not filing-grade tax advice.
+- Payroll: employee-side payroll estimates are jurisdiction-specific and omit employer-side costs and some personal/period-specific adjustments.
+- Crypto: BTC/ETH/USDT asset selection uses user-entered hypothetical baseline prices only; no live quote, market feed, exchange or trading feature is implied.
+- Financial scope: ROI, cash flow, rental yield, emergency fund and net worth are arithmetic/planning tools. They do not recommend products, investments, loans or property purchases.
+
+## Formula definitions for the final nine
+
+| Calculator | Core method | Important exclusions |
+|---|---|---|
+| Freelance Project Pricing | Labor + expenses + contingency, grossed up to target gross margin | Taxes, scope creep, payment risk and market-rate validation |
+| Freelancer Net Income After Costs | Revenue − expenses − user-entered tax reserve on positive profit | Jurisdiction-specific tax calculation |
+| Markup | Cost × markup rate; selling price = cost + markup | Does not equate markup and gross margin |
+| Break-even | Fixed costs ÷ (selling price − variable cost); whole units rounded up | Product mix, capacity and cost changes |
+| Business ROI | (Ending value − initial investment) ÷ initial investment | Not annualized; cash-flow timing excluded |
+| Cash Flow Projection | Opening cash + monthly inflows − outflows with user-entered monthly growth | Receivables timing, financing, tax and seasonality |
+| Rental Yield | Annual rent, vacancy allowance and operating costs divided by purchase price | Financing, acquisition costs, capex, income tax and appreciation |
+| Emergency Fund | Essential monthly expenses × selected months | No savings product recommendation |
+| Net Worth | Total assets − total liabilities | Point-in-time user estimates; unlisted obligations excluded |
+
+## Verification state
+
+- Registry uniqueness: 45/45 unique IDs.
+- Formula and smoke suite: 99/99 passed.
+- Frankfurter API check: 1/1 passed.
+- Playwright desktop/mobile suite: 3/3 passed; desktop test audits all 45 calculator views with axe WCAG 2.1 A/AA tags.
+- Earlier branch CI run #44312169199 succeeded (99/99 formula/smoke, API 1/1, browser 3/3); a fresh run is required after the latest navigation/sitemap regression assertions.
+- PR #21 merge and post-merge GitHub Pages deployment: pending; current PR head is being revalidated after additional route/sitemap tests.
+- Final Lighthouse audit: pending after deployment.

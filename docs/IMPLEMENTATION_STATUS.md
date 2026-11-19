@@ -150,7 +150,7 @@ The remaining list is a planning inventory and can be refined to avoid overlap o
 - Formula, smoke and Playwright checks passed; PR branch CI #44301506753, main CI #44301661186 and Pages deployment #44301661310 succeeded.
 
 
-## PR #20 — Crypto and investment asset selector (in progress, 2026-11-18)
+## PR #20 — Crypto and investment asset selector (merged and deployed, 2026-11-18)
 
 - Integrates the existing `asset-data.js` shared registry into Retirement Savings, 401(k), and Roth vs Traditional IRA calculators.
 - Adds BTC, ETH, USDT and generic asset-class selectors. Crypto selections reveal an optional user-entered hypothetical baseline price in the selected display currency.
@@ -158,4 +158,20 @@ The remaining list is a planning inventory and can be refined to avoid overlap o
 - Every investment selector visibly states: “Hypothetical / Baseline Input — Not Live Exchange Data.” No exchange API, market feed, or automatic price is used.
 - Asset selection changes only the illustrative unit denomination, not the assumed return. Outputs remain educational scenarios.
 - PR #20 branch CI #44305310477 passed: syntax checks, formula/smoke tests 87/87, Frankfurter API 1/1, Playwright desktop/mobile 3/3. The desktop suite runs axe WCAG 2.1 A/AA audits across all 36 calculator views, including the investment selector.
-- Current PR head before this documentation update: `e8a55ad8c676829cf86836a5d53fddf74eea1ed4`. Merge and post-merge deployment verification remain pending.
+- Merged commit: `4cb47e8411dec059f5ec25af5a79b5509df89803`. Main CI #44305761335 and Pages deployment #44305761259 succeeded.
+
+
+## PR #21 — 45 calculator completion (implementation and branch QA verified, 2026-11-19)
+
+- PR: https://github.com/apex-global-labs/FinPulse-Hub/pull/21
+- Production base before merge: `4cb47e8411dec059f5ec25af5a79b5509df89803`.
+- Added the final nine calculators: Freelance Project Pricing, Freelancer Net Income After Costs, Markup, Break-even, Business ROI, Cash Flow Projection, Rental Yield, Emergency Fund and Net Worth.
+- Each new calculator uses the shared display-currency selector, synchronized number/range inputs and instant recalculation.
+- All nine expose relevant Chart.js datasets (bar or line); the UI falls back to accessible SVG if the Chart.js CDN is unavailable.
+- Each new calculator includes a distinct explanatory SEO introduction and three FAQs.
+- Homepage directory links are generated from the 45-entry registry. Query routes update the document title, description and canonical URL.
+- `sitemap.xml` contains exactly 45 unique `?tool=` routes matching the calculator registry; `robots.txt` references the sitemap.
+- GitHub Pages deployment now publishes every runtime dependency (`finance-core.js`, `smart-ui.js`, tax datasets/engine, `asset-data.js`) plus `sitemap.xml` and `robots.txt`.
+- Branch CI run #44312169199 passed on the previously verified PR head: syntax; formula/smoke 99/99; Frankfurter API 1/1; Playwright desktop/mobile 3/3. The desktop Playwright loop runs axe WCAG 2.1 A/AA checks against all 45 calculator views and verifies the nine new SEO/chart blocks.
+- Additional QA assertions are now being added for exact sitemap-to-registry parity, 45 unique homepage links and direct query-route canonical metadata. A fresh branch CI run is required for these latest test additions.
+- Merge, production deployment and final Lighthouse mobile/desktop audit remain pending. Do not describe PR #21 as production-complete until the merge, Pages deployment and Lighthouse report are verified.
