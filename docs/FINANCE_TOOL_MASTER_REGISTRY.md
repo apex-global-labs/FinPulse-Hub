@@ -330,19 +330,19 @@ All Batch 10 tools provide informational time, distance, pace, speed and schedul
 
 | # | Tool | Stable ID |
 |---:|---|---|
-| 1 | Swimming Interval Planner | `swimming-interval-planner` |
+| 1 | Swimming Split Calculator | `swimming-interval-planner` |
 | 2 | Rowing Pace Calculator | `rowing-pace-calculator` |
-| 3 | Exercise Session Duration Calculator | `exercise-session-duration-calculator` |
-| 4 | Interval Training Timer (schedule calculation only) | `interval-training-timer` |
-| 5 | Rest Interval Planner | `rest-interval-planner` |
-| 6 | Workout Session Planner (Time Only) | `workout-session-planner-time-only` |
-| 7 | Weekly Activity Minutes Tracker | `weekly-activity-minutes-tracker` |
-| 8 | Activity Goal Progress Tracker | `activity-goal-progress-tracker` |
+| 3 | Session Duration Calculator | `exercise-session-duration-calculator` |
+| 4 | Interval Schedule Calculator (time arithmetic only) | `interval-training-timer` |
+| 5 | Gap Duration Calculator | `rest-interval-planner` |
+| 6 | Time Block Planner | `workout-session-planner-time-only` |
+| 7 | Weekly Time Log Summary | `weekly-activity-minutes-tracker` |
+| 8 | User-Defined Progress Calculator | `activity-goal-progress-tracker` |
 | 9 | Step-to-Distance Converter | `step-to-distance-converter` |
 | 10 | Distance-to-Step Estimator | `distance-to-step-estimator` |
 | 11 | Elevation Gain Rate Calculator | `elevation-gain-rate-calculator` |
 | 12 | Hiking Elevation Pace Calculator | `hiking-elevation-pace-calculator` |
-| 13 | Breathing Exercise Timer (timing arithmetic only) | `breathing-exercise-timer` |
+| 13 | Pattern Duration Calculator | `breathing-exercise-timer` |
 | 14 | Meditation Session Planner | `meditation-session-planner` |
 | 15 | Hydration Log Tracker (user-entered records only) | `hydration-log-tracker` |
 
@@ -354,3 +354,6 @@ Batch 11 tools use user-entered values only. No activity, breathing or hydration
 - Main CI #44504320519: 261/261 formula/smoke/regression, API 1/1, Browser 11/11.
 - Pages deployment #44504320744: success. Its published artifact has homepage count 205 and 205 sitemap URLs.
 - Production Lighthouse #44504380240: mobile Performance 83, desktop 100, Accessibility 100, SEO 100, CLS 0.000 / 0.0089.
+
+
+**Batch 11 display-label safety note:** Activity-adjacent roadmap entries are exposed as neutral time, measurement and record utilities. They do not provide workout programming, exercise targets, breathing techniques or live countdowns; stable route IDs are preserved.
