@@ -24,7 +24,7 @@ jobs:
       - name: Prepare static site
         run: |
           mkdir -p _site
-          cp index.html styles.css app.js finance-core.js smart-ui.js tax-data.js tax-state-data.js tax-engine.js asset-data.js math-core.js math-tools.js advanced-math-core.js advanced-math-tools.js date-time-core.js date-time-tools.js unit-converter-core.js unit-converter-tools.js developer-tools.js education-lifestyle-tools.js qrcode.js lifestyle-tools.js sitemap.xml robots.txt _site/
+          cp index.html styles.css app.js finance-core.js smart-ui.js tax-data.js tax-state-data.js tax-engine.js asset-data.js math-core.js math-tools.js advanced-math-core.js advanced-math-tools.js date-time-core.js date-time-tools.js unit-converter-core.js unit-converter-tools.js developer-tools.js education-lifestyle-tools.js qrcode.js lifestyle-tools.js health-activity-tools.js sitemap.xml robots.txt _site/
           touch _site/.nojekyll
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
