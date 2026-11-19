@@ -172,3 +172,31 @@ Every tool has a stable registry ID used by the `?tool=` route, homepage directo
 - Browser suite: all 115 Finance, Math & Statistics and Date & Time views are iterated; all Date & Time views assert guide presence and axe WCAG 2.1 A/AA compliance. Latest result: 6/6 browser tests passed.
 - Homepage directory and sitemap parity are enforced by smoke tests.
 - Main CI, Pages deployment and Lighthouse are recorded in `docs/PROJECT_STATE.md`.
+
+
+## 5. Unit, Measurement & Data Converters — 20 (Batch 6 PR candidate)
+
+| # | Tool | Stable ID |
+|---:|---|---|
+| 1 | Length Converter | `length-converter` |
+| 2 | Weight / Mass Converter | `mass-converter` |
+| 3 | Temperature Converter | `temperature-converter` |
+| 4 | Area Unit Converter | `area-converter` |
+| 5 | Volume Unit Converter | `volume-converter` |
+| 6 | Speed Converter | `speed-converter` |
+| 7 | Pressure Converter | `pressure-converter` |
+| 8 | Energy Converter | `energy-converter` |
+| 9 | Power Converter | `power-converter` |
+| 10 | Frequency Converter | `frequency-converter` |
+| 11 | Angle Converter | `angle-converter` |
+| 12 | Fuel Economy Converter | `fuel-economy-converter` |
+| 13 | Density Converter | `density-converter` |
+| 14 | Cooking Measurement Converter | `cooking-measurement-converter` |
+| 15 | Data Storage Converter | `data-storage-converter` |
+| 16 | Data Transfer Speed Converter | `data-transfer-speed-converter` |
+| 17 | Download Time Estimator | `download-time-estimator` |
+| 18 | Number Base Converter | `number-base-converter` |
+| 19 | Roman Numeral Converter | `roman-numeral-converter` |
+| 20 | Paper Size Converter | `paper-size-converter` |
+
+These 20 entries are a Batch 6 release candidate on `feat/batch-6-unit-measurement-converters`; they become active production tools only after merge and deployment. Release-candidate total: 135; current production main remains 115 until release.
