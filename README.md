@@ -6,10 +6,10 @@ A free-first, browser-based finance calculator website combining the former Fina
 
 - Active portfolio: 45 calculators registered in the PR #21 branch.
 - Production main: 36 calculators at commit 4cb47e8411dec059f5ec25af5a79b5509df89803 (PR #20).
-- PR #21: https://github.com/apex-global-labs/FinPulse-Hub/pull/21 — branch CI passed; merge and production deployment pending.
+- PR #21: https://github.com/apex-global-labs/FinPulse-Hub/pull/21 — implementation and initial branch QA passed; additional navigation/sitemap regression assertions are being verified. Merge and production deployment remain pending.
 - Website: https://apex-global-labs.github.io/FinPulse-Hub/
 - Hosting: GitHub Pages (free static hosting).
-- Stack: HTML, CSS and vanilla JavaScript; browser-side calculations; SVG fallback and Chart.js for charts.
+- Stack: HTML, CSS and vanilla JavaScript; browser-side calculations; Chart.js with accessible SVG fallback.
 
 ## Calculator scope
 
