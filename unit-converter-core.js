@@ -10,7 +10,9 @@ energy:{J:1,kJ:1000,MJ:1e6,cal:4.184,kcal:4184,Wh:3600,kWh:3600000,BTU:1055.0558
 power:{W:1,kW:1000,MW:1e6,hp:745.699871582,metricHp:735.49875,BTUh:.2930710702},
 frequency:{Hz:1,kHz:1000,MHz:1e6,GHz:1e9,rpm:1/60},
 angle:{rad:1,deg:PI/180,grad:PI/200,turn:2*PI,arcmin:PI/10800,arcsec:PI/648000},
-density:{kgm3:1,gcm3:1000,gmL:1000,kgL:1000,lbft3:16.01846337396,lbgalUS:119.8264273},\nstorage:{B:1,KB:1e3,MB:1e6,GB:1e9,TB:1e12,PB:1e15,KiB:1024,MiB:1048576,GiB:1073741824,TiB:1099511627776,PiB:1125899906842624},\ntransfer:{bps:1,Kbps:1e3,Mbps:1e6,Gbps:1e9,Bps:8,KBps:8e3,MBps:8e6,GBps:8e9},
+density:{kgm3:1,gcm3:1000,gmL:1000,kgL:1000,lbft3:16.01846337396,lbgalUS:119.8264273},
+storage:{B:1,KB:1e3,MB:1e6,GB:1e9,TB:1e12,PB:1e15,KiB:1024,MiB:1048576,GiB:1073741824,TiB:1099511627776,PiB:1125899906842624},
+transfer:{bps:1,Kbps:1e3,Mbps:1e6,Gbps:1e9,Bps:8,KBps:8e3,MBps:8e6,GBps:8e9},
 cooking:{mL:1,L:1000,tspUS:4.92892159375,tbspUS:14.78676478125,cupUS:236.5882365,flOzUS:29.5735295625,pintUS:473.176473,quartUS:946.352946,cupMetric:250,tspMetric:5,tbspMetric:15}
 };
 function convert(kind,value,from,to){if(!Number.isFinite(value))throw Error("Enter a finite numeric value.");
