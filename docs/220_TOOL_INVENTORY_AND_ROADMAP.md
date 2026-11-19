@@ -4,7 +4,7 @@
 - **Baseline:** Preserve all 45 existing financial calculators without renaming or removing their stable route IDs
 - **Expansion:** 175 new tools across four new top-level categories
 - **Hosting / stack:** GitHub Pages, static HTML/CSS/Vanilla JS, free-first, no paid backend or mandatory paid APIs
-- **Status:** In progress — 130 of 175 expansion tools are implemented and deployed; 45 planned additions remain
+- **Status:** Batch 10 is merged to `main` (205-tool source inventory); post-merge main CI and Pages deployment verification pending. Batch 11 implements the final 15 roadmap tools (220-tool candidate).
 
 ## 1. Target portfolio
 
@@ -517,3 +517,10 @@ Dedicated branch: `feat/batch-9-lifestyle-construction-remaining`. The 15 approv
 ## Batch 10 implementation — 2026-11-19
 
 Batch 10 implements the first 15 approved Health & Wellness items: Sleep Duration Calculator, Bedtime Planner, Wake-up Time Planner, Sleep Schedule Consistency Tracker, Sleep Log Summary, Running Pace Calculator, Running Speed Calculator, Distance-Time-Pace Calculator, Race Finish Time Predictor, Race Split Calculator, Walking Pace Calculator, Hiking Time Estimator, Cycling Speed Calculator, Cycling Time & Distance Calculator, Swimming Pace Calculator. These are limited to user-entered time, distance, pace, speed and schedule data. No diagnosis, weight/calorie goals, treatment guidance or individualized medical recommendations are implemented. Every tool includes a plain-language medical disclaimer and scientific limitations.
+
+
+## Batch 10 merge and Batch 11 final candidate — 2026-11-19
+
+Batch 10 PR #41 merged as `f7eaf356971523f8e6dda2d30278cdc972ef4836`. The pre-merge feature CI passed 261/261 tests, API 1/1, Browser 11/11 and WCAG 2.1 A/AA across all 15 new views. Main source now has 205 tool routes in the homepage and sitemap. Main CI, Pages deployment and live route verification remain required before calling 205 tools production-deployed.
+
+Batch 11 branch `feat/batch-11-health-wellness-final-220` implements the exact final 15 items in Section 13. The final portfolio must contain 220 unique tool IDs and exactly 220 canonical sitemap routes. Activity targets and hydration amounts remain user-entered; no health targets, exercise prescriptions, breathing technique instructions, diagnosis or treatment are provided. The interval and breathing tools are duration calculators only, not live timers.
