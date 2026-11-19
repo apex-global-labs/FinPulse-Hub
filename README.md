@@ -6,7 +6,7 @@ FinPulse Hub is a free-first, browser-based library targeting **220 calculators 
 
 - **Last verified production release:** 190 tools (Batch 9); Batch 10 merge commit `f7eaf356971523f8e6dda2d30278cdc972ef4836` updates `main` source to 205; Pages deployment verification pending
 - **Batch 10:** PR #41 merged; main source 205 tools · **Batch 11:** dedicated feature branch adds 15 tools; PR candidate 220
-- **Inventory:** 45 Finance + 25 Basic Math + 20 Advanced Math & Statistics + 25 Date & Time + 20 Unit & Data Converters + 20 Developer & Text utilities (Batch 7 production)
+- **Inventory:** 45 Finance + 25 Basic Math + 20 Advanced Math & Statistics + 25 Date & Time + 20 Unit & Data Converters + 20 Developer/Text + 20 Education/Home + 15 Lifestyle/Construction + 15 Health & Wellness (Batch 10 main source)
 - **Production branch:** `main`
 - **Latest main commit:** `f7eaf356971523f8e6dda2d30278cdc972ef4836` (Batch 10; deployment pending verification)
 - **Website:** https://apex-global-labs.github.io/FinPulse-Hub/
