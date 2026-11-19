@@ -70,14 +70,35 @@ test("sequence, series, correlation and regression tools expose appropriate char
  assert.equal(series.chartType,"line");assert.deepEqual(series.series,[2,6,14,30]);
  const pairs={x1:1,x2:2,x3:3,x4:4,x5:5,y1:3,y2:5,y3:7,y4:9,y5:11};
  const corr=advanced.find(x=>x.id==="correlation").run(pairs);
- assert.equal(corr.chartType,"scatter");assert.deepEqual(corr.chartLabels,[1,2,3,4,5]);
+ assert.equal(corr.chartType,"scatter");assert.deepEqual(corr.chartLabels,[1,2,3,4,5]);assert.deepEqual(corr.series,[3,5,7,9,11]);
  const reg=advanced.find(x=>x.id==="linear-regression").run(pairs);
- assert.equal(reg.chartType,"scatter");assert.deepEqual(reg.fitSeries,[3,5,7,9,11]);
+ assert.equal(reg.chartType,"scatter");assert.deepEqual(reg.series,[3,5,7,9,11]);assert.deepEqual(reg.fitSeries,[3,5,7,9,11]);
 });
+
+test("signed input metadata matches each basic math domain",()=>{
+ const signed={ "basic-arithmetic":["a","b"],fraction:["numerator","denominator"],"mixed-number":["whole"],"decimal-fraction":["value"],average:["a","b","c"],"percentage-change":["old","new"],"percent-error":["actual","expected"],rounding:["value"],"significant-figures":["value"],"scientific-notation":["value"],exponent:["base","exponent"],"cube-root":["value"],"nth-root":["value"],gcd:["a","b"],lcm:["a","b"],"prime-checker":["n"],modulo:["a","b"]};
+ for(const [id,keys] of Object.entries(signed)){const tool=basic.find(x=>x.id===id);for(const key of keys)assert.equal(tool.f.find(f=>f[0]===key)[3],"signed",id+"."+key)}
+});
+test("probability and descriptive statistics expose appropriate comparison charts",()=>{
+ const probability=advanced.find(x=>x.id==="probability").run({a:.4,b:.3,mode:"or"});
+ assert.equal(probability.chartType,"bar");assert.deepEqual(probability.series,[40,30,58]);assert.equal(probability.chartUnit,"%");
+ const data={x1:1,x2:2,x3:2,x4:4,x5:6};
+ const stats=advanced.find(x=>x.id==="mean-median-mode").run(data);
+ assert.equal(stats.chartType,"bar");assert.deepEqual(stats.series,[1,2,2,4,6]);
+ const variance=advanced.find(x=>x.id==="variance-standard-deviation").run({...data,kind:"population"});
+ assert.equal(variance.chartType,"bar");
+});
+test("geometry tools return labelled accessible diagram specifications",()=>{
+ const py=basic.find(x=>x.id==="pythagorean").run({a:3,b:4});
+ assert.deepEqual(py.geometry,{type:"right-triangle",a:3,b:4,c:5});
+ assert.deepEqual(basic.find(x=>x.id==="circle").run({radius:5}).geometry,{type:"circle",radius:5});
+ assert.deepEqual(basic.find(x=>x.id==="triangle-area").run({base:10,height:6}).geometry,{type:"triangle",base:10,height:6});
+});
+
 test("shared renderer supports math formula guides and accessible scatter plots",()=>{
  const app=fs.readFileSync("app.js","utf8");
  assert.match(app,/d\.formula&&Array\.isArray\(d\.steps\)/);
- assert.match(app,/function scatterGraph/);
+ assert.match(app,/function scatterGraph/);assert.match(app,/function geometryGraph/);
  assert.match(app,/role="img" aria-label="Scatter plot of paired observations and fitted line"/);
- assert.match(app,/graph\(r\.series,chartUnit,r\.chartLabels,r\.chartType,r\.fitSeries\)/);
+ assert.match(app,/graph\(r\.series,r\.chartUnit\|\|chartUnit,r\.chartLabels,r\.chartType,r\.fitSeries,r\.geometry\)/);
 });
