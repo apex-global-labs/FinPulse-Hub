@@ -390,3 +390,109 @@ The following batch boundaries supersede the earlier batch numbering for executi
 **Batch 6 candidate IDs:** `length-converter`, `mass-converter`, `temperature-converter`, `area-converter`, `volume-converter`, `speed-converter`, `pressure-converter`, `energy-converter`, `power-converter`, `frequency-converter`, `angle-converter`, `fuel-economy-converter`, `density-converter`, `cooking-measurement-converter`, `data-storage-converter`, `data-transfer-speed-converter`, `download-time-estimator`, `number-base-converter`, `roman-numeral-converter`, `paper-size-converter`.
 
 Every batch uses a dedicated feature branch and PR. Do not merge without the user's explicit approval. No unrelated side tasks or experiments are in scope until the 220-tool production release is complete.
+
+### Batch 7–11 — Exact remaining 85-tool allocation
+
+The Batch 6 converter list above accounts for 20 of the original 105 planned additions. Once Batch 6 is merged and deployed, the remaining 85 tools below are divided into five batches of 15–20. Each roadmap item appears exactly once; IDs are to be assigned and checked against the live registry before implementation.
+
+**Batch 7 — Developer & Text/Encoding Utilities (20; target total 155)**
+
+1. Word Counter
+2. Character Counter
+3. Sentence Counter
+4. Paragraph Counter
+5. Reading Time Calculator
+6. Case Converter
+7. Text Reverser
+8. Duplicate Line Remover
+9. Text Compare / Diff Tool
+10. Whitespace Cleaner
+11. Line Sorter
+12. Text-to-Slug Generator
+13. HTML Entity Encoder / Decoder
+14. URL Encoder / Decoder
+15. Base64 Encoder / Decoder
+16. JSON Formatter & Validator
+17. HTML Formatter
+18. CSS Formatter
+19. JavaScript Formatter
+20. HTML/CSS/JS Minifier
+
+**Batch 8 — Developer wrap-up + Education & Everyday Lifestyle Part 1 (20; target total 175)**
+
+1. UUID Generator
+2. Regex Tester (safe local matching)
+3. Color Code Converter (HEX/RGB/HSL)
+4. Unix Timestamp Helper
+5. Markdown Previewer
+6. GPA Calculator
+7. CGPA Calculator
+8. Grade Calculator
+9. Exam Percentage Calculator
+10. Marks Required Calculator
+11. Weighted Grade Calculator
+12. Final Exam Grade Calculator
+13. Semester GPA Planner
+14. Attendance Percentage Calculator
+15. Study Time Planner
+16. Reading Schedule Planner
+17. Assignment Grade Tracker
+18. Concrete Volume Calculator
+19. Brick Quantity Estimator
+20. Cement / Sand / Aggregate Estimator
+
+**Batch 9 — Lifestyle, Construction, Energy & Misc Part 2 (15; target total 190)**
+
+1. Paint Quantity Calculator
+2. Tile Quantity Calculator
+3. Flooring Material Estimator
+4. Roofing Area Calculator
+5. Room Area Calculator
+6. Wall Area Calculator
+7. Gravel Volume Calculator
+8. Fence Material Estimator
+9. Fuel Cost Calculator
+10. Electricity Bill Estimator (manual tariff)
+11. Bill Split Calculator
+12. Unit Price Comparator
+13. Sales Commission Calculator
+14. Random Number Generator (non-gambling use)
+15. QR Code Generator
+
+**Batch 10 — Health & Wellness Part 1 (15; target total 205)**
+
+1. Sleep Duration Calculator
+2. Bedtime Planner
+3. Wake-up Time Planner
+4. Sleep Schedule Consistency Tracker
+5. Sleep Log Summary
+6. Running Pace Calculator
+7. Running Speed Calculator
+8. Distance-Time-Pace Calculator
+9. Race Finish Time Predictor
+10. Race Split Calculator
+11. Walking Pace Calculator
+12. Hiking Time Estimator
+13. Cycling Speed Calculator
+14. Cycling Time & Distance Calculator
+15. Swimming Pace Calculator
+
+**Batch 11 — Health & Wellness Part 2 + Final Verification (15; target total 220)**
+
+1. Swimming Interval Planner
+2. Rowing Pace Calculator
+3. Exercise Session Duration Calculator
+4. Interval Training Timer
+5. Rest Interval Planner
+6. Workout Session Planner (time only)
+7. Weekly Activity Minutes Tracker
+8. Activity Goal Progress Tracker
+9. Step-to-Distance Converter (user-entered stride)
+10. Distance-to-Step Estimator (user-entered stride)
+11. Elevation Gain Rate Calculator
+12. Hiking Elevation Pace Calculator
+13. Breathing Exercise Timer
+14. Meditation Session Planner
+15. Hydration Log Tracker (user-entered records only)
+
+**Allocation check:** Batch 7 = 20, Batch 8 = 20, Batch 9 = 15, Batch 10 = 15, Batch 11 = 15; total remaining = 85. Together with the 20 Batch 6 converters, this reconciles the original 105-tool backlog. Health tools retain the safety exclusions in Section 7; no diagnosis, medication dosing, weight-loss or calorie-restriction tools may be introduced.
