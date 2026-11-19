@@ -26,6 +26,16 @@ jobs:
             sleep 1
           done
           curl --fail --silent http://127.0.0.1:4173/ > /dev/null
+      - name: Collect 3-run CDP CPU profiles and Chrome traces
+        run: |
+          PROFILE_RUNS=3 PROFILE_HOLD_MS=5000 node scripts/collect-cdp-performance.cjs
+      - name: Upload CPU profiles, Chrome traces and function summary
+        uses: actions/upload-artifact@v4
+        with:
+          name: finpulse-pr46-cdp-performance-profiles
+          path: performance-profiles/
+          if-no-files-found: error
+          retention-days: 30
       - name: Audit mobile homepage and final tool route
         run: |
           mkdir -p lighthouse-reports
