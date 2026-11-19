@@ -61,7 +61,7 @@ function staticRouteHtml(source, id, canonical) {
   if (html === source) throw new Error(id + ": could not add static route markers");
   html = html.replace("<head>", '<head><base href="../../"><script src="../../seo-prerender-bootstrap.js"></script>');
   html = html.replace(/<link rel="canonical" href="[^"]*">/, '<link rel="canonical" href="' + canonical + '">');
-  const jsonLdMatch = html.match(/<script id="tool-structured-data" type="application\\/ld\\+json">([\\s\\S]*?)<\\/script>/i);
+  const jsonLdMatch = html.match(/<script id="tool-structured-data" type="application\/ld\+json">([\s\S]*?)<\/script>/i);
   if (!jsonLdMatch) throw new Error(id + ": source JSON-LD missing before static rewrite");
   const jsonLd = JSON.parse(jsonLdMatch[1]);
   const software = jsonLd["@graph"]?.find(item => item["@type"] === "SoftwareApplication");
