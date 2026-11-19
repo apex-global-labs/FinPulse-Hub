@@ -50,7 +50,7 @@ function canonicalFor(id) {
   return url.href;
 }
 function staticRouteHtml(source, id, canonical) {
-  let html = source.replace("<html lang=\"en\">", '<html lang="en" data-static-prerender="true" data-static-canonical="' + canonical + '" data-tool-id="' + id + '">');
+  let html = source.replace(/<html lang="en"([^>]*)>/i, '<html lang="en"$1 data-static-prerender="true" data-static-canonical="' + canonical + '" data-tool-id="' + id + '">');
   if (html === source) throw new Error(id + ": could not add static route markers");
   html = html.replace("<head>", '<head><base href="../../"><script src="../../seo-prerender-bootstrap.js"></script>');
   html = html.replace(/<link rel="canonical" href="[^"]*">/, '<link rel="canonical" href="' + canonical + '">');
