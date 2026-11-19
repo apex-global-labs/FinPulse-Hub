@@ -48,4 +48,37 @@ await page.goto(base+"?tool=paper-size-converter");await page.locator("#f-orient
 await page.close();
 });
 });
+
+await t.test("Batch 7 all 20 Developer & Text utility views render guides, presets, FAQs and pass WCAG 2.1 A/AA",async()=>{
+const page=await browser.newPage({viewport:{width:1280,height:800},bypassCSP:true});
+await page.goto(base);await page.addScriptTag({content:axeSource});
+const tools=[["word-counter","Word Counter"],["character-counter","Character Counter"],["sentence-counter","Sentence Counter"],["paragraph-counter","Paragraph Counter"],["reading-time-calculator","Reading Time Calculator"],["case-converter","Case Converter"],["text-reverser","Text Reverser"],["duplicate-line-remover","Duplicate Line Remover"],["text-compare-diff","Text Compare / Diff Tool"],["whitespace-cleaner","Whitespace Cleaner"],["line-sorter","Line Sorter"],["text-to-slug-generator","Text-to-Slug Generator"],["html-entity-encoder-decoder","HTML Entity Encoder / Decoder"],["url-encoder-decoder","URL Encoder / Decoder"],["base64-encoder-decoder","Base64 Encoder / Decoder"],["json-formatter-validator","JSON Formatter & Validator"],["html-formatter","HTML Formatter"],["css-formatter","CSS Formatter"],["javascript-formatter","JavaScript Formatter"],["html-css-js-minifier","HTML/CSS/JS Minifier"]];
+assert.equal(await page.locator("#tool-links a").count(),155);
+for(const [id,name] of tools){
+ await page.goto(base+"?tool="+id);await page.addScriptTag({content:axeSource});
+ await page.getByRole("heading",{name,exact:true}).waitFor();
+ assert.ok(await page.locator("#formula-panel ol li").count()>=5,id+" steps");
+ assert.equal(await page.locator(".seo-content details").count(),4,id+" FAQs");
+ assert.equal(await page.locator(".preset-buttons button").count(),3,id+" presets");
+ const audit=await page.evaluate(async()=>await axe.run(document,{runOnly:{type:"tag",values:["wcag2a","wcag2aa","wcag21a","wcag21aa"]}}));
+ assert.deepEqual(audit.violations.map(v=>({id:v.id,impact:v.impact,description:v.help})),[],id+" accessibility");
+}
+await page.goto(base+"?tool=json-formatter-validator");
+await page.locator("#f-text").fill('{"bad":}');
+await page.locator("#f-mode").selectOption("pretty");
+assert.match(await page.locator(".result .sub").innerText(),/Invalid JSON/);
+await page.goto(base+"?tool=url-encoder-decoder");
+await page.locator("#f-text").fill("broken%2");
+await page.locator("#f-mode").selectOption("decode");
+assert.match(await page.locator(".result .sub").innerText(),/Malformed URL/);
+await page.goto(base+"?tool=base64-encoder-decoder");
+await page.locator("#f-text").fill("%%%=");
+await page.locator("#f-mode").selectOption("decode");
+assert.match(await page.locator(".result .sub").innerText(),/Malformed Base64/);
+await page.goto(base+"?tool=word-counter");
+await page.locator("#f-text").fill("   ");
+assert.match(await page.locator(".result .sub").innerText(),/cannot be empty/);
+await page.close();
+});
+
 test.after(async()=>{if(browser)await browser.close();if(server)await new Promise(r=>server.close(r))});
