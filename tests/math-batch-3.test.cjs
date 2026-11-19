@@ -76,8 +76,8 @@ test("sequence, series, correlation and regression tools expose appropriate char
 });
 test("shared renderer supports math formula guides and accessible scatter plots",()=>{
  const app=fs.readFileSync("app.js","utf8");
- assert.match(app,/d\\.formula&&Array\\.isArray\\(d\\.steps\\)/);
+ assert.match(app,/d\.formula&&Array\.isArray\(d\.steps\)/);
  assert.match(app,/function scatterGraph/);
  assert.match(app,/role="img" aria-label="Scatter plot of paired observations and fitted line"/);
- assert.match(app,/graph\\(r\\.series,chartUnit,r\\.chartLabels,r\\.chartType,r\\.fitSeries\\)/);
+ assert.match(app,/graph\(r\.series,chartUnit,r\.chartLabels,r\.chartType,r\.fitSeries\)/);
 });
