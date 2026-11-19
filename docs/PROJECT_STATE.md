@@ -30,13 +30,13 @@ All 115 tools are registered, the homepage directory contains 115 unique links, 
 | JavaScript syntax checks | Passed |
 | Formula + smoke + regression suite | 198 / 198 passed |
 | Frankfurter reference-rate API test | 1 / 1 passed |
-| Playwright browser suite before full Date & Time browser expansion | 5 / 5 passed |
+| Playwright browser suite (all 115 tool views) | 6 / 6 passed |
 | Formula/default-value and guide coverage | All 115 tools covered by registry/smoke/formula assertions |
 | WCAG browser checks | 45 Finance + 45 Math & Statistics views; full 25 Date & Time browser audit added in Batch 5 verification PR |
 | GitHub Pages deployment | Success |
 | Lighthouse mobile + desktop | Success |
 
-The final Batch 5 browser-coverage PR adds an axe WCAG 2.1 A/AA audit and formula-guide assertion for each of the 25 Date & Time views. Its final CI result is recorded in the PR and supersedes the pre-expansion browser count above.
+The final Batch 5 browser suite iterates all 45 Finance, 45 Math & Statistics and 25 Date & Time views. Each Date & Time view must render its formula/step guide and pass axe WCAG 2.1 A/AA checks.
 
 ## Lighthouse — runtime commit da94f903
 
