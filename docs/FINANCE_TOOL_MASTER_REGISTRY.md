@@ -2,8 +2,8 @@
 
 - **Version:** 3.0
 - **Updated:** 2026-11-19
-- **Production portfolio:** 175 active tools (Batch 8 merged; Batch 9 candidate: 190)
-- **Runtime release:** `ee06c524c7f4ce77109881d6fa877991c5d7851a`
+- **Production portfolio:** 190 active tools (Batch 9 merged; Batch 10 candidate: 205)
+- **Runtime release:** `4f7909018f04b8ae9a994b21827fd48acdb80a79`
 - **Repository:** apex-global-labs/FinPulse-Hub
 
 > This file retains its historical filename for compatibility. It is now the master registry for all FinPulse Hub tools, not only finance calculators.
@@ -21,8 +21,10 @@
 | Batch 8 Developer wrap-up | 5 | `education-lifestyle-tools.js` |
 | Education & Study | 12 | `education-lifestyle-tools.js` |
 | Home & Construction | 3 | `education-lifestyle-tools.js` |
-| **Production total** | **175** | |
-| **Release-candidate total** | **190** | |
+| Lifestyle & Construction Part 2 | 15 | `lifestyle-tools.js` |
+| Health & Wellness Part 1 | 15 | `health-activity-tools.js` |
+| **Production total** | **190** | |
+| **Release-candidate total** | **205** | |
 
 Every tool has a stable registry ID used by the `?tool=` route, homepage directory and sitemap. Do not rename an ID without an explicit migration and route regression.
 
@@ -297,3 +299,26 @@ Batch 8 adds exactly 20 unique IDs in `education-lifestyle-tools.js`: 5 develope
 | 15 | QR Code Generator | `qr-code-generator` |
 
 Batch 9 adds 15 unique IDs through `lifestyle-tools.js`; the QR generator uses the vendored MIT-licensed qrcodejs library and produces the image locally. Electricity pricing is manual only; construction quantities are estimates; random selection is explicitly limited to ordinary non-gambling use. Candidate total: 190.
+
+
+## Batch 10 — Health & Wellness Part 1 (15)
+
+| # | Tool | Stable ID |
+|---:|---|---|
+| 1 | Sleep Duration Calculator | `sleep-duration-calculator` |
+| 2 | Bedtime Planner | `bedtime-planner` |
+| 3 | Wake-up Time Planner | `wake-up-time-planner` |
+| 4 | Sleep Schedule Consistency Tracker | `sleep-schedule-consistency-tracker` |
+| 5 | Sleep Log Summary | `sleep-log-summary` |
+| 6 | Running Pace Calculator | `running-pace-calculator` |
+| 7 | Running Speed Calculator | `running-speed-calculator` |
+| 8 | Distance-Time-Pace Calculator | `distance-time-pace-calculator` |
+| 9 | Race Finish Time Predictor | `race-finish-time-predictor` |
+| 10 | Race Split Calculator | `race-split-calculator` |
+| 11 | Walking Pace Calculator | `walking-pace-calculator` |
+| 12 | Hiking Time Estimator | `hiking-time-estimator` |
+| 13 | Cycling Speed Calculator | `cycling-speed-calculator` |
+| 14 | Cycling Time & Distance Calculator | `cycling-time-distance-calculator` |
+| 15 | Swimming Pace Calculator | `swimming-pace-calculator` |
+
+All Batch 10 tools provide informational time, distance, pace, speed and schedule arithmetic only. Each page discloses assumptions, scientific limitations and a medical disclaimer; no diagnosis, treatment, weight goal or calorie target is provided.
