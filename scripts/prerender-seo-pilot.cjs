@@ -56,7 +56,9 @@ function staticRouteHtml(source, id, canonical) {
   html = html.replace(/<link rel="canonical" href="[^"]*">/, '<link rel="canonical" href="' + canonical + '">');
   html = html.replace("<h1>Online Math Calculator</h1>", '<div class="calc-home-title">Online Math Calculator</div>');
   html = html.replace("<h1>Make better sense<br><em>of your money.</em></h1>", '<div class="hero-title">Make better sense<br><em>of your money.</em></div>');
-  html = html.replace(/(<div class="heading">[\\s\\S]*?)<h2>([\\s\\S]*?)<\\/h2>/, "$1<h1>$2</h1>");
+  const toolName = PILOTS.find(tool => tool.id === id)?.name;
+  if (!toolName || !html.includes("<h2>" + toolName + "</h2>")) throw new Error(id + ": rendered tool heading missing");
+  html = html.replace("<h2>" + toolName + "</h2>", "<h1>" + toolName + "</h1>");
   if (!html.includes('data-static-prerender="true"')) throw new Error(id + ": static marker missing");
   if (!html.includes('data-tool-id="' + id + '"')) throw new Error(id + ": tool marker missing");
   return html;
