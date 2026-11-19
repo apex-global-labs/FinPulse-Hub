@@ -60,3 +60,7 @@ textarea{font:12px ui-sans-serif,system-ui,sans-serif;color:var(--ink);backgroun
 
 /* Direct calculator routes prioritize the working tool above the fold. */
 body.tool-view .home-calculator,body.tool-view .hero,body.tool-view .ad-slot-top,body.tool-view .tool-directory,body.tool-view .about,body.tool-view footer,body.tool-view main>aside{display:none!important}body.tool-view main{display:block;max-width:1120px;margin:18px auto;padding:0 22px}body.tool-view #app{min-height:0}body.tool-view #app .heading{margin-top:0}body.tool-view #app .grid{align-items:start}.learning-panel h3{margin:18px 0 8px}.learning-panel h3:first-child{margin-top:0}.learning-panel p,.learning-panel li{font-size:13px;line-height:1.75;color:var(--muted)}.learning-panel ol,.learning-panel ul{padding-left:22px}
+
+/* Apply direct-tool route layout before the first paint, then keep it in sync after in-app navigation. */
+html.tool-view .home-calculator,html.tool-view .hero,html.tool-view .ad-slot-top,html.tool-view .tool-directory,html.tool-view .about,html.tool-view footer,html.tool-view main>aside{display:none!important}
+@media(max-width:700px){body.tool-view #app .grid{display:flex;flex-direction:column}body.tool-view #app .result{order:-1}}
