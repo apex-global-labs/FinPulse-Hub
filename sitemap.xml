@@ -70,4 +70,24 @@
   <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=pythagorean</loc></url>
   <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=circle</loc></url>
   <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=triangle-area</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=linear-equation</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=quadratic-equation</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=simultaneous-equations</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=polynomial-calculator</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=logarithm</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=matrix-operations</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=matrix-determinant</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=matrix-inverse</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=complex-number</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=sequence-calculator</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=series-sum</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=permutation</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=combination</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=probability</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=mean-median-mode</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=variance-standard-deviation</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=z-score</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=correlation</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=linear-regression</loc></url>
+  <url><loc>https://apex-global-labs.github.io/FinPulse-Hub/?tool=confidence-interval</loc></url>
 </urlset>
