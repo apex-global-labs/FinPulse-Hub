@@ -61,6 +61,15 @@ function staticRouteHtml(source, id, canonical) {
   if (html === source) throw new Error(id + ": could not add static route markers");
   html = html.replace("<head>", '<head><base href="../../"><script src="../../seo-prerender-bootstrap.js"></script>');
   html = html.replace(/<link rel="canonical" href="[^"]*">/, '<link rel="canonical" href="' + canonical + '">');
+  const jsonLdMatch = html.match(/<script id="tool-structured-data" type="application\\/ld\\+json">([\\s\\S]*?)<\\/script>/i);
+  if (!jsonLdMatch) throw new Error(id + ": source JSON-LD missing before static rewrite");
+  const jsonLd = JSON.parse(jsonLdMatch[1]);
+  const software = jsonLd["@graph"]?.find(item => item["@type"] === "SoftwareApplication");
+  const faq = jsonLd["@graph"]?.find(item => item["@type"] === "FAQPage");
+  if (!software || !faq) throw new Error(id + ": source JSON-LD entities missing before static rewrite");
+  software.url = canonical;
+  faq.url = canonical;
+  html = html.replace(jsonLdMatch[0], '<script id="tool-structured-data" type="application/ld+json">' + JSON.stringify(jsonLd) + '</script>');
   html = html.replace("<h1>Online Math Calculator</h1>", '<div class="calc-home-title">Online Math Calculator</div>');
   html = html.replace("<h1>Make better sense<br><em>of your money.</em></h1>", '<div class="hero-title">Make better sense<br><em>of your money.</em></div>');
   const toolName = PILOTS.find(tool => tool.id === id)?.name;
@@ -130,7 +139,11 @@ async function main() {
       assert.ok(await page.locator("#formula-panel").count(), tool.id + ": no-JS formula");
       assert.ok(await page.locator(".seo-content details").count() >= 1, tool.id + ": no-JS FAQ");
       assert.ok(await page.locator("#tool-structured-data").count(), tool.id + ": no-JS JSON-LD");
-      assert.equal(await page.locator('link[rel="canonical"]').getAttribute("href"), canonicalFor(tool.id));
+      const noJsCanonical = canonicalFor(tool.id);
+      assert.equal(await page.locator('link[rel="canonical"]').getAttribute("href"), noJsCanonical);
+      const noJsGraph = await page.locator("#tool-structured-data").evaluate(node => JSON.parse(node.textContent));
+      assert.equal(noJsGraph["@graph"].find(item => item["@type"] === "SoftwareApplication")?.url, noJsCanonical, tool.id + ": no-JS SoftwareApplication URL mismatch");
+      assert.equal(noJsGraph["@graph"].find(item => item["@type"] === "FAQPage")?.url, noJsCanonical, tool.id + ": no-JS FAQPage URL mismatch");
       await page.close();
     }
 
