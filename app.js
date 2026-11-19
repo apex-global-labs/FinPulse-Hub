@@ -57,7 +57,8 @@ const D=[
 ,...window.FinPulseMathTools.registry,
 ...window.FinPulseAdvancedMathTools.registry,
 ...window.FinPulseDateTimeTools.registry,
-...window.FinPulseUnitTools.registry
+...window.FinPulseUnitTools.registry,
+...window.FinPulseDeveloperTools.registry
 ];
 const requestedTool=new URLSearchParams(location.search).get("tool");let active=D.some(x=>x.id===requestedTool)?requestedTool:D[0].id,category="All",activeCurrency="USD",currencyRateDate="",currencyRateCache=new Map(),countryPresetNote="",activeChart=null;
 D.filter(d=>["freelance-project","freelancer-net-income","markup","break-even","business-roi","cash-flow","rental-yield","emergency-fund","net-worth"].includes(d.id)).forEach(d=>{const v={};d.f.forEach(field=>{v[field[0]]=Number(field[2])});d.seo=d.run(v).seo;});
@@ -71,7 +72,7 @@ function fieldMarkup(f){
   return '<div class="field"><label for="'+id+'">'+f[1]+'</label><select id="'+id+'" name="'+f[0]+'">'+options.map(o=>{const code=type==="currency"?o:o;const label=type==="currency"?Smart.currencyLabel(code):({of:"What is X% of Y?",change:"Percentage change",reverse:"Find the original value",add:"Add tax",remove:"Remove tax",included:"Tax included"}[o]||o);return '<option value="'+code+'" '+(String(code)===String(f[2])?"selected":"")+'>'+label+'</option>'}).join("")+'</select></div>';
  }
  if(type==="date"||type==="time"||type==="datetime")return '<div class="field"><label for="'+id+'">'+f[1]+'</label><input id="'+id+'" name="'+f[0]+'" type="'+(type==="datetime"?"datetime-local":type)+'" value="'+f[2]+'" required></div>';
- if(type==="textlong")return '<div class="field full"><label for="'+id+'">'+f[1]+'</label><textarea id="'+id+'" name="'+f[0]+'" rows="3" maxlength="2000" placeholder="YYYY-MM-DD, YYYY-MM-DD">'+f[2]+'</textarea></div>';
+ if(type==="textlong")return '<div class="field full"><label for="'+id+'">'+f[1]+'</label><textarea id="'+id+'" name="'+f[0]+'" rows="5" maxlength="100000" placeholder="Paste text or source code here">'+f[2]+'</textarea></div>';
  if(type==="text")return '<div class="field"><label for="'+id+'">'+f[1]+'</label><input id="'+id+'" name="'+f[0]+'" type="text" maxlength="3" value="'+f[2]+'" required></div>';
  if(type==="signed")return '<div class="field"><label for="'+id+'">'+f[1]+'</label><input id="'+id+'" name="'+f[0]+'" type="number" step="any" value="'+f[2]+'" required></div>';
  const cfg=Smart.sliderConfig(f);
