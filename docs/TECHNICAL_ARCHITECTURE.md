@@ -9,7 +9,7 @@
 
 FinPulse Hub is a static-first single-page calculator library hosted on GitHub Pages. The production application uses semantic HTML, CSS and vanilla JavaScript. Calculation logic is separated from the DOM and tool presentation. There is no required backend, database, account service or paid runtime dependency.
 
-The production release now registers 205 tools (Batch 10); the final Batch 11 release candidate registers 220:
+The verified production release registers 220 tools (Batches 1–11):
 
 - 45 financial calculators
 - 25 basic mathematics tools
@@ -156,3 +156,13 @@ Measured on production runtime commit `da94f90328c80f557a98b08fa889d4c429046348`
 ## Batch 10 production verification
 
 Main CI #44504320519 passed 261/261 tests, API 1/1 and Browser 11/11. Pages deployment #44504320744 succeeded; its published artifact contains 205 homepage entries and 205 sitemap URLs. Production Lighthouse #44504380240 measured mobile Performance 83 / desktop 100, Accessibility 100, SEO 100, CLS 0.000 / 0.0089, LCP 1,534.7 ms / 384.1 ms and TBT 699 ms / 0 ms.
+
+
+## Final Batch 11 production release — 2026-11-19
+
+- PR #42 merged by squash as production commit `63822f8f43e0e1eb21ca85d0969b7ecb05e52313`.
+- Candidate Finance CI [#44510604397](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44510604397) and Candidate Lighthouse [#44510604392](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44510604392) both succeeded.
+- Main CI [#44511324462](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44511324462) succeeded: syntax checks passed; 275/275 formula, smoke and regression tests; Frankfurter API 1/1; Playwright browser suite 13/13. The final browser audit rendered all 220 unique routes and passed axe WCAG 2.1 A/AA checks.
+- GitHub Pages deployment [#44511324424](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44511324424) succeeded. Published artifact `github-pages` (artifact ID `14522372777`) was inspected: it contains 220 sitemap tool URLs, a homepage with the 220-tool counter, and `health-wellness-tools.js`.
+- Production Lighthouse [#44511405172](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44511405172) succeeded. Mobile: Performance 95, Accessibility 100, Best Practices 96, SEO 100, CLS 0.000, LCP 1,539.8 ms, TBT 253 ms. Desktop: Performance 100, Accessibility 100, Best Practices 96, SEO 100, CLS 0.0094, LCP 384.3 ms, TBT 0 ms.
+- Verified portfolio: 220/220 unique tools; homepage counter, registry and canonical sitemap all align. Latest verified production commit: `63822f8f43e0e1eb21ca85d0969b7ecb05e52313`.

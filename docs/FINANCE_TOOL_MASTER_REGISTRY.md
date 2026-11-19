@@ -2,8 +2,8 @@
 
 - **Version:** 3.0
 - **Updated:** 2026-11-19
-- **Verified production portfolio:** 205 active tools (Batch 10 deployed); Batch 11 candidate: 220
-- **Latest production commit:** `f7eaf356971523f8e6dda2d30278cdc972ef4836` (Batch 10 deployed)
+- **Verified production portfolio:** 220 active tools (Batches 1–11 deployed)
+- **Latest production commit:** `63822f8f43e0e1eb21ca85d0969b7ecb05e52313` (Batch 11 deployed)
 - **Repository:** apex-global-labs/FinPulse-Hub
 
 > This file retains its historical filename for compatibility. It is now the master registry for all FinPulse Hub tools, not only finance calculators.
@@ -357,3 +357,13 @@ Batch 11 tools use user-entered values only. No activity, breathing or hydration
 
 
 **Batch 11 display-label safety note:** Activity-adjacent roadmap entries are exposed as neutral time, measurement and record utilities. They do not provide workout programming, exercise targets, breathing techniques or live countdowns; stable route IDs are preserved.
+
+
+## Final Batch 11 production release — 2026-11-19
+
+- PR #42 merged by squash as production commit `63822f8f43e0e1eb21ca85d0969b7ecb05e52313`.
+- Candidate Finance CI [#44510604397](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44510604397) and Candidate Lighthouse [#44510604392](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44510604392) both succeeded.
+- Main CI [#44511324462](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44511324462) succeeded: syntax checks passed; 275/275 formula, smoke and regression tests; Frankfurter API 1/1; Playwright browser suite 13/13. The final browser audit rendered all 220 unique routes and passed axe WCAG 2.1 A/AA checks.
+- GitHub Pages deployment [#44511324424](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44511324424) succeeded. Published artifact `github-pages` (artifact ID `14522372777`) was inspected: it contains 220 sitemap tool URLs, a homepage with the 220-tool counter, and `health-wellness-tools.js`.
+- Production Lighthouse [#44511405172](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44511405172) succeeded. Mobile: Performance 95, Accessibility 100, Best Practices 96, SEO 100, CLS 0.000, LCP 1,539.8 ms, TBT 253 ms. Desktop: Performance 100, Accessibility 100, Best Practices 96, SEO 100, CLS 0.0094, LCP 384.3 ms, TBT 0 ms.
+- Verified portfolio: 220/220 unique tools; homepage counter, registry and canonical sitemap all align. Latest verified production commit: `63822f8f43e0e1eb21ca85d0969b7ecb05e52313`.

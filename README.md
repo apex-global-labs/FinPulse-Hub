@@ -1,14 +1,14 @@
 # FinPulse Hub
 
-FinPulse Hub is a free-first, browser-based library targeting **220 calculators and tools**. Batch 10 is merged and deployed from `main` (205 production tools); main CI, Pages deployment and production Lighthouse all succeeded. Batch 11 is the final 15-tool release candidate (220 total). Calculations run locally in the browser wherever possible; the site is hosted on GitHub Pages.
+FinPulse Hub is a free-first, browser-based library with **220 calculators and tools** in production. Batch 11 is merged and deployed from `main`; the final 220-tool release passed main CI, GitHub Pages deployment, full 220-route browser/accessibility checks and production Lighthouse. Calculations run locally in the browser wherever possible; the site is hosted on GitHub Pages.
 
 ## Production status
 
-- **Production release:** 205 tools (Batch 10 deployed); merge commit `f7eaf356971523f8e6dda2d30278cdc972ef4836`; main CI #44504320519, Pages #44504320744, Lighthouse #44504380240 all succeeded
-- **Batch 10:** PR #41 merged; main source 205 tools · **Batch 11:** dedicated feature branch adds 15 tools; PR candidate 220
-- **Inventory:** 45 Finance + 25 Basic Math + 20 Advanced Math & Statistics + 25 Date & Time + 20 Unit & Data Converters + 20 Developer/Text + 20 Education/Home + 15 Lifestyle/Construction + 15 Health & Wellness (Batch 10 main source)
+- **Production release:** 220 tools; merge commit `63822f8f43e0e1eb21ca85d0969b7ecb05e52313`; main CI #44511324462, Pages #44511324424 and production Lighthouse #44511405172 all succeeded
+- **Batch 10:** PR #41 merged (205 tools) · **Batch 11:** PR #42 merged; final production portfolio 220 tools
+- **Inventory:** 45 Finance + 25 Basic Math + 20 Advanced Math & Statistics + 25 Date & Time + 20 Unit & Data Converters + 20 Developer/Text + 5 Developer wrap-up + 12 Education/Study + 3 Home/Construction + 15 Lifestyle/Construction + 15 Health & Wellness Part 1 + 15 Health & Wellness Part 2
 - **Production branch:** `main`
-- **Latest main commit:** `f7eaf356971523f8e6dda2d30278cdc972ef4836` (Batch 10 deployed)
+- **Latest verified production commit:** `63822f8f43e0e1eb21ca85d0969b7ecb05e52313` (Batch 11 deployed)
 - **Website:** https://apex-global-labs.github.io/FinPulse-Hub/
 - **Hosting:** GitHub Pages (free static hosting)
 - **Stack:** semantic HTML, CSS, vanilla JavaScript, Node.js built-in tests, GitHub Actions
@@ -39,7 +39,7 @@ FinPulse Hub is a free-first, browser-based library targeting **220 calculators 
 - Copy, CSV/JSON export, print, shareable URL state and reset
 - Local calculation history with restore, light/dark theme and keyboard shortcuts
 - Related tools, embed-code generator and reserved ad-safe slots
-- Searchable production directory with 205 unique links; Batch 11 candidate adds 15 unique links
+- Searchable production directory with 220 unique links
 - Accessible labels, semantic tables/diagrams and browser accessibility checks
 
 Features are applied where relevant; no artificial finance charts or amortization schedules are added to unrelated tools.
@@ -108,3 +108,13 @@ GitHub Actions runs these checks on pull requests and pushes to `main`. A succes
 - Main CI: [#44504320519](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44504320519) — 261/261 tests, API 1/1 and Browser 11/11 passed.
 - GitHub Pages deployment: [#44504320744](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44504320744) — success; deployed artifact contains 205 homepage entries and 205 sitemap URLs.
 - Production Lighthouse: [#44504380240](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44504380240) — mobile Performance 83, desktop 100; Accessibility 100, SEO 100; CLS 0.000 mobile / 0.0089 desktop.
+
+
+## Final Batch 11 production release — 2026-11-19
+
+- PR #42 merged by squash as production commit `63822f8f43e0e1eb21ca85d0969b7ecb05e52313`.
+- Candidate Finance CI [#44510604397](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44510604397) and Candidate Lighthouse [#44510604392](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44510604392) both succeeded.
+- Main CI [#44511324462](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44511324462) succeeded: syntax checks passed; 275/275 formula, smoke and regression tests; Frankfurter API 1/1; Playwright browser suite 13/13. The final browser audit rendered all 220 unique routes and passed axe WCAG 2.1 A/AA checks.
+- GitHub Pages deployment [#44511324424](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44511324424) succeeded. Published artifact `github-pages` (artifact ID `14522372777`) was inspected: it contains 220 sitemap tool URLs, a homepage with the 220-tool counter, and `health-wellness-tools.js`.
+- Production Lighthouse [#44511405172](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44511405172) succeeded. Mobile: Performance 95, Accessibility 100, Best Practices 96, SEO 100, CLS 0.000, LCP 1,539.8 ms, TBT 253 ms. Desktop: Performance 100, Accessibility 100, Best Practices 96, SEO 100, CLS 0.0094, LCP 384.3 ms, TBT 0 ms.
+- Verified portfolio: 220/220 unique tools; homepage counter, registry and canonical sitemap all align. Latest verified production commit: `63822f8f43e0e1eb21ca85d0969b7ecb05e52313`.
