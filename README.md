@@ -1,11 +1,12 @@
 # FinPulse Hub
 
-FinPulse Hub is a free-first, browser-based library of **115 calculators and tools** for finance, mathematics, statistics, dates and time. Calculations run locally in the browser wherever possible; the site is hosted on GitHub Pages.
+FinPulse Hub is a free-first, browser-based library targeting **220 calculators and tools**; the current production baseline is 115 and Batch 6 proposes 20 more converters for finance, mathematics, statistics, dates and time. Calculations run locally in the browser wherever possible; the site is hosted on GitHub Pages.
 
 ## Production status
 
-- **Active tools:** 115 / 115
-- **Inventory:** 45 Finance + 25 Basic Math + 20 Advanced Math & Statistics + 25 Date & Time
+- **Production baseline:** 115 tools (main)
+- **Batch 6 release candidate:** 135 tools (115 existing + 20 converter tools; awaiting PR checks and merge approval)
+- **Inventory:** 45 Finance + 25 Basic Math + 20 Advanced Math & Statistics + 25 Date & Time + 20 Unit & Data Converters (Batch 6 candidate)
 - **Production branch:** `main`
 - **Runtime release commit:** `da94f90328c80f557a98b08fa889d4c429046348`
 - **Website:** https://apex-global-labs.github.io/FinPulse-Hub/
@@ -21,7 +22,8 @@ FinPulse Hub is a free-first, browser-based library of **115 calculators and too
 | Basic mathematics | 25 |
 | Advanced mathematics & statistics | 20 |
 | Date & time | 25 |
-| **Total** | **115** |
+| Unit & data converters (Batch 6 candidate) | 20 |
+| **Release-candidate total** | **135** |
 
 ## Shared capabilities
 
@@ -31,15 +33,15 @@ FinPulse Hub is a free-first, browser-based library of **115 calculators and too
 - Copy, CSV/JSON export, print, shareable URL state and reset
 - Local calculation history with restore, light/dark theme and keyboard shortcuts
 - Related tools, embed-code generator and reserved ad-safe slots
-- Searchable directory with 115 unique tool links
+- Searchable directory with 135 unique tool links in the Batch 6 branch (main remains at 115 until merge)
 - Accessible labels, semantic tables/diagrams and browser accessibility checks
 
 Features are applied where relevant; no artificial finance charts or amortization schedules are added to unrelated tools.
 
 ## Architecture
 
-- `finance-core.js`, `math-core.js`, `advanced-math-core.js`, `date-time-core.js`: calculation logic
-- `math-tools.js`, `advanced-math-tools.js`, `date-time-tools.js`: tool registries and metadata
+- `finance-core.js`, `math-core.js`, `advanced-math-core.js`, `date-time-core.js`, `unit-converter-core.js`: calculation logic
+- `math-tools.js`, `advanced-math-tools.js`, `date-time-tools.js`, `unit-converter-tools.js`: tool registries and metadata
 - `app.js`: finance registry, shared rendering, routing and workspace orchestration
 - `smart-ui.js`, tax and asset data modules: shared controls and jurisdiction/selector data
 - `tests/`: formula, smoke, API and Playwright browser/regression tests
@@ -50,7 +52,7 @@ Features are applied where relevant; no artificial finance charts or amortizatio
 | Document | Purpose |
 |---|---|
 | [Project State](docs/PROJECT_STATE.md) | Current production commit, verification evidence and release status |
-| [Master Tool Registry](docs/FINANCE_TOOL_MASTER_REGISTRY.md) | Exact 115-tool inventory and stable route IDs |
+| [Master Tool Registry](docs/FINANCE_TOOL_MASTER_REGISTRY.md) | Exact production inventory and stable route IDs |
 | [Technical Architecture](docs/TECHNICAL_ARCHITECTURE.md) | Implemented architecture and test strategy |
 | [Implementation Status](docs/IMPLEMENTATION_STATUS.md) | Completed batches and remaining work |
 | [Product Requirements](docs/PRODUCT_REQUIREMENTS.md) | Product scope, boundaries and requirements |

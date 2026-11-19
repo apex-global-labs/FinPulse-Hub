@@ -78,3 +78,23 @@ The final Batch 5 browser suite iterates all 45 Finance, 45 Math & Statistics an
 - Currency reference rates are published rates, not live transaction quotes.
 - Tax/payroll outputs are estimates with explicit jurisdiction and scope limitations.
 - Financial projections are scenario illustrations, not guarantees or personal financial advice.
+
+
+## Batch 6 — Unit, Measurement & Data Converters (PR candidate)
+
+- **Branch:** `feat/batch-6-unit-measurement-converters`
+- **Base commit:** `219399ed588c26885d8902a3c1237c63c91d9c87`
+- **Candidate inventory:** 135 tools (115 preserved + 20 new); production remains 115 until PR merge and Pages deployment.
+- **New runtime modules:** `unit-converter-core.js`, `unit-converter-tools.js`
+- **New IDs:** `length-converter`, `mass-converter`, `temperature-converter`, `area-converter`, `volume-converter`, `speed-converter`, `pressure-converter`, `energy-converter`, `power-converter`, `frequency-converter`, `angle-converter`, `fuel-economy-converter`, `density-converter`, `cooking-measurement-converter`, `data-storage-converter`, `data-transfer-speed-converter`, `download-time-estimator`, `number-base-converter`, `roman-numeral-converter`, `paper-size-converter`.
+- **Sitemap candidate:** 135 unique tool routes.
+- **PR:** [#34](https://github.com/apex-global-labs/FinPulse-Hub/pull/34), open and mergeable; awaiting explicit user approval.
+- **CI:** [Run #44491064031](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44491064031) — success; syntax passed, Formula + Smoke + Regression 214/214, API 1/1, Browser 7/7. All 20 converter views passed WCAG 2.1 A/AA axe checks.
+- **QA state:** PR CI green; main CI and Pages deployment remain pending merge. Do not count these tools as production-delivered until merge and deployment succeed.
+
+## Latest Lighthouse rerun — production baseline commit 219399ed
+
+- [Run #44483331679](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44483331679) completed successfully and uploaded artifact `finpulse-lighthouse-reports`.
+- Mobile: Performance 98, Accessibility 100, Best Practices 96, SEO 100; LCP 1,348 ms, TBT 175 ms, CLS 0.000.
+- Desktop: Performance 100, Accessibility 100, Best Practices 96, SEO 100; LCP 623 ms, TBT 0 ms, CLS 0.000.
+- Both viewport audits recorded zero CLS.
