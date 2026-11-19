@@ -44,3 +44,6 @@ textarea{font:12px ui-sans-serif,system-ui,sans-serif;color:var(--ink);backgroun
 :root[data-theme="dark"] nav{color:var(--muted)}
 :root[data-theme="dark"] .cat{background:var(--surface-soft);color:var(--muted)}
 :root[data-theme="dark"] .primary{background:#176b50;color:#fff}
+
+/* Batch 1: compact, horizontally scrollable amortization tables and scenario presets */
+.schedule-scroll{max-width:100%;overflow-x:auto;border:1px solid var(--border);border-radius:10px}.schedule-scroll table{width:100%;min-width:650px;border-collapse:collapse;font-size:12px}.schedule-scroll th,.schedule-scroll td{padding:9px 10px;border-bottom:1px solid var(--border);text-align:right;white-space:nowrap}.schedule-scroll th:first-child,.schedule-scroll td:first-child{text-align:left}.schedule-scroll th{position:sticky;top:0;background:var(--surface-soft);color:var(--ink)}.schedule-scroll td{color:var(--muted)}.preset-buttons{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:12px 0}.preset-buttons>span{font-size:12px;color:var(--muted);font-weight:600}.preset-buttons .btn{font-size:12px;padding:7px 10px}.schedule-panel[hidden]{display:none}
