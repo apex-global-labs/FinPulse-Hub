@@ -1,0 +1,1619 @@
+{
+  "schemaVersion": 1,
+  "auditDate": "2026-11-21",
+  "baseline": "main",
+  "sourceFile": "developer-tools.js",
+  "toolCount": 20,
+  "literalOccurrences": 119,
+  "method": "Quoted/template literal scan excluding comments, scoped to tool-definition segments; heuristic classification and context supplied for manual review.",
+  "tools": [
+    {
+      "toolId": "word-counter",
+      "toolName": "Word Counter",
+      "category": "Developer & Text Tools",
+      "subcategory": "Text & Writing Utilities",
+      "stringCount": 3,
+      "strings": [
+        {
+          "toolId": "word-counter",
+          "toolName": "Word Counter",
+          "sourceFile": "developer-tools.js",
+          "line": 3,
+          "exact": "word-counter",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": "\"word-counter\",\"Word Counter\",\"Count Unicode words and unique words.\"], ["
+        },
+        {
+          "toolId": "word-counter",
+          "toolName": "Word Counter",
+          "sourceFile": "developer-tools.js",
+          "line": 3,
+          "exact": "Word Counter",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "\"word-counter\",\"Word Counter\",\"Count Unicode words and unique words.\"], ["
+        },
+        {
+          "toolId": "word-counter",
+          "toolName": "Word Counter",
+          "sourceFile": "developer-tools.js",
+          "line": 3,
+          "exact": "Count Unicode words and unique words.",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "\"word-counter\",\"Word Counter\",\"Count Unicode words and unique words.\"], ["
+        }
+      ]
+    },
+    {
+      "toolId": "character-counter",
+      "toolName": "Character Counter",
+      "category": "Developer & Text Tools",
+      "subcategory": "Text & Writing Utilities",
+      "stringCount": 3,
+      "strings": [
+        {
+          "toolId": "character-counter",
+          "toolName": "Character Counter",
+          "sourceFile": "developer-tools.js",
+          "line": 4,
+          "exact": "character-counter",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": "\"character-counter\",\"Character Counter\",\"Count graphemes, code points and UTF-8 bytes.\"],"
+        },
+        {
+          "toolId": "character-counter",
+          "toolName": "Character Counter",
+          "sourceFile": "developer-tools.js",
+          "line": 4,
+          "exact": "Character Counter",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "\"character-counter\",\"Character Counter\",\"Count graphemes, code points and UTF-8 bytes.\"], ["
+        },
+        {
+          "toolId": "character-counter",
+          "toolName": "Character Counter",
+          "sourceFile": "developer-tools.js",
+          "line": 4,
+          "exact": "Count graphemes, code points and UTF-8 bytes.",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "\"character-counter\",\"Character Counter\",\"Count graphemes, code points and UTF-8 bytes.\"], ["
+        }
+      ]
+    },
+    {
+      "toolId": "sentence-counter",
+      "toolName": "Sentence Counter",
+      "category": "Developer & Text Tools",
+      "subcategory": "Text & Writing Utilities",
+      "stringCount": 3,
+      "strings": [
+        {
+          "toolId": "sentence-counter",
+          "toolName": "Sentence Counter",
+          "sourceFile": "developer-tools.js",
+          "line": 5,
+          "exact": "sentence-counter",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": "\"sentence-counter\",\"Sentence Counter\",\"Count sentence-like segments using common punctua"
+        },
+        {
+          "toolId": "sentence-counter",
+          "toolName": "Sentence Counter",
+          "sourceFile": "developer-tools.js",
+          "line": 5,
+          "exact": "Sentence Counter",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "\"sentence-counter\",\"Sentence Counter\",\"Count sentence-like segments using common punctuation.\"], ["
+        },
+        {
+          "toolId": "sentence-counter",
+          "toolName": "Sentence Counter",
+          "sourceFile": "developer-tools.js",
+          "line": 5,
+          "exact": "Count sentence-like segments using common punctuation.",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "\"sentence-counter\",\"Sentence Counter\",\"Count sentence-like segments using common punctuation.\"], ["
+        }
+      ]
+    },
+    {
+      "toolId": "paragraph-counter",
+      "toolName": "Paragraph Counter",
+      "category": "Developer & Text Tools",
+      "subcategory": "Text & Writing Utilities",
+      "stringCount": 3,
+      "strings": [
+        {
+          "toolId": "paragraph-counter",
+          "toolName": "Paragraph Counter",
+          "sourceFile": "developer-tools.js",
+          "line": 6,
+          "exact": "paragraph-counter",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": "\"paragraph-counter\",\"Paragraph Counter\",\"Count non-empty blocks separated by blank lines."
+        },
+        {
+          "toolId": "paragraph-counter",
+          "toolName": "Paragraph Counter",
+          "sourceFile": "developer-tools.js",
+          "line": 6,
+          "exact": "Paragraph Counter",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "\"paragraph-counter\",\"Paragraph Counter\",\"Count non-empty blocks separated by blank lines.\"], ["
+        },
+        {
+          "toolId": "paragraph-counter",
+          "toolName": "Paragraph Counter",
+          "sourceFile": "developer-tools.js",
+          "line": 6,
+          "exact": "Count non-empty blocks separated by blank lines.",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "\"paragraph-counter\",\"Paragraph Counter\",\"Count non-empty blocks separated by blank lines.\"], ["
+        }
+      ]
+    },
+    {
+      "toolId": "reading-time-calculator",
+      "toolName": "Reading Time Calculator",
+      "category": "Developer & Text Tools",
+      "subcategory": "Text & Writing Utilities",
+      "stringCount": 3,
+      "strings": [
+        {
+          "toolId": "reading-time-calculator",
+          "toolName": "Reading Time Calculator",
+          "sourceFile": "developer-tools.js",
+          "line": 7,
+          "exact": "reading-time-calculator",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": "\"reading-time-calculator\",\"Reading Time Calculator\",\"Estimate reading time from word count and "
+        },
+        {
+          "toolId": "reading-time-calculator",
+          "toolName": "Reading Time Calculator",
+          "sourceFile": "developer-tools.js",
+          "line": 7,
+          "exact": "Reading Time Calculator",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "\"reading-time-calculator\",\"Reading Time Calculator\",\"Estimate reading time from word count and reading speed.\"], ["
+        },
+        {
+          "toolId": "reading-time-calculator",
+          "toolName": "Reading Time Calculator",
+          "sourceFile": "developer-tools.js",
+          "line": 7,
+          "exact": "Estimate reading time from word count and reading speed.",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "\"reading-time-calculator\",\"Reading Time Calculator\",\"Estimate reading time from word count and reading speed.\"], ["
+        }
+      ]
+    },
+    {
+      "toolId": "case-converter",
+      "toolName": "Case Converter",
+      "category": "Developer & Text Tools",
+      "subcategory": "Text & Writing Utilities",
+      "stringCount": 3,
+      "strings": [
+        {
+          "toolId": "case-converter",
+          "toolName": "Case Converter",
+          "sourceFile": "developer-tools.js",
+          "line": 8,
+          "exact": "case-converter",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": "\"case-converter\",\"Case Converter\",\"Convert text between common letter and identifier c"
+        },
+        {
+          "toolId": "case-converter",
+          "toolName": "Case Converter",
+          "sourceFile": "developer-tools.js",
+          "line": 8,
+          "exact": "Case Converter",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "\"case-converter\",\"Case Converter\",\"Convert text between common letter and identifier cases.\"], ["
+        },
+        {
+          "toolId": "case-converter",
+          "toolName": "Case Converter",
+          "sourceFile": "developer-tools.js",
+          "line": 8,
+          "exact": "Convert text between common letter and identifier cases.",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "\"case-converter\",\"Case Converter\",\"Convert text between common letter and identifier cases.\"], ["
+        }
+      ]
+    },
+    {
+      "toolId": "text-reverser",
+      "toolName": "Text Reverser",
+      "category": "Developer & Text Tools",
+      "subcategory": "Text & Writing Utilities",
+      "stringCount": 3,
+      "strings": [
+        {
+          "toolId": "text-reverser",
+          "toolName": "Text Reverser",
+          "sourceFile": "developer-tools.js",
+          "line": 9,
+          "exact": "text-reverser",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": "\"text-reverser\",\"Text Reverser\",\"Reverse grapheme clusters or whitespace-separated wo"
+        },
+        {
+          "toolId": "text-reverser",
+          "toolName": "Text Reverser",
+          "sourceFile": "developer-tools.js",
+          "line": 9,
+          "exact": "Text Reverser",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "\"text-reverser\",\"Text Reverser\",\"Reverse grapheme clusters or whitespace-separated words.\"], ["
+        },
+        {
+          "toolId": "text-reverser",
+          "toolName": "Text Reverser",
+          "sourceFile": "developer-tools.js",
+          "line": 9,
+          "exact": "Reverse grapheme clusters or whitespace-separated words.",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "\"text-reverser\",\"Text Reverser\",\"Reverse grapheme clusters or whitespace-separated words.\"], ["
+        }
+      ]
+    },
+    {
+      "toolId": "duplicate-line-remover",
+      "toolName": "Duplicate Line Remover",
+      "category": "Developer & Text Tools",
+      "subcategory": "Text & Writing Utilities",
+      "stringCount": 3,
+      "strings": [
+        {
+          "toolId": "duplicate-line-remover",
+          "toolName": "Duplicate Line Remover",
+          "sourceFile": "developer-tools.js",
+          "line": 10,
+          "exact": "duplicate-line-remover",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": "\"duplicate-line-remover\",\"Duplicate Line Remover\",\"Remove repeated lines while preserving firs"
+        },
+        {
+          "toolId": "duplicate-line-remover",
+          "toolName": "Duplicate Line Remover",
+          "sourceFile": "developer-tools.js",
+          "line": 10,
+          "exact": "Duplicate Line Remover",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "\"duplicate-line-remover\",\"Duplicate Line Remover\",\"Remove repeated lines while preserving first occurrence.\"], ["
+        },
+        {
+          "toolId": "duplicate-line-remover",
+          "toolName": "Duplicate Line Remover",
+          "sourceFile": "developer-tools.js",
+          "line": 10,
+          "exact": "Remove repeated lines while preserving first occurrence.",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "\"duplicate-line-remover\",\"Duplicate Line Remover\",\"Remove repeated lines while preserving first occurrence.\"], ["
+        }
+      ]
+    },
+    {
+      "toolId": "text-compare-diff",
+      "toolName": "Text Compare / Diff Tool",
+      "category": "Developer & Text Tools",
+      "subcategory": "Text & Writing Utilities",
+      "stringCount": 3,
+      "strings": [
+        {
+          "toolId": "text-compare-diff",
+          "toolName": "Text Compare / Diff Tool",
+          "sourceFile": "developer-tools.js",
+          "line": 11,
+          "exact": "text-compare-diff",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": "\"text-compare-diff\",\"Text Compare / Diff Tool\",\"Compare two text blocks and list added an"
+        },
+        {
+          "toolId": "text-compare-diff",
+          "toolName": "Text Compare / Diff Tool",
+          "sourceFile": "developer-tools.js",
+          "line": 11,
+          "exact": "Text Compare / Diff Tool",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": "\"text-compare-diff\",\"Text Compare / Diff Tool\",\"Compare two text blocks and list added and removed lines.\"], ["
+        },
+        {
+          "toolId": "text-compare-diff",
+          "toolName": "Text Compare / Diff Tool",
+          "sourceFile": "developer-tools.js",
+          "line": 11,
+          "exact": "Compare two text blocks and list added and removed lines.",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "\"text-compare-diff\",\"Text Compare / Diff Tool\",\"Compare two text blocks and list added and removed lines.\"], ["
+        }
+      ]
+    },
+    {
+      "toolId": "whitespace-cleaner",
+      "toolName": "Whitespace Cleaner",
+      "category": "Developer & Text Tools",
+      "subcategory": "Text & Writing Utilities",
+      "stringCount": 3,
+      "strings": [
+        {
+          "toolId": "whitespace-cleaner",
+          "toolName": "Whitespace Cleaner",
+          "sourceFile": "developer-tools.js",
+          "line": 12,
+          "exact": "whitespace-cleaner",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": "\"whitespace-cleaner\",\"Whitespace Cleaner\",\"Normalize line endings, trim edges or remove bl"
+        },
+        {
+          "toolId": "whitespace-cleaner",
+          "toolName": "Whitespace Cleaner",
+          "sourceFile": "developer-tools.js",
+          "line": 12,
+          "exact": "Whitespace Cleaner",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "\"whitespace-cleaner\",\"Whitespace Cleaner\",\"Normalize line endings, trim edges or remove blank lines.\"], ["
+        },
+        {
+          "toolId": "whitespace-cleaner",
+          "toolName": "Whitespace Cleaner",
+          "sourceFile": "developer-tools.js",
+          "line": 12,
+          "exact": "Normalize line endings, trim edges or remove blank lines.",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "\"whitespace-cleaner\",\"Whitespace Cleaner\",\"Normalize line endings, trim edges or remove blank lines.\"], ["
+        }
+      ]
+    },
+    {
+      "toolId": "line-sorter",
+      "toolName": "Line Sorter",
+      "category": "Developer & Text Tools",
+      "subcategory": "Text & Writing Utilities",
+      "stringCount": 3,
+      "strings": [
+        {
+          "toolId": "line-sorter",
+          "toolName": "Line Sorter",
+          "sourceFile": "developer-tools.js",
+          "line": 13,
+          "exact": "line-sorter",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": "\"line-sorter\",\"Line Sorter\",\"Sort text lines alphabetically or numerically.\"], ["
+        },
+        {
+          "toolId": "line-sorter",
+          "toolName": "Line Sorter",
+          "sourceFile": "developer-tools.js",
+          "line": 13,
+          "exact": "Line Sorter",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "\"line-sorter\",\"Line Sorter\",\"Sort text lines alphabetically or numerically.\"], ["
+        },
+        {
+          "toolId": "line-sorter",
+          "toolName": "Line Sorter",
+          "sourceFile": "developer-tools.js",
+          "line": 13,
+          "exact": "Sort text lines alphabetically or numerically.",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "\"line-sorter\",\"Line Sorter\",\"Sort text lines alphabetically or numerically.\"], ["
+        }
+      ]
+    },
+    {
+      "toolId": "text-to-slug-generator",
+      "toolName": "Text-to-Slug Generator",
+      "category": "Developer & Text Tools",
+      "subcategory": "Text & Writing Utilities",
+      "stringCount": 3,
+      "strings": [
+        {
+          "toolId": "text-to-slug-generator",
+          "toolName": "Text-to-Slug Generator",
+          "sourceFile": "developer-tools.js",
+          "line": 14,
+          "exact": "text-to-slug-generator",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": "\"text-to-slug-generator\",\"Text-to-Slug Generator\",\"Create lowercase URL-friendly slugs.\"], ["
+        },
+        {
+          "toolId": "text-to-slug-generator",
+          "toolName": "Text-to-Slug Generator",
+          "sourceFile": "developer-tools.js",
+          "line": 14,
+          "exact": "Text-to-Slug Generator",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "\"text-to-slug-generator\",\"Text-to-Slug Generator\",\"Create lowercase URL-friendly slugs.\"], ["
+        },
+        {
+          "toolId": "text-to-slug-generator",
+          "toolName": "Text-to-Slug Generator",
+          "sourceFile": "developer-tools.js",
+          "line": 14,
+          "exact": "Create lowercase URL-friendly slugs.",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "\"text-to-slug-generator\",\"Text-to-Slug Generator\",\"Create lowercase URL-friendly slugs.\"], ["
+        }
+      ]
+    },
+    {
+      "toolId": "html-entity-encoder-decoder",
+      "toolName": "HTML Entity Encoder / Decoder",
+      "category": "Developer & Text Tools",
+      "subcategory": "Encoding & Decoding",
+      "stringCount": 3,
+      "strings": [
+        {
+          "toolId": "html-entity-encoder-decoder",
+          "toolName": "HTML Entity Encoder / Decoder",
+          "sourceFile": "developer-tools.js",
+          "line": 15,
+          "exact": "html-entity-encoder-decoder",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": "\"html-entity-encoder-decoder\",\"HTML Entity Encoder / Decoder\",\"Encode reserved HTML characters or d"
+        },
+        {
+          "toolId": "html-entity-encoder-decoder",
+          "toolName": "HTML Entity Encoder / Decoder",
+          "sourceFile": "developer-tools.js",
+          "line": 15,
+          "exact": "HTML Entity Encoder / Decoder",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": "\"html-entity-encoder-decoder\",\"HTML Entity Encoder / Decoder\",\"Encode reserved HTML characters or decode common entities.\"], ["
+        },
+        {
+          "toolId": "html-entity-encoder-decoder",
+          "toolName": "HTML Entity Encoder / Decoder",
+          "sourceFile": "developer-tools.js",
+          "line": 15,
+          "exact": "Encode reserved HTML characters or decode common entities.",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "\"html-entity-encoder-decoder\",\"HTML Entity Encoder / Decoder\",\"Encode reserved HTML characters or decode common entities.\"], ["
+        }
+      ]
+    },
+    {
+      "toolId": "url-encoder-decoder",
+      "toolName": "URL Encoder / Decoder",
+      "category": "Developer & Text Tools",
+      "subcategory": "Encoding & Decoding",
+      "stringCount": 3,
+      "strings": [
+        {
+          "toolId": "url-encoder-decoder",
+          "toolName": "URL Encoder / Decoder",
+          "sourceFile": "developer-tools.js",
+          "line": 16,
+          "exact": "url-encoder-decoder",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": "\"url-encoder-decoder\",\"URL Encoder / Decoder\",\"Encode or decode URL components with strict "
+        },
+        {
+          "toolId": "url-encoder-decoder",
+          "toolName": "URL Encoder / Decoder",
+          "sourceFile": "developer-tools.js",
+          "line": 16,
+          "exact": "URL Encoder / Decoder",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": "\"url-encoder-decoder\",\"URL Encoder / Decoder\",\"Encode or decode URL components with strict percent validation.\"], ["
+        },
+        {
+          "toolId": "url-encoder-decoder",
+          "toolName": "URL Encoder / Decoder",
+          "sourceFile": "developer-tools.js",
+          "line": 16,
+          "exact": "Encode or decode URL components with strict percent validation.",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "\"url-encoder-decoder\",\"URL Encoder / Decoder\",\"Encode or decode URL components with strict percent validation.\"], ["
+        }
+      ]
+    },
+    {
+      "toolId": "base64-encoder-decoder",
+      "toolName": "Base64 Encoder / Decoder",
+      "category": "Developer & Text Tools",
+      "subcategory": "Encoding & Decoding",
+      "stringCount": 3,
+      "strings": [
+        {
+          "toolId": "base64-encoder-decoder",
+          "toolName": "Base64 Encoder / Decoder",
+          "sourceFile": "developer-tools.js",
+          "line": 17,
+          "exact": "base64-encoder-decoder",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": "\"base64-encoder-decoder\",\"Base64 Encoder / Decoder\",\"Encode UTF-8 text or decode valid Base64."
+        },
+        {
+          "toolId": "base64-encoder-decoder",
+          "toolName": "Base64 Encoder / Decoder",
+          "sourceFile": "developer-tools.js",
+          "line": 17,
+          "exact": "Base64 Encoder / Decoder",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": "\"base64-encoder-decoder\",\"Base64 Encoder / Decoder\",\"Encode UTF-8 text or decode valid Base64.\"], ["
+        },
+        {
+          "toolId": "base64-encoder-decoder",
+          "toolName": "Base64 Encoder / Decoder",
+          "sourceFile": "developer-tools.js",
+          "line": 17,
+          "exact": "Encode UTF-8 text or decode valid Base64.",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "\"base64-encoder-decoder\",\"Base64 Encoder / Decoder\",\"Encode UTF-8 text or decode valid Base64.\"], ["
+        }
+      ]
+    },
+    {
+      "toolId": "json-formatter-validator",
+      "toolName": "JSON Formatter & Validator",
+      "category": "Developer & Text Tools",
+      "subcategory": "Code & Markup Utilities",
+      "stringCount": 3,
+      "strings": [
+        {
+          "toolId": "json-formatter-validator",
+          "toolName": "JSON Formatter & Validator",
+          "sourceFile": "developer-tools.js",
+          "line": 18,
+          "exact": "json-formatter-validator",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": "\"json-formatter-validator\",\"JSON Formatter & Validator\",\"Validate JSON and pretty-print or compa"
+        },
+        {
+          "toolId": "json-formatter-validator",
+          "toolName": "JSON Formatter & Validator",
+          "sourceFile": "developer-tools.js",
+          "line": 18,
+          "exact": "JSON Formatter & Validator",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "\"json-formatter-validator\",\"JSON Formatter & Validator\",\"Validate JSON and pretty-print or compact it.\"], ["
+        },
+        {
+          "toolId": "json-formatter-validator",
+          "toolName": "JSON Formatter & Validator",
+          "sourceFile": "developer-tools.js",
+          "line": 18,
+          "exact": "Validate JSON and pretty-print or compact it.",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "\"json-formatter-validator\",\"JSON Formatter & Validator\",\"Validate JSON and pretty-print or compact it.\"], ["
+        }
+      ]
+    },
+    {
+      "toolId": "html-formatter",
+      "toolName": "HTML Formatter",
+      "category": "Developer & Text Tools",
+      "subcategory": "Code & Markup Utilities",
+      "stringCount": 3,
+      "strings": [
+        {
+          "toolId": "html-formatter",
+          "toolName": "HTML Formatter",
+          "sourceFile": "developer-tools.js",
+          "line": 19,
+          "exact": "html-formatter",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": "\"html-formatter\",\"HTML Formatter\",\"Format markup with tag-per-line spacing.\"], ["
+        },
+        {
+          "toolId": "html-formatter",
+          "toolName": "HTML Formatter",
+          "sourceFile": "developer-tools.js",
+          "line": 19,
+          "exact": "HTML Formatter",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "\"html-formatter\",\"HTML Formatter\",\"Format markup with tag-per-line spacing.\"], ["
+        },
+        {
+          "toolId": "html-formatter",
+          "toolName": "HTML Formatter",
+          "sourceFile": "developer-tools.js",
+          "line": 19,
+          "exact": "Format markup with tag-per-line spacing.",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "\"html-formatter\",\"HTML Formatter\",\"Format markup with tag-per-line spacing.\"], ["
+        }
+      ]
+    },
+    {
+      "toolId": "css-formatter",
+      "toolName": "CSS Formatter",
+      "category": "Developer & Text Tools",
+      "subcategory": "Code & Markup Utilities",
+      "stringCount": 3,
+      "strings": [
+        {
+          "toolId": "css-formatter",
+          "toolName": "CSS Formatter",
+          "sourceFile": "developer-tools.js",
+          "line": 20,
+          "exact": "css-formatter",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": "\"css-formatter\",\"CSS Formatter\",\"Format CSS declarations after delimiter checks.\"], ["
+        },
+        {
+          "toolId": "css-formatter",
+          "toolName": "CSS Formatter",
+          "sourceFile": "developer-tools.js",
+          "line": 20,
+          "exact": "CSS Formatter",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "\"css-formatter\",\"CSS Formatter\",\"Format CSS declarations after delimiter checks.\"], ["
+        },
+        {
+          "toolId": "css-formatter",
+          "toolName": "CSS Formatter",
+          "sourceFile": "developer-tools.js",
+          "line": 20,
+          "exact": "Format CSS declarations after delimiter checks.",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "\"css-formatter\",\"CSS Formatter\",\"Format CSS declarations after delimiter checks.\"], ["
+        }
+      ]
+    },
+    {
+      "toolId": "javascript-formatter",
+      "toolName": "JavaScript Formatter",
+      "category": "Developer & Text Tools",
+      "subcategory": "Code & Markup Utilities",
+      "stringCount": 3,
+      "strings": [
+        {
+          "toolId": "javascript-formatter",
+          "toolName": "JavaScript Formatter",
+          "sourceFile": "developer-tools.js",
+          "line": 21,
+          "exact": "javascript-formatter",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": "\"javascript-formatter\",\"JavaScript Formatter\",\"Format JavaScript conservatively without exec"
+        },
+        {
+          "toolId": "javascript-formatter",
+          "toolName": "JavaScript Formatter",
+          "sourceFile": "developer-tools.js",
+          "line": 21,
+          "exact": "JavaScript Formatter",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "\"javascript-formatter\",\"JavaScript Formatter\",\"Format JavaScript conservatively without executing source.\"], ["
+        },
+        {
+          "toolId": "javascript-formatter",
+          "toolName": "JavaScript Formatter",
+          "sourceFile": "developer-tools.js",
+          "line": 21,
+          "exact": "Format JavaScript conservatively without executing source.",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "\"javascript-formatter\",\"JavaScript Formatter\",\"Format JavaScript conservatively without executing source.\"], ["
+        }
+      ]
+    },
+    {
+      "toolId": "html-css-js-minifier",
+      "toolName": "HTML/CSS/JS Minifier",
+      "category": "Developer & Text Tools",
+      "subcategory": "Code & Markup Utilities",
+      "stringCount": 62,
+      "strings": [
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 22,
+          "exact": "html-css-js-minifier",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": "\"html-css-js-minifier\",\"HTML/CSS/JS Minifier\",\"Conservatively reduce source whitespace and c"
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 22,
+          "exact": "HTML/CSS/JS Minifier",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": "\"html-css-js-minifier\",\"HTML/CSS/JS Minifier\",\"Conservatively reduce source whitespace and comments.\"] ]; const sam"
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 22,
+          "exact": "Conservatively reduce source whitespace and comments.",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "\"html-css-js-minifier\",\"HTML/CSS/JS Minifier\",\"Conservatively reduce source whitespace and comments.\"] ]; const sample=\"FinPulse Hub\\nFree tools for everyday work.\",faq=[["
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 24,
+          "exact": "FinPulse Hub\\nFree tools for everyday work.",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "\"html-css-js-minifier\",\"HTML/CSS/JS Minifier\",\"Conservatively reduce source whitespace and comments.\"] ]; const sample=\"FinPulse Hub\\nFree tools for everyday work.\",faq=[[\"How does it work?\",\"It applies the documented deterministic te"
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 24,
+          "exact": "How does it work?",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "S/JS Minifier\",\"Conservatively reduce source whitespace and comments.\"] ]; const sample=\"FinPulse Hub\\nFree tools for everyday work.\",faq=[[\"How does it work?\",\"It applies the documented deterministic text rule locally.\"],[\"Is my"
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 24,
+          "exact": "It applies the documented deterministic text rule locally.",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "ervatively reduce source whitespace and comments.\"] ]; const sample=\"FinPulse Hub\\nFree tools for everyday work.\",faq=[[\"How does it work?\",\"It applies the documented deterministic text rule locally.\"],[\"Is my input uploaded?\",\"No. Text processing runs in this browser.\""
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 24,
+          "exact": "Is my input uploaded?",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "mple=\"FinPulse Hub\\nFree tools for everyday work.\",faq=[[\"How does it work?\",\"It applies the documented deterministic text rule locally.\"],[\"Is my input uploaded?\",\"No. Text processing runs in this browser.\"],[\"Can I edit and run aga"
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 24,
+          "exact": "No. Text processing runs in this browser.",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": " tools for everyday work.\",faq=[[\"How does it work?\",\"It applies the documented deterministic text rule locally.\"],[\"Is my input uploaded?\",\"No. Text processing runs in this browser.\"],[\"Can I edit and run again?\",\"Yes. The input remains available.\"],[\""
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 24,
+          "exact": "Can I edit and run again?",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "work?\",\"It applies the documented deterministic text rule locally.\"],[\"Is my input uploaded?\",\"No. Text processing runs in this browser.\"],[\"Can I edit and run again?\",\"Yes. The input remains available.\"],[\"What if input is invalid?\",\"A "
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 24,
+          "exact": "Yes. The input remains available.",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "ented deterministic text rule locally.\"],[\"Is my input uploaded?\",\"No. Text processing runs in this browser.\"],[\"Can I edit and run again?\",\"Yes. The input remains available.\"],[\"What if input is invalid?\",\"A clear validation message is shown in"
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 24,
+          "exact": "What if input is invalid?",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "\"],[\"Is my input uploaded?\",\"No. Text processing runs in this browser.\"],[\"Can I edit and run again?\",\"Yes. The input remains available.\"],[\"What if input is invalid?\",\"A clear validation message is shown instead of guessing.\"]],steps=[\""
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 24,
+          "exact": "A clear validation message is shown instead of guessing.",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "\"No. Text processing runs in this browser.\"],[\"Can I edit and run again?\",\"Yes. The input remains available.\"],[\"What if input is invalid?\",\"A clear validation message is shown instead of guessing.\"]],steps=[\"Paste text into the input; empty input is rejected.\",\"Selec"
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 24,
+          "exact": "Paste text into the input; empty input is rejected.",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "ain?\",\"Yes. The input remains available.\"],[\"What if input is invalid?\",\"A clear validation message is shown instead of guessing.\"]],steps=[\"Paste text into the input; empty input is rejected.\",\"Select the required mode or format.\",\"Validate input length, syntax "
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 24,
+          "exact": "Select the required mode or format.",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "nput is invalid?\",\"A clear validation message is shown instead of guessing.\"]],steps=[\"Paste text into the input; empty input is rejected.\",\"Select the required mode or format.\",\"Validate input length, syntax and supported options.\",\"Apply the doc"
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 24,
+          "exact": "Validate input length, syntax and supported options.",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "message is shown instead of guessing.\"]],steps=[\"Paste text into the input; empty input is rejected.\",\"Select the required mode or format.\",\"Validate input length, syntax and supported options.\",\"Apply the documented algorithm locally in the browser.\",\"Review the "
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 24,
+          "exact": "Apply the documented algorithm locally in the browser.",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "text into the input; empty input is rejected.\",\"Select the required mode or format.\",\"Validate input length, syntax and supported options.\",\"Apply the documented algorithm locally in the browser.\",\"Review the output and use copy, export, share, history or reset.\"]; "
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 24,
+          "exact": "Review the output and use copy, export, share, history or reset.",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "e required mode or format.\",\"Validate input length, syntax and supported options.\",\"Apply the documented algorithm locally in the browser.\",\"Review the output and use copy, export, share, history or reset.\"]; const field=(id,label,value)=>[id,label,value,\"textlong\"],sel=(id,l"
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 25,
+          "exact": "textlong",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": "locally in the browser.\",\"Review the output and use copy, export, share, history or reset.\"]; const field=(id,label,value)=>[id,label,value,\"textlong\"],sel=(id,label,value,options)=>[id,label,value,\"select\",options]; fun"
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 25,
+          "exact": "select",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": "export, share, history or reset.\"]; const field=(id,label,value)=>[id,label,value,\"textlong\"],sel=(id,label,value,options)=>[id,label,value,\"select\",options]; function need(s,max=20000){s=String(s??\"\");if(!s.trim())thr"
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 26,
+          "exact": "Input cannot be empty. Paste text before running this tool.",
+          "tokenType": "string",
+          "dynamic": "dynamic-fragment",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "long\"],sel=(id,label,value,options)=>[id,label,value,\"select\",options]; function need(s,max=20000){s=String(s??\"\");if(!s.trim())throw Error(\"Input cannot be empty. Paste text before running this tool.\");if(s.length>max)throw Error(\"Input exceeds the \"+max.toLocaleString("
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 26,
+          "exact": "Input exceeds the",
+          "tokenType": "string",
+          "dynamic": "dynamic-fragment",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "=20000){s=String(s??\"\");if(!s.trim())throw Error(\"Input cannot be empty. Paste text before running this tool.\");if(s.length>max)throw Error(\"Input exceeds the \"+max.toLocaleString()+\" character limit.\");return s} function words(s)"
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 26,
+          "exact": "character limit.",
+          "tokenType": "string",
+          "dynamic": "dynamic-fragment",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": " Error(\"Input cannot be empty. Paste text before running this tool.\");if(s.length>max)throw Error(\"Input exceeds the \"+max.toLocaleString()+\" character limit.\");return s} function words(s){return s.match(/[\\p{L}\\p{N}]+(?:['’][\\p{"
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 27,
+          "exact": "’][\\p{L}\\p{N}]+)*/gu)||[]}\nfunction graphemes(s){return typeof Intl!==\"undefined\"&&Intl.Segmenter?[...new Intl.Segmenter(undefined,{granularity:\"grapheme\"}).segment(s)].length:[...s].length}\nfunction slug(s){return s.normalize(\"NFKD\").replace(/\\p{M}/gu,\"\").toLowerCase().replace(/[’",
+          "tokenType": "string",
+          "dynamic": "dynamic-fragment",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": "max)throw Error(\"Input exceeds the \"+max.toLocaleString()+\" character limit.\");return s} function words(s){return s.match(/[\\p{L}\\p{N}]+(?:['’][\\p{L}\\p{N}]+)*/gu)||[]} function graphemes(s){return typeof Intl!==\"undefined\"&&Intl.Segmenter?[...new Intl.Segmenter(undefined,{granularity:\"grapheme\"}).segment(s)].length:[...s].length} function slug(s){return s.normalize(\"NFKD\").replace(/\\p{M}/gu,\"\").toLowerCase().replace(/[’']/g,\"\").replace(/[^\\p{L}\\p{N}]+/gu,\"-\").replace(/^-+|-+$/g,\"\")} functi"
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 29,
+          "exact": "-",
+          "tokenType": "string",
+          "dynamic": "dynamic-fragment",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "..s].length} function slug(s){return s.normalize(\"NFKD\").replace(/\\p{M}/gu,\"\").toLowerCase().replace(/[’']/g,\"\").replace(/[^\\p{L}\\p{N}]+/gu,\"-\").replace(/^-+|-+$/g,\"\")} function encode64(s){let b=new TextEncoder()"
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 31,
+          "exact": "Malformed Base64: valid padded Base64 is required.",
+          "tokenType": "string",
+          "dynamic": "dynamic-fragment",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "code64(s){s=s.replace(/\\s+/g,\"\");if(!s||s.length%4||!/^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/.test(s))throw Error(\"Malformed Base64: valid padded Base64 is required.\");try{return new TextDecoder(\"utf-8\",{fatal:true}).decode(Uint8Array.f"
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 31,
+          "exact": "utf-8",
+          "tokenType": "string",
+          "dynamic": "dynamic-fragment",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": "-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/.test(s))throw Error(\"Malformed Base64: valid padded Base64 is required.\");try{return new TextDecoder(\"utf-8\",{fatal:true}).decode(Uint8Array.from(atob(s),c=>c.charCodeAt(0)))}cat"
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 31,
+          "exact": "Base64 does not contain valid UTF-8 text.",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "ase64 is required.\");try{return new TextDecoder(\"utf-8\",{fatal:true}).decode(Uint8Array.from(atob(s),c=>c.charCodeAt(0)))}catch{throw Error(\"Base64 does not contain valid UTF-8 text.\")}} function balanced(s,lang){let stack=[],q=\"\",esc=false,comment=\"\";f"
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 32,
+          "exact": "line",
+          "tokenType": "string",
+          "dynamic": "dynamic-fragment",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": "F-8 text.\")}} function balanced(s,lang){let stack=[],q=\"\",esc=false,comment=\"\";for(let i=0;i<s.length;i++){let c=s[i],n=s[i+1];if(comment===\"line\"){if(c===\"\\n\")comment=\"\";continue}if(comment===\"block\"){if(c===\"*\"&&n="
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 32,
+          "exact": "\\n",
+          "tokenType": "string",
+          "dynamic": "dynamic-fragment",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "unction balanced(s,lang){let stack=[],q=\"\",esc=false,comment=\"\";for(let i=0;i<s.length;i++){let c=s[i],n=s[i+1];if(comment===\"line\"){if(c===\"\\n\")comment=\"\";continue}if(comment===\"block\"){if(c===\"*\"&&n===\"/\"){commen"
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 32,
+          "exact": "block",
+          "tokenType": "string",
+          "dynamic": "dynamic-fragment",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": "q=\"\",esc=false,comment=\"\";for(let i=0;i<s.length;i++){let c=s[i],n=s[i+1];if(comment===\"line\"){if(c===\"\\n\")comment=\"\";continue}if(comment===\"block\"){if(c===\"*\"&&n===\"/\"){comment=\"\";i++}continue}if(q){if(esc)esc=false;"
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 32,
+          "exact": "*",
+          "tokenType": "string",
+          "dynamic": "dynamic-fragment",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": "omment=\"\";for(let i=0;i<s.length;i++){let c=s[i],n=s[i+1];if(comment===\"line\"){if(c===\"\\n\")comment=\"\";continue}if(comment===\"block\"){if(c===\"*\"&&n===\"/\"){comment=\"\";i++}continue}if(q){if(esc)esc=false;else if(c==="
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 32,
+          "exact": "/",
+          "tokenType": "string",
+          "dynamic": "dynamic-fragment",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": ";for(let i=0;i<s.length;i++){let c=s[i],n=s[i+1];if(comment===\"line\"){if(c===\"\\n\")comment=\"\";continue}if(comment===\"block\"){if(c===\"*\"&&n===\"/\"){comment=\"\";i++}continue}if(q){if(esc)esc=false;else if(c===\"\\\\\")esc="
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 32,
+          "exact": "\\\\",
+          "tokenType": "string",
+          "dynamic": "dynamic-fragment",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "ine\"){if(c===\"\\n\")comment=\"\";continue}if(comment===\"block\"){if(c===\"*\"&&n===\"/\"){comment=\"\";i++}continue}if(q){if(esc)esc=false;else if(c===\"\\\\\")esc=true;else if(c===q)q=\"\";continue}if(lang!==\"html\"&&c===\"/\"&&n===\""
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 32,
+          "exact": "html",
+          "tokenType": "string",
+          "dynamic": "dynamic-fragment",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": "block\"){if(c===\"*\"&&n===\"/\"){comment=\"\";i++}continue}if(q){if(esc)esc=false;else if(c===\"\\\\\")esc=true;else if(c===q)q=\"\";continue}if(lang!==\"html\"&&c===\"/\"&&n===\"/\"){comment=\"line\";i++;continue}if(lang!==\"html\"&&c==="
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 32,
+          "exact": "/",
+          "tokenType": "string",
+          "dynamic": "dynamic-fragment",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": "===\"*\"&&n===\"/\"){comment=\"\";i++}continue}if(q){if(esc)esc=false;else if(c===\"\\\\\")esc=true;else if(c===q)q=\"\";continue}if(lang!==\"html\"&&c===\"/\"&&n===\"/\"){comment=\"line\";i++;continue}if(lang!==\"html\"&&c===\"/\"&&n==="
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 32,
+          "exact": "/",
+          "tokenType": "string",
+          "dynamic": "dynamic-fragment",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": "===\"/\"){comment=\"\";i++}continue}if(q){if(esc)esc=false;else if(c===\"\\\\\")esc=true;else if(c===q)q=\"\";continue}if(lang!==\"html\"&&c===\"/\"&&n===\"/\"){comment=\"line\";i++;continue}if(lang!==\"html\"&&c===\"/\"&&n===\"*\"){comm"
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 32,
+          "exact": "line",
+          "tokenType": "string",
+          "dynamic": "dynamic-fragment",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": "nt=\"\";i++}continue}if(q){if(esc)esc=false;else if(c===\"\\\\\")esc=true;else if(c===q)q=\"\";continue}if(lang!==\"html\"&&c===\"/\"&&n===\"/\"){comment=\"line\";i++;continue}if(lang!==\"html\"&&c===\"/\"&&n===\"*\"){comment=\"block\";i++;"
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 32,
+          "exact": "html",
+          "tokenType": "string",
+          "dynamic": "dynamic-fragment",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": "c)esc=false;else if(c===\"\\\\\")esc=true;else if(c===q)q=\"\";continue}if(lang!==\"html\"&&c===\"/\"&&n===\"/\"){comment=\"line\";i++;continue}if(lang!==\"html\"&&c===\"/\"&&n===\"*\"){comment=\"block\";i++;continue}if(c==='\"'||c===\"'\"||"
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 32,
+          "exact": "/",
+          "tokenType": "string",
+          "dynamic": "dynamic-fragment",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": "else if(c===\"\\\\\")esc=true;else if(c===q)q=\"\";continue}if(lang!==\"html\"&&c===\"/\"&&n===\"/\"){comment=\"line\";i++;continue}if(lang!==\"html\"&&c===\"/\"&&n===\"*\"){comment=\"block\";i++;continue}if(c==='\"'||c===\"'\"||(lang===\""
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 32,
+          "exact": "*",
+          "tokenType": "string",
+          "dynamic": "dynamic-fragment",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": "===\"\\\\\")esc=true;else if(c===q)q=\"\";continue}if(lang!==\"html\"&&c===\"/\"&&n===\"/\"){comment=\"line\";i++;continue}if(lang!==\"html\"&&c===\"/\"&&n===\"*\"){comment=\"block\";i++;continue}if(c==='\"'||c===\"'\"||(lang===\"js\"&&c.ch"
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 32,
+          "exact": "block",
+          "tokenType": "string",
+          "dynamic": "dynamic-fragment",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": "rue;else if(c===q)q=\"\";continue}if(lang!==\"html\"&&c===\"/\"&&n===\"/\"){comment=\"line\";i++;continue}if(lang!==\"html\"&&c===\"/\"&&n===\"*\"){comment=\"block\";i++;continue}if(c==='\"'||c===\"'\"||(lang===\"js\"&&c.charCodeAt(0)===96)"
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 32,
+          "exact": "\"",
+          "tokenType": "string",
+          "dynamic": "dynamic-fragment",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "nue}if(lang!==\"html\"&&c===\"/\"&&n===\"/\"){comment=\"line\";i++;continue}if(lang!==\"html\"&&c===\"/\"&&n===\"*\"){comment=\"block\";i++;continue}if(c==='\"'||c===\"'\"||(lang===\"js\"&&c.charCodeAt(0)===96)){q=c;continue}if(\"({[\"."
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 32,
+          "exact": "'",
+          "tokenType": "string",
+          "dynamic": "dynamic-fragment",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "ng!==\"html\"&&c===\"/\"&&n===\"/\"){comment=\"line\";i++;continue}if(lang!==\"html\"&&c===\"/\"&&n===\"*\"){comment=\"block\";i++;continue}if(c==='\"'||c===\"'\"||(lang===\"js\"&&c.charCodeAt(0)===96)){q=c;continue}if(\"({[\".includes("
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 32,
+          "exact": "js",
+          "tokenType": "string",
+          "dynamic": "dynamic-fragment",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": "c===\"/\"&&n===\"/\"){comment=\"line\";i++;continue}if(lang!==\"html\"&&c===\"/\"&&n===\"*\"){comment=\"block\";i++;continue}if(c==='\"'||c===\"'\"||(lang===\"js\"&&c.charCodeAt(0)===96)){q=c;continue}if(\"({[\".includes(c))stack.push("
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 32,
+          "exact": "({[",
+          "tokenType": "string",
+          "dynamic": "dynamic-fragment",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": "}if(lang!==\"html\"&&c===\"/\"&&n===\"*\"){comment=\"block\";i++;continue}if(c==='\"'||c===\"'\"||(lang===\"js\"&&c.charCodeAt(0)===96)){q=c;continue}if(\"({[\".includes(c))stack.push(c);if(\")}]\".includes(c)){let p=stack.pop();if("
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 32,
+          "exact": ")}]",
+          "tokenType": "string",
+          "dynamic": "dynamic-fragment",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": "){comment=\"block\";i++;continue}if(c==='\"'||c===\"'\"||(lang===\"js\"&&c.charCodeAt(0)===96)){q=c;continue}if(\"({[\".includes(c))stack.push(c);if(\")}]\".includes(c)){let p=stack.pop();if(!p||({\"}\":\"{\",\")\":\"(\",\"]\":\"[\"})[c]!"
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 32,
+          "exact": "}",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": "=\"'\"||(lang===\"js\"&&c.charCodeAt(0)===96)){q=c;continue}if(\"({[\".includes(c))stack.push(c);if(\")}]\".includes(c)){let p=stack.pop();if(!p||({\"}\":\"{\",\")\":\"(\",\"]\":\"[\"})[c]!==p)throw Error(\"Unmatched closing delimiter"
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 32,
+          "exact": "{",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": "||(lang===\"js\"&&c.charCodeAt(0)===96)){q=c;continue}if(\"({[\".includes(c))stack.push(c);if(\")}]\".includes(c)){let p=stack.pop();if(!p||({\"}\":\"{\",\")\":\"(\",\"]\":\"[\"})[c]!==p)throw Error(\"Unmatched closing delimiter at "
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 32,
+          "exact": ")",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "ang===\"js\"&&c.charCodeAt(0)===96)){q=c;continue}if(\"({[\".includes(c))stack.push(c);if(\")}]\".includes(c)){let p=stack.pop();if(!p||({\"}\":\"{\",\")\":\"(\",\"]\":\"[\"})[c]!==p)throw Error(\"Unmatched closing delimiter at char"
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 32,
+          "exact": "(",
+          "tokenType": "string",
+          "dynamic": "static-literal",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "==\"js\"&&c.charCodeAt(0)===96)){q=c;continue}if(\"({[\".includes(c))stack.push(c);if(\")}]\".includes(c)){let p=stack.pop();if(!p||({\"}\":\"{\",\")\":\"(\",\"]\":\"[\"})[c]!==p)throw Error(\"Unmatched closing delimiter at characte"
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 32,
+          "exact": "]",
+          "tokenType": "string",
+          "dynamic": "dynamic-fragment",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "s\"&&c.charCodeAt(0)===96)){q=c;continue}if(\"({[\".includes(c))stack.push(c);if(\")}]\".includes(c)){let p=stack.pop();if(!p||({\"}\":\"{\",\")\":\"(\",\"]\":\"[\"})[c]!==p)throw Error(\"Unmatched closing delimiter at character \"+"
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 32,
+          "exact": "[",
+          "tokenType": "string",
+          "dynamic": "dynamic-fragment",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "c.charCodeAt(0)===96)){q=c;continue}if(\"({[\".includes(c))stack.push(c);if(\")}]\".includes(c)){let p=stack.pop();if(!p||({\"}\":\"{\",\")\":\"(\",\"]\":\"[\"})[c]!==p)throw Error(\"Unmatched closing delimiter at character \"+(i+1"
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 32,
+          "exact": "Unmatched closing delimiter at character",
+          "tokenType": "string",
+          "dynamic": "dynamic-fragment",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "c;continue}if(\"({[\".includes(c))stack.push(c);if(\")}]\".includes(c)){let p=stack.pop();if(!p||({\"}\":\"{\",\")\":\"(\",\"]\":\"[\"})[c]!==p)throw Error(\"Unmatched closing delimiter at character \"+(i+1)+\".\")}}if(q||comment===\"block\"||stack.length)throw Error(\"Input "
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 32,
+          "exact": ".",
+          "tokenType": "string",
+          "dynamic": "dynamic-fragment",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": ")}]\".includes(c)){let p=stack.pop();if(!p||({\"}\":\"{\",\")\":\"(\",\"]\":\"[\"})[c]!==p)throw Error(\"Unmatched closing delimiter at character \"+(i+1)+\".\")}}if(q||comment===\"block\"||stack.length)throw Error(\"Input has an unc"
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 32,
+          "exact": "block",
+          "tokenType": "string",
+          "dynamic": "dynamic-fragment",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": "p=stack.pop();if(!p||({\"}\":\"{\",\")\":\"(\",\"]\":\"[\"})[c]!==p)throw Error(\"Unmatched closing delimiter at character \"+(i+1)+\".\")}}if(q||comment===\"block\"||stack.length)throw Error(\"Input has an unclosed string, comment or d"
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 32,
+          "exact": "Input has an unclosed string, comment or delimiter.",
+          "tokenType": "string",
+          "dynamic": "dynamic-fragment",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": ":\"(\",\"]\":\"[\"})[c]!==p)throw Error(\"Unmatched closing delimiter at character \"+(i+1)+\".\")}}if(q||comment===\"block\"||stack.length)throw Error(\"Input has an unclosed string, comment or delimiter.\")} function diff(a,b){let A=a.split(/\\r?\\n/),B=b.split(/\\r?\\n/);if(A.l"
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 33,
+          "exact": "Diff is limited to 200 lines per input.",
+          "tokenType": "string",
+          "dynamic": "dynamic-fragment",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "sed string, comment or delimiter.\")} function diff(a,b){let A=a.split(/\\r?\\n/),B=b.split(/\\r?\\n/);if(A.length>200||B.length>200)throw Error(\"Diff is limited to 200 lines per input.\");let d=Array.from({length:A.length+1},()=>new Uint16Array(B.length+1)"
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 33,
+          "exact": "Same",
+          "tokenType": "string",
+          "dynamic": "dynamic-fragment",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": "ax(d[i+1][j],d[i][j+1]);let i=0,j=0,r=[];while(i<A.length||j<B.length){if(i<A.length&&j<B.length&&A[i]===B[j]){r.push({item:\" \"+A[i],value:\"Same\"});i++;j++}else if(j<B.length&&(i===A.length||d[i][j+1]>=d[i+1][j])){r"
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 33,
+          "exact": "+",
+          "tokenType": "string",
+          "dynamic": "dynamic-fragment",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": "B.length&&A[i]===B[j]){r.push({item:\" \"+A[i],value:\"Same\"});i++;j++}else if(j<B.length&&(i===A.length||d[i][j+1]>=d[i+1][j])){r.push({item:\"+ \"+B[j],value:\"Added\"});j++}else{r.push({item:\"− \"+A[i],value:\"Removed\"}"
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 33,
+          "exact": "Added",
+          "tokenType": "string",
+          "dynamic": "dynamic-fragment",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": "=B[j]){r.push({item:\" \"+A[i],value:\"Same\"});i++;j++}else if(j<B.length&&(i===A.length||d[i][j+1]>=d[i+1][j])){r.push({item:\"+ \"+B[j],value:\"Added\"});j++}else{r.push({item:\"− \"+A[i],value:\"Removed\"});i++}}return r} fu"
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 33,
+          "exact": "−",
+          "tokenType": "string",
+          "dynamic": "dynamic-fragment",
+          "classification": "visible-candidate/review-required",
+          "protectedParameters": [],
+          "context": "lue:\"Same\"});i++;j++}else if(j<B.length&&(i===A.length||d[i][j+1]>=d[i+1][j])){r.push({item:\"+ \"+B[j],value:\"Added\"});j++}else{r.push({item:\"− \"+A[i],value:\"Removed\"});i++}}return r} function run(id,v){let s=need(v"
+        },
+        {
+          "toolId": "html-css-js-minifier",
+          "toolName": "HTML/CSS/JS Minifier",
+          "sourceFile": "developer-tools.js",
+          "line": 33,
+          "exact": "Removed",
+          "tokenType": "string",
+          "dynamic": "dynamic-fragment",
+          "classification": "protected/review-required",
+          "protectedParameters": [],
+          "context": ";j++}else if(j<B.length&&(i===A.length||d[i][j+1]>=d[i+1][j])){r.push({item:\"+ \"+B[j],value:\"Added\"});j++}else{r.push({item:\"− \"+A[i],value:\"Removed\"});i++}}return r} function run(id,v){let s=need(v.text??v.left, id==="
+        }
+      ]
+    }
+  ]
+}
