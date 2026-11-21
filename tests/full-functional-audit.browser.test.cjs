@@ -252,6 +252,23 @@ test("all 220 registered tools execute with valid representative inputs in deskt
         "| Tool ID | Tool | Category | Inputs | Desktop | Mobile | Existing calculation-test evidence |",
         "|---|---|---|---|---|---|---|"
       ];
+      const formulaTools = records.filter(row => row.id !== "qr-code-generator");
+      const generatorTools = records.filter(row => row.id === "qr-code-generator");
+      const renderOnlyTools = records.filter(row => !coverage[row.category]);
+      lines.push(
+        "",
+        "### Formula / calculation / transformation expected-value list (" + formulaTools.length + ")",
+        "",
+        formulaTools.map(row => "- " + row.id + " — " + row.name + " (" + row.category + ")").join("\\n") || "None",
+        "",
+        "### Non-formula generator output / validation list (" + generatorTools.length + ")",
+        "",
+        generatorTools.map(row => "- " + row.id + " — " + row.name).join("\\n") || "None",
+        "",
+        "### Render-only list (" + renderOnlyTools.length + ")",
+        "",
+        renderOnlyTools.map(row => "- " + row.id + " — " + row.name).join("\\n") || "None"
+      );
       for (const row of records) {
         const mobile = mobileById.get(row.id);
         const inputText = row.fields.map(field => field.key + " (" + field.label.replace(/\|/g, "/") + ")").join(", ").replace(/\|/g, "/");
