@@ -49,7 +49,7 @@ test("all 220 registered tools execute with valid representative inputs in deskt
       const tools = await page.locator("#tool-links a").evaluateAll(links =>
         links.map(a => ({
           id: new URL(a.href).searchParams.get("tool"),
-          name: a.textContent.trim()
+          name: a.querySelector(".tool-card strong")?.textContent.trim() || a.textContent.trim()
         }))
       );
       assert.equal(tools.length, 220, "published registry link count");
