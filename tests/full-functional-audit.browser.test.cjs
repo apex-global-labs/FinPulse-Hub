@@ -56,15 +56,24 @@ test("all 220 registered tools execute their default calculation handler in desk
 
       for (const tool of tools) {
         await page.locator("#search").fill(tool.name);
-        await page.waitForFunction(
-          name => {
-            const heading = document.querySelector("#app .heading h2");
-            const result = document.querySelector("#app .result .value");
-            return heading?.textContent.trim() === name;
-          },
-          tool.name,
-          { timeout: 5000 }
-        );
+        try {
+          await page.waitForFunction(
+            name => {
+              const heading = document.querySelector("#app .heading h2");
+              return heading?.textContent.trim() === name;
+            },
+            tool.name,
+            { timeout: 5000 }
+          );
+        } catch (error) {
+          const diagnostic = await page.evaluate(() => ({
+            search: document.querySelector("#search")?.value,
+            heading: document.querySelector("#app .heading h2")?.textContent.trim() || null,
+            resultLabel: document.querySelector("#app .result .label")?.textContent.trim() || null,
+            resultDetail: document.querySelector("#app .result .sub")?.textContent.trim() || null
+          }));
+          throw new Error(viewport.name + " failed to render " + tool.id + " (" + tool.name + "): " + JSON.stringify(diagnostic) + "; " + error.message);
+        }
         const row = await page.evaluate(() => {
           const heading = document.querySelector("#app .heading h2");
           const result = document.querySelector("#app .result .value");
