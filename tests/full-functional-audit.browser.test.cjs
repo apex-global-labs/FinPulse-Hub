@@ -30,6 +30,8 @@ test("all 220 registered tools execute their default calculation handler in desk
   browser = await chromium.launch({ headless: true });
   const base = "http://127.0.0.1:" + server.address().port;
   const records = [];
+  const mobileRecords = [];
+  const failures = [];
   const runtimeErrors = [];
   const completed = { desktop: [], mobile: [] };
 
@@ -95,30 +97,39 @@ test("all 220 registered tools execute their default calculation handler in desk
             horizontalOverflow: document.documentElement.scrollWidth > window.innerWidth + 1
           };
         });
-        assert.equal(row.name, tool.name, viewport.name + " heading: " + tool.id);
-        assert.ok(row.category, viewport.name + " category missing: " + tool.id);
-        assert.ok(row.result && row.result !== "—" && row.resultLabel !== "CHECK YOUR INPUTS", viewport.name + " default handler failed: " + tool.id + " (" + row.resultLabel + "): " + row.resultDetail + "; fields=" + JSON.stringify(row.fields));
-        assert.ok(row.fields.length > 0, viewport.name + " input fields missing: " + tool.id);
-        assert.deepEqual(row.unlabeled, [], viewport.name + " unlabeled inputs: " + tool.id);
-        assert.equal(row.horizontalOverflow, false, viewport.name + " horizontal overflow: " + tool.id);
+        const issues = [];
+        if (row.name !== tool.name) issues.push("heading mismatch");
+        if (!row.category) issues.push("category missing");
+        if (!row.result || row.result === "—" || row.resultLabel === "CHECK YOUR INPUTS") issues.push("default handler failed: " + row.resultLabel + " — " + row.resultDetail);
+        if (!row.fields.length) issues.push("input fields missing");
+        if (row.unlabeled.length) issues.push("unlabeled inputs: " + row.unlabeled.join(", "));
+        if (row.horizontalOverflow) issues.push("horizontal overflow");
         completed[viewport.name].push(tool.id);
-        if (viewport.name === "desktop") records.push({ id: tool.id, ...row, status: "default-handler-passed" });
+        const record = { id: tool.id, ...row, status: issues.length ? "failed" : "default-handler-passed", issues };
+        if (issues.length) failures.push({ viewport: viewport.name, id: tool.id, name: tool.name, issues, fields: row.fields });
+        if (viewport.name === "desktop") records.push(record);
+        else mobileRecords.push(record);
       }
       await page.close();
     }
 
-    assert.deepEqual(runtimeErrors, [], "browser runtime/console errors");
     const categories = {};
     for (const row of records) categories[row.category] = (categories[row.category] || 0) + 1;
-    assert.equal(records.length, 220);
+    assert.equal(records.length, 220, "desktop inventory must contain 220 tools");
+    assert.equal(mobileRecords.length, 220, "mobile inventory must contain 220 tools");
     console.log("FUNCTIONAL_AUDIT_SUMMARY " + JSON.stringify({
       tools: records.length,
       viewports: ["desktop", "mobile"],
       executions: records.length * 2,
+      desktopPassed: records.filter(x => x.status === "default-handler-passed").length,
+      mobilePassed: mobileRecords.filter(x => x.status === "default-handler-passed").length,
+      failures,
       categories,
-      runtimeErrors: runtimeErrors.length
+      runtimeErrors
     }));
     console.log("FUNCTIONAL_AUDIT_REGISTRY " + JSON.stringify(records));
+    assert.deepEqual(failures, [], "tool functional failures");
+    assert.deepEqual(runtimeErrors, [], "browser runtime/console errors");
   } finally {
     try {
       await mkdir("artifacts", { recursive: true });
@@ -126,6 +137,8 @@ test("all 220 registered tools execute their default calculation handler in desk
         sourceCommit: process.env.GITHUB_SHA || "local",
         viewports: completed,
         desktopRegistry: records,
+        mobileRegistry: mobileRecords,
+        failures,
         runtimeErrors
       }, null, 2) + "\n");
     } catch (error) {
