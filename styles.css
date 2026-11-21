@@ -66,3 +66,7 @@ main,#app,.panel,.grid,.fields,.field,.smart-controls,aside{min-width:0;max-widt
 
 /* Preserve the desktop content width while keeping it shrinkable on phones. */
 main{max-width:1240px}
+
+/* Calculation breakdowns can contain wide tabular metrics; keep scrolling inside the breakdown panel. */
+#breakdown-panel,#breakdown-table{min-width:0;max-width:100%;box-sizing:border-box}
+#breakdown-panel{overflow-x:auto}
