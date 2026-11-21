@@ -4,6 +4,8 @@ const Global=require("../global-context.js");
 
 test("global registries contain all ISO country/region entries and valid independent locale/currency choices",()=>{
  assert.equal(Global.countries.length,249);
+ assert.equal(Global.metadata.countryStandard,"ISO 3166-1 alpha-2");
+ assert.equal(Global.metadata.currencyStandard,"ISO 4217");
  assert.equal(new Set(Global.countries.map(x=>x.code)).size,249);
  assert.equal(Global.currencies.length,154);
  assert.equal(new Set(Global.currencies.map(x=>x.code)).size,154);
@@ -32,7 +34,12 @@ test("user can explicitly apply a country currency suggestion and later override
 });
 
 test("territories with multiple legal tender currencies preserve alternatives",()=>{
- assert.deepEqual(Global.getCountry("BT").currencies,["INR","BTN"]);
+ assert.deepEqual(Global.getCountry("BT").currencies,["BTN","INR"]);
+ assert.equal(Global.suggestedCurrency("BT"),"BTN");
+ assert.equal(Global.suggestedCurrency("LS"),"LSL");
+ assert.equal(Global.suggestedCurrency("NA"),"NAD");
+ assert.equal(Global.suggestedCurrency("ZW"),"ZWG");
+ assert.equal(Global.suggestedCurrency("PS"),null);
  assert.deepEqual(Global.getCountry("PA").currencies,["PAB","USD"]);
  assert.equal(Global.suggestedCurrency("AQ"),null);
 });
