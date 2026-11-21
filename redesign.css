@@ -23,7 +23,7 @@ header nav a{font-size:13px;color:var(--muted)}
 .hero .cta{background:var(--green);color:#fff;margin-top:12px}
 .hero-art{width:210px;box-shadow:none;border:1px solid var(--line);background:var(--surface-soft)}
 .ad-slot-top{height:0;min-height:0;border:0;margin:0 auto}
-.home-route main{display:block;max-width:1180px;margin:20px auto 12px;padding:0 22px}
+.home-route main{display:block;max-width:1180px;margin:20px auto 12px;padding:0 22px};min-height:92px
 .home-route main>aside{position:static;display:grid;grid-template-columns:190px minmax(220px,1fr);align-items:center;gap:8px 16px;padding:13px 16px;box-shadow:var(--fp-card-shadow)}
 .home-route main>aside>small{grid-column:1/-1}
 .home-route main>aside input{margin:0}
