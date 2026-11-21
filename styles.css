@@ -75,7 +75,6 @@ main{max-width:1240px}
 .metric{min-width:0}
 .metric strong{min-width:0;max-width:65%;overflow-wrap:anywhere;word-break:break-word}
 
-/* Keep wide calculation breakdown tables scrollable without contributing to page width on phones. */
-#breakdown-panel{width:100%;contain:inline-size}
-#breakdown-panel .schedule-scroll{width:100%;max-width:100%;min-width:0;contain:inline-size;overflow-x:auto}
-#breakdown-panel .schedule-scroll table{width:max-content;min-width:650px;max-width:none}
+/* Long developer-tool outputs must wrap inside metric flex rows instead of widening mobile pages. */
+.metric > span{flex:1 1 35%;min-width:0;overflow-wrap:anywhere;word-break:break-word}
+.metric > strong{display:block;flex:0 1 65%;min-width:0;max-width:65%;white-space:normal;overflow-wrap:anywhere;word-break:break-word;text-align:right}
