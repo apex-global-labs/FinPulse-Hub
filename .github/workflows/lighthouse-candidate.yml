@@ -51,6 +51,7 @@ jobs:
           }
           NODE
       - name: Upload candidate Lighthouse reports
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: finpulse-batch-11-lighthouse-reports

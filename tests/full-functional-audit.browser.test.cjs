@@ -49,15 +49,15 @@ test("all 220 registered tools execute with valid representative inputs in deskt
       const tools = await page.locator("#tool-links a").evaluateAll(links =>
         links.map(a => ({
           id: new URL(a.href).searchParams.get("tool"),
-          name: a.textContent.trim()
+          name: a.querySelector(".tool-card strong")?.textContent.trim() || a.textContent.trim()
         }))
       );
       assert.equal(tools.length, 220, "published registry link count");
       assert.equal(new Set(tools.map(x => x.id)).size, 220, "tool IDs must be unique");
       assert.equal(new Set(tools.map(x => x.name)).size, 220, "tool names must be unique");
 
+      await page.goto(base + "?tool=" + encodeURIComponent(tools[0].id), { waitUntil: "domcontentloaded" });
       for (const tool of tools) {
-        await page.evaluate(() => history.replaceState(null, "", location.pathname));
         await page.locator("#search").fill(tool.name);
         try {
           await page.waitForFunction(
