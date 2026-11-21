@@ -51,3 +51,12 @@ test("category and subcategory names are unique and non-empty", () => {
     }
   }
 });
+
+
+test("GitHub Pages deployment includes homepage calculator scripts and canonical directory data", () => {
+  const workflow = fs.readFileSync(path.join(__dirname, "..", ".github", "workflows", "deploy.yml"), "utf8");
+  const copyStep = workflow.split("\n").find(line => line.includes("cp index.html")) || "";
+  for (const file of ["home-calculator-core.js", "home-calculator.js", "tool-category-mapping.json"]) {
+    assert.ok(copyStep.includes(file), `Pages artifact must include ${file}`);
+  }
+});
