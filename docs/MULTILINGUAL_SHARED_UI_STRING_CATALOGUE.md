@@ -1,10 +1,19 @@
 # Shared UI and Dynamic Message String Catalogue
 
 - Audit date: 2026-11-21
-- Sources: `app.js` shared renderer (after tool registry), `home-calculator.js`, and `index.html`.
-- Extracted occurrences: **2212**.
-- Full literal/context records: `MULTILINGUAL_SHARED_UI_STRING_CATALOGUE.json`.
+- Total extracted occurrences: **2,212**.
+- Sources: shared `app.js` renderer, `home-calculator.js`, and static `index.html` text nodes.
 
-This supplements the 220-tool registry catalogue. It includes shared form/result rendering, validation and error feedback, currency-rate status, history/copy/share controls, guide/FAQ rendering, chart/diagram accessible labels, homepage calculator UI, and HTML text nodes. The extractor preserves exact text and source line/context. HTML text nodes are extracted separately from JS literals.
+## Per-source catalogues
 
-**Review limitation:** Literal occurrences are not all user-visible at runtime; some are internal values, selectors, markup fragments, or machine tokens. Dynamic text assembled from variables and exceptions whose messages originate in imported/core modules must be traced and parameterized before translation. `protectedParameters` is deliberately blank pending manual identification of typed interpolation values. This is a candidate catalogue, not an approved translation allowlist.
+| Source | Occurrences | Catalogue |
+|---|---:|---|
+| Shared `app.js` after tool registry | 1,232 | [shared-app.json](./multilingual-string-catalogue/shared-app.json) |
+| Homepage calculator | 171 | [shared-home-calculator.json](./multilingual-string-catalogue/shared-home-calculator.json) |
+| Homepage HTML text nodes | 809 | [shared-index-html.json](./multilingual-string-catalogue/shared-index-html.json) |
+
+Each entry records exact text/literal, source file, absolute line, token type, static/dynamic hint, nearby source context and a protected-parameter placeholder.
+
+## Review limitations
+
+The extractor captures quoted/template literals and HTML text nodes, not every string generated from runtime variables, imported constants, core-module exceptions, CSS pseudo-content or browser-generated UI. Some captured values are markup, selectors, machine tokens or non-visible implementation strings. The list is a review catalogue, not an approved translation allowlist. Dynamic message parameters need manual typed definitions before translation.
