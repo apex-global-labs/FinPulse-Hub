@@ -13,7 +13,7 @@
 - Additional monetary tools outside the Finance category: **5** (Fuel Cost, Electricity Bill, Bill Split, Unit Price Comparator, Sales Commission).
 - Total identified monetary tools: **49**.
 - Existing display currency catalog: **15 codes** (USD, EUR, GBP, BDT, CAD, AUD, INR, JPY, CHF, SGD, AED, SAR, NZD, ZAR, CNY).
-- The general financial output formatter initializes `activeCurrency` to **USD**. A `display-currency` change handler exists, but the production `app.js`/rendered form source has no `id="display-currency"` selector markup. Therefore the expected user-selectable display currency control is not wired into the live finance tool form; the Currency Converter retains its own from/to currency fields.
+- The general financial output formatter initializes `activeCurrency` to **USD**. A `display-currency` change handler exists, but the production `app.js` source contains no `id="display-currency"` element or corresponding rendered form control. Therefore the expected user-selectable display currency control is not wired into the live finance tool form; the Currency Converter retains its own from/to currency fields. Its source-amount breakdown also calls `fmt(v.amount)` without passing the selected `from` currency, so that line is formatted using the shared USD fallback even when a different source currency is selected.
 - Currency code coverage is limited to the above 15 choices, not the global currency registry.
 - Country presets are limited to Sales Tax, VAT/GST and Inflation. Tax profile selection for Income Tax and Salary currently has 4 country tax profile families (US, UK, Canada, Bangladesh) and US state add-ons.
 - Phase 1 global context module is on unmerged PR #64 and is not in production `main`; it must not be treated as live or as already connected to the finance engine.
@@ -104,7 +104,7 @@ The five tools above are the only non-Finance money-related tools found in the l
 ### 3.3 Existing currency choices
 `USD, EUR, GBP, BDT, CAD, AUD, INR, JPY, CHF, SGD, AED, SAR, NZD, ZAR, CNY`
 
-Gap: 139+ globally used ISO 4217 currencies are not available through this dropdown. The exact gap must be recomputed against a versioned ISO 4217 current-currency dataset before implementation; historical, fund, precious-metal and non-circulating codes should not be treated as everyday tender.
+Gap: 139 currency codes present in the Phase 1 candidate registry are absent from this 15-code dropdown. This is a comparison against the candidate registry, not a claim that all 154 are equally used everyday tender. Recompute against a versioned ISO 4217 current-currency dataset before implementation; historical, fund, precious-metal and non-circulating codes should not be treated as everyday tender.
 
 ## 4. Financial jurisdiction and regional applicability
 
@@ -199,6 +199,6 @@ The US preset is a zero placeholder explicitly requiring a local rate, not a gen
 
 ## 8. Audit conclusion
 
-The principal globalization gap is not that 220 tools need currency fields. It is that **49 tools carry monetary meaning, but their currency semantics are not consistently explicit**. Finance output formatting currently defaults to USD, the expected display-currency control is not rendered, and five non-Finance money tools have inconsistent or absent currency context. Tax and regulated financial calculations are only partially jurisdiction-aware.
+The principal globalization gap is not that 220 tools need currency fields. It is that **49 tools carry monetary meaning, but their currency semantics are not consistently explicit**. Forty-three non-converter Finance tools and the Electricity Bill Estimator use the shared USD default; the Currency Converter has a distinct source/target pair but misformats its source-amount breakdown when the source is not USD; four other non-Finance money tools have absent currency labels/selectors. Finance output formatting currently defaults to USD and the expected display-currency control is not rendered. Tax and regulated financial calculations are only partially jurisdiction-aware.
 
 The safe next change is a narrow, formula-preserving currency-context integration, not an indiscriminate conversion of every numeric field or every tool.
