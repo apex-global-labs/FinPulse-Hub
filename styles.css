@@ -70,3 +70,7 @@ main{max-width:1240px}
 /* Calculation breakdowns can contain wide tabular metrics; keep scrolling inside the breakdown panel. */
 #breakdown-panel,#breakdown-table{min-width:0;max-width:100%;box-sizing:border-box}
 #breakdown-panel{overflow-x:auto}
+
+/* Long metric values (URLs, Base64 and formatted JSON) must wrap instead of widening the calculator. */
+.metric{min-width:0}
+.metric strong{min-width:0;max-width:65%;overflow-wrap:anywhere;word-break:break-word}
