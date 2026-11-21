@@ -225,3 +225,11 @@ footer{max-width:1180px;margin:auto;border-top:1px solid var(--line)}
  .home-route #tool-directory{padding-top:5px}
 }
 @media(max-width:380px){.home-route #quick-calculator .calc-key{min-height:32px}}
+
+
+/* Scientific mode: keep the familiar four-column number pad intact beside two columns of functions. */
+.home-calculator[data-mode=scientific] .calc-keys{grid-template-columns:minmax(0,1fr) minmax(0,2fr);align-items:stretch;gap:6px}
+.home-calculator[data-mode=scientific] .calc-scientific-keys{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(6,minmax(34px,1fr));gap:5px;min-width:0}
+.home-calculator[data-mode=scientific] .calc-basic-keys{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(5,minmax(34px,1fr));gap:5px;min-width:0}
+.home-calculator[data-mode=scientific] .calc-key{min-width:0;min-height:34px;font-size:12px;padding-inline:2px}
+@media(max-width:650px){.home-calculator[data-mode=scientific] .calc-keys{grid-template-columns:minmax(0,1.05fr) minmax(0,1.95fr);gap:5px}.home-calculator[data-mode=scientific] .calc-scientific-keys,.home-calculator[data-mode=scientific] .calc-basic-keys{gap:4px}.home-calculator[data-mode=scientific] .calc-key{font-size:11px}}
