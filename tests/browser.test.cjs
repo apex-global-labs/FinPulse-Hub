@@ -28,7 +28,7 @@ await page.addScriptTag({content:axeSource});
 const names=["Age Calculator","Date Difference Calculator","Add Days Calculator","Subtract Days Calculator","Business Days Calculator","Working Days Calculator","ISO Week Number Calculator","Day of Year Calculator","Days in Month Calculator","Leap Year Checker","Calendar Month View","Recurring Date Calculator","Term Duration Calculator","Time Duration Calculator","Time Difference Calculator","Add Time Calculator","Subtract Time Calculator","Countdown Timer","Event Date Countdown","Date to Unix Timestamp","Unix Timestamp to Date","World Clock","Time Zone Converter","UTC Offset Calculator","Meeting Time Planner"];
 for(const name of names){
  await page.locator("#search").fill(name);
- if(await page.locator("html").evaluate(el=>el.classList.contains("home-route"))){await page.locator("#tool-links a").first().click();await page.addScriptTag({content:axeSource});}
+ if(await page.locator("html").evaluate(el=>el.classList.contains("home-route"))){await page.locator('#tool-links a[href*="tool=age-calculator"]').click();await page.addScriptTag({content:axeSource});}
  await page.getByRole("heading",{name,exact:true}).waitFor();
  assert.ok(await page.locator("#formula-panel ol li").count()>=4,name+" calculation guide");
  const audit=await page.evaluate(async()=>await axe.run(document,{runOnly:{type:"tag",values:["wcag2a","wcag2aa","wcag21a","wcag21aa"]}}));
