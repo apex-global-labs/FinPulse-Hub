@@ -152,8 +152,7 @@ footer{max-width:1180px;margin:auto;border-top:1px solid var(--line)}
 @media(max-width:380px){.home-route #tool-links{grid-template-columns:1fr}}
 
 /* Reserve the calculator's first-paint footprint on the homepage to prevent mobile CLS while keys initialize. */
-.home-route #home-calculator{min-height:520px}
-@media(max-width:650px){.home-route #home-calculator{min-height:610px}}
+/* Let the calculator size to its visible controls; avoid artificial blank space above the directory. */
 
 /* Homepage directory: canonical category > subcategory > individual tool hierarchy. */
 .home-route #tool-links{grid-template-columns:repeat(3,minmax(0,1fr));align-items:start;gap:26px 30px}
