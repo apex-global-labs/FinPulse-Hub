@@ -3,7 +3,7 @@ const test = require("node:test");
 const assert = require("node:assert/strict");
 const { chromium } = require("playwright");
 const { createServer } = require("node:http");
-const { readFile } = require("node:fs/promises");
+const { readFile, mkdir, writeFile } = require("node:fs/promises");
 const { join } = require("node:path");
 
 let server;
@@ -31,6 +31,7 @@ test("all 220 registered tools execute their default calculation handler in desk
   const base = "http://127.0.0.1:" + server.address().port;
   const records = [];
   const runtimeErrors = [];
+  const completed = { desktop: [], mobile: [] };
 
   try {
     for (const viewport of [
@@ -92,6 +93,7 @@ test("all 220 registered tools execute their default calculation handler in desk
         assert.ok(row.fields.length > 0, viewport.name + " input fields missing: " + tool.id);
         assert.deepEqual(row.unlabeled, [], viewport.name + " unlabeled inputs: " + tool.id);
         assert.equal(row.horizontalOverflow, false, viewport.name + " horizontal overflow: " + tool.id);
+        completed[viewport.name].push(tool.id);
         if (viewport.name === "desktop") records.push({ id: tool.id, ...row, status: "default-handler-passed" });
       }
       await page.close();
@@ -110,6 +112,17 @@ test("all 220 registered tools execute their default calculation handler in desk
     }));
     console.log("FUNCTIONAL_AUDIT_REGISTRY " + JSON.stringify(records));
   } finally {
+    try {
+      await mkdir("artifacts", { recursive: true });
+      await writeFile("artifacts/220-tool-functional-audit.json", JSON.stringify({
+        sourceCommit: process.env.GITHUB_SHA || "local",
+        viewports: completed,
+        desktopRegistry: records,
+        runtimeErrors
+      }, null, 2) + "\\n");
+    } catch (error) {
+      console.error("Could not persist functional audit artifact: " + error.message);
+    }
     if (browser) await browser.close();
     if (server) await new Promise(resolve => server.close(resolve));
   }
