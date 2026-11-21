@@ -25,3 +25,11 @@ jobs:
           npx playwright install chromium
       - name: Desktop and mobile browser tests
         run: npm run test:browser
+      - name: Upload 220-tool functional audit registry
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: 220-tool-functional-audit
+          path: artifacts/220-tool-functional-audit.json
+          if-no-files-found: warn
+          retention-days: 14
