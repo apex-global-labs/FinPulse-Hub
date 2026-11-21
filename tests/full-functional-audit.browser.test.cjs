@@ -84,6 +84,10 @@ test("all 220 registered tools execute with valid representative inputs in deskt
         }
         const firstPreset = page.locator('#app button[data-preset="0"]').first();
         if (await firstPreset.count()) await firstPreset.click();
+        if (tool.id === "probability") {
+          await page.locator("#f-a").fill("0.4");
+          await page.locator("#f-b").fill("0.3");
+        }
         await page.evaluate(() => {
           const fields = [...document.querySelectorAll("#app .fields input[name], #app .fields select[name], #app .fields textarea[name]")];
           for (const el of fields) {
