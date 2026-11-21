@@ -130,3 +130,33 @@ Preferred direction for investigation: language-prefixed static routes (for exam
 ## 8. Delivery policy
 
 This document is a plan only. It does not authorize direct edits to `main`, merging, or production deployment. Implementation should proceed in small reviewable PRs, with one phase or tightly related sub-phase per PR. Keep the default English experience stable throughout the rollout.
+
+
+## 9. Phase 0 — architecture reconciliation findings (2026-11-21)
+
+### Existing SEO/prerender work inspected
+
+- **PR #50 — static SEO prerender pilot** changes `app.js`, `index.html`, `styles.css`, `package.json`, adds `scripts/prerender-seo-pilot.cjs` and `seo-prerender-bootstrap.js`, and uploads generated HTML as a CI artifact. It currently targets five English routes: Mortgage, Percentage, Age, Length and Word Counter.
+- The pilot generates static HTML by opening the existing app with Playwright, waiting for the tool's client-rendered content/FAQ/JSON-LD, then writing a route snapshot. It preserves the existing `?tool=` runtime route through a bootstrap script, but changes the pilot page's canonical to a `/tools/<slug>/` URL.
+- The PR #50 workflow uploads pilot pages for inspection; the inspected change does not yet establish a production Pages deployment of all generated routes or a seven-locale route generator. Do not assume that its generated paths are already live.
+- **PR #58 — Global SEO Master Audit** explicitly recommends static generation only after pilot parity, retaining legacy query routes during migration, and not adding `hreflang` until real translated pages exist at separate stable URLs.
+- **PR #46** changes tool-page layout/content and its performance audit; **PR #45** changes the calculator embed dialog. Both touch shared application/rendering behavior and must be preserved in route hydration tests.
+- PR #50's base commit is older than the current production baseline inspected for this roadmap, so its branch must be rebased/reconciled and its current CI/artifact evidence rechecked before it can become the foundation for localized routes.
+
+### Architecture decision for multilingual work
+
+1. Keep the existing English homepage and all current `?tool=<id>` URLs fully functional and canonical until a separate route migration is proven safe.
+2. Do not implement localized canonical tags, `hreflang`, or sitemap entries in the language-selector phase.
+3. Treat language selection as a presentation preference initially. The locale dictionary/renderer must be independent of calculation registries and formulas.
+4. For indexable localized content, prefer a distinct language-prefixed static route family only after the English static route pilot is accepted—for example `/ar/tools/mortgage-calculator/`, `/hi/tools/mortgage-calculator/`, `/ur/tools/mortgage-calculator/`, `/zh-cn/tools/mortgage-calculator/`, `/ja/tools/mortgage-calculator/`, and `/ru/tools/mortgage-calculator/`. These are proposed patterns, not live routes.
+5. A localized route must be generated from the same stable tool ID and source registry as English, with locale-specific visible text, `lang`, `dir`, title, description, canonical and structured data. It must not be a duplicate English page with only the language label changed.
+6. Keep formulas, numeric input parsing, internal units, tool IDs, query/share parameters and API payloads locale-neutral. Locale formatting is display-only and must not alter arithmetic or persisted input semantics.
+7. Do not duplicate the full 220-tool app into seven unrelated codebases. Use one renderer and locale dictionaries; static generation should emit locale-specific HTML from that shared renderer.
+8. Do not silently infer a user's currency, tax jurisdiction, unit system or calculation assumptions from their selected language. Language and jurisdiction are separate preferences.
+
+### Phase 0 exit status
+
+- Static SEO architecture and current PR overlap have been inspected at source/diff level.
+- Final route architecture is constrained as above but remains conditional on PR #50's full pilot validation and coordination with PRs #45/#46.
+- Complete user-visible string inventory and per-tool dynamic-message coverage have **not yet** been completed; this remains required before Phase 1 implementation.
+- No runtime, calculation, SEO metadata, sitemap, production branch or live site was changed by this audit.
