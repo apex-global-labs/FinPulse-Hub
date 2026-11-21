@@ -121,7 +121,7 @@ await page.goto(base+"?tool=fuel-cost-calculator");assert.equal(await page.locat
 await page.goto(base+"?tool=electricity-bill-estimator");assert.equal(await page.locator(".result .value").innerText(),"$36.75");assert.equal(await page.locator("#f-currency option").count(),154);
 await page.goto(base+"?tool=bill-split-calculator");await page.getByRole("heading",{name:"Bill Split Calculator",exact:true}).waitFor();await page.locator("#f-people").fill("3");await page.locator("#f-mode").selectOption("weighted");await page.locator("#f-weights").fill("50,30,20");await page.waitForFunction(()=>document.querySelector("#breakdown-table").innerText.includes("$60.00"));const splitText=await page.locator("#breakdown-table").innerText();assert.match(splitText,/\$60\.00/);assert.match(splitText,/\$36\.00/);assert.match(splitText,/\$24\.00/);
 await page.goto(base+"?tool=fuel-cost-calculator");await page.locator("#global-context-panel > summary").click();await page.locator("#global-currency").selectOption("BDT");await page.waitForFunction(()=>/BDT|৳/.test(document.querySelector(".result .value").innerText));assert.equal(await page.locator("#f-price").inputValue(),"1.65");
-await page.goto(base+"?tool=401k");assert.match(await page.locator(".result .value").innerText(),/^\$/);assert.match(await page.locator("#currency-context-note").innerText(),/US-specific.*USD/);
+await page.goto(base+"?tool=401k");assert.match(await page.locator(".result .value").innerText(),/^\$/);assert.match(await page.locator("#currency-context-note").innerText(),/IRS contribution and eligibility limits are not enforced/);
 await page.locator("#global-context-panel > summary").click();await page.locator("#global-currency").selectOption("USD");
 await page.close();
 });
