@@ -259,15 +259,15 @@ test("all 220 registered tools execute with valid representative inputs in deskt
         "",
         "### Formula / calculation / transformation expected-value list (" + formulaTools.length + ")",
         "",
-        formulaTools.map(row => "- " + row.id + " — " + row.name + " (" + row.category + ")").join("\\n") || "None",
+        formulaTools.map(row => "- " + row.id + " — " + row.name + " (" + row.category + ")").join("\n") || "None",
         "",
         "### Non-formula generator output / validation list (" + generatorTools.length + ")",
         "",
-        generatorTools.map(row => "- " + row.id + " — " + row.name).join("\\n") || "None",
+        generatorTools.map(row => "- " + row.id + " — " + row.name).join("\n") || "None",
         "",
         "### Render-only list (" + renderOnlyTools.length + ")",
         "",
-        renderOnlyTools.map(row => "- " + row.id + " — " + row.name).join("\\n") || "None"
+        renderOnlyTools.map(row => "- " + row.id + " — " + row.name).join("\n") || "None"
       );
       for (const row of records) {
         const mobile = mobileById.get(row.id);
