@@ -1,5 +1,6 @@
 const test=require("node:test");
 const assert=require("node:assert/strict");
+const fs=require("node:fs");
 const Global=require("../global-context.js");
 
 test("global registries contain all ISO country/region entries and valid independent locale/currency choices",()=>{
@@ -59,4 +60,23 @@ test("currency formatting validates codes and uses locale independently",()=>{
  assert.match(Global.formatMoney(1234.5,"BDT"),/৳|BDT/);
  assert.throws(()=>Global.formatMoney(1,"ZZZ"),/Unsupported ISO currency code/);
  Global.update({countryCode:null,locale:"en",currencyCode:"USD",currencyMode:"manual",measurementSystem:"metric",financialJurisdiction:null});
+});
+
+test("homepage exposes accessible independent global settings and loads the module before app.js",()=>{
+ const html=fs.readFileSync("index.html","utf8");
+ assert.match(html,/id="global-context-panel"/);
+ assert.match(html,/id="global-country"/);
+ assert.match(html,/id="global-locale"/);
+ assert.match(html,/id="global-currency"/);
+ assert.match(html,/id="global-use-suggested"/);
+ assert.ok(html.indexOf('src="global-context.js"')<html.indexOf('src="app.js"'));
+ assert.match(html,/Existing calculators keep their current currency behavior/);
+});
+
+test("syntax and GitHub Pages packaging include the global context module",()=>{
+ const pkg=JSON.parse(fs.readFileSync("package.json","utf8"));
+ const deploy=fs.readFileSync(".github/workflows/deploy.yml","utf8");
+ assert.match(pkg.scripts.check,/node --check global-context\.js/);
+ assert.match(pkg.scripts.test,/tests\/global-context\.test\.cjs/);
+ assert.match(deploy,/smart-ui\.js global-context\.js tax-data\.js/);
 });
