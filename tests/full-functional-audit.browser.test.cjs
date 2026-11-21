@@ -59,6 +59,9 @@ test("all 220 registered tools execute with valid representative inputs in deskt
       for (const tool of tools) {
         await page.evaluate(() => history.replaceState(null, "", location.pathname));
         await page.locator("#search").fill(tool.name);
+        if (await page.locator("html").evaluate(el => el.classList.contains("home-route"))) {
+          await page.locator("#tool-links a").first().click();
+        }
         try {
           await page.waitForFunction(
             name => {
