@@ -13,5 +13,21 @@ test("Unicode counters, reversal and identifier conversion preserve expected res
 test("diff, sorting and duplicate removal handle bounded deterministic cases",()=>{const g=id=>registry.find(x=>x.id===id);assert.equal(g("text-compare-diff").run({left:"a\nb",right:"a\nc"}).metrics[0][1],1);assert.equal(g("line-sorter").run({text:"10\n2",mode:"numeric-asc",unique:"no"}).main,"2\n10");assert.equal(g("duplicate-line-remover").run({text:"a\nb\na",mode:"exact"}).main,"a\nb")});
 test("CSS and JavaScript formatter/minifier reject unmatched delimiters",()=>{const g=id=>registry.find(x=>x.id===id);assert.throws(()=>g("css-formatter").run({text:"a{color:red"}),/unclosed/);assert.throws(()=>g("javascript-formatter").run({text:"function x( {"}),/unclosed/);assert.throws(()=>g("html-css-js-minifier").run({text:"const x = {",language:"js"}),/unclosed/)});
 test("URL and Base64 Unicode round-trip correctly",()=>{const url=registry.find(x=>x.id==="url-encoder-decoder"),b64=registry.find(x=>x.id==="base64-encoder-decoder"),text="বাংলা & English";const encoded=url.run({text,mode:"encode"}).main;assert.equal(url.run({text:encoded,mode:"decode"}).main,text);const b=b64.run({text,mode:"encode"}).main;assert.equal(b64.run({text:b,mode:"decode"}).main,text)});
+test("remaining developer utilities have direct expected-value formula and transformation coverage",()=>{
+ const g=id=>registry.find(x=>x.id===id);
+ assert.equal(g("character-counter").run({text:"A👨‍👩‍👧‍👦B"}).main,3);
+ assert.equal(g("sentence-counter").run({text:"One. Two? Three!"}).main,3);
+ assert.equal(g("paragraph-counter").run({text:"alpha\n\nbeta\n \n gamma"}).main,3);
+ const reading=g("reading-time-calculator").run({text:"one two three four five six",wpm:200});
+ assert.equal(reading.main,"1 min");assert.equal(reading.metrics.find(x=>x[0]==="Seconds")[1],2);
+ assert.equal(g("whitespace-cleaner").run({text:"  alpha  \n  beta  ",mode:"trim-lines"}).main,"alpha\nbeta");
+ assert.equal(g("html-entity-encoder-decoder").run({text:'<div title="A&B">Hi</div>',mode:"encode"}).main,"&lt;div title=&quot;A&amp;B&quot;&gt;Hi&lt;/div&gt;");
+ assert.equal(g("html-entity-encoder-decoder").run({text:"&lt;div&gt;A&amp;B&lt;/div&gt;",mode:"decode"}).main,"<div>A&B</div>");
+ assert.equal(g("json-formatter-validator").run({text:'{"a":1,"b":2}',mode:"compact"}).main,'{"a":1,"b":2}');
+ assert.equal(g("html-formatter").run({text:"<div><span>Hi</span></div>"}).main,"<div>\n<span>Hi</span>\n</div>");
+ assert.equal(g("css-formatter").run({text:"a{color:red; margin:0}"}).main,"a {\ncolor:red;\nmargin:0\n}\n");
+ assert.equal(g("javascript-formatter").run({text:"function add(a,b){return a+b;}"}).main,"function add(a,b){\nreturn a+b;\n}\n");
+ assert.equal(g("html-css-js-minifier").run({text:"const x = 1; // note\nconsole.log(x);",language:"js"}).main,"const x = 1;console.log(x);");
+});
 test("roadmap IDs do not overlap the existing date-time or converter registries",()=>{const date=fs.readFileSync("date-time-tools.js","utf8"),unit=fs.readFileSync("unit-converter-tools.js","utf8");for(const id of expected){assert.equal(date.includes('"'+id+'"'),false,id+" date-time overlap");assert.equal(unit.includes('"'+id+'"'),false,id+" converter overlap")}});
 test("homepage, sitemap and runtime module all declare the 220-tool final candidate",()=>{const html=fs.readFileSync("index.html","utf8"),app=fs.readFileSync("app.js","utf8"),sitemap=fs.readFileSync("sitemap.xml","utf8");assert.match(html,/tool-count">220/);assert.match(html,/developer-tools\.js/);assert.match(app,/FinPulseDeveloperTools\.registry/);assert.equal([...sitemap.matchAll(/<loc>/g)].length,220);assert.equal(new Set([...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(x=>x[1])).size,220)});
