@@ -287,3 +287,25 @@ footer{max-width:1180px;margin:auto;border-top:1px solid var(--line)}
  .home-route #quick-calculator{padding-inline:7px}
  .home-calculator[data-mode=scientific] .calc-key{min-height:29px;font-size:10px}
 }
+
+
+/* Final height correction: trim vertical chrome without reducing key hit targets excessively. */
+.home-route #home-calculator{padding-block:8px;padding-inline:12px}
+.home-route #home-calculator .calc-heading{margin-bottom:6px;gap:8px}
+.home-route #home-calculator .calc-heading h1{font-size:clamp(19px,1.9vw,23px);margin:2px 0}
+.home-route #home-calculator .calc-heading p{font-size:10px;line-height:1.25}
+.home-route #quick-calculator .calc-layout{gap:8px}
+.home-route #quick-calculator .calc-main,.home-route #quick-calculator .calc-history{padding:7px}
+.home-route #quick-calculator .calc-display{min-height:60px;padding:5px 8px;margin-bottom:5px}
+.home-route #quick-calculator #calc-result{font-size:20px}
+.home-route #quick-calculator .calc-keys{gap:4px}
+.home-route #quick-calculator .calc-key{min-height:31px}
+.home-route #quick-calculator .calc-hint{font-size:8px;line-height:1.2;margin-top:3px}
+@media(max-width:650px){
+ .home-route #home-calculator{padding:7px}
+ .home-route #home-calculator .calc-heading{margin-bottom:5px}
+ .home-route #quick-calculator .calc-main{padding:6px}
+ .home-route #quick-calculator .calc-display{min-height:56px;padding:4px 7px;margin-bottom:4px}
+ .home-route #quick-calculator .calc-key{min-height:30px}
+ .home-route #quick-calculator .calc-keys{gap:4px}
+}
