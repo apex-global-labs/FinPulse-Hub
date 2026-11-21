@@ -70,7 +70,7 @@ test("homepage exposes accessible independent global settings and loads the modu
  assert.match(html,/id="global-currency"/);
  assert.match(html,/id="global-use-suggested"/);
  assert.ok(html.indexOf('src="global-context.js"')<html.indexOf('src="app.js"'));
- assert.match(html,/Monetary tools use this currency for display/);assert.match(html,/Tax-profile and US-specific retirement tools retain their required currencies/);
+ assert.match(html,/Monetary tools display and interpret entered amounts in this currency/);assert.match(html,/Tax-profile and US-specific retirement tools retain their required currencies/);
 });
 
 test("syntax and GitHub Pages packaging include the global context module",()=>{
