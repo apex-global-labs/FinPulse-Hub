@@ -18,7 +18,8 @@
 
 ### Phase 2B — Finance tool integration
 
-- 39 Finance tools use the global currency preference for presentation.
+- 37 Finance tools use the global currency preference for presentation.
+- 401(k) and Roth vs Traditional IRA remain explicitly US-specific and display USD because their contribution rules/limits are USD-denominated; the global currency preference does not relabel them.
 - Income Tax and Salary Take-Home retain the currency supplied by the selected tax profile; jurisdiction-specific tax output is not overwritten by a display preference.
 - Percentage Calculator remains dimensionless.
 - Currency Converter, Exchange Fee & Markup, and International Money Transfer retain separate source/recipient currency semantics.
