@@ -79,3 +79,5 @@ main{max-width:1240px}
 #metrics .metric{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,65%);align-items:start;gap:12px;min-width:0}
 #metrics .metric span{min-width:0;overflow-wrap:anywhere;word-break:break-word}
 #metrics .metric strong{display:block;width:100%;min-width:0;max-width:100%;white-space:normal;overflow-wrap:anywhere;word-break:break-word;text-align:right}
+/* Guard any remaining strong output nodes against intrinsic-width overflow on narrow screens. */
+#app strong{display:block;min-width:0;max-width:100%;white-space:normal;overflow-wrap:anywhere;word-break:break-word}
