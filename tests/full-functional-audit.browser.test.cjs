@@ -89,7 +89,7 @@ test("all 220 registered tools execute their default calculation handler in desk
             fields: fields.map(el => ({
               key: el.name,
               label: document.querySelector('label[for="' + CSS.escape(el.id) + '"]')?.textContent.trim() || "",
-              type: el.type || el.tagName.toLowerCase()
+              type: el.type || el.tagName.toLowerCase(), value: el.value
             })),
             unlabeled: unlabeled.map(el => el.name),
             horizontalOverflow: document.documentElement.scrollWidth > window.innerWidth + 1
@@ -97,7 +97,7 @@ test("all 220 registered tools execute their default calculation handler in desk
         });
         assert.equal(row.name, tool.name, viewport.name + " heading: " + tool.id);
         assert.ok(row.category, viewport.name + " category missing: " + tool.id);
-        assert.ok(row.result && row.result !== "—" && row.resultLabel !== "CHECK YOUR INPUTS", viewport.name + " default handler failed: " + tool.id + " (" + row.resultLabel + "): " + row.resultDetail);
+        assert.ok(row.result && row.result !== "—" && row.resultLabel !== "CHECK YOUR INPUTS", viewport.name + " default handler failed: " + tool.id + " (" + row.resultLabel + "): " + row.resultDetail + "; fields=" + JSON.stringify(row.fields));
         assert.ok(row.fields.length > 0, viewport.name + " input fields missing: " + tool.id);
         assert.deepEqual(row.unlabeled, [], viewport.name + " unlabeled inputs: " + tool.id);
         assert.equal(row.horizontalOverflow, false, viewport.name + " horizontal overflow: " + tool.id);
