@@ -23,6 +23,7 @@
 - Income Tax and Salary Take-Home retain the currency supplied by the selected tax profile; jurisdiction-specific tax output is not overwritten by a display preference.
 - Percentage Calculator remains dimensionless.
 - Currency Converter, Exchange Fee & Markup, and International Money Transfer retain separate source/recipient currency semantics.
+- Automatic reference rates remain limited to currency pairs supported by the existing Frankfurter service. Unsupported pairs show an explicit rate error and leave the manual rate field available; the existing 10-second timeout and one-hour in-memory cache remain unchanged.
 - Currency Converter source amount is formatted using its selected From currency.
 - Exchange Fee & Markup and International Money Transfer now expose an explicit source-currency selector; source-side fees/costs are formatted in that currency and recipient amounts in the destination currency.
 
