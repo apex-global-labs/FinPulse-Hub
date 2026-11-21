@@ -254,13 +254,13 @@ test("all 220 registered tools execute with valid representative inputs in deskt
       ];
       for (const row of records) {
         const mobile = mobileById.get(row.id);
-        const inputText = row.fields.map(field => field.key + " (" + field.label.replace(/\\|/g, "/") + ")").join(", ").replace(/\\|/g, "/");
+        const inputText = row.fields.map(field => field.key + " (" + field.label.replace(/\|/g, "/") + ")").join(", ").replace(/\|/g, "/");
         const desktopStatus = row.status === "representative-handler-passed" ? "PASS" : "FAIL";
         const mobileStatus = mobile?.status === "representative-handler-passed" ? "PASS" : "FAIL";
-        lines.push("| " + row.id + " | " + row.name.replace(/\\|/g, "/") + " | " + row.category.replace(/\\|/g, "/") + " | " + inputText + " | " + desktopStatus + " | " + mobileStatus + " | " + (coverage[row.category] || "No formula/logic suite mapped; render/handler smoke only") + " |");
+        lines.push("| " + row.id + " | " + row.name.replace(/\|/g, "/") + " | " + row.category.replace(/\|/g, "/") + " | " + inputText + " | " + desktopStatus + " | " + mobileStatus + " | " + (coverage[row.category] || "No formula/logic suite mapped; render/handler smoke only") + " |");
       }
-      lines.push("", "## Failures", "", failures.length ? failures.map(item => "- " + item.viewport + " — " + item.id + " (" + item.name + "): " + item.issues.join("; ")).join("\\n") : "None", "", "## Browser runtime errors", "", runtimeErrors.length ? runtimeErrors.map(error => "- " + error).join("\\n") : "None", "");
-      await writeFile("artifacts/220-tool-functional-audit.md", lines.join("\\n"));
+      lines.push("", "## Failures", "", failures.length ? failures.map(item => "- " + item.viewport + " — " + item.id + " (" + item.name + "): " + item.issues.join("; ")).join("\n") : "None", "", "## Browser runtime errors", "", runtimeErrors.length ? runtimeErrors.map(error => "- " + error).join("\n") : "None", "");
+      await writeFile("artifacts/220-tool-functional-audit.md", lines.join("\n"));
     } catch (error) {
       console.error("Could not persist functional audit Markdown: " + error.message);
     }
