@@ -160,3 +160,8 @@ This document is a plan only. It does not authorize direct edits to `main`, merg
 - Final route architecture is constrained as above but remains conditional on PR #50's full pilot validation and coordination with PRs #45/#46.
 - Complete user-visible string inventory and per-tool dynamic-message coverage have **not yet** been completed; this remains required before Phase 1 implementation.
 - No runtime, calculation, SEO metadata, sitemap, production branch or live site was changed by this audit.
+
+
+## Phase 0 — User-visible text inventory (2026-11-21)
+
+The canonical 220-tool identity/source ownership inventory is documented in [`MULTILINGUAL_USER_VISIBLE_TEXT_INVENTORY.md`](./MULTILINGUAL_USER_VISIBLE_TEXT_INVENTORY.md). It records all 220 unique tool IDs, category/subcategory, English name and source definition file, plus the shared rendering layers and translation-safe boundaries. The exhaustive literal-string catalogue (all individual field labels, dynamic validation/result messages, FAQ/SEO strings and exact source locations) is explicitly **not yet complete** and remains a gate before runtime translation implementation. No runtime or production files were changed.
