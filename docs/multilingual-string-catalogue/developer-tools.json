@@ -24,7 +24,10 @@
           "dynamic": "static-literal",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": "\"word-counter\",\"Word Counter\",\"Count Unicode words and unique words.\"], ["
+          "context": "\"word-counter\",\"Word Counter\",\"Count Unicode words and unique words.\"], [",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "word-counter",
@@ -36,7 +39,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "\"word-counter\",\"Word Counter\",\"Count Unicode words and unique words.\"], ["
+          "context": "\"word-counter\",\"Word Counter\",\"Count Unicode words and unique words.\"], [",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "word-counter",
@@ -48,7 +54,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "\"word-counter\",\"Word Counter\",\"Count Unicode words and unique words.\"], ["
+          "context": "\"word-counter\",\"Word Counter\",\"Count Unicode words and unique words.\"], [",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         }
       ]
     },
@@ -69,7 +78,10 @@
           "dynamic": "static-literal",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": "\"character-counter\",\"Character Counter\",\"Count graphemes, code points and UTF-8 bytes.\"],"
+          "context": "\"character-counter\",\"Character Counter\",\"Count graphemes, code points and UTF-8 bytes.\"],",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "character-counter",
@@ -81,7 +93,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "\"character-counter\",\"Character Counter\",\"Count graphemes, code points and UTF-8 bytes.\"], ["
+          "context": "\"character-counter\",\"Character Counter\",\"Count graphemes, code points and UTF-8 bytes.\"], [",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "character-counter",
@@ -93,7 +108,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "\"character-counter\",\"Character Counter\",\"Count graphemes, code points and UTF-8 bytes.\"], ["
+          "context": "\"character-counter\",\"Character Counter\",\"Count graphemes, code points and UTF-8 bytes.\"], [",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         }
       ]
     },
@@ -114,7 +132,10 @@
           "dynamic": "static-literal",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": "\"sentence-counter\",\"Sentence Counter\",\"Count sentence-like segments using common punctua"
+          "context": "\"sentence-counter\",\"Sentence Counter\",\"Count sentence-like segments using common punctua",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "sentence-counter",
@@ -126,7 +147,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "\"sentence-counter\",\"Sentence Counter\",\"Count sentence-like segments using common punctuation.\"], ["
+          "context": "\"sentence-counter\",\"Sentence Counter\",\"Count sentence-like segments using common punctuation.\"], [",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "sentence-counter",
@@ -138,7 +162,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "\"sentence-counter\",\"Sentence Counter\",\"Count sentence-like segments using common punctuation.\"], ["
+          "context": "\"sentence-counter\",\"Sentence Counter\",\"Count sentence-like segments using common punctuation.\"], [",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         }
       ]
     },
@@ -159,7 +186,10 @@
           "dynamic": "static-literal",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": "\"paragraph-counter\",\"Paragraph Counter\",\"Count non-empty blocks separated by blank lines."
+          "context": "\"paragraph-counter\",\"Paragraph Counter\",\"Count non-empty blocks separated by blank lines.",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "paragraph-counter",
@@ -171,7 +201,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "\"paragraph-counter\",\"Paragraph Counter\",\"Count non-empty blocks separated by blank lines.\"], ["
+          "context": "\"paragraph-counter\",\"Paragraph Counter\",\"Count non-empty blocks separated by blank lines.\"], [",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "paragraph-counter",
@@ -183,7 +216,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "\"paragraph-counter\",\"Paragraph Counter\",\"Count non-empty blocks separated by blank lines.\"], ["
+          "context": "\"paragraph-counter\",\"Paragraph Counter\",\"Count non-empty blocks separated by blank lines.\"], [",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         }
       ]
     },
@@ -204,7 +240,10 @@
           "dynamic": "static-literal",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": "\"reading-time-calculator\",\"Reading Time Calculator\",\"Estimate reading time from word count and "
+          "context": "\"reading-time-calculator\",\"Reading Time Calculator\",\"Estimate reading time from word count and ",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "reading-time-calculator",
@@ -216,7 +255,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "\"reading-time-calculator\",\"Reading Time Calculator\",\"Estimate reading time from word count and reading speed.\"], ["
+          "context": "\"reading-time-calculator\",\"Reading Time Calculator\",\"Estimate reading time from word count and reading speed.\"], [",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "reading-time-calculator",
@@ -228,7 +270,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "\"reading-time-calculator\",\"Reading Time Calculator\",\"Estimate reading time from word count and reading speed.\"], ["
+          "context": "\"reading-time-calculator\",\"Reading Time Calculator\",\"Estimate reading time from word count and reading speed.\"], [",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         }
       ]
     },
@@ -249,7 +294,10 @@
           "dynamic": "static-literal",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": "\"case-converter\",\"Case Converter\",\"Convert text between common letter and identifier c"
+          "context": "\"case-converter\",\"Case Converter\",\"Convert text between common letter and identifier c",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "case-converter",
@@ -261,7 +309,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "\"case-converter\",\"Case Converter\",\"Convert text between common letter and identifier cases.\"], ["
+          "context": "\"case-converter\",\"Case Converter\",\"Convert text between common letter and identifier cases.\"], [",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "case-converter",
@@ -273,7 +324,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "\"case-converter\",\"Case Converter\",\"Convert text between common letter and identifier cases.\"], ["
+          "context": "\"case-converter\",\"Case Converter\",\"Convert text between common letter and identifier cases.\"], [",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         }
       ]
     },
@@ -294,7 +348,10 @@
           "dynamic": "static-literal",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": "\"text-reverser\",\"Text Reverser\",\"Reverse grapheme clusters or whitespace-separated wo"
+          "context": "\"text-reverser\",\"Text Reverser\",\"Reverse grapheme clusters or whitespace-separated wo",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "text-reverser",
@@ -306,7 +363,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "\"text-reverser\",\"Text Reverser\",\"Reverse grapheme clusters or whitespace-separated words.\"], ["
+          "context": "\"text-reverser\",\"Text Reverser\",\"Reverse grapheme clusters or whitespace-separated words.\"], [",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "text-reverser",
@@ -318,7 +378,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "\"text-reverser\",\"Text Reverser\",\"Reverse grapheme clusters or whitespace-separated words.\"], ["
+          "context": "\"text-reverser\",\"Text Reverser\",\"Reverse grapheme clusters or whitespace-separated words.\"], [",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         }
       ]
     },
@@ -339,7 +402,10 @@
           "dynamic": "static-literal",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": "\"duplicate-line-remover\",\"Duplicate Line Remover\",\"Remove repeated lines while preserving firs"
+          "context": "\"duplicate-line-remover\",\"Duplicate Line Remover\",\"Remove repeated lines while preserving firs",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "duplicate-line-remover",
@@ -351,7 +417,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "\"duplicate-line-remover\",\"Duplicate Line Remover\",\"Remove repeated lines while preserving first occurrence.\"], ["
+          "context": "\"duplicate-line-remover\",\"Duplicate Line Remover\",\"Remove repeated lines while preserving first occurrence.\"], [",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "duplicate-line-remover",
@@ -363,7 +432,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "\"duplicate-line-remover\",\"Duplicate Line Remover\",\"Remove repeated lines while preserving first occurrence.\"], ["
+          "context": "\"duplicate-line-remover\",\"Duplicate Line Remover\",\"Remove repeated lines while preserving first occurrence.\"], [",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         }
       ]
     },
@@ -384,7 +456,10 @@
           "dynamic": "static-literal",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": "\"text-compare-diff\",\"Text Compare / Diff Tool\",\"Compare two text blocks and list added an"
+          "context": "\"text-compare-diff\",\"Text Compare / Diff Tool\",\"Compare two text blocks and list added an",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "text-compare-diff",
@@ -396,7 +471,10 @@
           "dynamic": "static-literal",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": "\"text-compare-diff\",\"Text Compare / Diff Tool\",\"Compare two text blocks and list added and removed lines.\"], ["
+          "context": "\"text-compare-diff\",\"Text Compare / Diff Tool\",\"Compare two text blocks and list added and removed lines.\"], [",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "text-compare-diff",
@@ -408,7 +486,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "\"text-compare-diff\",\"Text Compare / Diff Tool\",\"Compare two text blocks and list added and removed lines.\"], ["
+          "context": "\"text-compare-diff\",\"Text Compare / Diff Tool\",\"Compare two text blocks and list added and removed lines.\"], [",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         }
       ]
     },
@@ -429,7 +510,10 @@
           "dynamic": "static-literal",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": "\"whitespace-cleaner\",\"Whitespace Cleaner\",\"Normalize line endings, trim edges or remove bl"
+          "context": "\"whitespace-cleaner\",\"Whitespace Cleaner\",\"Normalize line endings, trim edges or remove bl",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "whitespace-cleaner",
@@ -441,7 +525,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "\"whitespace-cleaner\",\"Whitespace Cleaner\",\"Normalize line endings, trim edges or remove blank lines.\"], ["
+          "context": "\"whitespace-cleaner\",\"Whitespace Cleaner\",\"Normalize line endings, trim edges or remove blank lines.\"], [",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "whitespace-cleaner",
@@ -453,7 +540,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "\"whitespace-cleaner\",\"Whitespace Cleaner\",\"Normalize line endings, trim edges or remove blank lines.\"], ["
+          "context": "\"whitespace-cleaner\",\"Whitespace Cleaner\",\"Normalize line endings, trim edges or remove blank lines.\"], [",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         }
       ]
     },
@@ -474,7 +564,10 @@
           "dynamic": "static-literal",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": "\"line-sorter\",\"Line Sorter\",\"Sort text lines alphabetically or numerically.\"], ["
+          "context": "\"line-sorter\",\"Line Sorter\",\"Sort text lines alphabetically or numerically.\"], [",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "line-sorter",
@@ -486,7 +579,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "\"line-sorter\",\"Line Sorter\",\"Sort text lines alphabetically or numerically.\"], ["
+          "context": "\"line-sorter\",\"Line Sorter\",\"Sort text lines alphabetically or numerically.\"], [",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "line-sorter",
@@ -498,7 +594,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "\"line-sorter\",\"Line Sorter\",\"Sort text lines alphabetically or numerically.\"], ["
+          "context": "\"line-sorter\",\"Line Sorter\",\"Sort text lines alphabetically or numerically.\"], [",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         }
       ]
     },
@@ -519,7 +618,10 @@
           "dynamic": "static-literal",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": "\"text-to-slug-generator\",\"Text-to-Slug Generator\",\"Create lowercase URL-friendly slugs.\"], ["
+          "context": "\"text-to-slug-generator\",\"Text-to-Slug Generator\",\"Create lowercase URL-friendly slugs.\"], [",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "text-to-slug-generator",
@@ -531,7 +633,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "\"text-to-slug-generator\",\"Text-to-Slug Generator\",\"Create lowercase URL-friendly slugs.\"], ["
+          "context": "\"text-to-slug-generator\",\"Text-to-Slug Generator\",\"Create lowercase URL-friendly slugs.\"], [",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "text-to-slug-generator",
@@ -543,7 +648,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "\"text-to-slug-generator\",\"Text-to-Slug Generator\",\"Create lowercase URL-friendly slugs.\"], ["
+          "context": "\"text-to-slug-generator\",\"Text-to-Slug Generator\",\"Create lowercase URL-friendly slugs.\"], [",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         }
       ]
     },
@@ -564,7 +672,10 @@
           "dynamic": "static-literal",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": "\"html-entity-encoder-decoder\",\"HTML Entity Encoder / Decoder\",\"Encode reserved HTML characters or d"
+          "context": "\"html-entity-encoder-decoder\",\"HTML Entity Encoder / Decoder\",\"Encode reserved HTML characters or d",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-entity-encoder-decoder",
@@ -576,7 +687,10 @@
           "dynamic": "static-literal",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": "\"html-entity-encoder-decoder\",\"HTML Entity Encoder / Decoder\",\"Encode reserved HTML characters or decode common entities.\"], ["
+          "context": "\"html-entity-encoder-decoder\",\"HTML Entity Encoder / Decoder\",\"Encode reserved HTML characters or decode common entities.\"], [",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-entity-encoder-decoder",
@@ -588,7 +702,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "\"html-entity-encoder-decoder\",\"HTML Entity Encoder / Decoder\",\"Encode reserved HTML characters or decode common entities.\"], ["
+          "context": "\"html-entity-encoder-decoder\",\"HTML Entity Encoder / Decoder\",\"Encode reserved HTML characters or decode common entities.\"], [",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         }
       ]
     },
@@ -609,7 +726,10 @@
           "dynamic": "static-literal",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": "\"url-encoder-decoder\",\"URL Encoder / Decoder\",\"Encode or decode URL components with strict "
+          "context": "\"url-encoder-decoder\",\"URL Encoder / Decoder\",\"Encode or decode URL components with strict ",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "url-encoder-decoder",
@@ -621,7 +741,10 @@
           "dynamic": "static-literal",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": "\"url-encoder-decoder\",\"URL Encoder / Decoder\",\"Encode or decode URL components with strict percent validation.\"], ["
+          "context": "\"url-encoder-decoder\",\"URL Encoder / Decoder\",\"Encode or decode URL components with strict percent validation.\"], [",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "url-encoder-decoder",
@@ -633,7 +756,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "\"url-encoder-decoder\",\"URL Encoder / Decoder\",\"Encode or decode URL components with strict percent validation.\"], ["
+          "context": "\"url-encoder-decoder\",\"URL Encoder / Decoder\",\"Encode or decode URL components with strict percent validation.\"], [",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         }
       ]
     },
@@ -654,7 +780,10 @@
           "dynamic": "static-literal",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": "\"base64-encoder-decoder\",\"Base64 Encoder / Decoder\",\"Encode UTF-8 text or decode valid Base64."
+          "context": "\"base64-encoder-decoder\",\"Base64 Encoder / Decoder\",\"Encode UTF-8 text or decode valid Base64.",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "base64-encoder-decoder",
@@ -666,7 +795,10 @@
           "dynamic": "static-literal",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": "\"base64-encoder-decoder\",\"Base64 Encoder / Decoder\",\"Encode UTF-8 text or decode valid Base64.\"], ["
+          "context": "\"base64-encoder-decoder\",\"Base64 Encoder / Decoder\",\"Encode UTF-8 text or decode valid Base64.\"], [",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "base64-encoder-decoder",
@@ -678,7 +810,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "\"base64-encoder-decoder\",\"Base64 Encoder / Decoder\",\"Encode UTF-8 text or decode valid Base64.\"], ["
+          "context": "\"base64-encoder-decoder\",\"Base64 Encoder / Decoder\",\"Encode UTF-8 text or decode valid Base64.\"], [",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         }
       ]
     },
@@ -699,7 +834,10 @@
           "dynamic": "static-literal",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": "\"json-formatter-validator\",\"JSON Formatter & Validator\",\"Validate JSON and pretty-print or compa"
+          "context": "\"json-formatter-validator\",\"JSON Formatter & Validator\",\"Validate JSON and pretty-print or compa",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "json-formatter-validator",
@@ -711,7 +849,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "\"json-formatter-validator\",\"JSON Formatter & Validator\",\"Validate JSON and pretty-print or compact it.\"], ["
+          "context": "\"json-formatter-validator\",\"JSON Formatter & Validator\",\"Validate JSON and pretty-print or compact it.\"], [",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "json-formatter-validator",
@@ -723,7 +864,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "\"json-formatter-validator\",\"JSON Formatter & Validator\",\"Validate JSON and pretty-print or compact it.\"], ["
+          "context": "\"json-formatter-validator\",\"JSON Formatter & Validator\",\"Validate JSON and pretty-print or compact it.\"], [",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         }
       ]
     },
@@ -744,7 +888,10 @@
           "dynamic": "static-literal",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": "\"html-formatter\",\"HTML Formatter\",\"Format markup with tag-per-line spacing.\"], ["
+          "context": "\"html-formatter\",\"HTML Formatter\",\"Format markup with tag-per-line spacing.\"], [",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-formatter",
@@ -756,7 +903,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "\"html-formatter\",\"HTML Formatter\",\"Format markup with tag-per-line spacing.\"], ["
+          "context": "\"html-formatter\",\"HTML Formatter\",\"Format markup with tag-per-line spacing.\"], [",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-formatter",
@@ -768,7 +918,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "\"html-formatter\",\"HTML Formatter\",\"Format markup with tag-per-line spacing.\"], ["
+          "context": "\"html-formatter\",\"HTML Formatter\",\"Format markup with tag-per-line spacing.\"], [",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         }
       ]
     },
@@ -789,7 +942,10 @@
           "dynamic": "static-literal",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": "\"css-formatter\",\"CSS Formatter\",\"Format CSS declarations after delimiter checks.\"], ["
+          "context": "\"css-formatter\",\"CSS Formatter\",\"Format CSS declarations after delimiter checks.\"], [",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "css-formatter",
@@ -801,7 +957,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "\"css-formatter\",\"CSS Formatter\",\"Format CSS declarations after delimiter checks.\"], ["
+          "context": "\"css-formatter\",\"CSS Formatter\",\"Format CSS declarations after delimiter checks.\"], [",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "css-formatter",
@@ -813,7 +972,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "\"css-formatter\",\"CSS Formatter\",\"Format CSS declarations after delimiter checks.\"], ["
+          "context": "\"css-formatter\",\"CSS Formatter\",\"Format CSS declarations after delimiter checks.\"], [",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         }
       ]
     },
@@ -834,7 +996,10 @@
           "dynamic": "static-literal",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": "\"javascript-formatter\",\"JavaScript Formatter\",\"Format JavaScript conservatively without exec"
+          "context": "\"javascript-formatter\",\"JavaScript Formatter\",\"Format JavaScript conservatively without exec",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "javascript-formatter",
@@ -846,7 +1011,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "\"javascript-formatter\",\"JavaScript Formatter\",\"Format JavaScript conservatively without executing source.\"], ["
+          "context": "\"javascript-formatter\",\"JavaScript Formatter\",\"Format JavaScript conservatively without executing source.\"], [",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "javascript-formatter",
@@ -858,7 +1026,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "\"javascript-formatter\",\"JavaScript Formatter\",\"Format JavaScript conservatively without executing source.\"], ["
+          "context": "\"javascript-formatter\",\"JavaScript Formatter\",\"Format JavaScript conservatively without executing source.\"], [",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         }
       ]
     },
@@ -879,7 +1050,10 @@
           "dynamic": "static-literal",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": "\"html-css-js-minifier\",\"HTML/CSS/JS Minifier\",\"Conservatively reduce source whitespace and c"
+          "context": "\"html-css-js-minifier\",\"HTML/CSS/JS Minifier\",\"Conservatively reduce source whitespace and c",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -891,7 +1065,10 @@
           "dynamic": "static-literal",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": "\"html-css-js-minifier\",\"HTML/CSS/JS Minifier\",\"Conservatively reduce source whitespace and comments.\"] ]; const sam"
+          "context": "\"html-css-js-minifier\",\"HTML/CSS/JS Minifier\",\"Conservatively reduce source whitespace and comments.\"] ]; const sam",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -903,7 +1080,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "\"html-css-js-minifier\",\"HTML/CSS/JS Minifier\",\"Conservatively reduce source whitespace and comments.\"] ]; const sample=\"FinPulse Hub\\nFree tools for everyday work.\",faq=[["
+          "context": "\"html-css-js-minifier\",\"HTML/CSS/JS Minifier\",\"Conservatively reduce source whitespace and comments.\"] ]; const sample=\"FinPulse Hub\\nFree tools for everyday work.\",faq=[[",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -915,7 +1095,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "\"html-css-js-minifier\",\"HTML/CSS/JS Minifier\",\"Conservatively reduce source whitespace and comments.\"] ]; const sample=\"FinPulse Hub\\nFree tools for everyday work.\",faq=[[\"How does it work?\",\"It applies the documented deterministic te"
+          "context": "\"html-css-js-minifier\",\"HTML/CSS/JS Minifier\",\"Conservatively reduce source whitespace and comments.\"] ]; const sample=\"FinPulse Hub\\nFree tools for everyday work.\",faq=[[\"How does it work?\",\"It applies the documented deterministic te",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -927,7 +1110,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "S/JS Minifier\",\"Conservatively reduce source whitespace and comments.\"] ]; const sample=\"FinPulse Hub\\nFree tools for everyday work.\",faq=[[\"How does it work?\",\"It applies the documented deterministic text rule locally.\"],[\"Is my"
+          "context": "S/JS Minifier\",\"Conservatively reduce source whitespace and comments.\"] ]; const sample=\"FinPulse Hub\\nFree tools for everyday work.\",faq=[[\"How does it work?\",\"It applies the documented deterministic text rule locally.\"],[\"Is my",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -939,7 +1125,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "ervatively reduce source whitespace and comments.\"] ]; const sample=\"FinPulse Hub\\nFree tools for everyday work.\",faq=[[\"How does it work?\",\"It applies the documented deterministic text rule locally.\"],[\"Is my input uploaded?\",\"No. Text processing runs in this browser.\""
+          "context": "ervatively reduce source whitespace and comments.\"] ]; const sample=\"FinPulse Hub\\nFree tools for everyday work.\",faq=[[\"How does it work?\",\"It applies the documented deterministic text rule locally.\"],[\"Is my input uploaded?\",\"No. Text processing runs in this browser.\"",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -951,7 +1140,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "mple=\"FinPulse Hub\\nFree tools for everyday work.\",faq=[[\"How does it work?\",\"It applies the documented deterministic text rule locally.\"],[\"Is my input uploaded?\",\"No. Text processing runs in this browser.\"],[\"Can I edit and run aga"
+          "context": "mple=\"FinPulse Hub\\nFree tools for everyday work.\",faq=[[\"How does it work?\",\"It applies the documented deterministic text rule locally.\"],[\"Is my input uploaded?\",\"No. Text processing runs in this browser.\"],[\"Can I edit and run aga",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -963,7 +1155,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": " tools for everyday work.\",faq=[[\"How does it work?\",\"It applies the documented deterministic text rule locally.\"],[\"Is my input uploaded?\",\"No. Text processing runs in this browser.\"],[\"Can I edit and run again?\",\"Yes. The input remains available.\"],[\""
+          "context": " tools for everyday work.\",faq=[[\"How does it work?\",\"It applies the documented deterministic text rule locally.\"],[\"Is my input uploaded?\",\"No. Text processing runs in this browser.\"],[\"Can I edit and run again?\",\"Yes. The input remains available.\"],[\"",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -975,7 +1170,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "work?\",\"It applies the documented deterministic text rule locally.\"],[\"Is my input uploaded?\",\"No. Text processing runs in this browser.\"],[\"Can I edit and run again?\",\"Yes. The input remains available.\"],[\"What if input is invalid?\",\"A "
+          "context": "work?\",\"It applies the documented deterministic text rule locally.\"],[\"Is my input uploaded?\",\"No. Text processing runs in this browser.\"],[\"Can I edit and run again?\",\"Yes. The input remains available.\"],[\"What if input is invalid?\",\"A ",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -987,7 +1185,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "ented deterministic text rule locally.\"],[\"Is my input uploaded?\",\"No. Text processing runs in this browser.\"],[\"Can I edit and run again?\",\"Yes. The input remains available.\"],[\"What if input is invalid?\",\"A clear validation message is shown in"
+          "context": "ented deterministic text rule locally.\"],[\"Is my input uploaded?\",\"No. Text processing runs in this browser.\"],[\"Can I edit and run again?\",\"Yes. The input remains available.\"],[\"What if input is invalid?\",\"A clear validation message is shown in",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -999,7 +1200,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "\"],[\"Is my input uploaded?\",\"No. Text processing runs in this browser.\"],[\"Can I edit and run again?\",\"Yes. The input remains available.\"],[\"What if input is invalid?\",\"A clear validation message is shown instead of guessing.\"]],steps=[\""
+          "context": "\"],[\"Is my input uploaded?\",\"No. Text processing runs in this browser.\"],[\"Can I edit and run again?\",\"Yes. The input remains available.\"],[\"What if input is invalid?\",\"A clear validation message is shown instead of guessing.\"]],steps=[\"",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1011,7 +1215,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "\"No. Text processing runs in this browser.\"],[\"Can I edit and run again?\",\"Yes. The input remains available.\"],[\"What if input is invalid?\",\"A clear validation message is shown instead of guessing.\"]],steps=[\"Paste text into the input; empty input is rejected.\",\"Selec"
+          "context": "\"No. Text processing runs in this browser.\"],[\"Can I edit and run again?\",\"Yes. The input remains available.\"],[\"What if input is invalid?\",\"A clear validation message is shown instead of guessing.\"]],steps=[\"Paste text into the input; empty input is rejected.\",\"Selec",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1023,7 +1230,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "ain?\",\"Yes. The input remains available.\"],[\"What if input is invalid?\",\"A clear validation message is shown instead of guessing.\"]],steps=[\"Paste text into the input; empty input is rejected.\",\"Select the required mode or format.\",\"Validate input length, syntax "
+          "context": "ain?\",\"Yes. The input remains available.\"],[\"What if input is invalid?\",\"A clear validation message is shown instead of guessing.\"]],steps=[\"Paste text into the input; empty input is rejected.\",\"Select the required mode or format.\",\"Validate input length, syntax ",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1035,7 +1245,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "nput is invalid?\",\"A clear validation message is shown instead of guessing.\"]],steps=[\"Paste text into the input; empty input is rejected.\",\"Select the required mode or format.\",\"Validate input length, syntax and supported options.\",\"Apply the doc"
+          "context": "nput is invalid?\",\"A clear validation message is shown instead of guessing.\"]],steps=[\"Paste text into the input; empty input is rejected.\",\"Select the required mode or format.\",\"Validate input length, syntax and supported options.\",\"Apply the doc",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1047,7 +1260,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "message is shown instead of guessing.\"]],steps=[\"Paste text into the input; empty input is rejected.\",\"Select the required mode or format.\",\"Validate input length, syntax and supported options.\",\"Apply the documented algorithm locally in the browser.\",\"Review the "
+          "context": "message is shown instead of guessing.\"]],steps=[\"Paste text into the input; empty input is rejected.\",\"Select the required mode or format.\",\"Validate input length, syntax and supported options.\",\"Apply the documented algorithm locally in the browser.\",\"Review the ",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1059,7 +1275,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "text into the input; empty input is rejected.\",\"Select the required mode or format.\",\"Validate input length, syntax and supported options.\",\"Apply the documented algorithm locally in the browser.\",\"Review the output and use copy, export, share, history or reset.\"]; "
+          "context": "text into the input; empty input is rejected.\",\"Select the required mode or format.\",\"Validate input length, syntax and supported options.\",\"Apply the documented algorithm locally in the browser.\",\"Review the output and use copy, export, share, history or reset.\"]; ",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1071,7 +1290,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "e required mode or format.\",\"Validate input length, syntax and supported options.\",\"Apply the documented algorithm locally in the browser.\",\"Review the output and use copy, export, share, history or reset.\"]; const field=(id,label,value)=>[id,label,value,\"textlong\"],sel=(id,l"
+          "context": "e required mode or format.\",\"Validate input length, syntax and supported options.\",\"Apply the documented algorithm locally in the browser.\",\"Review the output and use copy, export, share, history or reset.\"]; const field=(id,label,value)=>[id,label,value,\"textlong\"],sel=(id,l",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1083,7 +1305,10 @@
           "dynamic": "static-literal",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": "locally in the browser.\",\"Review the output and use copy, export, share, history or reset.\"]; const field=(id,label,value)=>[id,label,value,\"textlong\"],sel=(id,label,value,options)=>[id,label,value,\"select\",options]; fun"
+          "context": "locally in the browser.\",\"Review the output and use copy, export, share, history or reset.\"]; const field=(id,label,value)=>[id,label,value,\"textlong\"],sel=(id,label,value,options)=>[id,label,value,\"select\",options]; fun",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1095,7 +1320,10 @@
           "dynamic": "static-literal",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": "export, share, history or reset.\"]; const field=(id,label,value)=>[id,label,value,\"textlong\"],sel=(id,label,value,options)=>[id,label,value,\"select\",options]; function need(s,max=20000){s=String(s??\"\");if(!s.trim())thr"
+          "context": "export, share, history or reset.\"]; const field=(id,label,value)=>[id,label,value,\"textlong\"],sel=(id,label,value,options)=>[id,label,value,\"select\",options]; function need(s,max=20000){s=String(s??\"\");if(!s.trim())thr",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1107,7 +1335,10 @@
           "dynamic": "dynamic-fragment",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "long\"],sel=(id,label,value,options)=>[id,label,value,\"select\",options]; function need(s,max=20000){s=String(s??\"\");if(!s.trim())throw Error(\"Input cannot be empty. Paste text before running this tool.\");if(s.length>max)throw Error(\"Input exceeds the \"+max.toLocaleString("
+          "context": "long\"],sel=(id,label,value,options)=>[id,label,value,\"select\",options]; function need(s,max=20000){s=String(s??\"\");if(!s.trim())throw Error(\"Input cannot be empty. Paste text before running this tool.\");if(s.length>max)throw Error(\"Input exceeds the \"+max.toLocaleString(",
+          "role": "validation / error candidate",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1119,7 +1350,10 @@
           "dynamic": "dynamic-fragment",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "=20000){s=String(s??\"\");if(!s.trim())throw Error(\"Input cannot be empty. Paste text before running this tool.\");if(s.length>max)throw Error(\"Input exceeds the \"+max.toLocaleString()+\" character limit.\");return s} function words(s)"
+          "context": "=20000){s=String(s??\"\");if(!s.trim())throw Error(\"Input cannot be empty. Paste text before running this tool.\");if(s.length>max)throw Error(\"Input exceeds the \"+max.toLocaleString()+\" character limit.\");return s} function words(s)",
+          "role": "validation / error candidate",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1131,7 +1365,10 @@
           "dynamic": "dynamic-fragment",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": " Error(\"Input cannot be empty. Paste text before running this tool.\");if(s.length>max)throw Error(\"Input exceeds the \"+max.toLocaleString()+\" character limit.\");return s} function words(s){return s.match(/[\\p{L}\\p{N}]+(?:['’][\\p{"
+          "context": " Error(\"Input cannot be empty. Paste text before running this tool.\");if(s.length>max)throw Error(\"Input exceeds the \"+max.toLocaleString()+\" character limit.\");return s} function words(s){return s.match(/[\\p{L}\\p{N}]+(?:['’][\\p{",
+          "role": "validation / error candidate",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1143,7 +1380,10 @@
           "dynamic": "dynamic-fragment",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": "max)throw Error(\"Input exceeds the \"+max.toLocaleString()+\" character limit.\");return s} function words(s){return s.match(/[\\p{L}\\p{N}]+(?:['’][\\p{L}\\p{N}]+)*/gu)||[]} function graphemes(s){return typeof Intl!==\"undefined\"&&Intl.Segmenter?[...new Intl.Segmenter(undefined,{granularity:\"grapheme\"}).segment(s)].length:[...s].length} function slug(s){return s.normalize(\"NFKD\").replace(/\\p{M}/gu,\"\").toLowerCase().replace(/[’']/g,\"\").replace(/[^\\p{L}\\p{N}]+/gu,\"-\").replace(/^-+|-+$/g,\"\")} functi"
+          "context": "max)throw Error(\"Input exceeds the \"+max.toLocaleString()+\" character limit.\");return s} function words(s){return s.match(/[\\p{L}\\p{N}]+(?:['’][\\p{L}\\p{N}]+)*/gu)||[]} function graphemes(s){return typeof Intl!==\"undefined\"&&Intl.Segmenter?[...new Intl.Segmenter(undefined,{granularity:\"grapheme\"}).segment(s)].length:[...s].length} function slug(s){return s.normalize(\"NFKD\").replace(/\\p{M}/gu,\"\").toLowerCase().replace(/[’']/g,\"\").replace(/[^\\p{L}\\p{N}]+/gu,\"-\").replace(/^-+|-+$/g,\"\")} functi",
+          "role": "validation / error candidate",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1155,7 +1395,10 @@
           "dynamic": "dynamic-fragment",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "..s].length} function slug(s){return s.normalize(\"NFKD\").replace(/\\p{M}/gu,\"\").toLowerCase().replace(/[’']/g,\"\").replace(/[^\\p{L}\\p{N}]+/gu,\"-\").replace(/^-+|-+$/g,\"\")} function encode64(s){let b=new TextEncoder()"
+          "context": "..s].length} function slug(s){return s.normalize(\"NFKD\").replace(/\\p{M}/gu,\"\").toLowerCase().replace(/[’']/g,\"\").replace(/[^\\p{L}\\p{N}]+/gu,\"-\").replace(/^-+|-+$/g,\"\")} function encode64(s){let b=new TextEncoder()",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1167,7 +1410,10 @@
           "dynamic": "dynamic-fragment",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "code64(s){s=s.replace(/\\s+/g,\"\");if(!s||s.length%4||!/^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/.test(s))throw Error(\"Malformed Base64: valid padded Base64 is required.\");try{return new TextDecoder(\"utf-8\",{fatal:true}).decode(Uint8Array.f"
+          "context": "code64(s){s=s.replace(/\\s+/g,\"\");if(!s||s.length%4||!/^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/.test(s))throw Error(\"Malformed Base64: valid padded Base64 is required.\");try{return new TextDecoder(\"utf-8\",{fatal:true}).decode(Uint8Array.f",
+          "role": "validation / error candidate",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1179,7 +1425,10 @@
           "dynamic": "dynamic-fragment",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": "-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/.test(s))throw Error(\"Malformed Base64: valid padded Base64 is required.\");try{return new TextDecoder(\"utf-8\",{fatal:true}).decode(Uint8Array.from(atob(s),c=>c.charCodeAt(0)))}cat"
+          "context": "-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/.test(s))throw Error(\"Malformed Base64: valid padded Base64 is required.\");try{return new TextDecoder(\"utf-8\",{fatal:true}).decode(Uint8Array.from(atob(s),c=>c.charCodeAt(0)))}cat",
+          "role": "validation / error candidate",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1191,7 +1440,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "ase64 is required.\");try{return new TextDecoder(\"utf-8\",{fatal:true}).decode(Uint8Array.from(atob(s),c=>c.charCodeAt(0)))}catch{throw Error(\"Base64 does not contain valid UTF-8 text.\")}} function balanced(s,lang){let stack=[],q=\"\",esc=false,comment=\"\";f"
+          "context": "ase64 is required.\");try{return new TextDecoder(\"utf-8\",{fatal:true}).decode(Uint8Array.from(atob(s),c=>c.charCodeAt(0)))}catch{throw Error(\"Base64 does not contain valid UTF-8 text.\")}} function balanced(s,lang){let stack=[],q=\"\",esc=false,comment=\"\";f",
+          "role": "validation / error candidate",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1203,7 +1455,10 @@
           "dynamic": "dynamic-fragment",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": "F-8 text.\")}} function balanced(s,lang){let stack=[],q=\"\",esc=false,comment=\"\";for(let i=0;i<s.length;i++){let c=s[i],n=s[i+1];if(comment===\"line\"){if(c===\"\\n\")comment=\"\";continue}if(comment===\"block\"){if(c===\"*\"&&n="
+          "context": "F-8 text.\")}} function balanced(s,lang){let stack=[],q=\"\",esc=false,comment=\"\";for(let i=0;i<s.length;i++){let c=s[i],n=s[i+1];if(comment===\"line\"){if(c===\"\\n\")comment=\"\";continue}if(comment===\"block\"){if(c===\"*\"&&n=",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1215,7 +1470,10 @@
           "dynamic": "dynamic-fragment",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "unction balanced(s,lang){let stack=[],q=\"\",esc=false,comment=\"\";for(let i=0;i<s.length;i++){let c=s[i],n=s[i+1];if(comment===\"line\"){if(c===\"\\n\")comment=\"\";continue}if(comment===\"block\"){if(c===\"*\"&&n===\"/\"){commen"
+          "context": "unction balanced(s,lang){let stack=[],q=\"\",esc=false,comment=\"\";for(let i=0;i<s.length;i++){let c=s[i],n=s[i+1];if(comment===\"line\"){if(c===\"\\n\")comment=\"\";continue}if(comment===\"block\"){if(c===\"*\"&&n===\"/\"){commen",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1227,7 +1485,10 @@
           "dynamic": "dynamic-fragment",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": "q=\"\",esc=false,comment=\"\";for(let i=0;i<s.length;i++){let c=s[i],n=s[i+1];if(comment===\"line\"){if(c===\"\\n\")comment=\"\";continue}if(comment===\"block\"){if(c===\"*\"&&n===\"/\"){comment=\"\";i++}continue}if(q){if(esc)esc=false;"
+          "context": "q=\"\",esc=false,comment=\"\";for(let i=0;i<s.length;i++){let c=s[i],n=s[i+1];if(comment===\"line\"){if(c===\"\\n\")comment=\"\";continue}if(comment===\"block\"){if(c===\"*\"&&n===\"/\"){comment=\"\";i++}continue}if(q){if(esc)esc=false;",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1239,7 +1500,10 @@
           "dynamic": "dynamic-fragment",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": "omment=\"\";for(let i=0;i<s.length;i++){let c=s[i],n=s[i+1];if(comment===\"line\"){if(c===\"\\n\")comment=\"\";continue}if(comment===\"block\"){if(c===\"*\"&&n===\"/\"){comment=\"\";i++}continue}if(q){if(esc)esc=false;else if(c==="
+          "context": "omment=\"\";for(let i=0;i<s.length;i++){let c=s[i],n=s[i+1];if(comment===\"line\"){if(c===\"\\n\")comment=\"\";continue}if(comment===\"block\"){if(c===\"*\"&&n===\"/\"){comment=\"\";i++}continue}if(q){if(esc)esc=false;else if(c===",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1251,7 +1515,10 @@
           "dynamic": "dynamic-fragment",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": ";for(let i=0;i<s.length;i++){let c=s[i],n=s[i+1];if(comment===\"line\"){if(c===\"\\n\")comment=\"\";continue}if(comment===\"block\"){if(c===\"*\"&&n===\"/\"){comment=\"\";i++}continue}if(q){if(esc)esc=false;else if(c===\"\\\\\")esc="
+          "context": ";for(let i=0;i<s.length;i++){let c=s[i],n=s[i+1];if(comment===\"line\"){if(c===\"\\n\")comment=\"\";continue}if(comment===\"block\"){if(c===\"*\"&&n===\"/\"){comment=\"\";i++}continue}if(q){if(esc)esc=false;else if(c===\"\\\\\")esc=",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1263,7 +1530,10 @@
           "dynamic": "dynamic-fragment",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "ine\"){if(c===\"\\n\")comment=\"\";continue}if(comment===\"block\"){if(c===\"*\"&&n===\"/\"){comment=\"\";i++}continue}if(q){if(esc)esc=false;else if(c===\"\\\\\")esc=true;else if(c===q)q=\"\";continue}if(lang!==\"html\"&&c===\"/\"&&n===\""
+          "context": "ine\"){if(c===\"\\n\")comment=\"\";continue}if(comment===\"block\"){if(c===\"*\"&&n===\"/\"){comment=\"\";i++}continue}if(q){if(esc)esc=false;else if(c===\"\\\\\")esc=true;else if(c===q)q=\"\";continue}if(lang!==\"html\"&&c===\"/\"&&n===\"",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1275,7 +1545,10 @@
           "dynamic": "dynamic-fragment",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": "block\"){if(c===\"*\"&&n===\"/\"){comment=\"\";i++}continue}if(q){if(esc)esc=false;else if(c===\"\\\\\")esc=true;else if(c===q)q=\"\";continue}if(lang!==\"html\"&&c===\"/\"&&n===\"/\"){comment=\"line\";i++;continue}if(lang!==\"html\"&&c==="
+          "context": "block\"){if(c===\"*\"&&n===\"/\"){comment=\"\";i++}continue}if(q){if(esc)esc=false;else if(c===\"\\\\\")esc=true;else if(c===q)q=\"\";continue}if(lang!==\"html\"&&c===\"/\"&&n===\"/\"){comment=\"line\";i++;continue}if(lang!==\"html\"&&c===",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1287,7 +1560,10 @@
           "dynamic": "dynamic-fragment",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": "===\"*\"&&n===\"/\"){comment=\"\";i++}continue}if(q){if(esc)esc=false;else if(c===\"\\\\\")esc=true;else if(c===q)q=\"\";continue}if(lang!==\"html\"&&c===\"/\"&&n===\"/\"){comment=\"line\";i++;continue}if(lang!==\"html\"&&c===\"/\"&&n==="
+          "context": "===\"*\"&&n===\"/\"){comment=\"\";i++}continue}if(q){if(esc)esc=false;else if(c===\"\\\\\")esc=true;else if(c===q)q=\"\";continue}if(lang!==\"html\"&&c===\"/\"&&n===\"/\"){comment=\"line\";i++;continue}if(lang!==\"html\"&&c===\"/\"&&n===",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1299,7 +1575,10 @@
           "dynamic": "dynamic-fragment",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": "===\"/\"){comment=\"\";i++}continue}if(q){if(esc)esc=false;else if(c===\"\\\\\")esc=true;else if(c===q)q=\"\";continue}if(lang!==\"html\"&&c===\"/\"&&n===\"/\"){comment=\"line\";i++;continue}if(lang!==\"html\"&&c===\"/\"&&n===\"*\"){comm"
+          "context": "===\"/\"){comment=\"\";i++}continue}if(q){if(esc)esc=false;else if(c===\"\\\\\")esc=true;else if(c===q)q=\"\";continue}if(lang!==\"html\"&&c===\"/\"&&n===\"/\"){comment=\"line\";i++;continue}if(lang!==\"html\"&&c===\"/\"&&n===\"*\"){comm",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1311,7 +1590,10 @@
           "dynamic": "dynamic-fragment",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": "nt=\"\";i++}continue}if(q){if(esc)esc=false;else if(c===\"\\\\\")esc=true;else if(c===q)q=\"\";continue}if(lang!==\"html\"&&c===\"/\"&&n===\"/\"){comment=\"line\";i++;continue}if(lang!==\"html\"&&c===\"/\"&&n===\"*\"){comment=\"block\";i++;"
+          "context": "nt=\"\";i++}continue}if(q){if(esc)esc=false;else if(c===\"\\\\\")esc=true;else if(c===q)q=\"\";continue}if(lang!==\"html\"&&c===\"/\"&&n===\"/\"){comment=\"line\";i++;continue}if(lang!==\"html\"&&c===\"/\"&&n===\"*\"){comment=\"block\";i++;",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1323,7 +1605,10 @@
           "dynamic": "dynamic-fragment",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": "c)esc=false;else if(c===\"\\\\\")esc=true;else if(c===q)q=\"\";continue}if(lang!==\"html\"&&c===\"/\"&&n===\"/\"){comment=\"line\";i++;continue}if(lang!==\"html\"&&c===\"/\"&&n===\"*\"){comment=\"block\";i++;continue}if(c==='\"'||c===\"'\"||"
+          "context": "c)esc=false;else if(c===\"\\\\\")esc=true;else if(c===q)q=\"\";continue}if(lang!==\"html\"&&c===\"/\"&&n===\"/\"){comment=\"line\";i++;continue}if(lang!==\"html\"&&c===\"/\"&&n===\"*\"){comment=\"block\";i++;continue}if(c==='\"'||c===\"'\"||",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1335,7 +1620,10 @@
           "dynamic": "dynamic-fragment",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": "else if(c===\"\\\\\")esc=true;else if(c===q)q=\"\";continue}if(lang!==\"html\"&&c===\"/\"&&n===\"/\"){comment=\"line\";i++;continue}if(lang!==\"html\"&&c===\"/\"&&n===\"*\"){comment=\"block\";i++;continue}if(c==='\"'||c===\"'\"||(lang===\""
+          "context": "else if(c===\"\\\\\")esc=true;else if(c===q)q=\"\";continue}if(lang!==\"html\"&&c===\"/\"&&n===\"/\"){comment=\"line\";i++;continue}if(lang!==\"html\"&&c===\"/\"&&n===\"*\"){comment=\"block\";i++;continue}if(c==='\"'||c===\"'\"||(lang===\"",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1347,7 +1635,10 @@
           "dynamic": "dynamic-fragment",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": "===\"\\\\\")esc=true;else if(c===q)q=\"\";continue}if(lang!==\"html\"&&c===\"/\"&&n===\"/\"){comment=\"line\";i++;continue}if(lang!==\"html\"&&c===\"/\"&&n===\"*\"){comment=\"block\";i++;continue}if(c==='\"'||c===\"'\"||(lang===\"js\"&&c.ch"
+          "context": "===\"\\\\\")esc=true;else if(c===q)q=\"\";continue}if(lang!==\"html\"&&c===\"/\"&&n===\"/\"){comment=\"line\";i++;continue}if(lang!==\"html\"&&c===\"/\"&&n===\"*\"){comment=\"block\";i++;continue}if(c==='\"'||c===\"'\"||(lang===\"js\"&&c.ch",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1359,7 +1650,10 @@
           "dynamic": "dynamic-fragment",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": "rue;else if(c===q)q=\"\";continue}if(lang!==\"html\"&&c===\"/\"&&n===\"/\"){comment=\"line\";i++;continue}if(lang!==\"html\"&&c===\"/\"&&n===\"*\"){comment=\"block\";i++;continue}if(c==='\"'||c===\"'\"||(lang===\"js\"&&c.charCodeAt(0)===96)"
+          "context": "rue;else if(c===q)q=\"\";continue}if(lang!==\"html\"&&c===\"/\"&&n===\"/\"){comment=\"line\";i++;continue}if(lang!==\"html\"&&c===\"/\"&&n===\"*\"){comment=\"block\";i++;continue}if(c==='\"'||c===\"'\"||(lang===\"js\"&&c.charCodeAt(0)===96)",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1371,7 +1665,10 @@
           "dynamic": "dynamic-fragment",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "nue}if(lang!==\"html\"&&c===\"/\"&&n===\"/\"){comment=\"line\";i++;continue}if(lang!==\"html\"&&c===\"/\"&&n===\"*\"){comment=\"block\";i++;continue}if(c==='\"'||c===\"'\"||(lang===\"js\"&&c.charCodeAt(0)===96)){q=c;continue}if(\"({[\"."
+          "context": "nue}if(lang!==\"html\"&&c===\"/\"&&n===\"/\"){comment=\"line\";i++;continue}if(lang!==\"html\"&&c===\"/\"&&n===\"*\"){comment=\"block\";i++;continue}if(c==='\"'||c===\"'\"||(lang===\"js\"&&c.charCodeAt(0)===96)){q=c;continue}if(\"({[\".",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1383,7 +1680,10 @@
           "dynamic": "dynamic-fragment",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "ng!==\"html\"&&c===\"/\"&&n===\"/\"){comment=\"line\";i++;continue}if(lang!==\"html\"&&c===\"/\"&&n===\"*\"){comment=\"block\";i++;continue}if(c==='\"'||c===\"'\"||(lang===\"js\"&&c.charCodeAt(0)===96)){q=c;continue}if(\"({[\".includes("
+          "context": "ng!==\"html\"&&c===\"/\"&&n===\"/\"){comment=\"line\";i++;continue}if(lang!==\"html\"&&c===\"/\"&&n===\"*\"){comment=\"block\";i++;continue}if(c==='\"'||c===\"'\"||(lang===\"js\"&&c.charCodeAt(0)===96)){q=c;continue}if(\"({[\".includes(",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1395,7 +1695,10 @@
           "dynamic": "dynamic-fragment",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": "c===\"/\"&&n===\"/\"){comment=\"line\";i++;continue}if(lang!==\"html\"&&c===\"/\"&&n===\"*\"){comment=\"block\";i++;continue}if(c==='\"'||c===\"'\"||(lang===\"js\"&&c.charCodeAt(0)===96)){q=c;continue}if(\"({[\".includes(c))stack.push("
+          "context": "c===\"/\"&&n===\"/\"){comment=\"line\";i++;continue}if(lang!==\"html\"&&c===\"/\"&&n===\"*\"){comment=\"block\";i++;continue}if(c==='\"'||c===\"'\"||(lang===\"js\"&&c.charCodeAt(0)===96)){q=c;continue}if(\"({[\".includes(c))stack.push(",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1407,7 +1710,10 @@
           "dynamic": "dynamic-fragment",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": "}if(lang!==\"html\"&&c===\"/\"&&n===\"*\"){comment=\"block\";i++;continue}if(c==='\"'||c===\"'\"||(lang===\"js\"&&c.charCodeAt(0)===96)){q=c;continue}if(\"({[\".includes(c))stack.push(c);if(\")}]\".includes(c)){let p=stack.pop();if("
+          "context": "}if(lang!==\"html\"&&c===\"/\"&&n===\"*\"){comment=\"block\";i++;continue}if(c==='\"'||c===\"'\"||(lang===\"js\"&&c.charCodeAt(0)===96)){q=c;continue}if(\"({[\".includes(c))stack.push(c);if(\")}]\".includes(c)){let p=stack.pop();if(",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1419,7 +1725,10 @@
           "dynamic": "dynamic-fragment",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": "){comment=\"block\";i++;continue}if(c==='\"'||c===\"'\"||(lang===\"js\"&&c.charCodeAt(0)===96)){q=c;continue}if(\"({[\".includes(c))stack.push(c);if(\")}]\".includes(c)){let p=stack.pop();if(!p||({\"}\":\"{\",\")\":\"(\",\"]\":\"[\"})[c]!"
+          "context": "){comment=\"block\";i++;continue}if(c==='\"'||c===\"'\"||(lang===\"js\"&&c.charCodeAt(0)===96)){q=c;continue}if(\"({[\".includes(c))stack.push(c);if(\")}]\".includes(c)){let p=stack.pop();if(!p||({\"}\":\"{\",\")\":\"(\",\"]\":\"[\"})[c]!",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1431,7 +1740,10 @@
           "dynamic": "static-literal",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": "=\"'\"||(lang===\"js\"&&c.charCodeAt(0)===96)){q=c;continue}if(\"({[\".includes(c))stack.push(c);if(\")}]\".includes(c)){let p=stack.pop();if(!p||({\"}\":\"{\",\")\":\"(\",\"]\":\"[\"})[c]!==p)throw Error(\"Unmatched closing delimiter"
+          "context": "=\"'\"||(lang===\"js\"&&c.charCodeAt(0)===96)){q=c;continue}if(\"({[\".includes(c))stack.push(c);if(\")}]\".includes(c)){let p=stack.pop();if(!p||({\"}\":\"{\",\")\":\"(\",\"]\":\"[\"})[c]!==p)throw Error(\"Unmatched closing delimiter",
+          "role": "validation / error candidate",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1443,7 +1755,10 @@
           "dynamic": "static-literal",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": "||(lang===\"js\"&&c.charCodeAt(0)===96)){q=c;continue}if(\"({[\".includes(c))stack.push(c);if(\")}]\".includes(c)){let p=stack.pop();if(!p||({\"}\":\"{\",\")\":\"(\",\"]\":\"[\"})[c]!==p)throw Error(\"Unmatched closing delimiter at "
+          "context": "||(lang===\"js\"&&c.charCodeAt(0)===96)){q=c;continue}if(\"({[\".includes(c))stack.push(c);if(\")}]\".includes(c)){let p=stack.pop();if(!p||({\"}\":\"{\",\")\":\"(\",\"]\":\"[\"})[c]!==p)throw Error(\"Unmatched closing delimiter at ",
+          "role": "validation / error candidate",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1455,7 +1770,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "ang===\"js\"&&c.charCodeAt(0)===96)){q=c;continue}if(\"({[\".includes(c))stack.push(c);if(\")}]\".includes(c)){let p=stack.pop();if(!p||({\"}\":\"{\",\")\":\"(\",\"]\":\"[\"})[c]!==p)throw Error(\"Unmatched closing delimiter at char"
+          "context": "ang===\"js\"&&c.charCodeAt(0)===96)){q=c;continue}if(\"({[\".includes(c))stack.push(c);if(\")}]\".includes(c)){let p=stack.pop();if(!p||({\"}\":\"{\",\")\":\"(\",\"]\":\"[\"})[c]!==p)throw Error(\"Unmatched closing delimiter at char",
+          "role": "validation / error candidate",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1467,7 +1785,10 @@
           "dynamic": "static-literal",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "==\"js\"&&c.charCodeAt(0)===96)){q=c;continue}if(\"({[\".includes(c))stack.push(c);if(\")}]\".includes(c)){let p=stack.pop();if(!p||({\"}\":\"{\",\")\":\"(\",\"]\":\"[\"})[c]!==p)throw Error(\"Unmatched closing delimiter at characte"
+          "context": "==\"js\"&&c.charCodeAt(0)===96)){q=c;continue}if(\"({[\".includes(c))stack.push(c);if(\")}]\".includes(c)){let p=stack.pop();if(!p||({\"}\":\"{\",\")\":\"(\",\"]\":\"[\"})[c]!==p)throw Error(\"Unmatched closing delimiter at characte",
+          "role": "validation / error candidate",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1479,7 +1800,10 @@
           "dynamic": "dynamic-fragment",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "s\"&&c.charCodeAt(0)===96)){q=c;continue}if(\"({[\".includes(c))stack.push(c);if(\")}]\".includes(c)){let p=stack.pop();if(!p||({\"}\":\"{\",\")\":\"(\",\"]\":\"[\"})[c]!==p)throw Error(\"Unmatched closing delimiter at character \"+"
+          "context": "s\"&&c.charCodeAt(0)===96)){q=c;continue}if(\"({[\".includes(c))stack.push(c);if(\")}]\".includes(c)){let p=stack.pop();if(!p||({\"}\":\"{\",\")\":\"(\",\"]\":\"[\"})[c]!==p)throw Error(\"Unmatched closing delimiter at character \"+",
+          "role": "validation / error candidate",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1491,7 +1815,10 @@
           "dynamic": "dynamic-fragment",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "c.charCodeAt(0)===96)){q=c;continue}if(\"({[\".includes(c))stack.push(c);if(\")}]\".includes(c)){let p=stack.pop();if(!p||({\"}\":\"{\",\")\":\"(\",\"]\":\"[\"})[c]!==p)throw Error(\"Unmatched closing delimiter at character \"+(i+1"
+          "context": "c.charCodeAt(0)===96)){q=c;continue}if(\"({[\".includes(c))stack.push(c);if(\")}]\".includes(c)){let p=stack.pop();if(!p||({\"}\":\"{\",\")\":\"(\",\"]\":\"[\"})[c]!==p)throw Error(\"Unmatched closing delimiter at character \"+(i+1",
+          "role": "validation / error candidate",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1503,7 +1830,10 @@
           "dynamic": "dynamic-fragment",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "c;continue}if(\"({[\".includes(c))stack.push(c);if(\")}]\".includes(c)){let p=stack.pop();if(!p||({\"}\":\"{\",\")\":\"(\",\"]\":\"[\"})[c]!==p)throw Error(\"Unmatched closing delimiter at character \"+(i+1)+\".\")}}if(q||comment===\"block\"||stack.length)throw Error(\"Input "
+          "context": "c;continue}if(\"({[\".includes(c))stack.push(c);if(\")}]\".includes(c)){let p=stack.pop();if(!p||({\"}\":\"{\",\")\":\"(\",\"]\":\"[\"})[c]!==p)throw Error(\"Unmatched closing delimiter at character \"+(i+1)+\".\")}}if(q||comment===\"block\"||stack.length)throw Error(\"Input ",
+          "role": "validation / error candidate",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1515,7 +1845,10 @@
           "dynamic": "dynamic-fragment",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": ")}]\".includes(c)){let p=stack.pop();if(!p||({\"}\":\"{\",\")\":\"(\",\"]\":\"[\"})[c]!==p)throw Error(\"Unmatched closing delimiter at character \"+(i+1)+\".\")}}if(q||comment===\"block\"||stack.length)throw Error(\"Input has an unc"
+          "context": ")}]\".includes(c)){let p=stack.pop();if(!p||({\"}\":\"{\",\")\":\"(\",\"]\":\"[\"})[c]!==p)throw Error(\"Unmatched closing delimiter at character \"+(i+1)+\".\")}}if(q||comment===\"block\"||stack.length)throw Error(\"Input has an unc",
+          "role": "validation / error candidate",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1527,7 +1860,10 @@
           "dynamic": "dynamic-fragment",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": "p=stack.pop();if(!p||({\"}\":\"{\",\")\":\"(\",\"]\":\"[\"})[c]!==p)throw Error(\"Unmatched closing delimiter at character \"+(i+1)+\".\")}}if(q||comment===\"block\"||stack.length)throw Error(\"Input has an unclosed string, comment or d"
+          "context": "p=stack.pop();if(!p||({\"}\":\"{\",\")\":\"(\",\"]\":\"[\"})[c]!==p)throw Error(\"Unmatched closing delimiter at character \"+(i+1)+\".\")}}if(q||comment===\"block\"||stack.length)throw Error(\"Input has an unclosed string, comment or d",
+          "role": "validation / error candidate",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1539,7 +1875,10 @@
           "dynamic": "dynamic-fragment",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": ":\"(\",\"]\":\"[\"})[c]!==p)throw Error(\"Unmatched closing delimiter at character \"+(i+1)+\".\")}}if(q||comment===\"block\"||stack.length)throw Error(\"Input has an unclosed string, comment or delimiter.\")} function diff(a,b){let A=a.split(/\\r?\\n/),B=b.split(/\\r?\\n/);if(A.l"
+          "context": ":\"(\",\"]\":\"[\"})[c]!==p)throw Error(\"Unmatched closing delimiter at character \"+(i+1)+\".\")}}if(q||comment===\"block\"||stack.length)throw Error(\"Input has an unclosed string, comment or delimiter.\")} function diff(a,b){let A=a.split(/\\r?\\n/),B=b.split(/\\r?\\n/);if(A.l",
+          "role": "validation / error candidate",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1551,7 +1890,10 @@
           "dynamic": "dynamic-fragment",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "sed string, comment or delimiter.\")} function diff(a,b){let A=a.split(/\\r?\\n/),B=b.split(/\\r?\\n/);if(A.length>200||B.length>200)throw Error(\"Diff is limited to 200 lines per input.\");let d=Array.from({length:A.length+1},()=>new Uint16Array(B.length+1)"
+          "context": "sed string, comment or delimiter.\")} function diff(a,b){let A=a.split(/\\r?\\n/),B=b.split(/\\r?\\n/);if(A.length>200||B.length>200)throw Error(\"Diff is limited to 200 lines per input.\");let d=Array.from({length:A.length+1},()=>new Uint16Array(B.length+1)",
+          "role": "validation / error candidate",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1563,7 +1905,10 @@
           "dynamic": "dynamic-fragment",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": "ax(d[i+1][j],d[i][j+1]);let i=0,j=0,r=[];while(i<A.length||j<B.length){if(i<A.length&&j<B.length&&A[i]===B[j]){r.push({item:\" \"+A[i],value:\"Same\"});i++;j++}else if(j<B.length&&(i===A.length||d[i][j+1]>=d[i+1][j])){r"
+          "context": "ax(d[i+1][j],d[i][j+1]);let i=0,j=0,r=[];while(i<A.length||j<B.length){if(i<A.length&&j<B.length&&A[i]===B[j]){r.push({item:\" \"+A[i],value:\"Same\"});i++;j++}else if(j<B.length&&(i===A.length||d[i][j+1]>=d[i+1][j])){r",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1575,7 +1920,10 @@
           "dynamic": "dynamic-fragment",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": "B.length&&A[i]===B[j]){r.push({item:\" \"+A[i],value:\"Same\"});i++;j++}else if(j<B.length&&(i===A.length||d[i][j+1]>=d[i+1][j])){r.push({item:\"+ \"+B[j],value:\"Added\"});j++}else{r.push({item:\"− \"+A[i],value:\"Removed\"}"
+          "context": "B.length&&A[i]===B[j]){r.push({item:\" \"+A[i],value:\"Same\"});i++;j++}else if(j<B.length&&(i===A.length||d[i][j+1]>=d[i+1][j])){r.push({item:\"+ \"+B[j],value:\"Added\"});j++}else{r.push({item:\"− \"+A[i],value:\"Removed\"}",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1587,7 +1935,10 @@
           "dynamic": "dynamic-fragment",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": "=B[j]){r.push({item:\" \"+A[i],value:\"Same\"});i++;j++}else if(j<B.length&&(i===A.length||d[i][j+1]>=d[i+1][j])){r.push({item:\"+ \"+B[j],value:\"Added\"});j++}else{r.push({item:\"− \"+A[i],value:\"Removed\"});i++}}return r} fu"
+          "context": "=B[j]){r.push({item:\" \"+A[i],value:\"Same\"});i++;j++}else if(j<B.length&&(i===A.length||d[i][j+1]>=d[i+1][j])){r.push({item:\"+ \"+B[j],value:\"Added\"});j++}else{r.push({item:\"− \"+A[i],value:\"Removed\"});i++}}return r} fu",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1599,7 +1950,10 @@
           "dynamic": "dynamic-fragment",
           "classification": "visible-candidate/review-required",
           "protectedParameters": [],
-          "context": "lue:\"Same\"});i++;j++}else if(j<B.length&&(i===A.length||d[i][j+1]>=d[i+1][j])){r.push({item:\"+ \"+B[j],value:\"Added\"});j++}else{r.push({item:\"− \"+A[i],value:\"Removed\"});i++}}return r} function run(id,v){let s=need(v"
+          "context": "lue:\"Same\"});i++;j++}else if(j<B.length&&(i===A.length||d[i][j+1]>=d[i+1][j])){r.push({item:\"+ \"+B[j],value:\"Added\"});j++}else{r.push({item:\"− \"+A[i],value:\"Removed\"});i++}}return r} function run(id,v){let s=need(v",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         },
         {
           "toolId": "html-css-js-minifier",
@@ -1611,7 +1965,10 @@
           "dynamic": "dynamic-fragment",
           "classification": "protected/review-required",
           "protectedParameters": [],
-          "context": ";j++}else if(j<B.length&&(i===A.length||d[i][j+1]>=d[i+1][j])){r.push({item:\"+ \"+B[j],value:\"Added\"});j++}else{r.push({item:\"− \"+A[i],value:\"Removed\"});i++}}return r} function run(id,v){let s=need(v.text??v.left, id==="
+          "context": ";j++}else if(j<B.length&&(i===A.length||d[i][j+1]>=d[i+1][j])){r.push({item:\"+ \"+B[j],value:\"Added\"});j++}else{r.push({item:\"− \"+A[i],value:\"Removed\"});i++}}return r} function run(id,v){let s=need(v.text??v.left, id===",
+          "role": "unclassified literal — review",
+          "parameterCandidates": [],
+          "translationStatus": "manual-review-required"
         }
       ]
     }
