@@ -59,3 +59,7 @@ textarea{font:12px ui-sans-serif,system-ui,sans-serif;color:var(--ink);backgroun
 :root[data-theme="dark"] .calc-mode button[aria-pressed=true]{color:#10251f}
 
 .qr-preview-image{display:block;width:min(100%,512px);height:auto;image-rendering:pixelated;margin-inline:auto}
+
+/* Keep narrow form controls and grid children inside mobile calculator panels. */
+input,select,textarea{box-sizing:border-box;min-width:0;max-width:100%}
+main,#app,.panel,.grid,.fields,.field,.smart-controls,aside{min-width:0;max-width:100%;box-sizing:border-box}
