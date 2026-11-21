@@ -150,3 +150,7 @@ footer{max-width:1180px;margin:auto;border-top:1px solid var(--line)}
  .home-route .tool-category-group li span{font-size:9px}
 }
 @media(max-width:380px){.home-route #tool-links{grid-template-columns:1fr}}
+
+/* Reserve the calculator's first-paint footprint on the homepage to prevent mobile CLS while keys initialize. */
+.home-route #home-calculator{min-height:520px}
+@media(max-width:650px){.home-route #home-calculator{min-height:610px}}
