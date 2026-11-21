@@ -1,0 +1,2542 @@
+{
+  "schemaVersion": 1,
+  "auditDate": "2026-11-21",
+  "baseline": "main",
+  "sourceFile": "home-calculator.js",
+  "occurrences": 171,
+  "entries": [
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 1,
+      "exact": "use strict",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "(()=>{\"use strict\"; const root=document.querySelector(\"#home-calculator\"); if(!root||!wi",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 2,
+      "exact": "#home-calculator",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "(()=>{\"use strict\"; const root=document.querySelector(\"#home-calculator\"); if(!root||!window.FinPulseHomeCalculator)return; const $=s=>root.qu",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 4,
+      "exact": "#calc-expression",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "ySelector(\"#home-calculator\"); if(!root||!window.FinPulseHomeCalculator)return; const $=s=>root.querySelector(s),expr=$(\"#calc-expression\"),result=$(\"#calc-result\"),status=$(\"#calc-status\"),history=$(\"#calc-h",
+      "role": "history / action feedback candidate",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 4,
+      "exact": "#calc-result",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "; if(!root||!window.FinPulseHomeCalculator)return; const $=s=>root.querySelector(s),expr=$(\"#calc-expression\"),result=$(\"#calc-result\"),status=$(\"#calc-status\"),history=$(\"#calc-history\"); let source=\"\",l",
+      "role": "history / action feedback candidate",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 4,
+      "exact": "#calc-status",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "lseHomeCalculator)return; const $=s=>root.querySelector(s),expr=$(\"#calc-expression\"),result=$(\"#calc-result\"),status=$(\"#calc-status\"),history=$(\"#calc-history\"); let source=\"\",lastValue=null,items=[]; c",
+      "role": "history / action feedback candidate",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 4,
+      "exact": "#calc-history",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "const $=s=>root.querySelector(s),expr=$(\"#calc-expression\"),result=$(\"#calc-result\"),status=$(\"#calc-status\"),history=$(\"#calc-history\"); let source=\"\",lastValue=null,items=[]; const basic=[[\"AC\",\"clear\"],",
+      "role": "history / action feedback candidate",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 6,
+      "exact": "AC",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "calc-result\"),status=$(\"#calc-status\"),history=$(\"#calc-history\"); let source=\"\",lastValue=null,items=[]; const basic=[[\"AC\",\"clear\"],[\"⌫\",\"backspace\"],[\"%\",\"%\"],[\"÷\",\"/\"],[\"7\",\"7\"],[\"8\",\"8\"],[\"",
+      "role": "history / action feedback candidate",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 6,
+      "exact": "clear",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "result\"),status=$(\"#calc-status\"),history=$(\"#calc-history\"); let source=\"\",lastValue=null,items=[]; const basic=[[\"AC\",\"clear\"],[\"⌫\",\"backspace\"],[\"%\",\"%\"],[\"÷\",\"/\"],[\"7\",\"7\"],[\"8\",\"8\"],[\"9\",\"9\"],",
+      "role": "history / action feedback candidate",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 6,
+      "exact": "⌫",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "tatus=$(\"#calc-status\"),history=$(\"#calc-history\"); let source=\"\",lastValue=null,items=[]; const basic=[[\"AC\",\"clear\"],[\"⌫\",\"backspace\"],[\"%\",\"%\"],[\"÷\",\"/\"],[\"7\",\"7\"],[\"8\",\"8\"],[\"9\",\"9\"],[\"×\",\"",
+      "role": "history / action feedback candidate",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 6,
+      "exact": "backspace",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "s=$(\"#calc-status\"),history=$(\"#calc-history\"); let source=\"\",lastValue=null,items=[]; const basic=[[\"AC\",\"clear\"],[\"⌫\",\"backspace\"],[\"%\",\"%\"],[\"÷\",\"/\"],[\"7\",\"7\"],[\"8\",\"8\"],[\"9\",\"9\"],[\"×\",\"*\"],[\"4\",\"4\"",
+      "role": "history / action feedback candidate",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 6,
+      "exact": "%",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "tus\"),history=$(\"#calc-history\"); let source=\"\",lastValue=null,items=[]; const basic=[[\"AC\",\"clear\"],[\"⌫\",\"backspace\"],[\"%\",\"%\"],[\"÷\",\"/\"],[\"7\",\"7\"],[\"8\",\"8\"],[\"9\",\"9\"],[\"×\",\"*\"],[\"4\",\"4\"],[\"5\"",
+      "role": "history / action feedback candidate",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 6,
+      "exact": "%",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "),history=$(\"#calc-history\"); let source=\"\",lastValue=null,items=[]; const basic=[[\"AC\",\"clear\"],[\"⌫\",\"backspace\"],[\"%\",\"%\"],[\"÷\",\"/\"],[\"7\",\"7\"],[\"8\",\"8\"],[\"9\",\"9\"],[\"×\",\"*\"],[\"4\",\"4\"],[\"5\",\"5\"",
+      "role": "history / action feedback candidate",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 6,
+      "exact": "÷",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "ory=$(\"#calc-history\"); let source=\"\",lastValue=null,items=[]; const basic=[[\"AC\",\"clear\"],[\"⌫\",\"backspace\"],[\"%\",\"%\"],[\"÷\",\"/\"],[\"7\",\"7\"],[\"8\",\"8\"],[\"9\",\"9\"],[\"×\",\"*\"],[\"4\",\"4\"],[\"5\",\"5\"],[\"6\"",
+      "role": "history / action feedback candidate",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 6,
+      "exact": "/",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "$(\"#calc-history\"); let source=\"\",lastValue=null,items=[]; const basic=[[\"AC\",\"clear\"],[\"⌫\",\"backspace\"],[\"%\",\"%\"],[\"÷\",\"/\"],[\"7\",\"7\"],[\"8\",\"8\"],[\"9\",\"9\"],[\"×\",\"*\"],[\"4\",\"4\"],[\"5\",\"5\"],[\"6\",\"6\"",
+      "role": "history / action feedback candidate",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 6,
+      "exact": "7",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "lc-history\"); let source=\"\",lastValue=null,items=[]; const basic=[[\"AC\",\"clear\"],[\"⌫\",\"backspace\"],[\"%\",\"%\"],[\"÷\",\"/\"],[\"7\",\"7\"],[\"8\",\"8\"],[\"9\",\"9\"],[\"×\",\"*\"],[\"4\",\"4\"],[\"5\",\"5\"],[\"6\",\"6\"],[\"−\"",
+      "role": "history / action feedback candidate",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 6,
+      "exact": "7",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "istory\"); let source=\"\",lastValue=null,items=[]; const basic=[[\"AC\",\"clear\"],[\"⌫\",\"backspace\"],[\"%\",\"%\"],[\"÷\",\"/\"],[\"7\",\"7\"],[\"8\",\"8\"],[\"9\",\"9\"],[\"×\",\"*\"],[\"4\",\"4\"],[\"5\",\"5\"],[\"6\",\"6\"],[\"−\",\"-\"",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 6,
+      "exact": "8",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "\"); let source=\"\",lastValue=null,items=[]; const basic=[[\"AC\",\"clear\"],[\"⌫\",\"backspace\"],[\"%\",\"%\"],[\"÷\",\"/\"],[\"7\",\"7\"],[\"8\",\"8\"],[\"9\",\"9\"],[\"×\",\"*\"],[\"4\",\"4\"],[\"5\",\"5\"],[\"6\",\"6\"],[\"−\",\"-\"],[\"1\"",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 6,
+      "exact": "8",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "let source=\"\",lastValue=null,items=[]; const basic=[[\"AC\",\"clear\"],[\"⌫\",\"backspace\"],[\"%\",\"%\"],[\"÷\",\"/\"],[\"7\",\"7\"],[\"8\",\"8\"],[\"9\",\"9\"],[\"×\",\"*\"],[\"4\",\"4\"],[\"5\",\"5\"],[\"6\",\"6\"],[\"−\",\"-\"],[\"1\",\"1\"",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 6,
+      "exact": "9",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "urce=\"\",lastValue=null,items=[]; const basic=[[\"AC\",\"clear\"],[\"⌫\",\"backspace\"],[\"%\",\"%\"],[\"÷\",\"/\"],[\"7\",\"7\"],[\"8\",\"8\"],[\"9\",\"9\"],[\"×\",\"*\"],[\"4\",\"4\"],[\"5\",\"5\"],[\"6\",\"6\"],[\"−\",\"-\"],[\"1\",\"1\"],[\"2\"",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 6,
+      "exact": "9",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "=\"\",lastValue=null,items=[]; const basic=[[\"AC\",\"clear\"],[\"⌫\",\"backspace\"],[\"%\",\"%\"],[\"÷\",\"/\"],[\"7\",\"7\"],[\"8\",\"8\"],[\"9\",\"9\"],[\"×\",\"*\"],[\"4\",\"4\"],[\"5\",\"5\"],[\"6\",\"6\"],[\"−\",\"-\"],[\"1\",\"1\"],[\"2\",\"2\"",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 6,
+      "exact": "×",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "stValue=null,items=[]; const basic=[[\"AC\",\"clear\"],[\"⌫\",\"backspace\"],[\"%\",\"%\"],[\"÷\",\"/\"],[\"7\",\"7\"],[\"8\",\"8\"],[\"9\",\"9\"],[\"×\",\"*\"],[\"4\",\"4\"],[\"5\",\"5\"],[\"6\",\"6\"],[\"−\",\"-\"],[\"1\",\"1\"],[\"2\",\"2\"],[\"3\"",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 6,
+      "exact": "*",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "lue=null,items=[]; const basic=[[\"AC\",\"clear\"],[\"⌫\",\"backspace\"],[\"%\",\"%\"],[\"÷\",\"/\"],[\"7\",\"7\"],[\"8\",\"8\"],[\"9\",\"9\"],[\"×\",\"*\"],[\"4\",\"4\"],[\"5\",\"5\"],[\"6\",\"6\"],[\"−\",\"-\"],[\"1\",\"1\"],[\"2\",\"2\"],[\"3\",\"3\"",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 6,
+      "exact": "4",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "ll,items=[]; const basic=[[\"AC\",\"clear\"],[\"⌫\",\"backspace\"],[\"%\",\"%\"],[\"÷\",\"/\"],[\"7\",\"7\"],[\"8\",\"8\"],[\"9\",\"9\"],[\"×\",\"*\"],[\"4\",\"4\"],[\"5\",\"5\"],[\"6\",\"6\"],[\"−\",\"-\"],[\"1\",\"1\"],[\"2\",\"2\"],[\"3\",\"3\"],[\"+\"",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 6,
+      "exact": "4",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "tems=[]; const basic=[[\"AC\",\"clear\"],[\"⌫\",\"backspace\"],[\"%\",\"%\"],[\"÷\",\"/\"],[\"7\",\"7\"],[\"8\",\"8\"],[\"9\",\"9\"],[\"×\",\"*\"],[\"4\",\"4\"],[\"5\",\"5\"],[\"6\",\"6\"],[\"−\",\"-\"],[\"1\",\"1\"],[\"2\",\"2\"],[\"3\",\"3\"],[\"+\",\"+\"",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 6,
+      "exact": "5",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "]; const basic=[[\"AC\",\"clear\"],[\"⌫\",\"backspace\"],[\"%\",\"%\"],[\"÷\",\"/\"],[\"7\",\"7\"],[\"8\",\"8\"],[\"9\",\"9\"],[\"×\",\"*\"],[\"4\",\"4\"],[\"5\",\"5\"],[\"6\",\"6\"],[\"−\",\"-\"],[\"1\",\"1\"],[\"2\",\"2\"],[\"3\",\"3\"],[\"+\",\"+\"],[\"+/",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 6,
+      "exact": "5",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "onst basic=[[\"AC\",\"clear\"],[\"⌫\",\"backspace\"],[\"%\",\"%\"],[\"÷\",\"/\"],[\"7\",\"7\"],[\"8\",\"8\"],[\"9\",\"9\"],[\"×\",\"*\"],[\"4\",\"4\"],[\"5\",\"5\"],[\"6\",\"6\"],[\"−\",\"-\"],[\"1\",\"1\"],[\"2\",\"2\"],[\"3\",\"3\"],[\"+\",\"+\"],[\"+/-\",\"",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 6,
+      "exact": "6",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "asic=[[\"AC\",\"clear\"],[\"⌫\",\"backspace\"],[\"%\",\"%\"],[\"÷\",\"/\"],[\"7\",\"7\"],[\"8\",\"8\"],[\"9\",\"9\"],[\"×\",\"*\"],[\"4\",\"4\"],[\"5\",\"5\"],[\"6\",\"6\"],[\"−\",\"-\"],[\"1\",\"1\"],[\"2\",\"2\"],[\"3\",\"3\"],[\"+\",\"+\"],[\"+/-\",\"sign\"]",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 6,
+      "exact": "6",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "=[[\"AC\",\"clear\"],[\"⌫\",\"backspace\"],[\"%\",\"%\"],[\"÷\",\"/\"],[\"7\",\"7\"],[\"8\",\"8\"],[\"9\",\"9\"],[\"×\",\"*\"],[\"4\",\"4\"],[\"5\",\"5\"],[\"6\",\"6\"],[\"−\",\"-\"],[\"1\",\"1\"],[\"2\",\"2\"],[\"3\",\"3\"],[\"+\",\"+\"],[\"+/-\",\"sign\"],[\"0",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 6,
+      "exact": "−",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "\",\"clear\"],[\"⌫\",\"backspace\"],[\"%\",\"%\"],[\"÷\",\"/\"],[\"7\",\"7\"],[\"8\",\"8\"],[\"9\",\"9\"],[\"×\",\"*\"],[\"4\",\"4\"],[\"5\",\"5\"],[\"6\",\"6\"],[\"−\",\"-\"],[\"1\",\"1\"],[\"2\",\"2\"],[\"3\",\"3\"],[\"+\",\"+\"],[\"+/-\",\"sign\"],[\"0\",\"0\"]",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 6,
+      "exact": "-",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "lear\"],[\"⌫\",\"backspace\"],[\"%\",\"%\"],[\"÷\",\"/\"],[\"7\",\"7\"],[\"8\",\"8\"],[\"9\",\"9\"],[\"×\",\"*\"],[\"4\",\"4\"],[\"5\",\"5\"],[\"6\",\"6\"],[\"−\",\"-\"],[\"1\",\"1\"],[\"2\",\"2\"],[\"3\",\"3\"],[\"+\",\"+\"],[\"+/-\",\"sign\"],[\"0\",\"0\"],[\".",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 6,
+      "exact": "1",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": ",[\"⌫\",\"backspace\"],[\"%\",\"%\"],[\"÷\",\"/\"],[\"7\",\"7\"],[\"8\",\"8\"],[\"9\",\"9\"],[\"×\",\"*\"],[\"4\",\"4\"],[\"5\",\"5\"],[\"6\",\"6\"],[\"−\",\"-\"],[\"1\",\"1\"],[\"2\",\"2\"],[\"3\",\"3\"],[\"+\",\"+\"],[\"+/-\",\"sign\"],[\"0\",\"0\"],[\".\",\".\"]",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 6,
+      "exact": "1",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "\",\"backspace\"],[\"%\",\"%\"],[\"÷\",\"/\"],[\"7\",\"7\"],[\"8\",\"8\"],[\"9\",\"9\"],[\"×\",\"*\"],[\"4\",\"4\"],[\"5\",\"5\"],[\"6\",\"6\"],[\"−\",\"-\"],[\"1\",\"1\"],[\"2\",\"2\"],[\"3\",\"3\"],[\"+\",\"+\"],[\"+/-\",\"sign\"],[\"0\",\"0\"],[\".\",\".\"],[\"=",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 6,
+      "exact": "2",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "kspace\"],[\"%\",\"%\"],[\"÷\",\"/\"],[\"7\",\"7\"],[\"8\",\"8\"],[\"9\",\"9\"],[\"×\",\"*\"],[\"4\",\"4\"],[\"5\",\"5\"],[\"6\",\"6\"],[\"−\",\"-\"],[\"1\",\"1\"],[\"2\",\"2\"],[\"3\",\"3\"],[\"+\",\"+\"],[\"+/-\",\"sign\"],[\"0\",\"0\"],[\".\",\".\"],[\"=\",\"equ",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 6,
+      "exact": "2",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "ce\"],[\"%\",\"%\"],[\"÷\",\"/\"],[\"7\",\"7\"],[\"8\",\"8\"],[\"9\",\"9\"],[\"×\",\"*\"],[\"4\",\"4\"],[\"5\",\"5\"],[\"6\",\"6\"],[\"−\",\"-\"],[\"1\",\"1\"],[\"2\",\"2\"],[\"3\",\"3\"],[\"+\",\"+\"],[\"+/-\",\"sign\"],[\"0\",\"0\"],[\".\",\".\"],[\"=\",\"equals\"",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 6,
+      "exact": "3",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "\"%\",\"%\"],[\"÷\",\"/\"],[\"7\",\"7\"],[\"8\",\"8\"],[\"9\",\"9\"],[\"×\",\"*\"],[\"4\",\"4\"],[\"5\",\"5\"],[\"6\",\"6\"],[\"−\",\"-\"],[\"1\",\"1\"],[\"2\",\"2\"],[\"3\",\"3\"],[\"+\",\"+\"],[\"+/-\",\"sign\"],[\"0\",\"0\"],[\".\",\".\"],[\"=\",\"equals\"]]; co",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 6,
+      "exact": "3",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "\"%\"],[\"÷\",\"/\"],[\"7\",\"7\"],[\"8\",\"8\"],[\"9\",\"9\"],[\"×\",\"*\"],[\"4\",\"4\"],[\"5\",\"5\"],[\"6\",\"6\"],[\"−\",\"-\"],[\"1\",\"1\"],[\"2\",\"2\"],[\"3\",\"3\"],[\"+\",\"+\"],[\"+/-\",\"sign\"],[\"0\",\"0\"],[\".\",\".\"],[\"=\",\"equals\"]]; const ",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 6,
+      "exact": "+",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "\"÷\",\"/\"],[\"7\",\"7\"],[\"8\",\"8\"],[\"9\",\"9\"],[\"×\",\"*\"],[\"4\",\"4\"],[\"5\",\"5\"],[\"6\",\"6\"],[\"−\",\"-\"],[\"1\",\"1\"],[\"2\",\"2\"],[\"3\",\"3\"],[\"+\",\"+\"],[\"+/-\",\"sign\"],[\"0\",\"0\"],[\".\",\".\"],[\"=\",\"equals\"]]; const scient",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 6,
+      "exact": "+",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "\"/\"],[\"7\",\"7\"],[\"8\",\"8\"],[\"9\",\"9\"],[\"×\",\"*\"],[\"4\",\"4\"],[\"5\",\"5\"],[\"6\",\"6\"],[\"−\",\"-\"],[\"1\",\"1\"],[\"2\",\"2\"],[\"3\",\"3\"],[\"+\",\"+\"],[\"+/-\",\"sign\"],[\"0\",\"0\"],[\".\",\".\"],[\"=\",\"equals\"]]; const scientific",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 6,
+      "exact": "+/-",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "\"7\",\"7\"],[\"8\",\"8\"],[\"9\",\"9\"],[\"×\",\"*\"],[\"4\",\"4\"],[\"5\",\"5\"],[\"6\",\"6\"],[\"−\",\"-\"],[\"1\",\"1\"],[\"2\",\"2\"],[\"3\",\"3\"],[\"+\",\"+\"],[\"+/-\",\"sign\"],[\"0\",\"0\"],[\".\",\".\"],[\"=\",\"equals\"]]; const scientific=[[\"sin\"",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 6,
+      "exact": "sign",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "\"],[\"8\",\"8\"],[\"9\",\"9\"],[\"×\",\"*\"],[\"4\",\"4\"],[\"5\",\"5\"],[\"6\",\"6\"],[\"−\",\"-\"],[\"1\",\"1\"],[\"2\",\"2\"],[\"3\",\"3\"],[\"+\",\"+\"],[\"+/-\",\"sign\"],[\"0\",\"0\"],[\".\",\".\"],[\"=\",\"equals\"]]; const scientific=[[\"sin\",\"sin(\"",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 6,
+      "exact": "0",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "8\"],[\"9\",\"9\"],[\"×\",\"*\"],[\"4\",\"4\"],[\"5\",\"5\"],[\"6\",\"6\"],[\"−\",\"-\"],[\"1\",\"1\"],[\"2\",\"2\"],[\"3\",\"3\"],[\"+\",\"+\"],[\"+/-\",\"sign\"],[\"0\",\"0\"],[\".\",\".\"],[\"=\",\"equals\"]]; const scientific=[[\"sin\",\"sin(\"],[\"co",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 6,
+      "exact": "0",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "[\"9\",\"9\"],[\"×\",\"*\"],[\"4\",\"4\"],[\"5\",\"5\"],[\"6\",\"6\"],[\"−\",\"-\"],[\"1\",\"1\"],[\"2\",\"2\"],[\"3\",\"3\"],[\"+\",\"+\"],[\"+/-\",\"sign\"],[\"0\",\"0\"],[\".\",\".\"],[\"=\",\"equals\"]]; const scientific=[[\"sin\",\"sin(\"],[\"cos\",\"",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 6,
+      "exact": ".",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "9\"],[\"×\",\"*\"],[\"4\",\"4\"],[\"5\",\"5\"],[\"6\",\"6\"],[\"−\",\"-\"],[\"1\",\"1\"],[\"2\",\"2\"],[\"3\",\"3\"],[\"+\",\"+\"],[\"+/-\",\"sign\"],[\"0\",\"0\"],[\".\",\".\"],[\"=\",\"equals\"]]; const scientific=[[\"sin\",\"sin(\"],[\"cos\",\"cos(\"]",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 6,
+      "exact": ".",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "[\"×\",\"*\"],[\"4\",\"4\"],[\"5\",\"5\"],[\"6\",\"6\"],[\"−\",\"-\"],[\"1\",\"1\"],[\"2\",\"2\"],[\"3\",\"3\"],[\"+\",\"+\"],[\"+/-\",\"sign\"],[\"0\",\"0\"],[\".\",\".\"],[\"=\",\"equals\"]]; const scientific=[[\"sin\",\"sin(\"],[\"cos\",\"cos(\"],[\"t",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 6,
+      "exact": "=",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "*\"],[\"4\",\"4\"],[\"5\",\"5\"],[\"6\",\"6\"],[\"−\",\"-\"],[\"1\",\"1\"],[\"2\",\"2\"],[\"3\",\"3\"],[\"+\",\"+\"],[\"+/-\",\"sign\"],[\"0\",\"0\"],[\".\",\".\"],[\"=\",\"equals\"]]; const scientific=[[\"sin\",\"sin(\"],[\"cos\",\"cos(\"],[\"tan\",\"t",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 6,
+      "exact": "equals",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "[\"4\",\"4\"],[\"5\",\"5\"],[\"6\",\"6\"],[\"−\",\"-\"],[\"1\",\"1\"],[\"2\",\"2\"],[\"3\",\"3\"],[\"+\",\"+\"],[\"+/-\",\"sign\"],[\"0\",\"0\"],[\".\",\".\"],[\"=\",\"equals\"]]; const scientific=[[\"sin\",\"sin(\"],[\"cos\",\"cos(\"],[\"tan\",\"tan(\"],[\"l",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 7,
+      "exact": "sin",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "\"−\",\"-\"],[\"1\",\"1\"],[\"2\",\"2\"],[\"3\",\"3\"],[\"+\",\"+\"],[\"+/-\",\"sign\"],[\"0\",\"0\"],[\".\",\".\"],[\"=\",\"equals\"]]; const scientific=[[\"sin\",\"sin(\"],[\"cos\",\"cos(\"],[\"tan\",\"tan(\"],[\"log\",\"log(\"],[\"ln\",\"ln(\"],[\"√",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 7,
+      "exact": "sin(",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "\"],[\"1\",\"1\"],[\"2\",\"2\"],[\"3\",\"3\"],[\"+\",\"+\"],[\"+/-\",\"sign\"],[\"0\",\"0\"],[\".\",\".\"],[\"=\",\"equals\"]]; const scientific=[[\"sin\",\"sin(\"],[\"cos\",\"cos(\"],[\"tan\",\"tan(\"],[\"log\",\"log(\"],[\"ln\",\"ln(\"],[\"√\",\"sqrt",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 7,
+      "exact": "cos",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "1\"],[\"2\",\"2\"],[\"3\",\"3\"],[\"+\",\"+\"],[\"+/-\",\"sign\"],[\"0\",\"0\"],[\".\",\".\"],[\"=\",\"equals\"]]; const scientific=[[\"sin\",\"sin(\"],[\"cos\",\"cos(\"],[\"tan\",\"tan(\"],[\"log\",\"log(\"],[\"ln\",\"ln(\"],[\"√\",\"sqrt(\"],[\"x²",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 7,
+      "exact": "cos(",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "2\",\"2\"],[\"3\",\"3\"],[\"+\",\"+\"],[\"+/-\",\"sign\"],[\"0\",\"0\"],[\".\",\".\"],[\"=\",\"equals\"]]; const scientific=[[\"sin\",\"sin(\"],[\"cos\",\"cos(\"],[\"tan\",\"tan(\"],[\"log\",\"log(\"],[\"ln\",\"ln(\"],[\"√\",\"sqrt(\"],[\"x²\",\"^2\"]",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 7,
+      "exact": "tan",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "\"3\",\"3\"],[\"+\",\"+\"],[\"+/-\",\"sign\"],[\"0\",\"0\"],[\".\",\".\"],[\"=\",\"equals\"]]; const scientific=[[\"sin\",\"sin(\"],[\"cos\",\"cos(\"],[\"tan\",\"tan(\"],[\"log\",\"log(\"],[\"ln\",\"ln(\"],[\"√\",\"sqrt(\"],[\"x²\",\"^2\"],[\"xʸ\",\"",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 7,
+      "exact": "tan(",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "\"],[\"+\",\"+\"],[\"+/-\",\"sign\"],[\"0\",\"0\"],[\".\",\".\"],[\"=\",\"equals\"]]; const scientific=[[\"sin\",\"sin(\"],[\"cos\",\"cos(\"],[\"tan\",\"tan(\"],[\"log\",\"log(\"],[\"ln\",\"ln(\"],[\"√\",\"sqrt(\"],[\"x²\",\"^2\"],[\"xʸ\",\"^\"],[\"(",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 7,
+      "exact": "log",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "+\"],[\"+/-\",\"sign\"],[\"0\",\"0\"],[\".\",\".\"],[\"=\",\"equals\"]]; const scientific=[[\"sin\",\"sin(\"],[\"cos\",\"cos(\"],[\"tan\",\"tan(\"],[\"log\",\"log(\"],[\"ln\",\"ln(\"],[\"√\",\"sqrt(\"],[\"x²\",\"^2\"],[\"xʸ\",\"^\"],[\"(\",\"(\"],[",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 7,
+      "exact": "log(",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "+/-\",\"sign\"],[\"0\",\"0\"],[\".\",\".\"],[\"=\",\"equals\"]]; const scientific=[[\"sin\",\"sin(\"],[\"cos\",\"cos(\"],[\"tan\",\"tan(\"],[\"log\",\"log(\"],[\"ln\",\"ln(\"],[\"√\",\"sqrt(\"],[\"x²\",\"^2\"],[\"xʸ\",\"^\"],[\"(\",\"(\"],[\")\",\")\"",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 7,
+      "exact": "ln",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "n\"],[\"0\",\"0\"],[\".\",\".\"],[\"=\",\"equals\"]]; const scientific=[[\"sin\",\"sin(\"],[\"cos\",\"cos(\"],[\"tan\",\"tan(\"],[\"log\",\"log(\"],[\"ln\",\"ln(\"],[\"√\",\"sqrt(\"],[\"x²\",\"^2\"],[\"xʸ\",\"^\"],[\"(\",\"(\"],[\")\",\")\"],[\"π\",",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 7,
+      "exact": "ln(",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "\"0\",\"0\"],[\".\",\".\"],[\"=\",\"equals\"]]; const scientific=[[\"sin\",\"sin(\"],[\"cos\",\"cos(\"],[\"tan\",\"tan(\"],[\"log\",\"log(\"],[\"ln\",\"ln(\"],[\"√\",\"sqrt(\"],[\"x²\",\"^2\"],[\"xʸ\",\"^\"],[\"(\",\"(\"],[\")\",\")\"],[\"π\",\"pi\"],",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 7,
+      "exact": "√",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": ",[\".\",\".\"],[\"=\",\"equals\"]]; const scientific=[[\"sin\",\"sin(\"],[\"cos\",\"cos(\"],[\"tan\",\"tan(\"],[\"log\",\"log(\"],[\"ln\",\"ln(\"],[\"√\",\"sqrt(\"],[\"x²\",\"^2\"],[\"xʸ\",\"^\"],[\"(\",\"(\"],[\")\",\")\"],[\"π\",\"pi\"],[\"e\",\"",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 7,
+      "exact": "sqrt(",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "\",\".\"],[\"=\",\"equals\"]]; const scientific=[[\"sin\",\"sin(\"],[\"cos\",\"cos(\"],[\"tan\",\"tan(\"],[\"log\",\"log(\"],[\"ln\",\"ln(\"],[\"√\",\"sqrt(\"],[\"x²\",\"^2\"],[\"xʸ\",\"^\"],[\"(\",\"(\"],[\")\",\")\"],[\"π\",\"pi\"],[\"e\",\"e\"]]; fu",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 7,
+      "exact": "x²",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "\",\"equals\"]]; const scientific=[[\"sin\",\"sin(\"],[\"cos\",\"cos(\"],[\"tan\",\"tan(\"],[\"log\",\"log(\"],[\"ln\",\"ln(\"],[\"√\",\"sqrt(\"],[\"x²\",\"^2\"],[\"xʸ\",\"^\"],[\"(\",\"(\"],[\")\",\")\"],[\"π\",\"pi\"],[\"e\",\"e\"]]; function ",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 7,
+      "exact": "^2",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "uals\"]]; const scientific=[[\"sin\",\"sin(\"],[\"cos\",\"cos(\"],[\"tan\",\"tan(\"],[\"log\",\"log(\"],[\"ln\",\"ln(\"],[\"√\",\"sqrt(\"],[\"x²\",\"^2\"],[\"xʸ\",\"^\"],[\"(\",\"(\"],[\")\",\")\"],[\"π\",\"pi\"],[\"e\",\"e\"]]; function forma",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 7,
+      "exact": "xʸ",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "; const scientific=[[\"sin\",\"sin(\"],[\"cos\",\"cos(\"],[\"tan\",\"tan(\"],[\"log\",\"log(\"],[\"ln\",\"ln(\"],[\"√\",\"sqrt(\"],[\"x²\",\"^2\"],[\"xʸ\",\"^\"],[\"(\",\"(\"],[\")\",\")\"],[\"π\",\"pi\"],[\"e\",\"e\"]]; function format(n){if",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 7,
+      "exact": "^",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "st scientific=[[\"sin\",\"sin(\"],[\"cos\",\"cos(\"],[\"tan\",\"tan(\"],[\"log\",\"log(\"],[\"ln\",\"ln(\"],[\"√\",\"sqrt(\"],[\"x²\",\"^2\"],[\"xʸ\",\"^\"],[\"(\",\"(\"],[\")\",\")\"],[\"π\",\"pi\"],[\"e\",\"e\"]]; function format(n){if(Obj",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 7,
+      "exact": "(",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "entific=[[\"sin\",\"sin(\"],[\"cos\",\"cos(\"],[\"tan\",\"tan(\"],[\"log\",\"log(\"],[\"ln\",\"ln(\"],[\"√\",\"sqrt(\"],[\"x²\",\"^2\"],[\"xʸ\",\"^\"],[\"(\",\"(\"],[\")\",\")\"],[\"π\",\"pi\"],[\"e\",\"e\"]]; function format(n){if(Object.is",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 7,
+      "exact": "(",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "fic=[[\"sin\",\"sin(\"],[\"cos\",\"cos(\"],[\"tan\",\"tan(\"],[\"log\",\"log(\"],[\"ln\",\"ln(\"],[\"√\",\"sqrt(\"],[\"x²\",\"^2\"],[\"xʸ\",\"^\"],[\"(\",\"(\"],[\")\",\")\"],[\"π\",\"pi\"],[\"e\",\"e\"]]; function format(n){if(Object.is(n,-",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 7,
+      "exact": ")",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "\"sin\",\"sin(\"],[\"cos\",\"cos(\"],[\"tan\",\"tan(\"],[\"log\",\"log(\"],[\"ln\",\"ln(\"],[\"√\",\"sqrt(\"],[\"x²\",\"^2\"],[\"xʸ\",\"^\"],[\"(\",\"(\"],[\")\",\")\"],[\"π\",\"pi\"],[\"e\",\"e\"]]; function format(n){if(Object.is(n,-0))n=0",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 7,
+      "exact": ")",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "\",\"sin(\"],[\"cos\",\"cos(\"],[\"tan\",\"tan(\"],[\"log\",\"log(\"],[\"ln\",\"ln(\"],[\"√\",\"sqrt(\"],[\"x²\",\"^2\"],[\"xʸ\",\"^\"],[\"(\",\"(\"],[\")\",\")\"],[\"π\",\"pi\"],[\"e\",\"e\"]]; function format(n){if(Object.is(n,-0))n=0;ret",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 7,
+      "exact": "π",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "(\"],[\"cos\",\"cos(\"],[\"tan\",\"tan(\"],[\"log\",\"log(\"],[\"ln\",\"ln(\"],[\"√\",\"sqrt(\"],[\"x²\",\"^2\"],[\"xʸ\",\"^\"],[\"(\",\"(\"],[\")\",\")\"],[\"π\",\"pi\"],[\"e\",\"e\"]]; function format(n){if(Object.is(n,-0))n=0;return Nu",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 7,
+      "exact": "pi",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "[\"cos\",\"cos(\"],[\"tan\",\"tan(\"],[\"log\",\"log(\"],[\"ln\",\"ln(\"],[\"√\",\"sqrt(\"],[\"x²\",\"^2\"],[\"xʸ\",\"^\"],[\"(\",\"(\"],[\")\",\")\"],[\"π\",\"pi\"],[\"e\",\"e\"]]; function format(n){if(Object.is(n,-0))n=0;return Number(",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 7,
+      "exact": "e",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "\"cos(\"],[\"tan\",\"tan(\"],[\"log\",\"log(\"],[\"ln\",\"ln(\"],[\"√\",\"sqrt(\"],[\"x²\",\"^2\"],[\"xʸ\",\"^\"],[\"(\",\"(\"],[\")\",\")\"],[\"π\",\"pi\"],[\"e\",\"e\"]]; function format(n){if(Object.is(n,-0))n=0;return Number(n.toPr",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 7,
+      "exact": "e",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "(\"],[\"tan\",\"tan(\"],[\"log\",\"log(\"],[\"ln\",\"ln(\"],[\"√\",\"sqrt(\"],[\"x²\",\"^2\"],[\"xʸ\",\"^\"],[\"(\",\"(\"],[\")\",\")\"],[\"π\",\"pi\"],[\"e\",\"e\"]]; function format(n){if(Object.is(n,-0))n=0;return Number(n.toPrecis",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 8,
+      "exact": "en-US",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "\",\")\"],[\"π\",\"pi\"],[\"e\",\"e\"]]; function format(n){if(Object.is(n,-0))n=0;return Number(n.toPrecision(12)).toLocaleString(\"en-US\",{maximumFractionDigits:10})} function preview(){expr.textContent=sour",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 9,
+      "exact": "0",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "mber(n.toPrecision(12)).toLocaleString(\"en-US\",{maximumFractionDigits:10})} function preview(){expr.textContent=source||\"0\";if(!source){result.textContent=\"0\";status.textContent=\"Ready\";lastVal",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 9,
+      "exact": "0",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "ing(\"en-US\",{maximumFractionDigits:10})} function preview(){expr.textContent=source||\"0\";if(!source){result.textContent=\"0\";status.textContent=\"Ready\";lastValue=0;return}try{const n=window.FinP",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 9,
+      "exact": "Ready",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "ctionDigits:10})} function preview(){expr.textContent=source||\"0\";if(!source){result.textContent=\"0\";status.textContent=\"Ready\";lastValue=0;return}try{const n=window.FinPulseHomeCalculator.evaluate",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 9,
+      "exact": "Live result",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "lue=0;return}try{const n=window.FinPulseHomeCalculator.evaluate(source);result.textContent=format(n);status.textContent=\"Live result\";lastValue=n}catch(e){result.textContent=\"—\";status.textContent=e.mess",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 9,
+      "exact": "—",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": ".evaluate(source);result.textContent=format(n);status.textContent=\"Live result\";lastValue=n}catch(e){result.textContent=\"—\";status.textContent=e.message;lastValue=null}} function append(value){",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 10,
+      "exact": "pi",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "Value=n}catch(e){result.textContent=\"—\";status.textContent=e.message;lastValue=null}} function append(value){if(value===\"pi\")value=\"π\";if(value===\"*\")value=\"×\";if(value===\"/\")value=\"÷\";source+=v",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 10,
+      "exact": "π",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "ch(e){result.textContent=\"—\";status.textContent=e.message;lastValue=null}} function append(value){if(value===\"pi\")value=\"π\";if(value===\"*\")value=\"×\";if(value===\"/\")value=\"÷\";source+=value;previ",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 10,
+      "exact": "*",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "xtContent=\"—\";status.textContent=e.message;lastValue=null}} function append(value){if(value===\"pi\")value=\"π\";if(value===\"*\")value=\"×\";if(value===\"/\")value=\"÷\";source+=value;preview()} function ",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 10,
+      "exact": "×",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "\"—\";status.textContent=e.message;lastValue=null}} function append(value){if(value===\"pi\")value=\"π\";if(value===\"*\")value=\"×\";if(value===\"/\")value=\"÷\";source+=value;preview()} function buttonHtml",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 10,
+      "exact": "/",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "Content=e.message;lastValue=null}} function append(value){if(value===\"pi\")value=\"π\";if(value===\"*\")value=\"×\";if(value===\"/\")value=\"÷\";source+=value;preview()} function buttonHtml([label,value])",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 10,
+      "exact": "÷",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "message;lastValue=null}} function append(value){if(value===\"pi\")value=\"π\";if(value===\"*\")value=\"×\";if(value===\"/\")value=\"÷\";source+=value;preview()} function buttonHtml([label,value]){const act",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 11,
+      "exact": "clear",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "alue===\"*\")value=\"×\";if(value===\"/\")value=\"÷\";source+=value;preview()} function buttonHtml([label,value]){const action=[\"clear\",\"backspace\",\"sign\",\"equals\"].includes(value);const cls=value===\"equal",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 11,
+      "exact": "backspace",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "*\")value=\"×\";if(value===\"/\")value=\"÷\";source+=value;preview()} function buttonHtml([label,value]){const action=[\"clear\",\"backspace\",\"sign\",\"equals\"].includes(value);const cls=value===\"equals\"?\"calc-equ",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 11,
+      "exact": "sign",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": ";if(value===\"/\")value=\"÷\";source+=value;preview()} function buttonHtml([label,value]){const action=[\"clear\",\"backspace\",\"sign\",\"equals\"].includes(value);const cls=value===\"equals\"?\"calc-equals\":([",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 11,
+      "exact": "equals",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "ue===\"/\")value=\"÷\";source+=value;preview()} function buttonHtml([label,value]){const action=[\"clear\",\"backspace\",\"sign\",\"equals\"].includes(value);const cls=value===\"equals\"?\"calc-equals\":([\"clear\",\"",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 11,
+      "exact": "equals",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "function buttonHtml([label,value]){const action=[\"clear\",\"backspace\",\"sign\",\"equals\"].includes(value);const cls=value===\"equals\"?\"calc-equals\":([\"clear\",\"backspace\"].includes(value)?\"calc-utility\":(",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 11,
+      "exact": "calc-equals",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "buttonHtml([label,value]){const action=[\"clear\",\"backspace\",\"sign\",\"equals\"].includes(value);const cls=value===\"equals\"?\"calc-equals\":([\"clear\",\"backspace\"].includes(value)?\"calc-utility\":([\"/\",\"*\",\"+\",\"",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 11,
+      "exact": "clear",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "l,value]){const action=[\"clear\",\"backspace\",\"sign\",\"equals\"].includes(value);const cls=value===\"equals\"?\"calc-equals\":([\"clear\",\"backspace\"].includes(value)?\"calc-utility\":([\"/\",\"*\",\"+\",\"-\",\"%\"].in",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 11,
+      "exact": "backspace",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "){const action=[\"clear\",\"backspace\",\"sign\",\"equals\"].includes(value);const cls=value===\"equals\"?\"calc-equals\":([\"clear\",\"backspace\"].includes(value)?\"calc-utility\":([\"/\",\"*\",\"+\",\"-\",\"%\"].includes(value",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 11,
+      "exact": "calc-utility",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "space\",\"sign\",\"equals\"].includes(value);const cls=value===\"equals\"?\"calc-equals\":([\"clear\",\"backspace\"].includes(value)?\"calc-utility\":([\"/\",\"*\",\"+\",\"-\",\"%\"].includes(value)?\"calc-operator\":\"\"));return '<",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 11,
+      "exact": "/",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "uals\"].includes(value);const cls=value===\"equals\"?\"calc-equals\":([\"clear\",\"backspace\"].includes(value)?\"calc-utility\":([\"/\",\"*\",\"+\",\"-\",\"%\"].includes(value)?\"calc-operator\":\"\"));return '<button",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 11,
+      "exact": "*",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "\"].includes(value);const cls=value===\"equals\"?\"calc-equals\":([\"clear\",\"backspace\"].includes(value)?\"calc-utility\":([\"/\",\"*\",\"+\",\"-\",\"%\"].includes(value)?\"calc-operator\":\"\"));return '<button typ",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 11,
+      "exact": "+",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "ncludes(value);const cls=value===\"equals\"?\"calc-equals\":([\"clear\",\"backspace\"].includes(value)?\"calc-utility\":([\"/\",\"*\",\"+\",\"-\",\"%\"].includes(value)?\"calc-operator\":\"\"));return '<button type=\"b",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 11,
+      "exact": "-",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "des(value);const cls=value===\"equals\"?\"calc-equals\":([\"clear\",\"backspace\"].includes(value)?\"calc-utility\":([\"/\",\"*\",\"+\",\"-\",\"%\"].includes(value)?\"calc-operator\":\"\"));return '<button type=\"butto",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 11,
+      "exact": "%",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "value);const cls=value===\"equals\"?\"calc-equals\":([\"clear\",\"backspace\"].includes(value)?\"calc-utility\":([\"/\",\"*\",\"+\",\"-\",\"%\"].includes(value)?\"calc-operator\":\"\"));return '<button type=\"button\" c",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 11,
+      "exact": "calc-operator",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "e===\"equals\"?\"calc-equals\":([\"clear\",\"backspace\"].includes(value)?\"calc-utility\":([\"/\",\"*\",\"+\",\"-\",\"%\"].includes(value)?\"calc-operator\":\"\"));return '<button type=\"button\" class=\"calc-key '+cls+'\" '+(action",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [
+        {
+          "name": "cls",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        }
+      ],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 11,
+      "exact": "<button type=\"button\" class=\"calc-key",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "[\"clear\",\"backspace\"].includes(value)?\"calc-utility\":([\"/\",\"*\",\"+\",\"-\",\"%\"].includes(value)?\"calc-operator\":\"\"));return '<button type=\"button\" class=\"calc-key '+cls+'\" '+(action?'data-calc-action=\"'+value+'\"':'data-calc-key=\"'+val",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [
+        {
+          "name": "cls",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        },
+        {
+          "name": "value",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        }
+      ],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 11,
+      "exact": "\"",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "tility\":([\"/\",\"*\",\"+\",\"-\",\"%\"].includes(value)?\"calc-operator\":\"\"));return '<button type=\"button\" class=\"calc-key '+cls+'\" '+(action?'data-calc-action=\"'+value+'\"':'data-calc-key=\"'+value+'\"')+'",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [
+        {
+          "name": "cls",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        },
+        {
+          "name": "value",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        }
+      ],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 11,
+      "exact": "data-calc-action=\"",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": ",\"*\",\"+\",\"-\",\"%\"].includes(value)?\"calc-operator\":\"\"));return '<button type=\"button\" class=\"calc-key '+cls+'\" '+(action?'data-calc-action=\"'+value+'\"':'data-calc-key=\"'+value+'\"')+' aria-label=\"'+({clear:\"All c",
+      "role": "accessibility label candidate",
+      "parameterCandidates": [
+        {
+          "name": "cls",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        },
+        {
+          "name": "value",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        }
+      ],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 11,
+      "exact": "\"",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "value)?\"calc-operator\":\"\"));return '<button type=\"button\" class=\"calc-key '+cls+'\" '+(action?'data-calc-action=\"'+value+'\"':'data-calc-key=\"'+value+'\"')+' aria-label=\"'+({clear:\"All clear\",back",
+      "role": "accessibility label candidate",
+      "parameterCandidates": [
+        {
+          "name": "cls",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        },
+        {
+          "name": "value",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        }
+      ],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 11,
+      "exact": "data-calc-key=\"",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "e)?\"calc-operator\":\"\"));return '<button type=\"button\" class=\"calc-key '+cls+'\" '+(action?'data-calc-action=\"'+value+'\"':'data-calc-key=\"'+value+'\"')+' aria-label=\"'+({clear:\"All clear\",backspace:\"Backspace\",",
+      "role": "accessibility label candidate",
+      "parameterCandidates": [
+        {
+          "name": "cls",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        },
+        {
+          "name": "value",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        }
+      ],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 11,
+      "exact": "\"",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "return '<button type=\"button\" class=\"calc-key '+cls+'\" '+(action?'data-calc-action=\"'+value+'\"':'data-calc-key=\"'+value+'\"')+' aria-label=\"'+({clear:\"All clear\",backspace:\"Backspace\",sign:\"Chan",
+      "role": "accessibility label candidate",
+      "parameterCandidates": [
+        {
+          "name": "cls",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        },
+        {
+          "name": "value",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        }
+      ],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 11,
+      "exact": "aria-label=\"",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "n '<button type=\"button\" class=\"calc-key '+cls+'\" '+(action?'data-calc-action=\"'+value+'\"':'data-calc-key=\"'+value+'\"')+' aria-label=\"'+({clear:\"All clear\",backspace:\"Backspace\",sign:\"Change sign\",equals:\"",
+      "role": "accessibility label candidate",
+      "parameterCandidates": [
+        {
+          "name": "cls",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        },
+        {
+          "name": "value",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        }
+      ],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 11,
+      "exact": "All clear",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": " class=\"calc-key '+cls+'\" '+(action?'data-calc-action=\"'+value+'\"':'data-calc-key=\"'+value+'\"')+' aria-label=\"'+({clear:\"All clear\",backspace:\"Backspace\",sign:\"Change sign\",equals:\"Calculate\"}[value]||",
+      "role": "accessibility label candidate",
+      "parameterCandidates": [
+        {
+          "name": "cls",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        },
+        {
+          "name": "value",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        }
+      ],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 11,
+      "exact": "Backspace",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "+'\" '+(action?'data-calc-action=\"'+value+'\"':'data-calc-key=\"'+value+'\"')+' aria-label=\"'+({clear:\"All clear\",backspace:\"Backspace\",sign:\"Change sign\",equals:\"Calculate\"}[value]||label)+'\">'+label+'</b",
+      "role": "accessibility label candidate",
+      "parameterCandidates": [
+        {
+          "name": "value",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        },
+        {
+          "name": "label",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        }
+      ],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 11,
+      "exact": "Change sign",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "ta-calc-action=\"'+value+'\"':'data-calc-key=\"'+value+'\"')+' aria-label=\"'+({clear:\"All clear\",backspace:\"Backspace\",sign:\"Change sign\",equals:\"Calculate\"}[value]||label)+'\">'+label+'</button>'} function r",
+      "role": "accessibility label candidate",
+      "parameterCandidates": [
+        {
+          "name": "value",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        },
+        {
+          "name": "label",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        }
+      ],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 11,
+      "exact": "Calculate",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "ue+'\"':'data-calc-key=\"'+value+'\"')+' aria-label=\"'+({clear:\"All clear\",backspace:\"Backspace\",sign:\"Change sign\",equals:\"Calculate\"}[value]||label)+'\">'+label+'</button>'} function renderKeys(){const g",
+      "role": "accessibility label candidate",
+      "parameterCandidates": [
+        {
+          "name": "ue",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        },
+        {
+          "name": "value",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        },
+        {
+          "name": "label",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        }
+      ],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 11,
+      "exact": "\">",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "ue+'\"')+' aria-label=\"'+({clear:\"All clear\",backspace:\"Backspace\",sign:\"Change sign\",equals:\"Calculate\"}[value]||label)+'\">'+label+'</button>'} function renderKeys(){const grid=$(\"#calc-keys\"),s",
+      "role": "accessibility label candidate",
+      "parameterCandidates": [
+        {
+          "name": "ue",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        },
+        {
+          "name": "label",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        }
+      ],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 11,
+      "exact": "</button>",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "ria-label=\"'+({clear:\"All clear\",backspace:\"Backspace\",sign:\"Change sign\",equals:\"Calculate\"}[value]||label)+'\">'+label+'</button>'} function renderKeys(){const grid=$(\"#calc-keys\"),sci=$(\"#calc-mode-s",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [
+        {
+          "name": "label",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        }
+      ],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 12,
+      "exact": "#calc-keys",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "space\",sign:\"Change sign\",equals:\"Calculate\"}[value]||label)+'\">'+label+'</button>'} function renderKeys(){const grid=$(\"#calc-keys\"),sci=$(\"#calc-mode-scientific\").getAttribute(\"aria-pressed\")===\"true\"",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [
+        {
+          "name": "label",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        }
+      ],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 12,
+      "exact": "#calc-mode-scientific",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "sign\",equals:\"Calculate\"}[value]||label)+'\">'+label+'</button>'} function renderKeys(){const grid=$(\"#calc-keys\"),sci=$(\"#calc-mode-scientific\").getAttribute(\"aria-pressed\")===\"true\";grid.innerHTML=sci?'<div class",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [
+        {
+          "name": "label",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        }
+      ],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 12,
+      "exact": "aria-pressed",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "l)+'\">'+label+'</button>'} function renderKeys(){const grid=$(\"#calc-keys\"),sci=$(\"#calc-mode-scientific\").getAttribute(\"aria-pressed\")===\"true\";grid.innerHTML=sci?'<div class=\"calc-scientific-keys\" aria-",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [
+        {
+          "name": "label",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        }
+      ],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 12,
+      "exact": "true",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "utton>'} function renderKeys(){const grid=$(\"#calc-keys\"),sci=$(\"#calc-mode-scientific\").getAttribute(\"aria-pressed\")===\"true\";grid.innerHTML=sci?'<div class=\"calc-scientific-keys\" aria-label=\"Sci",
+      "role": "accessibility label candidate",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 12,
+      "exact": "<div class=\"calc-scientific-keys\" aria-label=\"Scientific functions\">",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "ys(){const grid=$(\"#calc-keys\"),sci=$(\"#calc-mode-scientific\").getAttribute(\"aria-pressed\")===\"true\";grid.innerHTML=sci?'<div class=\"calc-scientific-keys\" aria-label=\"Scientific functions\">'+scientific.map(buttonHtml).join(\"\")+'</div><div class=\"calc-basic-key",
+      "role": "accessibility label candidate",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 12,
+      "exact": "</div><div class=\"calc-basic-keys\" aria-label=\"Number pad\">",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "nnerHTML=sci?'<div class=\"calc-scientific-keys\" aria-label=\"Scientific functions\">'+scientific.map(buttonHtml).join(\"\")+'</div><div class=\"calc-basic-keys\" aria-label=\"Number pad\">'+basic.map(buttonHtml).join(\"\")+'</div>':basic.map(buttonHtml).join(\"\"",
+      "role": "accessibility label candidate",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 12,
+      "exact": "</div>",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "c.map(buttonHtml).join(\"\")+'</div><div class=\"calc-basic-keys\" aria-label=\"Number pad\">'+basic.map(buttonHtml).join(\"\")+'</div>':basic.map(buttonHtml).join(\"\")} function setMode(mode){const sci=mode",
+      "role": "accessibility label candidate",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 13,
+      "exact": "scientific",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": " pad\">'+basic.map(buttonHtml).join(\"\")+'</div>':basic.map(buttonHtml).join(\"\")} function setMode(mode){const sci=mode===\"scientific\";$(\"#calc-mode-basic\").setAttribute(\"aria-pressed\",String(!sci));$(\"#c",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 13,
+      "exact": "#calc-mode-basic",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "ap(buttonHtml).join(\"\")+'</div>':basic.map(buttonHtml).join(\"\")} function setMode(mode){const sci=mode===\"scientific\";$(\"#calc-mode-basic\").setAttribute(\"aria-pressed\",String(!sci));$(\"#calc-mode-scientific\")",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 13,
+      "exact": "aria-pressed",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "basic.map(buttonHtml).join(\"\")} function setMode(mode){const sci=mode===\"scientific\";$(\"#calc-mode-basic\").setAttribute(\"aria-pressed\",String(!sci));$(\"#calc-mode-scientific\").setAttribute(\"aria-pressed\",",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 13,
+      "exact": "#calc-mode-scientific",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": " function setMode(mode){const sci=mode===\"scientific\";$(\"#calc-mode-basic\").setAttribute(\"aria-pressed\",String(!sci));$(\"#calc-mode-scientific\").setAttribute(\"aria-pressed\",String(sci));root.dataset.mode=mode;rend",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 13,
+      "exact": "aria-pressed",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "===\"scientific\";$(\"#calc-mode-basic\").setAttribute(\"aria-pressed\",String(!sci));$(\"#calc-mode-scientific\").setAttribute(\"aria-pressed\",String(sci));root.dataset.mode=mode;renderKeys()} function calculate(",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 14,
+      "exact": "<li class=\"calc-history-item\"><button type=\"button\" data-history=\"",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "=format(n);items.unshift({expression:source,value:format(n)});items=items.slice(0,5);history.innerHTML=items.map((x,i)=>'<li class=\"calc-history-item\"><button type=\"button\" data-history=\"'+i+'\" aria-label=\"Reuse '+x.expression+' = '+x.value+'\"><span>'+x.expr",
+      "role": "accessibility label candidate",
+      "parameterCandidates": [
+        {
+          "name": "i",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        },
+        {
+          "name": "x.expression",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        },
+        {
+          "name": "x.value",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        }
+      ],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 14,
+      "exact": "\" aria-label=\"Reuse",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "ms.slice(0,5);history.innerHTML=items.map((x,i)=>'<li class=\"calc-history-item\"><button type=\"button\" data-history=\"'+i+'\" aria-label=\"Reuse '+x.expression+' = '+x.value+'\"><span>'+x.expression+'</span><strong>'+",
+      "role": "accessibility label candidate",
+      "parameterCandidates": [
+        {
+          "name": "i",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        },
+        {
+          "name": "x.expression",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        },
+        {
+          "name": "x.value",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        }
+      ],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 14,
+      "exact": "=",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "s.map((x,i)=>'<li class=\"calc-history-item\"><button type=\"button\" data-history=\"'+i+'\" aria-label=\"Reuse '+x.expression+' = '+x.value+'\"><span>'+x.expression+'</span><strong>'+x.value+'</strong><",
+      "role": "accessibility label candidate",
+      "parameterCandidates": [
+        {
+          "name": "i",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        },
+        {
+          "name": "x.expression",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        },
+        {
+          "name": "x.value",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        }
+      ],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 14,
+      "exact": "\"><span>",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "<li class=\"calc-history-item\"><button type=\"button\" data-history=\"'+i+'\" aria-label=\"Reuse '+x.expression+' = '+x.value+'\"><span>'+x.expression+'</span><strong>'+x.value+'</strong></button></li>').joi",
+      "role": "accessibility label candidate",
+      "parameterCandidates": [
+        {
+          "name": "i",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        },
+        {
+          "name": "x.expression",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        },
+        {
+          "name": "x.value",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        }
+      ],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 14,
+      "exact": "</span><strong>",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "item\"><button type=\"button\" data-history=\"'+i+'\" aria-label=\"Reuse '+x.expression+' = '+x.value+'\"><span>'+x.expression+'</span><strong>'+x.value+'</strong></button></li>').join(\"\");status.textContent=\"Calcu",
+      "role": "accessibility label candidate",
+      "parameterCandidates": [
+        {
+          "name": "i",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        },
+        {
+          "name": "x.expression",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        },
+        {
+          "name": "x.value",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        }
+      ],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 14,
+      "exact": "</strong></button></li>",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "\" data-history=\"'+i+'\" aria-label=\"Reuse '+x.expression+' = '+x.value+'\"><span>'+x.expression+'</span><strong>'+x.value+'</strong></button></li>').join(\"\");status.textContent=\"Calculated\"}catch(e){status.textContent",
+      "role": "accessibility label candidate",
+      "parameterCandidates": [
+        {
+          "name": "i",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        },
+        {
+          "name": "x.expression",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        },
+        {
+          "name": "x.value",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        }
+      ],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 14,
+      "exact": "Calculated",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "+' = '+x.value+'\"><span>'+x.expression+'</span><strong>'+x.value+'</strong></button></li>').join(\"\");status.textContent=\"Calculated\"}catch(e){status.textContent=e.message;result.textContent=\"—\";lastValu",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [
+        {
+          "name": "x.value",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        },
+        {
+          "name": "x.expression",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        }
+      ],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 14,
+      "exact": "—",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "rong></button></li>').join(\"\");status.textContent=\"Calculated\"}catch(e){status.textContent=e.message;result.textContent=\"—\";lastValue=null}} function action(name){if(name===\"clear\"){source=\"\";p",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 15,
+      "exact": "clear",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "lculated\"}catch(e){status.textContent=e.message;result.textContent=\"—\";lastValue=null}} function action(name){if(name===\"clear\"){source=\"\";preview()}else if(name===\"backspace\"){source=source.slice(",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 15,
+      "exact": "backspace",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "age;result.textContent=\"—\";lastValue=null}} function action(name){if(name===\"clear\"){source=\"\";preview()}else if(name===\"backspace\"){source=source.slice(0,-1);preview()}else if(name===\"sign\"){if(source",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 15,
+      "exact": "sign",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "){if(name===\"clear\"){source=\"\";preview()}else if(name===\"backspace\"){source=source.slice(0,-1);preview()}else if(name===\"sign\"){if(source)source=\"-(\"+source+\")\";preview()}else if(name===\"equals\")c",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [
+        {
+          "name": "source",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        }
+      ],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 15,
+      "exact": "-(",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "ce=\"\";preview()}else if(name===\"backspace\"){source=source.slice(0,-1);preview()}else if(name===\"sign\"){if(source)source=\"-(\"+source+\")\";preview()}else if(name===\"equals\")calculate()} root.addEve",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [
+        {
+          "name": "source",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        }
+      ],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 15,
+      "exact": ")",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "w()}else if(name===\"backspace\"){source=source.slice(0,-1);preview()}else if(name===\"sign\"){if(source)source=\"-(\"+source+\")\";preview()}else if(name===\"equals\")calculate()} root.addEventListener(",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [
+        {
+          "name": "source",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        }
+      ],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 15,
+      "exact": "equals",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "\"){source=source.slice(0,-1);preview()}else if(name===\"sign\"){if(source)source=\"-(\"+source+\")\";preview()}else if(name===\"equals\")calculate()} root.addEventListener(\"click\",e=>{const key=e.target.clo",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [
+        {
+          "name": "source",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        }
+      ],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 16,
+      "exact": "click",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "if(name===\"sign\"){if(source)source=\"-(\"+source+\")\";preview()}else if(name===\"equals\")calculate()} root.addEventListener(\"click\",e=>{const key=e.target.closest(\"[data-calc-key]\"),act=e.target.closes",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [
+        {
+          "name": "source",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        }
+      ],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 16,
+      "exact": "[data-calc-key]",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "+source+\")\";preview()}else if(name===\"equals\")calculate()} root.addEventListener(\"click\",e=>{const key=e.target.closest(\"[data-calc-key]\"),act=e.target.closest(\"[data-calc-action]\"),hist=e.target.closest(\"[d",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [
+        {
+          "name": "source",
+          "type": "unknown — verify before interpolation",
+          "translation": "protect value; translate surrounding message only"
+        }
+      ],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 16,
+      "exact": "[data-calc-action]",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "uals\")calculate()} root.addEventListener(\"click\",e=>{const key=e.target.closest(\"[data-calc-key]\"),act=e.target.closest(\"[data-calc-action]\"),hist=e.target.closest(\"[data-history]\");if(key)append(key.dataset.ca",
+      "role": "history / action feedback candidate",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 16,
+      "exact": "[data-history]",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "ick\",e=>{const key=e.target.closest(\"[data-calc-key]\"),act=e.target.closest(\"[data-calc-action]\"),hist=e.target.closest(\"[data-history]\");if(key)append(key.dataset.calcKey);if(act)action(act.dataset.calcAct",
+      "role": "history / action feedback candidate",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 17,
+      "exact": "#calc-mode-basic",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "(act)action(act.dataset.calcAction);if(hist){source=items[Number(hist.dataset.history)]?.expression||\"\";preview()}}); $(\"#calc-mode-basic\").addEventListener(\"click\",()=>setMode(\"basic\")); $(\"#calc-mode-scient",
+      "role": "history / action feedback candidate",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 17,
+      "exact": "click",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "f(hist){source=items[Number(hist.dataset.history)]?.expression||\"\";preview()}}); $(\"#calc-mode-basic\").addEventListener(\"click\",()=>setMode(\"basic\")); $(\"#calc-mode-scientific\").addEventListener(\"c",
+      "role": "history / action feedback candidate",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 17,
+      "exact": "basic",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "[Number(hist.dataset.history)]?.expression||\"\";preview()}}); $(\"#calc-mode-basic\").addEventListener(\"click\",()=>setMode(\"basic\")); $(\"#calc-mode-scientific\").addEventListener(\"click\",()=>setMode(\"s",
+      "role": "history / action feedback candidate",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 18,
+      "exact": "#calc-mode-scientific",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "dataset.history)]?.expression||\"\";preview()}}); $(\"#calc-mode-basic\").addEventListener(\"click\",()=>setMode(\"basic\")); $(\"#calc-mode-scientific\").addEventListener(\"click\",()=>setMode(\"scientific\")); $(\"#calc-copy\")",
+      "role": "history / action feedback candidate",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 18,
+      "exact": "click",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": ")}}); $(\"#calc-mode-basic\").addEventListener(\"click\",()=>setMode(\"basic\")); $(\"#calc-mode-scientific\").addEventListener(\"click\",()=>setMode(\"scientific\")); $(\"#calc-copy\").addEventListener(\"click\",",
+      "role": "history / action feedback candidate",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 18,
+      "exact": "scientific",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "basic\").addEventListener(\"click\",()=>setMode(\"basic\")); $(\"#calc-mode-scientific\").addEventListener(\"click\",()=>setMode(\"scientific\")); $(\"#calc-copy\").addEventListener(\"click\",async()=>{if(lastValue===",
+      "role": "history / action feedback candidate",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 19,
+      "exact": "#calc-copy",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "stener(\"click\",()=>setMode(\"basic\")); $(\"#calc-mode-scientific\").addEventListener(\"click\",()=>setMode(\"scientific\")); $(\"#calc-copy\").addEventListener(\"click\",async()=>{if(lastValue===null){status.textC",
+      "role": "history / action feedback candidate",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 19,
+      "exact": "click",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "ic\")); $(\"#calc-mode-scientific\").addEventListener(\"click\",()=>setMode(\"scientific\")); $(\"#calc-copy\").addEventListener(\"click\",async()=>{if(lastValue===null){status.textContent=\"Calculate a valid ",
+      "role": "history / action feedback candidate",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 19,
+      "exact": "Calculate a valid result first",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": ",()=>setMode(\"scientific\")); $(\"#calc-copy\").addEventListener(\"click\",async()=>{if(lastValue===null){status.textContent=\"Calculate a valid result first\";return}try{await navigator.clipboard.writeText(String(lastValue));sta",
+      "role": "history / action feedback candidate",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 19,
+      "exact": "Result copied",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "t=\"Calculate a valid result first\";return}try{await navigator.clipboard.writeText(String(lastValue));status.textContent=\"Result copied\"}catch{const area=document.createElement(\"textarea\");area.value=String",
+      "role": "history / action feedback candidate",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 19,
+      "exact": "textarea",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "gator.clipboard.writeText(String(lastValue));status.textContent=\"Result copied\"}catch{const area=document.createElement(\"textarea\");area.value=String(lastValue);root.appendChild(area);area.select();tr",
+      "role": "history / action feedback candidate",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 19,
+      "exact": "copy",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "nt.createElement(\"textarea\");area.value=String(lastValue);root.appendChild(area);area.select();try{document.execCommand(\"copy\");status.textContent=\"Result copied\"}catch{status.textContent=\"Copy is",
+      "role": "history / action feedback candidate",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 19,
+      "exact": "Result copied",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": ");area.value=String(lastValue);root.appendChild(area);area.select();try{document.execCommand(\"copy\");status.textContent=\"Result copied\"}catch{status.textContent=\"Copy is unavailable in this browser\"}area.r",
+      "role": "history / action feedback candidate",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 19,
+      "exact": "Copy is unavailable in this browser",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "dChild(area);area.select();try{document.execCommand(\"copy\");status.textContent=\"Result copied\"}catch{status.textContent=\"Copy is unavailable in this browser\"}area.remove()}}); document.addEventListener(\"keydown\",e=>{if(e.ctrlKe",
+      "role": "history / action feedback candidate",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 20,
+      "exact": "keydown",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "sult copied\"}catch{status.textContent=\"Copy is unavailable in this browser\"}area.remove()}}); document.addEventListener(\"keydown\",e=>{if(e.ctrlKey||e.metaKey||e.altKey)return;if(e.target.matches(\"inp",
+      "role": "history / action feedback candidate",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 20,
+      "exact": "input,textarea,select,[contenteditable=true]",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "}area.remove()}}); document.addEventListener(\"keydown\",e=>{if(e.ctrlKey||e.metaKey||e.altKey)return;if(e.target.matches(\"input,textarea,select,[contenteditable=true]\"))return;if(/^[0-9.]$/.test(e.key)){append(e.key);e.preventDefault()}e",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 20,
+      "exact": "+",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "ut,textarea,select,[contenteditable=true]\"))return;if(/^[0-9.]$/.test(e.key)){append(e.key);e.preventDefault()}else if([\"+\",\"-\",\"*\",\"/\",\"(\",\")\",\"%\"].includes(e.key)){append(e.key);e.preventDefa",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 20,
+      "exact": "-",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "extarea,select,[contenteditable=true]\"))return;if(/^[0-9.]$/.test(e.key)){append(e.key);e.preventDefault()}else if([\"+\",\"-\",\"*\",\"/\",\"(\",\")\",\"%\"].includes(e.key)){append(e.key);e.preventDefault(",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 20,
+      "exact": "*",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "rea,select,[contenteditable=true]\"))return;if(/^[0-9.]$/.test(e.key)){append(e.key);e.preventDefault()}else if([\"+\",\"-\",\"*\",\"/\",\"(\",\")\",\"%\"].includes(e.key)){append(e.key);e.preventDefault()}el",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 20,
+      "exact": "/",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "select,[contenteditable=true]\"))return;if(/^[0-9.]$/.test(e.key)){append(e.key);e.preventDefault()}else if([\"+\",\"-\",\"*\",\"/\",\"(\",\")\",\"%\"].includes(e.key)){append(e.key);e.preventDefault()}else i",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 20,
+      "exact": "(",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "ct,[contenteditable=true]\"))return;if(/^[0-9.]$/.test(e.key)){append(e.key);e.preventDefault()}else if([\"+\",\"-\",\"*\",\"/\",\"(\",\")\",\"%\"].includes(e.key)){append(e.key);e.preventDefault()}else if(e.",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 20,
+      "exact": ")",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "contenteditable=true]\"))return;if(/^[0-9.]$/.test(e.key)){append(e.key);e.preventDefault()}else if([\"+\",\"-\",\"*\",\"/\",\"(\",\")\",\"%\"].includes(e.key)){append(e.key);e.preventDefault()}else if(e.key=",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 20,
+      "exact": "%",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "enteditable=true]\"))return;if(/^[0-9.]$/.test(e.key)){append(e.key);e.preventDefault()}else if([\"+\",\"-\",\"*\",\"/\",\"(\",\")\",\"%\"].includes(e.key)){append(e.key);e.preventDefault()}else if(e.key===\"E",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 20,
+      "exact": "Enter",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "reventDefault()}else if([\"+\",\"-\",\"*\",\"/\",\"(\",\")\",\"%\"].includes(e.key)){append(e.key);e.preventDefault()}else if(e.key===\"Enter\"||e.key===\"=\"){action(\"equals\");e.preventDefault()}else if(e.key===\"Ba",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 20,
+      "exact": "=",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "lse if([\"+\",\"-\",\"*\",\"/\",\"(\",\")\",\"%\"].includes(e.key)){append(e.key);e.preventDefault()}else if(e.key===\"Enter\"||e.key===\"=\"){action(\"equals\");e.preventDefault()}else if(e.key===\"Backspace\"){act",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 20,
+      "exact": "equals",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "\"-\",\"*\",\"/\",\"(\",\")\",\"%\"].includes(e.key)){append(e.key);e.preventDefault()}else if(e.key===\"Enter\"||e.key===\"=\"){action(\"equals\");e.preventDefault()}else if(e.key===\"Backspace\"){action(\"backspace\");",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 20,
+      "exact": "Backspace",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "end(e.key);e.preventDefault()}else if(e.key===\"Enter\"||e.key===\"=\"){action(\"equals\");e.preventDefault()}else if(e.key===\"Backspace\"){action(\"backspace\");e.preventDefault()}else if(e.key===\"Escape\"){act",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 20,
+      "exact": "backspace",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "Default()}else if(e.key===\"Enter\"||e.key===\"=\"){action(\"equals\");e.preventDefault()}else if(e.key===\"Backspace\"){action(\"backspace\");e.preventDefault()}else if(e.key===\"Escape\"){action(\"clear\");e.preve",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 20,
+      "exact": "Escape",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "action(\"equals\");e.preventDefault()}else if(e.key===\"Backspace\"){action(\"backspace\");e.preventDefault()}else if(e.key===\"Escape\"){action(\"clear\");e.preventDefault()}}); setMode(\"basic\");preview(); }",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 20,
+      "exact": "clear",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "e.preventDefault()}else if(e.key===\"Backspace\"){action(\"backspace\");e.preventDefault()}else if(e.key===\"Escape\"){action(\"clear\");e.preventDefault()}}); setMode(\"basic\");preview(); })();",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    },
+    {
+      "scope": "shared-ui",
+      "sourceFile": "home-calculator.js",
+      "line": 21,
+      "exact": "basic",
+      "tokenType": "string",
+      "dynamic": "static-or-concatenated",
+      "protectedParameters": [],
+      "context": "space\"){action(\"backspace\");e.preventDefault()}else if(e.key===\"Escape\"){action(\"clear\");e.preventDefault()}}); setMode(\"basic\");preview(); })();",
+      "role": "shared UI literal — review",
+      "parameterCandidates": [],
+      "translationStatus": "manual-review-required"
+    }
+  ]
+}
