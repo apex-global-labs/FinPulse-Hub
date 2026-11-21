@@ -117,9 +117,12 @@ const tools=[["paint-quantity-calculator","Paint Quantity Calculator"],["tile-qu
 assert.equal(await page.locator("#tool-links a").count(),220);
 for(const [id,name] of tools){await page.goto(base+"?tool="+id);await page.addScriptTag({content:axeSource});await page.getByRole("heading",{name,exact:true}).waitFor();assert.ok(await page.locator("#formula-panel ol li").count()>=5,id+" steps");assert.equal(await page.locator(".seo-content details").count(),4,id+" FAQs");assert.equal(await page.locator(".preset-buttons button").count(),3,id+" presets");const audit=await page.evaluate(async()=>await axe.run(document,{runOnly:{type:"tag",values:["wcag2a","wcag2aa","wcag21a","wcag21aa"]}}));assert.deepEqual(audit.violations.map(v=>({id:v.id,impact:v.impact,description:v.help})),[],id+" accessibility");}
 await page.goto(base+"?tool=qr-code-generator");await page.locator("#markdown-preview img").waitFor();assert.match(await page.locator("#markdown-preview img").getAttribute("src"),/^data:image\/png;base64,/);assert.equal(await page.locator("#markdown-preview a[download]").count(),1);
-await page.goto(base+"?tool=fuel-cost-calculator");assert.equal(await page.locator(".result .value").innerText(),"33");
-await page.goto(base+"?tool=electricity-bill-estimator");assert.equal(await page.locator(".result .value").innerText(),"USD 36.75");
+await page.goto(base+"?tool=fuel-cost-calculator");assert.equal(await page.locator(".result .value").innerText(),"$33.00");
+await page.goto(base+"?tool=electricity-bill-estimator");assert.equal(await page.locator(".result .value").innerText(),"$36.75");assert.equal(await page.locator("#f-currency option").count(),154);
 await page.goto(base+"?tool=bill-split-calculator");await page.getByRole("heading",{name:"Bill Split Calculator",exact:true}).waitFor();await page.locator("#f-people").fill("3");await page.locator("#f-mode").selectOption("weighted");await page.locator("#f-weights").fill("50,30,20");await page.waitForFunction(()=>document.querySelector("#breakdown-table").innerText.includes("$60.00"));const splitText=await page.locator("#breakdown-table").innerText();assert.match(splitText,/\$60\.00/);assert.match(splitText,/\$36\.00/);assert.match(splitText,/\$24\.00/);
+await page.goto(base+"?tool=fuel-cost-calculator");await page.locator("#global-context-panel > summary").click();await page.locator("#global-currency").selectOption("BDT");await page.waitForFunction(()=>/BDT|৳/.test(document.querySelector(".result .value").innerText));assert.equal(await page.locator("#f-price").inputValue(),"1.65");
+await page.goto(base+"?tool=401k");assert.match(await page.locator(".result .value").innerText(),/^\$/);assert.match(await page.locator("#currency-context-note").innerText(),/US-specific.*USD/);
+await page.locator("#global-context-panel > summary").click();await page.locator("#global-currency").selectOption("USD");
 await page.close();
 });
 
