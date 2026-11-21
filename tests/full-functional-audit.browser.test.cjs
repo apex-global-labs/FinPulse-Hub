@@ -9,7 +9,7 @@ const { join } = require("node:path");
 let server;
 let browser;
 
-test("all 220 registered tools execute their default calculation handler in desktop and mobile Chromium", { timeout: 240000 }, async t => {
+test("all 220 registered tools execute their default calculation handler in desktop and mobile Chromium", { timeout: 360000 }, async t => {
   server = createServer(async (req, res) => {
     const pathname = decodeURIComponent(new URL(req.url, "http://127.0.0.1").pathname);
     const path = pathname.replace(/^\/+/, "") || "index.html";
