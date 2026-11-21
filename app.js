@@ -213,5 +213,5 @@ function graph(s,unit,labels,type,fitSeries,geometry,calendar){let el=$("#graph"
 if(new URLSearchParams(location.search).get("embed")==="1")document.body.classList.add("embed-mode");
 function applyTheme(theme){const next=theme==="dark"?"dark":"light";document.documentElement.dataset.theme=next;const button=$("#theme-toggle");if(button){button.textContent=next==="dark"?"Light mode":"Dark mode";button.setAttribute("aria-pressed",String(next==="dark"))}try{localStorage.setItem("finpulse-theme-v1",next)}catch{}}
 const savedTheme=(()=>{try{return localStorage.getItem("finpulse-theme-v1")}catch{return null}})();applyTheme(savedTheme==="dark"?"dark":"light");$("#theme-toggle")?.addEventListener("click",()=>applyTheme(document.documentElement.dataset.theme==="dark"?"light":"dark"));
-$("#search").addEventListener("input",list);$("#year").textContent=new Date().getFullYear();categories();list();
+$("#search").addEventListener("input",list);$("#year").textContent=new Date().getFullYear();categories();loadDirectoryMapping().then(()=>list()).catch(error=>{console.error(error);list()});
 })();
