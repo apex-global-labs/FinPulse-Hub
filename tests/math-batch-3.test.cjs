@@ -30,6 +30,8 @@ test("basic math rejects invalid fraction, ratio and rounding domains",()=>{
 });
 test("Ratio Calculator preserves the simplified ratio string in its rendered result",()=>{const tool=basic.find(x=>x.id==="ratio");assert.equal(tool.run({a:24,b:36}).main,"2:3");assert.equal(tool.run({a:0,b:36}).main,"0:1");assert.throws(()=>tool.run({a:0,b:0}));});
 
+test("Proportion Calculator unwraps the numeric result before formatting",()=>{const tool=basic.find(x=>x.id==="proportion");assert.equal(tool.run({a:2,b:3,c:8}).main,"12");assert.throws(()=>tool.run({a:0,b:3,c:8}));});
+
 test("basic math handles numeric limits without silently returning Infinity",()=>{
  near(M.average([1e308,1e308]),1e308,1e292);
  assert.throws(()=>M.percentageChange(-1e308,1e308));
