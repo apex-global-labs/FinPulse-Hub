@@ -176,3 +176,35 @@ The canonical 220-tool identity/source ownership inventory is documented in [`MU
 - Records include exact text, Tool ID where applicable, source file, absolute line, static/dynamic-fragment hint, heuristic role/classification, source context, candidate interpolation parameter names and manual-review status.
 - **Not yet complete:** candidate role/protected classification is heuristic; parameter types and protected-value contracts are not verified; all visible strings from core/imported modules, runtime-generated messages, CSS-generated content and browser-native UI have not been traced; no translation allowlist exists yet.
 - No runtime, calculation, input parsing, tool registry, SEO URL, sitemap or production files were changed.
+
+
+## Phase 0 — Global country, currency, locale and financial data architecture (2026-11-21)
+
+A companion architecture and machine-readable contract were added in this PR:
+
+- [Global country, currency and financial data architecture](./GLOBAL_COUNTRY_CURRENCY_FINANCIAL_DATA_ARCHITECTURE.md)
+- [Global context contract](./globalization-contracts/global-context-contract.json)
+
+### Catalogue validation
+- Re-fetched and parsed all 13 per-source catalogue JSON files: **13/13 valid JSON**.
+- Ten tool catalogues declare and contain **220/220 tool records** across the ten source modules, with **4,724** literal occurrences.
+- Three shared UI catalogues contain **2,212** occurrences (1,232 shared app renderer, 171 homepage calculator, 809 homepage HTML).
+- Total scoped lexical occurrences: **6,936**.
+- This confirms JSON integrity and declared inventory counts only. It does not establish that every captured string is visible or safe to translate. Heuristic classifications, interpolation types, imported/core modules and runtime-generated strings still require review. No translation allowlist is approved.
+
+### Global data decisions
+- Country, BCP 47 locale, ISO 4217 currency, direction, measurement system and financial jurisdiction are independent fields.
+- Country can suggest a primary currency, but users can override it; changing currency never silently converts entered amounts.
+- Money fields must be explicitly typed. Percentages (including deposit rates), quantities and physical units do not carry currency codes.
+- External finance values remain editable, sourced suggestions. Manual input is always available; background refresh must not overwrite user edits.
+- A country choice alone must never infer a retail deposit rate. The exact institution/product/tenure/effective date and rate definition must match. A central-bank policy rate is not a retail deposit offer.
+- Source priority is official national source, official institution/product source, intergovernmental statistics, permitted aggregated reference feed, then manual input.
+- Candidate public sources documented for evaluation: Frankfurter v2 and ECB SDMX for reference FX; World Bank Indicators v2 for periodic macro indicators; BIS SDMX and national central banks for policy/statistical rates. None is production-enabled. Provider terms, CORS, rate limits, exact metric definitions and freshness must be verified before runtime integration.
+- Freshness is metric-specific. Preserve observation, publication/effective and retrieval timestamps; stale values are never silently treated as current.
+- Existing BDT defaults and all 220 calculators remain unchanged until a tool-by-tool money-field audit and regression-tested migration.
+
+### Phase 0 status
+- All 13 current catalogue JSON files parse successfully.
+- Global context and financial input/data-source contracts are documented.
+- Runtime locale/country/currency selectors, currency conversion, API adapters and automatic financial prefill are **not implemented**.
+- No formulas, calculation defaults, tool registry, production assets, SEO URLs, sitemap or deployment were changed.
