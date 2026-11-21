@@ -3,7 +3,7 @@
 **Date:** 2026-11-21  
 **Branch:** feat/financial-input-globalization-phase-2a-2c  
 **Base:** Phase 1 Global Context candidate, PR #64 head 51da53929a6cc4083c98a1e4ba02bef2571b519b  
-**Status:** Implementation candidate; CI/browser/Lighthouse validation pending; not merged or deployed.
+**Status:** Implementation candidate; CI/browser/Lighthouse validation pending; not merged or deployed. PR #66 targets main so the repository's main-targeted pull-request workflows can validate the combined Phase 1 + Phase 2 change set.
 
 ## Scope delivered in this candidate
 
