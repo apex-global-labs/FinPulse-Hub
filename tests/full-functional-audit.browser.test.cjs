@@ -138,12 +138,12 @@ test("all 220 registered tools execute with valid representative inputs in deskt
         const issues = [];
         if (row.name !== tool.name) issues.push("heading mismatch");
         if (!row.category) issues.push("category missing");
-        if (!row.result || row.result === "—" || row.resultLabel === "CHECK YOUR INPUTS") issues.push("default handler failed: " + row.resultLabel + " — " + row.resultDetail);
+        if (!row.result || row.result === "—" || row.resultLabel === "CHECK YOUR INPUTS") issues.push("representative handler failed: " + row.resultLabel + " — " + row.resultDetail);
         if (!row.fields.length) issues.push("input fields missing");
         if (row.unlabeled.length) issues.push("unlabeled inputs: " + row.unlabeled.join(", "));
         if (row.horizontalOverflow) issues.push("horizontal overflow");
         completed[viewport.name].push(tool.id);
-        const record = { id: tool.id, ...row, status: issues.length ? "failed" : "default-handler-passed", issues };
+        const record = { id: tool.id, ...row, status: issues.length ? "failed" : "representative-handler-passed", issues };
         if (issues.length) failures.push({ viewport: viewport.name, id: tool.id, name: tool.name, issues, fields: row.fields });
         if (viewport.name === "desktop") records.push(record);
         else mobileRecords.push(record);
