@@ -15,9 +15,9 @@ test("CSS and JavaScript formatter/minifier reject unmatched delimiters",()=>{co
 test("URL and Base64 Unicode round-trip correctly",()=>{const url=registry.find(x=>x.id==="url-encoder-decoder"),b64=registry.find(x=>x.id==="base64-encoder-decoder"),text="বাংলা & English";const encoded=url.run({text,mode:"encode"}).main;assert.equal(url.run({text:encoded,mode:"decode"}).main,text);const b=b64.run({text,mode:"encode"}).main;assert.equal(b64.run({text:b,mode:"decode"}).main,text)});
 test("remaining developer utilities have direct expected-value formula and transformation coverage",()=>{
  const g=id=>registry.find(x=>x.id===id);
- assert.equal(g("character-counter").run({text:"A👨‍👩‍👧‍👦B"}).main,"3");
- assert.equal(g("sentence-counter").run({text:"One. Two? Three!"}).main,"3");
- assert.equal(g("paragraph-counter").run({text:"alpha\n\nbeta\n \n gamma"}).main,"3");
+ assert.equal(g("character-counter").run({text:"A👨‍👩‍👧‍👦B"}).main,3);
+ assert.equal(g("sentence-counter").run({text:"One. Two? Three!"}).main,3);
+ assert.equal(g("paragraph-counter").run({text:"alpha\n\nbeta\n \n gamma"}).main,3);
  const reading=g("reading-time-calculator").run({text:"one two three four five six",wpm:200});
  assert.equal(reading.main,"1 min");assert.equal(reading.metrics.find(x=>x[0]==="Seconds")[1],2);
  assert.equal(g("whitespace-cleaner").run({text:"  alpha  \n  beta  ",mode:"trim-lines"}).main,"alpha\nbeta");
