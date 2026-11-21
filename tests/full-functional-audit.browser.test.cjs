@@ -57,6 +57,7 @@ test("all 220 registered tools execute with valid representative inputs in deskt
       assert.equal(new Set(tools.map(x => x.name)).size, 220, "tool names must be unique");
 
       for (const tool of tools) {
+        await page.evaluate(() => history.replaceState(null, "", location.pathname));
         await page.locator("#search").fill(tool.name);
         try {
           await page.waitForFunction(
@@ -75,6 +76,11 @@ test("all 220 registered tools execute with valid representative inputs in deskt
             resultDetail: document.querySelector("#app .result .sub")?.textContent.trim() || null
           }));
           throw new Error(viewport.name + " failed to render " + tool.id + " (" + tool.name + "): " + JSON.stringify(diagnostic) + "; " + error.message);
+        }
+        if (tool.id === "activity-goal-progress-tracker") {
+          const initialPrompt = await page.locator("#app .result .value").textContent();
+          const initialLabel = await page.locator("#app .result .label").textContent();
+          if (initialPrompt.trim() !== "Enter your own goal" || initialLabel.trim() !== "USER-ENTERED GOAL REQUIRED") failures.push({ viewport: viewport.name, id: tool.id, name: tool.name, issues: ["blank optional goal should show the user-defined goal prompt"] });
         }
         const firstPreset = page.locator('#app button[data-preset="0"]').first();
         if (await firstPreset.count()) await firstPreset.click();
