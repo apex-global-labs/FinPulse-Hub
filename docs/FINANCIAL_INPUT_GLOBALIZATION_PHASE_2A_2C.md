@@ -35,7 +35,7 @@
 
 ## Non-negotiable calculation contract
 
-- No finance/lifestyle formula or numeric input is converted when the display currency changes.
+- No finance/lifestyle formula or numeric input is converted when the display currency changes. Entered monetary values are interpreted in the selected currency; changing the selector relabels their unit but does not perform FX conversion.
 - No exchange rate is fetched or applied outside the Currency Converter's existing Frankfurter/manual-rate flow.
 - Country selection remains independent from currency selection; applying a country suggestion remains an explicit action.
 - Income tax and salary outputs remain tied to the selected tax profile currency.
