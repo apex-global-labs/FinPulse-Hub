@@ -249,7 +249,7 @@ footer{max-width:1180px;margin:auto;border-top:1px solid var(--line)}
 .home-route #quick-calculator .calc-history{min-height:0}
 .home-calculator[data-mode=scientific] .calc-keys{grid-template-columns:minmax(0,.92fr) minmax(0,1.68fr);align-items:stretch;gap:6px}
 .home-calculator[data-mode=scientific] .calc-scientific-keys{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(6,minmax(32px,1fr));gap:5px;min-width:0}
-.home-calculator[data-mode=scientific] .calc-basic-keys{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(5,minmax(32px,1fr));grid-template-areas:"clear backspace percent divide" "seven eight nine multiply" "four five six minus" "one two three plus" "sign zero decimal equals";gap:5px;min-width:0}
+.home-calculator[data-mode=scientific] .calc-basic-keys{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(5,minmax(32px,1fr));grid-template-areas:"clear backspace percent divide" "one two three plus" "four five six minus" "seven eight nine multiply" "sign zero decimal equals";gap:5px;min-width:0}
 .home-calculator[data-mode=scientific] .calc-basic-keys [data-calc-action=clear]{grid-area:clear}
 .home-calculator[data-mode=scientific] .calc-basic-keys [data-calc-action=backspace]{grid-area:backspace}
 .home-calculator[data-mode=scientific] .calc-basic-keys [data-calc-key="%"]{grid-area:percent}
@@ -309,3 +309,12 @@ footer{max-width:1180px;margin:auto;border-top:1px solid var(--line)}
  .home-route #quick-calculator .calc-key{min-height:30px}
  .home-route #quick-calculator .calc-keys{gap:4px}
 }
+
+/* Accessible right-to-left website summary strip above the main navigation. */
+.site-marquee{height:30px;display:flex;align-items:center;overflow:hidden;background:var(--surface-soft);border-bottom:1px solid var(--line);color:var(--muted);font-size:11px;font-weight:650;letter-spacing:.15px}
+.site-marquee-track{display:flex;align-items:center;gap:64px;width:max-content;min-width:max-content;white-space:nowrap;animation:finpulse-marquee 30s linear infinite}
+.site-marquee-track span{display:block;padding-inline:12px}
+@keyframes finpulse-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.site-marquee:hover .site-marquee-track{animation-play-state:paused}
+@media(max-width:650px){.site-marquee{height:27px;font-size:10px}.site-marquee-track{gap:36px;animation-duration:24s}}
+@media(prefers-reduced-motion:reduce){.site-marquee-track{animation:none;transform:none}.site-marquee-track span[aria-hidden="true"]{display:none}}
