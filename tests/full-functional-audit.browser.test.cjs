@@ -201,6 +201,8 @@ test("all 220 registered tools execute with valid representative inputs in deskt
       console.error("Could not persist functional audit artifact: " + error.message);
     }
     try {
+      const categories = {};
+      for (const row of records) categories[row.category] = (categories[row.category] || 0) + 1;
       const coverage = {
         "EVERYDAY FINANCE": "Expected-value formula tests: tests/formula.test.cjs",
         "LOANS & HOUSING": "Expected-value formula tests: tests/formula.test.cjs",
