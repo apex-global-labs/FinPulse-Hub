@@ -1,0 +1,207 @@
+{
+  "schemaVersion": "1.0.0",
+  "status": "proposed-documentation-contract",
+  "auditDate": "2026-11-21",
+  "defaults": {
+    "language": "en",
+    "countryCode": null,
+    "locale": "en",
+    "currencyCode": null,
+    "direction": "ltr",
+    "measurementSystem": null,
+    "financialJurisdiction": null
+  },
+  "dimensions": {
+    "countryCode": {
+      "standard": "ISO-3166-1-alpha-2",
+      "required": false,
+      "meaning": "user-selected country or territory context; not inferred from language"
+    },
+    "locale": {
+      "standard": "BCP-47",
+      "required": true,
+      "default": "en",
+      "meaning": "language and display formatting preference"
+    },
+    "currencyCode": {
+      "standard": "ISO-4217-alpha",
+      "required": false,
+      "meaning": "currency denomination; symbol is presentation only"
+    },
+    "direction": {
+      "enum": [
+        "ltr",
+        "rtl"
+      ],
+      "derivedFrom": "locale registry"
+    },
+    "measurementSystem": {
+      "enum": [
+        "metric",
+        "us-customary",
+        "uk-imperial",
+        "user-defined"
+      ],
+      "required": false
+    },
+    "financialJurisdiction": {
+      "standard": "ISO-3166-1-alpha-2-or-subdivision",
+      "required": false,
+      "meaning": "explicit legal/tax/financial jurisdiction for a specific calculation"
+    }
+  },
+  "invariants": [
+    "Language does not infer country, currency, tax residence or measurement system.",
+    "Country may suggest a primary currency but user may override it.",
+    "Changing currency does not convert an amount; conversion is a separate explicit operation with dated FX provenance.",
+    "Only money fields carry a currencyCode; percentages, quantities and physical units do not.",
+    "No policy rate may be substituted for a retail deposit or lending rate.",
+    "External values are suggestions with provenance; manual override is always available.",
+    "Never replace a user-edited value during background refresh.",
+    "Existing BDT defaults remain unchanged until a tool-by-tool migration is approved and tested."
+  ],
+  "financialInputModes": [
+    "manual-only",
+    "suggested",
+    "prefill-editable",
+    "verified-fixed"
+  ],
+  "freshnessStates": [
+    "current",
+    "older-observation",
+    "stale",
+    "unavailable",
+    "not-applicable"
+  ],
+  "financialValueContract": {
+    "required": [
+      "metricId",
+      "value",
+      "unit",
+      "countryCode",
+      "sourceId",
+      "observationDate",
+      "retrievedAt",
+      "freshnessState"
+    ],
+    "optional": [
+      "currencyCode",
+      "institutionId",
+      "productType",
+      "tenure",
+      "compounding",
+      "publishedAt",
+      "effectiveFrom",
+      "effectiveTo",
+      "sourceUrl",
+      "methodology",
+      "allowedUse",
+      "userOverride"
+    ],
+    "unitExamples": [
+      "percent-per-year",
+      "currency-amount",
+      "index-points",
+      "count",
+      "physical-unit"
+    ]
+  },
+  "sourceRegistryContract": {
+    "required": [
+      "sourceId",
+      "providerName",
+      "officialStatus",
+      "countryCoverage",
+      "metricIds",
+      "definition",
+      "unit",
+      "frequency",
+      "termsUrl",
+      "allowedUse",
+      "knownLimitations"
+    ],
+    "optional": [
+      "seriesId",
+      "publicationLag",
+      "effectiveDateSemantics",
+      "attributionText",
+      "apiUrl",
+      "corsVerifiedAt",
+      "lastContractCheckAt",
+      "cachePolicy"
+    ]
+  },
+  "metricSourcePriority": [
+    "official-national-source",
+    "official-institution-product-source",
+    "intergovernmental-statistical-source",
+    "aggregated-reference-provider",
+    "manual-input"
+  ],
+  "apiFailureBehavior": [
+    "retain-manual-input",
+    "never-substitute-unlabelled-stale-value",
+    "last-known-value-may-only-be-labelled-historical-or-stale",
+    "do-not-overwrite-user-edits"
+  ],
+  "candidateProviders": [
+    {
+      "id": "frankfurter-v2",
+      "domain": "api.frankfurter.dev",
+      "purpose": "general reference FX",
+      "apiKeyRequired": false,
+      "productionEnabled": false,
+      "limitations": [
+        "not live executable quotes",
+        "blended reference rate is not official",
+        "underlying provider terms apply",
+        "CORS and rate limits require browser-origin verification"
+      ]
+    },
+    {
+      "id": "ecb-sdmx",
+      "domain": "data-api.ecb.europa.eu",
+      "purpose": "ECB official statistical series including EUR reference FX",
+      "apiKeyRequired": false,
+      "productionEnabled": false,
+      "limitations": [
+        "EUR-centred series",
+        "not a universal global retail finance API",
+        "CORS and exact series must be verified"
+      ]
+    },
+    {
+      "id": "world-bank-indicators-v2",
+      "domain": "api.worldbank.org",
+      "purpose": "historical and periodic macro indicators",
+      "apiKeyRequired": false,
+      "productionEnabled": false,
+      "limitations": [
+        "series may be lagged",
+        "not current bank product rates",
+        "exact indicator metadata and frequency required"
+      ]
+    },
+    {
+      "id": "bis-sdmx",
+      "domain": "stats.bis.org",
+      "purpose": "BIS statistical series including monetary policy rates",
+      "apiKeyRequired": false,
+      "productionEnabled": false,
+      "limitations": [
+        "coverage and frequency vary",
+        "policy rates are not retail deposit rates",
+        "BIS terms and CORS require review"
+      ]
+    }
+  ],
+  "prohibitedShortcuts": [
+    "infer deposit rate from country or currency",
+    "use central-bank policy rate as bank deposit offer",
+    "use search snippets as verified values",
+    "silently convert existing amounts on currency change",
+    "treat stale cached data as current",
+    "ship secret API keys in static client code",
+    "scrape pages where terms prohibit it or bypass CORS"
+  ]
+}
