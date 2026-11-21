@@ -163,6 +163,8 @@ Do not scrape pages in violation of provider terms or bypass CORS. Do not treat 
 Every provider/series integration must record:
 `sourceId`, `providerName`, `officialStatus`, `countryCoverage`, `metricIds`, `seriesId`, `definition`, `unit`, `frequency`, `publicationLag`, `effectiveDateSemantics`, `termsUrl`, `attributionText`, `apiUrl`, `corsVerifiedAt`, `lastContractCheckAt`, `allowedUse`, `knownLimitations`.
 
+The source registry is a catalogue of reviewed adapters, not an allowlist by provider name alone. A provider is not production-enabled until the exact series, data definition, provider/underlying-source reuse terms, browser-origin CORS, rate limits, attribution, response schema and metric-specific freshness rule have been verified. A successful CI reachability probe does not satisfy these checks.
+
 ## 6. Data quality, freshness and failure policy
 
 ### 6.1 Keep distinct timestamps
