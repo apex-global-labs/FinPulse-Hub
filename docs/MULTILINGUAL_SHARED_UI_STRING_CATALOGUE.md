@@ -12,7 +12,7 @@
 | Homepage calculator | 171 | [shared-home-calculator.json](./multilingual-string-catalogue/shared-home-calculator.json) |
 | Homepage HTML text nodes | 809 | [shared-index-html.json](./multilingual-string-catalogue/shared-index-html.json) |
 
-Each entry records exact text/literal, source file, absolute line, token type, static/dynamic hint, nearby source context and a protected-parameter placeholder.
+Each entry records exact text/literal, source file, absolute line, token type, heuristic role, static/dynamic hint, nearby source context, parameter candidates where concatenation is apparent, and manual-review status.
 
 ## Review limitations
 
