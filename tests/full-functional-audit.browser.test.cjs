@@ -141,6 +141,10 @@ test("all 220 registered tools execute with valid representative inputs in deskt
               const rect = el.getBoundingClientRect(), style = getComputedStyle(el);
               return { width: Math.round(rect.width), right: Math.round(rect.right), clientWidth: el.clientWidth, scrollWidth: el.scrollWidth, overflowX: style.overflowX };
             })(),
+            metricDiagnostics: [...document.querySelectorAll("#metrics .metric strong")].map(el => {
+              const rect = el.getBoundingClientRect(), style = getComputedStyle(el);
+              return { width: Math.round(rect.width), right: Math.round(rect.right), parentWidth: Math.round(el.parentElement.getBoundingClientRect().width), display: style.display, gridColumn: style.gridColumn, minWidth: style.minWidth, maxWidth: style.maxWidth, whiteSpace: style.whiteSpace, overflowWrap: style.overflowWrap };
+            }),
             breakdownAncestors,
             overflowNodes: [...document.querySelectorAll("body *")].map(el => {
               const rect = el.getBoundingClientRect();
@@ -162,7 +166,7 @@ test("all 220 registered tools execute with valid representative inputs in deskt
         }
         completed[viewport.name].push(tool.id);
         const record = { id: tool.id, ...row, status: issues.length ? "failed" : "representative-handler-passed", issues };
-        if (issues.length) failures.push({ viewport: viewport.name, id: tool.id, name: tool.name, issues, fields: row.fields });
+        if (issues.length) failures.push({ viewport: viewport.name, id: tool.id, name: tool.name, issues, fields: row.fields, metricDiagnostics: row.metricDiagnostics });
         if (viewport.name === "desktop") records.push(record);
         else mobileRecords.push(record);
       }
