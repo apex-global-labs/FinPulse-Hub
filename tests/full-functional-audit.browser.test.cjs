@@ -60,10 +60,7 @@ test("all 220 registered tools execute their default calculation handler in desk
           name => {
             const heading = document.querySelector("#app .heading h2");
             const result = document.querySelector("#app .result .value");
-            return heading?.textContent.trim() === name &&
-              result && result.textContent.trim() !== "" &&
-              result.textContent.trim() !== "—" &&
-              !document.querySelector("#app .result .label")?.textContent.includes("CHECK YOUR INPUTS");
+            return heading?.textContent.trim() === name;
           },
           tool.name,
           { timeout: 5000 }
@@ -78,6 +75,8 @@ test("all 220 registered tools execute their default calculation handler in desk
             name: heading?.textContent.trim(),
             category: category?.textContent.trim(),
             result: result?.textContent.trim(),
+            resultLabel: document.querySelector("#app .result .label")?.textContent.trim(),
+            resultDetail: document.querySelector("#app .result .sub")?.textContent.trim(),
             fields: fields.map(el => ({
               key: el.name,
               label: document.querySelector('label[for="' + CSS.escape(el.id) + '"]')?.textContent.trim() || "",
@@ -89,7 +88,7 @@ test("all 220 registered tools execute their default calculation handler in desk
         });
         assert.equal(row.name, tool.name, viewport.name + " heading: " + tool.id);
         assert.ok(row.category, viewport.name + " category missing: " + tool.id);
-        assert.ok(row.result, viewport.name + " result missing: " + tool.id);
+        assert.ok(row.result && row.result !== "—" && row.resultLabel !== "CHECK YOUR INPUTS", viewport.name + " default handler failed: " + tool.id + " (" + row.resultLabel + "): " + row.resultDetail);
         assert.ok(row.fields.length > 0, viewport.name + " input fields missing: " + tool.id);
         assert.deepEqual(row.unlabeled, [], viewport.name + " unlabeled inputs: " + tool.id);
         assert.equal(row.horizontalOverflow, false, viewport.name + " horizontal overflow: " + tool.id);
