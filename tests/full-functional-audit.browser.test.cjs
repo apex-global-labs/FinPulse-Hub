@@ -115,6 +115,12 @@ test("all 220 registered tools execute with valid representative inputs in deskt
           const category = document.querySelector("#app .heading .kicker");
           const fields = [...document.querySelectorAll("#app .fields input[name], #app .fields select[name], #app .fields textarea[name]")];
           const unlabeled = fields.filter(el => !el.id || !document.querySelector('label[for="' + CSS.escape(el.id) + '"]'));
+          const breakdownAncestors = [];
+          for (let el = document.querySelector("#breakdown-table table"); el; el = el.parentElement) {
+            const rect = el.getBoundingClientRect(), style = getComputedStyle(el);
+            breakdownAncestors.push({ tag: el.tagName.toLowerCase(), id: el.id, className: typeof el.className === "string" ? el.className : "", width: Math.round(rect.width), right: Math.round(rect.right), overflowX: style.overflowX, scrollWidth: el.scrollWidth, clientWidth: el.clientWidth });
+            if (el.id === "app") break;
+          }
           return {
             name: heading?.textContent.trim(),
             category: category?.textContent.trim(),
@@ -129,6 +135,7 @@ test("all 220 registered tools execute with valid representative inputs in deskt
             })),
             unlabeled: unlabeled.map(el => el.name),
             horizontalOverflow: document.documentElement.scrollWidth > window.innerWidth + 1,
+            breakdownAncestors,
             overflowNodes: [...document.querySelectorAll("body *")].map(el => {
               const rect = el.getBoundingClientRect();
               return { tag: el.tagName.toLowerCase(), id: el.id, className: typeof el.className === "string" ? el.className : "", inCategories: !!el.closest("#categories"), width: Math.round(rect.width), right: Math.round(rect.right), scrollWidth: el.scrollWidth, clientWidth: el.clientWidth };
