@@ -3,7 +3,7 @@
 - Audit date: 2026-11-21
 - Baseline: current `main` and canonical `tool-category-mapping.json`.
 - Canonical tool coverage: **220/220 unique IDs**; source ownership: **220/220**.
-- Exact quoted/template literal occurrences extracted from tool-definition segments (comments excluded): **4,724**.
+- Exact quoted/template literal occurrences extracted from tool-definition segments (comments excluded): **4,724**. Static-literal occurrences: **3,460**; dynamic-fragment candidates: **1,264**. Heuristic candidate-visible: **2,683**; protected/review-required: **2,041**.
 - Files are split by source module so they remain inspectable and reviewable.
 
 ## Per-source catalogues
@@ -21,7 +21,7 @@
 | `health-activity-tools.js` | 15 | 527 | [health-activity-tools.json](./multilingual-string-catalogue/health-activity-tools.json) |
 | `health-wellness-tools.js` | 15 | 370 | [health-wellness-tools.json](./multilingual-string-catalogue/health-wellness-tools.json) |
 
-Each JSON records the exact literal, stable Tool ID/name, source file, absolute line number, static/dynamic-fragment classification, heuristic classification, protected-parameter placeholder and surrounding code context.
+Each JSON records the exact literal, stable Tool ID/name, source file, absolute line number, static/dynamic-fragment classification, heuristic role, heuristic protected/candidate classification, nearby source context, parameter candidates detected near string concatenation, and a manual-review status. Parameter candidates are not yet typed or approved.
 
 ## Classification and review limits
 
