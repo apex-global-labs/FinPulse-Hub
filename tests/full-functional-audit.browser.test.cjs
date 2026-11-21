@@ -252,6 +252,9 @@ test("all 220 registered tools execute with valid representative inputs in deskt
         "| Tool ID | Tool | Category | Inputs | Desktop | Mobile | Existing calculation-test evidence |",
         "|---|---|---|---|---|---|---|"
       ];
+      const categorySummary = Object.entries(categories).sort((a, b) => a[0].localeCompare(b[0]));
+      const inventoryHeading = lines.indexOf("## Complete tool inventory");
+      lines.splice(inventoryHeading, 0, "## Category inventory", "", "| Category | Tool count |", "|---|---:|", ...categorySummary.map(([name, count]) => "| " + name + " | " + count + " |"), "");
       const formulaTools = records.filter(row => row.id !== "qr-code-generator");
       const generatorTools = records.filter(row => row.id === "qr-code-generator");
       const renderOnlyTools = records.filter(row => !coverage[row.category]);
