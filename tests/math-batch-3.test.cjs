@@ -32,6 +32,8 @@ test("Ratio Calculator preserves the simplified ratio string in its rendered res
 
 test("Proportion Calculator unwraps the numeric result before formatting",()=>{const tool=basic.find(x=>x.id==="proportion");assert.equal(tool.run({a:2,b:3,c:8}).main,"12");assert.throws(()=>tool.run({a:0,b:3,c:8}));});
 
+test("Percentage Change and Percent Error handlers format numeric values before adding percent signs",()=>{const change=basic.find(x=>x.id==="percentage-change"),error=basic.find(x=>x.id==="percent-error");assert.equal(change.run({old:80,new:100}).main,"25%");assert.equal(change.run({old:100,new:80}).main,"-20%");assert.equal(error.run({actual:48,expected:50}).main,"4%");assert.throws(()=>change.run({old:0,new:100}));assert.throws(()=>error.run({actual:48,expected:0}));});
+
 test("basic math handles numeric limits without silently returning Infinity",()=>{
  near(M.average([1e308,1e308]),1e308,1e292);
  assert.throws(()=>M.percentageChange(-1e308,1e308));
