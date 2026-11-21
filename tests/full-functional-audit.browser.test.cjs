@@ -166,8 +166,8 @@ test("all 220 registered tools execute with valid representative inputs in deskt
       tools: records.length,
       viewports: ["desktop", "mobile"],
       executions: records.length * 2,
-      desktopPassed: records.filter(x => x.status === "default-handler-passed").length,
-      mobilePassed: mobileRecords.filter(x => x.status === "default-handler-passed").length,
+      desktopPassed: records.filter(x => x.status === "representative-handler-passed").length,
+      mobilePassed: mobileRecords.filter(x => x.status === "representative-handler-passed").length,
       failures,
       categories,
       runtimeErrors
