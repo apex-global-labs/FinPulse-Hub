@@ -119,7 +119,7 @@ test("all 220 registered tools execute their default calculation handler in desk
         viewports: completed,
         desktopRegistry: records,
         runtimeErrors
-      }, null, 2) + "\\n");
+      }, null, 2) + "\n");
     } catch (error) {
       console.error("Could not persist functional audit artifact: " + error.message);
     }
