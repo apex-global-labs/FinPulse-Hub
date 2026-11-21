@@ -135,6 +135,12 @@ test("all 220 registered tools execute with valid representative inputs in deskt
             })),
             unlabeled: unlabeled.map(el => el.name),
             horizontalOverflow: document.documentElement.scrollWidth > window.innerWidth + 1,
+            breakdownScroll: (() => {
+              const el = document.querySelector("#breakdown-panel .schedule-scroll");
+              if (!el) return null;
+              const rect = el.getBoundingClientRect(), style = getComputedStyle(el);
+              return { width: Math.round(rect.width), right: Math.round(rect.right), clientWidth: el.clientWidth, scrollWidth: el.scrollWidth, overflowX: style.overflowX };
+            })(),
             breakdownAncestors,
             overflowNodes: [...document.querySelectorAll("body *")].map(el => {
               const rect = el.getBoundingClientRect();
@@ -149,6 +155,11 @@ test("all 220 registered tools execute with valid representative inputs in deskt
         if (!row.fields.length) issues.push("input fields missing");
         if (row.unlabeled.length) issues.push("unlabeled inputs: " + row.unlabeled.join(", "));
         if (row.horizontalOverflow) issues.push("horizontal overflow");
+        if (["url-encoder-decoder", "base64-encoder-decoder", "json-formatter-validator"].includes(tool.id)) {
+          if (!row.breakdownScroll || row.breakdownScroll.overflowX !== "auto" || row.breakdownScroll.width > viewport.width + 1 || row.breakdownScroll.right > viewport.width + 1) {
+            issues.push("breakdown table must scroll inside its mobile panel");
+          }
+        }
         completed[viewport.name].push(tool.id);
         const record = { id: tool.id, ...row, status: issues.length ? "failed" : "representative-handler-passed", issues };
         if (issues.length) failures.push({ viewport: viewport.name, id: tool.id, name: tool.name, issues, fields: row.fields });
