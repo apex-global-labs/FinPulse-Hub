@@ -145,6 +145,12 @@ test("all 220 registered tools execute with valid representative inputs in deskt
               const rect = el.getBoundingClientRect(), style = getComputedStyle(el);
               return { width: Math.round(rect.width), right: Math.round(rect.right), parentWidth: Math.round(el.parentElement.getBoundingClientRect().width), display: style.display, gridColumn: style.gridColumn, minWidth: style.minWidth, maxWidth: style.maxWidth, whiteSpace: style.whiteSpace, overflowWrap: style.overflowWrap };
             }),
+            strongDiagnostics: [...document.querySelectorAll("#app strong")].map(el => {
+              const rect = el.getBoundingClientRect(), style = getComputedStyle(el);
+              const ancestors = [];
+              for (let p = el.parentElement; p && p.id !== "app"; p = p.parentElement) ancestors.push({ tag: p.tagName.toLowerCase(), id: p.id, className: typeof p.className === "string" ? p.className : "", width: Math.round(p.getBoundingClientRect().width), overflowX: getComputedStyle(p).overflowX });
+              return { text: el.textContent.trim().slice(0, 80), width: Math.round(rect.width), right: Math.round(rect.right), display: style.display, minWidth: style.minWidth, maxWidth: style.maxWidth, whiteSpace: style.whiteSpace, overflowWrap: style.overflowWrap, ancestors };
+            }),
             breakdownAncestors,
             overflowNodes: [...document.querySelectorAll("body *")].map(el => {
               const rect = el.getBoundingClientRect();
@@ -166,7 +172,7 @@ test("all 220 registered tools execute with valid representative inputs in deskt
         }
         completed[viewport.name].push(tool.id);
         const record = { id: tool.id, ...row, status: issues.length ? "failed" : "representative-handler-passed", issues };
-        if (issues.length) failures.push({ viewport: viewport.name, id: tool.id, name: tool.name, issues, fields: row.fields, metricDiagnostics: row.metricDiagnostics });
+        if (issues.length) failures.push({ viewport: viewport.name, id: tool.id, name: tool.name, issues, fields: row.fields, metricDiagnostics: row.metricDiagnostics, strongDiagnostics: row.strongDiagnostics });
         if (viewport.name === "desktop") records.push(record);
         else mobileRecords.push(record);
       }
