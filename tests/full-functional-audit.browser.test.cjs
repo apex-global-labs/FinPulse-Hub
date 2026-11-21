@@ -225,7 +225,6 @@ test("all 220 registered tools execute with valid representative inputs in deskt
         "HEALTH & WELLNESS · PACE & ACTIVITY": "Expected-value pace, speed, distance and race calculation tests: health-activity-tools.test",
         "HEALTH & WELLNESS · USER-ENTERED TOOLS": "Expected-value interval, duration, activity, step, elevation and log tests: health-wellness-tools.test"
       };
-      const desktopById = new Map(records.map(row => [row.id, row]));
       const mobileById = new Map(mobileRecords.map(row => [row.id, row]));
       const lines = [
         "# FinPulse Hub — 220-tool functional audit",
