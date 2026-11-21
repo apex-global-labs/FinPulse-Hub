@@ -34,8 +34,9 @@ max=Math.min(Math.max(max,1),1000000000);
 const integer=/year|month|term|day|hour|week|people|employee|period|frequency|count/.test(key+" "+label);
 const percent=/rate|percent|tax|discount|markup|margin|inflation|apy|return|dti|withholding|contribution/.test(key+" "+label);
 return{max,step:integer?"1":percent?"0.01":"0.01"}}
-function currencySymbol(code){const c=currencies.find(x=>x.code===code);return c?c.symbol:code+" "}
-function currencyLabel(code){const c=currencies.find(x=>x.code===code);return c?c.symbol+" "+c.code+" — "+c.name:code}
+function getCurrencies(){return window.FinPulseGlobalContext?.currencies||currencies}
+function currencySymbol(code){const c=getCurrencies().find(x=>x.code===code);if(c&&c.symbol)return c.symbol;try{return new Intl.NumberFormat("en",{style:"currency",currency:code,currencyDisplay:"narrowSymbol"}).formatToParts(1).find(p=>p.type==="currency")?.value||code+" "}catch{return code+" "}}
+function currencyLabel(code){const c=getCurrencies().find(x=>x.code===code);return c?(c.symbol||currencySymbol(code))+" "+c.code+" — "+c.name:code}
 const inflationPresets=[
 {id:"custom",label:"Custom / enter my own inflation rate",rate:null,note:"Use your own inflation assumption.",source:"User-entered assumption"},
 {id:"IMF-BD-2026",label:"Bangladesh — 2026 IMF estimate (8.7%)",rate:8.7,note:"2026 annual average consumer-price inflation estimate; this is a macroeconomic projection, not a personal cost-of-living rate.",source:"https://www.imf.org/external/datamapper/profile/BGD"},
@@ -45,5 +46,5 @@ const inflationPresets=[
 ];
 const countryPresets={"sales-tax":presets,"vat-gst":presets,"inflation":inflationPresets};
 function getCountryPreset(tool,id){const p=(countryPresets[tool]||[]).find(x=>x.id===id);return p?{...p,checkedOn}:null}
-window.FinPulseSmartUI={currencies,cryptoAssets:[{symbol:"BTC",name:"Bitcoin"},{symbol:"ETH",name:"Ethereum"},{symbol:"USDT",name:"Tether"}],sliderConfig,currencyLabel,currencySymbol,countryPresets,getCountryPreset};
+window.FinPulseSmartUI={currencies,getCurrencies,cryptoAssets:[{symbol:"BTC",name:"Bitcoin"},{symbol:"ETH",name:"Ethereum"},{symbol:"USDT",name:"Tether"}],sliderConfig,currencyLabel,currencySymbol,countryPresets,getCountryPreset};
 })();
