@@ -169,3 +169,19 @@ footer{max-width:1180px;margin:auto;border-top:1px solid var(--line)}
 @media(max-width:900px){.home-route #tool-links{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 20px}}
 @media(max-width:650px){.home-route #tool-links{grid-template-columns:repeat(2,minmax(0,1fr));gap:19px 14px}.home-route .tool-category-group h3{font-size:14px}.home-route .tool-subcategory-group h4{font-size:11px}.home-route .tool-subcategory-group li a{font-size:12px}.home-route .tool-subcategory-group li span{font-size:9px}}
 @media(max-width:380px){.home-route #tool-links{grid-template-columns:1fr}}
+
+/* Tool-page layout: keep the active calculator primary and expose its complete subcategory beside it. */
+.tool-page-layout{display:grid;grid-template-columns:minmax(0,1fr) 238px;gap:18px;align-items:start}
+.tool-primary-column{min-width:0}
+.tool-related-sidebar{position:sticky;top:16px;min-width:0;max-height:calc(100vh - 32px);overflow:auto;padding:15px;background:var(--surface);border:1px solid var(--line);border-radius:12px}
+.tool-related-sidebar .related-panel{margin:0;padding:0;border:0;background:transparent;box-shadow:none}
+.tool-related-sidebar .related-panel h3{font-size:14px;line-height:1.4;margin:0 0 7px}
+.tool-related-sidebar .related-context{font-size:11px;line-height:1.45;color:var(--muted);margin:0 0 12px}
+.tool-related-sidebar .related-panel ul{display:grid;gap:8px;list-style:none;padding:0;margin:0}
+.tool-related-sidebar .related-panel li{min-width:0}
+.tool-related-sidebar .related-panel a{display:block;font-size:12px;line-height:1.4;font-weight:600;color:var(--green);overflow-wrap:anywhere;text-decoration:none}
+.tool-related-sidebar .related-panel a:hover{text-decoration:underline}
+@media(max-width:1050px){.tool-page-layout{grid-template-columns:minmax(0,1fr) 210px;gap:13px}.tool-related-sidebar{padding:12px}}
+@media(max-width:760px){.tool-page-layout{grid-template-columns:minmax(0,1fr)}.tool-related-sidebar{position:static;max-height:none;overflow:visible;margin-top:4px}.tool-related-sidebar .related-panel ul{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px 14px}}
+@media(max-width:420px){.tool-related-sidebar .related-panel ul{grid-template-columns:1fr}}
+@media print{.tool-related-sidebar{position:static;max-height:none;overflow:visible}}
