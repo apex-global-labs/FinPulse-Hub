@@ -10,16 +10,16 @@
 
 | Source file | Tools | Exact literal occurrences | Catalogue |
 |---|---:|---:|---|
-| `app.js` | 45 | 1,? | [app.json](./multilingual-string-catalogue/app.json) |
-| `math-tools.js` | 25 | see JSON | [math-tools.json](./multilingual-string-catalogue/math-tools.json) |
-| `advanced-math-tools.js` | 20 | see JSON | [advanced-math-tools.json](./multilingual-string-catalogue/advanced-math-tools.json) |
-| `date-time-tools.js` | 25 | see JSON | [date-time-tools.json](./multilingual-string-catalogue/date-time-tools.json) |
-| `unit-converter-tools.js` | 20 | see JSON | [unit-converter-tools.json](./multilingual-string-catalogue/unit-converter-tools.json) |
-| `developer-tools.js` | 20 | see JSON | [developer-tools.json](./multilingual-string-catalogue/developer-tools.json) |
-| `education-lifestyle-tools.js` | 20 | see JSON | [education-lifestyle-tools.json](./multilingual-string-catalogue/education-lifestyle-tools.json) |
-| `lifestyle-tools.js` | 15 | see JSON | [lifestyle-tools.json](./multilingual-string-catalogue/lifestyle-tools.json) |
-| `health-activity-tools.js` | 15 | see JSON | [health-activity-tools.json](./multilingual-string-catalogue/health-activity-tools.json) |
-| `health-wellness-tools.js` | 15 | see JSON | [health-wellness-tools.json](./multilingual-string-catalogue/health-wellness-tools.json) |
+| `app.js` | 45 | 956 | [app.json](./multilingual-string-catalogue/app.json) |
+| `math-tools.js` | 25 | 414 | [math-tools.json](./multilingual-string-catalogue/math-tools.json) |
+| `advanced-math-tools.js` | 20 | 478 | [advanced-math-tools.json](./multilingual-string-catalogue/advanced-math-tools.json) |
+| `date-time-tools.js` | 25 | 541 | [date-time-tools.json](./multilingual-string-catalogue/date-time-tools.json) |
+| `unit-converter-tools.js` | 20 | 440 | [unit-converter-tools.json](./multilingual-string-catalogue/unit-converter-tools.json) |
+| `developer-tools.js` | 20 | 119 | [developer-tools.json](./multilingual-string-catalogue/developer-tools.json) |
+| `education-lifestyle-tools.js` | 20 | 481 | [education-lifestyle-tools.json](./multilingual-string-catalogue/education-lifestyle-tools.json) |
+| `lifestyle-tools.js` | 15 | 398 | [lifestyle-tools.json](./multilingual-string-catalogue/lifestyle-tools.json) |
+| `health-activity-tools.js` | 15 | 527 | [health-activity-tools.json](./multilingual-string-catalogue/health-activity-tools.json) |
+| `health-wellness-tools.js` | 15 | 370 | [health-wellness-tools.json](./multilingual-string-catalogue/health-wellness-tools.json) |
 
 Each JSON records the exact literal, stable Tool ID/name, source file, absolute line number, static/dynamic-fragment classification, heuristic classification, protected-parameter placeholder and surrounding code context.
 
