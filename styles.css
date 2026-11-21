@@ -75,6 +75,7 @@ main{max-width:1240px}
 .metric{min-width:0}
 .metric strong{min-width:0;max-width:65%;overflow-wrap:anywhere;word-break:break-word}
 
-/* Long developer-tool outputs must wrap inside metric flex rows instead of widening mobile pages. */
-.metric > span{flex:1 1 35%;min-width:0;overflow-wrap:anywhere;word-break:break-word}
-.metric > strong{display:block;flex:0 1 65%;min-width:0;max-width:65%;white-space:normal;overflow-wrap:anywhere;word-break:break-word;text-align:right}
+/* Use a shrinkable two-column grid for long URL, Base64 and JSON metric outputs. */
+#metrics .metric{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,65%);align-items:start;gap:12px;min-width:0}
+#metrics .metric span{min-width:0;overflow-wrap:anywhere;word-break:break-word}
+#metrics .metric strong{display:block;width:100%;min-width:0;max-width:100%;white-space:normal;overflow-wrap:anywhere;word-break:break-word;text-align:right}
