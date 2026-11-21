@@ -165,3 +165,14 @@ This document is a plan only. It does not authorize direct edits to `main`, merg
 ## Phase 0 — User-visible text inventory (2026-11-21)
 
 The canonical 220-tool identity/source ownership inventory is documented in [`MULTILINGUAL_USER_VISIBLE_TEXT_INVENTORY.md`](./MULTILINGUAL_USER_VISIBLE_TEXT_INVENTORY.md). It records all 220 unique tool IDs, category/subcategory, English name and source definition file, plus the shared rendering layers and translation-safe boundaries. The exhaustive literal-string catalogue (all individual field labels, dynamic validation/result messages, FAQ/SEO strings and exact source locations) is explicitly **not yet complete** and remains a gate before runtime translation implementation. No runtime or production files were changed.
+
+
+## Phase 0 — Exact source-string extraction update (2026-11-21)
+
+- Current `main` baseline rechecked: `a4983bf8b84e8a2777bbed137ecedb70d74d6011`.
+- All 220 canonical Tool IDs are mapped to 10 definition modules; all 220 have at least one extracted literal record.
+- Extracted **4,724** quoted/template literal occurrences from the 220 tool-definition segments, excluding comments. The records are split into 10 source-module JSON files under `docs/multilingual-string-catalogue/`.
+- Extracted another **2,212** shared UI/homepage occurrences from shared `app.js`, `home-calculator.js`, and `index.html`, split into three JSON files.
+- Records include exact text, Tool ID where applicable, source file, absolute line, static/dynamic-fragment hint, heuristic role/classification, source context, candidate interpolation parameter names and manual-review status.
+- **Not yet complete:** candidate role/protected classification is heuristic; parameter types and protected-value contracts are not verified; all visible strings from core/imported modules, runtime-generated messages, CSS-generated content and browser-native UI have not been traced; no translation allowlist exists yet.
+- No runtime, calculation, input parsing, tool registry, SEO URL, sitemap or production files were changed.
