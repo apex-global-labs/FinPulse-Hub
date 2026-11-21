@@ -24,52 +24,51 @@
 
 | Tool ID | Tool | Monetary treatment | Initial finding |
 |---|---|---|---|
-| `currency` | Currency Converter | Monetary | Uses shared currency formatter / amount semantics; no per-input currency code in the tool contract |
-| `mortgage` | Mortgage Calculator | Monetary | Uses shared currency formatter / amount semantics; no per-input currency code in the tool contract |
-| `loan` | Loan Calculator | Monetary | Uses shared currency formatter / amount semantics; no per-input currency code in the tool contract |
-| `emi` | EMI Calculator | Monetary | Uses shared currency formatter / amount semantics; no per-input currency code in the tool contract |
-| `compound` | Compound Interest Calculator | Monetary | Uses shared currency formatter / amount semantics; no per-input currency code in the tool contract |
-| `tip` | Tip Calculator | Monetary | Uses shared currency formatter / amount semantics; no per-input currency code in the tool contract |
-| `car` | Auto / Car Loan Calculator | Monetary | Uses shared currency formatter / amount semantics; no per-input currency code in the tool contract |
-| `amortization` | Loan Amortization Calculator | Monetary | Uses shared currency formatter / amount semantics; no per-input currency code in the tool contract |
-| `savings` | Savings Goal Calculator | Monetary | Uses shared currency formatter / amount semantics; no per-input currency code in the tool contract |
-| `freelance` | Freelance Hourly Rate Calculator | Monetary | Uses shared currency formatter / amount semantics; no per-input currency code in the tool contract |
-| `margin` | Profit Margin Calculator | Monetary | Uses shared currency formatter / amount semantics; no per-input currency code in the tool contract |
-| `affordability` | Mortgage Affordability Calculator | Monetary | Uses shared currency formatter / amount semantics; no per-input currency code in the tool contract |
-| `payoff` | Mortgage Payoff & Extra Payment Calculator | Monetary | Uses shared currency formatter / amount semantics; no per-input currency code in the tool contract |
-| `refinance` | Mortgage Refinance Comparison | Monetary | Uses shared currency formatter / amount semantics; no per-input currency code in the tool contract |
-| `personal-loan` | Personal Loan Calculator | Monetary | Uses shared currency formatter / amount semantics; no per-input currency code in the tool contract |
-| `student-loan` | Student Loan Repayment Calculator | Monetary | Uses shared currency formatter / amount semantics; no per-input currency code in the tool contract |
-| `simple-interest` | Simple Interest Calculator | Monetary | Uses shared currency formatter / amount semantics; no per-input currency code in the tool contract |
-| `retirement` | Retirement Savings Calculator | Monetary | Uses shared currency formatter / amount semantics; no per-input currency code in the tool contract |
-| `401k` | 401k Contribution Calculator | Monetary | Uses shared currency formatter / amount semantics; no per-input currency code in the tool contract |
-| `ira` | Roth vs Traditional IRA Comparison | Monetary | Uses shared currency formatter / amount semantics; no per-input currency code in the tool contract |
-| `inflation` | Inflation Calculator | Monetary | Uses shared currency formatter / amount semantics; no per-input currency code in the tool contract |
-| `cd` | CD Calculator | Monetary | Uses shared currency formatter / amount semantics; no per-input currency code in the tool contract |
-| `apy` | APY Calculator | Monetary | Uses shared currency formatter / amount semantics; no per-input currency code in the tool contract |
-| `tax` | Tax Calculator | Monetary | Uses shared currency formatter / amount semantics; no per-input currency code in the tool contract |
-| `income-tax` | Income Tax Calculator | Monetary | Uses shared currency formatter / amount semantics; no per-input currency code in the tool contract |
-| `sales-tax` | Sales Tax Calculator | Monetary | Uses shared currency formatter / amount semantics; no per-input currency code in the tool contract |
-| `vat-gst` | VAT / GST Calculator | Monetary | Uses shared currency formatter / amount semantics; no per-input currency code in the tool contract |
-| `tax-refund` | Tax Refund Estimator | Monetary | Uses shared currency formatter / amount semantics; no per-input currency code in the tool contract |
-| `salary` | Salary Take-Home Calculator | Monetary | Uses shared currency formatter / amount semantics; no per-input currency code in the tool contract |
-| `paycheck` | Paycheck Calculator | Monetary | Uses shared currency formatter / amount semantics; no per-input currency code in the tool contract |
-| `payroll` | Payroll Calculator | Monetary | Uses shared currency formatter / amount semantics; no per-input currency code in the tool contract |
-| `overtime` | Overtime Pay Calculator | Monetary | Uses shared currency formatter / amount semantics; no per-input currency code in the tool contract |
-| `discount` | Discount Calculator | Monetary | Uses shared currency formatter / amount semantics; no per-input currency code in the tool contract |
-| `exchange-fees` | Exchange Fee & Markup Calculator | Monetary | Uses shared currency formatter / amount semantics; no per-input currency code in the tool contract |
-| `transfer-compare` | International Money Transfer Cost Calculator | Monetary | Uses shared currency formatter / amount semantics; no per-input currency code in the tool contract |
-| `freelance-project` | Freelance Project Pricing Calculator | Monetary | Uses shared currency formatter / amount semantics; no per-input currency code in the tool contract |
-| `freelancer-net-income` | Freelancer Net Income After Costs Calculator | Monetary | Uses shared currency formatter / amount semantics; no per-input currency code in the tool contract |
-| `markup` | Markup Calculator | Monetary | Uses shared currency formatter / amount semantics; no per-input currency code in the tool contract |
-| `break-even` | Break-even Calculator | Monetary | Uses shared currency formatter / amount semantics; no per-input currency code in the tool contract |
-| `business-roi` | Business ROI Calculator | Monetary | Uses shared currency formatter / amount semantics; no per-input currency code in the tool contract |
-| `cash-flow` | Cash Flow Projection Calculator | Monetary | Uses shared currency formatter / amount semantics; no per-input currency code in the tool contract |
-| `rental-yield` | Rental Yield Calculator | Monetary | Uses shared currency formatter / amount semantics; no per-input currency code in the tool contract |
-| `emergency-fund` | Emergency Fund Calculator | Monetary | Uses shared currency formatter / amount semantics; no per-input currency code in the tool contract |
-| `net-worth` | Net Worth Calculator | Monetary | Uses shared currency formatter / amount semantics; no per-input currency code in the tool contract |
+| `currency` | Currency Converter | Monetary | Explicit source/target currency fields; source amount breakdown still uses USD fallback. |
+| `income-tax` | Income Tax Calculator | Monetary | Currency comes from selected tax profile; country/tax year required. |
+| `salary` | Salary Take-Home Calculator | Monetary | Currency comes from selected tax profile; country/tax year required. |
+| `exchange-fees` | Exchange Fee & Markup Calculator | Monetary | Recipient currency is explicit; source amount remains shared USD fallback. |
+| `transfer-compare` | International Money Transfer Cost Calculator | Monetary | Recipient currency is explicit; source amount remains shared USD fallback. |
+# Fi
+# Fi
+# Fi
+# Fi
+# Fi
+# Fi
+# Fi
+# Fi
+# Fi
+# Fi
+# Fi
+# Fi
+# Fi
+# Fi
+# Fi
+# Fi
+# Fi
+# Fi
+# Fi
+# Fi
+# Fi
+# Fi
+# Fi
+# Fi
+# Fi
+# Fi
+# Fi
+# Fi
+# Fi
+# Fi
+# Fi
+# Fi
+# Fi
+# Fi
+# Fi
+# Fi
+# Fi
+# Fi
+# Fi
 | `percentage` | Percentage Calculator | Non-monetary | Dimensionless percentage operations; do not apply currency formatting |
-
 **Important:** The monetary classification above identifies money-valued inputs/results, not proof that each calculator has a correct currency selector. All monetary fields in these calculators are plain numeric values. The current global display currency is a separate presentation concern and must be explicitly connected before it can be trusted.
 
 ### 2.2 Additional 5 monetary tools outside Finance
