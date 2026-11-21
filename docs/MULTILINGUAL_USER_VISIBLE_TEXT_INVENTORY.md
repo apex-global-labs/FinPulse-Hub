@@ -329,3 +329,8 @@ Result values must be formatted by locale-aware display functions only after cal
 - No locale selector, language persistence, translation dictionaries or translated copy.
 - No localized route, canonical, hreflang, sitemap or deployment change.
 - No claim that browser tests, Lighthouse, accessibility or production deployment were rerun by this documentation-only inventory.
+
+
+## 8. Exact literal extraction update (2026-11-21)
+
+A source-literal catalogue has now been generated for all 220 tool definition segments: 4,724 quoted/template literal occurrences across the ten owning modules, with Tool ID, source file, absolute line, static/dynamic-fragment hint, heuristic protected/candidate classification and surrounding source context. See `MULTILINGUAL_TOOL_STRING_CATALOGUE.md` and its per-module JSON files. An additional 2,212 shared UI/homepage occurrences are catalogued in `MULTILINGUAL_SHARED_UI_STRING_CATALOGUE.md` and three per-source JSON files. These are exhaustive lexical captures for the scoped files, not a human-reviewed translation allowlist; runtime-generated values, imported/core messages and protected interpolation parameters still require review.
