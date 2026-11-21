@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "1.0.0",
+  "schemaVersion": "1.0.1",
   "status": "proposed-documentation-contract",
   "auditDate": "2026-11-21",
   "defaults": {
@@ -78,32 +78,53 @@
       "metricId",
       "value",
       "unit",
-      "countryCode",
-      "sourceId",
-      "observationDate",
-      "retrievedAt",
+      "inputOrigin",
       "freshnessState"
     ],
     "optional": [
+      "countryCode",
+      "geographicScope",
       "currencyCode",
+      "baseCurrencyCode",
+      "quoteCurrencyCode",
+      "sourceId",
       "institutionId",
       "productType",
       "tenure",
       "compounding",
+      "observationDate",
       "publishedAt",
       "effectiveFrom",
       "effectiveTo",
+      "retrievedAt",
+      "validatedAt",
       "sourceUrl",
       "methodology",
       "allowedUse",
-      "userOverride"
+      "userOverride",
+      "enteredAt",
+      "illustrativeLabel"
+    ],
+    "inputOrigin": [
+      "external-source",
+      "user-manual",
+      "illustrative-example"
+    ],
+    "conditionalRules": [
+      "If inputOrigin is external-source, sourceId and retrievedAt are required; preserve observationDate and/or publication/effective dates when supplied by the provider.",
+      "If inputOrigin is user-manual, sourceId is not required, freshnessState must be not-applicable, and enteredAt should be recorded.",
+      "If unit is currency-amount, currencyCode is required.",
+      "If unit is an FX rate, baseCurrencyCode and quoteCurrencyCode are required and must be different.",
+      "If the metric is jurisdiction-specific, countryCode or an explicit subdivision is required; global or multi-country series may use geographicScope without a single countryCode.",
+      "If inputOrigin is illustrative-example, the value must be visibly labelled illustrative and must not be presented as a current sourced rate."
     ],
     "unitExamples": [
       "percent-per-year",
       "currency-amount",
       "index-points",
       "count",
-      "physical-unit"
+      "physical-unit",
+      "fx-rate"
     ]
   },
   "sourceRegistryContract": {
