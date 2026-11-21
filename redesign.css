@@ -53,7 +53,7 @@ header nav a{font-size:13px;color:var(--muted)}
 .workspace-skeleton-columns{display:grid;grid-template-columns:1.1fr .9fr;gap:14px}
 .workspace-skeleton-panel{height:560px;border:1px solid var(--line);border-radius:12px;background:linear-gradient(110deg,var(--surface) 25%,var(--surface-soft) 38%,var(--surface) 52%)}
 .workspace-skeleton-wide{height:340px}
-.tool-route #app:not(:has(.workspace-skeleton)){min-height:2478px}
+
 .tool-route .heading{margin:0 0 16px}
 .tool-route .heading h2{font-size:clamp(25px,3vw,34px);letter-spacing:-.5px}
 .tool-route .grid{grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);gap:14px}
@@ -86,7 +86,7 @@ footer{max-width:1180px;margin:auto;border-top:1px solid var(--line)}
  .home-route #tool-directory{padding:8px 13px 22px}
  .home-route #tool-directory h2{font-size:19px}
  #tool-links{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
- #tool-links .tool-card{padding:11px;gap:6px}height:132px;
+ #tool-links .tool-card{padding:11px;gap:6px;height:132px}
  #tool-links .tool-card-skeleton{height:132px}
  .tool-route #app{min-height:3300px}
  .tool-route .workspace-skeleton-columns{grid-template-columns:1fr}
