@@ -28,3 +28,9 @@ test("related tools sidebar has desktop, mobile and print layouts", () => {
   assert.match(css, /@media\(max-width:760px\)\{\.tool-page-layout\{grid-template-columns:minmax\(0,1fr\)\}/);
   assert.match(css, /@media print\{\.tool-related-sidebar/);
 });
+
+test("brand link returns to the canonical homepage from every tool route", () => {
+  const html = fs.readFileSync(path.join(root, "index.html"), "utf8");
+  assert.match(html, /<a class="brand" href="https:\/\/apex-global-labs\.github\.io\/FinPulse-Hub\/" aria-label="FinPulse Hub homepage">/);
+  assert.doesNotMatch(html, /<a class="brand" href="#">/);
+});
