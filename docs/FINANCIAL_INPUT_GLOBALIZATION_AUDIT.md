@@ -25,50 +25,51 @@
 | Tool ID | Tool | Monetary treatment | Initial finding |
 |---|---|---|---|
 | `currency` | Currency Converter | Monetary | Explicit source/target currency fields; source amount breakdown still uses USD fallback. |
+| `mortgage` | Mortgage Calculator | Monetary | No currency field; uses shared USD default. |
+| `loan` | Loan Calculator | Monetary | No currency field; uses shared USD default. |
+| `emi` | EMI Calculator | Monetary | No currency field; uses shared USD default. |
+| `compound` | Compound Interest Calculator | Monetary | No currency field; uses shared USD default. |
+| `percentage` | Percentage Calculator | Non-monetary | Dimensionless percentage operations; no currency formatting. |
+| `tip` | Tip Calculator | Monetary | No currency field; uses shared USD default. |
+| `car` | Auto / Car Loan Calculator | Monetary | No currency field; uses shared USD default. |
+| `amortization` | Loan Amortization Calculator | Monetary | No currency field; uses shared USD default. |
+| `savings` | Savings Goal Calculator | Monetary | No currency field; uses shared USD default. |
+| `freelance` | Freelance Hourly Rate Calculator | Monetary | No currency field; uses shared USD default. |
+| `margin` | Profit Margin Calculator | Monetary | No currency field; uses shared USD default. |
+| `affordability` | Mortgage Affordability Calculator | Monetary | No currency field; uses shared USD default. |
+| `payoff` | Mortgage Payoff & Extra Payment Calculator | Monetary | No currency field; uses shared USD default. |
+| `refinance` | Mortgage Refinance Comparison | Monetary | No currency field; uses shared USD default. |
+| `personal-loan` | Personal Loan Calculator | Monetary | No currency field; uses shared USD default. |
+| `student-loan` | Student Loan Repayment Calculator | Monetary | No currency field; uses shared USD default. |
+| `simple-interest` | Simple Interest Calculator | Monetary | No currency field; uses shared USD default. |
+| `retirement` | Retirement Savings Calculator | Monetary | No currency field; uses shared USD default. |
+| `401k` | 401k Contribution Calculator | Monetary | No currency field; uses shared USD default; US-specific plan. |
+| `ira` | Roth vs Traditional IRA Comparison | Monetary | No currency field; uses shared USD default; US-specific accounts. |
+| `inflation` | Inflation Calculator | Monetary | No currency field; uses shared USD default; inflation presets are country-specific. |
+| `cd` | CD Calculator | Monetary | No currency field; uses shared USD default. |
+| `apy` | APY Calculator | Monetary | No currency field; uses shared USD default. |
+| `tax` | Tax Calculator | Monetary | No currency field; uses shared USD default; tax rate is manual. |
 | `income-tax` | Income Tax Calculator | Monetary | Currency comes from selected tax profile; country/tax year required. |
+| `sales-tax` | Sales Tax Calculator | Monetary | No currency field; uses shared USD default; tax preset needs jurisdiction. |
+| `vat-gst` | VAT / GST Calculator | Monetary | No currency field; uses shared USD default; tax preset needs jurisdiction. |
+| `tax-refund` | Tax Refund Estimator | Monetary | No currency field; uses shared USD default. |
 | `salary` | Salary Take-Home Calculator | Monetary | Currency comes from selected tax profile; country/tax year required. |
+| `paycheck` | Paycheck Calculator | Monetary | No currency field; uses shared USD default; withholding is manual. |
+| `payroll` | Payroll Calculator | Monetary | No currency field; uses shared USD default; employer tax is manual. |
+| `overtime` | Overtime Pay Calculator | Monetary | No currency field; uses shared USD default. |
+| `discount` | Discount Calculator | Monetary | No currency field; uses shared USD default. |
 | `exchange-fees` | Exchange Fee & Markup Calculator | Monetary | Recipient currency is explicit; source amount remains shared USD fallback. |
 | `transfer-compare` | International Money Transfer Cost Calculator | Monetary | Recipient currency is explicit; source amount remains shared USD fallback. |
-# Fi
-# Fi
-# Fi
-# Fi
-# Fi
-# Fi
-# Fi
-# Fi
-# Fi
-# Fi
-# Fi
-# Fi
-# Fi
-# Fi
-# Fi
-# Fi
-# Fi
-# Fi
-# Fi
-# Fi
-# Fi
-# Fi
-# Fi
-# Fi
-# Fi
-# Fi
-# Fi
-# Fi
-# Fi
-# Fi
-# Fi
-# Fi
-# Fi
-# Fi
-# Fi
-# Fi
-# Fi
-# Fi
-# Fi
-| `percentage` | Percentage Calculator | Non-monetary | Dimensionless percentage operations; do not apply currency formatting |
+| `freelance-project` | Freelance Project Pricing Calculator | Monetary | No currency field; uses shared USD default. |
+| `freelancer-net-income` | Freelancer Net Income After Costs Calculator | Monetary | No currency field; uses shared USD default. |
+| `markup` | Markup Calculator | Monetary | No currency field; uses shared USD default. |
+| `break-even` | Break-even Calculator | Monetary | No currency field; uses shared USD default. |
+| `business-roi` | Business ROI Calculator | Monetary | No currency field; uses shared USD default. |
+| `cash-flow` | Cash Flow Projection Calculator | Monetary | No currency field; uses shared USD default. |
+| `rental-yield` | Rental Yield Calculator | Monetary | No currency field; uses shared USD default. |
+| `emergency-fund` | Emergency Fund Calculator | Monetary | No currency field; uses shared USD default. |
+| `net-worth` | Net Worth Calculator | Monetary | No currency field; uses shared USD default. |
+
 **Important:** The monetary classification above identifies money-valued inputs/results, not proof that each calculator has a correct currency selector. All monetary fields in these calculators are plain numeric values. The current global display currency is a separate presentation concern and must be explicitly connected before it can be trusted.
 
 ### 2.2 Additional 5 monetary tools outside Finance
