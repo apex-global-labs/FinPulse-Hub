@@ -334,3 +334,8 @@ Result values must be formatted by locale-aware display functions only after cal
 ## 8. Exact literal extraction update (2026-11-21)
 
 A source-literal catalogue has now been generated for all 220 tool definition segments: 4,724 quoted/template literal occurrences across the ten owning modules, with Tool ID, source file, absolute line, static/dynamic-fragment hint, heuristic protected/candidate classification and surrounding source context. See `MULTILINGUAL_TOOL_STRING_CATALOGUE.md` and its per-module JSON files. An additional 2,212 shared UI/homepage occurrences are catalogued in `MULTILINGUAL_SHARED_UI_STRING_CATALOGUE.md` and three per-source JSON files. These are exhaustive lexical captures for the scoped files, not a human-reviewed translation allowlist; runtime-generated values, imported/core messages and protected interpolation parameters still require review.
+
+
+## 9. String-role and interpolation metadata update (2026-11-21)
+
+All 13 per-source JSON catalogues (10 tool modules + 3 shared UI files) now include heuristic `role`, `classification`, `dynamic`, `parameterCandidates` and `translationStatus` metadata. Dynamic concatenation candidates are marked to protect the interpolated value and translate only surrounding copy. Candidate parameter names/types are not yet semantically verified; the `unknown` type marker is intentional. Every record remains `manual-review-required` until rendered behavior is checked. The catalogue is a broad source inventory, not a safe-to-translate dictionary.
