@@ -200,6 +200,71 @@ test("all 220 registered tools execute with valid representative inputs in deskt
     } catch (error) {
       console.error("Could not persist functional audit artifact: " + error.message);
     }
+    try {
+      const coverage = {
+        "EVERYDAY FINANCE": "Expected-value formula tests: tests/formula.test.cjs",
+        "LOANS & HOUSING": "Expected-value formula tests: tests/formula.test.cjs",
+        "SAVINGS & GROWTH": "Expected-value formula tests: tests/formula.test.cjs",
+        "FREELANCE & BUSINESS": "Expected-value formula tests: tests/formula.test.cjs",
+        "RETIREMENT & INVESTING": "Expected-value formula tests: tests/formula.test.cjs",
+        "TAX & INCOME": "Expected-value formula tests: tests/formula.test.cjs",
+        "PAYROLL & PAY": "Expected-value formula tests: tests/formula.test.cjs",
+        "SHOPPING & PRICING": "Expected-value formula tests: tests/formula.test.cjs",
+        "CURRENCY & TRANSFERS": "Expected-value formula tests: tests/formula.test.cjs",
+        "PROPERTY & PLANNING": "Expected-value formula tests: tests/formula.test.cjs",
+        "PERSONAL FINANCE": "Expected-value formula tests: tests/formula.test.cjs",
+        "MATH & STATISTICS": "Expected-value formula tests: math-batch-1, advanced-math-batch-2; handler regression tests: math-batch-3",
+        "DATE & TIME": "Expected-value date/time core tests and all 25 default handlers: date-time-batch-3",
+        "UNIT & DATA CONVERTERS": "Expected-value conversion-family tests and selected handler outputs: unit-converter.test",
+        "DEVELOPER & TEXT UTILITIES": "Expected-value transformation/logic tests and 20 default-preset executions: developer-tools.test and education-lifestyle.test",
+        "EDUCATION & STUDY TOOLS": "Expected-value calculation tests: education-lifestyle.test",
+        "HOME & CONSTRUCTION ESTIMATES": "Expected-value quantity/area/volume tests: education-lifestyle.test and lifestyle-tools.test",
+        "EVERYDAY LIFESTYLE TOOLS": "Expected-value cost, commission, bill-split and comparison tests: lifestyle-tools.test",
+        "DEVELOPER & EVERYDAY TOOLS": "Generator output, validation and PNG preview tests (QR generator; not a formula calculator)",
+        "HEALTH & WELLNESS · SLEEP": "Expected-value sleep duration/schedule/log tests: health-activity-tools.test",
+        "HEALTH & WELLNESS · PACE & ACTIVITY": "Expected-value pace, speed, distance and race calculation tests: health-activity-tools.test",
+        "HEALTH & WELLNESS · USER-ENTERED TOOLS": "Expected-value interval, duration, activity, step, elevation and log tests: health-wellness-tools.test"
+      };
+      const desktopById = new Map(records.map(row => [row.id, row]));
+      const mobileById = new Map(mobileRecords.map(row => [row.id, row]));
+      const lines = [
+        "# FinPulse Hub — 220-tool functional audit",
+        "",
+        "- Source commit: " + (process.env.GITHUB_SHA || "local"),
+        "- Tools registered: " + records.length,
+        "- Browser executions: " + (records.length + mobileRecords.length) + " (desktop + mobile Chromium)",
+        "- Desktop handler passes: " + records.filter(x => x.status === "representative-handler-passed").length + "/" + records.length,
+        "- Mobile handler passes: " + mobileRecords.filter(x => x.status === "representative-handler-passed").length + "/" + mobileRecords.length,
+        "- Browser runtime/console errors: " + runtimeErrors.length,
+        "- Functional/layout failures: " + failures.length,
+        "",
+        "## Formula / calculation test coverage",
+        "",
+        "The evidence column identifies the existing suite with expected-value formula or logic assertions. These are grouped engine/family tests, not a claim that every tool has a separate standalone test case. The browser sweep independently executes each registered tool handler with representative inputs in both viewports.",
+        "",
+        "| Coverage class | Tools |",
+        "|---|---:|",
+        "| Formula / calculation / transformation expected-value suites | " + records.filter(x => x.id !== "qr-code-generator").length + " |",
+        "| Non-formula generator output and validation suite | " + records.filter(x => x.id === "qr-code-generator").length + " |",
+        "| Render-only tools (no calculation/logic or generator-output suite identified) | " + records.filter(x => !coverage[x.category]).length + " |",
+        "",
+        "## Complete tool inventory",
+        "",
+        "| Tool ID | Tool | Category | Inputs | Desktop | Mobile | Existing calculation-test evidence |",
+        "|---|---|---|---|---|---|---|"
+      ];
+      for (const row of records) {
+        const mobile = mobileById.get(row.id);
+        const inputText = row.fields.map(field => field.key + " (" + field.label.replace(/\\|/g, "/") + ")").join(", ").replace(/\\|/g, "/");
+        const desktopStatus = row.status === "representative-handler-passed" ? "PASS" : "FAIL";
+        const mobileStatus = mobile?.status === "representative-handler-passed" ? "PASS" : "FAIL";
+        lines.push("| " + row.id + " | " + row.name.replace(/\\|/g, "/") + " | " + row.category.replace(/\\|/g, "/") + " | " + inputText + " | " + desktopStatus + " | " + mobileStatus + " | " + (coverage[row.category] || "No formula/logic suite mapped; render/handler smoke only") + " |");
+      }
+      lines.push("", "## Failures", "", failures.length ? failures.map(item => "- " + item.viewport + " — " + item.id + " (" + item.name + "): " + item.issues.join("; ")).join("\\n") : "None", "", "## Browser runtime errors", "", runtimeErrors.length ? runtimeErrors.map(error => "- " + error).join("\\n") : "None", "");
+      await writeFile("artifacts/220-tool-functional-audit.md", lines.join("\\n"));
+    } catch (error) {
+      console.error("Could not persist functional audit Markdown: " + error.message);
+    }
     if (browser) await browser.close();
     if (server) await new Promise(resolve => server.close(resolve));
   }
