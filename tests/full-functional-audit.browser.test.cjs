@@ -56,8 +56,9 @@ test("all 220 registered tools execute with valid representative inputs in deskt
       assert.equal(new Set(tools.map(x => x.id)).size, 220, "tool IDs must be unique");
       assert.equal(new Set(tools.map(x => x.name)).size, 220, "tool names must be unique");
 
+      await page.goto(base + "?tool=" + encodeURIComponent(tools[0].id), { waitUntil: "domcontentloaded" });
       for (const tool of tools) {
-        await page.goto(base + "?tool=" + encodeURIComponent(tool.id), { waitUntil: "domcontentloaded" });
+        await page.locator("#search").fill(tool.name);
         try {
           await page.waitForFunction(
             name => {
