@@ -34,6 +34,7 @@
 
 ## Validation state
 
+- Local V8 runtime smoke: module and app syntax parsed; 16 registry, locale, currency-suggestion, manual-override, RTL, formatting, UI-wiring, package and Pages-packaging checks passed. This is not a substitute for the repository Node/Playwright CI.
 - Static source inspection: script order is `smart-ui.js` → `global-context.js` → `app.js`.
 - Package syntax check includes `global-context.js`.
 - Package test command includes `tests/global-context.test.cjs`.
