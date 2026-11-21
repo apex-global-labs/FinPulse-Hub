@@ -9,7 +9,7 @@ const { join } = require("node:path");
 let server;
 let browser;
 
-test("all 220 registered tools execute their default calculation handler in desktop and mobile Chromium", { timeout: 360000 }, async t => {
+test("all 220 registered tools execute with valid representative inputs in desktop and mobile Chromium", { timeout: 360000 }, async t => {
   server = createServer(async (req, res) => {
     const pathname = decodeURIComponent(new URL(req.url, "http://127.0.0.1").pathname);
     const path = pathname.replace(/^\/+/, "") || "index.html";
@@ -76,6 +76,30 @@ test("all 220 registered tools execute their default calculation handler in desk
           }));
           throw new Error(viewport.name + " failed to render " + tool.id + " (" + tool.name + "): " + JSON.stringify(diagnostic) + "; " + error.message);
         }
+        const firstPreset = page.locator('#app button[data-preset="0"]').first();
+        if (await firstPreset.count()) await firstPreset.click();
+        await page.evaluate(() => {
+          const fields = [...document.querySelectorAll("#app .fields input[name], #app .fields select[name], #app .fields textarea[name]")];
+          for (const el of fields) {
+            if (el.value !== "") continue;
+            if (el.tagName === "SELECT") {
+              const options = [...el.options].filter(option => option.value !== "");
+              if (options.length) el.value = (el.name === "to" && options.length > 1 ? options[1] : options[0]).value;
+            } else if (el.type === "datetime-local") {
+              el.value = el.name === "end" ? "2026-11-21T10:00" : "2026-11-21T09:00";
+            } else if (el.type === "date") {
+              el.value = "2026-11-21";
+            } else if (el.type === "time") {
+              el.value = el.name === "end" ? "10:00" : "09:00";
+            } else if (el.type === "number") {
+              el.value = "1";
+            } else {
+              el.value = el.tagName === "TEXTAREA" ? "FinPulse functional audit sample" : "sample";
+            }
+            el.dispatchEvent(new Event("input", { bubbles: true }));
+            el.dispatchEvent(new Event("change", { bubbles: true }));
+          }
+        });
         const row = await page.evaluate(() => {
           const heading = document.querySelector("#app .heading h2");
           const result = document.querySelector("#app .result .value");
@@ -91,10 +115,15 @@ test("all 220 registered tools execute their default calculation handler in desk
             fields: fields.map(el => ({
               key: el.name,
               label: document.querySelector('label[for="' + CSS.escape(el.id) + '"]')?.textContent.trim() || "",
-              type: el.type || el.tagName.toLowerCase(), value: el.value
+              type: el.type || el.tagName.toLowerCase(), value: el.value,
+              options: el.tagName === "SELECT" ? [...el.options].map(option => ({ value: option.value, selected: option.selected })) : undefined
             })),
             unlabeled: unlabeled.map(el => el.name),
-            horizontalOverflow: document.documentElement.scrollWidth > window.innerWidth + 1
+            horizontalOverflow: document.documentElement.scrollWidth > window.innerWidth + 1,
+            overflowNodes: [...document.querySelectorAll("body *")].map(el => {
+              const rect = el.getBoundingClientRect();
+              return { tag: el.tagName.toLowerCase(), id: el.id, className: typeof el.className === "string" ? el.className : "", width: Math.round(rect.width), right: Math.round(rect.right), scrollWidth: el.scrollWidth, clientWidth: el.clientWidth };
+            }).filter(x => x.width > 0 && (x.right > window.innerWidth + 1 || x.scrollWidth > x.clientWidth + 1)).slice(0, 8)
           };
         });
         const issues = [];
