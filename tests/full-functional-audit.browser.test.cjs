@@ -131,8 +131,8 @@ test("all 220 registered tools execute with valid representative inputs in deskt
             horizontalOverflow: document.documentElement.scrollWidth > window.innerWidth + 1,
             overflowNodes: [...document.querySelectorAll("body *")].map(el => {
               const rect = el.getBoundingClientRect();
-              return { tag: el.tagName.toLowerCase(), id: el.id, className: typeof el.className === "string" ? el.className : "", width: Math.round(rect.width), right: Math.round(rect.right), scrollWidth: el.scrollWidth, clientWidth: el.clientWidth };
-            }).filter(x => x.width > 0 && x.right > window.innerWidth + 1 && !document.getElementById(x.id)?.closest("#categories")).sort((a, b) => b.right - a.right).slice(0, 12)
+              return { tag: el.tagName.toLowerCase(), id: el.id, className: typeof el.className === "string" ? el.className : "", inCategories: !!el.closest("#categories"), width: Math.round(rect.width), right: Math.round(rect.right), scrollWidth: el.scrollWidth, clientWidth: el.clientWidth };
+            }).filter(x => x.width > 0 && x.right > window.innerWidth + 1 && !x.inCategories).sort((a, b) => b.right - a.right).slice(0, 12)
           };
         });
         const issues = [];
