@@ -26,8 +26,9 @@ function setLocale(locale){return update({locale})}
 function setCurrency(currencyCode){return update({currencyCode,currencyMode:"manual"})}
 function setMeasurementSystem(measurementSystem){return update({measurementSystem})}
 function setFinancialJurisdiction(financialJurisdiction){return update({financialJurisdiction})}
-function formatNumber(value,options={}){const opts={...options};return new Intl.NumberFormat(state.locale,opts).format(value)}
-function formatMoney(value,currencyCode=state.currencyCode,options={}){if(!valid(currencyCode,currencies,"code"))throw new RangeError("Unsupported ISO currency code: "+currencyCode);return new Intl.NumberFormat(state.locale,{style:"currency",currency:currencyCode,...options}).format(value)}
+function formatLocale(){return state.locale==="ar"?"ar-u-nu-arab":state.locale==="ur"?"ur-u-nu-arabext":state.locale}
+function formatNumber(value,options={}){const opts={...options};return new Intl.NumberFormat(formatLocale(),opts).format(value)}
+function formatMoney(value,currencyCode=state.currencyCode,options={}){if(!valid(currencyCode,currencies,"code"))throw new RangeError("Unsupported ISO currency code: "+currencyCode);return new Intl.NumberFormat(formatLocale(),{style:"currency",currency:currencyCode,...options}).format(value)}
 function initUI(){if(!root.document)return;const country=root.document.getElementById("global-country"),locale=root.document.getElementById("global-locale"),currency=root.document.getElementById("global-currency"),suggest=root.document.getElementById("global-use-suggested"),hint=root.document.getElementById("global-currency-hint");if(!country||!locale||!currency||!suggest||!hint)return;
 country.innerHTML='<option value="">Choose country / region</option>'+countries.map(c=>'<option value="'+c.code+'">'+escapeHtml(c.name)+' ('+c.code+')</option>').join("");
 locale.innerHTML=locales.map(l=>'<option value="'+l.code+'">'+escapeHtml(l.name)+' · '+l.code+'</option>').join("");
@@ -35,7 +36,7 @@ currency.innerHTML=currencies.map(c=>'<option value="'+c.code+'">'+c.code+' — 
 function render(){country.value=state.countryCode||"";locale.value=state.locale;currency.value=state.currencyCode;const suggestion=suggestedCurrency(state.countryCode);hint.textContent=suggestion?"Country suggestion: "+suggestion+". Selecting a country does not change currency automatically.":"Choose a country to see its primary currency suggestion.";suggest.hidden=!suggestion||suggestion===state.currencyCode}
 country.addEventListener("change",()=>{setCountry(country.value||null);render()});locale.addEventListener("change",()=>{setLocale(locale.value);render()});currency.addEventListener("change",()=>{setCurrency(currency.value);render()});suggest.addEventListener("click",()=>{useSuggestedCurrency();render()});render();publish()}
 function escapeHtml(value){return String(value).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
-const api=Object.freeze({version:1,storageKey:STORAGE_KEY,countries:Object.freeze(countries),currencies:Object.freeze(currencies),locales:Object.freeze(locales),get,update,setCountry,setLocale,setCurrency,setMeasurementSystem,setFinancialJurisdiction,getCountry,suggestedCurrency,useSuggestedCurrency,formatNumber,formatMoney,initUI});
+const api=Object.freeze({version:1,metadata:Object.freeze({snapshotDate:"2026-11-21",countryStandard:"ISO 3166-1 alpha-2",currencyStandard:"ISO 4217",currencyMapping:"Unicode CLDR territory-currency snapshot",localeStandard:"BCP 47"}),storageKey:STORAGE_KEY,countries:Object.freeze(countries),currencies:Object.freeze(currencies),locales:Object.freeze(locales),get,update,setCountry,setLocale,setCurrency,setMeasurementSystem,setFinancialJurisdiction,getCountry,suggestedCurrency,useSuggestedCurrency,formatNumber,formatMoney,initUI});
 if(root.document){if(root.document.readyState==="loading")root.document.addEventListener("DOMContentLoaded",initUI,{once:true});else initUI()}
 return api;
 });
