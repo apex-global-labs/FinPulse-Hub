@@ -144,3 +144,14 @@ The dedicated branch adds five Developer wrap-up tools, twelve Education & Study
 - Updated `docs/TAX_JURISDICTION_AUDIT_2026-11-22.md` with the current 0/50 full-verification status, NY partial scope, and browser failure diagnosis (commit `314b173fe1c168a58b17e8eda0ca350824e1ab1c`).
 - Temporary validation-only PR #69 targets `main` so the repository CI workflow can run (the implementation PR #67 is stacked on a non-main base and does not trigger this workflow). PR #69 is not for merge and will be closed after evidence capture. The fresh CI/browser result is pending.
 - PR #66 and PR #67 remain Draft. No merge or production deployment was performed. User approval remains required before any merge/deployment.
+
+
+## Phase 2D final browser/Lighthouse checkpoint — 2026-11-22 08:07 UTC
+
+- Finance Calculator CI #45000740126: syntax check passed; Node tests **322/322 passed**; Frankfurter API **1/1 passed**; Playwright desktop/mobile browser suite **16/16 passed**.
+- Browser functional audit: **220/220 tools passed desktop and 220/220 passed mobile Chromium** (440 representative executions); zero reported functional failures/runtime errors. Browser test batches report WCAG 2.1 A/AA checks passed across the 220 registered routes, including Bangladesh tax/payroll routes.
+- Candidate Lighthouse #45000740468 passed; all four routes met CLS <= 0.10. Mobile homepage Performance 97 / Accessibility 92 / Best Practices 96 / SEO 100 / CLS 0.000; mobile tool 96 / 100 / 96 / 100 / CLS 0.0303; desktop homepage 100 / 100 / 96 / 100 / CLS 0.000; desktop tool 100 / 100 / 96 / 100 / CLS 0.0087. Mobile homepage Lighthouse Accessibility 92 remains a review item, distinct from the passing route-level WCAG browser checks.
+- Artifacts: [220-tool browser functional audit](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/45000740126/artifacts/14745073902); [Lighthouse reports](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/45000740468/artifacts/14745324368).
+- US official 2026 tax schedule audit remains **0/50 fully verified**; New York is partial only. All state estimates remain provisional.
+- PR #66 and PR #67 remain Draft. Temporary validation PR #70 is closed after evidence capture. No merge or production deployment occurred. User approval is still required.
+- Full audit details: `docs/TAX_JURISDICTION_AUDIT_2026-11-22.md`.
