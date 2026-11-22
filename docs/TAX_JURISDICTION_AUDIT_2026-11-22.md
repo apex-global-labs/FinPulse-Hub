@@ -46,7 +46,7 @@ CRA 2026 payroll guidance lists a federal basic personal amount range of $16,452
 
 **File:** `tax-state-data.js`
 
-The 50 state entries use `statewisenews.com/state-income-tax-rates/` as their shared source, except for Arkansas, South Carolina and West Virginia, which have separate source URLs. A secondary generic source is insufficient evidence for 2026 legal rates and deductions across 47 states.
+The 50 state entries now link to each state’s official tax authority portal. These portal links are discovery references, not proof that the calculator values match the operative 2026 schedules. The current audit has **0/50 fully verified states**. New York has partial official-source verification for its 2026 single and married-joint state rate schedules and standard deductions; its credits, local taxes and other filing-status cases remain incomplete. No state is approved as fully verified.
 
 State rules may include different filing-status brackets, standard deductions, personal exemptions, credits, local income taxes, surtaxes and special schedules. The current UI offers only Single and Married Filing Jointly state filing statuses. Washington DC and US territories are not included.
 
@@ -221,3 +221,24 @@ Official references:
 - Lighthouse CLS budget (<= 0.10) passed on all four routes. Mobile homepage accessibility remains 92 and needs review before final accessibility sign-off.
 - 50-state official schedule verification remains 0/50. All 50 official authority portal links are present, but 2026 brackets, deductions, credits, local taxes and special schedules are not yet individually verified.
 - PR #66 remains Draft. PR #67 is the Phase 2D Draft candidate. No merge or deployment was performed. The temporary validation-only PR #68 was closed without merge.
+
+
+## Recheck — 2026-11-22 08:10 UTC
+
+### US state schedule evidence
+
+- Fully verified: **0/50**.
+- Partially verified: **New York only**. The current NY single and married-filing-jointly progressive state-rate thresholds and rates were checked against the official 2026 IT-2105-I schedule. The $8,000 single and $16,050 married-joint standard deductions were checked against the official 2026 IT-2104-I instructions.
+- NY official references: [IT-2105-I 2026](https://www.tax.ny.gov/pdf/2026/inc/it2105i_2026.pdf), [IT-2104-I 2026](https://www.tax.ny.gov/forms/html-instructions/2026/it/it2104i-2026.htm), [2026 NYS Earned Income Credit parameters](https://www.tax.ny.gov/pit/credits/eitc-parameters.htm).
+- NY remains provisional because the calculator does not model all filing statuses, NYC/Yonkers local taxes, the complete credit catalogue, surtaxes or special cases. The NY EITC reference is evidence of one credit schedule only, not a complete credit audit.
+- All other 49 states remain unverified against their actual 2026 primary-source schedules. Official portal links alone do not satisfy the release gate.
+
+### Browser / accessibility recheck
+
+- Workflow run #45000081990 completed with 13 passing and 3 failing test results (including the parent suite failure). The 220-route final release audit passed WCAG 2.1 A/AA across all 220 unique tool routes.
+- The two root causes were stale text assertions for Bangladesh payroll and disability-dependent disclosure wording; they did not indicate a route-level axe violation. The assertions were aligned with the actual user-facing disclosure in commit `4cc26717240179125f3f613ba85011ae477c9283`.
+- Follow-up code and regression changes are recorded in subsequent commits; a fresh candidate CI run is required before the browser gate can be marked passed. The full suite remains **pending**, not passed.
+
+### Release decision
+
+PR #67 remains Draft. No merge or production deployment has occurred. Keep all US state estimates provisional until the 50-state primary-source audit and regression coverage are complete.
