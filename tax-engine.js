@@ -27,7 +27,7 @@ breakdown.push({component:component.name,tax:due,marginalRate:x.marginalRate,tax
 }else{
 const x=progressive(taxable,p.bands);tax=x.tax;marginalRate=x.marginalRate;breakdown=x.breakdown;
 }
-let stateTax=0,stateTaxableIncome=0,stateName="",stateNote="",stateTaxMode="not-included";
+let stateTax=0,stateTaxableIncome=null,stateName="",stateNote="",stateTaxMode="not-included";
 if(profileId.startsWith("US-")&&stateId&&stateId!=="none"){
 const st=window.FinPulseStateData.states[stateId];if(!st)throw Error("Choose a supported US state.");
 if(!["single","joint"].includes(stateStatus))throw Error("US state filing status reference must be Single or Married Filing Jointly.");
