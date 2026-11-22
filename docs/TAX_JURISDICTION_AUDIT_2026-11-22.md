@@ -374,3 +374,10 @@ Structured contract: `tax-state-contracts-2026-group2.json`. Human-readable cont
 - **CO:** January 2026 official Individual Income Tax Guide describes 2026 federal taxable-income modifications, including overtime addback, tips treatment, high-income deduction addback caps ($1,000 single / $2,000 joint above $300,000 AGI), death-benefit and AmeriCorps subtractions, and AMT. The guide's rate table only lists through 2025 and the DR 0104 forms page currently links 2025/2024 returns; 2026 rate and final return/AMT instructions remain unverified.
 - All four states remain `calculationMode: manual`; `automationReady:false`; numeric golden vectors are blocked pending complete 2026 primary instructions and worksheets. Regression tests now guard both registry mode and engine behavior: no implicit state tax; only explicit manual amount is included.
 - Accessibility is tracked separately in `docs/ACCESSIBILITY_FOLLOW_UP_MOBILE_HOMEPAGE_2026-11-22.md`; mobile homepage Lighthouse Accessibility 92 baseline, artifact 14745908818. No fix or score improvement claimed yet.
+
+## Group 2 regression guard validation checkpoint — 2026-11-22 08:38 UTC
+
+- First CI attempt #45003642110 failed the new regression guard at 325/326 because the test used strict equality for a decimal amount (1234.56) and exposed normal IEEE-754 floating-point representation. No calculation engine defect was indicated; the regression assertion was corrected to use a 1e-6 tolerance in commit `1e0c5cd55a5d6b415345aeb6f44f70e647f92c0f`.
+- Current validation CI #45003689081 on commit `a372458db58f62d087d33e99f1abb9c4ab089700`: syntax check, `npm test`, and Frankfurter API steps have passed; desktop/mobile browser tests remain in progress. The complete CI run is not yet marked successful.
+- Current Lighthouse #45003689076: mobile homepage/tool audit completed successfully; desktop homepage/tool audit is still in progress. No new Lighthouse scores or final success claim yet.
+- All four group-2 states remain manual-only; no numeric golden tax vectors or automatic schedules have been activated.
