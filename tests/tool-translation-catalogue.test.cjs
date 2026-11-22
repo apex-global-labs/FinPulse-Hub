@@ -28,12 +28,23 @@ test("content schema covers all tool page content fields and seven locales",()=>
  for(const rule of ["stableKeys","preserveTokens","preserveTechnicalValues","htmlPolicy","direction","fallback","approval"])assert.ok(schema.fieldRules[rule],rule);
 });
 
-test("every canonical tool has six locale content records with explicit pending state",()=>{
+test("every canonical tool has six locale records with correct draft or pending state",()=>{
  assert.equal(content.tools.length,220);
  assert.deepEqual(content.tools.map(t=>t.id).sort(),mapping.tools.map(t=>t.id).sort());
+ const pilotIds=["currency","mortgage","loan","emi","compound","percentage","tip","car","amortization","savings"];
  for(const tool of content.tools){
   assert.deepEqual(Object.keys(tool.locales).sort(),locales.slice().sort());
-  for(const locale of locales){assert.equal(tool.locales[locale].status,"not-started");assert.deepEqual(tool.locales[locale].fields,{});}
+  for(const locale of locales){
+   if(pilotIds.includes(tool.id)){
+    assert.equal(tool.locales[locale].status,"draft",tool.id+":"+locale);
+    assert.ok(tool.locales[locale].fields.metadata.description,tool.id+":"+locale+" description");
+    assert.deepEqual(tool.locales[locale].fields.inputs.map(input=>input.key),tool.source.inputs.map(input=>input.key),tool.id+":"+locale+" stable input keys");
+    assert.ok(tool.locales[locale].fields.inputs.every(input=>input.label && input.label.trim()),tool.id+":"+locale+" input labels");
+   }else{
+    assert.equal(tool.locales[locale].status,"not-started",tool.id+":"+locale);
+    assert.deepEqual(tool.locales[locale].fields,{});
+   }
+  }
  }
 });
 
@@ -45,5 +56,18 @@ test("first ten tools have source descriptions and stable input-label keys extra
   assert.ok(tool.source.description && tool.source.description.length>15,id+" description");
   assert.ok(Array.isArray(tool.source.inputs) && tool.source.inputs.length>0,id+" inputs");
   assert.equal(new Set(tool.source.inputs.map(input=>input.key)).size,tool.source.inputs.length,id+" duplicate input key");
+ }
+});
+
+test("first ten descriptions and all input labels are drafted in all six target locales",()=>{
+ const firstTen=["currency","mortgage","loan","emi","compound","percentage","tip","car","amortization","savings"];
+ for(const id of firstTen){
+  const tool=content.tools.find(item=>item.id===id);
+  for(const locale of locales){
+   const translated=tool.locales[locale].fields;
+   assert.ok(translated.metadata.description.length>15,id+":"+locale+" description");
+   assert.deepEqual(translated.inputs.map(input=>input.key),tool.source.inputs.map(input=>input.key),id+":"+locale+" input key order");
+   assert.equal(translated.inputs.length,tool.source.inputs.length,id+":"+locale+" input count");
+  }
  }
 });
