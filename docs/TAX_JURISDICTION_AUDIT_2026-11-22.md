@@ -208,3 +208,16 @@ Official references:
 2. Confirm all Phase 2D Node tests and resolve any failures.
 3. Complete browser tests, axe WCAG 2.1 A/AA and mobile/desktop Lighthouse against the final branch.
 4. Review candidate source/effective-date metadata and update this document with exact run IDs and artifact evidence.
+
+## Phase 2D validation checkpoint — 2026-11-22 07:52 UTC
+
+- Candidate code SHA tested: 297abbea4619ec4ce479ae5284e59cdbdd4e161b.
+- Finance Calculator CI #45000081990: syntax check passed; 322/322 Node tests passed; Frankfurter API 1/1 passed. Desktop/mobile Playwright browser step was still running at the checkpoint; no browser pass claim is made yet.
+- Candidate Lighthouse #45000081967 completed successfully:
+  - Mobile homepage: Performance 93, Accessibility 92, Best Practices 96, SEO 100; CLS 0.000; LCP 2,428.7 ms; TBT 245 ms.
+  - Mobile tool route: Performance 93, Accessibility 100, Best Practices 96, SEO 100; CLS 0.0303; LCP 2,801.7 ms; TBT 176 ms.
+  - Desktop homepage: Performance 100, Accessibility 100, Best Practices 96, SEO 100; CLS 0.000; LCP 632.8 ms; TBT 0 ms.
+  - Desktop tool route: Performance 100, Accessibility 100, Best Practices 96, SEO 100; CLS 0.0087; LCP 642.8 ms; TBT 0 ms.
+- Lighthouse CLS budget (<= 0.10) passed on all four routes. Mobile homepage accessibility remains 92 and needs review before final accessibility sign-off.
+- 50-state official schedule verification remains 0/50. All 50 official authority portal links are present, but 2026 brackets, deductions, credits, local taxes and special schedules are not yet individually verified.
+- PR #66 remains Draft. PR #67 is the Phase 2D Draft candidate. No merge or deployment was performed. The temporary validation-only PR #68 was closed without merge.
