@@ -36,3 +36,14 @@ test("every canonical tool has six locale content records with explicit pending 
   for(const locale of locales){assert.equal(tool.locales[locale].status,"not-started");assert.deepEqual(tool.locales[locale].fields,{});}
  }
 });
+
+
+test("first ten tools have source descriptions and stable input-label keys extracted",()=>{
+ const firstTen=["currency","mortgage","loan","emi","compound","percentage","tip","car","amortization","savings"];
+ for(const id of firstTen){
+  const tool=content.tools.find(item=>item.id===id);
+  assert.ok(tool.source.description && tool.source.description.length>15,id+" description");
+  assert.ok(Array.isArray(tool.source.inputs) && tool.source.inputs.length>0,id+" inputs");
+  assert.equal(new Set(tool.source.inputs.map(input=>input.key)).size,tool.source.inputs.length,id+" duplicate input key");
+ }
+});
