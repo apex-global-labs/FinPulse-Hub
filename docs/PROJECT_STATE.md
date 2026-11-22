@@ -155,3 +155,14 @@ The dedicated branch adds five Developer wrap-up tools, twelve Education & Study
 - US official 2026 tax schedule audit remains **0/50 fully verified**; New York is partial only. All state estimates remain provisional.
 - PR #66 and PR #67 remain Draft. Temporary validation PR #70 is closed after evidence capture. No merge or production deployment occurred. User approval is still required.
 - Full audit details: `docs/TAX_JURISDICTION_AUDIT_2026-11-22.md`.
+
+
+## US 50-state tax audit — manual fallback checkpoint (2026-11-22)
+
+- Official 2026 schedule verification remains **0/50 fully verified**; New York remains partial only.
+- Adopted an automation-first, manual-fallback rule. No unverified state bracket/deduction table may be used automatically.
+- All 50 state records declare `calculationMode: "manual"`; registry declares `calculationMode: "manual-only"`.
+- Income Tax Calculator accepts an optional annual manual state tax amount in USD. Only a user-entered amount is added; zero/blank leaves state tax uncalculated. No state schedule, local tax, credit or special case is inferred.
+- Manual input is not independently validated; the user must obtain the amount from an official state source or verified tax record. Results remain incomplete educational estimates.
+- State-by-state official automation remains possible later, but only after primary-source verification and regression tests. No forced or estimated schedule activation.
+- PR #67 remains Draft. No merge or production deployment. Updated branch requires fresh CI, Playwright and Lighthouse validation.
