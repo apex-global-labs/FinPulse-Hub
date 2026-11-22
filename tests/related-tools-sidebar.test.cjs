@@ -31,6 +31,6 @@ test("related tools sidebar has desktop, mobile and print layouts", () => {
 
 test("brand link returns to the canonical homepage from every tool route", () => {
   const html = fs.readFileSync(path.join(root, "index.html"), "utf8");
-  assert.match(html, /<a class="brand" href="https:\/\/apex-global-labs\.github\.io\/FinPulse-Hub\/" aria-label="FinPulse Hub homepage">/);
+  assert.match(html, /<a class="brand" href="https:\/\/apex-global-labs\.github\.io\/FinPulse-Hub\/" aria-label="F FinPulse Hub homepage">/);
   assert.doesNotMatch(html, /<a class="brand" href="#">/);
 });

@@ -108,3 +108,104 @@ The dedicated branch adds five Developer wrap-up tools, twelve Education & Study
 - GitHub Pages deployment [#44511324424](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44511324424) succeeded. Published artifact `github-pages` (artifact ID `14522372777`) was inspected: it contains 220 sitemap tool URLs, a homepage with the 220-tool counter, and `health-wellness-tools.js`.
 - Production Lighthouse [#44511405172](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44511405172) succeeded. Mobile: Performance 95, Accessibility 100, Best Practices 96, SEO 100, CLS 0.000, LCP 1,539.8 ms, TBT 253 ms. Desktop: Performance 100, Accessibility 100, Best Practices 96, SEO 100, CLS 0.0094, LCP 384.3 ms, TBT 0 ms.
 - Verified portfolio: 220/220 unique tools; homepage counter, registry and canonical sitemap all align. Latest verified production commit: `63822f8f43e0e1eb21ca85d0969b7ecb05e52313`.
+
+## Phase 2D tax jurisdiction audit candidate — 2026-11-22
+
+- Production main baseline at audit start: a4983bf8b84e8a2777bbed137ecedb70d74d6011. Production inventory remains 220 tools; no merge or deployment was performed by this Phase 2D candidate.
+- Existing PR #66 remains Draft for Phase 2A–2C. Phase 2D work is isolated on feat/tax-jurisdiction-audit-phase-2d, based on PR #66 candidate head 8b2e83186025bb2c5214b2194fc0752bc9bcd7c0.
+- Canada: candidate now applies 2026 federal BPA, province/territory BPA credits, Manitoba/Yukon phase-outs and Québec federal abatement. Other personal credits and provincial surtaxes remain excluded.
+- Bangladesh: candidate adds Tk 50,000 per eligible disabled dependent child and corrects Tk 5,000 minimum-tax boundary logic. Bangladesh payroll statutory withholding is explicitly marked not configured; Salary Take-Home is not a statutory net-pay estimate.
+- US states: all 50 state tax authority portal links replace the previous shared secondary source. 0/50 2026 rate schedules are marked fully verified; data remains provisional until each official schedule, deduction, credit and local-tax scope is reconciled.
+- New tax regression tests and Bangladesh mobile browser/axe checks have been added. Final CI, browser, accessibility and Lighthouse evidence is pending.
+- Audit details: docs/TAX_JURISDICTION_AUDIT_2026-11-22.md. State source register: tax-state-data.js.
+- Release gate: do not merge PR #66 or Phase 2D work and do not deploy until all tax-specific validation succeeds and the 50-state verification blocker is resolved. User approval is required before merge/deployment.
+
+## Phase 2D validation checkpoint — 2026-11-22 07:52 UTC
+
+- Candidate code SHA tested: 297abbea4619ec4ce479ae5284e59cdbdd4e161b.
+- Finance Calculator CI #45000081990: syntax check passed; 322/322 Node tests passed; Frankfurter API 1/1 passed. Desktop/mobile Playwright browser step was still running at the checkpoint; no browser pass claim is made yet.
+- Candidate Lighthouse #45000081967 completed successfully:
+  - Mobile homepage: Performance 93, Accessibility 92, Best Practices 96, SEO 100; CLS 0.000; LCP 2,428.7 ms; TBT 245 ms.
+  - Mobile tool route: Performance 93, Accessibility 100, Best Practices 96, SEO 100; CLS 0.0303; LCP 2,801.7 ms; TBT 176 ms.
+  - Desktop homepage: Performance 100, Accessibility 100, Best Practices 96, SEO 100; CLS 0.000; LCP 632.8 ms; TBT 0 ms.
+  - Desktop tool route: Performance 100, Accessibility 100, Best Practices 96, SEO 100; CLS 0.0087; LCP 642.8 ms; TBT 0 ms.
+- Lighthouse CLS budget (<= 0.10) passed on all four routes. Mobile homepage accessibility remains 92 and needs review before final accessibility sign-off.
+- 50-state official schedule verification remains 0/50. All 50 official authority portal links are present, but 2026 brackets, deductions, credits, local taxes and special schedules are not yet individually verified.
+- PR #66 remains Draft. PR #67 is the Phase 2D Draft candidate. No merge or deployment was performed. The temporary validation-only PR #68 was closed without merge.
+
+
+## Phase 2D release-gate recheck — 2026-11-22 08:00 UTC
+
+- Finance CI run #45000081990 has now completed. Syntax, 322/322 Node tests and Frankfurter API 1/1 passed. The browser job failed: TAP reported 13 passing and 3 failing results (including a parent suite failure). Root causes were two outdated Bangladesh disclosure text assertions, not failures in the 220-route axe audit.
+- The final browser release audit in that same run passed all 220 unique tool routes against WCAG 2.1 A/AA. All 220 routes rendered; this does not convert the overall browser suite to Pass while the separate Bangladesh interaction assertions fail.
+- Updated the payroll/disability-disclosure browser assertions in commit `4cc26717240179125f3f613ba85011ae477c9283`.
+- Official US state audit: **0/50 fully verified**. New York is recorded as partial only: 2026 NYS single and married-joint rate schedules plus standard deductions checked against official NY tax publications. Credits, NYC/Yonkers local tax, other filing statuses, surtaxes and special cases remain incomplete. New York does not count toward the fully verified total. All state estimates remain provisional.
+- Added NY partial provenance and a matching regression assertion in commits `a577327ee1e9e6739e52d4cfdafa82046d8bc0f1` and `c05c1812cce859a16308bc60103c17953fe96087`.
+- Updated `docs/TAX_JURISDICTION_AUDIT_2026-11-22.md` with the current 0/50 full-verification status, NY partial scope, and browser failure diagnosis (commit `314b173fe1c168a58b17e8eda0ca350824e1ab1c`).
+- Temporary validation-only PR #69 targets `main` so the repository CI workflow can run (the implementation PR #67 is stacked on a non-main base and does not trigger this workflow). PR #69 is not for merge and will be closed after evidence capture. The fresh CI/browser result is pending.
+- PR #66 and PR #67 remain Draft. No merge or production deployment was performed. User approval remains required before any merge/deployment.
+
+
+## Phase 2D final browser/Lighthouse checkpoint — 2026-11-22 08:07 UTC
+
+- Finance Calculator CI #45000740126: syntax check passed; Node tests **322/322 passed**; Frankfurter API **1/1 passed**; Playwright desktop/mobile browser suite **16/16 passed**.
+- Browser functional audit: **220/220 tools passed desktop and 220/220 passed mobile Chromium** (440 representative executions); zero reported functional failures/runtime errors. Browser test batches report WCAG 2.1 A/AA checks passed across the 220 registered routes, including Bangladesh tax/payroll routes.
+- Candidate Lighthouse #45000740468 passed; all four routes met CLS <= 0.10. Mobile homepage Performance 97 / Accessibility 92 / Best Practices 96 / SEO 100 / CLS 0.000; mobile tool 96 / 100 / 96 / 100 / CLS 0.0303; desktop homepage 100 / 100 / 96 / 100 / CLS 0.000; desktop tool 100 / 100 / 96 / 100 / CLS 0.0087. Mobile homepage Lighthouse Accessibility 92 remains a review item, distinct from the passing route-level WCAG browser checks.
+- Artifacts: [220-tool browser functional audit](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/45000740126/artifacts/14745073902); [Lighthouse reports](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/45000740468/artifacts/14745324368).
+- US official 2026 tax schedule audit remains **0/50 fully verified**; New York is partial only. All state estimates remain provisional.
+- PR #66 and PR #67 remain Draft. Temporary validation PR #70 is closed after evidence capture. No merge or production deployment occurred. User approval is still required.
+- Full audit details: `docs/TAX_JURISDICTION_AUDIT_2026-11-22.md`.
+
+
+## US 50-state tax audit — manual fallback checkpoint (2026-11-22)
+
+- Official 2026 schedule verification remains **0/50 fully verified**; New York remains partial only.
+- Adopted an automation-first, manual-fallback rule. No unverified state bracket/deduction table may be used automatically.
+- All 50 state records declare `calculationMode: "manual"`; registry declares `calculationMode: "manual-only"`.
+- Income Tax Calculator accepts an optional annual manual state tax amount in USD. Only a user-entered amount is added; zero/blank leaves state tax uncalculated. No state schedule, local tax, credit or special case is inferred.
+- Manual input is not independently validated; the user must obtain the amount from an official state source or verified tax record. Results remain incomplete educational estimates.
+- State-by-state official automation remains possible later, but only after primary-source verification and regression tests. No forced or estimated schedule activation.
+- PR #67 remains Draft. No merge or production deployment. Updated branch requires fresh CI, Playwright and Lighthouse validation.
+
+## Phase 2D — first-group US state evidence checkpoint (candidate only) — 2026-11-22
+
+- Candidate branch: feat/tax-jurisdiction-audit-phase-2d; PR #67 remains Draft.
+- Eight states (AK, FL, NV, NH, SD, TN, TX, WY) now have official-source evidence that no state individual income tax applies for tax year 2026 and use automatic-zero in the Income Tax Calculator.
+- Washington remains manual-only because the calculator does not model its separate capital-gains tax and must preserve the effective date of its new high-income individual income tax (2028-01-01). New York remains partial. Other states remain manual-only.
+- Audit metrics: 8/50 no-individual-income-tax statuses verified; 0/50 positive-rate state schedules fully verified. These metrics are deliberately separate.
+- Salary Take-Home continues to exclude US state/local withholding; automatic-zero state selection applies only to the Income Tax Calculator.
+- Candidate CI #45002175312: npm run check passed, Node tests 322/322 passed, Frankfurter 1/1 passed; browser suite failed 12/16 due to stale California disclosure expectation and a Salary Take-Home missing-selector bug. Candidate fixes committed; fresh CI required.
+- Lighthouse #45002175310 succeeded; artifact 14746721249 uploaded. Score values not yet extracted.
+- No merge, production deployment, or production claim. See docs/TAX_JURISDICTION_AUDIT_2026-11-22.md for official source links, effective-date scope and details.
+
+## Phase 2D validation follow-up — 2026-11-22 08:28 UTC
+
+- Latest test-contract correction: CI #45002813258 failed 1/324 Node tests (323 passed) because a registry test still expected manual-only for all 50 states. Updated the assertion for eight verified-zero states and remaining manual-only records; commit 5a8c6ed397b00ba633c830c079a0211025ce4fa5.
+- Fresh validation CI #45002913438: syntax, npm test and Frankfurter API passed; browser tests still in progress at this checkpoint.
+- Fresh candidate Lighthouse #45002913442 still in progress; no scores or browser pass claimed.
+- No merge or production deployment.
+
+## CI/Lighthouse release-gate and next state group — 2026-11-22 08:31 UTC
+
+- Validation-only PR #71 candidate SHA a605ed3022f45a1853e85550bef1b8eb87d2beb1 passed CI #45002913438: syntax, 324/324 Node tests, 1/1 Frankfurter API, 16/16 browser tests, 220/220 desktop tool executions, 220/220 mobile tool executions, zero functional failures/runtime errors and all 220 route WCAG 2.1 A/AA checks.
+- Lighthouse #45002913442 succeeded. Mobile homepage 96/92/96/100 (CLS 0); mobile tool 96/100/96/100 (CLS 0.0303); desktop homepage 100/100/96/100 (CLS 0); desktop tool 100/100/96/100 (CLS 0.0087). CLS budget 0.10 passed on all routes. Mobile homepage accessibility 92 is a follow-up improvement opportunity.
+- Artifacts: CI 14745749524; Lighthouse 14745908818.
+- Second-group source triage started for IL, IN, MI, CO. Official evidence confirms some 2026 rates/exemptions, but local county tax, credits, special deductions, retirement/capital-gains rules, AMT, and/or missing 2026 rate confirmation prevent safe full automation. All four remain manual-only.
+- Tax audit totals unchanged: 8/50 verified no-individual-income-tax statuses; 0/50 fully verified positive-rate state schedules.
+- PR #67 remains Draft; PR #71 remains validation-only. No merge or production deployment.
+
+## Group 2 2026 tax contract and test guard — 2026-11-22
+
+- Added `tax-state-contracts-2026-group2.json` and `docs/TAX_STATE_CALCULATION_CONTRACTS_2026_GROUP2.md` for IL, IN, MI and CO. Official-source facts and unresolved 2026 rule areas are separated explicitly.
+- Full 2026 instructions are not complete/available for all four: Illinois IL-1040 instructions are listed as coming soon; Indiana's current individual forms page still lists 2025 booklets; Michigan's full booklet available at audit time is 2025 (2026 rate and withholding exemption separately confirmed); Colorado's January 2026 guide lacks a 2026 rate in its published rate table and DR 0104 page links 2025/2024 forms.
+- All four remain manual-only. No engine/state calculation activation occurred. Added formula tests that assert the manual-only registry and explicit manual input behavior for all four states. Numeric golden vectors are blocked until complete 2026 official return instructions and schedules are available.
+- Separate mobile homepage accessibility follow-up created: `docs/ACCESSIBILITY_FOLLOW_UP_MOBILE_HOMEPAGE_2026-11-22.md`. Baseline Lighthouse mobile homepage Accessibility 92; artifact 14745908818. Audit details and targeted remediation remain pending; no improvement claimed.
+- Tax audit totals unchanged: 8/50 verified no-individual-income-tax statuses; 0/50 fully verified positive-rate schedules.
+- PR #67 remains Draft; PR #71 validation-only. No merge or deployment.
+
+## Group 2 test run status — 2026-11-22 08:38 UTC
+
+- A first CI attempt found one test-only floating-point exact-equality issue (325/326 passed). The test now uses tolerance 1e-6 for decimal values; tax engine behavior was unchanged.
+- Current validation CI #45003689081: syntax, npm test and Frankfurter API steps passed; browser tests remain in progress.
+- Current Lighthouse #45003689076: mobile audits passed; desktop audits remain in progress. No final CI/Lighthouse pass claim or new scores yet.
+- IL, IN, MI, CO remain manual-only. No automation activation.

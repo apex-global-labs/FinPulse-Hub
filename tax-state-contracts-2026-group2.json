@@ -1,0 +1,215 @@
+{
+  "schemaVersion": 1,
+  "taxYear": 2026,
+  "group": [
+    "IL",
+    "IN",
+    "MI",
+    "CO"
+  ],
+  "status": "research-incomplete",
+  "policy": "manual-only-until-final-2026-primary-instructions-and-golden-regression-vectors-are-complete",
+  "engineChange": "none",
+  "commonContract": {
+    "currency": "USD",
+    "incomeBasis": "annual individual income tax estimate; not payroll withholding",
+    "inputsRequired": [
+      "grossIncome",
+      "federalFilingStatus",
+      "residencyType",
+      "incomeSourceCategories"
+    ],
+    "outputsRequired": [
+      "stateTaxableIncome",
+      "preCreditTax",
+      "credits",
+      "localIncomeTax",
+      "finalStateAndLocalTax",
+      "calculationDisclosure"
+    ],
+    "mandatoryRules": [
+      "year-effective source citations per rule",
+      "resident/part-year/nonresident allocation",
+      "federal conformity and state modifications",
+      "deductions and exemptions",
+      "nonrefundable/refundable credits",
+      "local income tax where applicable",
+      "reciprocity and other-state tax credits",
+      "tax-year-specific rounding",
+      "boundary and invalid-input tests"
+    ],
+    "notSupportedUntilExplicitlyImplemented": [
+      "business/pass-through special cases",
+      "complex capital gains and retirement elections",
+      "AMT unless fully modeled",
+      "city/county local tax unless location inputs exist",
+      "multi-state allocation outside documented supported cases"
+    ]
+  },
+  "states": {
+    "IL": {
+      "calculationMode": "manual",
+      "automationReady": false,
+      "sourceStatus": "2026 primary draft schedules available; complete 2026 IL-1040 instructions not yet posted (instructions column says coming soon).",
+      "verifiedFacts": {
+        "ratePercent": 4.95,
+        "baseModel": "federal AGI plus Illinois additions minus Illinois subtractions equals Illinois base income; subtract applicable exemption allowances before applying the flat rate",
+        "personalExemption2026": 2925,
+        "additionalExemptionAge65OrBlind": 1000,
+        "exemptionAGILimit": {
+          "singleAndOther": 250000,
+          "joint": 500000
+        },
+        "rounding": "whole dollars; drop cents below 0.50 and round 0.50 or more upward",
+        "reciprocityWageStates": [
+          "IA",
+          "KY",
+          "MI",
+          "WI"
+        ]
+      },
+      "contractRequirements": [
+        "2026 IL-1040 instructions when released",
+        "2026 Schedule M additions/subtractions",
+        "Schedule IL-E/EITC dependent exemption, EITC and under-12 child credit worksheets",
+        "Schedule ICR credits",
+        "Schedule CR other-state credit",
+        "Schedule NR resident/nonresident allocation",
+        "all filing-status and exemption phaseout cases",
+        "reciprocity and non-wage income exceptions"
+      ],
+      "officialSources": [
+        "https://tax.illinois.gov/taxprofessionals/draft-forms/individual-income-tax-draft-forms.html",
+        "https://tax.illinois.gov/questionsandanswers/answer.851.html",
+        "https://tax.illinois.gov/forms/incometax/currentyear/individual/il-1040-instr/general-information.html",
+        "https://tax.illinois.gov/content/dam/soi/en/web/tax/taxprofessionals/draft-forms/documents/iit-draft-forms/2026-iit-vendor-forms-and-instructions/2026-sch-il-e-eitc-instr-vendor.pdf"
+      ],
+      "goldenVectors": "blocked-until-complete-2026-il-1040-instructions-and-all-supporting-schedules-are-final"
+    },
+    "IN": {
+      "calculationMode": "manual",
+      "automationReady": false,
+      "sourceStatus": "2026 DOR Tax Chapter and county rate schedule are available; 2026 IT-40/IT-40PNR full individual instructions and full schedules were not present on current-year forms page at audit time (2025 booklets still listed).",
+      "verifiedFacts": {
+        "stateRatePercent": 2.95,
+        "countyTax": "separate county income tax applies; 2026 county rates effective October 1, 2026 are published in Departmental Notice 1",
+        "federalConformity": "IRC as amended and in effect January 1, 2026, subject to Indiana modifications",
+        "taxYear2026OnlyDeductions": [
+          "qualified tips",
+          "qualified overtime compensation",
+          "qualified passenger-vehicle loan interest"
+        ],
+        "nonresidentQualifiedInvestmentPartnershipIncome": "excluded effective January 1, 2026 when statutory qualified partnership conditions are met"
+      },
+      "contractRequirements": [
+        "2026 IT-40 full instructions and schedules 1-7, IN-DEP, CT-40",
+        "2026 IT-40PNR instructions and county schedule CT-40PNR",
+        "county of residence/principal employment and nonresident county-source allocation",
+        "state and county rate stacking and caps",
+        "dependent exemptions, elderly/adoption/EITC and other credits",
+        "2026-only tips/overtime/vehicle-interest eligibility, limits and filing-status restrictions",
+        "IRC conformity/add-backs including research and qualified production property",
+        "reciprocity and nonresident sourcing",
+        "tax rounding"
+      ],
+      "officialSources": [
+        "https://www.in.gov/dor/files/tax-chapter.pdf",
+        "https://www.in.gov/dor/files/dn01.pdf",
+        "https://www.in.gov/dA/9bd4adadb4/ib128.pdf?language_id=1",
+        "https://www.in.gov/dor/tax-forms/individual/current/"
+      ],
+      "goldenVectors": "blocked-until-2026-it-40-and-it-40pnr-instructions-and-county-worksheets-are-published-and-verified"
+    },
+    "MI": {
+      "calculationMode": "manual",
+      "automationReady": false,
+      "sourceStatus": "2026 rate and withholding exemption are officially published; full 2026 MI-1040 instructions were not located. The currently indexed 40-page MI-1040 booklet is explicitly labeled tax year 2025 and must not be treated as 2026 final-return instructions.",
+      "verifiedFacts": {
+        "ratePercent": 4.25,
+        "personalExemptionWithholding2026": 5900,
+        "federalBase": "federal AGI with Michigan additions and subtractions; Michigan exemption then applied",
+        "reciprocalWageStates": [
+          "IL",
+          "IN",
+          "KY",
+          "MN",
+          "OH",
+          "WI"
+        ],
+        "localIncomeTax": "city income taxes are separate; Detroit individual return is administered through Treasury"
+      },
+      "contractRequirements": [
+        "final 2026 MI-1040 booklet and Schedule 1/NR/4884 instructions",
+        "2026 personal exemption and age/blind/dependent rules for final liability (do not assume withholding certificate equals all return rules)",
+        "2026 retirement/pension and Social Security subtractions including birth-year transition",
+        "city income taxes including Detroit and any supported city-rate inputs",
+        "property tax/farmland/EITC/other credits",
+        "other-state tax credit",
+        "resident/part-year/nonresident allocation and reciprocity",
+        "2026 additions/decoupling and rounding"
+      ],
+      "officialSources": [
+        "https://www.michigan.gov/treasury/reference/taxpayer-notices/2026/04/15/425-income-tax-rate-for-individuals-and-fiduciaries-in-2026-tax-year",
+        "https://www.michigan.gov/taxes/business-taxes/withholding/calendar-year-tax-information",
+        "https://www.michigan.gov/taxes/-/media/Project/Websites/taxes/Forms/IIT/TY2025/MI-1040-Book.pdf",
+        "https://www.michigan.gov/treasury/reference/taxpayer-notices/2025/11/17/social-security-taxation-changes-in-public-act-24-of-2025",
+        "https://www.michigan.gov/treasury/reference/taxpayer-notices/2026/02/25/decoupling-michigan-income-taxes-from-certain-internal-revenue-code-provisions"
+      ],
+      "goldenVectors": "blocked-until-final-2026-mi-1040-and-retirement-city-tax-schedules-are-verified"
+    },
+    "CO": {
+      "calculationMode": "manual",
+      "automationReady": false,
+      "sourceStatus": "January 2026 official Individual Income Tax Guide contains 2026 law changes; current DR 0104 page still links 2025/2024 forms and guide's rate table only lists through 2025. No official 2026 rate located.",
+      "verifiedFacts": {
+        "baseModel": "federal taxable income plus Colorado additions minus Colorado subtractions",
+        "rate2025Percent": 4.4,
+        "rate2026Percent": null,
+        "highIncomeFederalDeductionAddback": {
+          "agiThreshold": 300000,
+          "singleLimit": 1000,
+          "jointLimit": 2000,
+          "appliesTaxYears": "2026 and later"
+        },
+        "overtimeDeduction": "full federal Schedule 1-A overtime deduction is added back for 2026 and later",
+        "qualifiedTips": "no Colorado addback for federal qualified tips deduction",
+        "newSubtractions2026": [
+          "included death benefits",
+          "Segal AmeriCorps Education Award"
+        ],
+        "alternativeMinimumTax": true,
+        "filingStatus": "same as federal; joint federal return generally requires joint Colorado return"
+      },
+      "contractRequirements": [
+        "official 2026 rate and 2026 DR 0104/DR 0104PN/DR 0104AMT forms and instructions",
+        "complete federal taxable income modifications",
+        "2026 deduction addback limits and AGI threshold",
+        "2026 OBBBA overtime/tips treatment",
+        "credits and refundability",
+        "AMT computation and threshold",
+        "part-year/nonresident sourcing and apportionment",
+        "state tax deduction addback and SALT parity/QBI interactions",
+        "rounding and tax table rules"
+      ],
+      "officialSources": [
+        "https://tax.colorado.gov/individual-income-tax-guide",
+        "https://tax.colorado.gov/DR0104",
+        "https://tax.colorado.gov/sites/tax/files/documents/Individual_Income_Tax_Guide_January_2026.pdf",
+        "https://tax.colorado.gov/sites/default/files/documents/DR_0104EP_2026.pdf"
+      ],
+      "goldenVectors": "blocked-until-2026-rate-and-final-dr-0104-instructions-and-amt-schedule-are-available"
+    }
+  },
+  "regressionGate": {
+    "status": "prepared-not-activated",
+    "requiredTests": [
+      "all four state records remain calculationMode manual",
+      "no state-specific automatic tax is calculated for these four states",
+      "manual entered state tax remains explicit and separately disclosed",
+      "golden vectors for filing-status boundaries, income thresholds, county/city tax, credits, residency and rounding",
+      "differential comparison against official sample returns or state worksheets",
+      "browser tests confirm manual-only disclosure and no misleading zero estimate"
+    ],
+    "activationRule": "Only switch an individual state to automatic after its official 2026 instruction set is complete, all supported features are implemented, golden regression vectors pass, browser/accessibility checks pass, and the audit is reviewed."
+  }
+}
