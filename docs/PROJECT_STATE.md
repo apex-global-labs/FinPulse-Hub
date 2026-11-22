@@ -177,3 +177,10 @@ The dedicated branch adds five Developer wrap-up tools, twelve Education & Study
 - Candidate CI #45002175312: npm run check passed, Node tests 322/322 passed, Frankfurter 1/1 passed; browser suite failed 12/16 due to stale California disclosure expectation and a Salary Take-Home missing-selector bug. Candidate fixes committed; fresh CI required.
 - Lighthouse #45002175310 succeeded; artifact 14746721249 uploaded. Score values not yet extracted.
 - No merge, production deployment, or production claim. See docs/TAX_JURISDICTION_AUDIT_2026-11-22.md for official source links, effective-date scope and details.
+
+## Phase 2D validation follow-up — 2026-11-22 08:28 UTC
+
+- Latest test-contract correction: CI #45002813258 failed 1/324 Node tests (323 passed) because a registry test still expected manual-only for all 50 states. Updated the assertion for eight verified-zero states and remaining manual-only records; commit 5a8c6ed397b00ba633c830c079a0211025ce4fa5.
+- Fresh validation CI #45002913438: syntax, npm test and Frankfurter API passed; browser tests still in progress at this checkpoint.
+- Fresh candidate Lighthouse #45002913442 still in progress; no scores or browser pass claimed.
+- No merge or production deployment.
