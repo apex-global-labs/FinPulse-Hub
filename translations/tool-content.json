@@ -22,7 +22,30 @@
         "title": "Currency Converter",
         "category": "Finance & Money",
         "subcategory": "Currency & Money Transfer",
-        "file": "app.js"
+        "file": "app.js",
+        "description": "Convert between currencies using the latest published reference rate, or enter a rate manually.",
+        "inputs": [
+          {
+            "key": "amount",
+            "label": "Amount"
+          },
+          {
+            "key": "rate",
+            "label": "Exchange rate"
+          },
+          {
+            "key": "fee",
+            "label": "Provider fee (%)"
+          },
+          {
+            "key": "from",
+            "label": "From currency"
+          },
+          {
+            "key": "to",
+            "label": "To currency"
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -49,7 +72,8 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-title-description-inputs-extracted"
     },
     {
       "id": "mortgage",
@@ -57,7 +81,30 @@
         "title": "Mortgage Calculator",
         "category": "Finance & Money",
         "subcategory": "Mortgage Calculators",
-        "file": "app.js"
+        "file": "app.js",
+        "description": "Estimate monthly principal and interest, total borrowing cost and balance trend.",
+        "inputs": [
+          {
+            "key": "principal",
+            "label": "Home price / loan amount"
+          },
+          {
+            "key": "down",
+            "label": "Down payment"
+          },
+          {
+            "key": "rate",
+            "label": "Annual interest rate (%)"
+          },
+          {
+            "key": "years",
+            "label": "Loan term (years)"
+          },
+          {
+            "key": "extra",
+            "label": "Extra monthly payment"
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -84,7 +131,8 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-title-description-inputs-extracted"
     },
     {
       "id": "loan",
@@ -92,7 +140,26 @@
         "title": "Loan Calculator",
         "category": "Finance & Money",
         "subcategory": "Loan Calculators",
-        "file": "app.js"
+        "file": "app.js",
+        "description": "Estimate a fixed-rate loan payment and total borrowing cost.",
+        "inputs": [
+          {
+            "key": "principal",
+            "label": "Loan amount"
+          },
+          {
+            "key": "rate",
+            "label": "Annual interest rate (%)"
+          },
+          {
+            "key": "years",
+            "label": "Loan term (years)"
+          },
+          {
+            "key": "extra",
+            "label": "Extra monthly payment"
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -119,7 +186,8 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-title-description-inputs-extracted"
     },
     {
       "id": "emi",
@@ -127,7 +195,22 @@
         "title": "EMI Calculator",
         "category": "Finance & Money",
         "subcategory": "Loan Calculators",
-        "file": "app.js"
+        "file": "app.js",
+        "description": "Calculate the equal monthly instalment for a reducing-balance loan.",
+        "inputs": [
+          {
+            "key": "principal",
+            "label": "Principal amount"
+          },
+          {
+            "key": "rate",
+            "label": "Annual interest rate (%)"
+          },
+          {
+            "key": "years",
+            "label": "Loan tenure (years)"
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -154,7 +237,8 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-title-description-inputs-extracted"
     },
     {
       "id": "compound",
@@ -162,7 +246,30 @@
         "title": "Compound Interest Calculator",
         "category": "Finance & Money",
         "subcategory": "Investment & Return Calculators",
-        "file": "app.js"
+        "file": "app.js",
+        "description": "Explore growth from a starting balance, regular deposits and an assumed rate.",
+        "inputs": [
+          {
+            "key": "principal",
+            "label": "Starting amount"
+          },
+          {
+            "key": "deposit",
+            "label": "Monthly deposit"
+          },
+          {
+            "key": "rate",
+            "label": "Annual assumed rate (%)"
+          },
+          {
+            "key": "altRate",
+            "label": "Comparison annual rate (%)"
+          },
+          {
+            "key": "years",
+            "label": "Time period (years)"
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -189,7 +296,8 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-title-description-inputs-extracted"
     },
     {
       "id": "percentage",
@@ -197,7 +305,22 @@
         "title": "Percentage Calculator",
         "category": "Finance & Money",
         "subcategory": "Percentage & Everyday Calculators",
-        "file": "app.js"
+        "file": "app.js",
+        "description": "Calculate a percentage, percentage change or reverse percentage.",
+        "inputs": [
+          {
+            "key": "mode",
+            "label": "Calculation mode"
+          },
+          {
+            "key": "a",
+            "label": "First value"
+          },
+          {
+            "key": "b",
+            "label": "Second value / percentage"
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -224,7 +347,8 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-title-description-inputs-extracted"
     },
     {
       "id": "tip",
@@ -232,7 +356,22 @@
         "title": "Tip Calculator",
         "category": "Finance & Money",
         "subcategory": "Shopping & Everyday Calculators",
-        "file": "app.js"
+        "file": "app.js",
+        "description": "Calculate a tip, the total bill and an even split.",
+        "inputs": [
+          {
+            "key": "bill",
+            "label": "Bill amount"
+          },
+          {
+            "key": "tip",
+            "label": "Tip (%)"
+          },
+          {
+            "key": "people",
+            "label": "Number of people"
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -259,7 +398,8 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-title-description-inputs-extracted"
     },
     {
       "id": "car",
@@ -267,7 +407,38 @@
         "title": "Auto / Car Loan Calculator",
         "category": "Finance & Money",
         "subcategory": "Loan Calculators",
-        "file": "app.js"
+        "file": "app.js",
+        "description": "Estimate a vehicle loan payment after down payment, trade-in and fees.",
+        "inputs": [
+          {
+            "key": "price",
+            "label": "Vehicle price"
+          },
+          {
+            "key": "down",
+            "label": "Down payment"
+          },
+          {
+            "key": "trade",
+            "label": "Trade-in value"
+          },
+          {
+            "key": "rate",
+            "label": "Annual interest rate (%)"
+          },
+          {
+            "key": "years",
+            "label": "Loan term (years)"
+          },
+          {
+            "key": "fees",
+            "label": "Fees added to loan"
+          },
+          {
+            "key": "extra",
+            "label": "Extra monthly payment"
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -294,7 +465,8 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-title-description-inputs-extracted"
     },
     {
       "id": "amortization",
@@ -302,7 +474,26 @@
         "title": "Loan Amortization Calculator",
         "category": "Finance & Money",
         "subcategory": "Loan Calculators",
-        "file": "app.js"
+        "file": "app.js",
+        "description": "See how a payment is split between principal and interest over time, with an optional extra monthly amount.",
+        "inputs": [
+          {
+            "key": "principal",
+            "label": "Loan amount"
+          },
+          {
+            "key": "rate",
+            "label": "Annual interest rate (%)"
+          },
+          {
+            "key": "years",
+            "label": "Loan term (years)"
+          },
+          {
+            "key": "extra",
+            "label": "Extra monthly payment"
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -329,7 +520,8 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-title-description-inputs-extracted"
     },
     {
       "id": "savings",
@@ -337,7 +529,30 @@
         "title": "Savings Goal Calculator",
         "category": "Finance & Money",
         "subcategory": "Savings & Personal Finance",
-        "file": "app.js"
+        "file": "app.js",
+        "description": "Estimate the monthly deposit needed to reach a savings target.",
+        "inputs": [
+          {
+            "key": "goal",
+            "label": "Savings target"
+          },
+          {
+            "key": "current",
+            "label": "Current savings"
+          },
+          {
+            "key": "rate",
+            "label": "Annual assumed interest (%)"
+          },
+          {
+            "key": "altRate",
+            "label": "Comparison annual interest (%)"
+          },
+          {
+            "key": "years",
+            "label": "Time available (years)"
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -364,7 +579,8 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-title-description-inputs-extracted"
     },
     {
       "id": "freelance",
