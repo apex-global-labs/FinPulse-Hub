@@ -20,7 +20,8 @@
     "expectedToolCount": 220,
     "actualToolCount": 220,
     "uniqueToolIdCount": 220,
-    "translatedTitlePilotCount": 10
+    "translatedTitlePilotCount": 10,
+    "reviewedTitlePilotCount": 10
   },
   "tools": [
     {
@@ -37,7 +38,9 @@
         "ja": "通貨換算ツール",
         "ru": "Конвертер валют"
       },
-      "status": "title-translated-review-required"
+      "status": "title-translated-review-required",
+      "titleReviewStatus": "ai-reviewed-native-review-pending",
+      "titleReviewNote": "Uses the standard currency-conversion term; currency codes and ISO identifiers remain unchanged."
     },
     {
       "id": "mortgage",
@@ -53,7 +56,9 @@
         "ja": "住宅ローン計算機",
         "ru": "Ипотечный калькулятор"
       },
-      "status": "title-translated-review-required"
+      "status": "title-translated-review-required",
+      "titleReviewStatus": "ai-reviewed-native-review-pending",
+      "titleReviewNote": "Uses the common consumer-facing home-loan term where that is the natural local equivalent; legal mortgage distinctions remain in the description."
     },
     {
       "id": "loan",
@@ -69,7 +74,9 @@
         "ja": "ローン計算機",
         "ru": "Кредитный калькулятор"
       },
-      "status": "title-translated-review-required"
+      "status": "title-translated-review-required",
+      "titleReviewStatus": "ai-reviewed-native-review-pending",
+      "titleReviewNote": "Uses the standard general loan term, not a country-specific credit product."
     },
     {
       "id": "emi",
@@ -85,7 +92,9 @@
         "ja": "均等月払い（EMI）計算機",
         "ru": "Калькулятор равного ежемесячного платежа (EMI)"
       },
-      "status": "title-translated-review-required"
+      "status": "title-translated-review-required",
+      "titleReviewStatus": "ai-reviewed-native-review-pending",
+      "titleReviewNote": "Expands EMI as an equal monthly instalment; keep the acronym visible because it is widely used in relevant markets."
     },
     {
       "id": "compound",
@@ -101,7 +110,9 @@
         "ja": "複利計算機",
         "ru": "Калькулятор сложных процентов"
       },
-      "status": "title-translated-review-required"
+      "status": "title-translated-review-required",
+      "titleReviewStatus": "ai-reviewed-native-review-pending",
+      "titleReviewNote": "Uses the established compound-interest term rather than simple interest."
     },
     {
       "id": "percentage",
@@ -117,7 +128,9 @@
         "ja": "パーセント計算機",
         "ru": "Калькулятор процентов"
       },
-      "status": "title-translated-review-required"
+      "status": "title-translated-review-required",
+      "titleReviewStatus": "ai-reviewed-native-review-pending",
+      "titleReviewNote": "Names the percentage calculation concept without implying a particular calculation mode."
     },
     {
       "id": "tip",
@@ -133,7 +146,9 @@
         "ja": "チップ計算機",
         "ru": "Калькулятор чаевых"
       },
-      "status": "title-translated-review-required"
+      "status": "title-translated-review-required",
+      "titleReviewStatus": "ai-reviewed-native-review-pending",
+      "titleReviewNote": "Uses the service-tip/gratuity sense, not a software hint."
     },
     {
       "id": "car",
@@ -149,7 +164,9 @@
         "ja": "自動車ローン計算機",
         "ru": "Калькулятор автокредита"
       },
-      "status": "title-translated-review-required"
+      "status": "title-translated-review-required",
+      "titleReviewStatus": "ai-reviewed-native-review-pending",
+      "titleReviewNote": "Identifies a vehicle loan and does not imply a lease."
     },
     {
       "id": "amortization",
@@ -165,7 +182,9 @@
         "ja": "ローン返済計画計算機",
         "ru": "Калькулятор амортизации кредита"
       },
-      "status": "title-translated-review-required"
+      "status": "title-translated-review-required",
+      "titleReviewStatus": "ai-reviewed-native-review-pending",
+      "titleReviewNote": "Refers to loan amortization/repayment schedule, not just a payment amount."
     },
     {
       "id": "savings",
@@ -181,7 +200,9 @@
         "ja": "貯蓄目標計算機",
         "ru": "Калькулятор цели накоплений"
       },
-      "status": "title-translated-review-required"
+      "status": "title-translated-review-required",
+      "titleReviewStatus": "ai-reviewed-native-review-pending",
+      "titleReviewNote": "Names a goal-based savings calculation, not a savings account product."
     },
     {
       "id": "freelance",
@@ -190,7 +211,8 @@
       "subcategory": "Business & Freelance Calculators",
       "sourceFile": "app.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "margin",
@@ -199,7 +221,8 @@
       "subcategory": "Business & Freelance Calculators",
       "sourceFile": "app.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "affordability",
@@ -208,7 +231,8 @@
       "subcategory": "Mortgage Calculators",
       "sourceFile": "app.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "payoff",
@@ -217,7 +241,8 @@
       "subcategory": "Mortgage Calculators",
       "sourceFile": "app.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "refinance",
@@ -226,7 +251,8 @@
       "subcategory": "Mortgage Calculators",
       "sourceFile": "app.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "personal-loan",
@@ -235,7 +261,8 @@
       "subcategory": "Loan Calculators",
       "sourceFile": "app.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "student-loan",
@@ -244,7 +271,8 @@
       "subcategory": "Loan Calculators",
       "sourceFile": "app.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "simple-interest",
@@ -253,7 +281,8 @@
       "subcategory": "Investment & Return Calculators",
       "sourceFile": "app.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "retirement",
@@ -262,7 +291,8 @@
       "subcategory": "Investment & Return Calculators",
       "sourceFile": "app.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "401k",
@@ -271,7 +301,8 @@
       "subcategory": "Investment & Return Calculators",
       "sourceFile": "app.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "ira",
@@ -280,7 +311,8 @@
       "subcategory": "Investment & Return Calculators",
       "sourceFile": "app.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "inflation",
@@ -289,7 +321,8 @@
       "subcategory": "Savings & Personal Finance",
       "sourceFile": "app.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "cd",
@@ -298,7 +331,8 @@
       "subcategory": "Savings & Personal Finance",
       "sourceFile": "app.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "apy",
@@ -307,7 +341,8 @@
       "subcategory": "Savings & Personal Finance",
       "sourceFile": "app.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "tax",
@@ -316,7 +351,8 @@
       "subcategory": "Tax Calculators",
       "sourceFile": "app.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "income-tax",
@@ -325,7 +361,8 @@
       "subcategory": "Tax Calculators",
       "sourceFile": "app.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "sales-tax",
@@ -334,7 +371,8 @@
       "subcategory": "Tax Calculators",
       "sourceFile": "app.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "vat-gst",
@@ -343,7 +381,8 @@
       "subcategory": "Tax Calculators",
       "sourceFile": "app.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "tax-refund",
@@ -352,7 +391,8 @@
       "subcategory": "Tax Calculators",
       "sourceFile": "app.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "salary",
@@ -361,7 +401,8 @@
       "subcategory": "Salary & Payroll Calculators",
       "sourceFile": "app.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "paycheck",
@@ -370,7 +411,8 @@
       "subcategory": "Salary & Payroll Calculators",
       "sourceFile": "app.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "payroll",
@@ -379,7 +421,8 @@
       "subcategory": "Salary & Payroll Calculators",
       "sourceFile": "app.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "overtime",
@@ -388,7 +431,8 @@
       "subcategory": "Salary & Payroll Calculators",
       "sourceFile": "app.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "discount",
@@ -397,7 +441,8 @@
       "subcategory": "Shopping & Everyday Calculators",
       "sourceFile": "app.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "exchange-fees",
@@ -406,7 +451,8 @@
       "subcategory": "Currency & Money Transfer",
       "sourceFile": "app.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "transfer-compare",
@@ -415,7 +461,8 @@
       "subcategory": "Currency & Money Transfer",
       "sourceFile": "app.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "freelance-project",
@@ -424,7 +471,8 @@
       "subcategory": "Business & Freelance Calculators",
       "sourceFile": "app.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "freelancer-net-income",
@@ -433,7 +481,8 @@
       "subcategory": "Business & Freelance Calculators",
       "sourceFile": "app.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "markup",
@@ -442,7 +491,8 @@
       "subcategory": "Business & Freelance Calculators",
       "sourceFile": "app.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "break-even",
@@ -451,7 +501,8 @@
       "subcategory": "Business & Freelance Calculators",
       "sourceFile": "app.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "business-roi",
@@ -460,7 +511,8 @@
       "subcategory": "Investment & Return Calculators",
       "sourceFile": "app.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "cash-flow",
@@ -469,7 +521,8 @@
       "subcategory": "Business & Freelance Calculators",
       "sourceFile": "app.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "rental-yield",
@@ -478,7 +531,8 @@
       "subcategory": "Investment & Return Calculators",
       "sourceFile": "app.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "emergency-fund",
@@ -487,7 +541,8 @@
       "subcategory": "Savings & Personal Finance",
       "sourceFile": "app.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "net-worth",
@@ -496,7 +551,8 @@
       "subcategory": "Savings & Personal Finance",
       "sourceFile": "app.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "basic-arithmetic",
@@ -505,7 +561,8 @@
       "subcategory": "Basic Math & Number Tools",
       "sourceFile": "math-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "fraction",
@@ -514,7 +571,8 @@
       "subcategory": "Basic Math & Number Tools",
       "sourceFile": "math-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "mixed-number",
@@ -523,7 +581,8 @@
       "subcategory": "Basic Math & Number Tools",
       "sourceFile": "math-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "decimal-fraction",
@@ -532,7 +591,8 @@
       "subcategory": "Basic Math & Number Tools",
       "sourceFile": "math-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "ratio",
@@ -541,7 +601,8 @@
       "subcategory": "Basic Math & Number Tools",
       "sourceFile": "math-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "proportion",
@@ -550,7 +611,8 @@
       "subcategory": "Basic Math & Number Tools",
       "sourceFile": "math-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "average",
@@ -559,7 +621,8 @@
       "subcategory": "Basic Math & Number Tools",
       "sourceFile": "math-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "percentage-change",
@@ -568,7 +631,8 @@
       "subcategory": "Basic Math & Number Tools",
       "sourceFile": "math-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "percent-error",
@@ -577,7 +641,8 @@
       "subcategory": "Basic Math & Number Tools",
       "sourceFile": "math-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "rounding",
@@ -586,7 +651,8 @@
       "subcategory": "Basic Math & Number Tools",
       "sourceFile": "math-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "significant-figures",
@@ -595,7 +661,8 @@
       "subcategory": "Basic Math & Number Tools",
       "sourceFile": "math-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "scientific-notation",
@@ -604,7 +671,8 @@
       "subcategory": "Basic Math & Number Tools",
       "sourceFile": "math-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "exponent",
@@ -613,7 +681,8 @@
       "subcategory": "Advanced Math & Number Theory",
       "sourceFile": "math-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "square-root",
@@ -622,7 +691,8 @@
       "subcategory": "Advanced Math & Number Theory",
       "sourceFile": "math-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "cube-root",
@@ -631,7 +701,8 @@
       "subcategory": "Advanced Math & Number Theory",
       "sourceFile": "math-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "nth-root",
@@ -640,7 +711,8 @@
       "subcategory": "Advanced Math & Number Theory",
       "sourceFile": "math-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "factorial",
@@ -649,7 +721,8 @@
       "subcategory": "Advanced Math & Number Theory",
       "sourceFile": "math-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "gcd",
@@ -658,7 +731,8 @@
       "subcategory": "Advanced Math & Number Theory",
       "sourceFile": "math-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "lcm",
@@ -667,7 +741,8 @@
       "subcategory": "Advanced Math & Number Theory",
       "sourceFile": "math-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "prime-checker",
@@ -676,7 +751,8 @@
       "subcategory": "Advanced Math & Number Theory",
       "sourceFile": "math-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "prime-factorization",
@@ -685,7 +761,8 @@
       "subcategory": "Advanced Math & Number Theory",
       "sourceFile": "math-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "modulo",
@@ -694,7 +771,8 @@
       "subcategory": "Advanced Math & Number Theory",
       "sourceFile": "math-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "pythagorean",
@@ -703,7 +781,8 @@
       "subcategory": "Geometry",
       "sourceFile": "math-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "circle",
@@ -712,7 +791,8 @@
       "subcategory": "Geometry",
       "sourceFile": "math-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "triangle-area",
@@ -721,7 +801,8 @@
       "subcategory": "Geometry",
       "sourceFile": "math-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "linear-equation",
@@ -730,7 +811,8 @@
       "subcategory": "Algebra & Linear Algebra",
       "sourceFile": "advanced-math-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "quadratic-equation",
@@ -739,7 +821,8 @@
       "subcategory": "Algebra & Linear Algebra",
       "sourceFile": "advanced-math-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "simultaneous-equations",
@@ -748,7 +831,8 @@
       "subcategory": "Algebra & Linear Algebra",
       "sourceFile": "advanced-math-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "polynomial-calculator",
@@ -757,7 +841,8 @@
       "subcategory": "Algebra & Linear Algebra",
       "sourceFile": "advanced-math-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "logarithm",
@@ -766,7 +851,8 @@
       "subcategory": "Advanced Math & Number Theory",
       "sourceFile": "advanced-math-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "matrix-operations",
@@ -775,7 +861,8 @@
       "subcategory": "Algebra & Linear Algebra",
       "sourceFile": "advanced-math-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "matrix-determinant",
@@ -784,7 +871,8 @@
       "subcategory": "Algebra & Linear Algebra",
       "sourceFile": "advanced-math-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "matrix-inverse",
@@ -793,7 +881,8 @@
       "subcategory": "Algebra & Linear Algebra",
       "sourceFile": "advanced-math-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "complex-number",
@@ -802,7 +891,8 @@
       "subcategory": "Advanced Math & Number Theory",
       "sourceFile": "advanced-math-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "sequence-calculator",
@@ -811,7 +901,8 @@
       "subcategory": "Advanced Math & Number Theory",
       "sourceFile": "advanced-math-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "series-sum",
@@ -820,7 +911,8 @@
       "subcategory": "Advanced Math & Number Theory",
       "sourceFile": "advanced-math-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "permutation",
@@ -829,7 +921,8 @@
       "subcategory": "Advanced Math & Number Theory",
       "sourceFile": "advanced-math-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "combination",
@@ -838,7 +931,8 @@
       "subcategory": "Advanced Math & Number Theory",
       "sourceFile": "advanced-math-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "probability",
@@ -847,7 +941,8 @@
       "subcategory": "Statistics & Probability",
       "sourceFile": "advanced-math-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "mean-median-mode",
@@ -856,7 +951,8 @@
       "subcategory": "Statistics & Probability",
       "sourceFile": "advanced-math-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "variance-standard-deviation",
@@ -865,7 +961,8 @@
       "subcategory": "Statistics & Probability",
       "sourceFile": "advanced-math-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "z-score",
@@ -874,7 +971,8 @@
       "subcategory": "Statistics & Probability",
       "sourceFile": "advanced-math-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "correlation",
@@ -883,7 +981,8 @@
       "subcategory": "Statistics & Probability",
       "sourceFile": "advanced-math-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "linear-regression",
@@ -892,7 +991,8 @@
       "subcategory": "Statistics & Probability",
       "sourceFile": "advanced-math-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "confidence-interval",
@@ -901,7 +1001,8 @@
       "subcategory": "Statistics & Probability",
       "sourceFile": "advanced-math-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "age-calculator",
@@ -910,7 +1011,8 @@
       "subcategory": "Date Calculators",
       "sourceFile": "date-time-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "date-difference",
@@ -919,7 +1021,8 @@
       "subcategory": "Date Calculators",
       "sourceFile": "date-time-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "add-days",
@@ -928,7 +1031,8 @@
       "subcategory": "Date Calculators",
       "sourceFile": "date-time-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "subtract-days",
@@ -937,7 +1041,8 @@
       "subcategory": "Date Calculators",
       "sourceFile": "date-time-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "business-days",
@@ -946,7 +1051,8 @@
       "subcategory": "Date Calculators",
       "sourceFile": "date-time-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "working-days",
@@ -955,7 +1061,8 @@
       "subcategory": "Date Calculators",
       "sourceFile": "date-time-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "iso-week",
@@ -964,7 +1071,8 @@
       "subcategory": "Date Calculators",
       "sourceFile": "date-time-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "day-of-year",
@@ -973,7 +1081,8 @@
       "subcategory": "Date Calculators",
       "sourceFile": "date-time-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "days-in-month",
@@ -982,7 +1091,8 @@
       "subcategory": "Date Calculators",
       "sourceFile": "date-time-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "leap-year",
@@ -991,7 +1101,8 @@
       "subcategory": "Date Calculators",
       "sourceFile": "date-time-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "calendar-month",
@@ -1000,7 +1111,8 @@
       "subcategory": "Date Calculators",
       "sourceFile": "date-time-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "recurring-date",
@@ -1009,7 +1121,8 @@
       "subcategory": "Date Calculators",
       "sourceFile": "date-time-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "term-duration",
@@ -1018,7 +1131,8 @@
       "subcategory": "Date Calculators",
       "sourceFile": "date-time-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "time-duration",
@@ -1027,7 +1141,8 @@
       "subcategory": "Time Calculators",
       "sourceFile": "date-time-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "time-difference",
@@ -1036,7 +1151,8 @@
       "subcategory": "Time Calculators",
       "sourceFile": "date-time-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "add-time",
@@ -1045,7 +1161,8 @@
       "subcategory": "Time Calculators",
       "sourceFile": "date-time-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "subtract-time",
@@ -1054,7 +1171,8 @@
       "subcategory": "Time Calculators",
       "sourceFile": "date-time-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "countdown-timer",
@@ -1063,7 +1181,8 @@
       "subcategory": "Time Calculators",
       "sourceFile": "date-time-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "event-countdown",
@@ -1072,7 +1191,8 @@
       "subcategory": "Time Calculators",
       "sourceFile": "date-time-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "date-to-unix",
@@ -1081,7 +1201,8 @@
       "subcategory": "Timestamp Tools",
       "sourceFile": "date-time-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "unix-to-date",
@@ -1090,7 +1211,8 @@
       "subcategory": "Timestamp Tools",
       "sourceFile": "date-time-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "world-clock",
@@ -1099,7 +1221,8 @@
       "subcategory": "World Clock & Time Zones",
       "sourceFile": "date-time-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "timezone-converter",
@@ -1108,7 +1231,8 @@
       "subcategory": "World Clock & Time Zones",
       "sourceFile": "date-time-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "utc-offset",
@@ -1117,7 +1241,8 @@
       "subcategory": "World Clock & Time Zones",
       "sourceFile": "date-time-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "meeting-time-planner",
@@ -1126,7 +1251,8 @@
       "subcategory": "World Clock & Time Zones",
       "sourceFile": "date-time-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "length-converter",
@@ -1135,7 +1261,8 @@
       "subcategory": "Length, Area & Paper Sizes",
       "sourceFile": "unit-converter-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "mass-converter",
@@ -1144,7 +1271,8 @@
       "subcategory": "Weight & Mass",
       "sourceFile": "unit-converter-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "temperature-converter",
@@ -1153,7 +1281,8 @@
       "subcategory": "Temperature",
       "sourceFile": "unit-converter-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "area-converter",
@@ -1162,7 +1291,8 @@
       "subcategory": "Length, Area & Paper Sizes",
       "sourceFile": "unit-converter-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "volume-converter",
@@ -1171,7 +1301,8 @@
       "subcategory": "Volume & Cooking Measures",
       "sourceFile": "unit-converter-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "speed-converter",
@@ -1180,7 +1311,8 @@
       "subcategory": "Speed & Fuel Economy",
       "sourceFile": "unit-converter-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "pressure-converter",
@@ -1189,7 +1321,8 @@
       "subcategory": "Science & Engineering Units",
       "sourceFile": "unit-converter-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "energy-converter",
@@ -1198,7 +1331,8 @@
       "subcategory": "Science & Engineering Units",
       "sourceFile": "unit-converter-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "power-converter",
@@ -1207,7 +1341,8 @@
       "subcategory": "Science & Engineering Units",
       "sourceFile": "unit-converter-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "frequency-converter",
@@ -1216,7 +1351,8 @@
       "subcategory": "Science & Engineering Units",
       "sourceFile": "unit-converter-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "angle-converter",
@@ -1225,7 +1361,8 @@
       "subcategory": "Science & Engineering Units",
       "sourceFile": "unit-converter-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "fuel-economy-converter",
@@ -1234,7 +1371,8 @@
       "subcategory": "Speed & Fuel Economy",
       "sourceFile": "unit-converter-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "density-converter",
@@ -1243,7 +1381,8 @@
       "subcategory": "Science & Engineering Units",
       "sourceFile": "unit-converter-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "cooking-measurement-converter",
@@ -1252,7 +1391,8 @@
       "subcategory": "Volume & Cooking Measures",
       "sourceFile": "unit-converter-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "data-storage-converter",
@@ -1261,7 +1401,8 @@
       "subcategory": "Digital Storage & Data Transfer",
       "sourceFile": "unit-converter-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "data-transfer-speed-converter",
@@ -1270,7 +1411,8 @@
       "subcategory": "Digital Storage & Data Transfer",
       "sourceFile": "unit-converter-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "download-time-estimator",
@@ -1279,7 +1421,8 @@
       "subcategory": "Digital Storage & Data Transfer",
       "sourceFile": "unit-converter-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "number-base-converter",
@@ -1288,7 +1431,8 @@
       "subcategory": "Number Systems & Numerals",
       "sourceFile": "unit-converter-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "roman-numeral-converter",
@@ -1297,7 +1441,8 @@
       "subcategory": "Number Systems & Numerals",
       "sourceFile": "unit-converter-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "paper-size-converter",
@@ -1306,7 +1451,8 @@
       "subcategory": "Length, Area & Paper Sizes",
       "sourceFile": "unit-converter-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "word-counter",
@@ -1315,7 +1461,8 @@
       "subcategory": "Text & Writing Utilities",
       "sourceFile": "developer-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "character-counter",
@@ -1324,7 +1471,8 @@
       "subcategory": "Text & Writing Utilities",
       "sourceFile": "developer-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "sentence-counter",
@@ -1333,7 +1481,8 @@
       "subcategory": "Text & Writing Utilities",
       "sourceFile": "developer-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "paragraph-counter",
@@ -1342,7 +1491,8 @@
       "subcategory": "Text & Writing Utilities",
       "sourceFile": "developer-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "reading-time-calculator",
@@ -1351,7 +1501,8 @@
       "subcategory": "Text & Writing Utilities",
       "sourceFile": "developer-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "case-converter",
@@ -1360,7 +1511,8 @@
       "subcategory": "Text & Writing Utilities",
       "sourceFile": "developer-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "text-reverser",
@@ -1369,7 +1521,8 @@
       "subcategory": "Text & Writing Utilities",
       "sourceFile": "developer-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "duplicate-line-remover",
@@ -1378,7 +1531,8 @@
       "subcategory": "Text & Writing Utilities",
       "sourceFile": "developer-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "text-compare-diff",
@@ -1387,7 +1541,8 @@
       "subcategory": "Text & Writing Utilities",
       "sourceFile": "developer-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "whitespace-cleaner",
@@ -1396,7 +1551,8 @@
       "subcategory": "Text & Writing Utilities",
       "sourceFile": "developer-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "line-sorter",
@@ -1405,7 +1561,8 @@
       "subcategory": "Text & Writing Utilities",
       "sourceFile": "developer-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "text-to-slug-generator",
@@ -1414,7 +1571,8 @@
       "subcategory": "Text & Writing Utilities",
       "sourceFile": "developer-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "html-entity-encoder-decoder",
@@ -1423,7 +1581,8 @@
       "subcategory": "Encoding & Decoding",
       "sourceFile": "developer-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "url-encoder-decoder",
@@ -1432,7 +1591,8 @@
       "subcategory": "Encoding & Decoding",
       "sourceFile": "developer-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "base64-encoder-decoder",
@@ -1441,7 +1601,8 @@
       "subcategory": "Encoding & Decoding",
       "sourceFile": "developer-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "json-formatter-validator",
@@ -1450,7 +1611,8 @@
       "subcategory": "Code & Markup Utilities",
       "sourceFile": "developer-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "html-formatter",
@@ -1459,7 +1621,8 @@
       "subcategory": "Code & Markup Utilities",
       "sourceFile": "developer-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "css-formatter",
@@ -1468,7 +1631,8 @@
       "subcategory": "Code & Markup Utilities",
       "sourceFile": "developer-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "javascript-formatter",
@@ -1477,7 +1641,8 @@
       "subcategory": "Code & Markup Utilities",
       "sourceFile": "developer-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "html-css-js-minifier",
@@ -1486,7 +1651,8 @@
       "subcategory": "Code & Markup Utilities",
       "sourceFile": "developer-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "uuid-generator",
@@ -1495,7 +1661,8 @@
       "subcategory": "Developer Utilities",
       "sourceFile": "education-lifestyle-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "regex-tester",
@@ -1504,7 +1671,8 @@
       "subcategory": "Developer Utilities",
       "sourceFile": "education-lifestyle-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "color-code-converter",
@@ -1513,7 +1681,8 @@
       "subcategory": "Developer Utilities",
       "sourceFile": "education-lifestyle-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "unix-timestamp-unit-helper",
@@ -1522,7 +1691,8 @@
       "subcategory": "Developer Utilities",
       "sourceFile": "education-lifestyle-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "markdown-previewer",
@@ -1531,7 +1701,8 @@
       "subcategory": "Code & Markup Utilities",
       "sourceFile": "education-lifestyle-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "gpa-calculator",
@@ -1540,7 +1711,8 @@
       "subcategory": "Grades, GPA & Exams",
       "sourceFile": "education-lifestyle-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "cgpa-calculator",
@@ -1549,7 +1721,8 @@
       "subcategory": "Grades, GPA & Exams",
       "sourceFile": "education-lifestyle-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "grade-calculator",
@@ -1558,7 +1731,8 @@
       "subcategory": "Grades, GPA & Exams",
       "sourceFile": "education-lifestyle-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "exam-percentage-calculator",
@@ -1567,7 +1741,8 @@
       "subcategory": "Grades, GPA & Exams",
       "sourceFile": "education-lifestyle-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "marks-required-calculator",
@@ -1576,7 +1751,8 @@
       "subcategory": "Grades, GPA & Exams",
       "sourceFile": "education-lifestyle-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "weighted-grade-calculator",
@@ -1585,7 +1761,8 @@
       "subcategory": "Grades, GPA & Exams",
       "sourceFile": "education-lifestyle-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "final-exam-grade-calculator",
@@ -1594,7 +1771,8 @@
       "subcategory": "Grades, GPA & Exams",
       "sourceFile": "education-lifestyle-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "semester-gpa-planner",
@@ -1603,7 +1781,8 @@
       "subcategory": "Grades, GPA & Exams",
       "sourceFile": "education-lifestyle-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "attendance-percentage-calculator",
@@ -1612,7 +1791,8 @@
       "subcategory": "Grades, GPA & Exams",
       "sourceFile": "education-lifestyle-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "study-time-planner",
@@ -1621,7 +1801,8 @@
       "subcategory": "Grades, GPA & Exams",
       "sourceFile": "education-lifestyle-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "reading-schedule-planner",
@@ -1630,7 +1811,8 @@
       "subcategory": "Grades, GPA & Exams",
       "sourceFile": "education-lifestyle-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "assignment-grade-tracker",
@@ -1639,7 +1821,8 @@
       "subcategory": "Grades, GPA & Exams",
       "sourceFile": "education-lifestyle-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "concrete-volume-calculator",
@@ -1648,7 +1831,8 @@
       "subcategory": "Building Materials & Volume",
       "sourceFile": "education-lifestyle-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "brick-quantity-estimator",
@@ -1657,7 +1841,8 @@
       "subcategory": "Building Materials & Volume",
       "sourceFile": "education-lifestyle-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "cement-sand-aggregate-estimator",
@@ -1666,7 +1851,8 @@
       "subcategory": "Building Materials & Volume",
       "sourceFile": "education-lifestyle-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "paint-quantity-calculator",
@@ -1675,7 +1861,8 @@
       "subcategory": "Room, Surface & Flooring",
       "sourceFile": "lifestyle-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "tile-quantity-calculator",
@@ -1684,7 +1871,8 @@
       "subcategory": "Room, Surface & Flooring",
       "sourceFile": "lifestyle-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "flooring-material-estimator",
@@ -1693,7 +1881,8 @@
       "subcategory": "Room, Surface & Flooring",
       "sourceFile": "lifestyle-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "roofing-area-calculator",
@@ -1702,7 +1891,8 @@
       "subcategory": "Roofing & Outdoor Projects",
       "sourceFile": "lifestyle-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "room-area-calculator",
@@ -1711,7 +1901,8 @@
       "subcategory": "Room, Surface & Flooring",
       "sourceFile": "lifestyle-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "wall-area-calculator",
@@ -1720,7 +1911,8 @@
       "subcategory": "Room, Surface & Flooring",
       "sourceFile": "lifestyle-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "gravel-volume-calculator",
@@ -1729,7 +1921,8 @@
       "subcategory": "Building Materials & Volume",
       "sourceFile": "lifestyle-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "fence-material-estimator",
@@ -1738,7 +1931,8 @@
       "subcategory": "Roofing & Outdoor Projects",
       "sourceFile": "lifestyle-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "fuel-cost-calculator",
@@ -1747,7 +1941,8 @@
       "subcategory": "Household Cost Calculators",
       "sourceFile": "lifestyle-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "electricity-bill-estimator",
@@ -1756,7 +1951,8 @@
       "subcategory": "Household Cost Calculators",
       "sourceFile": "lifestyle-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "bill-split-calculator",
@@ -1765,7 +1961,8 @@
       "subcategory": "Shopping & Bill Calculators",
       "sourceFile": "lifestyle-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "unit-price-comparator",
@@ -1774,7 +1971,8 @@
       "subcategory": "Shopping & Bill Calculators",
       "sourceFile": "lifestyle-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "sales-commission-calculator",
@@ -1783,7 +1981,8 @@
       "subcategory": "Commission & Earnings",
       "sourceFile": "lifestyle-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "study-topic-organizer",
@@ -1792,7 +1991,8 @@
       "subcategory": "Grades, GPA & Exams",
       "sourceFile": "lifestyle-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "qr-code-generator",
@@ -1801,7 +2001,8 @@
       "subcategory": "QR & Code Utilities",
       "sourceFile": "lifestyle-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "sleep-duration-calculator",
@@ -1810,7 +2011,8 @@
       "subcategory": "Sleep & Schedule Calculators",
       "sourceFile": "health-activity-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "bedtime-planner",
@@ -1819,7 +2021,8 @@
       "subcategory": "Sleep & Schedule Calculators",
       "sourceFile": "health-activity-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "wake-up-time-planner",
@@ -1828,7 +2031,8 @@
       "subcategory": "Sleep & Schedule Calculators",
       "sourceFile": "health-activity-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "sleep-schedule-consistency-tracker",
@@ -1837,7 +2041,8 @@
       "subcategory": "Sleep & Schedule Calculators",
       "sourceFile": "health-activity-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "sleep-log-summary",
@@ -1846,7 +2051,8 @@
       "subcategory": "Sleep & Schedule Calculators",
       "sourceFile": "health-activity-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "running-pace-calculator",
@@ -1855,7 +2061,8 @@
       "subcategory": "Pace, Speed & Distance Calculators",
       "sourceFile": "health-activity-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "running-speed-calculator",
@@ -1864,7 +2071,8 @@
       "subcategory": "Pace, Speed & Distance Calculators",
       "sourceFile": "health-activity-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "distance-time-pace-calculator",
@@ -1873,7 +2081,8 @@
       "subcategory": "Pace, Speed & Distance Calculators",
       "sourceFile": "health-activity-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "race-finish-time-predictor",
@@ -1882,7 +2091,8 @@
       "subcategory": "Pace, Speed & Distance Calculators",
       "sourceFile": "health-activity-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "race-split-calculator",
@@ -1891,7 +2101,8 @@
       "subcategory": "Pace, Speed & Distance Calculators",
       "sourceFile": "health-activity-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "walking-pace-calculator",
@@ -1900,7 +2111,8 @@
       "subcategory": "Pace, Speed & Distance Calculators",
       "sourceFile": "health-activity-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "hiking-time-estimator",
@@ -1909,7 +2121,8 @@
       "subcategory": "Pace, Speed & Distance Calculators",
       "sourceFile": "health-activity-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "cycling-speed-calculator",
@@ -1918,7 +2131,8 @@
       "subcategory": "Pace, Speed & Distance Calculators",
       "sourceFile": "health-activity-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "cycling-time-distance-calculator",
@@ -1927,7 +2141,8 @@
       "subcategory": "Pace, Speed & Distance Calculators",
       "sourceFile": "health-activity-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "swimming-pace-calculator",
@@ -1936,7 +2151,8 @@
       "subcategory": "Pace, Speed & Distance Calculators",
       "sourceFile": "health-activity-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "swimming-interval-planner",
@@ -1945,7 +2161,8 @@
       "subcategory": "User-Entered Activity Splits",
       "sourceFile": "health-wellness-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "rowing-pace-calculator",
@@ -1954,7 +2171,8 @@
       "subcategory": "User-Entered Activity Splits",
       "sourceFile": "health-wellness-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "exercise-session-duration-calculator",
@@ -1963,7 +2181,8 @@
       "subcategory": "User-Entered Logs & Time Summaries",
       "sourceFile": "health-wellness-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "interval-training-timer",
@@ -1972,7 +2191,8 @@
       "subcategory": "User-Entered Logs & Time Summaries",
       "sourceFile": "health-wellness-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "rest-interval-planner",
@@ -1981,7 +2201,8 @@
       "subcategory": "User-Entered Logs & Time Summaries",
       "sourceFile": "health-wellness-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "workout-session-planner-time-only",
@@ -1990,7 +2211,8 @@
       "subcategory": "User-Entered Logs & Time Summaries",
       "sourceFile": "health-wellness-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "weekly-activity-minutes-tracker",
@@ -1999,7 +2221,8 @@
       "subcategory": "User-Entered Logs & Time Summaries",
       "sourceFile": "health-wellness-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "activity-goal-progress-tracker",
@@ -2008,7 +2231,8 @@
       "subcategory": "User-Entered Logs & Time Summaries",
       "sourceFile": "health-wellness-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "step-to-distance-converter",
@@ -2017,7 +2241,8 @@
       "subcategory": "Distance, Steps & Elevation",
       "sourceFile": "health-wellness-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "distance-to-step-estimator",
@@ -2026,7 +2251,8 @@
       "subcategory": "Distance, Steps & Elevation",
       "sourceFile": "health-wellness-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "elevation-gain-rate-calculator",
@@ -2035,7 +2261,8 @@
       "subcategory": "Distance, Steps & Elevation",
       "sourceFile": "health-wellness-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "hiking-elevation-pace-calculator",
@@ -2044,7 +2271,8 @@
       "subcategory": "Distance, Steps & Elevation",
       "sourceFile": "health-wellness-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "breathing-exercise-timer",
@@ -2053,7 +2281,8 @@
       "subcategory": "User-Defined Session Duration",
       "sourceFile": "health-wellness-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "meditation-session-planner",
@@ -2062,7 +2291,8 @@
       "subcategory": "User-Defined Session Duration",
       "sourceFile": "health-wellness-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     },
     {
       "id": "hydration-log-tracker",
@@ -2071,7 +2301,9 @@
       "subcategory": "User-Entered Logs & Time Summaries",
       "sourceFile": "health-wellness-tools.js",
       "title": {},
-      "status": "pending-translation"
+      "status": "pending-translation",
+      "titleReviewStatus": "not-started"
     }
-  ]
+  ],
+  "reviewPolicy": "AI terminology and meaning review completed for the 10 title pilot entries only. Native-speaker review remains required before publication; finance-domain review required where product terminology differs by country."
 }
