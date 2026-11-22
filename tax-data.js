@@ -25,14 +25,18 @@ PE:{label:"Prince Edward Island",bands:bands([[33928,9.5],[65820,13.47],[106890,
 SK:{label:"Saskatchewan",bands:bands([[54532,10.5],[155805,12.5],[Infinity,14.5]])},
 YT:{label:"Yukon",bands:bands([[58523,6.4],[117045,9],[181440,10.9],[500000,12.8],[Infinity,15]])}
 };
-const canada={};for(const [code,p] of Object.entries(caProv))canada["CA-2026-"+code]={label:"Canada — Federal + "+p.label+" · 2026",currency:"CAD",components:[{name:"Federal",bands:caFederal},{name:p.label,bands:p.bands}]};
+const caCredits={
+AB:{amount:22769,rate:8},BC:{amount:13216,rate:5.6},MB:{amount:15780,rate:10.8,phaseOut:{start:200000,end:400000,min:0}},NB:{amount:13664,rate:9.4},NL:{amount:15000,rate:8.7},NS:{amount:11932,rate:8.79},NT:{amount:18198,rate:5.9},NU:{amount:19659,rate:4},ON:{amount:12989,rate:5.05},PE:{amount:15000,rate:9.5},SK:{amount:20381,rate:10.5},YT:{amount:16452,rate:6.4,phaseOut:{start:181440,end:258482,min:14829}}
+};
+const federalCredit={creditAmount:16452,creditRate:14,phaseOut:{start:181440,end:258482,min:14829}};
+const canada={};for(const [code,p] of Object.entries(caProv)){const provincial=caCredits[code];canada["CA-2026-"+code]={label:"Canada — Federal + "+p.label+" · 2026",currency:"CAD",components:[{name:"Federal",bands:caFederal,...federalCredit},{name:p.label,bands:p.bands,creditAmount:provincial.amount,creditRate:provincial.rate,...(provincial.phaseOut?{phaseOut:provincial.phaseOut}:{})}]};}
 const bd={
- "BD-2026-general":{label:"Bangladesh — General individual · AY 2026–27",currency:"BDT",allowance:375000,bands:bands([[300000,10],[700000,15],[1200000,20],[3200000,25],[Infinity,30]]),minimumTax:5000},
+ "BD-2026-general":{label:"Bangladesh — General individual · AY 2026–27",currency:"BDT",allowance:375000,bands:bands([[300000,10],[700000,15],[1200000,20],[3200000,25],[Infinity,30]]),minimumTax:5000,dependentDisabilityAllowance:50000},
  "BD-2026-women-senior":{label:"Bangladesh — Women / age 65+ · AY 2026–27",currency:"BDT",allowance:425000,bands:bands([[300000,10],[700000,15],[1200000,20],[3200000,25],[Infinity,30]]),minimumTax:5000},
  "BD-2026-third-gender-disability":{label:"Bangladesh — Third gender / disability · AY 2026–27",currency:"BDT",allowance:500000,bands:bands([[300000,10],[700000,15],[1200000,20],[3200000,25],[Infinity,30]]),minimumTax:5000},
  "BD-2026-freedom-fighter":{label:"Bangladesh — Gazetted freedom fighter / July fighter · AY 2026–27",currency:"BDT",allowance:525000,bands:bands([[300000,10],[700000,15],[1200000,20],[3200000,25],[Infinity,30]]),minimumTax:5000}
 };
-canada["CA-2026-QC"]={label:"Canada — Federal + Québec · 2026",currency:"CAD",components:[{name:"Federal",bands:caFederal},{name:"Québec",bands:bands([[54345,14],[108680,19],[132245,24],[Infinity,25.75]]),credit:18952*0.14}]};
+canada["CA-2026-QC"]={label:"Canada — Federal + Québec · 2026",currency:"CAD",components:[{name:"Federal",bands:caFederal,...federalCredit,abatement:0.165},{name:"Québec",bands:bands([[54345,14],[108680,19],[132245,24],[Infinity,25.75]]),creditAmount:18952,creditRate:14}]};
 const profiles={...us,...uk,...canada,...bd};
 const sources={
  US:"https://www.irs.gov/irb/2025-45_IRB",
@@ -41,6 +45,6 @@ const sources={
  CA:"https://www.canada.ca/en/revenue-agency/services/tax/individuals/tax-rates-brackets/current-year.html",
  BD:"https://nbr.gov.bd/taxtypes/income-tax/income-tax-paripatra/eservices/taxefiling/eng"
 };
-sources.US_STATES="https://statewisenews.com/state-income-tax-rates/";sources.QUEBEC="https://www.revenuquebec.ca/en/citizens/income-tax-return/completing-your-income-tax-return/income-tax-rates/";sources.FICA="https://www.irs.gov/publications/p15";sources.UK_NI="https://www.gov.uk/government/publications/rates-and-allowances-national-insurance-contributions/rates-and-allowances-national-insurance-contributions";sources.CA_PAYROLL="https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4032-payroll-deductions-tables/t4032oc-jan/t4032oc-january-general-information.html";sources.QC_PAYROLL="https://www.revenuquebec.ca/en/businesses/source-deductions-and-employer-contributions/employers-principal-changes-for-2026/";
-window.FinPulseTaxData={profiles,sources,checkedOn:"2026-11-18"};
+sources.US_STATES="https://www.taxadmin.org/state-tax-agencies";sources.QUEBEC="https://www.revenuquebec.ca/en/citizens/income-tax-return/completing-your-income-tax-return/income-tax-rates/";sources.FICA="https://www.irs.gov/publications/p15";sources.UK_NI="https://www.gov.uk/government/publications/rates-and-allowances-national-insurance-contributions/rates-and-allowances-national-insurance-contributions";sources.CA_PAYROLL="https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4032-payroll-deductions-tables/t4032oc-jan/t4032oc-january-general-information.html";sources.QC_PAYROLL="https://www.revenuquebec.ca/en/businesses/source-deductions-and-employer-contributions/employers-principal-changes-for-2026/";
+window.FinPulseTaxData={profiles,sources,checkedOn:"2026-11-22"};
 })();
