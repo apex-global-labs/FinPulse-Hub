@@ -49,3 +49,13 @@
  }
  return {create};
 });
+
+(function(root){
+ "use strict";
+ const engine=root.FinPulseI18n;if(!engine||!root.document)return;
+ engine.init();
+ const script=[...root.document.scripts].find(item=>item.src.includes("translation-engine.js"));
+ if(!script||typeof root.fetch!=="function")return;
+ const url=new URL("translations/catalogue.json",script.src);
+ root.fetch(url.href,{credentials:"same-origin"}).then(response=>{if(!response.ok)throw Error("Translation catalogue request failed: "+response.status);return response.json()}).then(data=>engine.setCatalogue(data)).catch(error=>{root.console?.warn("FinPulse translations unavailable; English remains active.",error)});
+})(typeof window!=="undefined"?window:globalThis);
