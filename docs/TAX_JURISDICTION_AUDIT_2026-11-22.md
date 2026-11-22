@@ -318,3 +318,11 @@ Washington is not enabled for automatic zero. The [Washington Department of Reve
 - CI run #45002175312: syntax, Node tests (322/322) and Frankfurter API (1/1) passed; browser suite failed (12/16). Failure details: stale California wording assertion; Salary Take-Home route null selector caused Bangladesh salary disclosure timeout and 2/440 functional executions to fail. Candidate fixes are now committed and require a fresh CI rerun. Do not treat this run as a browser pass.
 - Lighthouse run #45002175310 completed successfully and uploaded artifact [14746721249](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/45002175310/artifacts/14746721249). Score values have not yet been extracted from the artifact; no score claim is made here.
 - PR #67 remains Draft. No merge or production deployment occurred.
+
+## Latest regression follow-up — 2026-11-22 08:28 UTC
+
+- Follow-up CI #45002813258 reached the Node suite but failed 1/324 tests (323 passed): the state-registry contract test still expected the former manual-only registry mode. The new expected contract is mixed verified-zero plus manual-only; the assertion was corrected in commit 5a8c6ed397b00ba633c830c079a0211025ce4fa5.
+- Validation-only PR #71 now points to head a605ed3022f45a1853e85550bef1b8eb87d2beb1 with that test correction.
+- Fresh CI #45002913438: syntax, npm test and Frankfurter API steps passed; Playwright desktop/mobile browser tests are still in progress. No browser pass claim yet.
+- Fresh Lighthouse #45002913442 is still in progress. The prior Lighthouse run #45002813199 is also pending at this checkpoint; score values have not been extracted.
+- PR #67 remains Draft; PR #71 remains a validation-only Draft. No merge or deployment.
