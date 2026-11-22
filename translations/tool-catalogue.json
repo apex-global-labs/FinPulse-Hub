@@ -1,0 +1,2077 @@
+{
+  "schemaVersion": 1,
+  "sourceLocale": "en",
+  "supportedLocales": [
+    "en",
+    "hi",
+    "ar",
+    "ur",
+    "zh-CN",
+    "ja",
+    "ru"
+  ],
+  "generatedFrom": {
+    "mappingFile": "tool-category-mapping.json",
+    "mappingSchemaVersion": 1,
+    "expectedToolCount": 220
+  },
+  "translationPolicy": "Tool titles only are piloted in the first batch. Tool descriptions, field labels, result labels, FAQs, guides, disclaimers and SEO text require separate reviewed translations. Never translate formulas, IDs, currency codes or jurisdiction data.",
+  "validation": {
+    "expectedToolCount": 220,
+    "actualToolCount": 220,
+    "uniqueToolIdCount": 220,
+    "translatedTitlePilotCount": 10
+  },
+  "tools": [
+    {
+      "id": "currency",
+      "sourceTitle": "Currency Converter",
+      "category": "Finance & Money",
+      "subcategory": "Currency & Money Transfer",
+      "sourceFile": "app.js",
+      "title": {
+        "hi": "मुद्रा परिवर्तक",
+        "ar": "محول العملات",
+        "ur": "کرنسی کنورٹر",
+        "zh-CN": "货币换算器",
+        "ja": "通貨換算ツール",
+        "ru": "Конвертер валют"
+      },
+      "status": "title-translated-review-required"
+    },
+    {
+      "id": "mortgage",
+      "sourceTitle": "Mortgage Calculator",
+      "category": "Finance & Money",
+      "subcategory": "Mortgage Calculators",
+      "sourceFile": "app.js",
+      "title": {
+        "hi": "होम लोन कैलकुलेटर",
+        "ar": "حاسبة الرهن العقاري",
+        "ur": "ہوم لون کیلکولیٹر",
+        "zh-CN": "房贷计算器",
+        "ja": "住宅ローン計算機",
+        "ru": "Ипотечный калькулятор"
+      },
+      "status": "title-translated-review-required"
+    },
+    {
+      "id": "loan",
+      "sourceTitle": "Loan Calculator",
+      "category": "Finance & Money",
+      "subcategory": "Loan Calculators",
+      "sourceFile": "app.js",
+      "title": {
+        "hi": "लोन कैलकुलेटर",
+        "ar": "حاسبة القروض",
+        "ur": "قرض کیلکولیٹر",
+        "zh-CN": "贷款计算器",
+        "ja": "ローン計算機",
+        "ru": "Кредитный калькулятор"
+      },
+      "status": "title-translated-review-required"
+    },
+    {
+      "id": "emi",
+      "sourceTitle": "EMI Calculator",
+      "category": "Finance & Money",
+      "subcategory": "Loan Calculators",
+      "sourceFile": "app.js",
+      "title": {
+        "hi": "समान मासिक किस्त (EMI) कैलकुलेटर",
+        "ar": "حاسبة القسط الشهري المتساوي",
+        "ur": "مساوی ماہانہ قسط (EMI) کیلکولیٹر",
+        "zh-CN": "等额月供（EMI）计算器",
+        "ja": "均等月払い（EMI）計算機",
+        "ru": "Калькулятор равного ежемесячного платежа (EMI)"
+      },
+      "status": "title-translated-review-required"
+    },
+    {
+      "id": "compound",
+      "sourceTitle": "Compound Interest Calculator",
+      "category": "Finance & Money",
+      "subcategory": "Investment & Return Calculators",
+      "sourceFile": "app.js",
+      "title": {
+        "hi": "चक्रवृद्धि ब्याज कैलकुलेटर",
+        "ar": "حاسبة الفائدة المركبة",
+        "ur": "مرکب سود کیلکولیٹر",
+        "zh-CN": "复利计算器",
+        "ja": "複利計算機",
+        "ru": "Калькулятор сложных процентов"
+      },
+      "status": "title-translated-review-required"
+    },
+    {
+      "id": "percentage",
+      "sourceTitle": "Percentage Calculator",
+      "category": "Finance & Money",
+      "subcategory": "Percentage & Everyday Calculators",
+      "sourceFile": "app.js",
+      "title": {
+        "hi": "प्रतिशत कैलकुलेटर",
+        "ar": "حاسبة النسبة المئوية",
+        "ur": "فیصد کیلکولیٹر",
+        "zh-CN": "百分比计算器",
+        "ja": "パーセント計算機",
+        "ru": "Калькулятор процентов"
+      },
+      "status": "title-translated-review-required"
+    },
+    {
+      "id": "tip",
+      "sourceTitle": "Tip Calculator",
+      "category": "Finance & Money",
+      "subcategory": "Shopping & Everyday Calculators",
+      "sourceFile": "app.js",
+      "title": {
+        "hi": "टिप कैलकुलेटर",
+        "ar": "حاسبة الإكرامية",
+        "ur": "ٹِپ کیلکولیٹر",
+        "zh-CN": "小费计算器",
+        "ja": "チップ計算機",
+        "ru": "Калькулятор чаевых"
+      },
+      "status": "title-translated-review-required"
+    },
+    {
+      "id": "car",
+      "sourceTitle": "Auto / Car Loan Calculator",
+      "category": "Finance & Money",
+      "subcategory": "Loan Calculators",
+      "sourceFile": "app.js",
+      "title": {
+        "hi": "कार लोन कैलकुलेटर",
+        "ar": "حاسبة قرض السيارة",
+        "ur": "کار لون کیلکولیٹر",
+        "zh-CN": "汽车贷款计算器",
+        "ja": "自動車ローン計算機",
+        "ru": "Калькулятор автокредита"
+      },
+      "status": "title-translated-review-required"
+    },
+    {
+      "id": "amortization",
+      "sourceTitle": "Loan Amortization Calculator",
+      "category": "Finance & Money",
+      "subcategory": "Loan Calculators",
+      "sourceFile": "app.js",
+      "title": {
+        "hi": "लोन परिशोधन कैलकुलेटर",
+        "ar": "حاسبة جدول سداد القرض",
+        "ur": "قرض کی ادائیگی کا شیڈول کیلکولیٹر",
+        "zh-CN": "贷款摊销计算器",
+        "ja": "ローン返済計画計算機",
+        "ru": "Калькулятор амортизации кредита"
+      },
+      "status": "title-translated-review-required"
+    },
+    {
+      "id": "savings",
+      "sourceTitle": "Savings Goal Calculator",
+      "category": "Finance & Money",
+      "subcategory": "Savings & Personal Finance",
+      "sourceFile": "app.js",
+      "title": {
+        "hi": "बचत लक्ष्य कैलकुलेटर",
+        "ar": "حاسبة هدف الادخار",
+        "ur": "بچت کے ہدف کا کیلکولیٹر",
+        "zh-CN": "储蓄目标计算器",
+        "ja": "貯蓄目標計算機",
+        "ru": "Калькулятор цели накоплений"
+      },
+      "status": "title-translated-review-required"
+    },
+    {
+      "id": "freelance",
+      "sourceTitle": "Freelance Hourly Rate Calculator",
+      "category": "Finance & Money",
+      "subcategory": "Business & Freelance Calculators",
+      "sourceFile": "app.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "margin",
+      "sourceTitle": "Profit Margin Calculator",
+      "category": "Finance & Money",
+      "subcategory": "Business & Freelance Calculators",
+      "sourceFile": "app.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "affordability",
+      "sourceTitle": "Mortgage Affordability Calculator",
+      "category": "Finance & Money",
+      "subcategory": "Mortgage Calculators",
+      "sourceFile": "app.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "payoff",
+      "sourceTitle": "Mortgage Payoff & Extra Payment Calculator",
+      "category": "Finance & Money",
+      "subcategory": "Mortgage Calculators",
+      "sourceFile": "app.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "refinance",
+      "sourceTitle": "Mortgage Refinance Comparison",
+      "category": "Finance & Money",
+      "subcategory": "Mortgage Calculators",
+      "sourceFile": "app.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "personal-loan",
+      "sourceTitle": "Personal Loan Calculator",
+      "category": "Finance & Money",
+      "subcategory": "Loan Calculators",
+      "sourceFile": "app.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "student-loan",
+      "sourceTitle": "Student Loan Repayment Calculator",
+      "category": "Finance & Money",
+      "subcategory": "Loan Calculators",
+      "sourceFile": "app.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "simple-interest",
+      "sourceTitle": "Simple Interest Calculator",
+      "category": "Finance & Money",
+      "subcategory": "Investment & Return Calculators",
+      "sourceFile": "app.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "retirement",
+      "sourceTitle": "Retirement Savings Calculator",
+      "category": "Finance & Money",
+      "subcategory": "Investment & Return Calculators",
+      "sourceFile": "app.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "401k",
+      "sourceTitle": "401k Contribution Calculator",
+      "category": "Finance & Money",
+      "subcategory": "Investment & Return Calculators",
+      "sourceFile": "app.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "ira",
+      "sourceTitle": "Roth vs Traditional IRA Comparison",
+      "category": "Finance & Money",
+      "subcategory": "Investment & Return Calculators",
+      "sourceFile": "app.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "inflation",
+      "sourceTitle": "Inflation Calculator",
+      "category": "Finance & Money",
+      "subcategory": "Savings & Personal Finance",
+      "sourceFile": "app.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "cd",
+      "sourceTitle": "CD Calculator",
+      "category": "Finance & Money",
+      "subcategory": "Savings & Personal Finance",
+      "sourceFile": "app.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "apy",
+      "sourceTitle": "APY Calculator",
+      "category": "Finance & Money",
+      "subcategory": "Savings & Personal Finance",
+      "sourceFile": "app.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "tax",
+      "sourceTitle": "Tax Calculator",
+      "category": "Finance & Money",
+      "subcategory": "Tax Calculators",
+      "sourceFile": "app.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "income-tax",
+      "sourceTitle": "Income Tax Calculator",
+      "category": "Finance & Money",
+      "subcategory": "Tax Calculators",
+      "sourceFile": "app.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "sales-tax",
+      "sourceTitle": "Sales Tax Calculator",
+      "category": "Finance & Money",
+      "subcategory": "Tax Calculators",
+      "sourceFile": "app.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "vat-gst",
+      "sourceTitle": "VAT / GST Calculator",
+      "category": "Finance & Money",
+      "subcategory": "Tax Calculators",
+      "sourceFile": "app.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "tax-refund",
+      "sourceTitle": "Tax Refund Estimator",
+      "category": "Finance & Money",
+      "subcategory": "Tax Calculators",
+      "sourceFile": "app.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "salary",
+      "sourceTitle": "Salary Take-Home Calculator",
+      "category": "Finance & Money",
+      "subcategory": "Salary & Payroll Calculators",
+      "sourceFile": "app.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "paycheck",
+      "sourceTitle": "Paycheck Calculator",
+      "category": "Finance & Money",
+      "subcategory": "Salary & Payroll Calculators",
+      "sourceFile": "app.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "payroll",
+      "sourceTitle": "Payroll Calculator",
+      "category": "Finance & Money",
+      "subcategory": "Salary & Payroll Calculators",
+      "sourceFile": "app.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "overtime",
+      "sourceTitle": "Overtime Pay Calculator",
+      "category": "Finance & Money",
+      "subcategory": "Salary & Payroll Calculators",
+      "sourceFile": "app.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "discount",
+      "sourceTitle": "Discount Calculator",
+      "category": "Finance & Money",
+      "subcategory": "Shopping & Everyday Calculators",
+      "sourceFile": "app.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "exchange-fees",
+      "sourceTitle": "Exchange Fee & Markup Calculator",
+      "category": "Finance & Money",
+      "subcategory": "Currency & Money Transfer",
+      "sourceFile": "app.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "transfer-compare",
+      "sourceTitle": "International Money Transfer Cost Calculator",
+      "category": "Finance & Money",
+      "subcategory": "Currency & Money Transfer",
+      "sourceFile": "app.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "freelance-project",
+      "sourceTitle": "Freelance Project Pricing Calculator",
+      "category": "Finance & Money",
+      "subcategory": "Business & Freelance Calculators",
+      "sourceFile": "app.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "freelancer-net-income",
+      "sourceTitle": "Freelancer Net Income After Costs Calculator",
+      "category": "Finance & Money",
+      "subcategory": "Business & Freelance Calculators",
+      "sourceFile": "app.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "markup",
+      "sourceTitle": "Markup Calculator",
+      "category": "Finance & Money",
+      "subcategory": "Business & Freelance Calculators",
+      "sourceFile": "app.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "break-even",
+      "sourceTitle": "Break-even Calculator",
+      "category": "Finance & Money",
+      "subcategory": "Business & Freelance Calculators",
+      "sourceFile": "app.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "business-roi",
+      "sourceTitle": "Business ROI Calculator",
+      "category": "Finance & Money",
+      "subcategory": "Investment & Return Calculators",
+      "sourceFile": "app.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "cash-flow",
+      "sourceTitle": "Cash Flow Projection Calculator",
+      "category": "Finance & Money",
+      "subcategory": "Business & Freelance Calculators",
+      "sourceFile": "app.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "rental-yield",
+      "sourceTitle": "Rental Yield Calculator",
+      "category": "Finance & Money",
+      "subcategory": "Investment & Return Calculators",
+      "sourceFile": "app.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "emergency-fund",
+      "sourceTitle": "Emergency Fund Calculator",
+      "category": "Finance & Money",
+      "subcategory": "Savings & Personal Finance",
+      "sourceFile": "app.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "net-worth",
+      "sourceTitle": "Net Worth Calculator",
+      "category": "Finance & Money",
+      "subcategory": "Savings & Personal Finance",
+      "sourceFile": "app.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "basic-arithmetic",
+      "sourceTitle": "Basic Arithmetic Calculator",
+      "category": "Math & Statistics",
+      "subcategory": "Basic Math & Number Tools",
+      "sourceFile": "math-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "fraction",
+      "sourceTitle": "Fraction Calculator",
+      "category": "Math & Statistics",
+      "subcategory": "Basic Math & Number Tools",
+      "sourceFile": "math-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "mixed-number",
+      "sourceTitle": "Mixed Number Calculator",
+      "category": "Math & Statistics",
+      "subcategory": "Basic Math & Number Tools",
+      "sourceFile": "math-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "decimal-fraction",
+      "sourceTitle": "Decimal to Fraction Converter",
+      "category": "Math & Statistics",
+      "subcategory": "Basic Math & Number Tools",
+      "sourceFile": "math-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "ratio",
+      "sourceTitle": "Ratio Calculator",
+      "category": "Math & Statistics",
+      "subcategory": "Basic Math & Number Tools",
+      "sourceFile": "math-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "proportion",
+      "sourceTitle": "Proportion Calculator",
+      "category": "Math & Statistics",
+      "subcategory": "Basic Math & Number Tools",
+      "sourceFile": "math-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "average",
+      "sourceTitle": "Average Calculator",
+      "category": "Math & Statistics",
+      "subcategory": "Basic Math & Number Tools",
+      "sourceFile": "math-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "percentage-change",
+      "sourceTitle": "Percentage Change Calculator",
+      "category": "Math & Statistics",
+      "subcategory": "Basic Math & Number Tools",
+      "sourceFile": "math-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "percent-error",
+      "sourceTitle": "Percent Error Calculator",
+      "category": "Math & Statistics",
+      "subcategory": "Basic Math & Number Tools",
+      "sourceFile": "math-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "rounding",
+      "sourceTitle": "Rounding Calculator",
+      "category": "Math & Statistics",
+      "subcategory": "Basic Math & Number Tools",
+      "sourceFile": "math-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "significant-figures",
+      "sourceTitle": "Significant Figures Calculator",
+      "category": "Math & Statistics",
+      "subcategory": "Basic Math & Number Tools",
+      "sourceFile": "math-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "scientific-notation",
+      "sourceTitle": "Scientific Notation Converter",
+      "category": "Math & Statistics",
+      "subcategory": "Basic Math & Number Tools",
+      "sourceFile": "math-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "exponent",
+      "sourceTitle": "Exponent Calculator",
+      "category": "Math & Statistics",
+      "subcategory": "Advanced Math & Number Theory",
+      "sourceFile": "math-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "square-root",
+      "sourceTitle": "Square Root Calculator",
+      "category": "Math & Statistics",
+      "subcategory": "Advanced Math & Number Theory",
+      "sourceFile": "math-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "cube-root",
+      "sourceTitle": "Cube Root Calculator",
+      "category": "Math & Statistics",
+      "subcategory": "Advanced Math & Number Theory",
+      "sourceFile": "math-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "nth-root",
+      "sourceTitle": "Nth Root Calculator",
+      "category": "Math & Statistics",
+      "subcategory": "Advanced Math & Number Theory",
+      "sourceFile": "math-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "factorial",
+      "sourceTitle": "Factorial Calculator",
+      "category": "Math & Statistics",
+      "subcategory": "Advanced Math & Number Theory",
+      "sourceFile": "math-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "gcd",
+      "sourceTitle": "GCD Calculator",
+      "category": "Math & Statistics",
+      "subcategory": "Advanced Math & Number Theory",
+      "sourceFile": "math-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "lcm",
+      "sourceTitle": "LCM Calculator",
+      "category": "Math & Statistics",
+      "subcategory": "Advanced Math & Number Theory",
+      "sourceFile": "math-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "prime-checker",
+      "sourceTitle": "Prime Number Checker",
+      "category": "Math & Statistics",
+      "subcategory": "Advanced Math & Number Theory",
+      "sourceFile": "math-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "prime-factorization",
+      "sourceTitle": "Prime Factorization Calculator",
+      "category": "Math & Statistics",
+      "subcategory": "Advanced Math & Number Theory",
+      "sourceFile": "math-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "modulo",
+      "sourceTitle": "Modulo / Remainder Calculator",
+      "category": "Math & Statistics",
+      "subcategory": "Advanced Math & Number Theory",
+      "sourceFile": "math-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "pythagorean",
+      "sourceTitle": "Pythagorean Theorem Calculator",
+      "category": "Math & Statistics",
+      "subcategory": "Geometry",
+      "sourceFile": "math-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "circle",
+      "sourceTitle": "Circle Calculator",
+      "category": "Math & Statistics",
+      "subcategory": "Geometry",
+      "sourceFile": "math-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "triangle-area",
+      "sourceTitle": "Triangle Area Calculator",
+      "category": "Math & Statistics",
+      "subcategory": "Geometry",
+      "sourceFile": "math-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "linear-equation",
+      "sourceTitle": "Linear Equation Solver",
+      "category": "Math & Statistics",
+      "subcategory": "Algebra & Linear Algebra",
+      "sourceFile": "advanced-math-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "quadratic-equation",
+      "sourceTitle": "Quadratic Equation Solver",
+      "category": "Math & Statistics",
+      "subcategory": "Algebra & Linear Algebra",
+      "sourceFile": "advanced-math-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "simultaneous-equations",
+      "sourceTitle": "Simultaneous Equations Solver",
+      "category": "Math & Statistics",
+      "subcategory": "Algebra & Linear Algebra",
+      "sourceFile": "advanced-math-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "polynomial-calculator",
+      "sourceTitle": "Polynomial Calculator",
+      "category": "Math & Statistics",
+      "subcategory": "Algebra & Linear Algebra",
+      "sourceFile": "advanced-math-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "logarithm",
+      "sourceTitle": "Logarithm Calculator",
+      "category": "Math & Statistics",
+      "subcategory": "Advanced Math & Number Theory",
+      "sourceFile": "advanced-math-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "matrix-operations",
+      "sourceTitle": "Matrix Operations Calculator",
+      "category": "Math & Statistics",
+      "subcategory": "Algebra & Linear Algebra",
+      "sourceFile": "advanced-math-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "matrix-determinant",
+      "sourceTitle": "Matrix Determinant Calculator",
+      "category": "Math & Statistics",
+      "subcategory": "Algebra & Linear Algebra",
+      "sourceFile": "advanced-math-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "matrix-inverse",
+      "sourceTitle": "Matrix Inverse Calculator",
+      "category": "Math & Statistics",
+      "subcategory": "Algebra & Linear Algebra",
+      "sourceFile": "advanced-math-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "complex-number",
+      "sourceTitle": "Complex Number Calculator",
+      "category": "Math & Statistics",
+      "subcategory": "Advanced Math & Number Theory",
+      "sourceFile": "advanced-math-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "sequence-calculator",
+      "sourceTitle": "Arithmetic & Geometric Sequence Calculator",
+      "category": "Math & Statistics",
+      "subcategory": "Advanced Math & Number Theory",
+      "sourceFile": "advanced-math-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "series-sum",
+      "sourceTitle": "Series Sum Calculator",
+      "category": "Math & Statistics",
+      "subcategory": "Advanced Math & Number Theory",
+      "sourceFile": "advanced-math-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "permutation",
+      "sourceTitle": "Permutation Calculator",
+      "category": "Math & Statistics",
+      "subcategory": "Advanced Math & Number Theory",
+      "sourceFile": "advanced-math-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "combination",
+      "sourceTitle": "Combination Calculator",
+      "category": "Math & Statistics",
+      "subcategory": "Advanced Math & Number Theory",
+      "sourceFile": "advanced-math-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "probability",
+      "sourceTitle": "Probability Calculator",
+      "category": "Math & Statistics",
+      "subcategory": "Statistics & Probability",
+      "sourceFile": "advanced-math-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "mean-median-mode",
+      "sourceTitle": "Mean Median Mode Calculator",
+      "category": "Math & Statistics",
+      "subcategory": "Statistics & Probability",
+      "sourceFile": "advanced-math-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "variance-standard-deviation",
+      "sourceTitle": "Variance & Standard Deviation Calculator",
+      "category": "Math & Statistics",
+      "subcategory": "Statistics & Probability",
+      "sourceFile": "advanced-math-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "z-score",
+      "sourceTitle": "Z-Score Calculator",
+      "category": "Math & Statistics",
+      "subcategory": "Statistics & Probability",
+      "sourceFile": "advanced-math-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "correlation",
+      "sourceTitle": "Correlation Calculator",
+      "category": "Math & Statistics",
+      "subcategory": "Statistics & Probability",
+      "sourceFile": "advanced-math-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "linear-regression",
+      "sourceTitle": "Linear Regression Calculator",
+      "category": "Math & Statistics",
+      "subcategory": "Statistics & Probability",
+      "sourceFile": "advanced-math-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "confidence-interval",
+      "sourceTitle": "Confidence Interval Calculator",
+      "category": "Math & Statistics",
+      "subcategory": "Statistics & Probability",
+      "sourceFile": "advanced-math-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "age-calculator",
+      "sourceTitle": "Age Calculator",
+      "category": "Date & Time",
+      "subcategory": "Date Calculators",
+      "sourceFile": "date-time-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "date-difference",
+      "sourceTitle": "Date Difference Calculator",
+      "category": "Date & Time",
+      "subcategory": "Date Calculators",
+      "sourceFile": "date-time-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "add-days",
+      "sourceTitle": "Add Days Calculator",
+      "category": "Date & Time",
+      "subcategory": "Date Calculators",
+      "sourceFile": "date-time-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "subtract-days",
+      "sourceTitle": "Subtract Days Calculator",
+      "category": "Date & Time",
+      "subcategory": "Date Calculators",
+      "sourceFile": "date-time-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "business-days",
+      "sourceTitle": "Business Days Calculator",
+      "category": "Date & Time",
+      "subcategory": "Date Calculators",
+      "sourceFile": "date-time-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "working-days",
+      "sourceTitle": "Working Days Calculator",
+      "category": "Date & Time",
+      "subcategory": "Date Calculators",
+      "sourceFile": "date-time-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "iso-week",
+      "sourceTitle": "ISO Week Number Calculator",
+      "category": "Date & Time",
+      "subcategory": "Date Calculators",
+      "sourceFile": "date-time-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "day-of-year",
+      "sourceTitle": "Day of Year Calculator",
+      "category": "Date & Time",
+      "subcategory": "Date Calculators",
+      "sourceFile": "date-time-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "days-in-month",
+      "sourceTitle": "Days in Month Calculator",
+      "category": "Date & Time",
+      "subcategory": "Date Calculators",
+      "sourceFile": "date-time-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "leap-year",
+      "sourceTitle": "Leap Year Checker",
+      "category": "Date & Time",
+      "subcategory": "Date Calculators",
+      "sourceFile": "date-time-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "calendar-month",
+      "sourceTitle": "Calendar Month View",
+      "category": "Date & Time",
+      "subcategory": "Date Calculators",
+      "sourceFile": "date-time-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "recurring-date",
+      "sourceTitle": "Recurring Date Calculator",
+      "category": "Date & Time",
+      "subcategory": "Date Calculators",
+      "sourceFile": "date-time-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "term-duration",
+      "sourceTitle": "Term Duration Calculator",
+      "category": "Date & Time",
+      "subcategory": "Date Calculators",
+      "sourceFile": "date-time-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "time-duration",
+      "sourceTitle": "Time Duration Calculator",
+      "category": "Date & Time",
+      "subcategory": "Time Calculators",
+      "sourceFile": "date-time-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "time-difference",
+      "sourceTitle": "Time Difference Calculator",
+      "category": "Date & Time",
+      "subcategory": "Time Calculators",
+      "sourceFile": "date-time-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "add-time",
+      "sourceTitle": "Add Time Calculator",
+      "category": "Date & Time",
+      "subcategory": "Time Calculators",
+      "sourceFile": "date-time-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "subtract-time",
+      "sourceTitle": "Subtract Time Calculator",
+      "category": "Date & Time",
+      "subcategory": "Time Calculators",
+      "sourceFile": "date-time-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "countdown-timer",
+      "sourceTitle": "Countdown Timer",
+      "category": "Date & Time",
+      "subcategory": "Time Calculators",
+      "sourceFile": "date-time-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "event-countdown",
+      "sourceTitle": "Event Date Countdown",
+      "category": "Date & Time",
+      "subcategory": "Time Calculators",
+      "sourceFile": "date-time-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "date-to-unix",
+      "sourceTitle": "Date to Unix Timestamp",
+      "category": "Date & Time",
+      "subcategory": "Timestamp Tools",
+      "sourceFile": "date-time-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "unix-to-date",
+      "sourceTitle": "Unix Timestamp to Date",
+      "category": "Date & Time",
+      "subcategory": "Timestamp Tools",
+      "sourceFile": "date-time-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "world-clock",
+      "sourceTitle": "World Clock",
+      "category": "Date & Time",
+      "subcategory": "World Clock & Time Zones",
+      "sourceFile": "date-time-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "timezone-converter",
+      "sourceTitle": "Time Zone Converter",
+      "category": "Date & Time",
+      "subcategory": "World Clock & Time Zones",
+      "sourceFile": "date-time-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "utc-offset",
+      "sourceTitle": "UTC Offset Calculator",
+      "category": "Date & Time",
+      "subcategory": "World Clock & Time Zones",
+      "sourceFile": "date-time-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "meeting-time-planner",
+      "sourceTitle": "Meeting Time Planner",
+      "category": "Date & Time",
+      "subcategory": "World Clock & Time Zones",
+      "sourceFile": "date-time-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "length-converter",
+      "sourceTitle": "Length Converter",
+      "category": "Unit & Data Conversion",
+      "subcategory": "Length, Area & Paper Sizes",
+      "sourceFile": "unit-converter-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "mass-converter",
+      "sourceTitle": "Weight / Mass Converter",
+      "category": "Unit & Data Conversion",
+      "subcategory": "Weight & Mass",
+      "sourceFile": "unit-converter-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "temperature-converter",
+      "sourceTitle": "Temperature Converter",
+      "category": "Unit & Data Conversion",
+      "subcategory": "Temperature",
+      "sourceFile": "unit-converter-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "area-converter",
+      "sourceTitle": "Area Unit Converter",
+      "category": "Unit & Data Conversion",
+      "subcategory": "Length, Area & Paper Sizes",
+      "sourceFile": "unit-converter-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "volume-converter",
+      "sourceTitle": "Volume Unit Converter",
+      "category": "Unit & Data Conversion",
+      "subcategory": "Volume & Cooking Measures",
+      "sourceFile": "unit-converter-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "speed-converter",
+      "sourceTitle": "Speed Converter",
+      "category": "Unit & Data Conversion",
+      "subcategory": "Speed & Fuel Economy",
+      "sourceFile": "unit-converter-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "pressure-converter",
+      "sourceTitle": "Pressure Converter",
+      "category": "Unit & Data Conversion",
+      "subcategory": "Science & Engineering Units",
+      "sourceFile": "unit-converter-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "energy-converter",
+      "sourceTitle": "Energy Converter",
+      "category": "Unit & Data Conversion",
+      "subcategory": "Science & Engineering Units",
+      "sourceFile": "unit-converter-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "power-converter",
+      "sourceTitle": "Power Converter",
+      "category": "Unit & Data Conversion",
+      "subcategory": "Science & Engineering Units",
+      "sourceFile": "unit-converter-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "frequency-converter",
+      "sourceTitle": "Frequency Converter",
+      "category": "Unit & Data Conversion",
+      "subcategory": "Science & Engineering Units",
+      "sourceFile": "unit-converter-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "angle-converter",
+      "sourceTitle": "Angle Converter",
+      "category": "Unit & Data Conversion",
+      "subcategory": "Science & Engineering Units",
+      "sourceFile": "unit-converter-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "fuel-economy-converter",
+      "sourceTitle": "Fuel Economy Converter",
+      "category": "Unit & Data Conversion",
+      "subcategory": "Speed & Fuel Economy",
+      "sourceFile": "unit-converter-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "density-converter",
+      "sourceTitle": "Density Converter",
+      "category": "Unit & Data Conversion",
+      "subcategory": "Science & Engineering Units",
+      "sourceFile": "unit-converter-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "cooking-measurement-converter",
+      "sourceTitle": "Cooking Measurement Converter",
+      "category": "Unit & Data Conversion",
+      "subcategory": "Volume & Cooking Measures",
+      "sourceFile": "unit-converter-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "data-storage-converter",
+      "sourceTitle": "Data Storage Converter",
+      "category": "Unit & Data Conversion",
+      "subcategory": "Digital Storage & Data Transfer",
+      "sourceFile": "unit-converter-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "data-transfer-speed-converter",
+      "sourceTitle": "Data Transfer Speed Converter",
+      "category": "Unit & Data Conversion",
+      "subcategory": "Digital Storage & Data Transfer",
+      "sourceFile": "unit-converter-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "download-time-estimator",
+      "sourceTitle": "Download Time Estimator",
+      "category": "Unit & Data Conversion",
+      "subcategory": "Digital Storage & Data Transfer",
+      "sourceFile": "unit-converter-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "number-base-converter",
+      "sourceTitle": "Number Base Converter",
+      "category": "Unit & Data Conversion",
+      "subcategory": "Number Systems & Numerals",
+      "sourceFile": "unit-converter-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "roman-numeral-converter",
+      "sourceTitle": "Roman Numeral Converter",
+      "category": "Unit & Data Conversion",
+      "subcategory": "Number Systems & Numerals",
+      "sourceFile": "unit-converter-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "paper-size-converter",
+      "sourceTitle": "Paper Size Converter",
+      "category": "Unit & Data Conversion",
+      "subcategory": "Length, Area & Paper Sizes",
+      "sourceFile": "unit-converter-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "word-counter",
+      "sourceTitle": "Word Counter",
+      "category": "Developer & Text Tools",
+      "subcategory": "Text & Writing Utilities",
+      "sourceFile": "developer-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "character-counter",
+      "sourceTitle": "Character Counter",
+      "category": "Developer & Text Tools",
+      "subcategory": "Text & Writing Utilities",
+      "sourceFile": "developer-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "sentence-counter",
+      "sourceTitle": "Sentence Counter",
+      "category": "Developer & Text Tools",
+      "subcategory": "Text & Writing Utilities",
+      "sourceFile": "developer-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "paragraph-counter",
+      "sourceTitle": "Paragraph Counter",
+      "category": "Developer & Text Tools",
+      "subcategory": "Text & Writing Utilities",
+      "sourceFile": "developer-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "reading-time-calculator",
+      "sourceTitle": "Reading Time Calculator",
+      "category": "Developer & Text Tools",
+      "subcategory": "Text & Writing Utilities",
+      "sourceFile": "developer-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "case-converter",
+      "sourceTitle": "Case Converter",
+      "category": "Developer & Text Tools",
+      "subcategory": "Text & Writing Utilities",
+      "sourceFile": "developer-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "text-reverser",
+      "sourceTitle": "Text Reverser",
+      "category": "Developer & Text Tools",
+      "subcategory": "Text & Writing Utilities",
+      "sourceFile": "developer-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "duplicate-line-remover",
+      "sourceTitle": "Duplicate Line Remover",
+      "category": "Developer & Text Tools",
+      "subcategory": "Text & Writing Utilities",
+      "sourceFile": "developer-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "text-compare-diff",
+      "sourceTitle": "Text Compare / Diff Tool",
+      "category": "Developer & Text Tools",
+      "subcategory": "Text & Writing Utilities",
+      "sourceFile": "developer-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "whitespace-cleaner",
+      "sourceTitle": "Whitespace Cleaner",
+      "category": "Developer & Text Tools",
+      "subcategory": "Text & Writing Utilities",
+      "sourceFile": "developer-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "line-sorter",
+      "sourceTitle": "Line Sorter",
+      "category": "Developer & Text Tools",
+      "subcategory": "Text & Writing Utilities",
+      "sourceFile": "developer-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "text-to-slug-generator",
+      "sourceTitle": "Text-to-Slug Generator",
+      "category": "Developer & Text Tools",
+      "subcategory": "Text & Writing Utilities",
+      "sourceFile": "developer-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "html-entity-encoder-decoder",
+      "sourceTitle": "HTML Entity Encoder / Decoder",
+      "category": "Developer & Text Tools",
+      "subcategory": "Encoding & Decoding",
+      "sourceFile": "developer-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "url-encoder-decoder",
+      "sourceTitle": "URL Encoder / Decoder",
+      "category": "Developer & Text Tools",
+      "subcategory": "Encoding & Decoding",
+      "sourceFile": "developer-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "base64-encoder-decoder",
+      "sourceTitle": "Base64 Encoder / Decoder",
+      "category": "Developer & Text Tools",
+      "subcategory": "Encoding & Decoding",
+      "sourceFile": "developer-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "json-formatter-validator",
+      "sourceTitle": "JSON Formatter & Validator",
+      "category": "Developer & Text Tools",
+      "subcategory": "Code & Markup Utilities",
+      "sourceFile": "developer-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "html-formatter",
+      "sourceTitle": "HTML Formatter",
+      "category": "Developer & Text Tools",
+      "subcategory": "Code & Markup Utilities",
+      "sourceFile": "developer-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "css-formatter",
+      "sourceTitle": "CSS Formatter",
+      "category": "Developer & Text Tools",
+      "subcategory": "Code & Markup Utilities",
+      "sourceFile": "developer-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "javascript-formatter",
+      "sourceTitle": "JavaScript Formatter",
+      "category": "Developer & Text Tools",
+      "subcategory": "Code & Markup Utilities",
+      "sourceFile": "developer-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "html-css-js-minifier",
+      "sourceTitle": "HTML/CSS/JS Minifier",
+      "category": "Developer & Text Tools",
+      "subcategory": "Code & Markup Utilities",
+      "sourceFile": "developer-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "uuid-generator",
+      "sourceTitle": "UUID Generator",
+      "category": "Developer & Text Tools",
+      "subcategory": "Developer Utilities",
+      "sourceFile": "education-lifestyle-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "regex-tester",
+      "sourceTitle": "Regex Tester (safe local matching)",
+      "category": "Developer & Text Tools",
+      "subcategory": "Developer Utilities",
+      "sourceFile": "education-lifestyle-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "color-code-converter",
+      "sourceTitle": "Color Code Converter (HEX/RGB/HSL)",
+      "category": "Developer & Text Tools",
+      "subcategory": "Developer Utilities",
+      "sourceFile": "education-lifestyle-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "unix-timestamp-unit-helper",
+      "sourceTitle": "Unix Timestamp Unit Helper",
+      "category": "Developer & Text Tools",
+      "subcategory": "Developer Utilities",
+      "sourceFile": "education-lifestyle-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "markdown-previewer",
+      "sourceTitle": "Markdown Previewer",
+      "category": "Developer & Text Tools",
+      "subcategory": "Code & Markup Utilities",
+      "sourceFile": "education-lifestyle-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "gpa-calculator",
+      "sourceTitle": "GPA Calculator",
+      "category": "Education & Study",
+      "subcategory": "Grades, GPA & Exams",
+      "sourceFile": "education-lifestyle-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "cgpa-calculator",
+      "sourceTitle": "CGPA Calculator",
+      "category": "Education & Study",
+      "subcategory": "Grades, GPA & Exams",
+      "sourceFile": "education-lifestyle-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "grade-calculator",
+      "sourceTitle": "Grade Calculator",
+      "category": "Education & Study",
+      "subcategory": "Grades, GPA & Exams",
+      "sourceFile": "education-lifestyle-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "exam-percentage-calculator",
+      "sourceTitle": "Exam Percentage Calculator",
+      "category": "Education & Study",
+      "subcategory": "Grades, GPA & Exams",
+      "sourceFile": "education-lifestyle-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "marks-required-calculator",
+      "sourceTitle": "Marks Required Calculator",
+      "category": "Education & Study",
+      "subcategory": "Grades, GPA & Exams",
+      "sourceFile": "education-lifestyle-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "weighted-grade-calculator",
+      "sourceTitle": "Weighted Grade Calculator",
+      "category": "Education & Study",
+      "subcategory": "Grades, GPA & Exams",
+      "sourceFile": "education-lifestyle-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "final-exam-grade-calculator",
+      "sourceTitle": "Final Exam Grade Calculator",
+      "category": "Education & Study",
+      "subcategory": "Grades, GPA & Exams",
+      "sourceFile": "education-lifestyle-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "semester-gpa-planner",
+      "sourceTitle": "Semester GPA Planner",
+      "category": "Education & Study",
+      "subcategory": "Grades, GPA & Exams",
+      "sourceFile": "education-lifestyle-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "attendance-percentage-calculator",
+      "sourceTitle": "Attendance Percentage Calculator",
+      "category": "Education & Study",
+      "subcategory": "Grades, GPA & Exams",
+      "sourceFile": "education-lifestyle-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "study-time-planner",
+      "sourceTitle": "Study Time Planner",
+      "category": "Education & Study",
+      "subcategory": "Grades, GPA & Exams",
+      "sourceFile": "education-lifestyle-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "reading-schedule-planner",
+      "sourceTitle": "Reading Schedule Planner",
+      "category": "Education & Study",
+      "subcategory": "Grades, GPA & Exams",
+      "sourceFile": "education-lifestyle-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "assignment-grade-tracker",
+      "sourceTitle": "Assignment Grade Tracker",
+      "category": "Education & Study",
+      "subcategory": "Grades, GPA & Exams",
+      "sourceFile": "education-lifestyle-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "concrete-volume-calculator",
+      "sourceTitle": "Concrete Volume Calculator",
+      "category": "Home & Construction",
+      "subcategory": "Building Materials & Volume",
+      "sourceFile": "education-lifestyle-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "brick-quantity-estimator",
+      "sourceTitle": "Brick Quantity Estimator",
+      "category": "Home & Construction",
+      "subcategory": "Building Materials & Volume",
+      "sourceFile": "education-lifestyle-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "cement-sand-aggregate-estimator",
+      "sourceTitle": "Cement / Sand / Aggregate Estimator",
+      "category": "Home & Construction",
+      "subcategory": "Building Materials & Volume",
+      "sourceFile": "education-lifestyle-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "paint-quantity-calculator",
+      "sourceTitle": "Paint Quantity Calculator",
+      "category": "Home & Construction",
+      "subcategory": "Room, Surface & Flooring",
+      "sourceFile": "lifestyle-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "tile-quantity-calculator",
+      "sourceTitle": "Tile Quantity Calculator",
+      "category": "Home & Construction",
+      "subcategory": "Room, Surface & Flooring",
+      "sourceFile": "lifestyle-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "flooring-material-estimator",
+      "sourceTitle": "Flooring Material Estimator",
+      "category": "Home & Construction",
+      "subcategory": "Room, Surface & Flooring",
+      "sourceFile": "lifestyle-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "roofing-area-calculator",
+      "sourceTitle": "Roofing Area Calculator",
+      "category": "Home & Construction",
+      "subcategory": "Roofing & Outdoor Projects",
+      "sourceFile": "lifestyle-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "room-area-calculator",
+      "sourceTitle": "Room Area Calculator",
+      "category": "Home & Construction",
+      "subcategory": "Room, Surface & Flooring",
+      "sourceFile": "lifestyle-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "wall-area-calculator",
+      "sourceTitle": "Wall Area Calculator",
+      "category": "Home & Construction",
+      "subcategory": "Room, Surface & Flooring",
+      "sourceFile": "lifestyle-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "gravel-volume-calculator",
+      "sourceTitle": "Gravel Volume Calculator",
+      "category": "Home & Construction",
+      "subcategory": "Building Materials & Volume",
+      "sourceFile": "lifestyle-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "fence-material-estimator",
+      "sourceTitle": "Fence Material Estimator",
+      "category": "Home & Construction",
+      "subcategory": "Roofing & Outdoor Projects",
+      "sourceFile": "lifestyle-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "fuel-cost-calculator",
+      "sourceTitle": "Fuel Cost Calculator",
+      "category": "Everyday Life",
+      "subcategory": "Household Cost Calculators",
+      "sourceFile": "lifestyle-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "electricity-bill-estimator",
+      "sourceTitle": "Electricity Bill Estimator",
+      "category": "Everyday Life",
+      "subcategory": "Household Cost Calculators",
+      "sourceFile": "lifestyle-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "bill-split-calculator",
+      "sourceTitle": "Bill Split Calculator",
+      "category": "Everyday Life",
+      "subcategory": "Shopping & Bill Calculators",
+      "sourceFile": "lifestyle-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "unit-price-comparator",
+      "sourceTitle": "Unit Price Comparator",
+      "category": "Everyday Life",
+      "subcategory": "Shopping & Bill Calculators",
+      "sourceFile": "lifestyle-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "sales-commission-calculator",
+      "sourceTitle": "Sales Commission Calculator",
+      "category": "Everyday Life",
+      "subcategory": "Commission & Earnings",
+      "sourceFile": "lifestyle-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "study-topic-organizer",
+      "sourceTitle": "Study Topic Organizer",
+      "category": "Education & Study",
+      "subcategory": "Grades, GPA & Exams",
+      "sourceFile": "lifestyle-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "qr-code-generator",
+      "sourceTitle": "QR Code Generator",
+      "category": "Developer & Text Tools",
+      "subcategory": "QR & Code Utilities",
+      "sourceFile": "lifestyle-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "sleep-duration-calculator",
+      "sourceTitle": "Sleep Duration Calculator",
+      "category": "Health & Wellness",
+      "subcategory": "Sleep & Schedule Calculators",
+      "sourceFile": "health-activity-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "bedtime-planner",
+      "sourceTitle": "Bedtime Planner",
+      "category": "Health & Wellness",
+      "subcategory": "Sleep & Schedule Calculators",
+      "sourceFile": "health-activity-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "wake-up-time-planner",
+      "sourceTitle": "Wake-up Time Planner",
+      "category": "Health & Wellness",
+      "subcategory": "Sleep & Schedule Calculators",
+      "sourceFile": "health-activity-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "sleep-schedule-consistency-tracker",
+      "sourceTitle": "Sleep Schedule Consistency Tracker",
+      "category": "Health & Wellness",
+      "subcategory": "Sleep & Schedule Calculators",
+      "sourceFile": "health-activity-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "sleep-log-summary",
+      "sourceTitle": "Sleep Log Summary",
+      "category": "Health & Wellness",
+      "subcategory": "Sleep & Schedule Calculators",
+      "sourceFile": "health-activity-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "running-pace-calculator",
+      "sourceTitle": "Running Pace Calculator",
+      "category": "Health & Activity",
+      "subcategory": "Pace, Speed & Distance Calculators",
+      "sourceFile": "health-activity-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "running-speed-calculator",
+      "sourceTitle": "Running Speed Calculator",
+      "category": "Health & Activity",
+      "subcategory": "Pace, Speed & Distance Calculators",
+      "sourceFile": "health-activity-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "distance-time-pace-calculator",
+      "sourceTitle": "Distance-Time-Pace Calculator",
+      "category": "Health & Activity",
+      "subcategory": "Pace, Speed & Distance Calculators",
+      "sourceFile": "health-activity-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "race-finish-time-predictor",
+      "sourceTitle": "Race Finish Time Predictor",
+      "category": "Health & Activity",
+      "subcategory": "Pace, Speed & Distance Calculators",
+      "sourceFile": "health-activity-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "race-split-calculator",
+      "sourceTitle": "Race Split Calculator",
+      "category": "Health & Activity",
+      "subcategory": "Pace, Speed & Distance Calculators",
+      "sourceFile": "health-activity-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "walking-pace-calculator",
+      "sourceTitle": "Walking Pace Calculator",
+      "category": "Health & Activity",
+      "subcategory": "Pace, Speed & Distance Calculators",
+      "sourceFile": "health-activity-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "hiking-time-estimator",
+      "sourceTitle": "Hiking Time Estimator",
+      "category": "Health & Activity",
+      "subcategory": "Pace, Speed & Distance Calculators",
+      "sourceFile": "health-activity-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "cycling-speed-calculator",
+      "sourceTitle": "Cycling Speed Calculator",
+      "category": "Health & Activity",
+      "subcategory": "Pace, Speed & Distance Calculators",
+      "sourceFile": "health-activity-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "cycling-time-distance-calculator",
+      "sourceTitle": "Cycling Time & Distance Calculator",
+      "category": "Health & Activity",
+      "subcategory": "Pace, Speed & Distance Calculators",
+      "sourceFile": "health-activity-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "swimming-pace-calculator",
+      "sourceTitle": "Swimming Pace Calculator",
+      "category": "Health & Activity",
+      "subcategory": "Pace, Speed & Distance Calculators",
+      "sourceFile": "health-activity-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "swimming-interval-planner",
+      "sourceTitle": "Swimming Split Calculator",
+      "category": "Health & Activity",
+      "subcategory": "User-Entered Activity Splits",
+      "sourceFile": "health-wellness-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "rowing-pace-calculator",
+      "sourceTitle": "Rowing Pace Calculator",
+      "category": "Health & Activity",
+      "subcategory": "User-Entered Activity Splits",
+      "sourceFile": "health-wellness-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "exercise-session-duration-calculator",
+      "sourceTitle": "Session Duration Calculator",
+      "category": "Health & Wellness",
+      "subcategory": "User-Entered Logs & Time Summaries",
+      "sourceFile": "health-wellness-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "interval-training-timer",
+      "sourceTitle": "Interval Schedule Calculator",
+      "category": "Health & Wellness",
+      "subcategory": "User-Entered Logs & Time Summaries",
+      "sourceFile": "health-wellness-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "rest-interval-planner",
+      "sourceTitle": "Gap Duration Calculator",
+      "category": "Health & Wellness",
+      "subcategory": "User-Entered Logs & Time Summaries",
+      "sourceFile": "health-wellness-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "workout-session-planner-time-only",
+      "sourceTitle": "Time Block Planner",
+      "category": "Health & Wellness",
+      "subcategory": "User-Entered Logs & Time Summaries",
+      "sourceFile": "health-wellness-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "weekly-activity-minutes-tracker",
+      "sourceTitle": "Weekly Time Log Summary",
+      "category": "Health & Wellness",
+      "subcategory": "User-Entered Logs & Time Summaries",
+      "sourceFile": "health-wellness-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "activity-goal-progress-tracker",
+      "sourceTitle": "User-Defined Progress Calculator",
+      "category": "Health & Wellness",
+      "subcategory": "User-Entered Logs & Time Summaries",
+      "sourceFile": "health-wellness-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "step-to-distance-converter",
+      "sourceTitle": "Step-to-Distance Converter",
+      "category": "Health & Activity",
+      "subcategory": "Distance, Steps & Elevation",
+      "sourceFile": "health-wellness-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "distance-to-step-estimator",
+      "sourceTitle": "Distance-to-Step Estimator",
+      "category": "Health & Activity",
+      "subcategory": "Distance, Steps & Elevation",
+      "sourceFile": "health-wellness-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "elevation-gain-rate-calculator",
+      "sourceTitle": "Elevation Gain Rate Calculator",
+      "category": "Health & Activity",
+      "subcategory": "Distance, Steps & Elevation",
+      "sourceFile": "health-wellness-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "hiking-elevation-pace-calculator",
+      "sourceTitle": "Hiking Elevation Pace Calculator",
+      "category": "Health & Activity",
+      "subcategory": "Distance, Steps & Elevation",
+      "sourceFile": "health-wellness-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "breathing-exercise-timer",
+      "sourceTitle": "Pattern Duration Calculator",
+      "category": "Health & Wellness",
+      "subcategory": "User-Defined Session Duration",
+      "sourceFile": "health-wellness-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "meditation-session-planner",
+      "sourceTitle": "Meditation Session Planner",
+      "category": "Health & Wellness",
+      "subcategory": "User-Defined Session Duration",
+      "sourceFile": "health-wellness-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    },
+    {
+      "id": "hydration-log-tracker",
+      "sourceTitle": "Hydration Log Tracker",
+      "category": "Health & Wellness",
+      "subcategory": "User-Entered Logs & Time Summaries",
+      "sourceFile": "health-wellness-tools.js",
+      "title": {},
+      "status": "pending-translation"
+    }
+  ]
+}
