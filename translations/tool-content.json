@@ -49,31 +49,188 @@
       },
       "locales": {
         "hi": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "मुद्रा परिवर्तक का उपयोग नवीनतम प्रकाशित संदर्भ विनिमय दर से या आपके द्वारा दर्ज की गई दर से मुद्राओं के बीच राशि बदलने के लिए करें।"
+            },
+            "inputs": [
+              {
+                "key": "amount",
+                "label": "राशि"
+              },
+              {
+                "key": "rate",
+                "label": "विनिमय दर"
+              },
+              {
+                "key": "fee",
+                "label": "सेवा प्रदाता शुल्क (%)"
+              },
+              {
+                "key": "from",
+                "label": "मूल मुद्रा"
+              },
+              {
+                "key": "to",
+                "label": "लक्ष्य मुद्रा"
+              }
+            ]
+          }
         },
         "ar": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "حوّل المبالغ بين العملات باستخدام أحدث سعر مرجعي منشور أو أدخل سعرًا يدويًا."
+            },
+            "inputs": [
+              {
+                "key": "amount",
+                "label": "المبلغ"
+              },
+              {
+                "key": "rate",
+                "label": "سعر الصرف"
+              },
+              {
+                "key": "fee",
+                "label": "رسوم مزوّد الخدمة (%)"
+              },
+              {
+                "key": "from",
+                "label": "من العملة"
+              },
+              {
+                "key": "to",
+                "label": "إلى العملة"
+              }
+            ]
+          }
         },
         "ur": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "تازہ ترین شائع شدہ حوالہ شرحِ تبادلہ استعمال کرکے یا اپنی درج کردہ شرح کے ذریعے کرنسیوں کے درمیان رقم تبدیل کریں۔"
+            },
+            "inputs": [
+              {
+                "key": "amount",
+                "label": "رقم"
+              },
+              {
+                "key": "rate",
+                "label": "شرحِ تبادلہ"
+              },
+              {
+                "key": "fee",
+                "label": "سروس فراہم کنندہ کی فیس (%)"
+              },
+              {
+                "key": "from",
+                "label": "اس کرنسی سے"
+              },
+              {
+                "key": "to",
+                "label": "اس کرنسی میں"
+              }
+            ]
+          }
         },
         "zh-CN": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "使用最新发布的参考汇率，或手动输入汇率，在不同货币之间进行换算。"
+            },
+            "inputs": [
+              {
+                "key": "amount",
+                "label": "金额"
+              },
+              {
+                "key": "rate",
+                "label": "汇率"
+              },
+              {
+                "key": "fee",
+                "label": "服务提供商费用 (%)"
+              },
+              {
+                "key": "from",
+                "label": "原货币"
+              },
+              {
+                "key": "to",
+                "label": "目标货币"
+              }
+            ]
+          }
         },
         "ja": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "最新の公表基準レート、または手動で入力したレートを使って通貨を換算します。"
+            },
+            "inputs": [
+              {
+                "key": "amount",
+                "label": "金額"
+              },
+              {
+                "key": "rate",
+                "label": "為替レート"
+              },
+              {
+                "key": "fee",
+                "label": "サービス提供者の手数料 (%)"
+              },
+              {
+                "key": "from",
+                "label": "換算前の通貨"
+              },
+              {
+                "key": "to",
+                "label": "換算先の通貨"
+              }
+            ]
+          }
         },
         "ru": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "Конвертируйте суммы между валютами по последнему опубликованному справочному курсу или введите курс вручную."
+            },
+            "inputs": [
+              {
+                "key": "amount",
+                "label": "Сумма"
+              },
+              {
+                "key": "rate",
+                "label": "Обменный курс"
+              },
+              {
+                "key": "fee",
+                "label": "Комиссия поставщика (%)"
+              },
+              {
+                "key": "from",
+                "label": "Из валюты"
+              },
+              {
+                "key": "to",
+                "label": "В валюту"
+              }
+            ]
+          }
         }
       },
-      "sourceExtractionStatus": "source-title-description-inputs-extracted"
+      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceTranslationStatus": "description-and-input-labels-drafted"
     },
     {
       "id": "mortgage",
@@ -108,31 +265,188 @@
       },
       "locales": {
         "hi": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "मासिक मूलधन और ब्याज, उधार लेने की कुल लागत तथा बकाया राशि के रुझान का अनुमान लगाएँ।"
+            },
+            "inputs": [
+              {
+                "key": "principal",
+                "label": "घर की कीमत / ऋण राशि"
+              },
+              {
+                "key": "down",
+                "label": "डाउन पेमेंट"
+              },
+              {
+                "key": "rate",
+                "label": "वार्षिक ब्याज दर (%)"
+              },
+              {
+                "key": "years",
+                "label": "ऋण अवधि (वर्ष)"
+              },
+              {
+                "key": "extra",
+                "label": "अतिरिक्त मासिक भुगतान"
+              }
+            ]
+          }
         },
         "ar": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "قدّر أصل الدين والفائدة شهريًا، وإجمالي تكلفة الاقتراض، واتجاه الرصيد المتبقي."
+            },
+            "inputs": [
+              {
+                "key": "principal",
+                "label": "سعر المنزل / مبلغ القرض"
+              },
+              {
+                "key": "down",
+                "label": "الدفعة المقدمة"
+              },
+              {
+                "key": "rate",
+                "label": "معدل الفائدة السنوي (%)"
+              },
+              {
+                "key": "years",
+                "label": "مدة القرض (بالسنوات)"
+              },
+              {
+                "key": "extra",
+                "label": "دفعة شهرية إضافية"
+              }
+            ]
+          }
         },
         "ur": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "ماہانہ اصل زر اور سود، قرض لینے کی کل لاگت اور بقایا رقم کے رجحان کا اندازہ لگائیں۔"
+            },
+            "inputs": [
+              {
+                "key": "principal",
+                "label": "گھر کی قیمت / قرض کی رقم"
+              },
+              {
+                "key": "down",
+                "label": "ابتدائی ادائیگی"
+              },
+              {
+                "key": "rate",
+                "label": "سالانہ شرحِ سود (%)"
+              },
+              {
+                "key": "years",
+                "label": "قرض کی مدت (سال)"
+              },
+              {
+                "key": "extra",
+                "label": "اضافی ماہانہ ادائیگی"
+              }
+            ]
+          }
         },
         "zh-CN": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "估算每月本金与利息、借款总成本以及剩余贷款余额的变化趋势。"
+            },
+            "inputs": [
+              {
+                "key": "principal",
+                "label": "房屋价格 / 贷款金额"
+              },
+              {
+                "key": "down",
+                "label": "首付款"
+              },
+              {
+                "key": "rate",
+                "label": "年利率 (%)"
+              },
+              {
+                "key": "years",
+                "label": "贷款期限（年）"
+              },
+              {
+                "key": "extra",
+                "label": "每月额外还款"
+              }
+            ]
+          }
         },
         "ja": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "毎月の元金と利息、借入総費用、残高の推移を試算します。"
+            },
+            "inputs": [
+              {
+                "key": "principal",
+                "label": "住宅価格 / 借入額"
+              },
+              {
+                "key": "down",
+                "label": "頭金"
+              },
+              {
+                "key": "rate",
+                "label": "年利 (%)"
+              },
+              {
+                "key": "years",
+                "label": "返済期間（年）"
+              },
+              {
+                "key": "extra",
+                "label": "毎月の追加返済額"
+              }
+            ]
+          }
         },
         "ru": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "Оцените ежемесячные выплаты основного долга и процентов, общую стоимость займа и динамику остатка."
+            },
+            "inputs": [
+              {
+                "key": "principal",
+                "label": "Цена жилья / сумма кредита"
+              },
+              {
+                "key": "down",
+                "label": "Первоначальный взнос"
+              },
+              {
+                "key": "rate",
+                "label": "Годовая процентная ставка (%)"
+              },
+              {
+                "key": "years",
+                "label": "Срок кредита (лет)"
+              },
+              {
+                "key": "extra",
+                "label": "Дополнительный ежемесячный платёж"
+              }
+            ]
+          }
         }
       },
-      "sourceExtractionStatus": "source-title-description-inputs-extracted"
+      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceTranslationStatus": "description-and-input-labels-drafted"
     },
     {
       "id": "loan",
@@ -163,31 +477,164 @@
       },
       "locales": {
         "hi": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "निश्चित ब्याज दर वाले ऋण की किस्त और उधार लेने की कुल लागत का अनुमान लगाएँ।"
+            },
+            "inputs": [
+              {
+                "key": "principal",
+                "label": "ऋण राशि"
+              },
+              {
+                "key": "rate",
+                "label": "वार्षिक ब्याज दर (%)"
+              },
+              {
+                "key": "years",
+                "label": "ऋण अवधि (वर्ष)"
+              },
+              {
+                "key": "extra",
+                "label": "अतिरिक्त मासिक भुगतान"
+              }
+            ]
+          }
         },
         "ar": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "قدّر قسط القرض ذي معدل الفائدة الثابت وإجمالي تكلفة الاقتراض."
+            },
+            "inputs": [
+              {
+                "key": "principal",
+                "label": "مبلغ القرض"
+              },
+              {
+                "key": "rate",
+                "label": "معدل الفائدة السنوي (%)"
+              },
+              {
+                "key": "years",
+                "label": "مدة القرض (بالسنوات)"
+              },
+              {
+                "key": "extra",
+                "label": "دفعة شهرية إضافية"
+              }
+            ]
+          }
         },
         "ur": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "مقررہ شرحِ سود والے قرض کی قسط اور قرض لینے کی کل لاگت کا اندازہ لگائیں۔"
+            },
+            "inputs": [
+              {
+                "key": "principal",
+                "label": "قرض کی رقم"
+              },
+              {
+                "key": "rate",
+                "label": "سالانہ شرحِ سود (%)"
+              },
+              {
+                "key": "years",
+                "label": "قرض کی مدت (سال)"
+              },
+              {
+                "key": "extra",
+                "label": "اضافی ماہانہ ادائیگی"
+              }
+            ]
+          }
         },
         "zh-CN": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "估算固定利率贷款的还款额和借款总成本。"
+            },
+            "inputs": [
+              {
+                "key": "principal",
+                "label": "贷款金额"
+              },
+              {
+                "key": "rate",
+                "label": "年利率 (%)"
+              },
+              {
+                "key": "years",
+                "label": "贷款期限（年）"
+              },
+              {
+                "key": "extra",
+                "label": "每月额外还款"
+              }
+            ]
+          }
         },
         "ja": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "固定金利ローンの返済額と借入総費用を試算します。"
+            },
+            "inputs": [
+              {
+                "key": "principal",
+                "label": "借入額"
+              },
+              {
+                "key": "rate",
+                "label": "年利 (%)"
+              },
+              {
+                "key": "years",
+                "label": "返済期間（年）"
+              },
+              {
+                "key": "extra",
+                "label": "毎月の追加返済額"
+              }
+            ]
+          }
         },
         "ru": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "Оцените платёж по кредиту с фиксированной ставкой и общую стоимость заимствования."
+            },
+            "inputs": [
+              {
+                "key": "principal",
+                "label": "Сумма кредита"
+              },
+              {
+                "key": "rate",
+                "label": "Годовая процентная ставка (%)"
+              },
+              {
+                "key": "years",
+                "label": "Срок кредита (лет)"
+              },
+              {
+                "key": "extra",
+                "label": "Дополнительный ежемесячный платёж"
+              }
+            ]
+          }
         }
       },
-      "sourceExtractionStatus": "source-title-description-inputs-extracted"
+      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceTranslationStatus": "description-and-input-labels-drafted"
     },
     {
       "id": "emi",
@@ -214,31 +661,140 @@
       },
       "locales": {
         "hi": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "घटती शेष राशि वाले ऋण के लिए समान मासिक किस्त की गणना करें।"
+            },
+            "inputs": [
+              {
+                "key": "principal",
+                "label": "मूलधन राशि"
+              },
+              {
+                "key": "rate",
+                "label": "वार्षिक ब्याज दर (%)"
+              },
+              {
+                "key": "years",
+                "label": "ऋण अवधि (वर्ष)"
+              }
+            ]
+          }
         },
         "ar": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "احسب القسط الشهري المتساوي لقرض ذي رصيد متناقص."
+            },
+            "inputs": [
+              {
+                "key": "principal",
+                "label": "مبلغ أصل القرض"
+              },
+              {
+                "key": "rate",
+                "label": "معدل الفائدة السنوي (%)"
+              },
+              {
+                "key": "years",
+                "label": "مدة القرض (بالسنوات)"
+              }
+            ]
+          }
         },
         "ur": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "کم ہوتے ہوئے بقایا قرض کے لیے مساوی ماہانہ قسط کا حساب لگائیں۔"
+            },
+            "inputs": [
+              {
+                "key": "principal",
+                "label": "اصل قرض کی رقم"
+              },
+              {
+                "key": "rate",
+                "label": "سالانہ شرحِ سود (%)"
+              },
+              {
+                "key": "years",
+                "label": "قرض کی مدت (سال)"
+              }
+            ]
+          }
         },
         "zh-CN": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "计算余额递减型贷款的等额月供。"
+            },
+            "inputs": [
+              {
+                "key": "principal",
+                "label": "贷款本金"
+              },
+              {
+                "key": "rate",
+                "label": "年利率 (%)"
+              },
+              {
+                "key": "years",
+                "label": "贷款期限（年）"
+              }
+            ]
+          }
         },
         "ja": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "元金残高が減少するローンの均等月額返済額を計算します。"
+            },
+            "inputs": [
+              {
+                "key": "principal",
+                "label": "元金"
+              },
+              {
+                "key": "rate",
+                "label": "年利 (%)"
+              },
+              {
+                "key": "years",
+                "label": "返済期間（年）"
+              }
+            ]
+          }
         },
         "ru": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "Рассчитайте равный ежемесячный платёж по кредиту с уменьшающимся остатком."
+            },
+            "inputs": [
+              {
+                "key": "principal",
+                "label": "Сумма основного долга"
+              },
+              {
+                "key": "rate",
+                "label": "Годовая процентная ставка (%)"
+              },
+              {
+                "key": "years",
+                "label": "Срок кредита (лет)"
+              }
+            ]
+          }
         }
       },
-      "sourceExtractionStatus": "source-title-description-inputs-extracted"
+      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceTranslationStatus": "description-and-input-labels-drafted"
     },
     {
       "id": "compound",
@@ -273,31 +829,188 @@
       },
       "locales": {
         "hi": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "शुरुआती राशि, नियमित जमा और अनुमानित दर से होने वाली वृद्धि का आकलन करें।"
+            },
+            "inputs": [
+              {
+                "key": "principal",
+                "label": "शुरुआती राशि"
+              },
+              {
+                "key": "deposit",
+                "label": "मासिक जमा"
+              },
+              {
+                "key": "rate",
+                "label": "अनुमानित वार्षिक दर (%)"
+              },
+              {
+                "key": "altRate",
+                "label": "तुलना के लिए वार्षिक दर (%)"
+              },
+              {
+                "key": "years",
+                "label": "समय अवधि (वर्ष)"
+              }
+            ]
+          }
         },
         "ar": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "استكشف نمو الرصيد الابتدائي والإيداعات المنتظمة ومعدل العائد المفترض."
+            },
+            "inputs": [
+              {
+                "key": "principal",
+                "label": "المبلغ الابتدائي"
+              },
+              {
+                "key": "deposit",
+                "label": "الإيداع الشهري"
+              },
+              {
+                "key": "rate",
+                "label": "معدل سنوي مفترض (%)"
+              },
+              {
+                "key": "altRate",
+                "label": "معدل سنوي للمقارنة (%)"
+              },
+              {
+                "key": "years",
+                "label": "الفترة الزمنية (بالسنوات)"
+              }
+            ]
+          }
         },
         "ur": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "ابتدائی رقم، باقاعدہ جمع اور فرضی شرح سے ہونے والی نمو کا جائزہ لیں۔"
+            },
+            "inputs": [
+              {
+                "key": "principal",
+                "label": "ابتدائی رقم"
+              },
+              {
+                "key": "deposit",
+                "label": "ماہانہ جمع"
+              },
+              {
+                "key": "rate",
+                "label": "فرضی سالانہ شرح (%)"
+              },
+              {
+                "key": "altRate",
+                "label": "موازنہ کی سالانہ شرح (%)"
+              },
+              {
+                "key": "years",
+                "label": "مدت (سال)"
+              }
+            ]
+          }
         },
         "zh-CN": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "查看初始余额、定期存款和假设利率带来的增长。"
+            },
+            "inputs": [
+              {
+                "key": "principal",
+                "label": "初始金额"
+              },
+              {
+                "key": "deposit",
+                "label": "每月存入金额"
+              },
+              {
+                "key": "rate",
+                "label": "假设年利率 (%)"
+              },
+              {
+                "key": "altRate",
+                "label": "对比年利率 (%)"
+              },
+              {
+                "key": "years",
+                "label": "期限（年）"
+              }
+            ]
+          }
         },
         "ja": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "初期残高、定期積立、想定利率による資産の増加を確認します。"
+            },
+            "inputs": [
+              {
+                "key": "principal",
+                "label": "初期金額"
+              },
+              {
+                "key": "deposit",
+                "label": "毎月の積立額"
+              },
+              {
+                "key": "rate",
+                "label": "想定年利率 (%)"
+              },
+              {
+                "key": "altRate",
+                "label": "比較用の年利率 (%)"
+              },
+              {
+                "key": "years",
+                "label": "運用期間（年）"
+              }
+            ]
+          }
         },
         "ru": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "Оцените рост начальной суммы с регулярными взносами и предполагаемой ставкой."
+            },
+            "inputs": [
+              {
+                "key": "principal",
+                "label": "Начальная сумма"
+              },
+              {
+                "key": "deposit",
+                "label": "Ежемесячный взнос"
+              },
+              {
+                "key": "rate",
+                "label": "Предполагаемая годовая ставка (%)"
+              },
+              {
+                "key": "altRate",
+                "label": "Сравнительная годовая ставка (%)"
+              },
+              {
+                "key": "years",
+                "label": "Период (лет)"
+              }
+            ]
+          }
         }
       },
-      "sourceExtractionStatus": "source-title-description-inputs-extracted"
+      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceTranslationStatus": "description-and-input-labels-drafted"
     },
     {
       "id": "percentage",
@@ -324,31 +1037,140 @@
       },
       "locales": {
         "hi": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "प्रतिशत, प्रतिशत परिवर्तन या उल्टे प्रतिशत की गणना करें।"
+            },
+            "inputs": [
+              {
+                "key": "mode",
+                "label": "गणना का तरीका"
+              },
+              {
+                "key": "a",
+                "label": "पहला मान"
+              },
+              {
+                "key": "b",
+                "label": "दूसरा मान / प्रतिशत"
+              }
+            ]
+          }
         },
         "ar": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "احسب النسبة المئوية أو التغير بالنسبة المئوية أو النسبة العكسية."
+            },
+            "inputs": [
+              {
+                "key": "mode",
+                "label": "طريقة الحساب"
+              },
+              {
+                "key": "a",
+                "label": "القيمة الأولى"
+              },
+              {
+                "key": "b",
+                "label": "القيمة الثانية / النسبة المئوية"
+              }
+            ]
+          }
         },
         "ur": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "فیصد، فیصدی تبدیلی یا الٹی فیصد کا حساب لگائیں۔"
+            },
+            "inputs": [
+              {
+                "key": "mode",
+                "label": "حساب کا طریقہ"
+              },
+              {
+                "key": "a",
+                "label": "پہلی قدر"
+              },
+              {
+                "key": "b",
+                "label": "دوسری قدر / فیصد"
+              }
+            ]
+          }
         },
         "zh-CN": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "计算百分比、百分比变化或反向百分比。"
+            },
+            "inputs": [
+              {
+                "key": "mode",
+                "label": "计算模式"
+              },
+              {
+                "key": "a",
+                "label": "第一个数值"
+              },
+              {
+                "key": "b",
+                "label": "第二个数值 / 百分比"
+              }
+            ]
+          }
         },
         "ja": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "割合、増減率、逆算パーセントを計算します。"
+            },
+            "inputs": [
+              {
+                "key": "mode",
+                "label": "計算モード"
+              },
+              {
+                "key": "a",
+                "label": "1つ目の値"
+              },
+              {
+                "key": "b",
+                "label": "2つ目の値 / パーセント"
+              }
+            ]
+          }
         },
         "ru": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "Рассчитайте процент, процентное изменение или обратный процент."
+            },
+            "inputs": [
+              {
+                "key": "mode",
+                "label": "Режим расчёта"
+              },
+              {
+                "key": "a",
+                "label": "Первое значение"
+              },
+              {
+                "key": "b",
+                "label": "Второе значение / процент"
+              }
+            ]
+          }
         }
       },
-      "sourceExtractionStatus": "source-title-description-inputs-extracted"
+      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceTranslationStatus": "description-and-input-labels-drafted"
     },
     {
       "id": "tip",
@@ -375,31 +1197,140 @@
       },
       "locales": {
         "hi": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "टिप, कुल बिल और प्रत्येक व्यक्ति का समान हिस्सा निकालें।"
+            },
+            "inputs": [
+              {
+                "key": "bill",
+                "label": "बिल राशि"
+              },
+              {
+                "key": "tip",
+                "label": "टिप (%)"
+              },
+              {
+                "key": "people",
+                "label": "लोगों की संख्या"
+              }
+            ]
+          }
         },
         "ar": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "احسب الإكرامية وإجمالي الفاتورة وتقسيم المبلغ بالتساوي."
+            },
+            "inputs": [
+              {
+                "key": "bill",
+                "label": "مبلغ الفاتورة"
+              },
+              {
+                "key": "tip",
+                "label": "الإكرامية (%)"
+              },
+              {
+                "key": "people",
+                "label": "عدد الأشخاص"
+              }
+            ]
+          }
         },
         "ur": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "ٹِپ، کل بل اور ہر فرد کا برابر حصہ معلوم کریں۔"
+            },
+            "inputs": [
+              {
+                "key": "bill",
+                "label": "بل کی رقم"
+              },
+              {
+                "key": "tip",
+                "label": "ٹِپ (%)"
+              },
+              {
+                "key": "people",
+                "label": "افراد کی تعداد"
+              }
+            ]
+          }
         },
         "zh-CN": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "计算小费、账单总额以及平均分摊金额。"
+            },
+            "inputs": [
+              {
+                "key": "bill",
+                "label": "账单金额"
+              },
+              {
+                "key": "tip",
+                "label": "小费 (%)"
+              },
+              {
+                "key": "people",
+                "label": "人数"
+              }
+            ]
+          }
         },
         "ja": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "チップ、請求総額、均等に分けた場合の一人当たりの金額を計算します。"
+            },
+            "inputs": [
+              {
+                "key": "bill",
+                "label": "請求金額"
+              },
+              {
+                "key": "tip",
+                "label": "チップ (%)"
+              },
+              {
+                "key": "people",
+                "label": "人数"
+              }
+            ]
+          }
         },
         "ru": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "Рассчитайте чаевые, итоговый счёт и равную долю на каждого человека."
+            },
+            "inputs": [
+              {
+                "key": "bill",
+                "label": "Сумма счёта"
+              },
+              {
+                "key": "tip",
+                "label": "Чаевые (%)"
+              },
+              {
+                "key": "people",
+                "label": "Количество человек"
+              }
+            ]
+          }
         }
       },
-      "sourceExtractionStatus": "source-title-description-inputs-extracted"
+      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceTranslationStatus": "description-and-input-labels-drafted"
     },
     {
       "id": "car",
@@ -442,31 +1373,236 @@
       },
       "locales": {
         "hi": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "डाउन पेमेंट, ट्रेड-इन और शुल्क के बाद वाहन ऋण की किस्त का अनुमान लगाएँ।"
+            },
+            "inputs": [
+              {
+                "key": "price",
+                "label": "वाहन की कीमत"
+              },
+              {
+                "key": "down",
+                "label": "डाउन पेमेंट"
+              },
+              {
+                "key": "trade",
+                "label": "ट्रेड-इन मूल्य"
+              },
+              {
+                "key": "rate",
+                "label": "वार्षिक ब्याज दर (%)"
+              },
+              {
+                "key": "years",
+                "label": "ऋण अवधि (वर्ष)"
+              },
+              {
+                "key": "fees",
+                "label": "ऋण में जोड़े गए शुल्क"
+              },
+              {
+                "key": "extra",
+                "label": "अतिरिक्त मासिक भुगतान"
+              }
+            ]
+          }
         },
         "ar": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "قدّر قسط قرض السيارة بعد احتساب الدفعة المقدمة وقيمة الاستبدال والرسوم."
+            },
+            "inputs": [
+              {
+                "key": "price",
+                "label": "سعر المركبة"
+              },
+              {
+                "key": "down",
+                "label": "الدفعة المقدمة"
+              },
+              {
+                "key": "trade",
+                "label": "قيمة السيارة المستبدلة"
+              },
+              {
+                "key": "rate",
+                "label": "معدل الفائدة السنوي (%)"
+              },
+              {
+                "key": "years",
+                "label": "مدة القرض (بالسنوات)"
+              },
+              {
+                "key": "fees",
+                "label": "رسوم مضافة إلى القرض"
+              },
+              {
+                "key": "extra",
+                "label": "دفعة شهرية إضافية"
+              }
+            ]
+          }
         },
         "ur": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "ابتدائی ادائیگی، ٹریڈ اِن اور فیس شامل کرنے کے بعد گاڑی کے قرض کی قسط کا اندازہ لگائیں۔"
+            },
+            "inputs": [
+              {
+                "key": "price",
+                "label": "گاڑی کی قیمت"
+              },
+              {
+                "key": "down",
+                "label": "ابتدائی ادائیگی"
+              },
+              {
+                "key": "trade",
+                "label": "ٹریڈ اِن کی مالیت"
+              },
+              {
+                "key": "rate",
+                "label": "سالانہ شرحِ سود (%)"
+              },
+              {
+                "key": "years",
+                "label": "قرض کی مدت (سال)"
+              },
+              {
+                "key": "fees",
+                "label": "قرض میں شامل فیس"
+              },
+              {
+                "key": "extra",
+                "label": "اضافی ماہانہ ادائیگی"
+              }
+            ]
+          }
         },
         "zh-CN": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "根据首付款、置换车辆价值和费用，估算汽车贷款还款额。"
+            },
+            "inputs": [
+              {
+                "key": "price",
+                "label": "车辆价格"
+              },
+              {
+                "key": "down",
+                "label": "首付款"
+              },
+              {
+                "key": "trade",
+                "label": "置换车辆价值"
+              },
+              {
+                "key": "rate",
+                "label": "年利率 (%)"
+              },
+              {
+                "key": "years",
+                "label": "贷款期限（年）"
+              },
+              {
+                "key": "fees",
+                "label": "计入贷款的费用"
+              },
+              {
+                "key": "extra",
+                "label": "每月额外还款"
+              }
+            ]
+          }
         },
         "ja": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "頭金、下取り価格、諸費用を反映して自動車ローンの返済額を試算します。"
+            },
+            "inputs": [
+              {
+                "key": "price",
+                "label": "車両価格"
+              },
+              {
+                "key": "down",
+                "label": "頭金"
+              },
+              {
+                "key": "trade",
+                "label": "下取り価格"
+              },
+              {
+                "key": "rate",
+                "label": "年利 (%)"
+              },
+              {
+                "key": "years",
+                "label": "返済期間（年）"
+              },
+              {
+                "key": "fees",
+                "label": "ローンに加算する諸費用"
+              },
+              {
+                "key": "extra",
+                "label": "毎月の追加返済額"
+              }
+            ]
+          }
         },
         "ru": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "Оцените платёж по автокредиту с учётом первоначального взноса, стоимости автомобиля по trade-in и сборов."
+            },
+            "inputs": [
+              {
+                "key": "price",
+                "label": "Цена автомобиля"
+              },
+              {
+                "key": "down",
+                "label": "Первоначальный взнос"
+              },
+              {
+                "key": "trade",
+                "label": "Стоимость автомобиля по trade-in"
+              },
+              {
+                "key": "rate",
+                "label": "Годовая процентная ставка (%)"
+              },
+              {
+                "key": "years",
+                "label": "Срок кредита (лет)"
+              },
+              {
+                "key": "fees",
+                "label": "Сборы, включаемые в кредит"
+              },
+              {
+                "key": "extra",
+                "label": "Дополнительный ежемесячный платёж"
+              }
+            ]
+          }
         }
       },
-      "sourceExtractionStatus": "source-title-description-inputs-extracted"
+      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceTranslationStatus": "description-and-input-labels-drafted"
     },
     {
       "id": "amortization",
@@ -497,31 +1633,164 @@
       },
       "locales": {
         "hi": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "देखें कि समय के साथ भुगतान मूलधन और ब्याज में कैसे बँटता है; वैकल्पिक अतिरिक्त मासिक भुगतान भी शामिल करें।"
+            },
+            "inputs": [
+              {
+                "key": "principal",
+                "label": "ऋण राशि"
+              },
+              {
+                "key": "rate",
+                "label": "वार्षिक ब्याज दर (%)"
+              },
+              {
+                "key": "years",
+                "label": "ऋण अवधि (वर्ष)"
+              },
+              {
+                "key": "extra",
+                "label": "अतिरिक्त मासिक भुगतान"
+              }
+            ]
+          }
         },
         "ar": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "اعرف كيف تتوزع الدفعات بين أصل القرض والفائدة بمرور الوقت، مع إمكانية إضافة دفعة شهرية إضافية."
+            },
+            "inputs": [
+              {
+                "key": "principal",
+                "label": "مبلغ القرض"
+              },
+              {
+                "key": "rate",
+                "label": "معدل الفائدة السنوي (%)"
+              },
+              {
+                "key": "years",
+                "label": "مدة القرض (بالسنوات)"
+              },
+              {
+                "key": "extra",
+                "label": "دفعة شهرية إضافية"
+              }
+            ]
+          }
         },
         "ur": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "دیکھیں کہ وقت کے ساتھ ادائیگی اصل زر اور سود میں کیسے تقسیم ہوتی ہے؛ اضافی ماہانہ ادائیگی بھی شامل کی جا سکتی ہے۔"
+            },
+            "inputs": [
+              {
+                "key": "principal",
+                "label": "قرض کی رقم"
+              },
+              {
+                "key": "rate",
+                "label": "سالانہ شرحِ سود (%)"
+              },
+              {
+                "key": "years",
+                "label": "قرض کی مدت (سال)"
+              },
+              {
+                "key": "extra",
+                "label": "اضافی ماہانہ ادائیگی"
+              }
+            ]
+          }
         },
         "zh-CN": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "查看每期还款如何随时间分配到本金和利息，并可选择增加每月还款额。"
+            },
+            "inputs": [
+              {
+                "key": "principal",
+                "label": "贷款金额"
+              },
+              {
+                "key": "rate",
+                "label": "年利率 (%)"
+              },
+              {
+                "key": "years",
+                "label": "贷款期限（年）"
+              },
+              {
+                "key": "extra",
+                "label": "每月额外还款"
+              }
+            ]
+          }
         },
         "ja": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "返済額が元金と利息にどのように配分されるかを確認できます。毎月の追加返済も設定できます。"
+            },
+            "inputs": [
+              {
+                "key": "principal",
+                "label": "借入額"
+              },
+              {
+                "key": "rate",
+                "label": "年利 (%)"
+              },
+              {
+                "key": "years",
+                "label": "返済期間（年）"
+              },
+              {
+                "key": "extra",
+                "label": "毎月の追加返済額"
+              }
+            ]
+          }
         },
         "ru": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "Посмотрите, как каждый платёж со временем распределяется между основным долгом и процентами; можно добавить дополнительный ежемесячный платёж."
+            },
+            "inputs": [
+              {
+                "key": "principal",
+                "label": "Сумма кредита"
+              },
+              {
+                "key": "rate",
+                "label": "Годовая процентная ставка (%)"
+              },
+              {
+                "key": "years",
+                "label": "Срок кредита (лет)"
+              },
+              {
+                "key": "extra",
+                "label": "Дополнительный ежемесячный платёж"
+              }
+            ]
+          }
         }
       },
-      "sourceExtractionStatus": "source-title-description-inputs-extracted"
+      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceTranslationStatus": "description-and-input-labels-drafted"
     },
     {
       "id": "savings",
@@ -556,31 +1825,188 @@
       },
       "locales": {
         "hi": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "अपने बचत लक्ष्य तक पहुँचने के लिए आवश्यक बचत राशि और समय का अनुमान लगाएँ।"
+            },
+            "inputs": [
+              {
+                "key": "goal",
+                "label": "बचत लक्ष्य"
+              },
+              {
+                "key": "current",
+                "label": "वर्तमान बचत"
+              },
+              {
+                "key": "rate",
+                "label": "नियमित जमा राशि"
+              },
+              {
+                "key": "altRate",
+                "label": "जमा की आवृत्ति"
+              },
+              {
+                "key": "years",
+                "label": "लक्ष्य तक पहुँचने की अवधि"
+              }
+            ]
+          }
         },
         "ar": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "قدّر مبالغ الادخار والمدة اللازمة للوصول إلى هدفك الادخاري."
+            },
+            "inputs": [
+              {
+                "key": "goal",
+                "label": "هدف الادخار"
+              },
+              {
+                "key": "current",
+                "label": "المدخرات الحالية"
+              },
+              {
+                "key": "rate",
+                "label": "مبلغ الإيداع المنتظم"
+              },
+              {
+                "key": "altRate",
+                "label": "وتيرة الإيداع"
+              },
+              {
+                "key": "years",
+                "label": "المدة للوصول إلى الهدف"
+              }
+            ]
+          }
         },
         "ur": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "اپنے بچت کے ہدف تک پہنچنے کے لیے درکار بچت کی رقم اور مدت کا اندازہ لگائیں۔"
+            },
+            "inputs": [
+              {
+                "key": "goal",
+                "label": "بچت کا ہدف"
+              },
+              {
+                "key": "current",
+                "label": "موجودہ بچت"
+              },
+              {
+                "key": "rate",
+                "label": "باقاعدہ جمع کی رقم"
+              },
+              {
+                "key": "altRate",
+                "label": "جمع کرنے کی وقفہ وار ترتیب"
+              },
+              {
+                "key": "years",
+                "label": "ہدف تک پہنچنے کی مدت"
+              }
+            ]
+          }
         },
         "zh-CN": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "估算实现储蓄目标所需的储蓄金额和时间。"
+            },
+            "inputs": [
+              {
+                "key": "goal",
+                "label": "储蓄目标"
+              },
+              {
+                "key": "current",
+                "label": "当前储蓄"
+              },
+              {
+                "key": "rate",
+                "label": "定期存入金额"
+              },
+              {
+                "key": "altRate",
+                "label": "存入频率"
+              },
+              {
+                "key": "years",
+                "label": "达到目标所需时间"
+              }
+            ]
+          }
         },
         "ja": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "貯蓄目標の達成に必要な積立額と期間を試算します。"
+            },
+            "inputs": [
+              {
+                "key": "goal",
+                "label": "貯蓄目標額"
+              },
+              {
+                "key": "current",
+                "label": "現在の貯蓄額"
+              },
+              {
+                "key": "rate",
+                "label": "定期預入額"
+              },
+              {
+                "key": "altRate",
+                "label": "預入頻度"
+              },
+              {
+                "key": "years",
+                "label": "目標達成までの期間"
+              }
+            ]
+          }
         },
         "ru": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "description": "Оцените сумму накоплений и срок, необходимые для достижения цели."
+            },
+            "inputs": [
+              {
+                "key": "goal",
+                "label": "Цель накоплений"
+              },
+              {
+                "key": "current",
+                "label": "Текущие накопления"
+              },
+              {
+                "key": "rate",
+                "label": "Регулярный взнос"
+              },
+              {
+                "key": "altRate",
+                "label": "Периодичность взносов"
+              },
+              {
+                "key": "years",
+                "label": "Срок достижения цели"
+              }
+            ]
+          }
         }
       },
-      "sourceExtractionStatus": "source-title-description-inputs-extracted"
+      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceTranslationStatus": "description-and-input-labels-drafted"
     },
     {
       "id": "freelance",
