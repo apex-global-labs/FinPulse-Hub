@@ -1,6 +1,7 @@
 const test=require("node:test");
 const assert=require("node:assert/strict");
 const fs=require("node:fs");
+const vm=require("node:vm");
 const Global=require("../global-context.js");
 
 test("global registries contain all ISO country/region entries and valid independent locale/currency choices",()=>{
@@ -13,6 +14,21 @@ test("global registries contain all ISO country/region entries and valid indepen
  assert.deepEqual(Global.locales.map(x=>x.code),["en","hi","ar","ur","zh-CN","ja","ru"]);
  assert.ok(Global.countries.every(x=>/^[A-Z]{2}$/.test(x.code)));
  assert.ok(Global.currencies.every(x=>/^[A-Z]{3}$/.test(x.code)));
+});
+
+
+test("global country and currency labels are generated only when settings are opened or a registry is requested",()=>{
+ const source=fs.readFileSync("global-context.js","utf8"),listeners=[];
+ const panel={open:false,addEventListener:(name,fn)=>listeners.push({name,fn})};
+ let displayNameConstructions=0;
+ class DisplayNames{constructor(){displayNameConstructions++}of(code){return code}}
+ const document={readyState:"complete",documentElement:{dataset:{}},getElementById:id=>id==="global-context-panel"?panel:null};
+ const context={document,Intl:{DisplayNames},CustomEvent:class{constructor(type,options){this.type=type;this.detail=options.detail}},dispatchEvent:()=>{}};
+ vm.runInNewContext(source,context);
+ assert.equal(displayNameConstructions,0);
+ assert.ok(listeners.some(x=>x.name==="toggle"));
+ void context.FinPulseGlobalContext.currencies;
+ assert.equal(displayNameConstructions,1);
 });
 
 test("country selection suggests but does not silently change the currency",()=>{
