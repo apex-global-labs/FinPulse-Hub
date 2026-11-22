@@ -27,23 +27,22 @@ breakdown.push({component:component.name,tax:due,marginalRate:x.marginalRate,tax
 }else{
 const x=progressive(taxable,p.bands);tax=x.tax;marginalRate=x.marginalRate;breakdown=x.breakdown;
 }
-let stateTax=0,stateTaxableIncome=0,stateName="",stateNote="";
+let stateTax=0,stateTaxableIncome=0,stateName="",stateNote="",stateTaxMode="not-included";
 if(profileId.startsWith("US-")&&stateId&&stateId!=="none"){
 const st=window.FinPulseStateData.states[stateId];if(!st)throw Error("Choose a supported US state.");
-if(!["single","joint"].includes(stateStatus))throw Error("US state estimate currently supports Single or Married Filing Jointly only.");
-const config=st[stateStatus==="joint"?"joint":"single"];stateName=st.name;stateTaxableIncome=Math.max(0,adjustedNetIncome-config.standardDeduction);
-const special=stateId==="AR"&&stateTaxableIncome>94700?st.highIncomeSchedule:null,sx=progressive(stateTaxableIncome,special?special.bands:config.bands);
-stateTax=sx.tax;stateNote=special?special.note:(st.specialNote||"");
-tax+=stateTax;breakdown.push({component:st.name+" state income tax",tax:stateTax,marginalRate:sx.marginalRate,taxableIncome:stateTaxableIncome});
+if(!["single","joint"].includes(stateStatus))throw Error("US state filing status reference must be Single or Married Filing Jointly.");
+const manualStateTax=options?.manualStateTax??0;if(!Number.isFinite(manualStateTax)||manualStateTax<0)throw Error("Manual state tax must be a valid non-negative amount.");
+stateName=st.name;stateTax=manualStateTax;stateTaxMode="manual";stateNote="State tax is a user-entered annual amount. No unverified 2026 state brackets, deductions, credits, local taxes or special rules were applied.";
+if(stateTax>0){tax+=stateTax;breakdown.push({component:st.name+" state income tax (manual input)",tax:stateTax,manual:true});}
 }
 const beforeMinimum=tax;
 if(p.minimumTax&&adjustedNetIncome>allowance)tax=Math.max(tax,p.minimumTax);
 let note="Educational estimate using selected 2026 jurisdiction rates and simplified assumptions. This is not a tax return or filing calculation. ";
 if(profileId.startsWith("CA-2026-"))note+="Canadian federal and provincial/territorial basic personal amount non-refundable credits are applied, including the federal BPA phase-out, Manitoba BPA phase-out and Québec federal abatement. Other personal credits, provincial surtaxes/health premiums, local taxes, age/spouse/dependant/disability/tuition credits and special elections are not fully modeled. ";
-if(profileId.startsWith("US-")&&stateId&&stateId!=="none")note+="The state authority portal is linked, but the 2026 state schedule, deductions, credits, local taxes and surtaxes have not been independently verified for every state. State output is provisional, not authoritative. ";
+if(profileId.startsWith("US-")&&stateId&&stateId!=="none")note+="The 2026 state schedule is not automatically calculated. Any state amount included is manually entered; local taxes, credits, exemptions, deductions and special adjustments are not calculated. The state estimate is incomplete and not authoritative. ";
 if(profileId.startsWith("BD-2026-"))note+="Bangladesh AY 2026–27 applies the Tk 50,000 additional tax-free threshold per eligible child/dependent with disability entered; only one parent/legal guardian may claim for a dependent. A Tk 5,000 minimum tax applies when net total income exceeds the applicable tax-free threshold under the published 2026–27 budget framework. Source-based minimum tax, rebates, surcharge, wealth surcharge, special income sources and other eligibility conditions are not modeled. ";
 note+=stateNote;
-return{profile:p.label,currency:p.currency,grossIncome:gross,deductions,personalAllowance:allowance,taxableIncome:taxable,stateTaxableIncome,stateTax,stateName,tax,creditTotal,effectiveRate:gross?tax/gross*100:0,marginalRate,breakdown,minimumTaxApplied:tax>beforeMinimum,note};
+return{profile:p.label,currency:p.currency,grossIncome:gross,deductions,personalAllowance:allowance,taxableIncome:taxable,stateTaxableIncome,stateTax,stateName,stateTaxMode,tax,creditTotal,effectiveRate:gross?tax/gross*100:0,marginalRate,breakdown,minimumTaxApplied:tax>beforeMinimum,note};
 }
 function payroll(profileId,gross,filingStatus="single"){
 if(!Number.isFinite(gross)||gross<0)throw Error("Gross income must be a valid non-negative amount.");
