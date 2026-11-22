@@ -31,7 +31,7 @@ const x=progressive(taxable,p.bands);tax=x.tax;marginalRate=x.marginalRate;break
 let stateTax=0,stateTaxableIncome=null,stateName="",stateNote="",stateTaxMode="not-included";
 if(profileId.startsWith("US-")&&stateId&&stateId!=="none"){
 const st=window.FinPulseStateData.states[stateId];if(!st)throw Error("Choose a supported US state.");
-if(!["single","joint"].includes(stateStatus))throw Error("US state filing status reference must be Single or Married Filing Jointly.");
+if(!["single","joint"].includes(stateStatus))throw Error("US state estimate currently supports Single or Married Filing Jointly only.");
 stateName=st.name;stateTax=manualStateTax;stateTaxMode="manual";stateNote="State tax is a user-entered annual amount. No unverified 2026 state brackets, deductions, credits, local taxes or special rules were applied.";
 if(stateTax>0){tax+=stateTax;breakdown.push({component:st.name+" state income tax (manual input)",tax:stateTax,manual:true});}
 }
