@@ -267,3 +267,16 @@ PR #67 remains Draft. No merge or production deployment has occurred. Keep all U
 - US official 2026 schedule audit remains **0/50 fully verified**. New York remains partial only; all state estimates stay provisional.
 - Browser/automated accessibility gate is passed; Lighthouse run passed, with mobile homepage score 92 retained as a review item.
 - PR #66 and PR #67 remain Draft. Validation-only PR #70 is closed after evidence capture. No merge or production deployment occurred.
+
+
+## Manual fallback implementation decision — 2026-11-22
+
+- The official-source review confirms the existing evidence gate remains **0/50 fully verified**; New York is still partial only. The current review did not establish a defensible complete 2026 schedule for the remaining 49 states.
+- To avoid false precision, the US state tax engine no longer applies the stored provisional bracket/deduction arrays automatically.
+- All 50 state records now declare `calculationMode: "manual"`; the registry declares `calculationMode: "manual-only"`.
+- The Income Tax Calculator provides an optional annual manual State tax amount (USD). Only that user-entered amount is added to the federal estimate. With no amount entered, State tax is not calculated or silently inferred.
+- The manual amount is not validated against the state tax authority and does not model brackets, deductions, credits, local taxes, surtaxes, residency, or special income rules. Users must use an official state calculator/publication or their own verified tax record. The output remains an educational, incomplete estimate.
+- New York's partial source check does not unlock automatic calculation; it remains manual-only until the entire supported component and filing-status scope is verified.
+- No State is counted as verified. The remaining 49 States are not being force-filled; official schedule automation may be added later State-by-State when sufficient primary-source evidence and regression coverage exist.
+- Regression coverage now asserts that unverified state brackets are never applied automatically, manual amounts are included only when entered, and invalid manual amounts are rejected.
+- PR #67 remains Draft; no merge or production deployment was performed. CI/browser/Lighthouse must be rerun against the updated branch before any release decision.
