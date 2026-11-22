@@ -28,8 +28,11 @@ Ten title candidates have AI terminology/meaning review notes. This is not nativ
 - Content-field schema: complete.
 - First 10 titles: AI-reviewed candidate; native review pending.
 - English source descriptions and keyed input labels extracted for the first 10 tools.
-- Target-locale descriptions, input/output labels, FAQs, guides, disclaimers and localized SEO: not yet translated.
-- Per-tool content extraction and translation: next implementation phase.
+- First 10 descriptions translated into all six target locales: 60/60 locale descriptions drafted.
+- First 10 input labels translated into all six target locales: 264/264 labels drafted across 44 stable input keys.
+- All 60 locale records for the first 10 tools are marked `draft`; no native-speaker or domain approval is claimed.
+- Output/result labels, metrics, FAQs, guides, disclaimers, errors, accessibility copy and localized SEO remain pending.
+- Browser validation for the newly translated tool-page content remains pending; current browser coverage validates the shared language selector, RTL/LTR switching, persistence and currency independence.
 
 ## Release gate
-CI and Lighthouse must run against the latest PR head after the accessibility fixes and schema tests are included. PR remains Draft. No production deployment is authorized by this work.
+CI and Lighthouse must pass against the latest PR head after the new translation-content assertions. The first-10 content remains draft-only until linguistic/domain review and tool-page browser coverage pass. PR remains Draft. No production deployment is authorized by this work.
