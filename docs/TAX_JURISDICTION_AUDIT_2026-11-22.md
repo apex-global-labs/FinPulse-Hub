@@ -363,3 +363,14 @@ Initial candidate group: Illinois (IL), Indiana (IN), Michigan (MI), Colorado (C
 - Keep IL, IN, MI and CO manual-only until tax-year 2026 official filing instructions, full taxable-income base, filing statuses, credits, local taxes, income-source rules and regression vectors are verified.
 - Prior first-group automatic-zero states remain the only verified automatic states: AK, FL, NV, NH, SD, TN, TX and WY.
 - Audit metrics remain 8/50 verified no-individual-income-tax statuses and 0/50 fully verified positive-rate state schedules.
+
+## Group 2 detailed 2026 calculation-contract review — 2026-11-22 08:33 UTC
+
+Structured contract: `tax-state-contracts-2026-group2.json`. Human-readable contract: `docs/TAX_STATE_CALCULATION_CONTRACTS_2026_GROUP2.md`. Regression guard added to `tests/formula.test.cjs`. No state data or tax engine automatic mode was changed.
+
+- **IL:** official 2026 draft page lists IL-1040 instructions as “coming soon”; supporting Schedule IL-E/EITC and Schedule M instructions are draft. Verified 4.95% rate from existing official state materials, $2,925 2026 exemption, $1,000 age/blind additions and AGI phase-out thresholds. Full 2026 line instructions, all schedules and credits are not yet complete/final.
+- **IN:** official DOR 2026 Tax Chapter confirms 2.95% state rate, Jan. 1, 2026 federal conformity subject to modifications, and 2026-only tips/overtime/qualified vehicle-loan-interest deductions. Official county rate schedule effective Oct. 1, 2026 exists. Current-year form page still lists 2025 IT-40/IT-40PNR booklets, so final 2026 forms and full resident/nonresident instructions remain unavailable.
+- **MI:** official Treasury confirms 4.25% 2026 rate and official withholding page lists $5,900 personal exemption. The available full MI-1040 booklet is explicitly tax year 2025; it is not a 2026 return instruction source. City tax, retirement/pension transitions, credits and final exemption details require the 2026 booklet.
+- **CO:** January 2026 official Individual Income Tax Guide describes 2026 federal taxable-income modifications, including overtime addback, tips treatment, high-income deduction addback caps ($1,000 single / $2,000 joint above $300,000 AGI), death-benefit and AmeriCorps subtractions, and AMT. The guide's rate table only lists through 2025 and the DR 0104 forms page currently links 2025/2024 returns; 2026 rate and final return/AMT instructions remain unverified.
+- All four states remain `calculationMode: manual`; `automationReady:false`; numeric golden vectors are blocked pending complete 2026 primary instructions and worksheets. Regression tests now guard both registry mode and engine behavior: no implicit state tax; only explicit manual amount is included.
+- Accessibility is tracked separately in `docs/ACCESSIBILITY_FOLLOW_UP_MOBILE_HOMEPAGE_2026-11-22.md`; mobile homepage Lighthouse Accessibility 92 baseline, artifact 14745908818. No fix or score improvement claimed yet.
