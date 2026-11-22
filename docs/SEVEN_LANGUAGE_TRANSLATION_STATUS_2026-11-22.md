@@ -27,7 +27,8 @@ Ten title candidates have AI terminology/meaning review notes. This is not nativ
 - 220-tool inventory: complete.
 - Content-field schema: complete.
 - First 10 titles: AI-reviewed candidate; native review pending.
-- Full descriptions, input/output labels, FAQs, guides, disclaimers and localized SEO: not yet translated.
+- English source descriptions and keyed input labels extracted for the first 10 tools.
+- Target-locale descriptions, input/output labels, FAQs, guides, disclaimers and localized SEO: not yet translated.
 - Per-tool content extraction and translation: next implementation phase.
 
 ## Release gate
