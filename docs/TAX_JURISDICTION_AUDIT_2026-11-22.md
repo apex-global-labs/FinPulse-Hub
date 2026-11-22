@@ -46,7 +46,7 @@ CRA 2026 payroll guidance lists a federal basic personal amount range of $16,452
 
 **File:** `tax-state-data.js`
 
-The 50 state entries use `statewisenews.com/state-income-tax-rates/` as their shared source, except for Arkansas, South Carolina and West Virginia, which have separate source URLs. A secondary generic source is insufficient evidence for 2026 legal rates and deductions across 47 states.
+The 50 state entries now link to each state’s official tax authority portal. These portal links are discovery references, not proof that the calculator values match the operative 2026 schedules. The current audit has **0/50 fully verified states**. New York has partial official-source verification for its 2026 single and married-joint state rate schedules and standard deductions; its credits, local taxes and other filing-status cases remain incomplete. No state is approved as fully verified.
 
 State rules may include different filing-status brackets, standard deductions, personal exemptions, credits, local income taxes, surtaxes and special schedules. The current UI offers only Single and Married Filing Jointly state filing statuses. Washington DC and US territories are not included.
 
@@ -152,3 +152,232 @@ These are candidate-branch changes only. They have not been merged or deployed.
 - [ ] Update `docs/PROJECT_STATE.md` after the audit and final acceptance.
 
 **Release recommendation:** Keep PR #66 Draft. Do not merge or deploy until all P1 items are either corrected and tested or the affected estimates are clearly restricted/disabled. A successful CI run alone does not establish tax-law completeness.
+
+## Phase 2D implementation update — 2026-11-22
+
+### Canada — implemented credit layer (candidate)
+
+- Added 2026 federal Basic Personal Amount credit at 14%, with the published $16,452 maximum / $14,829 minimum phase-out range.
+- Added province/territory basic personal amount credits using the 2026 CRA payroll tables and corresponding lowest marginal rates.
+- Added Manitoba's $15,780 basic amount phase-out from $200,000 to $400,000.
+- Added Yukon federal-mirroring BPA phase-out.
+- Added Québec's $18,952 basic personal amount credit and 16.5% federal abatement.
+- Credits are capped at the component tax payable; no negative tax/refund is generated.
+- Other credits (age, spouse, dependant, disability, tuition, medical, employment amount), provincial surtaxes/health premiums and all personal circumstances remain out of scope and are disclosed.
+
+Official references:
+- CRA 2026 tax brackets: https://www.canada.ca/en/revenue-agency/services/tax/individuals/tax-rates-brackets/current-year.html
+- CRA 2026 T4127 payroll formulas and basic amounts: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/payroll-deductions-t4127-payroll-deductions-formulas/t4127-jan-122nd-edition-effective-january-1-2026/t4127-jan-payroll-deductions-formulas-computer-programs.html
+- Revenu Québec 2026 personal credit amounts and rates: https://www.revenuquebec.ca/en/businesses/source-deductions-and-employer-contributions/employers-principal-changes-for-2026/
+- Québec abatement: https://www.canada.ca/en/department-finance/programs/federal-transfers/quebec-abatement.html
+
+### US states — official authority directory added; schedule verification remains blocked
+
+- Replaced the shared secondary StateWise source link with an official state tax authority portal URL for each of the 50 states.
+- Added sourceStatus and a machine-readable sourceAudit contract. The current candidate intentionally reports 0/50 state schedules fully verified.
+- This is not a claim that all 50 2026 schedules are verified. Brackets, standard deductions, personal exemptions, credits, local taxes, surtaxes, special schedules and filing-status rules still require individual primary-source comparison before state results can be labelled authoritative.
+- Candidate state estimates remain explicitly provisional in the UI and engine note. Only Single and Married Filing Jointly are currently supported by the state calculator.
+
+### Bangladesh — implemented special allowance and minimum-tax boundary
+
+- Added an input for eligible disabled dependent children; each increases the applicable tax-free threshold by Tk 50,000, consistent with NBR Appendix B.
+- Minimum tax is Tk 5,000 only when net total income (gross less entered eligible deductions) exceeds the applicable threshold. It no longer applies merely because gross income exceeds the threshold when deductions bring net income below it.
+- No unverified “new taxpayer Tk 1,000” exception was added. The FY 2026–27 budget states Tk 5,000 once total income exceeds the threshold.
+- Source-based minimum tax, tax rebates, surcharge/wealth surcharge, special income sources and other statutory conditions remain excluded.
+
+Official references:
+- NBR Budget Speech Appendix B: https://nbr.gov.bd/uploads/budget/Budget_Speech_English.pdf
+- NBR Income Tax publications: https://nbr.gov.bd/publications/income-tax/eng
+- Income Tax Act 2023: https://nbr.gov.bd/uploads/acts/Income_tax_act_2023.pdf
+- NBR FAQ: https://nbr.gov.bd/faq/income-tax-faq/eng
+
+### Bangladesh payroll disclosure
+
+- The payroll engine returns no statutory employee withholding deductions for Bangladesh.
+- The salary calculator now receives an explicit note that its result is not a statutory net-pay estimate and excludes applicable NBR withholding, employer/employee contributions, benefits, provident fund, gratuity and year-to-date reconciliation.
+
+### Tests and validation status
+
+- Added regression coverage for Canadian federal/provincial credits, federal and Manitoba BPA phase-out boundaries, Québec abatement, Bangladesh disabled-dependent thresholds, Tk 5,000 minimum-tax boundaries, invalid dependent counts, Bangladesh payroll disclosure, 50-state source-contract coverage, US filing-status limits and federal filing-status distinctions.
+- Added mobile browser/axe checks for Bangladesh Income Tax and Salary Take-Home routes.
+- CI, Playwright and Lighthouse must be run against the final Phase 2D branch before any release decision. No merge or deployment is authorized.
+
+### Remaining release blockers
+
+1. Complete the actual 50-state 2026 schedule-by-schedule official-source reconciliation (currently 0/50 marked verified).
+2. Confirm all Phase 2D Node tests and resolve any failures.
+3. Complete browser tests, axe WCAG 2.1 A/AA and mobile/desktop Lighthouse against the final branch.
+4. Review candidate source/effective-date metadata and update this document with exact run IDs and artifact evidence.
+
+## Phase 2D validation checkpoint — 2026-11-22 07:52 UTC
+
+- Candidate code SHA tested: 297abbea4619ec4ce479ae5284e59cdbdd4e161b.
+- Finance Calculator CI #45000081990: syntax check passed; 322/322 Node tests passed; Frankfurter API 1/1 passed. Desktop/mobile Playwright browser step was still running at the checkpoint; no browser pass claim is made yet.
+- Candidate Lighthouse #45000081967 completed successfully:
+  - Mobile homepage: Performance 93, Accessibility 92, Best Practices 96, SEO 100; CLS 0.000; LCP 2,428.7 ms; TBT 245 ms.
+  - Mobile tool route: Performance 93, Accessibility 100, Best Practices 96, SEO 100; CLS 0.0303; LCP 2,801.7 ms; TBT 176 ms.
+  - Desktop homepage: Performance 100, Accessibility 100, Best Practices 96, SEO 100; CLS 0.000; LCP 632.8 ms; TBT 0 ms.
+  - Desktop tool route: Performance 100, Accessibility 100, Best Practices 96, SEO 100; CLS 0.0087; LCP 642.8 ms; TBT 0 ms.
+- Lighthouse CLS budget (<= 0.10) passed on all four routes. Mobile homepage accessibility remains 92 and needs review before final accessibility sign-off.
+- 50-state official schedule verification remains 0/50. All 50 official authority portal links are present, but 2026 brackets, deductions, credits, local taxes and special schedules are not yet individually verified.
+- PR #66 remains Draft. PR #67 is the Phase 2D Draft candidate. No merge or deployment was performed. The temporary validation-only PR #68 was closed without merge.
+
+
+## Recheck — 2026-11-22 08:10 UTC
+
+### US state schedule evidence
+
+- Fully verified: **0/50**.
+- Partially verified: **New York only**. The current NY single and married-filing-jointly progressive state-rate thresholds and rates were checked against the official 2026 IT-2105-I schedule. The $8,000 single and $16,050 married-joint standard deductions were checked against the official 2026 IT-2104-I instructions.
+- NY official references: [IT-2105-I 2026](https://www.tax.ny.gov/pdf/2026/inc/it2105i_2026.pdf), [IT-2104-I 2026](https://www.tax.ny.gov/forms/html-instructions/2026/it/it2104i-2026.htm), [2026 NYS Earned Income Credit parameters](https://www.tax.ny.gov/pit/credits/eitc-parameters.htm).
+- NY remains provisional because the calculator does not model all filing statuses, NYC/Yonkers local taxes, the complete credit catalogue, surtaxes or special cases. The NY EITC reference is evidence of one credit schedule only, not a complete credit audit.
+- All other 49 states remain unverified against their actual 2026 primary-source schedules. Official portal links alone do not satisfy the release gate.
+
+### Browser / accessibility recheck
+
+- Workflow run #45000081990 completed with 13 passing and 3 failing test results (including the parent suite failure). The 220-route final release audit passed WCAG 2.1 A/AA across all 220 unique tool routes.
+- The two root causes were stale text assertions for Bangladesh payroll and disability-dependent disclosure wording; they did not indicate a route-level axe violation. The assertions were aligned with the actual user-facing disclosure in commit `4cc26717240179125f3f613ba85011ae477c9283`.
+- Follow-up code and regression changes are recorded in subsequent commits; a fresh candidate CI run is required before the browser gate can be marked passed. The full suite remains **pending**, not passed.
+
+### Release decision
+
+PR #67 remains Draft. No merge or production deployment has occurred. Keep all US state estimates provisional until the 50-state primary-source audit and regression coverage are complete.
+
+
+## Final browser and Lighthouse recheck — 2026-11-22 08:07 UTC
+
+### Confirmed successful CI
+- Finance Calculator CI run #45000740126 completed successfully on the Phase 2D candidate tree (the validation branch adds only a branch-scoped CI trigger).
+- `npm run check`: passed. `npm test`: **322/322 passed**, 0 failed. Frankfurter API: **1/1 passed**.
+- Playwright desktop/mobile browser suite: **16/16 passed**, 0 failed.
+- Functional audit: **220/220 tools passed in desktop Chromium and 220/220 in mobile Chromium** (440 representative executions); no runtime errors or functional failures.
+- Browser test batches report WCAG 2.1 A/AA checks passed for all 220 registered tool routes, including Bangladesh tax/payroll routes.
+- [220-tool functional audit artifact](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/45000740126/artifacts/14745073902).
+
+### Confirmed Lighthouse
+- Candidate Lighthouse run #45000740468 completed successfully; CLS <= 0.10 passed on all four routes.
+- Mobile homepage: Performance 97, Accessibility 92, Best Practices 96, SEO 100; CLS 0.000; LCP 2,422 ms; TBT 115 ms.
+- Mobile tool: Performance 96, Accessibility 100, Best Practices 96, SEO 100; CLS 0.0303; LCP 2,733 ms; TBT 24 ms.
+- Desktop homepage: Performance 100, Accessibility 100, Best Practices 96, SEO 100; CLS 0.000; LCP 627 ms; TBT 0 ms.
+- Desktop tool: Performance 100, Accessibility 100, Best Practices 96, SEO 100; CLS 0.0087; LCP 632 ms; TBT 0 ms.
+- Mobile homepage Lighthouse Accessibility remains 92; review its audit opportunities. This is distinct from the passing route-level WCAG browser checks.
+- [Lighthouse reports](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/45000740468/artifacts/14745324368).
+
+### Remaining release gate
+- US official 2026 schedule audit remains **0/50 fully verified**. New York remains partial only; all state estimates stay provisional.
+- Browser/automated accessibility gate is passed; Lighthouse run passed, with mobile homepage score 92 retained as a review item.
+- PR #66 and PR #67 remain Draft. Validation-only PR #70 is closed after evidence capture. No merge or production deployment occurred.
+
+
+## Manual fallback implementation decision — 2026-11-22
+
+- The official-source review confirms the existing evidence gate remains **0/50 fully verified**; New York is still partial only. The current review did not establish a defensible complete 2026 schedule for the remaining 49 states.
+- To avoid false precision, the US state tax engine no longer applies the stored provisional bracket/deduction arrays automatically.
+- All 50 state records now declare `calculationMode: "manual"`; the registry declares `calculationMode: "manual-only"`.
+- The Income Tax Calculator provides an optional annual manual State tax amount (USD). Only that user-entered amount is added to the federal estimate. With no amount entered, State tax is not calculated or silently inferred.
+- The manual amount is not validated against the state tax authority and does not model brackets, deductions, credits, local taxes, surtaxes, residency, or special income rules. Users must use an official state calculator/publication or their own verified tax record. The output remains an educational, incomplete estimate.
+- New York's partial source check does not unlock automatic calculation; it remains manual-only until the entire supported component and filing-status scope is verified.
+- No State is counted as verified. The remaining 49 States are not being force-filled; official schedule automation may be added later State-by-State when sufficient primary-source evidence and regression coverage exist.
+- Regression coverage now asserts that unverified state brackets are never applied automatically, manual amounts are included only when entered, and invalid manual amounts are rejected.
+- PR #67 remains Draft; no merge or production deployment was performed. CI/browser/Lighthouse must be rerun against the updated branch before any release decision.
+
+## First-group official-source evidence and 2026 tax-year scope — 2026-11-22
+
+### Verified zero individual income tax states (8)
+
+The following state-level primary government sources support a zero state individual income-tax result for tax year 2026. The engine now uses an explicit calculationMode: automatic-zero for these eight states only. No positive-rate bracket schedule is implied or verified by this finding.
+
+| State | Official primary source | Scope / effective-date finding |
+|---|---|---|
+| Alaska (AK) | [Alaska Office of the State Assessor — Alaska Tax Facts](https://www.commerce.alaska.gov/web/dcra/officeofthestateassessor/alaskataxfacts) | State government says there is no personal state income tax; source revised 2026-11-04. |
+| Florida (FL) | [Florida Department of Revenue FAQ](https://floridarevenue.com/faq/Pages/FAQDetails.aspx?FAQID=1466) | DOR says Florida does not impose personal income tax and there are no individual personal-income-tax filing requirements. Business taxes remain separate. |
+| Nevada (NV) | [Nevada Department of Taxation — Income Tax in Nevada](https://tax.nv.gov/about-nevada-department-of-taxation/income-tax-in-nevada/) | DOR explicitly says no individual income tax on salaries, wages or similar compensation; no state return is required on earned income. Business taxes remain separate. |
+| New Hampshire (NH) | [NH Department of Revenue Administration — Interest & Dividends Tax transparency](https://www.revenue.nh.gov/transparency/transparency-all-tax-types/transparency-interest-dividends-tax) | DRA confirms the former Interest & Dividends Tax was repealed effective 2025-01-01; therefore it does not apply to tax year 2026. |
+| South Dakota (SD) | [South Dakota Department of Revenue — Taxes](https://dor.sd.gov/individuals/taxes) | DOR says South Dakota does not impose a state income tax. |
+| Tennessee (TN) | [Tennessee Department of Revenue — Hall Income Tax due date and rates](https://www.tn.gov/revenue/taxes/hall-income-tax/due-date-and-tax-rates.html) | DOR confirms Hall Income Tax repeal beginning 2021-01-01; no Hall tax applies in 2026. |
+| Texas (TX) | [Texas Comptroller — Texas Constitution, Article VIII §24-a](https://comptroller.texas.gov/taxes/property-tax/docs/96-298-25.pdf) | Official constitution text prohibits a tax on individuals' net income. This is the individual-income-tax scope, not a claim that businesses owe no taxes. |
+| Wyoming (WY) | [Wyoming State Auditor — 2025 Annual Comprehensive Financial Report](https://sao.wyo.gov/wp-content/uploads/2026/01/2025-ACFR-12.22.25.pdf) | State ACFR states Wyoming does not impose income, earnings or other taxes based on wages or other income; reviewed for 2026 use. |
+
+### Explicit exclusion — Washington (WA)
+
+Washington is not enabled for automatic zero. The [Washington Department of Revenue income-tax page](https://dor.wa.gov/taxes-rates/income-tax) says no individual income tax currently applies, but the state separately administers a capital-gains tax and states a new 9.9% individual income tax will take effect on 2028-01-01 for individuals / joint filers above $1 million AGI. Since the calculator does not classify income sources or calculate the capital-gains tax, WA remains manual-only rather than implying a complete zero state-tax result. The 2028 tax is not applied to tax year 2026.
+
+### Tax-year scope and engine behavior
+
+- Effective scope: tax year 2026 state-level individual income tax only. Federal income tax and unrelated state, local, business, payroll, sales, property, excise, insurance or other taxes are not zeroed by this rule.
+- Eight states above are marked automatic-zero; a user-entered manual state income-tax amount is rejected for these states to prevent contradictory input.
+- Washington, New York (partial schedule verification), and the other 40 states remain manual / manual-only until their applicable income categories, filing-status scope, deductions, credits, local taxes and effective dates are supported by primary-source evidence and tests.
+- The count remains 0/50 fully verified positive-rate state schedules. Separately, 8/50 state no-individual-income-tax statuses have been verified. These are distinct audit metrics and must not be conflated.
+- The Salary Take-Home Calculator continues to disclose that US state payroll withholding is not configured; the zero-tax state feature applies only when a state is explicitly selected in the Income Tax Calculator.
+
+### Regression and browser validation
+
+- Added formula tests for all eight automatic-zero states, Washington manual-only status, and rejection of manual state-tax overrides for automatic-zero states.
+- Fixed a browser-test regression where Salary Take-Home invoked state selectors that are intentionally absent on its page; salary now explicitly calls the tax engine with no state estimate, consistent with its payroll limitation disclosure.
+- Updated the Income Tax Calculator note to distinguish official automatic-zero states from manual-only states.
+- CI run #45002175312: syntax, Node tests (322/322) and Frankfurter API (1/1) passed; browser suite failed (12/16). Failure details: stale California wording assertion; Salary Take-Home route null selector caused Bangladesh salary disclosure timeout and 2/440 functional executions to fail. Candidate fixes are now committed and require a fresh CI rerun. Do not treat this run as a browser pass.
+- Lighthouse run #45002175310 completed successfully and uploaded artifact [14746721249](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/45002175310/artifacts/14746721249). Score values have not yet been extracted from the artifact; no score claim is made here.
+- PR #67 remains Draft. No merge or production deployment occurred.
+
+## Latest regression follow-up — 2026-11-22 08:28 UTC
+
+- Follow-up CI #45002813258 reached the Node suite but failed 1/324 tests (323 passed): the state-registry contract test still expected the former manual-only registry mode. The new expected contract is mixed verified-zero plus manual-only; the assertion was corrected in commit 5a8c6ed397b00ba633c830c079a0211025ce4fa5.
+- Validation-only PR #71 now points to head a605ed3022f45a1853e85550bef1b8eb87d2beb1 with that test correction.
+- Fresh CI #45002913438: syntax, npm test and Frankfurter API steps passed; Playwright desktop/mobile browser tests are still in progress. No browser pass claim yet.
+- Fresh Lighthouse #45002913442 is still in progress. The prior Lighthouse run #45002813199 is also pending at this checkpoint; score values have not been extracted.
+- PR #67 remains Draft; PR #71 remains a validation-only Draft. No merge or deployment.
+
+## Candidate CI/Lighthouse completion and second-group source triage — 2026-11-22 08:31 UTC
+
+### Completed validation on validation-only PR #71
+
+- Finance Calculator CI run #45002913438 completed with conclusion success on candidate SHA a605ed3022f45a1853e85550bef1b8eb87d2beb1.
+- Syntax check passed. Node test suite: 324/324 passed. Frankfurter API check: 1/1 passed. Playwright browser suite: 16/16 passed.
+- Functional audit: 220 unique tools executed on desktop and mobile; 440/440 executions passed (220 desktop, 220 mobile), zero failures and zero runtime errors. All 220 routes passed the browser WCAG 2.1 A/AA checks. Artifact: 14745749524 (220-tool-functional-audit).
+- Lighthouse run #45002913442 completed with conclusion success on the same candidate SHA. All four audits and CLS budget enforcement passed. Artifact: 14745908818 (finpulse-batch-11-lighthouse-reports).
+
+| Lighthouse route | Performance | Accessibility | Best Practices | SEO | CLS | LCP (ms) | TBT (ms) |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Mobile homepage | 96 | 92 | 96 | 100 | 0.0000 | 2579.1 | 133 |
+| Mobile tool (hydration-log-tracker) | 96 | 100 | 96 | 100 | 0.0303 | 2725.1 | 21 |
+| Desktop homepage | 100 | 100 | 96 | 100 | 0.0000 | 623.1 | 0 |
+| Desktop tool (hydration-log-tracker) | 100 | 100 | 96 | 100 | 0.0087 | 634.4 | 0 |
+
+- CLS stayed below the enforced 0.10 budget on all routes. Lighthouse CI completed successfully. Mobile homepage Accessibility 92 is a follow-up improvement opportunity, not a failed run; no threshold failure occurred.
+- No merge or production deployment. PR #67 remains Draft; PR #71 remains validation-only and must not be merged.
+
+### Second US state group — official-source triage only (not enabled)
+
+Initial candidate group: Illinois (IL), Indiana (IN), Michigan (MI), Colorado (CO). These states remain manual-only. This is source triage, not a tax-engine verification or authorization to automate.
+
+| State | Official-source evidence located | Material scope / blockers before automation |
+|---|---|---|
+| Illinois (IL) | Illinois DOR 2026 withholding guide states 4.95% effective 2026-01-01: https://tax.illinois.gov/forms/withholding/currentyear/il-700-t-withholding-guide-tables.html . DOR FAQ states 2026 personal exemption $2,925 per eligible exemption: https://tax.illinois.gov/questionsandanswers/answer.851.html . | Need full 2026 IL-1040 instructions, dependent exemption/credit interactions, age/blind additions, AGI phase-out limits ($250k single / $500k joint), and nonresident allocation. Withholding guide is not a complete final-liability schedule. |
+| Indiana (IN) | DOR states 2026 individual AGI rate 2.95%: https://www.in.gov/dor/resources/tax-rates-and-reports/rates-fees-and-penalties/ . DOR county schedule effective Oct. 1, 2026: https://www.in.gov/dor/files/dn01.pdf . | County income tax is material and county rates may change in January/October. Need county selection, 2026 county tax rules, filing/residency/reciprocity handling, dependent exemptions, add-backs/deductions, and new 2026-only qualified overtime, tips and auto-loan-interest deductions. Not suitable for state-only flat-rate automation. |
+| Michigan (MI) | Treasury confirms 2026 individual rate 4.25%: https://www.michigan.gov/treasury/reference/taxpayer-notices/2026/04/15/425-income-tax-rate-for-individuals-and-fiduciaries-in-2026-tax-year . 2026 withholding guide gives personal exemption $5,900: https://www.michigan.gov/taxes/-/media/Project/Websites/taxes/Forms/SUW/TY2026/446_Withholding-Guide_2026.pdf . | Need full 2026 MI-1040 instructions and special exemption / disabled-veteran treatment, city income taxes (including Detroit), 2026 retirement/pension subtractions fully phased in, senior dividend/interest/capital-gain rules, nonresident sourcing and credits. Withholding rate/exemption alone is insufficient. |
+| Colorado (CO) | DOR individual income-tax guide explains modified federal taxable-income base, additions/subtractions and AMT: https://tax.colorado.gov/individual-income-tax-guide . | Official guide's rate table currently ends at tax year 2025 (4.4%); an explicit 2026 rate was not located. 2026 standard/itemized deduction addback limits change to $1,000 single / $2,000 joint for AGI above $300,000, and AMT plus other modifications apply. Do not infer the 2026 rate from 2025. |
+
+### Decision
+
+- No state from the second group is switched to automatic mode in this checkpoint.
+- Keep IL, IN, MI and CO manual-only until tax-year 2026 official filing instructions, full taxable-income base, filing statuses, credits, local taxes, income-source rules and regression vectors are verified.
+- Prior first-group automatic-zero states remain the only verified automatic states: AK, FL, NV, NH, SD, TN, TX and WY.
+- Audit metrics remain 8/50 verified no-individual-income-tax statuses and 0/50 fully verified positive-rate state schedules.
+
+## Group 2 detailed 2026 calculation-contract review — 2026-11-22 08:33 UTC
+
+Structured contract: `tax-state-contracts-2026-group2.json`. Human-readable contract: `docs/TAX_STATE_CALCULATION_CONTRACTS_2026_GROUP2.md`. Regression guard added to `tests/formula.test.cjs`. No state data or tax engine automatic mode was changed.
+
+- **IL:** official 2026 draft page lists IL-1040 instructions as “coming soon”; supporting Schedule IL-E/EITC and Schedule M instructions are draft. Verified 4.95% rate from existing official state materials, $2,925 2026 exemption, $1,000 age/blind additions and AGI phase-out thresholds. Full 2026 line instructions, all schedules and credits are not yet complete/final.
+- **IN:** official DOR 2026 Tax Chapter confirms 2.95% state rate, Jan. 1, 2026 federal conformity subject to modifications, and 2026-only tips/overtime/qualified vehicle-loan-interest deductions. Official county rate schedule effective Oct. 1, 2026 exists. Current-year form page still lists 2025 IT-40/IT-40PNR booklets, so final 2026 forms and full resident/nonresident instructions remain unavailable.
+- **MI:** official Treasury confirms 4.25% 2026 rate and official withholding page lists $5,900 personal exemption. The available full MI-1040 booklet is explicitly tax year 2025; it is not a 2026 return instruction source. City tax, retirement/pension transitions, credits and final exemption details require the 2026 booklet.
+- **CO:** January 2026 official Individual Income Tax Guide describes 2026 federal taxable-income modifications, including overtime addback, tips treatment, high-income deduction addback caps ($1,000 single / $2,000 joint above $300,000 AGI), death-benefit and AmeriCorps subtractions, and AMT. The guide's rate table only lists through 2025 and the DR 0104 forms page currently links 2025/2024 returns; 2026 rate and final return/AMT instructions remain unverified.
+- All four states remain `calculationMode: manual`; `automationReady:false`; numeric golden vectors are blocked pending complete 2026 primary instructions and worksheets. Regression tests now guard both registry mode and engine behavior: no implicit state tax; only explicit manual amount is included.
+- Accessibility is tracked separately in `docs/ACCESSIBILITY_FOLLOW_UP_MOBILE_HOMEPAGE_2026-11-22.md`; mobile homepage Lighthouse Accessibility 92 baseline, artifact 14745908818. No fix or score improvement claimed yet.
+
+## Group 2 regression guard validation checkpoint — 2026-11-22 08:38 UTC
+
+- First CI attempt #45003642110 failed the new regression guard at 325/326 because the test used strict equality for a decimal amount (1234.56) and exposed normal IEEE-754 floating-point representation. No calculation engine defect was indicated; the regression assertion was corrected to use a 1e-6 tolerance in commit `1e0c5cd55a5d6b415345aeb6f44f70e647f92c0f`.
+- Current validation CI #45003689081 on commit `a372458db58f62d087d33e99f1abb9c4ab089700`: syntax check, `npm test`, and Frankfurter API steps have passed; desktop/mobile browser tests remain in progress. The complete CI run is not yet marked successful.
+- Current Lighthouse #45003689076: mobile homepage/tool audit completed successfully; desktop homepage/tool audit is still in progress. No new Lighthouse scores or final success claim yet.
+- All four group-2 states remain manual-only; no numeric golden tax vectors or automatic schedules have been activated.
