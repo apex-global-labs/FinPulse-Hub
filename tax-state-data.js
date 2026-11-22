@@ -17,11 +17,24 @@ states.NY.sourceDocuments={rateSchedules:"https://www.tax.ny.gov/pdf/2026/inc/it
 states.NY.verification={checkedOn:"2026-11-22",verifiedComponents:["New York State single and married-filing-jointly progressive rate thresholds and rates","2026 standard deduction: $8,000 single and $16,050 married filing jointly"],notVerified:["Head-of-household and other unsupported filing-status schedules in the engine","New York City and Yonkers local income taxes","Complete state credit and deduction catalogue","Surtaxes and special income cases"],status:"partial"};
 states.AR.source="https://www.arkleg.state.ar.us/Home/FTPDocument?path=%2FAssembly%2F2025%2F2026S1%2FFiscal+Impacts%2FSB1-DFA1.pdf";
 states.SC.source="https://dor.sc.gov/news/information-about-h-4216";
+
+const zeroTaxEvidence={
+AK:{source:"https://www.commerce.alaska.gov/web/dcra/officeofthestateassessor/alaskataxfacts",status:"Alaska state government confirms no personal state income tax; applicable to tax year 2026."},
+FL:{source:"https://floridarevenue.com/faq/Pages/FAQDetails.aspx?FAQID=1466",status:"Florida Department of Revenue confirms no personal income tax and no individual filing requirement; applicable to tax year 2026."},
+NV:{source:"https://tax.nv.gov/about-nevada-department-of-taxation/income-tax-in-nevada/",status:"Nevada Department of Taxation confirms no individual income tax on salaries, wages or similar compensation; applicable to tax year 2026."},
+NH:{source:"https://www.revenue.nh.gov/transparency/transparency-all-tax-types/transparency-interest-dividends-tax",status:"New Hampshire DRA confirms the Interest and Dividends Tax was repealed effective January 1, 2025; no individual income tax remains for tax year 2026."},
+SD:{source:"https://dor.sd.gov/individuals/taxes",status:"South Dakota Department of Revenue confirms the state does not impose a state income tax; applicable to tax year 2026."},
+TN:{source:"https://www.tn.gov/revenue/taxes/hall-income-tax/due-date-and-tax-rates.html",status:"Tennessee Department of Revenue confirms Hall Income Tax repeal beginning January 1, 2021; applicable to tax year 2026."},
+TX:{source:"https://comptroller.texas.gov/taxes/property-tax/docs/96-298-25.pdf",status:"Official Texas Constitution text, Article VIII Section 24-a, prohibits a tax on individuals' net income; applicable to tax year 2026."},
+WY:{source:"https://sao.wyo.gov/wp-content/uploads/2026/01/2025-ACFR-12.22.25.pdf",status:"Wyoming State Auditor's 2025 ACFR states the state does not impose income, earnings or other taxes based on wages or other income; reviewed for tax year 2026."}
+};
+for(const [code,evidence] of Object.entries(zeroTaxEvidence)){states[code].calculationMode="automatic-zero";states[code].source=evidence.source;states[code].sourceStatus=evidence.status;states[code].sourceDocuments={individualIncomeTax:evidence.source};states[code].verifiedTaxYear=2026;}
+states.WA.sourceStatus="Not enabled for automatic-zero mode: Washington has a separate capital-gains tax, and a new high-income individual income tax is scheduled to take effect January 1, 2028. 2026 wage-income scope requires separate treatment.";
 const payroll={
 US:{socialSecurityRate:6.2,socialSecurityWageBase:184500,medicareRate:1.45,additionalMedicareRate:0.9,additionalMedicareThreshold:{single:200000,joint:250000,separate:125000,hoh:200000}},
 UK:{primaryThreshold:12570,upperEarningsLimit:50270,mainRate:8,upperRate:2},
 CA:{cppBasicExemption:3500,cppMaximumPensionable:74600,cppRate:5.95,cpp2Maximum:85000,cpp2Rate:4,eiMaximumInsurable:68900,eiRate:1.63},
 QC:{qppBasicExemption:3500,qppMaximumPensionable:74600,qppRate:6.3,qpp2Maximum:85000,qpp2Rate:4,eiMaximumInsurable:68900,eiRate:1.3,qpipMaximumInsurable:103000,qpipRate:0.43}
 };
-window.FinPulseStateData={states,payroll,officialAuthorities,sourceAudit:{status:"incomplete",calculationMode:"manual-only",verifiedSchedules:0,partiallyVerifiedStates:["NY"],totalStates:50,checkedOn:"2026-11-22",note:"New York single and married-joint rate schedules and standard deductions have partial official-source verification only. No state is fully verified across brackets, deductions, credits, local taxes and supported filing statuses. All state estimates remain provisional."}};
+window.FinPulseStateData={states,payroll,officialAuthorities,sourceAudit:{status:"partial",calculationMode:"mixed-verified-zero-and-manual-only",verifiedSchedules:0,verifiedZeroTaxStates:8,automaticZeroStates:["AK","FL","NV","NH","SD","TN","TX","WY"],partiallyVerifiedStates:["NY"],excludedFromAutomaticZero:["WA"],totalStates:50,checkedOn:"2026-11-22",note:"Eight states have official-source verification that no state individual income tax applies for tax year 2026 and are enabled as automatic zero. Washington remains manual-only because capital-gains tax and future 2028 income-tax scope are separate. New York remains partial. No positive-rate state schedule is fully verified; all other states remain manual-only."}};
 })();
