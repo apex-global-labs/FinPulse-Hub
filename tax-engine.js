@@ -4,7 +4,7 @@ function estimate(profileId,gross,deductions=0,stateId="none",stateStatus="singl
 const p=window.FinPulseTaxData.profiles[profileId];if(!p)throw Error("Choose a supported tax jurisdiction and year.");
 for(const [v,n] of [[gross,"Gross income"],[deductions,"Deductions"]])if(!Number.isFinite(v)||v<0)throw Error(n+" must be a valid non-negative amount.");
 if(deductions>gross)throw Error("Deductions cannot exceed gross income.");
-let allowance=p.allowance||0;if(p.taperAllowanceAbove&&gross>p.taperAllowanceAbove)allowance=Math.max(0,allowance-(gross-p.taperAllowanceAbove)/2);
+let allowance=p.allowance||0;const adjustedNetIncome=Math.max(0,gross-deductions);if(p.taperAllowanceAbove&&adjustedNetIncome>p.taperAllowanceAbove)allowance=Math.max(0,allowance-(adjustedNetIncome-p.taperAllowanceAbove)/2);
 const taxable=Math.max(0,gross-deductions-allowance);let tax=0,breakdown=[],marginalRate=0;
 if(p.components){for(const c of p.components){const componentTaxable=Math.max(0,gross-deductions-(c.allowance||0));const x=progressive(componentTaxable,c.bands);const due=Math.max(0,x.tax-(c.credit||0));tax+=due;marginalRate+=x.marginalRate;breakdown.push({component:c.name,tax:due,marginalRate:x.marginalRate,taxableIncome:componentTaxable,credit:c.credit||0});}}
 else{const x=progressive(taxable,p.bands);tax=x.tax;marginalRate=x.marginalRate;breakdown=x.breakdown;}
