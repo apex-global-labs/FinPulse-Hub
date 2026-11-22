@@ -86,3 +86,23 @@ test("first ten results and metrics are translated with stable source metric key
   }
  }
 });
+
+test("first ten FAQ, formula, disclaimer, error, SEO and accessibility fields cover all locales",()=>{
+ const ids=["currency","mortgage","loan","emi","compound","percentage","tip","car","amortization","savings"];
+ for(const id of ids){
+  const tool=content.tools.find(item=>item.id===id);
+  assert.ok(tool.source.explanations.formula && tool.source.explanations.steps.length>0,id+" source formula");
+  assert.ok(tool.source.faqs.length>=4,id+" source FAQ");
+  for(const locale of locales){
+   const fields=tool.locales[locale].fields;
+   assert.ok(fields.explanations.formulaTitle && fields.explanations.formulaDescription,id+":"+locale+" formula explanation");
+   assert.ok(fields.explanations.disclaimers.length>0,id+":"+locale+" disclaimer");
+   assert.equal(fields.faqs.length,4,id+":"+locale+" FAQ count");
+   assert.ok(fields.faqs.every(f=>f.key&&f.question&&f.answer),id+":"+locale+" FAQ content");
+   assert.ok(fields.errors.length===tool.source.errors.length,id+":"+locale+" validation errors");
+   assert.ok(fields.seo.title&&fields.seo.metaDescription&&fields.seo.h1&&fields.seo.introduction,id+":"+locale+" SEO");
+   assert.ok(fields.accessibility.pageLabel&&fields.accessibility.formLabel&&fields.accessibility.resultAnnouncement,id+":"+locale+" accessibility");
+   assert.deepEqual(fields.accessibility.controlLabels.map(x=>x.key),tool.source.inputs.map(x=>x.key),id+":"+locale+" accessible input keys");
+  }
+ }
+});
