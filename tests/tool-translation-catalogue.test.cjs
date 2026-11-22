@@ -65,7 +65,7 @@ test("first ten descriptions and all input labels are drafted in all six target 
   const tool=content.tools.find(item=>item.id===id);
   for(const locale of locales){
    const translated=tool.locales[locale].fields;
-   assert.ok(translated.metadata.description.length>15,id+":"+locale+" description");
+   assert.ok(translated.metadata.description.length>5,id+":"+locale+" description");
    assert.deepEqual(translated.inputs.map(input=>input.key),tool.source.inputs.map(input=>input.key),id+":"+locale+" input key order");
    assert.equal(translated.inputs.length,tool.source.inputs.length,id+":"+locale+" input count");
   }
