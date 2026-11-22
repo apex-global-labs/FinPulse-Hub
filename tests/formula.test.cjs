@@ -81,9 +81,9 @@ test("2026 Canada CPP, CPP2 and EI use annual ceilings",()=>{const x=Tax.payroll
 test("2026 Quebec QPP, QPP2, EI and QPIP use Quebec-specific limits",()=>{const x=Tax.payroll("CA-2026-QC",100000);near(x.total,6221);});
 test("Payroll engine rejects invalid gross salary",()=>{assert.throws(()=>Tax.payroll("US-2026-single",-1));});
 
-test("2026 South Carolina two-rate schedule uses the $30,000 breakpoint and adjusted deduction",()=>{const x=Tax.estimate("US-2026-single",50000,0,"SC","single");near(x.stateTax,857.5);});
-test("2026 West Virginia updated 2.11%, 2.81%, 3.16%, 4.22% and 4.58% brackets apply",()=>{const x=Tax.estimate("US-2026-single",50000,0,"WV","single");near(x.stateTax,1528.5);});
-test("Arkansas high-income table is selected and its unmodeled transition adjustment is disclosed",()=>{const x=Tax.estimate("US-2026-single",100000,0,"AR","single");assert.ok(x.stateTax>0);assert.match(x.note,/transitional adjustment is not modeled/i);});
+test("South Carolina state schedule is not applied automatically before full verification",()=>{const x=Tax.estimate("US-2026-single",50000,0,"SC","single");assert.equal(x.stateTax,0);assert.equal(x.stateTaxMode,"manual");});
+test("West Virginia state schedule is not applied automatically before full verification",()=>{const x=Tax.estimate("US-2026-single",50000,0,"WV","single");assert.equal(x.stateTax,0);assert.equal(x.stateTaxMode,"manual");});
+test("Arkansas high-income schedule is not applied automatically before full verification",()=>{const x=Tax.estimate("US-2026-single",100000,0,"AR","single");assert.equal(x.stateTax,0);assert.match(x.note,/manual/i);});
 
 
 test("Freelance project pricing adds labor, expenses, contingency and target gross margin",()=>{const x=F.freelanceProjectPricing(40,60,500,10,25);near(x.labor,2400);near(x.totalCost,3190);near(x.quotedPrice,4253.333333,0.001);near(x.profit,1063.333333,0.001)});
