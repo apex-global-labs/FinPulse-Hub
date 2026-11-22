@@ -132,3 +132,15 @@ The dedicated branch adds five Developer wrap-up tools, twelve Education & Study
 - Lighthouse CLS budget (<= 0.10) passed on all four routes. Mobile homepage accessibility remains 92 and needs review before final accessibility sign-off.
 - 50-state official schedule verification remains 0/50. All 50 official authority portal links are present, but 2026 brackets, deductions, credits, local taxes and special schedules are not yet individually verified.
 - PR #66 remains Draft. PR #67 is the Phase 2D Draft candidate. No merge or deployment was performed. The temporary validation-only PR #68 was closed without merge.
+
+
+## Phase 2D release-gate recheck — 2026-11-22 08:00 UTC
+
+- Finance CI run #45000081990 has now completed. Syntax, 322/322 Node tests and Frankfurter API 1/1 passed. The browser job failed: TAP reported 13 passing and 3 failing results (including a parent suite failure). Root causes were two outdated Bangladesh disclosure text assertions, not failures in the 220-route axe audit.
+- The final browser release audit in that same run passed all 220 unique tool routes against WCAG 2.1 A/AA. All 220 routes rendered; this does not convert the overall browser suite to Pass while the separate Bangladesh interaction assertions fail.
+- Updated the payroll/disability-disclosure browser assertions in commit `4cc26717240179125f3f613ba85011ae477c9283`.
+- Official US state audit: **0/50 fully verified**. New York is recorded as partial only: 2026 NYS single and married-joint rate schedules plus standard deductions checked against official NY tax publications. Credits, NYC/Yonkers local tax, other filing statuses, surtaxes and special cases remain incomplete. New York does not count toward the fully verified total. All state estimates remain provisional.
+- Added NY partial provenance and a matching regression assertion in commits `a577327ee1e9e6739e52d4cfdafa82046d8bc0f1` and `c05c1812cce859a16308bc60103c17953fe96087`.
+- Updated `docs/TAX_JURISDICTION_AUDIT_2026-11-22.md` with the current 0/50 full-verification status, NY partial scope, and browser failure diagnosis (commit `314b173fe1c168a58b17e8eda0ca350824e1ab1c`).
+- Temporary validation-only PR #69 targets `main` so the repository CI workflow can run (the implementation PR #67 is stacked on a non-main base and does not trigger this workflow). PR #69 is not for merge and will be closed after evidence capture. The fresh CI/browser result is pending.
+- PR #66 and PR #67 remain Draft. No merge or production deployment was performed. User approval remains required before any merge/deployment.
