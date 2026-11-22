@@ -31,8 +31,12 @@ Ten title candidates have AI terminology/meaning review notes. This is not nativ
 - First 10 descriptions translated into all six target locales: 60/60 locale descriptions drafted.
 - First 10 input labels translated into all six target locales: 264/264 labels drafted across 44 stable input keys.
 - All 60 locale records for the first 10 tools are marked `draft`; no native-speaker or domain approval is claimed.
-- Output/result labels, metrics, FAQs, guides, disclaimers, errors, accessibility copy and localized SEO remain pending.
-- Browser validation for the newly translated tool-page content remains pending; current browser coverage validates the shared language selector, RTL/LTR switching, persistence and currency independence.
+- First 10 result headings/summaries: 60/60 drafted; 270 metric labels and 66 breakdown labels translated with stable keys.
+- FAQ: 240 question/answer fields drafted; formula/explanation summary: 60 locale records; disclaimers: 60 records; source-derived validation errors: 198 message/recovery pairs.
+- SEO title, meta description, H1 and introduction: 60 locale records; accessibility page/form/result labels and input-control labels: 60 locale records.
+- Formula strings and technical identifiers remain unchanged. Detailed calculation steps are still source-English in the source registry and require per-locale translation before publication; no claim of full formula-step translation is made.
+- Tool-page runtime rendering of these draft records is not yet enabled; records remain draft-only and fall back to English in production.
+- Seven-locale browser validation is in progress; existing shared-shell browser coverage checks locale switching, persistence, currency independence and RTL/LTR. The new browser suite additionally loads the 220-tool catalogue and checks first-batch records across all seven locales.
 
 ## Release gate
-CI and Lighthouse must pass against the latest PR head after the new translation-content assertions. The first-10 content remains draft-only until linguistic/domain review and tool-page browser coverage pass. PR remains Draft. No production deployment is authorized by this work.
+CI and Lighthouse must pass against the latest PR head, including the new translation-content assertions and seven-locale browser suite. The first-10 content remains draft-only until linguistic/domain review and tool-page runtime rendering coverage pass. PR remains Draft. No production deployment is authorized by this work.
