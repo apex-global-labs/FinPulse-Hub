@@ -370,3 +370,5 @@ footer{max-width:1180px;margin:auto;border-top:1px solid var(--line)}
 
 /* Accessibility: preserve a clear, unobscured mobile disclosure target. */
 #quick-calculator>summary{display:flex;width:100%;min-height:44px;position:relative;z-index:1;align-items:center;padding:12px 14px;line-height:1.35;}
+
+@media(max-width:650px){.home-route #quick-calculator{margin-top:0}.home-route #home-calculator{margin-top:4px}}
