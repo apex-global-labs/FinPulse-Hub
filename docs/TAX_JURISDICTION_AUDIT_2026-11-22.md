@@ -152,3 +152,59 @@ These are candidate-branch changes only. They have not been merged or deployed.
 - [ ] Update `docs/PROJECT_STATE.md` after the audit and final acceptance.
 
 **Release recommendation:** Keep PR #66 Draft. Do not merge or deploy until all P1 items are either corrected and tested or the affected estimates are clearly restricted/disabled. A successful CI run alone does not establish tax-law completeness.
+
+## Phase 2D implementation update — 2026-11-22
+
+### Canada — implemented credit layer (candidate)
+
+- Added 2026 federal Basic Personal Amount credit at 14%, with the published $16,452 maximum / $14,829 minimum phase-out range.
+- Added province/territory basic personal amount credits using the 2026 CRA payroll tables and corresponding lowest marginal rates.
+- Added Manitoba's $15,780 basic amount phase-out from $200,000 to $400,000.
+- Added Yukon federal-mirroring BPA phase-out.
+- Added Québec's $18,952 basic personal amount credit and 16.5% federal abatement.
+- Credits are capped at the component tax payable; no negative tax/refund is generated.
+- Other credits (age, spouse, dependant, disability, tuition, medical, employment amount), provincial surtaxes/health premiums and all personal circumstances remain out of scope and are disclosed.
+
+Official references:
+- CRA 2026 tax brackets: https://www.canada.ca/en/revenue-agency/services/tax/individuals/tax-rates-brackets/current-year.html
+- CRA 2026 T4127 payroll formulas and basic amounts: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/payroll-deductions-t4127-payroll-deductions-formulas/t4127-jan-122nd-edition-effective-january-1-2026/t4127-jan-payroll-deductions-formulas-computer-programs.html
+- Revenu Québec 2026 personal credit amounts and rates: https://www.revenuquebec.ca/en/businesses/source-deductions-and-employer-contributions/employers-principal-changes-for-2026/
+- Québec abatement: https://www.canada.ca/en/department-finance/programs/federal-transfers/quebec-abatement.html
+
+### US states — official authority directory added; schedule verification remains blocked
+
+- Replaced the shared secondary StateWise source link with an official state tax authority portal URL for each of the 50 states.
+- Added sourceStatus and a machine-readable sourceAudit contract. The current candidate intentionally reports 0/50 state schedules fully verified.
+- This is not a claim that all 50 2026 schedules are verified. Brackets, standard deductions, personal exemptions, credits, local taxes, surtaxes, special schedules and filing-status rules still require individual primary-source comparison before state results can be labelled authoritative.
+- Candidate state estimates remain explicitly provisional in the UI and engine note. Only Single and Married Filing Jointly are currently supported by the state calculator.
+
+### Bangladesh — implemented special allowance and minimum-tax boundary
+
+- Added an input for eligible disabled dependent children; each increases the applicable tax-free threshold by Tk 50,000, consistent with NBR Appendix B.
+- Minimum tax is Tk 5,000 only when net total income (gross less entered eligible deductions) exceeds the applicable threshold. It no longer applies merely because gross income exceeds the threshold when deductions bring net income below it.
+- No unverified “new taxpayer Tk 1,000” exception was added. The FY 2026–27 budget states Tk 5,000 once total income exceeds the threshold.
+- Source-based minimum tax, tax rebates, surcharge/wealth surcharge, special income sources and other statutory conditions remain excluded.
+
+Official references:
+- NBR Budget Speech Appendix B: https://nbr.gov.bd/uploads/budget/Budget_Speech_English.pdf
+- NBR Income Tax publications: https://nbr.gov.bd/publications/income-tax/eng
+- Income Tax Act 2023: https://nbr.gov.bd/uploads/acts/Income_tax_act_2023.pdf
+- NBR FAQ: https://nbr.gov.bd/faq/income-tax-faq/eng
+
+### Bangladesh payroll disclosure
+
+- The payroll engine returns no statutory employee withholding deductions for Bangladesh.
+- The salary calculator now receives an explicit note that its result is not a statutory net-pay estimate and excludes applicable NBR withholding, employer/employee contributions, benefits, provident fund, gratuity and year-to-date reconciliation.
+
+### Tests and validation status
+
+- Added regression coverage for Canadian federal/provincial credits, federal and Manitoba BPA phase-out boundaries, Québec abatement, Bangladesh disabled-dependent thresholds, Tk 5,000 minimum-tax boundaries, invalid dependent counts, Bangladesh payroll disclosure, 50-state source-contract coverage, US filing-status limits and federal filing-status distinctions.
+- Added mobile browser/axe checks for Bangladesh Income Tax and Salary Take-Home routes.
+- CI, Playwright and Lighthouse must be run against the final Phase 2D branch before any release decision. No merge or deployment is authorized.
+
+### Remaining release blockers
+
+1. Complete the actual 50-state 2026 schedule-by-schedule official-source reconciliation (currently 0/50 marked verified).
+2. Confirm all Phase 2D Node tests and resolve any failures.
+3. Complete browser tests, axe WCAG 2.1 A/AA and mobile/desktop Lighthouse against the final branch.
+4. Review candidate source/effective-date metadata and update this document with exact run IDs and artifact evidence.
