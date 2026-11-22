@@ -108,3 +108,14 @@ The dedicated branch adds five Developer wrap-up tools, twelve Education & Study
 - GitHub Pages deployment [#44511324424](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44511324424) succeeded. Published artifact `github-pages` (artifact ID `14522372777`) was inspected: it contains 220 sitemap tool URLs, a homepage with the 220-tool counter, and `health-wellness-tools.js`.
 - Production Lighthouse [#44511405172](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44511405172) succeeded. Mobile: Performance 95, Accessibility 100, Best Practices 96, SEO 100, CLS 0.000, LCP 1,539.8 ms, TBT 253 ms. Desktop: Performance 100, Accessibility 100, Best Practices 96, SEO 100, CLS 0.0094, LCP 384.3 ms, TBT 0 ms.
 - Verified portfolio: 220/220 unique tools; homepage counter, registry and canonical sitemap all align. Latest verified production commit: `63822f8f43e0e1eb21ca85d0969b7ecb05e52313`.
+
+## Phase 2D tax jurisdiction audit candidate — 2026-11-22
+
+- Production main baseline at audit start: a4983bf8b84e8a2777bbed137ecedb70d74d6011. Production inventory remains 220 tools; no merge or deployment was performed by this Phase 2D candidate.
+- Existing PR #66 remains Draft for Phase 2A–2C. Phase 2D work is isolated on feat/tax-jurisdiction-audit-phase-2d, based on PR #66 candidate head 8b2e83186025bb2c5214b2194fc0752bc9bcd7c0.
+- Canada: candidate now applies 2026 federal BPA, province/territory BPA credits, Manitoba/Yukon phase-outs and Québec federal abatement. Other personal credits and provincial surtaxes remain excluded.
+- Bangladesh: candidate adds Tk 50,000 per eligible disabled dependent child and corrects Tk 5,000 minimum-tax boundary logic. Bangladesh payroll statutory withholding is explicitly marked not configured; Salary Take-Home is not a statutory net-pay estimate.
+- US states: all 50 state tax authority portal links replace the previous shared secondary source. 0/50 2026 rate schedules are marked fully verified; data remains provisional until each official schedule, deduction, credit and local-tax scope is reconciled.
+- New tax regression tests and Bangladesh mobile browser/axe checks have been added. Final CI, browser, accessibility and Lighthouse evidence is pending.
+- Audit details: docs/TAX_JURISDICTION_AUDIT_2026-11-22.md. State source register: tax-state-data.js.
+- Release gate: do not merge PR #66 or Phase 2D work and do not deploy until all tax-specific validation succeeds and the 50-state verification blocker is resolved. User approval is required before merge/deployment.
