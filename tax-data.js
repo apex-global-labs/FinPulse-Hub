@@ -32,9 +32,9 @@ const federalCredit={creditAmount:16452,creditRate:14,phaseOut:{start:181440,end
 const canada={};for(const [code,p] of Object.entries(caProv)){const provincial=caCredits[code];canada["CA-2026-"+code]={label:"Canada — Federal + "+p.label+" · 2026",currency:"CAD",components:[{name:"Federal",bands:caFederal,...federalCredit},{name:p.label,bands:p.bands,creditAmount:provincial.amount,creditRate:provincial.rate,...(provincial.phaseOut?{phaseOut:provincial.phaseOut}:{})}]};}
 const bd={
  "BD-2026-general":{label:"Bangladesh — General individual · AY 2026–27",currency:"BDT",allowance:375000,bands:bands([[300000,10],[700000,15],[1200000,20],[3200000,25],[Infinity,30]]),minimumTax:5000,dependentDisabilityAllowance:50000},
- "BD-2026-women-senior":{label:"Bangladesh — Women / age 65+ · AY 2026–27",currency:"BDT",allowance:425000,bands:bands([[300000,10],[700000,15],[1200000,20],[3200000,25],[Infinity,30]]),minimumTax:5000},
- "BD-2026-third-gender-disability":{label:"Bangladesh — Third gender / disability · AY 2026–27",currency:"BDT",allowance:500000,bands:bands([[300000,10],[700000,15],[1200000,20],[3200000,25],[Infinity,30]]),minimumTax:5000},
- "BD-2026-freedom-fighter":{label:"Bangladesh — Gazetted freedom fighter / July fighter · AY 2026–27",currency:"BDT",allowance:525000,bands:bands([[300000,10],[700000,15],[1200000,20],[3200000,25],[Infinity,30]]),minimumTax:5000}
+ "BD-2026-women-senior":{label:"Bangladesh — Women / age 65+ · AY 2026–27",currency:"BDT",allowance:425000,bands:bands([[300000,10],[700000,15],[1200000,20],[3200000,25],[Infinity,30]]),minimumTax:5000,dependentDisabilityAllowance:50000},
+ "BD-2026-third-gender-disability":{label:"Bangladesh — Third gender / disability · AY 2026–27",currency:"BDT",allowance:500000,bands:bands([[300000,10],[700000,15],[1200000,20],[3200000,25],[Infinity,30]]),minimumTax:5000,dependentDisabilityAllowance:50000},
+ "BD-2026-freedom-fighter":{label:"Bangladesh — Gazetted freedom fighter / July fighter · AY 2026–27",currency:"BDT",allowance:525000,bands:bands([[300000,10],[700000,15],[1200000,20],[3200000,25],[Infinity,30]]),minimumTax:5000,dependentDisabilityAllowance:50000}
 };
 canada["CA-2026-QC"]={label:"Canada — Federal + Québec · 2026",currency:"CAD",components:[{name:"Federal",bands:caFederal,...federalCredit,abatement:0.165},{name:"Québec",bands:bands([[54345,14],[108680,19],[132245,24],[Infinity,25.75]]),creditAmount:18952,creditRate:14}]};
 const profiles={...us,...uk,...canada,...bd};
