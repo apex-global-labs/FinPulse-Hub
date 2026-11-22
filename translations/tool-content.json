@@ -89,7 +89,42 @@
               "label": "Estimated received amount"
             }
           ]
-        }
+        },
+        "explanations": {
+          "formula": "Received amount = amount × exchange rate × (1 − provider fee percentage)",
+          "steps": [
+            "Use the latest published reference rate when available, or the manually entered rate.",
+            "Multiply the source amount by the exchange rate to get the gross converted value.",
+            "Calculate the provider fee as a percentage of the gross converted value.",
+            "Subtract the fee to estimate the amount received.",
+            "Reference rates are not guaranteed bank or card quotes."
+          ],
+          "disclaimers": [
+            "Reference rates are not guaranteed bank or card quotes."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-purpose",
+            "question": "What does this calculator calculate?",
+            "answer": "Convert an amount using a reference or manually entered exchange rate."
+          },
+          {
+            "key": "faq-use",
+            "question": "How do I use this calculator?",
+            "answer": "Enter the requested values, review the assumptions and adjust any input to update the result."
+          },
+          {
+            "key": "faq-speed",
+            "question": "Are results instant?",
+            "answer": "Yes. Calculations run in your browser and update when supported inputs change."
+          },
+          {
+            "key": "faq-privacy",
+            "question": "Are my entries sent to a server?",
+            "answer": "No. Calculator inputs are processed in this browser; do not enter sensitive personal information."
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -167,7 +202,49 @@
                 "title": "भुगतान अनुसूची",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "सूत्र और गणना के चरण",
+              "formulaDescription": "Received amount = amount × exchange rate × (1 − provider fee percentage)",
+              "assumptions": [
+                "नीचे दिया गया सूत्र दर्ज किए गए मानों और मान्यताओं पर आधारित अनुमान देता है।"
+              ],
+              "notes": [
+                "दर्ज की गई दर और मानों का उपयोग करें।",
+                "सूत्र में प्रत्येक अवधि की गणना करें।",
+                "परिणाम दर्ज की गई अवधि और मान्यताओं पर निर्भर करता है।",
+                "परिणाम को अनुमान के रूप में देखें, गारंटी के रूप में नहीं।",
+                "परिणाम को अनुमान के रूप में देखें, गारंटी के रूप में नहीं।"
+              ],
+              "disclaimers": [
+                "यह परिणाम केवल जानकारी और योजना बनाने के लिए अनुमान है, वित्तीय सलाह या गारंटी नहीं। वास्तविक दरें, शुल्क, कर और प्रदाता की शर्तें अलग हो सकती हैं।"
+              ],
+              "limitations": [
+                "यह परिणाम केवल जानकारी और योजना बनाने के लिए अनुमान है, वित्तीय सलाह या गारंटी नहीं। वास्तविक दरें, शुल्क, कर और प्रदाता की शर्तें अलग हो सकती हैं।"
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "यह कैलकुलेटर क्या गणना करता है?",
+                "answer": "Convert an amount using a reference or manually entered exchange rate."
+              },
+              {
+                "key": "faq-use",
+                "question": "मैं इस कैलकुलेटर का उपयोग कैसे करूँ?",
+                "answer": "माँगे गए मान दर्ज करें, मान्यताओं की समीक्षा करें और परिणाम देखने के लिए इनपुट बदलें।"
+              },
+              {
+                "key": "faq-speed",
+                "question": "क्या परिणाम तुरंत मिलते हैं?",
+                "answer": "हाँ। समर्थित इनपुट बदलने पर गणना ब्राउज़र में अपडेट होती है।"
+              },
+              {
+                "key": "faq-privacy",
+                "question": "क्या मेरी प्रविष्टियाँ सर्वर पर भेजी जाती हैं?",
+                "answer": "नहीं। इनपुट इसी ब्राउज़र में संसाधित होते हैं। संवेदनशील व्यक्तिगत जानकारी दर्ज न करें।"
+              }
+            ]
           }
         },
         "ar": {
@@ -245,7 +322,49 @@
                 "title": "جدول السداد",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "الصيغة وخطوات الحساب",
+              "formulaDescription": "Received amount = amount × exchange rate × (1 − provider fee percentage)",
+              "assumptions": [
+                "تعطي الصيغة أدناه تقديرًا استنادًا إلى القيم والافتراضات التي أدخلتها."
+              ],
+              "notes": [
+                "استخدم المعدل والقيم التي أدخلتها.",
+                "احسب كل فترة باستخدام الصيغة.",
+                "تعتمد النتيجة على المدة والافتراضات المدخلة.",
+                "تعامل مع النتيجة كتقدير لا كضمان.",
+                "تعامل مع النتيجة كتقدير لا كضمان."
+              ],
+              "disclaimers": [
+                "هذه النتيجة تقدير لأغراض المعلومات والتخطيط فقط، وليست نصيحة مالية أو ضمانًا. قد تختلف الأسعار والرسوم والضرائب وشروط المزوّد الفعلية."
+              ],
+              "limitations": [
+                "هذه النتيجة تقدير لأغراض المعلومات والتخطيط فقط، وليست نصيحة مالية أو ضمانًا. قد تختلف الأسعار والرسوم والضرائب وشروط المزوّد الفعلية."
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "ماذا تحسب هذه الآلة؟",
+                "answer": "Convert an amount using a reference or manually entered exchange rate."
+              },
+              {
+                "key": "faq-use",
+                "question": "كيف أستخدم هذه الآلة؟",
+                "answer": "أدخل القيم المطلوبة، وراجع الافتراضات، وعدّل المدخلات لتحديث النتيجة."
+              },
+              {
+                "key": "faq-speed",
+                "question": "هل تظهر النتائج فورًا؟",
+                "answer": "نعم. تُحدّث الحسابات داخل المتصفح عند تغيير المدخلات المدعومة."
+              },
+              {
+                "key": "faq-privacy",
+                "question": "هل تُرسل إدخالاتي إلى خادم؟",
+                "answer": "لا. تُعالج المدخلات في هذا المتصفح. لا تُدخل معلومات شخصية حساسة."
+              }
+            ]
           }
         },
         "ur": {
@@ -323,7 +442,49 @@
                 "title": "ادائیگی کا شیڈول",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "فارمولا اور حساب کے مراحل",
+              "formulaDescription": "Received amount = amount × exchange rate × (1 − provider fee percentage)",
+              "assumptions": [
+                "ذیل کا فارمولا آپ کی درج کردہ قدروں اور مفروضوں کی بنیاد پر تخمینہ دیتا ہے۔"
+              ],
+              "notes": [
+                "درج کردہ شرح اور قدریں استعمال کریں۔",
+                "فارمولے کے ذریعے ہر مدت کا حساب کریں۔",
+                "نتیجہ درج کردہ مدت اور مفروضوں پر منحصر ہے۔",
+                "نتیجے کو تخمینہ سمجھیں، ضمانت نہیں۔",
+                "نتیجے کو تخمینہ سمجھیں، ضمانت نہیں۔"
+              ],
+              "disclaimers": [
+                "یہ نتیجہ صرف معلومات اور منصوبہ بندی کے لیے تخمینہ ہے، مالی مشورہ یا ضمانت نہیں۔ اصل شرحیں، فیس، ٹیکس اور فراہم کنندہ کی شرائط مختلف ہو سکتی ہیں۔"
+              ],
+              "limitations": [
+                "یہ نتیجہ صرف معلومات اور منصوبہ بندی کے لیے تخمینہ ہے، مالی مشورہ یا ضمانت نہیں۔ اصل شرحیں، فیس، ٹیکس اور فراہم کنندہ کی شرائط مختلف ہو سکتی ہیں۔"
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "یہ کیلکولیٹر کیا حساب کرتا ہے؟",
+                "answer": "Convert an amount using a reference or manually entered exchange rate."
+              },
+              {
+                "key": "faq-use",
+                "question": "میں یہ کیلکولیٹر کیسے استعمال کروں؟",
+                "answer": "مطلوبہ قدریں درج کریں، مفروضوں کا جائزہ لیں اور نتیجہ اپ ڈیٹ کرنے کے لیے ان پٹس تبدیل کریں۔"
+              },
+              {
+                "key": "faq-speed",
+                "question": "کیا نتائج فوراً ملتے ہیں؟",
+                "answer": "جی ہاں۔ معاون ان پٹس تبدیل کرنے پر حساب براؤزر میں اپ ڈیٹ ہوتا ہے۔"
+              },
+              {
+                "key": "faq-privacy",
+                "question": "کیا میری درج کردہ معلومات سرور کو بھیجی جاتی ہیں؟",
+                "answer": "نہیں۔ ان پٹس اسی براؤزر میں پراسیس ہوتے ہیں۔ حساس ذاتی معلومات درج نہ کریں۔"
+              }
+            ]
           }
         },
         "zh-CN": {
@@ -401,7 +562,49 @@
                 "title": "还款计划",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "公式与计算步骤",
+              "formulaDescription": "Received amount = amount × exchange rate × (1 − provider fee percentage)",
+              "assumptions": [
+                "以下公式根据您输入的数值和假设提供估算结果。"
+              ],
+              "notes": [
+                "使用您输入的利率和数值。",
+                "根据公式逐期进行计算。",
+                "结果取决于输入的期限和假设。",
+                "请将结果视为估算，而非保证。",
+                "请将结果视为估算，而非保证。"
+              ],
+              "disclaimers": [
+                "此结果仅供信息参考和规划使用，不构成财务建议或保证。实际利率、费用、税款及服务提供商条款可能有所不同。"
+              ],
+              "limitations": [
+                "此结果仅供信息参考和规划使用，不构成财务建议或保证。实际利率、费用、税款及服务提供商条款可能有所不同。"
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "此计算器计算什么？",
+                "answer": "Convert an amount using a reference or manually entered exchange rate."
+              },
+              {
+                "key": "faq-use",
+                "question": "如何使用此计算器？",
+                "answer": "输入所需数值，查看假设条件，并调整输入以更新结果。"
+              },
+              {
+                "key": "faq-speed",
+                "question": "结果会立即显示吗？",
+                "answer": "是。更改受支持的输入后，计算会在浏览器中更新。"
+              },
+              {
+                "key": "faq-privacy",
+                "question": "我的输入会发送到服务器吗？",
+                "answer": "不会。输入内容仅在此浏览器中处理。请勿输入敏感个人信息。"
+              }
+            ]
           }
         },
         "ja": {
@@ -479,7 +682,49 @@
                 "title": "返済スケジュール",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "計算式と計算手順",
+              "formulaDescription": "Received amount = amount × exchange rate × (1 − provider fee percentage)",
+              "assumptions": [
+                "以下の式は、入力された値と前提条件に基づく推定値を示します。"
+              ],
+              "notes": [
+                "入力された利率と値を使用します。",
+                "式に従って各期間を計算します。",
+                "結果は入力された期間と前提条件によって変わります。",
+                "結果は保証ではなく推定値として扱ってください。",
+                "結果は保証ではなく推定値として扱ってください。"
+              ],
+              "disclaimers": [
+                "この結果は情報提供と計画用の推定値であり、金融アドバイスや保証ではありません。実際の金利、手数料、税金、事業者の条件は異なる場合があります。"
+              ],
+              "limitations": [
+                "この結果は情報提供と計画用の推定値であり、金融アドバイスや保証ではありません。実際の金利、手数料、税金、事業者の条件は異なる場合があります。"
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "この計算ツールでは何を計算できますか？",
+                "answer": "Convert an amount using a reference or manually entered exchange rate."
+              },
+              {
+                "key": "faq-use",
+                "question": "この計算ツールの使い方は？",
+                "answer": "必要な値を入力し、前提条件を確認して、入力を変更すると結果が更新されます。"
+              },
+              {
+                "key": "faq-speed",
+                "question": "結果はすぐに表示されますか？",
+                "answer": "はい。対応する入力を変更すると、ブラウザー内で計算結果が更新されます。"
+              },
+              {
+                "key": "faq-privacy",
+                "question": "入力内容はサーバーに送信されますか？",
+                "answer": "いいえ。入力内容はこのブラウザー内で処理されます。機密性の高い個人情報は入力しないでください。"
+              }
+            ]
           }
         },
         "ru": {
@@ -553,12 +798,54 @@
                 "title": "График платежей",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "Формула и этапы расчёта",
+              "formulaDescription": "Received amount = amount × exchange rate × (1 − provider fee percentage)",
+              "assumptions": [
+                "Формула ниже даёт оценку на основе введённых значений и допущений."
+              ],
+              "notes": [
+                "Используйте введённую ставку и значения.",
+                "Рассчитайте каждый период по формуле.",
+                "Результат зависит от заданного срока и допущений.",
+                "Рассматривайте результат как оценку, а не гарантию.",
+                "Рассматривайте результат как оценку, а не гарантию."
+              ],
+              "disclaimers": [
+                "Результат является оценкой только для информации и планирования, а не финансовой рекомендацией или гарантией. Фактические ставки, комиссии, налоги и условия поставщиков могут отличаться."
+              ],
+              "limitations": [
+                "Результат является оценкой только для информации и планирования, а не финансовой рекомендацией или гарантией. Фактические ставки, комиссии, налоги и условия поставщиков могут отличаться."
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "Что рассчитывает этот калькулятор?",
+                "answer": "Convert an amount using a reference or manually entered exchange rate."
+              },
+              {
+                "key": "faq-use",
+                "question": "Как пользоваться этим калькулятором?",
+                "answer": "Введите необходимые значения, проверьте допущения и измените параметры, чтобы обновить результат."
+              },
+              {
+                "key": "faq-speed",
+                "question": "Результаты отображаются сразу?",
+                "answer": "Да. При изменении поддерживаемых параметров расчёт обновляется в браузере."
+              },
+              {
+                "key": "faq-privacy",
+                "question": "Отправляются ли мои данные на сервер?",
+                "answer": "Нет. Введённые данные обрабатываются в этом браузере. Не вводите конфиденциальную личную информацию."
+              }
+            ]
           }
         }
       },
       "sourceExtractionStatus": "source-title-description-inputs-extracted",
-      "sourceTranslationStatus": "description-inputs-and-results-drafted"
+      "sourceTranslationStatus": "descriptions-inputs-results-formulas-and-faqs-drafted"
     },
     {
       "id": "mortgage",
@@ -616,7 +903,42 @@
             }
           ],
           "breakdown": []
-        }
+        },
+        "explanations": {
+          "formula": "P = home price − down payment; PMT = P·i / (1 − (1+i)⁻ⁿ)",
+          "steps": [
+            "Financed principal equals home price minus down payment.",
+            "Monthly rate i equals annual rate divided by 1200; n equals years multiplied by 12.",
+            "For a positive rate, calculate the fixed payment; at zero rate, payment equals P divided by n.",
+            "Monthly interest equals opening balance multiplied by i; principal equals payment minus interest.",
+            "Apply any extra principal payment and aggregate monthly rows into years."
+          ],
+          "disclaimers": [
+            "Fixed-rate or periodic estimates depend on the entered assumptions."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-purpose",
+            "question": "What does this calculator calculate?",
+            "answer": "Estimate principal and interest payments for a home loan using the entered price, down payment, rate and term."
+          },
+          {
+            "key": "faq-use",
+            "question": "How do I use this calculator?",
+            "answer": "Enter the requested values, review the assumptions and adjust any input to update the result."
+          },
+          {
+            "key": "faq-speed",
+            "question": "Are results instant?",
+            "answer": "Yes. Calculations run in your browser and update when supported inputs change."
+          },
+          {
+            "key": "faq-privacy",
+            "question": "Are my entries sent to a server?",
+            "answer": "No. Calculator inputs are processed in this browser; do not enter sensitive personal information."
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -677,7 +999,49 @@
                 "title": "भुगतान अनुसूची",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "सूत्र और गणना के चरण",
+              "formulaDescription": "P = home price − down payment; PMT = P·i / (1 − (1+i)⁻ⁿ)",
+              "assumptions": [
+                "नीचे दिया गया सूत्र दर्ज किए गए मानों और मान्यताओं पर आधारित अनुमान देता है।"
+              ],
+              "notes": [
+                "दर्ज की गई दर और मानों का उपयोग करें।",
+                "सूत्र में प्रत्येक अवधि की गणना करें।",
+                "परिणाम दर्ज की गई अवधि और मान्यताओं पर निर्भर करता है।",
+                "परिणाम को अनुमान के रूप में देखें, गारंटी के रूप में नहीं।",
+                "परिणाम को अनुमान के रूप में देखें, गारंटी के रूप में नहीं।"
+              ],
+              "disclaimers": [
+                "यह परिणाम केवल जानकारी और योजना बनाने के लिए अनुमान है, वित्तीय सलाह या गारंटी नहीं। वास्तविक दरें, शुल्क, कर और प्रदाता की शर्तें अलग हो सकती हैं।"
+              ],
+              "limitations": [
+                "यह परिणाम केवल जानकारी और योजना बनाने के लिए अनुमान है, वित्तीय सलाह या गारंटी नहीं। वास्तविक दरें, शुल्क, कर और प्रदाता की शर्तें अलग हो सकती हैं।"
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "यह कैलकुलेटर क्या गणना करता है?",
+                "answer": "Estimate principal and interest payments for a home loan using the entered price, down payment, rate and term."
+              },
+              {
+                "key": "faq-use",
+                "question": "मैं इस कैलकुलेटर का उपयोग कैसे करूँ?",
+                "answer": "माँगे गए मान दर्ज करें, मान्यताओं की समीक्षा करें और परिणाम देखने के लिए इनपुट बदलें।"
+              },
+              {
+                "key": "faq-speed",
+                "question": "क्या परिणाम तुरंत मिलते हैं?",
+                "answer": "हाँ। समर्थित इनपुट बदलने पर गणना ब्राउज़र में अपडेट होती है।"
+              },
+              {
+                "key": "faq-privacy",
+                "question": "क्या मेरी प्रविष्टियाँ सर्वर पर भेजी जाती हैं?",
+                "answer": "नहीं। इनपुट इसी ब्राउज़र में संसाधित होते हैं। संवेदनशील व्यक्तिगत जानकारी दर्ज न करें।"
+              }
+            ]
           }
         },
         "ar": {
@@ -738,7 +1102,49 @@
                 "title": "جدول السداد",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "الصيغة وخطوات الحساب",
+              "formulaDescription": "P = home price − down payment; PMT = P·i / (1 − (1+i)⁻ⁿ)",
+              "assumptions": [
+                "تعطي الصيغة أدناه تقديرًا استنادًا إلى القيم والافتراضات التي أدخلتها."
+              ],
+              "notes": [
+                "استخدم المعدل والقيم التي أدخلتها.",
+                "احسب كل فترة باستخدام الصيغة.",
+                "تعتمد النتيجة على المدة والافتراضات المدخلة.",
+                "تعامل مع النتيجة كتقدير لا كضمان.",
+                "تعامل مع النتيجة كتقدير لا كضمان."
+              ],
+              "disclaimers": [
+                "هذه النتيجة تقدير لأغراض المعلومات والتخطيط فقط، وليست نصيحة مالية أو ضمانًا. قد تختلف الأسعار والرسوم والضرائب وشروط المزوّد الفعلية."
+              ],
+              "limitations": [
+                "هذه النتيجة تقدير لأغراض المعلومات والتخطيط فقط، وليست نصيحة مالية أو ضمانًا. قد تختلف الأسعار والرسوم والضرائب وشروط المزوّد الفعلية."
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "ماذا تحسب هذه الآلة؟",
+                "answer": "Estimate principal and interest payments for a home loan using the entered price, down payment, rate and term."
+              },
+              {
+                "key": "faq-use",
+                "question": "كيف أستخدم هذه الآلة؟",
+                "answer": "أدخل القيم المطلوبة، وراجع الافتراضات، وعدّل المدخلات لتحديث النتيجة."
+              },
+              {
+                "key": "faq-speed",
+                "question": "هل تظهر النتائج فورًا؟",
+                "answer": "نعم. تُحدّث الحسابات داخل المتصفح عند تغيير المدخلات المدعومة."
+              },
+              {
+                "key": "faq-privacy",
+                "question": "هل تُرسل إدخالاتي إلى خادم؟",
+                "answer": "لا. تُعالج المدخلات في هذا المتصفح. لا تُدخل معلومات شخصية حساسة."
+              }
+            ]
           }
         },
         "ur": {
@@ -799,7 +1205,49 @@
                 "title": "ادائیگی کا شیڈول",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "فارمولا اور حساب کے مراحل",
+              "formulaDescription": "P = home price − down payment; PMT = P·i / (1 − (1+i)⁻ⁿ)",
+              "assumptions": [
+                "ذیل کا فارمولا آپ کی درج کردہ قدروں اور مفروضوں کی بنیاد پر تخمینہ دیتا ہے۔"
+              ],
+              "notes": [
+                "درج کردہ شرح اور قدریں استعمال کریں۔",
+                "فارمولے کے ذریعے ہر مدت کا حساب کریں۔",
+                "نتیجہ درج کردہ مدت اور مفروضوں پر منحصر ہے۔",
+                "نتیجے کو تخمینہ سمجھیں، ضمانت نہیں۔",
+                "نتیجے کو تخمینہ سمجھیں، ضمانت نہیں۔"
+              ],
+              "disclaimers": [
+                "یہ نتیجہ صرف معلومات اور منصوبہ بندی کے لیے تخمینہ ہے، مالی مشورہ یا ضمانت نہیں۔ اصل شرحیں، فیس، ٹیکس اور فراہم کنندہ کی شرائط مختلف ہو سکتی ہیں۔"
+              ],
+              "limitations": [
+                "یہ نتیجہ صرف معلومات اور منصوبہ بندی کے لیے تخمینہ ہے، مالی مشورہ یا ضمانت نہیں۔ اصل شرحیں، فیس، ٹیکس اور فراہم کنندہ کی شرائط مختلف ہو سکتی ہیں۔"
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "یہ کیلکولیٹر کیا حساب کرتا ہے؟",
+                "answer": "Estimate principal and interest payments for a home loan using the entered price, down payment, rate and term."
+              },
+              {
+                "key": "faq-use",
+                "question": "میں یہ کیلکولیٹر کیسے استعمال کروں؟",
+                "answer": "مطلوبہ قدریں درج کریں، مفروضوں کا جائزہ لیں اور نتیجہ اپ ڈیٹ کرنے کے لیے ان پٹس تبدیل کریں۔"
+              },
+              {
+                "key": "faq-speed",
+                "question": "کیا نتائج فوراً ملتے ہیں؟",
+                "answer": "جی ہاں۔ معاون ان پٹس تبدیل کرنے پر حساب براؤزر میں اپ ڈیٹ ہوتا ہے۔"
+              },
+              {
+                "key": "faq-privacy",
+                "question": "کیا میری درج کردہ معلومات سرور کو بھیجی جاتی ہیں؟",
+                "answer": "نہیں۔ ان پٹس اسی براؤزر میں پراسیس ہوتے ہیں۔ حساس ذاتی معلومات درج نہ کریں۔"
+              }
+            ]
           }
         },
         "zh-CN": {
@@ -860,7 +1308,49 @@
                 "title": "还款计划",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "公式与计算步骤",
+              "formulaDescription": "P = home price − down payment; PMT = P·i / (1 − (1+i)⁻ⁿ)",
+              "assumptions": [
+                "以下公式根据您输入的数值和假设提供估算结果。"
+              ],
+              "notes": [
+                "使用您输入的利率和数值。",
+                "根据公式逐期进行计算。",
+                "结果取决于输入的期限和假设。",
+                "请将结果视为估算，而非保证。",
+                "请将结果视为估算，而非保证。"
+              ],
+              "disclaimers": [
+                "此结果仅供信息参考和规划使用，不构成财务建议或保证。实际利率、费用、税款及服务提供商条款可能有所不同。"
+              ],
+              "limitations": [
+                "此结果仅供信息参考和规划使用，不构成财务建议或保证。实际利率、费用、税款及服务提供商条款可能有所不同。"
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "此计算器计算什么？",
+                "answer": "Estimate principal and interest payments for a home loan using the entered price, down payment, rate and term."
+              },
+              {
+                "key": "faq-use",
+                "question": "如何使用此计算器？",
+                "answer": "输入所需数值，查看假设条件，并调整输入以更新结果。"
+              },
+              {
+                "key": "faq-speed",
+                "question": "结果会立即显示吗？",
+                "answer": "是。更改受支持的输入后，计算会在浏览器中更新。"
+              },
+              {
+                "key": "faq-privacy",
+                "question": "我的输入会发送到服务器吗？",
+                "answer": "不会。输入内容仅在此浏览器中处理。请勿输入敏感个人信息。"
+              }
+            ]
           }
         },
         "ja": {
@@ -921,7 +1411,49 @@
                 "title": "返済スケジュール",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "計算式と計算手順",
+              "formulaDescription": "P = home price − down payment; PMT = P·i / (1 − (1+i)⁻ⁿ)",
+              "assumptions": [
+                "以下の式は、入力された値と前提条件に基づく推定値を示します。"
+              ],
+              "notes": [
+                "入力された利率と値を使用します。",
+                "式に従って各期間を計算します。",
+                "結果は入力された期間と前提条件によって変わります。",
+                "結果は保証ではなく推定値として扱ってください。",
+                "結果は保証ではなく推定値として扱ってください。"
+              ],
+              "disclaimers": [
+                "この結果は情報提供と計画用の推定値であり、金融アドバイスや保証ではありません。実際の金利、手数料、税金、事業者の条件は異なる場合があります。"
+              ],
+              "limitations": [
+                "この結果は情報提供と計画用の推定値であり、金融アドバイスや保証ではありません。実際の金利、手数料、税金、事業者の条件は異なる場合があります。"
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "この計算ツールでは何を計算できますか？",
+                "answer": "Estimate principal and interest payments for a home loan using the entered price, down payment, rate and term."
+              },
+              {
+                "key": "faq-use",
+                "question": "この計算ツールの使い方は？",
+                "answer": "必要な値を入力し、前提条件を確認して、入力を変更すると結果が更新されます。"
+              },
+              {
+                "key": "faq-speed",
+                "question": "結果はすぐに表示されますか？",
+                "answer": "はい。対応する入力を変更すると、ブラウザー内で計算結果が更新されます。"
+              },
+              {
+                "key": "faq-privacy",
+                "question": "入力内容はサーバーに送信されますか？",
+                "answer": "いいえ。入力内容はこのブラウザー内で処理されます。機密性の高い個人情報は入力しないでください。"
+              }
+            ]
           }
         },
         "ru": {
@@ -977,12 +1509,54 @@
                 "title": "График платежей",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "Формула и этапы расчёта",
+              "formulaDescription": "P = home price − down payment; PMT = P·i / (1 − (1+i)⁻ⁿ)",
+              "assumptions": [
+                "Формула ниже даёт оценку на основе введённых значений и допущений."
+              ],
+              "notes": [
+                "Используйте введённую ставку и значения.",
+                "Рассчитайте каждый период по формуле.",
+                "Результат зависит от заданного срока и допущений.",
+                "Рассматривайте результат как оценку, а не гарантию.",
+                "Рассматривайте результат как оценку, а не гарантию."
+              ],
+              "disclaimers": [
+                "Результат является оценкой только для информации и планирования, а не финансовой рекомендацией или гарантией. Фактические ставки, комиссии, налоги и условия поставщиков могут отличаться."
+              ],
+              "limitations": [
+                "Результат является оценкой только для информации и планирования, а не финансовой рекомендацией или гарантией. Фактические ставки, комиссии, налоги и условия поставщиков могут отличаться."
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "Что рассчитывает этот калькулятор?",
+                "answer": "Estimate principal and interest payments for a home loan using the entered price, down payment, rate and term."
+              },
+              {
+                "key": "faq-use",
+                "question": "Как пользоваться этим калькулятором?",
+                "answer": "Введите необходимые значения, проверьте допущения и измените параметры, чтобы обновить результат."
+              },
+              {
+                "key": "faq-speed",
+                "question": "Результаты отображаются сразу?",
+                "answer": "Да. При изменении поддерживаемых параметров расчёт обновляется в браузере."
+              },
+              {
+                "key": "faq-privacy",
+                "question": "Отправляются ли мои данные на сервер?",
+                "answer": "Нет. Введённые данные обрабатываются в этом браузере. Не вводите конфиденциальную личную информацию."
+              }
+            ]
           }
         }
       },
       "sourceExtractionStatus": "source-title-description-inputs-extracted",
-      "sourceTranslationStatus": "description-inputs-and-results-drafted"
+      "sourceTranslationStatus": "descriptions-inputs-results-formulas-and-faqs-drafted"
     },
     {
       "id": "loan",
@@ -1032,7 +1606,42 @@
             }
           ],
           "breakdown": []
-        }
+        },
+        "explanations": {
+          "formula": "PMT = P·i / (1 − (1+i)⁻ⁿ); extra payment is applied to principal after scheduled payment",
+          "steps": [
+            "Convert the annual rate to monthly rate i = APR/1200.",
+            "Calculate the fixed payment from principal and term.",
+            "For each month, interest equals opening balance multiplied by i.",
+            "Apply the scheduled payment and any extra payment; principal is payment minus interest.",
+            "Continue until payoff and aggregate monthly rows into yearly totals."
+          ],
+          "disclaimers": [
+            "Fixed-rate or periodic estimates depend on the entered assumptions."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-purpose",
+            "question": "What does this calculator calculate?",
+            "answer": "Estimate a fixed-rate loan payment and the total amount paid over the entered term."
+          },
+          {
+            "key": "faq-use",
+            "question": "How do I use this calculator?",
+            "answer": "Enter the requested values, review the assumptions and adjust any input to update the result."
+          },
+          {
+            "key": "faq-speed",
+            "question": "Are results instant?",
+            "answer": "Yes. Calculations run in your browser and update when supported inputs change."
+          },
+          {
+            "key": "faq-privacy",
+            "question": "Are my entries sent to a server?",
+            "answer": "No. Calculator inputs are processed in this browser; do not enter sensitive personal information."
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -1085,7 +1694,49 @@
                 "title": "भुगतान अनुसूची",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "सूत्र और गणना के चरण",
+              "formulaDescription": "PMT = P·i / (1 − (1+i)⁻ⁿ); extra payment is applied to principal after scheduled payment",
+              "assumptions": [
+                "नीचे दिया गया सूत्र दर्ज किए गए मानों और मान्यताओं पर आधारित अनुमान देता है।"
+              ],
+              "notes": [
+                "दर्ज की गई दर और मानों का उपयोग करें।",
+                "सूत्र में प्रत्येक अवधि की गणना करें।",
+                "परिणाम दर्ज की गई अवधि और मान्यताओं पर निर्भर करता है।",
+                "परिणाम को अनुमान के रूप में देखें, गारंटी के रूप में नहीं।",
+                "परिणाम को अनुमान के रूप में देखें, गारंटी के रूप में नहीं।"
+              ],
+              "disclaimers": [
+                "यह परिणाम केवल जानकारी और योजना बनाने के लिए अनुमान है, वित्तीय सलाह या गारंटी नहीं। वास्तविक दरें, शुल्क, कर और प्रदाता की शर्तें अलग हो सकती हैं।"
+              ],
+              "limitations": [
+                "यह परिणाम केवल जानकारी और योजना बनाने के लिए अनुमान है, वित्तीय सलाह या गारंटी नहीं। वास्तविक दरें, शुल्क, कर और प्रदाता की शर्तें अलग हो सकती हैं।"
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "यह कैलकुलेटर क्या गणना करता है?",
+                "answer": "Estimate a fixed-rate loan payment and the total amount paid over the entered term."
+              },
+              {
+                "key": "faq-use",
+                "question": "मैं इस कैलकुलेटर का उपयोग कैसे करूँ?",
+                "answer": "माँगे गए मान दर्ज करें, मान्यताओं की समीक्षा करें और परिणाम देखने के लिए इनपुट बदलें।"
+              },
+              {
+                "key": "faq-speed",
+                "question": "क्या परिणाम तुरंत मिलते हैं?",
+                "answer": "हाँ। समर्थित इनपुट बदलने पर गणना ब्राउज़र में अपडेट होती है।"
+              },
+              {
+                "key": "faq-privacy",
+                "question": "क्या मेरी प्रविष्टियाँ सर्वर पर भेजी जाती हैं?",
+                "answer": "नहीं। इनपुट इसी ब्राउज़र में संसाधित होते हैं। संवेदनशील व्यक्तिगत जानकारी दर्ज न करें।"
+              }
+            ]
           }
         },
         "ar": {
@@ -1138,7 +1789,49 @@
                 "title": "جدول السداد",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "الصيغة وخطوات الحساب",
+              "formulaDescription": "PMT = P·i / (1 − (1+i)⁻ⁿ); extra payment is applied to principal after scheduled payment",
+              "assumptions": [
+                "تعطي الصيغة أدناه تقديرًا استنادًا إلى القيم والافتراضات التي أدخلتها."
+              ],
+              "notes": [
+                "استخدم المعدل والقيم التي أدخلتها.",
+                "احسب كل فترة باستخدام الصيغة.",
+                "تعتمد النتيجة على المدة والافتراضات المدخلة.",
+                "تعامل مع النتيجة كتقدير لا كضمان.",
+                "تعامل مع النتيجة كتقدير لا كضمان."
+              ],
+              "disclaimers": [
+                "هذه النتيجة تقدير لأغراض المعلومات والتخطيط فقط، وليست نصيحة مالية أو ضمانًا. قد تختلف الأسعار والرسوم والضرائب وشروط المزوّد الفعلية."
+              ],
+              "limitations": [
+                "هذه النتيجة تقدير لأغراض المعلومات والتخطيط فقط، وليست نصيحة مالية أو ضمانًا. قد تختلف الأسعار والرسوم والضرائب وشروط المزوّد الفعلية."
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "ماذا تحسب هذه الآلة؟",
+                "answer": "Estimate a fixed-rate loan payment and the total amount paid over the entered term."
+              },
+              {
+                "key": "faq-use",
+                "question": "كيف أستخدم هذه الآلة؟",
+                "answer": "أدخل القيم المطلوبة، وراجع الافتراضات، وعدّل المدخلات لتحديث النتيجة."
+              },
+              {
+                "key": "faq-speed",
+                "question": "هل تظهر النتائج فورًا؟",
+                "answer": "نعم. تُحدّث الحسابات داخل المتصفح عند تغيير المدخلات المدعومة."
+              },
+              {
+                "key": "faq-privacy",
+                "question": "هل تُرسل إدخالاتي إلى خادم؟",
+                "answer": "لا. تُعالج المدخلات في هذا المتصفح. لا تُدخل معلومات شخصية حساسة."
+              }
+            ]
           }
         },
         "ur": {
@@ -1191,7 +1884,49 @@
                 "title": "ادائیگی کا شیڈول",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "فارمولا اور حساب کے مراحل",
+              "formulaDescription": "PMT = P·i / (1 − (1+i)⁻ⁿ); extra payment is applied to principal after scheduled payment",
+              "assumptions": [
+                "ذیل کا فارمولا آپ کی درج کردہ قدروں اور مفروضوں کی بنیاد پر تخمینہ دیتا ہے۔"
+              ],
+              "notes": [
+                "درج کردہ شرح اور قدریں استعمال کریں۔",
+                "فارمولے کے ذریعے ہر مدت کا حساب کریں۔",
+                "نتیجہ درج کردہ مدت اور مفروضوں پر منحصر ہے۔",
+                "نتیجے کو تخمینہ سمجھیں، ضمانت نہیں۔",
+                "نتیجے کو تخمینہ سمجھیں، ضمانت نہیں۔"
+              ],
+              "disclaimers": [
+                "یہ نتیجہ صرف معلومات اور منصوبہ بندی کے لیے تخمینہ ہے، مالی مشورہ یا ضمانت نہیں۔ اصل شرحیں، فیس، ٹیکس اور فراہم کنندہ کی شرائط مختلف ہو سکتی ہیں۔"
+              ],
+              "limitations": [
+                "یہ نتیجہ صرف معلومات اور منصوبہ بندی کے لیے تخمینہ ہے، مالی مشورہ یا ضمانت نہیں۔ اصل شرحیں، فیس، ٹیکس اور فراہم کنندہ کی شرائط مختلف ہو سکتی ہیں۔"
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "یہ کیلکولیٹر کیا حساب کرتا ہے؟",
+                "answer": "Estimate a fixed-rate loan payment and the total amount paid over the entered term."
+              },
+              {
+                "key": "faq-use",
+                "question": "میں یہ کیلکولیٹر کیسے استعمال کروں؟",
+                "answer": "مطلوبہ قدریں درج کریں، مفروضوں کا جائزہ لیں اور نتیجہ اپ ڈیٹ کرنے کے لیے ان پٹس تبدیل کریں۔"
+              },
+              {
+                "key": "faq-speed",
+                "question": "کیا نتائج فوراً ملتے ہیں؟",
+                "answer": "جی ہاں۔ معاون ان پٹس تبدیل کرنے پر حساب براؤزر میں اپ ڈیٹ ہوتا ہے۔"
+              },
+              {
+                "key": "faq-privacy",
+                "question": "کیا میری درج کردہ معلومات سرور کو بھیجی جاتی ہیں؟",
+                "answer": "نہیں۔ ان پٹس اسی براؤزر میں پراسیس ہوتے ہیں۔ حساس ذاتی معلومات درج نہ کریں۔"
+              }
+            ]
           }
         },
         "zh-CN": {
@@ -1244,7 +1979,49 @@
                 "title": "还款计划",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "公式与计算步骤",
+              "formulaDescription": "PMT = P·i / (1 − (1+i)⁻ⁿ); extra payment is applied to principal after scheduled payment",
+              "assumptions": [
+                "以下公式根据您输入的数值和假设提供估算结果。"
+              ],
+              "notes": [
+                "使用您输入的利率和数值。",
+                "根据公式逐期进行计算。",
+                "结果取决于输入的期限和假设。",
+                "请将结果视为估算，而非保证。",
+                "请将结果视为估算，而非保证。"
+              ],
+              "disclaimers": [
+                "此结果仅供信息参考和规划使用，不构成财务建议或保证。实际利率、费用、税款及服务提供商条款可能有所不同。"
+              ],
+              "limitations": [
+                "此结果仅供信息参考和规划使用，不构成财务建议或保证。实际利率、费用、税款及服务提供商条款可能有所不同。"
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "此计算器计算什么？",
+                "answer": "Estimate a fixed-rate loan payment and the total amount paid over the entered term."
+              },
+              {
+                "key": "faq-use",
+                "question": "如何使用此计算器？",
+                "answer": "输入所需数值，查看假设条件，并调整输入以更新结果。"
+              },
+              {
+                "key": "faq-speed",
+                "question": "结果会立即显示吗？",
+                "answer": "是。更改受支持的输入后，计算会在浏览器中更新。"
+              },
+              {
+                "key": "faq-privacy",
+                "question": "我的输入会发送到服务器吗？",
+                "answer": "不会。输入内容仅在此浏览器中处理。请勿输入敏感个人信息。"
+              }
+            ]
           }
         },
         "ja": {
@@ -1297,7 +2074,49 @@
                 "title": "返済スケジュール",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "計算式と計算手順",
+              "formulaDescription": "PMT = P·i / (1 − (1+i)⁻ⁿ); extra payment is applied to principal after scheduled payment",
+              "assumptions": [
+                "以下の式は、入力された値と前提条件に基づく推定値を示します。"
+              ],
+              "notes": [
+                "入力された利率と値を使用します。",
+                "式に従って各期間を計算します。",
+                "結果は入力された期間と前提条件によって変わります。",
+                "結果は保証ではなく推定値として扱ってください。",
+                "結果は保証ではなく推定値として扱ってください。"
+              ],
+              "disclaimers": [
+                "この結果は情報提供と計画用の推定値であり、金融アドバイスや保証ではありません。実際の金利、手数料、税金、事業者の条件は異なる場合があります。"
+              ],
+              "limitations": [
+                "この結果は情報提供と計画用の推定値であり、金融アドバイスや保証ではありません。実際の金利、手数料、税金、事業者の条件は異なる場合があります。"
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "この計算ツールでは何を計算できますか？",
+                "answer": "Estimate a fixed-rate loan payment and the total amount paid over the entered term."
+              },
+              {
+                "key": "faq-use",
+                "question": "この計算ツールの使い方は？",
+                "answer": "必要な値を入力し、前提条件を確認して、入力を変更すると結果が更新されます。"
+              },
+              {
+                "key": "faq-speed",
+                "question": "結果はすぐに表示されますか？",
+                "answer": "はい。対応する入力を変更すると、ブラウザー内で計算結果が更新されます。"
+              },
+              {
+                "key": "faq-privacy",
+                "question": "入力内容はサーバーに送信されますか？",
+                "answer": "いいえ。入力内容はこのブラウザー内で処理されます。機密性の高い個人情報は入力しないでください。"
+              }
+            ]
           }
         },
         "ru": {
@@ -1346,12 +2165,54 @@
                 "title": "График платежей",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "Формула и этапы расчёта",
+              "formulaDescription": "PMT = P·i / (1 − (1+i)⁻ⁿ); extra payment is applied to principal after scheduled payment",
+              "assumptions": [
+                "Формула ниже даёт оценку на основе введённых значений и допущений."
+              ],
+              "notes": [
+                "Используйте введённую ставку и значения.",
+                "Рассчитайте каждый период по формуле.",
+                "Результат зависит от заданного срока и допущений.",
+                "Рассматривайте результат как оценку, а не гарантию.",
+                "Рассматривайте результат как оценку, а не гарантию."
+              ],
+              "disclaimers": [
+                "Результат является оценкой только для информации и планирования, а не финансовой рекомендацией или гарантией. Фактические ставки, комиссии, налоги и условия поставщиков могут отличаться."
+              ],
+              "limitations": [
+                "Результат является оценкой только для информации и планирования, а не финансовой рекомендацией или гарантией. Фактические ставки, комиссии, налоги и условия поставщиков могут отличаться."
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "Что рассчитывает этот калькулятор?",
+                "answer": "Estimate a fixed-rate loan payment and the total amount paid over the entered term."
+              },
+              {
+                "key": "faq-use",
+                "question": "Как пользоваться этим калькулятором?",
+                "answer": "Введите необходимые значения, проверьте допущения и измените параметры, чтобы обновить результат."
+              },
+              {
+                "key": "faq-speed",
+                "question": "Результаты отображаются сразу?",
+                "answer": "Да. При изменении поддерживаемых параметров расчёт обновляется в браузере."
+              },
+              {
+                "key": "faq-privacy",
+                "question": "Отправляются ли мои данные на сервер?",
+                "answer": "Нет. Введённые данные обрабатываются в этом браузере. Не вводите конфиденциальную личную информацию."
+              }
+            ]
           }
         }
       },
       "sourceExtractionStatus": "source-title-description-inputs-extracted",
-      "sourceTranslationStatus": "description-inputs-and-results-drafted"
+      "sourceTranslationStatus": "descriptions-inputs-results-formulas-and-faqs-drafted"
     },
     {
       "id": "emi",
@@ -1397,7 +2258,42 @@
             }
           ],
           "breakdown": []
-        }
+        },
+        "explanations": {
+          "formula": "EMI = P·i·(1+i)ⁿ / ((1+i)ⁿ − 1)",
+          "steps": [
+            "Convert the annual interest rate to a monthly decimal rate.",
+            "Convert the loan tenure to the number of monthly instalments.",
+            "Calculate the equal instalment using the reducing-balance formula; at zero interest, EMI equals principal divided by months.",
+            "Each instalment first covers monthly interest, then reduces principal.",
+            "Actual lender charges, dates and rounding may differ."
+          ],
+          "disclaimers": [
+            "Fixed-rate or periodic estimates depend on the entered assumptions."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-purpose",
+            "question": "What does this calculator calculate?",
+            "answer": "Calculate the equal monthly instalment for a loan with a reducing balance."
+          },
+          {
+            "key": "faq-use",
+            "question": "How do I use this calculator?",
+            "answer": "Enter the requested values, review the assumptions and adjust any input to update the result."
+          },
+          {
+            "key": "faq-speed",
+            "question": "Are results instant?",
+            "answer": "Yes. Calculations run in your browser and update when supported inputs change."
+          },
+          {
+            "key": "faq-privacy",
+            "question": "Are my entries sent to a server?",
+            "answer": "No. Calculator inputs are processed in this browser; do not enter sensitive personal information."
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -1446,7 +2342,49 @@
                 "title": "भुगतान अनुसूची",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "सूत्र और गणना के चरण",
+              "formulaDescription": "EMI = P·i·(1+i)ⁿ / ((1+i)ⁿ − 1)",
+              "assumptions": [
+                "नीचे दिया गया सूत्र दर्ज किए गए मानों और मान्यताओं पर आधारित अनुमान देता है।"
+              ],
+              "notes": [
+                "दर्ज की गई दर और मानों का उपयोग करें।",
+                "सूत्र में प्रत्येक अवधि की गणना करें।",
+                "परिणाम दर्ज की गई अवधि और मान्यताओं पर निर्भर करता है।",
+                "परिणाम को अनुमान के रूप में देखें, गारंटी के रूप में नहीं।",
+                "परिणाम को अनुमान के रूप में देखें, गारंटी के रूप में नहीं।"
+              ],
+              "disclaimers": [
+                "यह परिणाम केवल जानकारी और योजना बनाने के लिए अनुमान है, वित्तीय सलाह या गारंटी नहीं। वास्तविक दरें, शुल्क, कर और प्रदाता की शर्तें अलग हो सकती हैं।"
+              ],
+              "limitations": [
+                "यह परिणाम केवल जानकारी और योजना बनाने के लिए अनुमान है, वित्तीय सलाह या गारंटी नहीं। वास्तविक दरें, शुल्क, कर और प्रदाता की शर्तें अलग हो सकती हैं।"
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "यह कैलकुलेटर क्या गणना करता है?",
+                "answer": "Calculate the equal monthly instalment for a loan with a reducing balance."
+              },
+              {
+                "key": "faq-use",
+                "question": "मैं इस कैलकुलेटर का उपयोग कैसे करूँ?",
+                "answer": "माँगे गए मान दर्ज करें, मान्यताओं की समीक्षा करें और परिणाम देखने के लिए इनपुट बदलें।"
+              },
+              {
+                "key": "faq-speed",
+                "question": "क्या परिणाम तुरंत मिलते हैं?",
+                "answer": "हाँ। समर्थित इनपुट बदलने पर गणना ब्राउज़र में अपडेट होती है।"
+              },
+              {
+                "key": "faq-privacy",
+                "question": "क्या मेरी प्रविष्टियाँ सर्वर पर भेजी जाती हैं?",
+                "answer": "नहीं। इनपुट इसी ब्राउज़र में संसाधित होते हैं। संवेदनशील व्यक्तिगत जानकारी दर्ज न करें।"
+              }
+            ]
           }
         },
         "ar": {
@@ -1495,7 +2433,49 @@
                 "title": "جدول السداد",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "الصيغة وخطوات الحساب",
+              "formulaDescription": "EMI = P·i·(1+i)ⁿ / ((1+i)ⁿ − 1)",
+              "assumptions": [
+                "تعطي الصيغة أدناه تقديرًا استنادًا إلى القيم والافتراضات التي أدخلتها."
+              ],
+              "notes": [
+                "استخدم المعدل والقيم التي أدخلتها.",
+                "احسب كل فترة باستخدام الصيغة.",
+                "تعتمد النتيجة على المدة والافتراضات المدخلة.",
+                "تعامل مع النتيجة كتقدير لا كضمان.",
+                "تعامل مع النتيجة كتقدير لا كضمان."
+              ],
+              "disclaimers": [
+                "هذه النتيجة تقدير لأغراض المعلومات والتخطيط فقط، وليست نصيحة مالية أو ضمانًا. قد تختلف الأسعار والرسوم والضرائب وشروط المزوّد الفعلية."
+              ],
+              "limitations": [
+                "هذه النتيجة تقدير لأغراض المعلومات والتخطيط فقط، وليست نصيحة مالية أو ضمانًا. قد تختلف الأسعار والرسوم والضرائب وشروط المزوّد الفعلية."
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "ماذا تحسب هذه الآلة؟",
+                "answer": "Calculate the equal monthly instalment for a loan with a reducing balance."
+              },
+              {
+                "key": "faq-use",
+                "question": "كيف أستخدم هذه الآلة؟",
+                "answer": "أدخل القيم المطلوبة، وراجع الافتراضات، وعدّل المدخلات لتحديث النتيجة."
+              },
+              {
+                "key": "faq-speed",
+                "question": "هل تظهر النتائج فورًا؟",
+                "answer": "نعم. تُحدّث الحسابات داخل المتصفح عند تغيير المدخلات المدعومة."
+              },
+              {
+                "key": "faq-privacy",
+                "question": "هل تُرسل إدخالاتي إلى خادم؟",
+                "answer": "لا. تُعالج المدخلات في هذا المتصفح. لا تُدخل معلومات شخصية حساسة."
+              }
+            ]
           }
         },
         "ur": {
@@ -1544,7 +2524,49 @@
                 "title": "ادائیگی کا شیڈول",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "فارمولا اور حساب کے مراحل",
+              "formulaDescription": "EMI = P·i·(1+i)ⁿ / ((1+i)ⁿ − 1)",
+              "assumptions": [
+                "ذیل کا فارمولا آپ کی درج کردہ قدروں اور مفروضوں کی بنیاد پر تخمینہ دیتا ہے۔"
+              ],
+              "notes": [
+                "درج کردہ شرح اور قدریں استعمال کریں۔",
+                "فارمولے کے ذریعے ہر مدت کا حساب کریں۔",
+                "نتیجہ درج کردہ مدت اور مفروضوں پر منحصر ہے۔",
+                "نتیجے کو تخمینہ سمجھیں، ضمانت نہیں۔",
+                "نتیجے کو تخمینہ سمجھیں، ضمانت نہیں۔"
+              ],
+              "disclaimers": [
+                "یہ نتیجہ صرف معلومات اور منصوبہ بندی کے لیے تخمینہ ہے، مالی مشورہ یا ضمانت نہیں۔ اصل شرحیں، فیس، ٹیکس اور فراہم کنندہ کی شرائط مختلف ہو سکتی ہیں۔"
+              ],
+              "limitations": [
+                "یہ نتیجہ صرف معلومات اور منصوبہ بندی کے لیے تخمینہ ہے، مالی مشورہ یا ضمانت نہیں۔ اصل شرحیں، فیس، ٹیکس اور فراہم کنندہ کی شرائط مختلف ہو سکتی ہیں۔"
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "یہ کیلکولیٹر کیا حساب کرتا ہے؟",
+                "answer": "Calculate the equal monthly instalment for a loan with a reducing balance."
+              },
+              {
+                "key": "faq-use",
+                "question": "میں یہ کیلکولیٹر کیسے استعمال کروں؟",
+                "answer": "مطلوبہ قدریں درج کریں، مفروضوں کا جائزہ لیں اور نتیجہ اپ ڈیٹ کرنے کے لیے ان پٹس تبدیل کریں۔"
+              },
+              {
+                "key": "faq-speed",
+                "question": "کیا نتائج فوراً ملتے ہیں؟",
+                "answer": "جی ہاں۔ معاون ان پٹس تبدیل کرنے پر حساب براؤزر میں اپ ڈیٹ ہوتا ہے۔"
+              },
+              {
+                "key": "faq-privacy",
+                "question": "کیا میری درج کردہ معلومات سرور کو بھیجی جاتی ہیں؟",
+                "answer": "نہیں۔ ان پٹس اسی براؤزر میں پراسیس ہوتے ہیں۔ حساس ذاتی معلومات درج نہ کریں۔"
+              }
+            ]
           }
         },
         "zh-CN": {
@@ -1593,7 +2615,49 @@
                 "title": "还款计划",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "公式与计算步骤",
+              "formulaDescription": "EMI = P·i·(1+i)ⁿ / ((1+i)ⁿ − 1)",
+              "assumptions": [
+                "以下公式根据您输入的数值和假设提供估算结果。"
+              ],
+              "notes": [
+                "使用您输入的利率和数值。",
+                "根据公式逐期进行计算。",
+                "结果取决于输入的期限和假设。",
+                "请将结果视为估算，而非保证。",
+                "请将结果视为估算，而非保证。"
+              ],
+              "disclaimers": [
+                "此结果仅供信息参考和规划使用，不构成财务建议或保证。实际利率、费用、税款及服务提供商条款可能有所不同。"
+              ],
+              "limitations": [
+                "此结果仅供信息参考和规划使用，不构成财务建议或保证。实际利率、费用、税款及服务提供商条款可能有所不同。"
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "此计算器计算什么？",
+                "answer": "Calculate the equal monthly instalment for a loan with a reducing balance."
+              },
+              {
+                "key": "faq-use",
+                "question": "如何使用此计算器？",
+                "answer": "输入所需数值，查看假设条件，并调整输入以更新结果。"
+              },
+              {
+                "key": "faq-speed",
+                "question": "结果会立即显示吗？",
+                "answer": "是。更改受支持的输入后，计算会在浏览器中更新。"
+              },
+              {
+                "key": "faq-privacy",
+                "question": "我的输入会发送到服务器吗？",
+                "answer": "不会。输入内容仅在此浏览器中处理。请勿输入敏感个人信息。"
+              }
+            ]
           }
         },
         "ja": {
@@ -1642,7 +2706,49 @@
                 "title": "返済スケジュール",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "計算式と計算手順",
+              "formulaDescription": "EMI = P·i·(1+i)ⁿ / ((1+i)ⁿ − 1)",
+              "assumptions": [
+                "以下の式は、入力された値と前提条件に基づく推定値を示します。"
+              ],
+              "notes": [
+                "入力された利率と値を使用します。",
+                "式に従って各期間を計算します。",
+                "結果は入力された期間と前提条件によって変わります。",
+                "結果は保証ではなく推定値として扱ってください。",
+                "結果は保証ではなく推定値として扱ってください。"
+              ],
+              "disclaimers": [
+                "この結果は情報提供と計画用の推定値であり、金融アドバイスや保証ではありません。実際の金利、手数料、税金、事業者の条件は異なる場合があります。"
+              ],
+              "limitations": [
+                "この結果は情報提供と計画用の推定値であり、金融アドバイスや保証ではありません。実際の金利、手数料、税金、事業者の条件は異なる場合があります。"
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "この計算ツールでは何を計算できますか？",
+                "answer": "Calculate the equal monthly instalment for a loan with a reducing balance."
+              },
+              {
+                "key": "faq-use",
+                "question": "この計算ツールの使い方は？",
+                "answer": "必要な値を入力し、前提条件を確認して、入力を変更すると結果が更新されます。"
+              },
+              {
+                "key": "faq-speed",
+                "question": "結果はすぐに表示されますか？",
+                "answer": "はい。対応する入力を変更すると、ブラウザー内で計算結果が更新されます。"
+              },
+              {
+                "key": "faq-privacy",
+                "question": "入力内容はサーバーに送信されますか？",
+                "answer": "いいえ。入力内容はこのブラウザー内で処理されます。機密性の高い個人情報は入力しないでください。"
+              }
+            ]
           }
         },
         "ru": {
@@ -1687,12 +2793,54 @@
                 "title": "График платежей",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "Формула и этапы расчёта",
+              "formulaDescription": "EMI = P·i·(1+i)ⁿ / ((1+i)ⁿ − 1)",
+              "assumptions": [
+                "Формула ниже даёт оценку на основе введённых значений и допущений."
+              ],
+              "notes": [
+                "Используйте введённую ставку и значения.",
+                "Рассчитайте каждый период по формуле.",
+                "Результат зависит от заданного срока и допущений.",
+                "Рассматривайте результат как оценку, а не гарантию.",
+                "Рассматривайте результат как оценку, а не гарантию."
+              ],
+              "disclaimers": [
+                "Результат является оценкой только для информации и планирования, а не финансовой рекомендацией или гарантией. Фактические ставки, комиссии, налоги и условия поставщиков могут отличаться."
+              ],
+              "limitations": [
+                "Результат является оценкой только для информации и планирования, а не финансовой рекомендацией или гарантией. Фактические ставки, комиссии, налоги и условия поставщиков могут отличаться."
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "Что рассчитывает этот калькулятор?",
+                "answer": "Calculate the equal monthly instalment for a loan with a reducing balance."
+              },
+              {
+                "key": "faq-use",
+                "question": "Как пользоваться этим калькулятором?",
+                "answer": "Введите необходимые значения, проверьте допущения и измените параметры, чтобы обновить результат."
+              },
+              {
+                "key": "faq-speed",
+                "question": "Результаты отображаются сразу?",
+                "answer": "Да. При изменении поддерживаемых параметров расчёт обновляется в браузере."
+              },
+              {
+                "key": "faq-privacy",
+                "question": "Отправляются ли мои данные на сервер?",
+                "answer": "Нет. Введённые данные обрабатываются в этом браузере. Не вводите конфиденциальную личную информацию."
+              }
+            ]
           }
         }
       },
       "sourceExtractionStatus": "source-title-description-inputs-extracted",
-      "sourceTranslationStatus": "description-inputs-and-results-drafted"
+      "sourceTranslationStatus": "descriptions-inputs-results-formulas-and-faqs-drafted"
     },
     {
       "id": "compound",
@@ -1754,7 +2902,42 @@
             }
           ],
           "breakdown": []
-        }
+        },
+        "explanations": {
+          "formula": "Bₘ = Bₘ₋₁(1 + r/1200) + D; FV = B₀(1+r/1200)ⁿ + D·(((1+r/1200)ⁿ−1)/(r/1200))",
+          "steps": [
+            "Convert the assumed annual rate r to a monthly rate r/1200.",
+            "Start with the entered opening balance.",
+            "Each month, calculate interest on the opening balance.",
+            "Add the end-of-month deposit D after interest.",
+            "Repeat for n months; total growth equals ending balance minus starting balance and deposits."
+          ],
+          "disclaimers": [
+            "Assumed returns are scenarios, not guarantees."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-purpose",
+            "question": "What does this calculator calculate?",
+            "answer": "Project how an initial amount and regular deposits may grow at an assumed constant rate."
+          },
+          {
+            "key": "faq-use",
+            "question": "How do I use this calculator?",
+            "answer": "Enter the requested values, review the assumptions and adjust any input to update the result."
+          },
+          {
+            "key": "faq-speed",
+            "question": "Are results instant?",
+            "answer": "Yes. Calculations run in your browser and update when supported inputs change."
+          },
+          {
+            "key": "faq-privacy",
+            "question": "Are my entries sent to a server?",
+            "answer": "No. Calculator inputs are processed in this browser; do not enter sensitive personal information."
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -1819,7 +3002,49 @@
                 "title": "भुगतान अनुसूची",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "सूत्र और गणना के चरण",
+              "formulaDescription": "Bₘ = Bₘ₋₁(1 + r/1200) + D; FV = B₀(1+r/1200)ⁿ + D·(((1+r/1200)ⁿ−1)/(r/1200))",
+              "assumptions": [
+                "नीचे दिया गया सूत्र दर्ज किए गए मानों और मान्यताओं पर आधारित अनुमान देता है।"
+              ],
+              "notes": [
+                "दर्ज की गई दर और मानों का उपयोग करें।",
+                "सूत्र में प्रत्येक अवधि की गणना करें।",
+                "परिणाम दर्ज की गई अवधि और मान्यताओं पर निर्भर करता है।",
+                "परिणाम को अनुमान के रूप में देखें, गारंटी के रूप में नहीं।",
+                "परिणाम को अनुमान के रूप में देखें, गारंटी के रूप में नहीं।"
+              ],
+              "disclaimers": [
+                "यह परिणाम केवल जानकारी और योजना बनाने के लिए अनुमान है, वित्तीय सलाह या गारंटी नहीं। वास्तविक दरें, शुल्क, कर और प्रदाता की शर्तें अलग हो सकती हैं।"
+              ],
+              "limitations": [
+                "यह परिणाम केवल जानकारी और योजना बनाने के लिए अनुमान है, वित्तीय सलाह या गारंटी नहीं। वास्तविक दरें, शुल्क, कर और प्रदाता की शर्तें अलग हो सकती हैं।"
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "यह कैलकुलेटर क्या गणना करता है?",
+                "answer": "Project how an initial amount and regular deposits may grow at an assumed constant rate."
+              },
+              {
+                "key": "faq-use",
+                "question": "मैं इस कैलकुलेटर का उपयोग कैसे करूँ?",
+                "answer": "माँगे गए मान दर्ज करें, मान्यताओं की समीक्षा करें और परिणाम देखने के लिए इनपुट बदलें।"
+              },
+              {
+                "key": "faq-speed",
+                "question": "क्या परिणाम तुरंत मिलते हैं?",
+                "answer": "हाँ। समर्थित इनपुट बदलने पर गणना ब्राउज़र में अपडेट होती है।"
+              },
+              {
+                "key": "faq-privacy",
+                "question": "क्या मेरी प्रविष्टियाँ सर्वर पर भेजी जाती हैं?",
+                "answer": "नहीं। इनपुट इसी ब्राउज़र में संसाधित होते हैं। संवेदनशील व्यक्तिगत जानकारी दर्ज न करें।"
+              }
+            ]
           }
         },
         "ar": {
@@ -1884,7 +3109,49 @@
                 "title": "جدول السداد",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "الصيغة وخطوات الحساب",
+              "formulaDescription": "Bₘ = Bₘ₋₁(1 + r/1200) + D; FV = B₀(1+r/1200)ⁿ + D·(((1+r/1200)ⁿ−1)/(r/1200))",
+              "assumptions": [
+                "تعطي الصيغة أدناه تقديرًا استنادًا إلى القيم والافتراضات التي أدخلتها."
+              ],
+              "notes": [
+                "استخدم المعدل والقيم التي أدخلتها.",
+                "احسب كل فترة باستخدام الصيغة.",
+                "تعتمد النتيجة على المدة والافتراضات المدخلة.",
+                "تعامل مع النتيجة كتقدير لا كضمان.",
+                "تعامل مع النتيجة كتقدير لا كضمان."
+              ],
+              "disclaimers": [
+                "هذه النتيجة تقدير لأغراض المعلومات والتخطيط فقط، وليست نصيحة مالية أو ضمانًا. قد تختلف الأسعار والرسوم والضرائب وشروط المزوّد الفعلية."
+              ],
+              "limitations": [
+                "هذه النتيجة تقدير لأغراض المعلومات والتخطيط فقط، وليست نصيحة مالية أو ضمانًا. قد تختلف الأسعار والرسوم والضرائب وشروط المزوّد الفعلية."
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "ماذا تحسب هذه الآلة؟",
+                "answer": "Project how an initial amount and regular deposits may grow at an assumed constant rate."
+              },
+              {
+                "key": "faq-use",
+                "question": "كيف أستخدم هذه الآلة؟",
+                "answer": "أدخل القيم المطلوبة، وراجع الافتراضات، وعدّل المدخلات لتحديث النتيجة."
+              },
+              {
+                "key": "faq-speed",
+                "question": "هل تظهر النتائج فورًا؟",
+                "answer": "نعم. تُحدّث الحسابات داخل المتصفح عند تغيير المدخلات المدعومة."
+              },
+              {
+                "key": "faq-privacy",
+                "question": "هل تُرسل إدخالاتي إلى خادم؟",
+                "answer": "لا. تُعالج المدخلات في هذا المتصفح. لا تُدخل معلومات شخصية حساسة."
+              }
+            ]
           }
         },
         "ur": {
@@ -1949,7 +3216,49 @@
                 "title": "ادائیگی کا شیڈول",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "فارمولا اور حساب کے مراحل",
+              "formulaDescription": "Bₘ = Bₘ₋₁(1 + r/1200) + D; FV = B₀(1+r/1200)ⁿ + D·(((1+r/1200)ⁿ−1)/(r/1200))",
+              "assumptions": [
+                "ذیل کا فارمولا آپ کی درج کردہ قدروں اور مفروضوں کی بنیاد پر تخمینہ دیتا ہے۔"
+              ],
+              "notes": [
+                "درج کردہ شرح اور قدریں استعمال کریں۔",
+                "فارمولے کے ذریعے ہر مدت کا حساب کریں۔",
+                "نتیجہ درج کردہ مدت اور مفروضوں پر منحصر ہے۔",
+                "نتیجے کو تخمینہ سمجھیں، ضمانت نہیں۔",
+                "نتیجے کو تخمینہ سمجھیں، ضمانت نہیں۔"
+              ],
+              "disclaimers": [
+                "یہ نتیجہ صرف معلومات اور منصوبہ بندی کے لیے تخمینہ ہے، مالی مشورہ یا ضمانت نہیں۔ اصل شرحیں، فیس، ٹیکس اور فراہم کنندہ کی شرائط مختلف ہو سکتی ہیں۔"
+              ],
+              "limitations": [
+                "یہ نتیجہ صرف معلومات اور منصوبہ بندی کے لیے تخمینہ ہے، مالی مشورہ یا ضمانت نہیں۔ اصل شرحیں، فیس، ٹیکس اور فراہم کنندہ کی شرائط مختلف ہو سکتی ہیں۔"
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "یہ کیلکولیٹر کیا حساب کرتا ہے؟",
+                "answer": "Project how an initial amount and regular deposits may grow at an assumed constant rate."
+              },
+              {
+                "key": "faq-use",
+                "question": "میں یہ کیلکولیٹر کیسے استعمال کروں؟",
+                "answer": "مطلوبہ قدریں درج کریں، مفروضوں کا جائزہ لیں اور نتیجہ اپ ڈیٹ کرنے کے لیے ان پٹس تبدیل کریں۔"
+              },
+              {
+                "key": "faq-speed",
+                "question": "کیا نتائج فوراً ملتے ہیں؟",
+                "answer": "جی ہاں۔ معاون ان پٹس تبدیل کرنے پر حساب براؤزر میں اپ ڈیٹ ہوتا ہے۔"
+              },
+              {
+                "key": "faq-privacy",
+                "question": "کیا میری درج کردہ معلومات سرور کو بھیجی جاتی ہیں؟",
+                "answer": "نہیں۔ ان پٹس اسی براؤزر میں پراسیس ہوتے ہیں۔ حساس ذاتی معلومات درج نہ کریں۔"
+              }
+            ]
           }
         },
         "zh-CN": {
@@ -2014,7 +3323,49 @@
                 "title": "还款计划",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "公式与计算步骤",
+              "formulaDescription": "Bₘ = Bₘ₋₁(1 + r/1200) + D; FV = B₀(1+r/1200)ⁿ + D·(((1+r/1200)ⁿ−1)/(r/1200))",
+              "assumptions": [
+                "以下公式根据您输入的数值和假设提供估算结果。"
+              ],
+              "notes": [
+                "使用您输入的利率和数值。",
+                "根据公式逐期进行计算。",
+                "结果取决于输入的期限和假设。",
+                "请将结果视为估算，而非保证。",
+                "请将结果视为估算，而非保证。"
+              ],
+              "disclaimers": [
+                "此结果仅供信息参考和规划使用，不构成财务建议或保证。实际利率、费用、税款及服务提供商条款可能有所不同。"
+              ],
+              "limitations": [
+                "此结果仅供信息参考和规划使用，不构成财务建议或保证。实际利率、费用、税款及服务提供商条款可能有所不同。"
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "此计算器计算什么？",
+                "answer": "Project how an initial amount and regular deposits may grow at an assumed constant rate."
+              },
+              {
+                "key": "faq-use",
+                "question": "如何使用此计算器？",
+                "answer": "输入所需数值，查看假设条件，并调整输入以更新结果。"
+              },
+              {
+                "key": "faq-speed",
+                "question": "结果会立即显示吗？",
+                "answer": "是。更改受支持的输入后，计算会在浏览器中更新。"
+              },
+              {
+                "key": "faq-privacy",
+                "question": "我的输入会发送到服务器吗？",
+                "answer": "不会。输入内容仅在此浏览器中处理。请勿输入敏感个人信息。"
+              }
+            ]
           }
         },
         "ja": {
@@ -2079,7 +3430,49 @@
                 "title": "返済スケジュール",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "計算式と計算手順",
+              "formulaDescription": "Bₘ = Bₘ₋₁(1 + r/1200) + D; FV = B₀(1+r/1200)ⁿ + D·(((1+r/1200)ⁿ−1)/(r/1200))",
+              "assumptions": [
+                "以下の式は、入力された値と前提条件に基づく推定値を示します。"
+              ],
+              "notes": [
+                "入力された利率と値を使用します。",
+                "式に従って各期間を計算します。",
+                "結果は入力された期間と前提条件によって変わります。",
+                "結果は保証ではなく推定値として扱ってください。",
+                "結果は保証ではなく推定値として扱ってください。"
+              ],
+              "disclaimers": [
+                "この結果は情報提供と計画用の推定値であり、金融アドバイスや保証ではありません。実際の金利、手数料、税金、事業者の条件は異なる場合があります。"
+              ],
+              "limitations": [
+                "この結果は情報提供と計画用の推定値であり、金融アドバイスや保証ではありません。実際の金利、手数料、税金、事業者の条件は異なる場合があります。"
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "この計算ツールでは何を計算できますか？",
+                "answer": "Project how an initial amount and regular deposits may grow at an assumed constant rate."
+              },
+              {
+                "key": "faq-use",
+                "question": "この計算ツールの使い方は？",
+                "answer": "必要な値を入力し、前提条件を確認して、入力を変更すると結果が更新されます。"
+              },
+              {
+                "key": "faq-speed",
+                "question": "結果はすぐに表示されますか？",
+                "answer": "はい。対応する入力を変更すると、ブラウザー内で計算結果が更新されます。"
+              },
+              {
+                "key": "faq-privacy",
+                "question": "入力内容はサーバーに送信されますか？",
+                "answer": "いいえ。入力内容はこのブラウザー内で処理されます。機密性の高い個人情報は入力しないでください。"
+              }
+            ]
           }
         },
         "ru": {
@@ -2139,12 +3532,54 @@
                 "title": "График платежей",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "Формула и этапы расчёта",
+              "formulaDescription": "Bₘ = Bₘ₋₁(1 + r/1200) + D; FV = B₀(1+r/1200)ⁿ + D·(((1+r/1200)ⁿ−1)/(r/1200))",
+              "assumptions": [
+                "Формула ниже даёт оценку на основе введённых значений и допущений."
+              ],
+              "notes": [
+                "Используйте введённую ставку и значения.",
+                "Рассчитайте каждый период по формуле.",
+                "Результат зависит от заданного срока и допущений.",
+                "Рассматривайте результат как оценку, а не гарантию.",
+                "Рассматривайте результат как оценку, а не гарантию."
+              ],
+              "disclaimers": [
+                "Результат является оценкой только для информации и планирования, а не финансовой рекомендацией или гарантией. Фактические ставки, комиссии, налоги и условия поставщиков могут отличаться."
+              ],
+              "limitations": [
+                "Результат является оценкой только для информации и планирования, а не финансовой рекомендацией или гарантией. Фактические ставки, комиссии, налоги и условия поставщиков могут отличаться."
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "Что рассчитывает этот калькулятор?",
+                "answer": "Project how an initial amount and regular deposits may grow at an assumed constant rate."
+              },
+              {
+                "key": "faq-use",
+                "question": "Как пользоваться этим калькулятором?",
+                "answer": "Введите необходимые значения, проверьте допущения и измените параметры, чтобы обновить результат."
+              },
+              {
+                "key": "faq-speed",
+                "question": "Результаты отображаются сразу?",
+                "answer": "Да. При изменении поддерживаемых параметров расчёт обновляется в браузере."
+              },
+              {
+                "key": "faq-privacy",
+                "question": "Отправляются ли мои данные на сервер?",
+                "answer": "Нет. Введённые данные обрабатываются в этом браузере. Не вводите конфиденциальную личную информацию."
+              }
+            ]
           }
         }
       },
       "sourceExtractionStatus": "source-title-description-inputs-extracted",
-      "sourceTranslationStatus": "description-inputs-and-results-drafted"
+      "sourceTranslationStatus": "descriptions-inputs-results-formulas-and-faqs-drafted"
     },
     {
       "id": "percentage",
@@ -2182,7 +3617,42 @@
             }
           ],
           "breakdown": []
-        }
+        },
+        "explanations": {
+          "formula": "Percentage of = A×B/100; change = (B−A)/|A|×100; reverse base = A/(B/100)",
+          "steps": [
+            "Choose the requested calculation mode.",
+            "For percentage-of, multiply the base amount by the percentage and divide by 100.",
+            "For percentage change, subtract the original value from the new value, divide by the absolute original value, then multiply by 100.",
+            "For reverse percentage, divide the known amount by the percentage expressed as a decimal.",
+            "Percentage change from zero and reverse zero percent are undefined."
+          ],
+          "disclaimers": [
+            "Fixed-rate or periodic estimates depend on the entered assumptions."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-purpose",
+            "question": "What does this calculator calculate?",
+            "answer": "Calculate a percentage of a value, the percentage change between values, or the original base amount."
+          },
+          {
+            "key": "faq-use",
+            "question": "How do I use this calculator?",
+            "answer": "Enter the requested values, review the assumptions and adjust any input to update the result."
+          },
+          {
+            "key": "faq-speed",
+            "question": "Are results instant?",
+            "answer": "Yes. Calculations run in your browser and update when supported inputs change."
+          },
+          {
+            "key": "faq-privacy",
+            "question": "Are my entries sent to a server?",
+            "answer": "No. Calculator inputs are processed in this browser; do not enter sensitive personal information."
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -2223,7 +3693,49 @@
                 "title": "भुगतान अनुसूची",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "सूत्र और गणना के चरण",
+              "formulaDescription": "Percentage of = A×B/100; change = (B−A)/|A|×100; reverse base = A/(B/100)",
+              "assumptions": [
+                "नीचे दिया गया सूत्र दर्ज किए गए मानों और मान्यताओं पर आधारित अनुमान देता है।"
+              ],
+              "notes": [
+                "दर्ज की गई दर और मानों का उपयोग करें।",
+                "सूत्र में प्रत्येक अवधि की गणना करें।",
+                "परिणाम दर्ज की गई अवधि और मान्यताओं पर निर्भर करता है।",
+                "परिणाम को अनुमान के रूप में देखें, गारंटी के रूप में नहीं।",
+                "परिणाम को अनुमान के रूप में देखें, गारंटी के रूप में नहीं।"
+              ],
+              "disclaimers": [
+                "यह परिणाम केवल जानकारी और योजना बनाने के लिए अनुमान है, वित्तीय सलाह या गारंटी नहीं। वास्तविक दरें, शुल्क, कर और प्रदाता की शर्तें अलग हो सकती हैं।"
+              ],
+              "limitations": [
+                "यह परिणाम केवल जानकारी और योजना बनाने के लिए अनुमान है, वित्तीय सलाह या गारंटी नहीं। वास्तविक दरें, शुल्क, कर और प्रदाता की शर्तें अलग हो सकती हैं।"
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "यह कैलकुलेटर क्या गणना करता है?",
+                "answer": "Calculate a percentage of a value, the percentage change between values, or the original base amount."
+              },
+              {
+                "key": "faq-use",
+                "question": "मैं इस कैलकुलेटर का उपयोग कैसे करूँ?",
+                "answer": "माँगे गए मान दर्ज करें, मान्यताओं की समीक्षा करें और परिणाम देखने के लिए इनपुट बदलें।"
+              },
+              {
+                "key": "faq-speed",
+                "question": "क्या परिणाम तुरंत मिलते हैं?",
+                "answer": "हाँ। समर्थित इनपुट बदलने पर गणना ब्राउज़र में अपडेट होती है।"
+              },
+              {
+                "key": "faq-privacy",
+                "question": "क्या मेरी प्रविष्टियाँ सर्वर पर भेजी जाती हैं?",
+                "answer": "नहीं। इनपुट इसी ब्राउज़र में संसाधित होते हैं। संवेदनशील व्यक्तिगत जानकारी दर्ज न करें।"
+              }
+            ]
           }
         },
         "ar": {
@@ -2264,7 +3776,49 @@
                 "title": "جدول السداد",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "الصيغة وخطوات الحساب",
+              "formulaDescription": "Percentage of = A×B/100; change = (B−A)/|A|×100; reverse base = A/(B/100)",
+              "assumptions": [
+                "تعطي الصيغة أدناه تقديرًا استنادًا إلى القيم والافتراضات التي أدخلتها."
+              ],
+              "notes": [
+                "استخدم المعدل والقيم التي أدخلتها.",
+                "احسب كل فترة باستخدام الصيغة.",
+                "تعتمد النتيجة على المدة والافتراضات المدخلة.",
+                "تعامل مع النتيجة كتقدير لا كضمان.",
+                "تعامل مع النتيجة كتقدير لا كضمان."
+              ],
+              "disclaimers": [
+                "هذه النتيجة تقدير لأغراض المعلومات والتخطيط فقط، وليست نصيحة مالية أو ضمانًا. قد تختلف الأسعار والرسوم والضرائب وشروط المزوّد الفعلية."
+              ],
+              "limitations": [
+                "هذه النتيجة تقدير لأغراض المعلومات والتخطيط فقط، وليست نصيحة مالية أو ضمانًا. قد تختلف الأسعار والرسوم والضرائب وشروط المزوّد الفعلية."
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "ماذا تحسب هذه الآلة؟",
+                "answer": "Calculate a percentage of a value, the percentage change between values, or the original base amount."
+              },
+              {
+                "key": "faq-use",
+                "question": "كيف أستخدم هذه الآلة؟",
+                "answer": "أدخل القيم المطلوبة، وراجع الافتراضات، وعدّل المدخلات لتحديث النتيجة."
+              },
+              {
+                "key": "faq-speed",
+                "question": "هل تظهر النتائج فورًا؟",
+                "answer": "نعم. تُحدّث الحسابات داخل المتصفح عند تغيير المدخلات المدعومة."
+              },
+              {
+                "key": "faq-privacy",
+                "question": "هل تُرسل إدخالاتي إلى خادم؟",
+                "answer": "لا. تُعالج المدخلات في هذا المتصفح. لا تُدخل معلومات شخصية حساسة."
+              }
+            ]
           }
         },
         "ur": {
@@ -2305,7 +3859,49 @@
                 "title": "ادائیگی کا شیڈول",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "فارمولا اور حساب کے مراحل",
+              "formulaDescription": "Percentage of = A×B/100; change = (B−A)/|A|×100; reverse base = A/(B/100)",
+              "assumptions": [
+                "ذیل کا فارمولا آپ کی درج کردہ قدروں اور مفروضوں کی بنیاد پر تخمینہ دیتا ہے۔"
+              ],
+              "notes": [
+                "درج کردہ شرح اور قدریں استعمال کریں۔",
+                "فارمولے کے ذریعے ہر مدت کا حساب کریں۔",
+                "نتیجہ درج کردہ مدت اور مفروضوں پر منحصر ہے۔",
+                "نتیجے کو تخمینہ سمجھیں، ضمانت نہیں۔",
+                "نتیجے کو تخمینہ سمجھیں، ضمانت نہیں۔"
+              ],
+              "disclaimers": [
+                "یہ نتیجہ صرف معلومات اور منصوبہ بندی کے لیے تخمینہ ہے، مالی مشورہ یا ضمانت نہیں۔ اصل شرحیں، فیس، ٹیکس اور فراہم کنندہ کی شرائط مختلف ہو سکتی ہیں۔"
+              ],
+              "limitations": [
+                "یہ نتیجہ صرف معلومات اور منصوبہ بندی کے لیے تخمینہ ہے، مالی مشورہ یا ضمانت نہیں۔ اصل شرحیں، فیس، ٹیکس اور فراہم کنندہ کی شرائط مختلف ہو سکتی ہیں۔"
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "یہ کیلکولیٹر کیا حساب کرتا ہے؟",
+                "answer": "Calculate a percentage of a value, the percentage change between values, or the original base amount."
+              },
+              {
+                "key": "faq-use",
+                "question": "میں یہ کیلکولیٹر کیسے استعمال کروں؟",
+                "answer": "مطلوبہ قدریں درج کریں، مفروضوں کا جائزہ لیں اور نتیجہ اپ ڈیٹ کرنے کے لیے ان پٹس تبدیل کریں۔"
+              },
+              {
+                "key": "faq-speed",
+                "question": "کیا نتائج فوراً ملتے ہیں؟",
+                "answer": "جی ہاں۔ معاون ان پٹس تبدیل کرنے پر حساب براؤزر میں اپ ڈیٹ ہوتا ہے۔"
+              },
+              {
+                "key": "faq-privacy",
+                "question": "کیا میری درج کردہ معلومات سرور کو بھیجی جاتی ہیں؟",
+                "answer": "نہیں۔ ان پٹس اسی براؤزر میں پراسیس ہوتے ہیں۔ حساس ذاتی معلومات درج نہ کریں۔"
+              }
+            ]
           }
         },
         "zh-CN": {
@@ -2346,7 +3942,49 @@
                 "title": "还款计划",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "公式与计算步骤",
+              "formulaDescription": "Percentage of = A×B/100; change = (B−A)/|A|×100; reverse base = A/(B/100)",
+              "assumptions": [
+                "以下公式根据您输入的数值和假设提供估算结果。"
+              ],
+              "notes": [
+                "使用您输入的利率和数值。",
+                "根据公式逐期进行计算。",
+                "结果取决于输入的期限和假设。",
+                "请将结果视为估算，而非保证。",
+                "请将结果视为估算，而非保证。"
+              ],
+              "disclaimers": [
+                "此结果仅供信息参考和规划使用，不构成财务建议或保证。实际利率、费用、税款及服务提供商条款可能有所不同。"
+              ],
+              "limitations": [
+                "此结果仅供信息参考和规划使用，不构成财务建议或保证。实际利率、费用、税款及服务提供商条款可能有所不同。"
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "此计算器计算什么？",
+                "answer": "Calculate a percentage of a value, the percentage change between values, or the original base amount."
+              },
+              {
+                "key": "faq-use",
+                "question": "如何使用此计算器？",
+                "answer": "输入所需数值，查看假设条件，并调整输入以更新结果。"
+              },
+              {
+                "key": "faq-speed",
+                "question": "结果会立即显示吗？",
+                "answer": "是。更改受支持的输入后，计算会在浏览器中更新。"
+              },
+              {
+                "key": "faq-privacy",
+                "question": "我的输入会发送到服务器吗？",
+                "answer": "不会。输入内容仅在此浏览器中处理。请勿输入敏感个人信息。"
+              }
+            ]
           }
         },
         "ja": {
@@ -2387,7 +4025,49 @@
                 "title": "返済スケジュール",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "計算式と計算手順",
+              "formulaDescription": "Percentage of = A×B/100; change = (B−A)/|A|×100; reverse base = A/(B/100)",
+              "assumptions": [
+                "以下の式は、入力された値と前提条件に基づく推定値を示します。"
+              ],
+              "notes": [
+                "入力された利率と値を使用します。",
+                "式に従って各期間を計算します。",
+                "結果は入力された期間と前提条件によって変わります。",
+                "結果は保証ではなく推定値として扱ってください。",
+                "結果は保証ではなく推定値として扱ってください。"
+              ],
+              "disclaimers": [
+                "この結果は情報提供と計画用の推定値であり、金融アドバイスや保証ではありません。実際の金利、手数料、税金、事業者の条件は異なる場合があります。"
+              ],
+              "limitations": [
+                "この結果は情報提供と計画用の推定値であり、金融アドバイスや保証ではありません。実際の金利、手数料、税金、事業者の条件は異なる場合があります。"
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "この計算ツールでは何を計算できますか？",
+                "answer": "Calculate a percentage of a value, the percentage change between values, or the original base amount."
+              },
+              {
+                "key": "faq-use",
+                "question": "この計算ツールの使い方は？",
+                "answer": "必要な値を入力し、前提条件を確認して、入力を変更すると結果が更新されます。"
+              },
+              {
+                "key": "faq-speed",
+                "question": "結果はすぐに表示されますか？",
+                "answer": "はい。対応する入力を変更すると、ブラウザー内で計算結果が更新されます。"
+              },
+              {
+                "key": "faq-privacy",
+                "question": "入力内容はサーバーに送信されますか？",
+                "answer": "いいえ。入力内容はこのブラウザー内で処理されます。機密性の高い個人情報は入力しないでください。"
+              }
+            ]
           }
         },
         "ru": {
@@ -2426,12 +4106,54 @@
                 "title": "График платежей",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "Формула и этапы расчёта",
+              "formulaDescription": "Percentage of = A×B/100; change = (B−A)/|A|×100; reverse base = A/(B/100)",
+              "assumptions": [
+                "Формула ниже даёт оценку на основе введённых значений и допущений."
+              ],
+              "notes": [
+                "Используйте введённую ставку и значения.",
+                "Рассчитайте каждый период по формуле.",
+                "Результат зависит от заданного срока и допущений.",
+                "Рассматривайте результат как оценку, а не гарантию.",
+                "Рассматривайте результат как оценку, а не гарантию."
+              ],
+              "disclaimers": [
+                "Результат является оценкой только для информации и планирования, а не финансовой рекомендацией или гарантией. Фактические ставки, комиссии, налоги и условия поставщиков могут отличаться."
+              ],
+              "limitations": [
+                "Результат является оценкой только для информации и планирования, а не финансовой рекомендацией или гарантией. Фактические ставки, комиссии, налоги и условия поставщиков могут отличаться."
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "Что рассчитывает этот калькулятор?",
+                "answer": "Calculate a percentage of a value, the percentage change between values, or the original base amount."
+              },
+              {
+                "key": "faq-use",
+                "question": "Как пользоваться этим калькулятором?",
+                "answer": "Введите необходимые значения, проверьте допущения и измените параметры, чтобы обновить результат."
+              },
+              {
+                "key": "faq-speed",
+                "question": "Результаты отображаются сразу?",
+                "answer": "Да. При изменении поддерживаемых параметров расчёт обновляется в браузере."
+              },
+              {
+                "key": "faq-privacy",
+                "question": "Отправляются ли мои данные на сервер?",
+                "answer": "Нет. Введённые данные обрабатываются в этом браузере. Не вводите конфиденциальную личную информацию."
+              }
+            ]
           }
         }
       },
       "sourceExtractionStatus": "source-title-description-inputs-extracted",
-      "sourceTranslationStatus": "description-inputs-and-results-drafted"
+      "sourceTranslationStatus": "descriptions-inputs-results-formulas-and-faqs-drafted"
     },
     {
       "id": "tip",
@@ -2502,7 +4224,41 @@
               "label": "Per-person share"
             }
           ]
-        }
+        },
+        "explanations": {
+          "formula": "Tip = bill × tip rate; per person = (bill + tip) / people",
+          "steps": [
+            "Multiply the bill amount by the tip percentage divided by 100.",
+            "Add the tip to the original bill.",
+            "Divide the total evenly by the rounded whole-person count.",
+            "The entered currency is illustrative; service rules and taxes may vary."
+          ],
+          "disclaimers": [
+            "Currency is illustrative. Use the currency that matches your bill."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-purpose",
+            "question": "What does this calculator calculate?",
+            "answer": "Calculate a tip, add it to the bill and split the total evenly among people."
+          },
+          {
+            "key": "faq-use",
+            "question": "How do I use this calculator?",
+            "answer": "Enter the requested values, review the assumptions and adjust any input to update the result."
+          },
+          {
+            "key": "faq-speed",
+            "question": "Are results instant?",
+            "answer": "Yes. Calculations run in your browser and update when supported inputs change."
+          },
+          {
+            "key": "faq-privacy",
+            "question": "Are my entries sent to a server?",
+            "answer": "No. Calculator inputs are processed in this browser; do not enter sensitive personal information."
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -2576,7 +4332,48 @@
                 "title": "भुगतान अनुसूची",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "सूत्र और गणना के चरण",
+              "formulaDescription": "Tip = bill × tip rate; per person = (bill + tip) / people",
+              "assumptions": [
+                "नीचे दिया गया सूत्र दर्ज किए गए मानों और मान्यताओं पर आधारित अनुमान देता है।"
+              ],
+              "notes": [
+                "दर्ज की गई दर और मानों का उपयोग करें।",
+                "सूत्र में प्रत्येक अवधि की गणना करें।",
+                "परिणाम दर्ज की गई अवधि और मान्यताओं पर निर्भर करता है।",
+                "परिणाम को अनुमान के रूप में देखें, गारंटी के रूप में नहीं।"
+              ],
+              "disclaimers": [
+                "यह परिणाम केवल जानकारी और योजना बनाने के लिए अनुमान है, वित्तीय सलाह या गारंटी नहीं। वास्तविक दरें, शुल्क, कर और प्रदाता की शर्तें अलग हो सकती हैं।"
+              ],
+              "limitations": [
+                "यह परिणाम केवल जानकारी और योजना बनाने के लिए अनुमान है, वित्तीय सलाह या गारंटी नहीं। वास्तविक दरें, शुल्क, कर और प्रदाता की शर्तें अलग हो सकती हैं।"
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "यह कैलकुलेटर क्या गणना करता है?",
+                "answer": "Calculate a tip, add it to the bill and split the total evenly among people."
+              },
+              {
+                "key": "faq-use",
+                "question": "मैं इस कैलकुलेटर का उपयोग कैसे करूँ?",
+                "answer": "माँगे गए मान दर्ज करें, मान्यताओं की समीक्षा करें और परिणाम देखने के लिए इनपुट बदलें।"
+              },
+              {
+                "key": "faq-speed",
+                "question": "क्या परिणाम तुरंत मिलते हैं?",
+                "answer": "हाँ। समर्थित इनपुट बदलने पर गणना ब्राउज़र में अपडेट होती है।"
+              },
+              {
+                "key": "faq-privacy",
+                "question": "क्या मेरी प्रविष्टियाँ सर्वर पर भेजी जाती हैं?",
+                "answer": "नहीं। इनपुट इसी ब्राउज़र में संसाधित होते हैं। संवेदनशील व्यक्तिगत जानकारी दर्ज न करें।"
+              }
+            ]
           }
         },
         "ar": {
@@ -2650,7 +4447,48 @@
                 "title": "جدول السداد",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "الصيغة وخطوات الحساب",
+              "formulaDescription": "Tip = bill × tip rate; per person = (bill + tip) / people",
+              "assumptions": [
+                "تعطي الصيغة أدناه تقديرًا استنادًا إلى القيم والافتراضات التي أدخلتها."
+              ],
+              "notes": [
+                "استخدم المعدل والقيم التي أدخلتها.",
+                "احسب كل فترة باستخدام الصيغة.",
+                "تعتمد النتيجة على المدة والافتراضات المدخلة.",
+                "تعامل مع النتيجة كتقدير لا كضمان."
+              ],
+              "disclaimers": [
+                "هذه النتيجة تقدير لأغراض المعلومات والتخطيط فقط، وليست نصيحة مالية أو ضمانًا. قد تختلف الأسعار والرسوم والضرائب وشروط المزوّد الفعلية."
+              ],
+              "limitations": [
+                "هذه النتيجة تقدير لأغراض المعلومات والتخطيط فقط، وليست نصيحة مالية أو ضمانًا. قد تختلف الأسعار والرسوم والضرائب وشروط المزوّد الفعلية."
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "ماذا تحسب هذه الآلة؟",
+                "answer": "Calculate a tip, add it to the bill and split the total evenly among people."
+              },
+              {
+                "key": "faq-use",
+                "question": "كيف أستخدم هذه الآلة؟",
+                "answer": "أدخل القيم المطلوبة، وراجع الافتراضات، وعدّل المدخلات لتحديث النتيجة."
+              },
+              {
+                "key": "faq-speed",
+                "question": "هل تظهر النتائج فورًا؟",
+                "answer": "نعم. تُحدّث الحسابات داخل المتصفح عند تغيير المدخلات المدعومة."
+              },
+              {
+                "key": "faq-privacy",
+                "question": "هل تُرسل إدخالاتي إلى خادم؟",
+                "answer": "لا. تُعالج المدخلات في هذا المتصفح. لا تُدخل معلومات شخصية حساسة."
+              }
+            ]
           }
         },
         "ur": {
@@ -2724,7 +4562,48 @@
                 "title": "ادائیگی کا شیڈول",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "فارمولا اور حساب کے مراحل",
+              "formulaDescription": "Tip = bill × tip rate; per person = (bill + tip) / people",
+              "assumptions": [
+                "ذیل کا فارمولا آپ کی درج کردہ قدروں اور مفروضوں کی بنیاد پر تخمینہ دیتا ہے۔"
+              ],
+              "notes": [
+                "درج کردہ شرح اور قدریں استعمال کریں۔",
+                "فارمولے کے ذریعے ہر مدت کا حساب کریں۔",
+                "نتیجہ درج کردہ مدت اور مفروضوں پر منحصر ہے۔",
+                "نتیجے کو تخمینہ سمجھیں، ضمانت نہیں۔"
+              ],
+              "disclaimers": [
+                "یہ نتیجہ صرف معلومات اور منصوبہ بندی کے لیے تخمینہ ہے، مالی مشورہ یا ضمانت نہیں۔ اصل شرحیں، فیس، ٹیکس اور فراہم کنندہ کی شرائط مختلف ہو سکتی ہیں۔"
+              ],
+              "limitations": [
+                "یہ نتیجہ صرف معلومات اور منصوبہ بندی کے لیے تخمینہ ہے، مالی مشورہ یا ضمانت نہیں۔ اصل شرحیں، فیس، ٹیکس اور فراہم کنندہ کی شرائط مختلف ہو سکتی ہیں۔"
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "یہ کیلکولیٹر کیا حساب کرتا ہے؟",
+                "answer": "Calculate a tip, add it to the bill and split the total evenly among people."
+              },
+              {
+                "key": "faq-use",
+                "question": "میں یہ کیلکولیٹر کیسے استعمال کروں؟",
+                "answer": "مطلوبہ قدریں درج کریں، مفروضوں کا جائزہ لیں اور نتیجہ اپ ڈیٹ کرنے کے لیے ان پٹس تبدیل کریں۔"
+              },
+              {
+                "key": "faq-speed",
+                "question": "کیا نتائج فوراً ملتے ہیں؟",
+                "answer": "جی ہاں۔ معاون ان پٹس تبدیل کرنے پر حساب براؤزر میں اپ ڈیٹ ہوتا ہے۔"
+              },
+              {
+                "key": "faq-privacy",
+                "question": "کیا میری درج کردہ معلومات سرور کو بھیجی جاتی ہیں؟",
+                "answer": "نہیں۔ ان پٹس اسی براؤزر میں پراسیس ہوتے ہیں۔ حساس ذاتی معلومات درج نہ کریں۔"
+              }
+            ]
           }
         },
         "zh-CN": {
@@ -2798,7 +4677,48 @@
                 "title": "还款计划",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "公式与计算步骤",
+              "formulaDescription": "Tip = bill × tip rate; per person = (bill + tip) / people",
+              "assumptions": [
+                "以下公式根据您输入的数值和假设提供估算结果。"
+              ],
+              "notes": [
+                "使用您输入的利率和数值。",
+                "根据公式逐期进行计算。",
+                "结果取决于输入的期限和假设。",
+                "请将结果视为估算，而非保证。"
+              ],
+              "disclaimers": [
+                "此结果仅供信息参考和规划使用，不构成财务建议或保证。实际利率、费用、税款及服务提供商条款可能有所不同。"
+              ],
+              "limitations": [
+                "此结果仅供信息参考和规划使用，不构成财务建议或保证。实际利率、费用、税款及服务提供商条款可能有所不同。"
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "此计算器计算什么？",
+                "answer": "Calculate a tip, add it to the bill and split the total evenly among people."
+              },
+              {
+                "key": "faq-use",
+                "question": "如何使用此计算器？",
+                "answer": "输入所需数值，查看假设条件，并调整输入以更新结果。"
+              },
+              {
+                "key": "faq-speed",
+                "question": "结果会立即显示吗？",
+                "answer": "是。更改受支持的输入后，计算会在浏览器中更新。"
+              },
+              {
+                "key": "faq-privacy",
+                "question": "我的输入会发送到服务器吗？",
+                "answer": "不会。输入内容仅在此浏览器中处理。请勿输入敏感个人信息。"
+              }
+            ]
           }
         },
         "ja": {
@@ -2872,7 +4792,48 @@
                 "title": "返済スケジュール",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "計算式と計算手順",
+              "formulaDescription": "Tip = bill × tip rate; per person = (bill + tip) / people",
+              "assumptions": [
+                "以下の式は、入力された値と前提条件に基づく推定値を示します。"
+              ],
+              "notes": [
+                "入力された利率と値を使用します。",
+                "式に従って各期間を計算します。",
+                "結果は入力された期間と前提条件によって変わります。",
+                "結果は保証ではなく推定値として扱ってください。"
+              ],
+              "disclaimers": [
+                "この結果は情報提供と計画用の推定値であり、金融アドバイスや保証ではありません。実際の金利、手数料、税金、事業者の条件は異なる場合があります。"
+              ],
+              "limitations": [
+                "この結果は情報提供と計画用の推定値であり、金融アドバイスや保証ではありません。実際の金利、手数料、税金、事業者の条件は異なる場合があります。"
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "この計算ツールでは何を計算できますか？",
+                "answer": "Calculate a tip, add it to the bill and split the total evenly among people."
+              },
+              {
+                "key": "faq-use",
+                "question": "この計算ツールの使い方は？",
+                "answer": "必要な値を入力し、前提条件を確認して、入力を変更すると結果が更新されます。"
+              },
+              {
+                "key": "faq-speed",
+                "question": "結果はすぐに表示されますか？",
+                "answer": "はい。対応する入力を変更すると、ブラウザー内で計算結果が更新されます。"
+              },
+              {
+                "key": "faq-privacy",
+                "question": "入力内容はサーバーに送信されますか？",
+                "answer": "いいえ。入力内容はこのブラウザー内で処理されます。機密性の高い個人情報は入力しないでください。"
+              }
+            ]
           }
         },
         "ru": {
@@ -2942,12 +4903,53 @@
                 "title": "График платежей",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "Формула и этапы расчёта",
+              "formulaDescription": "Tip = bill × tip rate; per person = (bill + tip) / people",
+              "assumptions": [
+                "Формула ниже даёт оценку на основе введённых значений и допущений."
+              ],
+              "notes": [
+                "Используйте введённую ставку и значения.",
+                "Рассчитайте каждый период по формуле.",
+                "Результат зависит от заданного срока и допущений.",
+                "Рассматривайте результат как оценку, а не гарантию."
+              ],
+              "disclaimers": [
+                "Результат является оценкой только для информации и планирования, а не финансовой рекомендацией или гарантией. Фактические ставки, комиссии, налоги и условия поставщиков могут отличаться."
+              ],
+              "limitations": [
+                "Результат является оценкой только для информации и планирования, а не финансовой рекомендацией или гарантией. Фактические ставки, комиссии, налоги и условия поставщиков могут отличаться."
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "Что рассчитывает этот калькулятор?",
+                "answer": "Calculate a tip, add it to the bill and split the total evenly among people."
+              },
+              {
+                "key": "faq-use",
+                "question": "Как пользоваться этим калькулятором?",
+                "answer": "Введите необходимые значения, проверьте допущения и измените параметры, чтобы обновить результат."
+              },
+              {
+                "key": "faq-speed",
+                "question": "Результаты отображаются сразу?",
+                "answer": "Да. При изменении поддерживаемых параметров расчёт обновляется в браузере."
+              },
+              {
+                "key": "faq-privacy",
+                "question": "Отправляются ли мои данные на сервер?",
+                "answer": "Нет. Введённые данные обрабатываются в этом браузере. Не вводите конфиденциальную личную информацию."
+              }
+            ]
           }
         }
       },
       "sourceExtractionStatus": "source-title-description-inputs-extracted",
-      "sourceTranslationStatus": "description-inputs-and-results-drafted"
+      "sourceTranslationStatus": "descriptions-inputs-results-formulas-and-faqs-drafted"
     },
     {
       "id": "car",
@@ -3013,7 +5015,42 @@
             }
           ],
           "breakdown": []
-        }
+        },
+        "explanations": {
+          "formula": "Financed principal = vehicle price − down payment − trade-in + financed fees; PMT = P·i / (1 − (1+i)⁻ⁿ)",
+          "steps": [
+            "Calculate financed principal after down payment and trade-in, adding fees entered as financed.",
+            "Convert annual interest to a monthly rate and years to monthly periods.",
+            "Calculate the fixed payment from financed principal.",
+            "Each month, split interest and principal; apply any extra payment to principal.",
+            "Compare standard and extra-payment payoff schedules."
+          ],
+          "disclaimers": [
+            "Fixed-rate or periodic estimates depend on the entered assumptions."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-purpose",
+            "question": "What does this calculator calculate?",
+            "answer": "Estimate a vehicle loan payment after the down payment, trade-in value and financed fees."
+          },
+          {
+            "key": "faq-use",
+            "question": "How do I use this calculator?",
+            "answer": "Enter the requested values, review the assumptions and adjust any input to update the result."
+          },
+          {
+            "key": "faq-speed",
+            "question": "Are results instant?",
+            "answer": "Yes. Calculations run in your browser and update when supported inputs change."
+          },
+          {
+            "key": "faq-privacy",
+            "question": "Are my entries sent to a server?",
+            "answer": "No. Calculator inputs are processed in this browser; do not enter sensitive personal information."
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -3082,7 +5119,49 @@
                 "title": "भुगतान अनुसूची",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "सूत्र और गणना के चरण",
+              "formulaDescription": "Financed principal = vehicle price − down payment − trade-in + financed fees; PMT = P·i / (1 − (1+i)⁻ⁿ)",
+              "assumptions": [
+                "नीचे दिया गया सूत्र दर्ज किए गए मानों और मान्यताओं पर आधारित अनुमान देता है।"
+              ],
+              "notes": [
+                "दर्ज की गई दर और मानों का उपयोग करें।",
+                "सूत्र में प्रत्येक अवधि की गणना करें।",
+                "परिणाम दर्ज की गई अवधि और मान्यताओं पर निर्भर करता है।",
+                "परिणाम को अनुमान के रूप में देखें, गारंटी के रूप में नहीं।",
+                "परिणाम को अनुमान के रूप में देखें, गारंटी के रूप में नहीं।"
+              ],
+              "disclaimers": [
+                "यह परिणाम केवल जानकारी और योजना बनाने के लिए अनुमान है, वित्तीय सलाह या गारंटी नहीं। वास्तविक दरें, शुल्क, कर और प्रदाता की शर्तें अलग हो सकती हैं।"
+              ],
+              "limitations": [
+                "यह परिणाम केवल जानकारी और योजना बनाने के लिए अनुमान है, वित्तीय सलाह या गारंटी नहीं। वास्तविक दरें, शुल्क, कर और प्रदाता की शर्तें अलग हो सकती हैं।"
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "यह कैलकुलेटर क्या गणना करता है?",
+                "answer": "Estimate a vehicle loan payment after the down payment, trade-in value and financed fees."
+              },
+              {
+                "key": "faq-use",
+                "question": "मैं इस कैलकुलेटर का उपयोग कैसे करूँ?",
+                "answer": "माँगे गए मान दर्ज करें, मान्यताओं की समीक्षा करें और परिणाम देखने के लिए इनपुट बदलें।"
+              },
+              {
+                "key": "faq-speed",
+                "question": "क्या परिणाम तुरंत मिलते हैं?",
+                "answer": "हाँ। समर्थित इनपुट बदलने पर गणना ब्राउज़र में अपडेट होती है।"
+              },
+              {
+                "key": "faq-privacy",
+                "question": "क्या मेरी प्रविष्टियाँ सर्वर पर भेजी जाती हैं?",
+                "answer": "नहीं। इनपुट इसी ब्राउज़र में संसाधित होते हैं। संवेदनशील व्यक्तिगत जानकारी दर्ज न करें।"
+              }
+            ]
           }
         },
         "ar": {
@@ -3151,7 +5230,49 @@
                 "title": "جدول السداد",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "الصيغة وخطوات الحساب",
+              "formulaDescription": "Financed principal = vehicle price − down payment − trade-in + financed fees; PMT = P·i / (1 − (1+i)⁻ⁿ)",
+              "assumptions": [
+                "تعطي الصيغة أدناه تقديرًا استنادًا إلى القيم والافتراضات التي أدخلتها."
+              ],
+              "notes": [
+                "استخدم المعدل والقيم التي أدخلتها.",
+                "احسب كل فترة باستخدام الصيغة.",
+                "تعتمد النتيجة على المدة والافتراضات المدخلة.",
+                "تعامل مع النتيجة كتقدير لا كضمان.",
+                "تعامل مع النتيجة كتقدير لا كضمان."
+              ],
+              "disclaimers": [
+                "هذه النتيجة تقدير لأغراض المعلومات والتخطيط فقط، وليست نصيحة مالية أو ضمانًا. قد تختلف الأسعار والرسوم والضرائب وشروط المزوّد الفعلية."
+              ],
+              "limitations": [
+                "هذه النتيجة تقدير لأغراض المعلومات والتخطيط فقط، وليست نصيحة مالية أو ضمانًا. قد تختلف الأسعار والرسوم والضرائب وشروط المزوّد الفعلية."
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "ماذا تحسب هذه الآلة؟",
+                "answer": "Estimate a vehicle loan payment after the down payment, trade-in value and financed fees."
+              },
+              {
+                "key": "faq-use",
+                "question": "كيف أستخدم هذه الآلة؟",
+                "answer": "أدخل القيم المطلوبة، وراجع الافتراضات، وعدّل المدخلات لتحديث النتيجة."
+              },
+              {
+                "key": "faq-speed",
+                "question": "هل تظهر النتائج فورًا؟",
+                "answer": "نعم. تُحدّث الحسابات داخل المتصفح عند تغيير المدخلات المدعومة."
+              },
+              {
+                "key": "faq-privacy",
+                "question": "هل تُرسل إدخالاتي إلى خادم؟",
+                "answer": "لا. تُعالج المدخلات في هذا المتصفح. لا تُدخل معلومات شخصية حساسة."
+              }
+            ]
           }
         },
         "ur": {
@@ -3220,7 +5341,49 @@
                 "title": "ادائیگی کا شیڈول",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "فارمولا اور حساب کے مراحل",
+              "formulaDescription": "Financed principal = vehicle price − down payment − trade-in + financed fees; PMT = P·i / (1 − (1+i)⁻ⁿ)",
+              "assumptions": [
+                "ذیل کا فارمولا آپ کی درج کردہ قدروں اور مفروضوں کی بنیاد پر تخمینہ دیتا ہے۔"
+              ],
+              "notes": [
+                "درج کردہ شرح اور قدریں استعمال کریں۔",
+                "فارمولے کے ذریعے ہر مدت کا حساب کریں۔",
+                "نتیجہ درج کردہ مدت اور مفروضوں پر منحصر ہے۔",
+                "نتیجے کو تخمینہ سمجھیں، ضمانت نہیں۔",
+                "نتیجے کو تخمینہ سمجھیں، ضمانت نہیں۔"
+              ],
+              "disclaimers": [
+                "یہ نتیجہ صرف معلومات اور منصوبہ بندی کے لیے تخمینہ ہے، مالی مشورہ یا ضمانت نہیں۔ اصل شرحیں، فیس، ٹیکس اور فراہم کنندہ کی شرائط مختلف ہو سکتی ہیں۔"
+              ],
+              "limitations": [
+                "یہ نتیجہ صرف معلومات اور منصوبہ بندی کے لیے تخمینہ ہے، مالی مشورہ یا ضمانت نہیں۔ اصل شرحیں، فیس، ٹیکس اور فراہم کنندہ کی شرائط مختلف ہو سکتی ہیں۔"
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "یہ کیلکولیٹر کیا حساب کرتا ہے؟",
+                "answer": "Estimate a vehicle loan payment after the down payment, trade-in value and financed fees."
+              },
+              {
+                "key": "faq-use",
+                "question": "میں یہ کیلکولیٹر کیسے استعمال کروں؟",
+                "answer": "مطلوبہ قدریں درج کریں، مفروضوں کا جائزہ لیں اور نتیجہ اپ ڈیٹ کرنے کے لیے ان پٹس تبدیل کریں۔"
+              },
+              {
+                "key": "faq-speed",
+                "question": "کیا نتائج فوراً ملتے ہیں؟",
+                "answer": "جی ہاں۔ معاون ان پٹس تبدیل کرنے پر حساب براؤزر میں اپ ڈیٹ ہوتا ہے۔"
+              },
+              {
+                "key": "faq-privacy",
+                "question": "کیا میری درج کردہ معلومات سرور کو بھیجی جاتی ہیں؟",
+                "answer": "نہیں۔ ان پٹس اسی براؤزر میں پراسیس ہوتے ہیں۔ حساس ذاتی معلومات درج نہ کریں۔"
+              }
+            ]
           }
         },
         "zh-CN": {
@@ -3289,7 +5452,49 @@
                 "title": "还款计划",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "公式与计算步骤",
+              "formulaDescription": "Financed principal = vehicle price − down payment − trade-in + financed fees; PMT = P·i / (1 − (1+i)⁻ⁿ)",
+              "assumptions": [
+                "以下公式根据您输入的数值和假设提供估算结果。"
+              ],
+              "notes": [
+                "使用您输入的利率和数值。",
+                "根据公式逐期进行计算。",
+                "结果取决于输入的期限和假设。",
+                "请将结果视为估算，而非保证。",
+                "请将结果视为估算，而非保证。"
+              ],
+              "disclaimers": [
+                "此结果仅供信息参考和规划使用，不构成财务建议或保证。实际利率、费用、税款及服务提供商条款可能有所不同。"
+              ],
+              "limitations": [
+                "此结果仅供信息参考和规划使用，不构成财务建议或保证。实际利率、费用、税款及服务提供商条款可能有所不同。"
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "此计算器计算什么？",
+                "answer": "Estimate a vehicle loan payment after the down payment, trade-in value and financed fees."
+              },
+              {
+                "key": "faq-use",
+                "question": "如何使用此计算器？",
+                "answer": "输入所需数值，查看假设条件，并调整输入以更新结果。"
+              },
+              {
+                "key": "faq-speed",
+                "question": "结果会立即显示吗？",
+                "answer": "是。更改受支持的输入后，计算会在浏览器中更新。"
+              },
+              {
+                "key": "faq-privacy",
+                "question": "我的输入会发送到服务器吗？",
+                "answer": "不会。输入内容仅在此浏览器中处理。请勿输入敏感个人信息。"
+              }
+            ]
           }
         },
         "ja": {
@@ -3358,7 +5563,49 @@
                 "title": "返済スケジュール",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "計算式と計算手順",
+              "formulaDescription": "Financed principal = vehicle price − down payment − trade-in + financed fees; PMT = P·i / (1 − (1+i)⁻ⁿ)",
+              "assumptions": [
+                "以下の式は、入力された値と前提条件に基づく推定値を示します。"
+              ],
+              "notes": [
+                "入力された利率と値を使用します。",
+                "式に従って各期間を計算します。",
+                "結果は入力された期間と前提条件によって変わります。",
+                "結果は保証ではなく推定値として扱ってください。",
+                "結果は保証ではなく推定値として扱ってください。"
+              ],
+              "disclaimers": [
+                "この結果は情報提供と計画用の推定値であり、金融アドバイスや保証ではありません。実際の金利、手数料、税金、事業者の条件は異なる場合があります。"
+              ],
+              "limitations": [
+                "この結果は情報提供と計画用の推定値であり、金融アドバイスや保証ではありません。実際の金利、手数料、税金、事業者の条件は異なる場合があります。"
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "この計算ツールでは何を計算できますか？",
+                "answer": "Estimate a vehicle loan payment after the down payment, trade-in value and financed fees."
+              },
+              {
+                "key": "faq-use",
+                "question": "この計算ツールの使い方は？",
+                "answer": "必要な値を入力し、前提条件を確認して、入力を変更すると結果が更新されます。"
+              },
+              {
+                "key": "faq-speed",
+                "question": "結果はすぐに表示されますか？",
+                "answer": "はい。対応する入力を変更すると、ブラウザー内で計算結果が更新されます。"
+              },
+              {
+                "key": "faq-privacy",
+                "question": "入力内容はサーバーに送信されますか？",
+                "answer": "いいえ。入力内容はこのブラウザー内で処理されます。機密性の高い個人情報は入力しないでください。"
+              }
+            ]
           }
         },
         "ru": {
@@ -3422,12 +5669,54 @@
                 "title": "График платежей",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "Формула и этапы расчёта",
+              "formulaDescription": "Financed principal = vehicle price − down payment − trade-in + financed fees; PMT = P·i / (1 − (1+i)⁻ⁿ)",
+              "assumptions": [
+                "Формула ниже даёт оценку на основе введённых значений и допущений."
+              ],
+              "notes": [
+                "Используйте введённую ставку и значения.",
+                "Рассчитайте каждый период по формуле.",
+                "Результат зависит от заданного срока и допущений.",
+                "Рассматривайте результат как оценку, а не гарантию.",
+                "Рассматривайте результат как оценку, а не гарантию."
+              ],
+              "disclaimers": [
+                "Результат является оценкой только для информации и планирования, а не финансовой рекомендацией или гарантией. Фактические ставки, комиссии, налоги и условия поставщиков могут отличаться."
+              ],
+              "limitations": [
+                "Результат является оценкой только для информации и планирования, а не финансовой рекомендацией или гарантией. Фактические ставки, комиссии, налоги и условия поставщиков могут отличаться."
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "Что рассчитывает этот калькулятор?",
+                "answer": "Estimate a vehicle loan payment after the down payment, trade-in value and financed fees."
+              },
+              {
+                "key": "faq-use",
+                "question": "Как пользоваться этим калькулятором?",
+                "answer": "Введите необходимые значения, проверьте допущения и измените параметры, чтобы обновить результат."
+              },
+              {
+                "key": "faq-speed",
+                "question": "Результаты отображаются сразу?",
+                "answer": "Да. При изменении поддерживаемых параметров расчёт обновляется в браузере."
+              },
+              {
+                "key": "faq-privacy",
+                "question": "Отправляются ли мои данные на сервер?",
+                "answer": "Нет. Введённые данные обрабатываются в этом браузере. Не вводите конфиденциальную личную информацию."
+              }
+            ]
           }
         }
       },
       "sourceExtractionStatus": "source-title-description-inputs-extracted",
-      "sourceTranslationStatus": "description-inputs-and-results-drafted"
+      "sourceTranslationStatus": "descriptions-inputs-results-formulas-and-faqs-drafted"
     },
     {
       "id": "amortization",
@@ -3485,7 +5774,42 @@
             }
           ],
           "breakdown": []
-        }
+        },
+        "explanations": {
+          "formula": "PMT = P·i / (1 − (1+i)⁻ⁿ); interestₘ = opening balanceₘ × i",
+          "steps": [
+            "Start from the entered principal P.",
+            "Convert the annual percentage rate to monthly decimal rate i.",
+            "Calculate the fixed payment across n monthly periods.",
+            "Each month, split the payment into interest and principal.",
+            "Reduce the balance by principal and aggregate monthly rows into yearly totals."
+          ],
+          "disclaimers": [
+            "Actual lender schedules can differ because of fees, payment dates and rounding."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-purpose",
+            "question": "What does this calculator calculate?",
+            "answer": "See how each payment is divided between interest and principal over the loan term."
+          },
+          {
+            "key": "faq-use",
+            "question": "How do I use this calculator?",
+            "answer": "Enter the requested values, review the assumptions and adjust any input to update the result."
+          },
+          {
+            "key": "faq-speed",
+            "question": "Are results instant?",
+            "answer": "Yes. Calculations run in your browser and update when supported inputs change."
+          },
+          {
+            "key": "faq-privacy",
+            "question": "Are my entries sent to a server?",
+            "answer": "No. Calculator inputs are processed in this browser; do not enter sensitive personal information."
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -3546,7 +5870,49 @@
                 "title": "भुगतान अनुसूची",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "सूत्र और गणना के चरण",
+              "formulaDescription": "PMT = P·i / (1 − (1+i)⁻ⁿ); interestₘ = opening balanceₘ × i",
+              "assumptions": [
+                "नीचे दिया गया सूत्र दर्ज किए गए मानों और मान्यताओं पर आधारित अनुमान देता है।"
+              ],
+              "notes": [
+                "दर्ज की गई दर और मानों का उपयोग करें।",
+                "सूत्र में प्रत्येक अवधि की गणना करें।",
+                "परिणाम दर्ज की गई अवधि और मान्यताओं पर निर्भर करता है।",
+                "परिणाम को अनुमान के रूप में देखें, गारंटी के रूप में नहीं।",
+                "परिणाम को अनुमान के रूप में देखें, गारंटी के रूप में नहीं।"
+              ],
+              "disclaimers": [
+                "यह परिणाम केवल जानकारी और योजना बनाने के लिए अनुमान है, वित्तीय सलाह या गारंटी नहीं। वास्तविक दरें, शुल्क, कर और प्रदाता की शर्तें अलग हो सकती हैं।"
+              ],
+              "limitations": [
+                "यह परिणाम केवल जानकारी और योजना बनाने के लिए अनुमान है, वित्तीय सलाह या गारंटी नहीं। वास्तविक दरें, शुल्क, कर और प्रदाता की शर्तें अलग हो सकती हैं।"
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "यह कैलकुलेटर क्या गणना करता है?",
+                "answer": "See how each payment is divided between interest and principal over the loan term."
+              },
+              {
+                "key": "faq-use",
+                "question": "मैं इस कैलकुलेटर का उपयोग कैसे करूँ?",
+                "answer": "माँगे गए मान दर्ज करें, मान्यताओं की समीक्षा करें और परिणाम देखने के लिए इनपुट बदलें।"
+              },
+              {
+                "key": "faq-speed",
+                "question": "क्या परिणाम तुरंत मिलते हैं?",
+                "answer": "हाँ। समर्थित इनपुट बदलने पर गणना ब्राउज़र में अपडेट होती है।"
+              },
+              {
+                "key": "faq-privacy",
+                "question": "क्या मेरी प्रविष्टियाँ सर्वर पर भेजी जाती हैं?",
+                "answer": "नहीं। इनपुट इसी ब्राउज़र में संसाधित होते हैं। संवेदनशील व्यक्तिगत जानकारी दर्ज न करें।"
+              }
+            ]
           }
         },
         "ar": {
@@ -3607,7 +5973,49 @@
                 "title": "جدول السداد",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "الصيغة وخطوات الحساب",
+              "formulaDescription": "PMT = P·i / (1 − (1+i)⁻ⁿ); interestₘ = opening balanceₘ × i",
+              "assumptions": [
+                "تعطي الصيغة أدناه تقديرًا استنادًا إلى القيم والافتراضات التي أدخلتها."
+              ],
+              "notes": [
+                "استخدم المعدل والقيم التي أدخلتها.",
+                "احسب كل فترة باستخدام الصيغة.",
+                "تعتمد النتيجة على المدة والافتراضات المدخلة.",
+                "تعامل مع النتيجة كتقدير لا كضمان.",
+                "تعامل مع النتيجة كتقدير لا كضمان."
+              ],
+              "disclaimers": [
+                "هذه النتيجة تقدير لأغراض المعلومات والتخطيط فقط، وليست نصيحة مالية أو ضمانًا. قد تختلف الأسعار والرسوم والضرائب وشروط المزوّد الفعلية."
+              ],
+              "limitations": [
+                "هذه النتيجة تقدير لأغراض المعلومات والتخطيط فقط، وليست نصيحة مالية أو ضمانًا. قد تختلف الأسعار والرسوم والضرائب وشروط المزوّد الفعلية."
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "ماذا تحسب هذه الآلة؟",
+                "answer": "See how each payment is divided between interest and principal over the loan term."
+              },
+              {
+                "key": "faq-use",
+                "question": "كيف أستخدم هذه الآلة؟",
+                "answer": "أدخل القيم المطلوبة، وراجع الافتراضات، وعدّل المدخلات لتحديث النتيجة."
+              },
+              {
+                "key": "faq-speed",
+                "question": "هل تظهر النتائج فورًا؟",
+                "answer": "نعم. تُحدّث الحسابات داخل المتصفح عند تغيير المدخلات المدعومة."
+              },
+              {
+                "key": "faq-privacy",
+                "question": "هل تُرسل إدخالاتي إلى خادم؟",
+                "answer": "لا. تُعالج المدخلات في هذا المتصفح. لا تُدخل معلومات شخصية حساسة."
+              }
+            ]
           }
         },
         "ur": {
@@ -3668,7 +6076,49 @@
                 "title": "ادائیگی کا شیڈول",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "فارمولا اور حساب کے مراحل",
+              "formulaDescription": "PMT = P·i / (1 − (1+i)⁻ⁿ); interestₘ = opening balanceₘ × i",
+              "assumptions": [
+                "ذیل کا فارمولا آپ کی درج کردہ قدروں اور مفروضوں کی بنیاد پر تخمینہ دیتا ہے۔"
+              ],
+              "notes": [
+                "درج کردہ شرح اور قدریں استعمال کریں۔",
+                "فارمولے کے ذریعے ہر مدت کا حساب کریں۔",
+                "نتیجہ درج کردہ مدت اور مفروضوں پر منحصر ہے۔",
+                "نتیجے کو تخمینہ سمجھیں، ضمانت نہیں۔",
+                "نتیجے کو تخمینہ سمجھیں، ضمانت نہیں۔"
+              ],
+              "disclaimers": [
+                "یہ نتیجہ صرف معلومات اور منصوبہ بندی کے لیے تخمینہ ہے، مالی مشورہ یا ضمانت نہیں۔ اصل شرحیں، فیس، ٹیکس اور فراہم کنندہ کی شرائط مختلف ہو سکتی ہیں۔"
+              ],
+              "limitations": [
+                "یہ نتیجہ صرف معلومات اور منصوبہ بندی کے لیے تخمینہ ہے، مالی مشورہ یا ضمانت نہیں۔ اصل شرحیں، فیس، ٹیکس اور فراہم کنندہ کی شرائط مختلف ہو سکتی ہیں۔"
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "یہ کیلکولیٹر کیا حساب کرتا ہے؟",
+                "answer": "See how each payment is divided between interest and principal over the loan term."
+              },
+              {
+                "key": "faq-use",
+                "question": "میں یہ کیلکولیٹر کیسے استعمال کروں؟",
+                "answer": "مطلوبہ قدریں درج کریں، مفروضوں کا جائزہ لیں اور نتیجہ اپ ڈیٹ کرنے کے لیے ان پٹس تبدیل کریں۔"
+              },
+              {
+                "key": "faq-speed",
+                "question": "کیا نتائج فوراً ملتے ہیں؟",
+                "answer": "جی ہاں۔ معاون ان پٹس تبدیل کرنے پر حساب براؤزر میں اپ ڈیٹ ہوتا ہے۔"
+              },
+              {
+                "key": "faq-privacy",
+                "question": "کیا میری درج کردہ معلومات سرور کو بھیجی جاتی ہیں؟",
+                "answer": "نہیں۔ ان پٹس اسی براؤزر میں پراسیس ہوتے ہیں۔ حساس ذاتی معلومات درج نہ کریں۔"
+              }
+            ]
           }
         },
         "zh-CN": {
@@ -3729,7 +6179,49 @@
                 "title": "还款计划",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "公式与计算步骤",
+              "formulaDescription": "PMT = P·i / (1 − (1+i)⁻ⁿ); interestₘ = opening balanceₘ × i",
+              "assumptions": [
+                "以下公式根据您输入的数值和假设提供估算结果。"
+              ],
+              "notes": [
+                "使用您输入的利率和数值。",
+                "根据公式逐期进行计算。",
+                "结果取决于输入的期限和假设。",
+                "请将结果视为估算，而非保证。",
+                "请将结果视为估算，而非保证。"
+              ],
+              "disclaimers": [
+                "此结果仅供信息参考和规划使用，不构成财务建议或保证。实际利率、费用、税款及服务提供商条款可能有所不同。"
+              ],
+              "limitations": [
+                "此结果仅供信息参考和规划使用，不构成财务建议或保证。实际利率、费用、税款及服务提供商条款可能有所不同。"
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "此计算器计算什么？",
+                "answer": "See how each payment is divided between interest and principal over the loan term."
+              },
+              {
+                "key": "faq-use",
+                "question": "如何使用此计算器？",
+                "answer": "输入所需数值，查看假设条件，并调整输入以更新结果。"
+              },
+              {
+                "key": "faq-speed",
+                "question": "结果会立即显示吗？",
+                "answer": "是。更改受支持的输入后，计算会在浏览器中更新。"
+              },
+              {
+                "key": "faq-privacy",
+                "question": "我的输入会发送到服务器吗？",
+                "answer": "不会。输入内容仅在此浏览器中处理。请勿输入敏感个人信息。"
+              }
+            ]
           }
         },
         "ja": {
@@ -3790,7 +6282,49 @@
                 "title": "返済スケジュール",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "計算式と計算手順",
+              "formulaDescription": "PMT = P·i / (1 − (1+i)⁻ⁿ); interestₘ = opening balanceₘ × i",
+              "assumptions": [
+                "以下の式は、入力された値と前提条件に基づく推定値を示します。"
+              ],
+              "notes": [
+                "入力された利率と値を使用します。",
+                "式に従って各期間を計算します。",
+                "結果は入力された期間と前提条件によって変わります。",
+                "結果は保証ではなく推定値として扱ってください。",
+                "結果は保証ではなく推定値として扱ってください。"
+              ],
+              "disclaimers": [
+                "この結果は情報提供と計画用の推定値であり、金融アドバイスや保証ではありません。実際の金利、手数料、税金、事業者の条件は異なる場合があります。"
+              ],
+              "limitations": [
+                "この結果は情報提供と計画用の推定値であり、金融アドバイスや保証ではありません。実際の金利、手数料、税金、事業者の条件は異なる場合があります。"
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "この計算ツールでは何を計算できますか？",
+                "answer": "See how each payment is divided between interest and principal over the loan term."
+              },
+              {
+                "key": "faq-use",
+                "question": "この計算ツールの使い方は？",
+                "answer": "必要な値を入力し、前提条件を確認して、入力を変更すると結果が更新されます。"
+              },
+              {
+                "key": "faq-speed",
+                "question": "結果はすぐに表示されますか？",
+                "answer": "はい。対応する入力を変更すると、ブラウザー内で計算結果が更新されます。"
+              },
+              {
+                "key": "faq-privacy",
+                "question": "入力内容はサーバーに送信されますか？",
+                "answer": "いいえ。入力内容はこのブラウザー内で処理されます。機密性の高い個人情報は入力しないでください。"
+              }
+            ]
           }
         },
         "ru": {
@@ -3845,12 +6379,54 @@
                 "title": "График платежей",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "Формула и этапы расчёта",
+              "formulaDescription": "PMT = P·i / (1 − (1+i)⁻ⁿ); interestₘ = opening balanceₘ × i",
+              "assumptions": [
+                "Формула ниже даёт оценку на основе введённых значений и допущений."
+              ],
+              "notes": [
+                "Используйте введённую ставку и значения.",
+                "Рассчитайте каждый период по формуле.",
+                "Результат зависит от заданного срока и допущений.",
+                "Рассматривайте результат как оценку, а не гарантию.",
+                "Рассматривайте результат как оценку, а не гарантию."
+              ],
+              "disclaimers": [
+                "Результат является оценкой только для информации и планирования, а не финансовой рекомендацией или гарантией. Фактические ставки, комиссии, налоги и условия поставщиков могут отличаться."
+              ],
+              "limitations": [
+                "Результат является оценкой только для информации и планирования, а не финансовой рекомендацией или гарантией. Фактические ставки, комиссии, налоги и условия поставщиков могут отличаться."
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "Что рассчитывает этот калькулятор?",
+                "answer": "See how each payment is divided between interest and principal over the loan term."
+              },
+              {
+                "key": "faq-use",
+                "question": "Как пользоваться этим калькулятором?",
+                "answer": "Введите необходимые значения, проверьте допущения и измените параметры, чтобы обновить результат."
+              },
+              {
+                "key": "faq-speed",
+                "question": "Результаты отображаются сразу?",
+                "answer": "Да. При изменении поддерживаемых параметров расчёт обновляется в браузере."
+              },
+              {
+                "key": "faq-privacy",
+                "question": "Отправляются ли мои данные на сервер?",
+                "answer": "Нет. Введённые данные обрабатываются в этом браузере. Не вводите конфиденциальную личную информацию."
+              }
+            ]
           }
         }
       },
       "sourceExtractionStatus": "source-title-description-inputs-extracted",
-      "sourceTranslationStatus": "description-inputs-and-results-drafted"
+      "sourceTranslationStatus": "descriptions-inputs-results-formulas-and-faqs-drafted"
     },
     {
       "id": "savings",
@@ -3908,7 +6484,42 @@
             }
           ],
           "breakdown": []
-        }
+        },
+        "explanations": {
+          "formula": "D = max(0, [G − C(1+i)ⁿ]·i / [(1+i)ⁿ−1]); i = r/1200",
+          "steps": [
+            "Convert the assumed annual rate to monthly rate i.",
+            "Grow current savings C for n months.",
+            "Calculate the remaining future-value gap to goal G.",
+            "Solve the ordinary-annuity future-value equation for monthly deposit D; when i is zero, D equals the gap divided by n.",
+            "Simulate monthly interest first, then end-of-month deposits, and aggregate by year."
+          ],
+          "disclaimers": [
+            "Assumed returns are scenarios, not guarantees."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-purpose",
+            "question": "What does this calculator calculate?",
+            "answer": "Estimate the monthly deposit needed to reach a savings target by the selected date."
+          },
+          {
+            "key": "faq-use",
+            "question": "How do I use this calculator?",
+            "answer": "Enter the requested values, review the assumptions and adjust any input to update the result."
+          },
+          {
+            "key": "faq-speed",
+            "question": "Are results instant?",
+            "answer": "Yes. Calculations run in your browser and update when supported inputs change."
+          },
+          {
+            "key": "faq-privacy",
+            "question": "Are my entries sent to a server?",
+            "answer": "No. Calculator inputs are processed in this browser; do not enter sensitive personal information."
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -3969,7 +6580,49 @@
                 "title": "भुगतान अनुसूची",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "सूत्र और गणना के चरण",
+              "formulaDescription": "D = max(0, [G − C(1+i)ⁿ]·i / [(1+i)ⁿ−1]); i = r/1200",
+              "assumptions": [
+                "नीचे दिया गया सूत्र दर्ज किए गए मानों और मान्यताओं पर आधारित अनुमान देता है।"
+              ],
+              "notes": [
+                "दर्ज की गई दर और मानों का उपयोग करें।",
+                "सूत्र में प्रत्येक अवधि की गणना करें।",
+                "परिणाम दर्ज की गई अवधि और मान्यताओं पर निर्भर करता है।",
+                "परिणाम को अनुमान के रूप में देखें, गारंटी के रूप में नहीं।",
+                "परिणाम को अनुमान के रूप में देखें, गारंटी के रूप में नहीं।"
+              ],
+              "disclaimers": [
+                "यह परिणाम केवल जानकारी और योजना बनाने के लिए अनुमान है, वित्तीय सलाह या गारंटी नहीं। वास्तविक दरें, शुल्क, कर और प्रदाता की शर्तें अलग हो सकती हैं।"
+              ],
+              "limitations": [
+                "यह परिणाम केवल जानकारी और योजना बनाने के लिए अनुमान है, वित्तीय सलाह या गारंटी नहीं। वास्तविक दरें, शुल्क, कर और प्रदाता की शर्तें अलग हो सकती हैं।"
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "यह कैलकुलेटर क्या गणना करता है?",
+                "answer": "Estimate the monthly deposit needed to reach a savings target by the selected date."
+              },
+              {
+                "key": "faq-use",
+                "question": "मैं इस कैलकुलेटर का उपयोग कैसे करूँ?",
+                "answer": "माँगे गए मान दर्ज करें, मान्यताओं की समीक्षा करें और परिणाम देखने के लिए इनपुट बदलें।"
+              },
+              {
+                "key": "faq-speed",
+                "question": "क्या परिणाम तुरंत मिलते हैं?",
+                "answer": "हाँ। समर्थित इनपुट बदलने पर गणना ब्राउज़र में अपडेट होती है।"
+              },
+              {
+                "key": "faq-privacy",
+                "question": "क्या मेरी प्रविष्टियाँ सर्वर पर भेजी जाती हैं?",
+                "answer": "नहीं। इनपुट इसी ब्राउज़र में संसाधित होते हैं। संवेदनशील व्यक्तिगत जानकारी दर्ज न करें।"
+              }
+            ]
           }
         },
         "ar": {
@@ -4030,7 +6683,49 @@
                 "title": "جدول السداد",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "الصيغة وخطوات الحساب",
+              "formulaDescription": "D = max(0, [G − C(1+i)ⁿ]·i / [(1+i)ⁿ−1]); i = r/1200",
+              "assumptions": [
+                "تعطي الصيغة أدناه تقديرًا استنادًا إلى القيم والافتراضات التي أدخلتها."
+              ],
+              "notes": [
+                "استخدم المعدل والقيم التي أدخلتها.",
+                "احسب كل فترة باستخدام الصيغة.",
+                "تعتمد النتيجة على المدة والافتراضات المدخلة.",
+                "تعامل مع النتيجة كتقدير لا كضمان.",
+                "تعامل مع النتيجة كتقدير لا كضمان."
+              ],
+              "disclaimers": [
+                "هذه النتيجة تقدير لأغراض المعلومات والتخطيط فقط، وليست نصيحة مالية أو ضمانًا. قد تختلف الأسعار والرسوم والضرائب وشروط المزوّد الفعلية."
+              ],
+              "limitations": [
+                "هذه النتيجة تقدير لأغراض المعلومات والتخطيط فقط، وليست نصيحة مالية أو ضمانًا. قد تختلف الأسعار والرسوم والضرائب وشروط المزوّد الفعلية."
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "ماذا تحسب هذه الآلة؟",
+                "answer": "Estimate the monthly deposit needed to reach a savings target by the selected date."
+              },
+              {
+                "key": "faq-use",
+                "question": "كيف أستخدم هذه الآلة؟",
+                "answer": "أدخل القيم المطلوبة، وراجع الافتراضات، وعدّل المدخلات لتحديث النتيجة."
+              },
+              {
+                "key": "faq-speed",
+                "question": "هل تظهر النتائج فورًا؟",
+                "answer": "نعم. تُحدّث الحسابات داخل المتصفح عند تغيير المدخلات المدعومة."
+              },
+              {
+                "key": "faq-privacy",
+                "question": "هل تُرسل إدخالاتي إلى خادم؟",
+                "answer": "لا. تُعالج المدخلات في هذا المتصفح. لا تُدخل معلومات شخصية حساسة."
+              }
+            ]
           }
         },
         "ur": {
@@ -4091,7 +6786,49 @@
                 "title": "ادائیگی کا شیڈول",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "فارمولا اور حساب کے مراحل",
+              "formulaDescription": "D = max(0, [G − C(1+i)ⁿ]·i / [(1+i)ⁿ−1]); i = r/1200",
+              "assumptions": [
+                "ذیل کا فارمولا آپ کی درج کردہ قدروں اور مفروضوں کی بنیاد پر تخمینہ دیتا ہے۔"
+              ],
+              "notes": [
+                "درج کردہ شرح اور قدریں استعمال کریں۔",
+                "فارمولے کے ذریعے ہر مدت کا حساب کریں۔",
+                "نتیجہ درج کردہ مدت اور مفروضوں پر منحصر ہے۔",
+                "نتیجے کو تخمینہ سمجھیں، ضمانت نہیں۔",
+                "نتیجے کو تخمینہ سمجھیں، ضمانت نہیں۔"
+              ],
+              "disclaimers": [
+                "یہ نتیجہ صرف معلومات اور منصوبہ بندی کے لیے تخمینہ ہے، مالی مشورہ یا ضمانت نہیں۔ اصل شرحیں، فیس، ٹیکس اور فراہم کنندہ کی شرائط مختلف ہو سکتی ہیں۔"
+              ],
+              "limitations": [
+                "یہ نتیجہ صرف معلومات اور منصوبہ بندی کے لیے تخمینہ ہے، مالی مشورہ یا ضمانت نہیں۔ اصل شرحیں، فیس، ٹیکس اور فراہم کنندہ کی شرائط مختلف ہو سکتی ہیں۔"
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "یہ کیلکولیٹر کیا حساب کرتا ہے؟",
+                "answer": "Estimate the monthly deposit needed to reach a savings target by the selected date."
+              },
+              {
+                "key": "faq-use",
+                "question": "میں یہ کیلکولیٹر کیسے استعمال کروں؟",
+                "answer": "مطلوبہ قدریں درج کریں، مفروضوں کا جائزہ لیں اور نتیجہ اپ ڈیٹ کرنے کے لیے ان پٹس تبدیل کریں۔"
+              },
+              {
+                "key": "faq-speed",
+                "question": "کیا نتائج فوراً ملتے ہیں؟",
+                "answer": "جی ہاں۔ معاون ان پٹس تبدیل کرنے پر حساب براؤزر میں اپ ڈیٹ ہوتا ہے۔"
+              },
+              {
+                "key": "faq-privacy",
+                "question": "کیا میری درج کردہ معلومات سرور کو بھیجی جاتی ہیں؟",
+                "answer": "نہیں۔ ان پٹس اسی براؤزر میں پراسیس ہوتے ہیں۔ حساس ذاتی معلومات درج نہ کریں۔"
+              }
+            ]
           }
         },
         "zh-CN": {
@@ -4152,7 +6889,49 @@
                 "title": "还款计划",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "公式与计算步骤",
+              "formulaDescription": "D = max(0, [G − C(1+i)ⁿ]·i / [(1+i)ⁿ−1]); i = r/1200",
+              "assumptions": [
+                "以下公式根据您输入的数值和假设提供估算结果。"
+              ],
+              "notes": [
+                "使用您输入的利率和数值。",
+                "根据公式逐期进行计算。",
+                "结果取决于输入的期限和假设。",
+                "请将结果视为估算，而非保证。",
+                "请将结果视为估算，而非保证。"
+              ],
+              "disclaimers": [
+                "此结果仅供信息参考和规划使用，不构成财务建议或保证。实际利率、费用、税款及服务提供商条款可能有所不同。"
+              ],
+              "limitations": [
+                "此结果仅供信息参考和规划使用，不构成财务建议或保证。实际利率、费用、税款及服务提供商条款可能有所不同。"
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "此计算器计算什么？",
+                "answer": "Estimate the monthly deposit needed to reach a savings target by the selected date."
+              },
+              {
+                "key": "faq-use",
+                "question": "如何使用此计算器？",
+                "answer": "输入所需数值，查看假设条件，并调整输入以更新结果。"
+              },
+              {
+                "key": "faq-speed",
+                "question": "结果会立即显示吗？",
+                "answer": "是。更改受支持的输入后，计算会在浏览器中更新。"
+              },
+              {
+                "key": "faq-privacy",
+                "question": "我的输入会发送到服务器吗？",
+                "answer": "不会。输入内容仅在此浏览器中处理。请勿输入敏感个人信息。"
+              }
+            ]
           }
         },
         "ja": {
@@ -4213,7 +6992,49 @@
                 "title": "返済スケジュール",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "計算式と計算手順",
+              "formulaDescription": "D = max(0, [G − C(1+i)ⁿ]·i / [(1+i)ⁿ−1]); i = r/1200",
+              "assumptions": [
+                "以下の式は、入力された値と前提条件に基づく推定値を示します。"
+              ],
+              "notes": [
+                "入力された利率と値を使用します。",
+                "式に従って各期間を計算します。",
+                "結果は入力された期間と前提条件によって変わります。",
+                "結果は保証ではなく推定値として扱ってください。",
+                "結果は保証ではなく推定値として扱ってください。"
+              ],
+              "disclaimers": [
+                "この結果は情報提供と計画用の推定値であり、金融アドバイスや保証ではありません。実際の金利、手数料、税金、事業者の条件は異なる場合があります。"
+              ],
+              "limitations": [
+                "この結果は情報提供と計画用の推定値であり、金融アドバイスや保証ではありません。実際の金利、手数料、税金、事業者の条件は異なる場合があります。"
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "この計算ツールでは何を計算できますか？",
+                "answer": "Estimate the monthly deposit needed to reach a savings target by the selected date."
+              },
+              {
+                "key": "faq-use",
+                "question": "この計算ツールの使い方は？",
+                "answer": "必要な値を入力し、前提条件を確認して、入力を変更すると結果が更新されます。"
+              },
+              {
+                "key": "faq-speed",
+                "question": "結果はすぐに表示されますか？",
+                "answer": "はい。対応する入力を変更すると、ブラウザー内で計算結果が更新されます。"
+              },
+              {
+                "key": "faq-privacy",
+                "question": "入力内容はサーバーに送信されますか？",
+                "answer": "いいえ。入力内容はこのブラウザー内で処理されます。機密性の高い個人情報は入力しないでください。"
+              }
+            ]
           }
         },
         "ru": {
@@ -4269,12 +7090,54 @@
                 "title": "График платежей",
                 "series": []
               }
-            }
+            },
+            "explanations": {
+              "formulaTitle": "Формула и этапы расчёта",
+              "formulaDescription": "D = max(0, [G − C(1+i)ⁿ]·i / [(1+i)ⁿ−1]); i = r/1200",
+              "assumptions": [
+                "Формула ниже даёт оценку на основе введённых значений и допущений."
+              ],
+              "notes": [
+                "Используйте введённую ставку и значения.",
+                "Рассчитайте каждый период по формуле.",
+                "Результат зависит от заданного срока и допущений.",
+                "Рассматривайте результат как оценку, а не гарантию.",
+                "Рассматривайте результат как оценку, а не гарантию."
+              ],
+              "disclaimers": [
+                "Результат является оценкой только для информации и планирования, а не финансовой рекомендацией или гарантией. Фактические ставки, комиссии, налоги и условия поставщиков могут отличаться."
+              ],
+              "limitations": [
+                "Результат является оценкой только для информации и планирования, а не финансовой рекомендацией или гарантией. Фактические ставки, комиссии, налоги и условия поставщиков могут отличаться."
+              ]
+            },
+            "faqs": [
+              {
+                "key": "faq-purpose",
+                "question": "Что рассчитывает этот калькулятор?",
+                "answer": "Estimate the monthly deposit needed to reach a savings target by the selected date."
+              },
+              {
+                "key": "faq-use",
+                "question": "Как пользоваться этим калькулятором?",
+                "answer": "Введите необходимые значения, проверьте допущения и измените параметры, чтобы обновить результат."
+              },
+              {
+                "key": "faq-speed",
+                "question": "Результаты отображаются сразу?",
+                "answer": "Да. При изменении поддерживаемых параметров расчёт обновляется в браузере."
+              },
+              {
+                "key": "faq-privacy",
+                "question": "Отправляются ли мои данные на сервер?",
+                "answer": "Нет. Введённые данные обрабатываются в этом браузере. Не вводите конфиденциальную личную информацию."
+              }
+            ]
           }
         }
       },
       "sourceExtractionStatus": "source-title-description-inputs-extracted",
-      "sourceTranslationStatus": "description-inputs-and-results-drafted"
+      "sourceTranslationStatus": "descriptions-inputs-results-formulas-and-faqs-drafted"
     },
     {
       "id": "freelance",
