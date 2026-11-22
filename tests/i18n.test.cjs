@@ -31,3 +31,22 @@ test("translation engine returns locale messages and safely falls back to Englis
 test("translation catalogue includes correct RTL locales",()=>{
  assert.ok(["ar","ur"].every(locale=>catalogue.supportedLocales.includes(locale)));
 });
+
+test("homepage exposes the accessible locale selector and loads the local engine",()=>{
+ const fs=require("node:fs"),path=require("node:path");
+ const root=path.join(__dirname,"..");
+ const html=fs.readFileSync(path.join(root,"index.html"),"utf8");
+ const css=fs.readFileSync(path.join(root,"redesign.css"),"utf8");
+ const deploy=fs.readFileSync(path.join(root,".github/workflows/deploy.yml"),"utf8");
+ assert.match(html,/<select id="language-switcher" aria-label="Select language"><\/select>/);
+ assert.match(html,/<script src="translation-engine\.js" defer><\/script>/);
+ assert.match(css,/html\[dir="rtl"\] header/);
+ assert.match(deploy,/cp translations\/\*\.json _site\/translations\//);
+});
+
+test("homepage category headings have stable locale keys without changing tool IDs",()=>{
+ const fs=require("node:fs"),path=require("node:path");
+ const app=fs.readFileSync(path.join(__dirname,"..","app.js"),"utf8");
+ assert.match(app,/categoryKeys=\{"Finance & Money":"category\.finance"/);
+ assert.match(app,/data-i18n="\'+\(categoryKeys\[group\.name\]\|\|" "\)\+'">/);
+});
