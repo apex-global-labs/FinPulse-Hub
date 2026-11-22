@@ -81,3 +81,16 @@ main{max-width:1240px}
 #metrics .metric strong{display:block;width:100%;min-width:0;max-width:100%;white-space:normal;overflow-wrap:anywhere;word-break:break-word;text-align:right}
 /* Guard any remaining strong output nodes against intrinsic-width overflow on narrow screens. */
 #app strong{display:block;min-width:0;max-width:100%;white-space:normal;overflow-wrap:anywhere;word-break:break-word}
+
+/* Global country, locale and currency preferences. */
+.global-context{position:relative;z-index:20;font-size:13px}
+.global-context>summary{list-style:none;cursor:pointer;border:1px solid var(--line);border-radius:9px;padding:9px 12px;background:var(--surface);color:var(--ink);font-weight:700;white-space:nowrap}
+.global-context>summary::-webkit-details-marker{display:none}
+.global-context>summary:focus-visible,.global-context select:focus-visible,.global-context button:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+.global-context[open] .global-context-controls{position:absolute;right:0;top:calc(100% + 8px);width:min(340px,calc(100vw - 28px));padding:16px;display:grid;gap:11px;background:var(--paper);border:1px solid var(--line);border-radius:12px;box-shadow:0 12px 34px rgba(0,0,0,.16)}
+.global-context-controls label{display:grid;gap:5px;color:var(--muted);font-size:12px;font-weight:700}
+.global-context-controls select{width:100%;min-height:40px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);padding:8px;font:inherit}
+.global-context-hint,.global-context-note{margin:0;color:var(--muted);font-size:11px;line-height:1.5}
+.global-context-controls .btn{width:100%;min-height:38px}
+@media(max-width:760px){header{flex-wrap:wrap;gap:10px}.global-context{margin-left:auto}.global-context[open] .global-context-controls{right:0}}
+@media(max-width:420px){.global-context{width:100%}.global-context>summary{text-align:center}.global-context[open] .global-context-controls{left:0;right:0;width:auto}}
