@@ -177,3 +177,28 @@ The dedicated branch adds five Developer wrap-up tools, twelve Education & Study
 - Candidate CI #45002175312: npm run check passed, Node tests 322/322 passed, Frankfurter 1/1 passed; browser suite failed 12/16 due to stale California disclosure expectation and a Salary Take-Home missing-selector bug. Candidate fixes committed; fresh CI required.
 - Lighthouse #45002175310 succeeded; artifact 14746721249 uploaded. Score values not yet extracted.
 - No merge, production deployment, or production claim. See docs/TAX_JURISDICTION_AUDIT_2026-11-22.md for official source links, effective-date scope and details.
+
+## Phase 2D validation follow-up — 2026-11-22 08:28 UTC
+
+- Latest test-contract correction: CI #45002813258 failed 1/324 Node tests (323 passed) because a registry test still expected manual-only for all 50 states. Updated the assertion for eight verified-zero states and remaining manual-only records; commit 5a8c6ed397b00ba633c830c079a0211025ce4fa5.
+- Fresh validation CI #45002913438: syntax, npm test and Frankfurter API passed; browser tests still in progress at this checkpoint.
+- Fresh candidate Lighthouse #45002913442 still in progress; no scores or browser pass claimed.
+- No merge or production deployment.
+
+## CI/Lighthouse release-gate and next state group — 2026-11-22 08:31 UTC
+
+- Validation-only PR #71 candidate SHA a605ed3022f45a1853e85550bef1b8eb87d2beb1 passed CI #45002913438: syntax, 324/324 Node tests, 1/1 Frankfurter API, 16/16 browser tests, 220/220 desktop tool executions, 220/220 mobile tool executions, zero functional failures/runtime errors and all 220 route WCAG 2.1 A/AA checks.
+- Lighthouse #45002913442 succeeded. Mobile homepage 96/92/96/100 (CLS 0); mobile tool 96/100/96/100 (CLS 0.0303); desktop homepage 100/100/96/100 (CLS 0); desktop tool 100/100/96/100 (CLS 0.0087). CLS budget 0.10 passed on all routes. Mobile homepage accessibility 92 is a follow-up improvement opportunity.
+- Artifacts: CI 14745749524; Lighthouse 14745908818.
+- Second-group source triage started for IL, IN, MI, CO. Official evidence confirms some 2026 rates/exemptions, but local county tax, credits, special deductions, retirement/capital-gains rules, AMT, and/or missing 2026 rate confirmation prevent safe full automation. All four remain manual-only.
+- Tax audit totals unchanged: 8/50 verified no-individual-income-tax statuses; 0/50 fully verified positive-rate state schedules.
+- PR #67 remains Draft; PR #71 remains validation-only. No merge or production deployment.
+
+## Group 2 2026 tax contract and test guard — 2026-11-22
+
+- Added `tax-state-contracts-2026-group2.json` and `docs/TAX_STATE_CALCULATION_CONTRACTS_2026_GROUP2.md` for IL, IN, MI and CO. Official-source facts and unresolved 2026 rule areas are separated explicitly.
+- Full 2026 instructions are not complete/available for all four: Illinois IL-1040 instructions are listed as coming soon; Indiana's current individual forms page still lists 2025 booklets; Michigan's full booklet available at audit time is 2025 (2026 rate and withholding exemption separately confirmed); Colorado's January 2026 guide lacks a 2026 rate in its published rate table and DR 0104 page links 2025/2024 forms.
+- All four remain manual-only. No engine/state calculation activation occurred. Added formula tests that assert the manual-only registry and explicit manual input behavior for all four states. Numeric golden vectors are blocked until complete 2026 official return instructions and schedules are available.
+- Separate mobile homepage accessibility follow-up created: `docs/ACCESSIBILITY_FOLLOW_UP_MOBILE_HOMEPAGE_2026-11-22.md`. Baseline Lighthouse mobile homepage Accessibility 92; artifact 14745908818. Audit details and targeted remediation remain pending; no improvement claimed.
+- Tax audit totals unchanged: 8/50 verified no-individual-income-tax statuses; 0/50 fully verified positive-rate schedules.
+- PR #67 remains Draft; PR #71 validation-only. No merge or deployment.
