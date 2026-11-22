@@ -193,3 +193,12 @@ The dedicated branch adds five Developer wrap-up tools, twelve Education & Study
 - Second-group source triage started for IL, IN, MI, CO. Official evidence confirms some 2026 rates/exemptions, but local county tax, credits, special deductions, retirement/capital-gains rules, AMT, and/or missing 2026 rate confirmation prevent safe full automation. All four remain manual-only.
 - Tax audit totals unchanged: 8/50 verified no-individual-income-tax statuses; 0/50 fully verified positive-rate state schedules.
 - PR #67 remains Draft; PR #71 remains validation-only. No merge or production deployment.
+
+## Group 2 2026 tax contract and test guard — 2026-11-22
+
+- Added `tax-state-contracts-2026-group2.json` and `docs/TAX_STATE_CALCULATION_CONTRACTS_2026_GROUP2.md` for IL, IN, MI and CO. Official-source facts and unresolved 2026 rule areas are separated explicitly.
+- Full 2026 instructions are not complete/available for all four: Illinois IL-1040 instructions are listed as coming soon; Indiana's current individual forms page still lists 2025 booklets; Michigan's full booklet available at audit time is 2025 (2026 rate and withholding exemption separately confirmed); Colorado's January 2026 guide lacks a 2026 rate in its published rate table and DR 0104 page links 2025/2024 forms.
+- All four remain manual-only. No engine/state calculation activation occurred. Added formula tests that assert the manual-only registry and explicit manual input behavior for all four states. Numeric golden vectors are blocked until complete 2026 official return instructions and schedules are available.
+- Separate mobile homepage accessibility follow-up created: `docs/ACCESSIBILITY_FOLLOW_UP_MOBILE_HOMEPAGE_2026-11-22.md`. Baseline Lighthouse mobile homepage Accessibility 92; artifact 14745908818. Audit details and targeted remediation remain pending; no improvement claimed.
+- Tax audit totals unchanged: 8/50 verified no-individual-income-tax statuses; 0/50 fully verified positive-rate schedules.
+- PR #67 remains Draft; PR #71 validation-only. No merge or deployment.
