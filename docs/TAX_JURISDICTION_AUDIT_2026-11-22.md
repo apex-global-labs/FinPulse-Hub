@@ -318,3 +318,59 @@ Washington is not enabled for automatic zero. The [Washington Department of Reve
 - CI run #45002175312: syntax, Node tests (322/322) and Frankfurter API (1/1) passed; browser suite failed (12/16). Failure details: stale California wording assertion; Salary Take-Home route null selector caused Bangladesh salary disclosure timeout and 2/440 functional executions to fail. Candidate fixes are now committed and require a fresh CI rerun. Do not treat this run as a browser pass.
 - Lighthouse run #45002175310 completed successfully and uploaded artifact [14746721249](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/45002175310/artifacts/14746721249). Score values have not yet been extracted from the artifact; no score claim is made here.
 - PR #67 remains Draft. No merge or production deployment occurred.
+
+## Latest regression follow-up — 2026-11-22 08:28 UTC
+
+- Follow-up CI #45002813258 reached the Node suite but failed 1/324 tests (323 passed): the state-registry contract test still expected the former manual-only registry mode. The new expected contract is mixed verified-zero plus manual-only; the assertion was corrected in commit 5a8c6ed397b00ba633c830c079a0211025ce4fa5.
+- Validation-only PR #71 now points to head a605ed3022f45a1853e85550bef1b8eb87d2beb1 with that test correction.
+- Fresh CI #45002913438: syntax, npm test and Frankfurter API steps passed; Playwright desktop/mobile browser tests are still in progress. No browser pass claim yet.
+- Fresh Lighthouse #45002913442 is still in progress. The prior Lighthouse run #45002813199 is also pending at this checkpoint; score values have not been extracted.
+- PR #67 remains Draft; PR #71 remains a validation-only Draft. No merge or deployment.
+
+## Candidate CI/Lighthouse completion and second-group source triage — 2026-11-22 08:31 UTC
+
+### Completed validation on validation-only PR #71
+
+- Finance Calculator CI run #45002913438 completed with conclusion success on candidate SHA a605ed3022f45a1853e85550bef1b8eb87d2beb1.
+- Syntax check passed. Node test suite: 324/324 passed. Frankfurter API check: 1/1 passed. Playwright browser suite: 16/16 passed.
+- Functional audit: 220 unique tools executed on desktop and mobile; 440/440 executions passed (220 desktop, 220 mobile), zero failures and zero runtime errors. All 220 routes passed the browser WCAG 2.1 A/AA checks. Artifact: 14745749524 (220-tool-functional-audit).
+- Lighthouse run #45002913442 completed with conclusion success on the same candidate SHA. All four audits and CLS budget enforcement passed. Artifact: 14745908818 (finpulse-batch-11-lighthouse-reports).
+
+| Lighthouse route | Performance | Accessibility | Best Practices | SEO | CLS | LCP (ms) | TBT (ms) |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Mobile homepage | 96 | 92 | 96 | 100 | 0.0000 | 2579.1 | 133 |
+| Mobile tool (hydration-log-tracker) | 96 | 100 | 96 | 100 | 0.0303 | 2725.1 | 21 |
+| Desktop homepage | 100 | 100 | 96 | 100 | 0.0000 | 623.1 | 0 |
+| Desktop tool (hydration-log-tracker) | 100 | 100 | 96 | 100 | 0.0087 | 634.4 | 0 |
+
+- CLS stayed below the enforced 0.10 budget on all routes. Lighthouse CI completed successfully. Mobile homepage Accessibility 92 is a follow-up improvement opportunity, not a failed run; no threshold failure occurred.
+- No merge or production deployment. PR #67 remains Draft; PR #71 remains validation-only and must not be merged.
+
+### Second US state group — official-source triage only (not enabled)
+
+Initial candidate group: Illinois (IL), Indiana (IN), Michigan (MI), Colorado (CO). These states remain manual-only. This is source triage, not a tax-engine verification or authorization to automate.
+
+| State | Official-source evidence located | Material scope / blockers before automation |
+|---|---|---|
+| Illinois (IL) | Illinois DOR 2026 withholding guide states 4.95% effective 2026-01-01: https://tax.illinois.gov/forms/withholding/currentyear/il-700-t-withholding-guide-tables.html . DOR FAQ states 2026 personal exemption $2,925 per eligible exemption: https://tax.illinois.gov/questionsandanswers/answer.851.html . | Need full 2026 IL-1040 instructions, dependent exemption/credit interactions, age/blind additions, AGI phase-out limits ($250k single / $500k joint), and nonresident allocation. Withholding guide is not a complete final-liability schedule. |
+| Indiana (IN) | DOR states 2026 individual AGI rate 2.95%: https://www.in.gov/dor/resources/tax-rates-and-reports/rates-fees-and-penalties/ . DOR county schedule effective Oct. 1, 2026: https://www.in.gov/dor/files/dn01.pdf . | County income tax is material and county rates may change in January/October. Need county selection, 2026 county tax rules, filing/residency/reciprocity handling, dependent exemptions, add-backs/deductions, and new 2026-only qualified overtime, tips and auto-loan-interest deductions. Not suitable for state-only flat-rate automation. |
+| Michigan (MI) | Treasury confirms 2026 individual rate 4.25%: https://www.michigan.gov/treasury/reference/taxpayer-notices/2026/04/15/425-income-tax-rate-for-individuals-and-fiduciaries-in-2026-tax-year . 2026 withholding guide gives personal exemption $5,900: https://www.michigan.gov/taxes/-/media/Project/Websites/taxes/Forms/SUW/TY2026/446_Withholding-Guide_2026.pdf . | Need full 2026 MI-1040 instructions and special exemption / disabled-veteran treatment, city income taxes (including Detroit), 2026 retirement/pension subtractions fully phased in, senior dividend/interest/capital-gain rules, nonresident sourcing and credits. Withholding rate/exemption alone is insufficient. |
+| Colorado (CO) | DOR individual income-tax guide explains modified federal taxable-income base, additions/subtractions and AMT: https://tax.colorado.gov/individual-income-tax-guide . | Official guide's rate table currently ends at tax year 2025 (4.4%); an explicit 2026 rate was not located. 2026 standard/itemized deduction addback limits change to $1,000 single / $2,000 joint for AGI above $300,000, and AMT plus other modifications apply. Do not infer the 2026 rate from 2025. |
+
+### Decision
+
+- No state from the second group is switched to automatic mode in this checkpoint.
+- Keep IL, IN, MI and CO manual-only until tax-year 2026 official filing instructions, full taxable-income base, filing statuses, credits, local taxes, income-source rules and regression vectors are verified.
+- Prior first-group automatic-zero states remain the only verified automatic states: AK, FL, NV, NH, SD, TN, TX and WY.
+- Audit metrics remain 8/50 verified no-individual-income-tax statuses and 0/50 fully verified positive-rate state schedules.
+
+## Group 2 detailed 2026 calculation-contract review — 2026-11-22 08:33 UTC
+
+Structured contract: `tax-state-contracts-2026-group2.json`. Human-readable contract: `docs/TAX_STATE_CALCULATION_CONTRACTS_2026_GROUP2.md`. Regression guard added to `tests/formula.test.cjs`. No state data or tax engine automatic mode was changed.
+
+- **IL:** official 2026 draft page lists IL-1040 instructions as “coming soon”; supporting Schedule IL-E/EITC and Schedule M instructions are draft. Verified 4.95% rate from existing official state materials, $2,925 2026 exemption, $1,000 age/blind additions and AGI phase-out thresholds. Full 2026 line instructions, all schedules and credits are not yet complete/final.
+- **IN:** official DOR 2026 Tax Chapter confirms 2.95% state rate, Jan. 1, 2026 federal conformity subject to modifications, and 2026-only tips/overtime/qualified vehicle-loan-interest deductions. Official county rate schedule effective Oct. 1, 2026 exists. Current-year form page still lists 2025 IT-40/IT-40PNR booklets, so final 2026 forms and full resident/nonresident instructions remain unavailable.
+- **MI:** official Treasury confirms 4.25% 2026 rate and official withholding page lists $5,900 personal exemption. The available full MI-1040 booklet is explicitly tax year 2025; it is not a 2026 return instruction source. City tax, retirement/pension transitions, credits and final exemption details require the 2026 booklet.
+- **CO:** January 2026 official Individual Income Tax Guide describes 2026 federal taxable-income modifications, including overtime addback, tips treatment, high-income deduction addback caps ($1,000 single / $2,000 joint above $300,000 AGI), death-benefit and AmeriCorps subtractions, and AMT. The guide's rate table only lists through 2025 and the DR 0104 forms page currently links 2025/2024 returns; 2026 rate and final return/AMT instructions remain unverified.
+- All four states remain `calculationMode: manual`; `automationReady:false`; numeric golden vectors are blocked pending complete 2026 primary instructions and worksheets. Regression tests now guard both registry mode and engine behavior: no implicit state tax; only explicit manual amount is included.
+- Accessibility is tracked separately in `docs/ACCESSIBILITY_FOLLOW_UP_MOBILE_HOMEPAGE_2026-11-22.md`; mobile homepage Lighthouse Accessibility 92 baseline, artifact 14745908818. No fix or score improvement claimed yet.
