@@ -202,3 +202,10 @@ The dedicated branch adds five Developer wrap-up tools, twelve Education & Study
 - Separate mobile homepage accessibility follow-up created: `docs/ACCESSIBILITY_FOLLOW_UP_MOBILE_HOMEPAGE_2026-11-22.md`. Baseline Lighthouse mobile homepage Accessibility 92; artifact 14745908818. Audit details and targeted remediation remain pending; no improvement claimed.
 - Tax audit totals unchanged: 8/50 verified no-individual-income-tax statuses; 0/50 fully verified positive-rate schedules.
 - PR #67 remains Draft; PR #71 validation-only. No merge or deployment.
+
+## Group 2 test run status — 2026-11-22 08:38 UTC
+
+- A first CI attempt found one test-only floating-point exact-equality issue (325/326 passed). The test now uses tolerance 1e-6 for decimal values; tax engine behavior was unchanged.
+- Current validation CI #45003689081: syntax, npm test and Frankfurter API steps passed; browser tests remain in progress.
+- Current Lighthouse #45003689076: mobile audits passed; desktop audits remain in progress. No final CI/Lighthouse pass claim or new scores yet.
+- IL, IN, MI, CO remain manual-only. No automation activation.
