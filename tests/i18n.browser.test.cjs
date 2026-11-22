@@ -7,7 +7,7 @@ const {join}=require("node:path");
 
 test("language selector changes shared UI, RTL direction and persists without changing currency",async()=>{
  const server=createServer(async(req,res)=>{
-  const path=decodeURIComponent(req.url.split("?")[0]).replace(/^\\//,"")||"index.html";
+  const path=decodeURIComponent(req.url.split("?")[0]).replace(/^\//,"")||"index.html";
   try{
    const data=await readFile(join(process.cwd(),path));
    const type=path.endsWith(".css")?"text/css":path.endsWith(".js")?"text/javascript":path.endsWith(".json")?"application/json":"text/html";
