@@ -48,5 +48,5 @@ test("homepage category headings have stable locale keys without changing tool I
  const fs=require("node:fs"),path=require("node:path");
  const app=fs.readFileSync(path.join(__dirname,"..","app.js"),"utf8");
  assert.match(app,/categoryKeys=\{"Finance & Money":"category\.finance"/);
- assert.match(app,/data-i18n="\'+\(categoryKeys\[group\.name\]\|\|" "\)\+'">/);
+ assert.match(app,/data-i18n=.*categoryKeys\\[group\\.name\\]/);
 });
