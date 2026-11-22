@@ -242,3 +242,28 @@ Official references:
 ### Release decision
 
 PR #67 remains Draft. No merge or production deployment has occurred. Keep all US state estimates provisional until the 50-state primary-source audit and regression coverage are complete.
+
+
+## Final browser and Lighthouse recheck — 2026-11-22 08:07 UTC
+
+### Confirmed successful CI
+- Finance Calculator CI run #45000740126 completed successfully on the Phase 2D candidate tree (the validation branch adds only a branch-scoped CI trigger).
+- `npm run check`: passed. `npm test`: **322/322 passed**, 0 failed. Frankfurter API: **1/1 passed**.
+- Playwright desktop/mobile browser suite: **16/16 passed**, 0 failed.
+- Functional audit: **220/220 tools passed in desktop Chromium and 220/220 in mobile Chromium** (440 representative executions); no runtime errors or functional failures.
+- Browser test batches report WCAG 2.1 A/AA checks passed for all 220 registered tool routes, including Bangladesh tax/payroll routes.
+- [220-tool functional audit artifact](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/45000740126/artifacts/14745073902).
+
+### Confirmed Lighthouse
+- Candidate Lighthouse run #45000740468 completed successfully; CLS <= 0.10 passed on all four routes.
+- Mobile homepage: Performance 97, Accessibility 92, Best Practices 96, SEO 100; CLS 0.000; LCP 2,422 ms; TBT 115 ms.
+- Mobile tool: Performance 96, Accessibility 100, Best Practices 96, SEO 100; CLS 0.0303; LCP 2,733 ms; TBT 24 ms.
+- Desktop homepage: Performance 100, Accessibility 100, Best Practices 96, SEO 100; CLS 0.000; LCP 627 ms; TBT 0 ms.
+- Desktop tool: Performance 100, Accessibility 100, Best Practices 96, SEO 100; CLS 0.0087; LCP 632 ms; TBT 0 ms.
+- Mobile homepage Lighthouse Accessibility remains 92; review its audit opportunities. This is distinct from the passing route-level WCAG browser checks.
+- [Lighthouse reports](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/45000740468/artifacts/14745324368).
+
+### Remaining release gate
+- US official 2026 schedule audit remains **0/50 fully verified**. New York remains partial only; all state estimates stay provisional.
+- Browser/automated accessibility gate is passed; Lighthouse run passed, with mobile homepage score 92 retained as a review item.
+- PR #66 and PR #67 remain Draft. Validation-only PR #70 is closed after evidence capture. No merge or production deployment occurred.
