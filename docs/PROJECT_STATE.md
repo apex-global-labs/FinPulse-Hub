@@ -166,3 +166,14 @@ The dedicated branch adds five Developer wrap-up tools, twelve Education & Study
 - Manual input is not independently validated; the user must obtain the amount from an official state source or verified tax record. Results remain incomplete educational estimates.
 - State-by-state official automation remains possible later, but only after primary-source verification and regression tests. No forced or estimated schedule activation.
 - PR #67 remains Draft. No merge or production deployment. Updated branch requires fresh CI, Playwright and Lighthouse validation.
+
+## Phase 2D — first-group US state evidence checkpoint (candidate only) — 2026-11-22
+
+- Candidate branch: feat/tax-jurisdiction-audit-phase-2d; PR #67 remains Draft.
+- Eight states (AK, FL, NV, NH, SD, TN, TX, WY) now have official-source evidence that no state individual income tax applies for tax year 2026 and use automatic-zero in the Income Tax Calculator.
+- Washington remains manual-only because the calculator does not model its separate capital-gains tax and must preserve the effective date of its new high-income individual income tax (2028-01-01). New York remains partial. Other states remain manual-only.
+- Audit metrics: 8/50 no-individual-income-tax statuses verified; 0/50 positive-rate state schedules fully verified. These metrics are deliberately separate.
+- Salary Take-Home continues to exclude US state/local withholding; automatic-zero state selection applies only to the Income Tax Calculator.
+- Candidate CI #45002175312: npm run check passed, Node tests 322/322 passed, Frankfurter 1/1 passed; browser suite failed 12/16 due to stale California disclosure expectation and a Salary Take-Home missing-selector bug. Candidate fixes committed; fresh CI required.
+- Lighthouse #45002175310 succeeded; artifact 14746721249 uploaded. Score values not yet extracted.
+- No merge, production deployment, or production claim. See docs/TAX_JURISDICTION_AUDIT_2026-11-22.md for official source links, effective-date scope and details.
