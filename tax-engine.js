@@ -5,6 +5,7 @@ function estimate(profileId,gross,deductions=0,stateId="none",stateStatus="singl
 const p=window.FinPulseTaxData.profiles[profileId];if(!p)throw Error("Choose a supported tax jurisdiction and year.");
 for(const [v,n] of [[gross,"Gross income"],[deductions,"Deductions"]])if(!Number.isFinite(v)||v<0)throw Error(n+" must be a valid non-negative amount.");
 if(deductions>gross)throw Error("Deductions cannot exceed gross income.");
+const manualStateTax=options?.manualStateTax??0;if(!Number.isFinite(manualStateTax)||manualStateTax<0)throw Error("Manual state tax must be a valid non-negative amount.");if(manualStateTax>0&&(!profileId.startsWith("US-")||!stateId||stateId==="none"))throw Error("Choose a US state before entering a manual state tax amount.");
 const disabledDependents=options?.disabledDependents??0;
 if(!Number.isInteger(disabledDependents)||disabledDependents<0||disabledDependents>10)throw Error("Eligible disabled dependent count must be a whole number from 0 to 10.");
 let allowance=p.allowance||0;
@@ -31,7 +32,6 @@ let stateTax=0,stateTaxableIncome=null,stateName="",stateNote="",stateTaxMode="n
 if(profileId.startsWith("US-")&&stateId&&stateId!=="none"){
 const st=window.FinPulseStateData.states[stateId];if(!st)throw Error("Choose a supported US state.");
 if(!["single","joint"].includes(stateStatus))throw Error("US state filing status reference must be Single or Married Filing Jointly.");
-const manualStateTax=options?.manualStateTax??0;if(!Number.isFinite(manualStateTax)||manualStateTax<0)throw Error("Manual state tax must be a valid non-negative amount.");
 stateName=st.name;stateTax=manualStateTax;stateTaxMode="manual";stateNote="State tax is a user-entered annual amount. No unverified 2026 state brackets, deductions, credits, local taxes or special rules were applied.";
 if(stateTax>0){tax+=stateTax;breakdown.push({component:st.name+" state income tax (manual input)",tax:stateTax,manual:true});}
 }
