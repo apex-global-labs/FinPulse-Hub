@@ -67,7 +67,28 @@
               "label": "Rate date"
             }
           ],
-          "breakdown": []
+          "breakdown": [
+            {
+              "key": "breakdown-1",
+              "label": "Source amount"
+            },
+            {
+              "key": "breakdown-2",
+              "label": "Reference / manual rate"
+            },
+            {
+              "key": "breakdown-3",
+              "label": "Gross converted amount"
+            },
+            {
+              "key": "breakdown-4",
+              "label": "Provider fee"
+            },
+            {
+              "key": "breakdown-5",
+              "label": "Estimated received amount"
+            }
+          ]
         }
       },
       "locales": {
@@ -120,7 +141,28 @@
                   "label": "تاريخ السعر"
                 }
               ],
-              "breakdown": [],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "मूल राशि"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "संदर्भ / मैन्युअल दर"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "कुल परिवर्तित राशि"
+                },
+                {
+                  "key": "breakdown-4",
+                  "label": "सेवा प्रदाता शुल्क"
+                },
+                {
+                  "key": "breakdown-5",
+                  "label": "अनुमानित प्राप्त राशि"
+                }
+              ],
               "chart": {
                 "title": "भुगतान अनुसूची",
                 "series": []
@@ -177,7 +219,28 @@
                   "label": "شرح کی تاریخ"
                 }
               ],
-              "breakdown": [],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "مبلغ المصدر"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "السعر المرجعي / اليدوي"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "إجمالي المبلغ المحوّل"
+                },
+                {
+                  "key": "breakdown-4",
+                  "label": "رسوم مزوّد الخدمة"
+                },
+                {
+                  "key": "breakdown-5",
+                  "label": "المبلغ المستلم المقدّر"
+                }
+              ],
               "chart": {
                 "title": "جدول السداد",
                 "series": []
@@ -234,7 +297,28 @@
                   "label": "汇率日期"
                 }
               ],
-              "breakdown": [],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "اصل رقم"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "حوالہ / دستی شرح"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "کل تبدیل شدہ رقم"
+                },
+                {
+                  "key": "breakdown-4",
+                  "label": "سروس فراہم کنندہ کی فیس"
+                },
+                {
+                  "key": "breakdown-5",
+                  "label": "تخمینی موصولہ رقم"
+                }
+              ],
               "chart": {
                 "title": "ادائیگی کا شیڈول",
                 "series": []
@@ -291,7 +375,28 @@
                   "label": "レート日付"
                 }
               ],
-              "breakdown": [],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "来源金额"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "参考 / 手动汇率"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "兑换总额"
+                },
+                {
+                  "key": "breakdown-4",
+                  "label": "服务提供商费用"
+                },
+                {
+                  "key": "breakdown-5",
+                  "label": "预计到账金额"
+                }
+              ],
               "chart": {
                 "title": "还款计划",
                 "series": []
@@ -348,7 +453,28 @@
                   "label": "Дата курса"
                 }
               ],
-              "breakdown": [],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "元の金額"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "参照 / 手動レート"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "換算総額"
+                },
+                {
+                  "key": "breakdown-4",
+                  "label": "サービス提供者の手数料"
+                },
+                {
+                  "key": "breakdown-5",
+                  "label": "受取予定額"
+                }
+              ],
               "chart": {
                 "title": "返済スケジュール",
                 "series": []
@@ -401,7 +527,28 @@
                   "key": "metric-4"
                 }
               ],
-              "breakdown": [],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "Исходная сумма"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "Справочный / ручной курс"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "Общая конвертированная сумма"
+                },
+                {
+                  "key": "breakdown-4",
+                  "label": "Комиссия поставщика"
+                },
+                {
+                  "key": "breakdown-5",
+                  "label": "Ориентировочная сумма к получению"
+                }
+              ],
               "chart": {
                 "title": "График платежей",
                 "series": []
@@ -1977,7 +2124,8 @@
                   "key": "metric-3"
                 },
                 {
-                  "key": "metric-4"
+                  "key": "metric-4",
+                  "label": "Расчётный прирост"
                 },
                 {
                   "key": "metric-5"
@@ -2328,7 +2476,32 @@
               "label": "People"
             }
           ],
-          "breakdown": []
+          "breakdown": [
+            {
+              "key": "breakdown-1",
+              "label": "Bill amount"
+            },
+            {
+              "key": "breakdown-2",
+              "label": "Tip rate"
+            },
+            {
+              "key": "breakdown-3",
+              "label": "Tip amount"
+            },
+            {
+              "key": "breakdown-4",
+              "label": "Total bill"
+            },
+            {
+              "key": "breakdown-5",
+              "label": "People"
+            },
+            {
+              "key": "breakdown-6",
+              "label": "Per-person share"
+            }
+          ]
         }
       },
       "locales": {
@@ -2373,7 +2546,32 @@
                   "label": "عدد الأشخاص"
                 }
               ],
-              "breakdown": [],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "बिल राशि"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "टिप दर"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "टिप राशि"
+                },
+                {
+                  "key": "breakdown-4",
+                  "label": "कुल बिल"
+                },
+                {
+                  "key": "breakdown-5",
+                  "label": "लोगों की संख्या"
+                },
+                {
+                  "key": "breakdown-6",
+                  "label": "प्रति व्यक्ति हिस्सा"
+                }
+              ],
               "chart": {
                 "title": "भुगतान अनुसूची",
                 "series": []
@@ -2422,7 +2620,32 @@
                   "label": "افراد کی تعداد"
                 }
               ],
-              "breakdown": [],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "مبلغ الفاتورة"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "نسبة الإكرامية"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "مبلغ الإكرامية"
+                },
+                {
+                  "key": "breakdown-4",
+                  "label": "إجمالي الفاتورة"
+                },
+                {
+                  "key": "breakdown-5",
+                  "label": "عدد الأشخاص"
+                },
+                {
+                  "key": "breakdown-6",
+                  "label": "حصة الفرد"
+                }
+              ],
               "chart": {
                 "title": "جدول السداد",
                 "series": []
@@ -2471,7 +2694,32 @@
                   "label": "人数"
                 }
               ],
-              "breakdown": [],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "بل کی رقم"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "ٹِپ کی شرح"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "ٹِپ کی رقم"
+                },
+                {
+                  "key": "breakdown-4",
+                  "label": "کل بل"
+                },
+                {
+                  "key": "breakdown-5",
+                  "label": "افراد کی تعداد"
+                },
+                {
+                  "key": "breakdown-6",
+                  "label": "فی فرد حصہ"
+                }
+              ],
               "chart": {
                 "title": "ادائیگی کا شیڈول",
                 "series": []
@@ -2520,7 +2768,32 @@
                   "label": "人数"
                 }
               ],
-              "breakdown": [],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "账单金额"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "小费比例"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "小费金额"
+                },
+                {
+                  "key": "breakdown-4",
+                  "label": "账单总额"
+                },
+                {
+                  "key": "breakdown-5",
+                  "label": "人数"
+                },
+                {
+                  "key": "breakdown-6",
+                  "label": "人均分摊金额"
+                }
+              ],
               "chart": {
                 "title": "还款计划",
                 "series": []
@@ -2569,7 +2842,32 @@
                   "label": "Количество человек"
                 }
               ],
-              "breakdown": [],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "請求金額"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "チップ率"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "チップ額"
+                },
+                {
+                  "key": "breakdown-4",
+                  "label": "請求総額"
+                },
+                {
+                  "key": "breakdown-5",
+                  "label": "人数"
+                },
+                {
+                  "key": "breakdown-6",
+                  "label": "一人当たりの負担額"
+                }
+              ],
               "chart": {
                 "title": "返済スケジュール",
                 "series": []
@@ -2614,7 +2912,32 @@
                   "key": "metric-4"
                 }
               ],
-              "breakdown": [],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "Сумма счёта"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "Процент чаевых"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "Сумма чаевых"
+                },
+                {
+                  "key": "breakdown-4",
+                  "label": "Общий счёт"
+                },
+                {
+                  "key": "breakdown-5",
+                  "label": "Количество человек"
+                },
+                {
+                  "key": "breakdown-6",
+                  "label": "Доля на человека"
+                }
+              ],
               "chart": {
                 "title": "График платежей",
                 "series": []
