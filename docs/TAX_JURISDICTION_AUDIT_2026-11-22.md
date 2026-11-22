@@ -280,3 +280,41 @@ PR #67 remains Draft. No merge or production deployment has occurred. Keep all U
 - No State is counted as verified. The remaining 49 States are not being force-filled; official schedule automation may be added later State-by-State when sufficient primary-source evidence and regression coverage exist.
 - Regression coverage now asserts that unverified state brackets are never applied automatically, manual amounts are included only when entered, and invalid manual amounts are rejected.
 - PR #67 remains Draft; no merge or production deployment was performed. CI/browser/Lighthouse must be rerun against the updated branch before any release decision.
+
+## First-group official-source evidence and 2026 tax-year scope — 2026-11-22
+
+### Verified zero individual income tax states (8)
+
+The following state-level primary government sources support a zero state individual income-tax result for tax year 2026. The engine now uses an explicit calculationMode: automatic-zero for these eight states only. No positive-rate bracket schedule is implied or verified by this finding.
+
+| State | Official primary source | Scope / effective-date finding |
+|---|---|---|
+| Alaska (AK) | [Alaska Office of the State Assessor — Alaska Tax Facts](https://www.commerce.alaska.gov/web/dcra/officeofthestateassessor/alaskataxfacts) | State government says there is no personal state income tax; source revised 2026-11-04. |
+| Florida (FL) | [Florida Department of Revenue FAQ](https://floridarevenue.com/faq/Pages/FAQDetails.aspx?FAQID=1466) | DOR says Florida does not impose personal income tax and there are no individual personal-income-tax filing requirements. Business taxes remain separate. |
+| Nevada (NV) | [Nevada Department of Taxation — Income Tax in Nevada](https://tax.nv.gov/about-nevada-department-of-taxation/income-tax-in-nevada/) | DOR explicitly says no individual income tax on salaries, wages or similar compensation; no state return is required on earned income. Business taxes remain separate. |
+| New Hampshire (NH) | [NH Department of Revenue Administration — Interest & Dividends Tax transparency](https://www.revenue.nh.gov/transparency/transparency-all-tax-types/transparency-interest-dividends-tax) | DRA confirms the former Interest & Dividends Tax was repealed effective 2025-01-01; therefore it does not apply to tax year 2026. |
+| South Dakota (SD) | [South Dakota Department of Revenue — Taxes](https://dor.sd.gov/individuals/taxes) | DOR says South Dakota does not impose a state income tax. |
+| Tennessee (TN) | [Tennessee Department of Revenue — Hall Income Tax due date and rates](https://www.tn.gov/revenue/taxes/hall-income-tax/due-date-and-tax-rates.html) | DOR confirms Hall Income Tax repeal beginning 2021-01-01; no Hall tax applies in 2026. |
+| Texas (TX) | [Texas Comptroller — Texas Constitution, Article VIII §24-a](https://comptroller.texas.gov/taxes/property-tax/docs/96-298-25.pdf) | Official constitution text prohibits a tax on individuals' net income. This is the individual-income-tax scope, not a claim that businesses owe no taxes. |
+| Wyoming (WY) | [Wyoming State Auditor — 2025 Annual Comprehensive Financial Report](https://sao.wyo.gov/wp-content/uploads/2026/01/2025-ACFR-12.22.25.pdf) | State ACFR states Wyoming does not impose income, earnings or other taxes based on wages or other income; reviewed for 2026 use. |
+
+### Explicit exclusion — Washington (WA)
+
+Washington is not enabled for automatic zero. The [Washington Department of Revenue income-tax page](https://dor.wa.gov/taxes-rates/income-tax) says no individual income tax currently applies, but the state separately administers a capital-gains tax and states a new 9.9% individual income tax will take effect on 2028-01-01 for individuals / joint filers above $1 million AGI. Since the calculator does not classify income sources or calculate the capital-gains tax, WA remains manual-only rather than implying a complete zero state-tax result. The 2028 tax is not applied to tax year 2026.
+
+### Tax-year scope and engine behavior
+
+- Effective scope: tax year 2026 state-level individual income tax only. Federal income tax and unrelated state, local, business, payroll, sales, property, excise, insurance or other taxes are not zeroed by this rule.
+- Eight states above are marked automatic-zero; a user-entered manual state income-tax amount is rejected for these states to prevent contradictory input.
+- Washington, New York (partial schedule verification), and the other 40 states remain manual / manual-only until their applicable income categories, filing-status scope, deductions, credits, local taxes and effective dates are supported by primary-source evidence and tests.
+- The count remains 0/50 fully verified positive-rate state schedules. Separately, 8/50 state no-individual-income-tax statuses have been verified. These are distinct audit metrics and must not be conflated.
+- The Salary Take-Home Calculator continues to disclose that US state payroll withholding is not configured; the zero-tax state feature applies only when a state is explicitly selected in the Income Tax Calculator.
+
+### Regression and browser validation
+
+- Added formula tests for all eight automatic-zero states, Washington manual-only status, and rejection of manual state-tax overrides for automatic-zero states.
+- Fixed a browser-test regression where Salary Take-Home invoked state selectors that are intentionally absent on its page; salary now explicitly calls the tax engine with no state estimate, consistent with its payroll limitation disclosure.
+- Updated the Income Tax Calculator note to distinguish official automatic-zero states from manual-only states.
+- CI run #45002175312: syntax, Node tests (322/322) and Frankfurter API (1/1) passed; browser suite failed (12/16). Failure details: stale California wording assertion; Salary Take-Home route null selector caused Bangladesh salary disclosure timeout and 2/440 functional executions to fail. Candidate fixes are now committed and require a fresh CI rerun. Do not treat this run as a browser pass.
+- Lighthouse run #45002175310 completed successfully and uploaded artifact [14746721249](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/45002175310/artifacts/14746721249). Score values have not yet been extracted from the artifact; no score claim is made here.
+- PR #67 remains Draft. No merge or production deployment occurred.
