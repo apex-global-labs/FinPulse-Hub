@@ -71,3 +71,18 @@ test("first ten descriptions and all input labels are drafted in all six target 
   }
  }
 });
+test("first ten results and metrics are translated with stable source metric keys",()=>{
+ const ids=["currency","mortgage","loan","emi","compound","percentage","tip","car","amortization","savings"];
+ for(const id of ids){
+  const tool=content.tools.find(item=>item.id===id);
+  assert.ok(tool.source.results && tool.source.results.metrics.length>0,id+" source result metrics");
+  for(const locale of locales){
+   const result=tool.locales[locale].fields.results;
+   assert.ok(result.heading && result.summary,id+":"+locale+" result heading/summary");
+   assert.deepEqual(result.metrics.map(item=>item.key),tool.source.results.metrics.map(item=>item.key),id+":"+locale+" metric keys");
+   assert.deepEqual(result.breakdown.map(item=>item.key),tool.source.results.breakdown.map(item=>item.key),id+":"+locale+" breakdown keys");
+   assert.ok(result.metrics.every(item=>item.label && item.label.trim()),id+":"+locale+" metric labels");
+   assert.ok(result.breakdown.every(item=>item.label && item.label.trim()),id+":"+locale+" breakdown labels");
+  }
+ }
+});
