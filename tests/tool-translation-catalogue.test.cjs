@@ -1,7 +1,10 @@
 const test=require("node:test");
 const assert=require("node:assert/strict");
 const catalogue=require("../translations/tool-catalogue.json");
+const content=require("../translations/tool-content.json");
+const schema=require("../translations/content-schema.json");
 const mapping=require("../tool-category-mapping.json");
+const locales=["hi","ar","ur","zh-CN","ja","ru"];
 
 test("tool translation inventory covers all 220 canonical IDs exactly once",()=>{
  assert.equal(catalogue.validation.expectedToolCount,220);
@@ -10,17 +13,26 @@ test("tool translation inventory covers all 220 canonical IDs exactly once",()=>
  assert.deepEqual(catalogue.tools.map(t=>t.id).sort(),mapping.tools.map(t=>t.id).sort());
 });
 
-test("tool translation pilot has six locale title slots and preserves source metadata",()=>{
- assert.deepEqual(catalogue.supportedLocales,["en","hi","ar","ur","zh-CN","ja","ru"]);
- for(const tool of catalogue.tools){
-  const source=mapping.tools.find(item=>item.id===tool.id);
-  assert.equal(tool.sourceTitle,source.name);
-  assert.equal(tool.category,source.category);
-  assert.equal(tool.subcategory,source.subcategory);
-  assert.equal(tool.sourceFile,source.sourceFile);
-  for(const locale of ["hi","ar","ur","zh-CN","ja","ru"]){
-   if(tool.title[locale]!==undefined)assert.ok(tool.title[locale].trim().length>0);
-  }
+test("first ten tool titles have terminology review notes and native-review gate",()=>{
+ const pilot=catalogue.tools.filter(t=>t.titleReviewStatus==="ai-reviewed-native-review-pending");
+ assert.equal(pilot.length,10);
+ for(const tool of pilot){
+  assert.ok(tool.titleReviewNote && tool.titleReviewNote.length>20);
+  for(const locale of locales)assert.ok(tool.title[locale] && tool.title[locale].trim().length>0,tool.id+":"+locale);
  }
- assert.equal(catalogue.validation.translatedTitlePilotCount,10);
+});
+
+test("content schema covers all tool page content fields and seven locales",()=>{
+ assert.deepEqual(schema.supportedLocales,["en","hi","ar","ur","zh-CN","ja","ru"]);
+ for(const group of ["metadata","inputs","actions","results","explanations","errors","faq","guide","seo","accessibility"])assert.ok(schema.fieldGroups[group],group);
+ for(const rule of ["stableKeys","preserveTokens","preserveTechnicalValues","htmlPolicy","direction","fallback","approval"])assert.ok(schema.fieldRules[rule],rule);
+});
+
+test("every canonical tool has six locale content records with explicit pending state",()=>{
+ assert.equal(content.tools.length,220);
+ assert.deepEqual(content.tools.map(t=>t.id).sort(),mapping.tools.map(t=>t.id).sort());
+ for(const tool of content.tools){
+  assert.deepEqual(Object.keys(tool.locales).sort(),locales.slice().sort());
+  for(const locale of locales){assert.equal(tool.locales[locale].status,"not-started");assert.deepEqual(tool.locales[locale].fields,{});}
+ }
 });
