@@ -45,7 +45,30 @@
             "key": "to",
             "label": "To currency"
           }
-        ]
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "ESTIMATED RECEIVED AMOUNT",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Converted before fee"
+            },
+            {
+              "key": "metric-2",
+              "label": "Estimated fee"
+            },
+            {
+              "key": "metric-3",
+              "label": "Rate used"
+            },
+            {
+              "key": "metric-4",
+              "label": "Rate date"
+            }
+          ],
+          "breakdown": []
+        }
       },
       "locales": {
         "hi": {
@@ -75,7 +98,34 @@
                 "key": "to",
                 "label": "लक्ष्य मुद्रा"
               }
-            ]
+            ],
+            "results": {
+              "heading": "परिणाम",
+              "summary": "Estimated received amount",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "المبلغ المحوّل قبل الرسوم"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "الرسوم المقدّرة"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "سعر الصرف المستخدم"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "تاريخ السعر"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "भुगतान अनुसूची",
+                "series": []
+              }
+            }
           }
         },
         "ar": {
@@ -105,7 +155,34 @@
                 "key": "to",
                 "label": "إلى العملة"
               }
-            ]
+            ],
+            "results": {
+              "heading": "النتيجة",
+              "summary": "المبلغ المستلم المقدّر",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "فیس سے پہلے تبدیل شدہ رقم"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "تخمینی فیس"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "استعمال شدہ شرحِ تبادلہ"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "شرح کی تاریخ"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "جدول السداد",
+                "series": []
+              }
+            }
           }
         },
         "ur": {
@@ -135,7 +212,34 @@
                 "key": "to",
                 "label": "اس کرنسی میں"
               }
-            ]
+            ],
+            "results": {
+              "heading": "نتیجہ",
+              "summary": "تخمینی موصولہ رقم",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "扣费前兑换金额"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "预计费用"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "使用的汇率"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "汇率日期"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "ادائیگی کا شیڈول",
+                "series": []
+              }
+            }
           }
         },
         "zh-CN": {
@@ -165,7 +269,34 @@
                 "key": "to",
                 "label": "目标货币"
               }
-            ]
+            ],
+            "results": {
+              "heading": "结果",
+              "summary": "预计到账金额",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "手数料差引前の換算額"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "推定手数料"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "適用為替レート"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "レート日付"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "还款计划",
+                "series": []
+              }
+            }
           }
         },
         "ja": {
@@ -195,7 +326,34 @@
                 "key": "to",
                 "label": "換算先の通貨"
               }
-            ]
+            ],
+            "results": {
+              "heading": "結果",
+              "summary": "受取予定額",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "Сумма до комиссии"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "Расчётная комиссия"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "Использованный курс"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "Дата курса"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "返済スケジュール",
+                "series": []
+              }
+            }
           }
         },
         "ru": {
@@ -225,12 +383,35 @@
                 "key": "to",
                 "label": "В валюту"
               }
-            ]
+            ],
+            "results": {
+              "heading": "Результат",
+              "summary": "Ориентировочная сумма к получению",
+              "metrics": [
+                {
+                  "key": "metric-1"
+                },
+                {
+                  "key": "metric-2"
+                },
+                {
+                  "key": "metric-3"
+                },
+                {
+                  "key": "metric-4"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "График платежей",
+                "series": []
+              }
+            }
           }
         }
       },
       "sourceExtractionStatus": "source-title-description-inputs-extracted",
-      "sourceTranslationStatus": "description-and-input-labels-drafted"
+      "sourceTranslationStatus": "description-inputs-and-results-drafted"
     },
     {
       "id": "mortgage",
@@ -261,7 +442,34 @@
             "key": "extra",
             "label": "Extra monthly payment"
           }
-        ]
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "ESTIMATED MONTHLY PAYMENT",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Base monthly payment"
+            },
+            {
+              "key": "metric-2",
+              "label": "Total interest"
+            },
+            {
+              "key": "metric-3",
+              "label": "Total paid"
+            },
+            {
+              "key": "metric-4",
+              "label": "Estimated payoff period"
+            },
+            {
+              "key": "metric-5",
+              "label": "Principal repaid"
+            }
+          ],
+          "breakdown": []
+        }
       },
       "locales": {
         "hi": {
@@ -291,7 +499,38 @@
                 "key": "extra",
                 "label": "अतिरिक्त मासिक भुगतान"
               }
-            ]
+            ],
+            "results": {
+              "heading": "परिणाम",
+              "summary": "Estimated monthly payment",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "القسط الشهري الأساسي"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "إجمالي الفائدة"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "إجمالي المدفوعات"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "مدة السداد المقدّرة"
+                },
+                {
+                  "key": "metric-5",
+                  "label": "أصل القرض المسدّد"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "भुगतान अनुसूची",
+                "series": []
+              }
+            }
           }
         },
         "ar": {
@@ -321,7 +560,38 @@
                 "key": "extra",
                 "label": "دفعة شهرية إضافية"
               }
-            ]
+            ],
+            "results": {
+              "heading": "النتيجة",
+              "summary": "القسط الشهري المقدّر",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "بنیادی ماہانہ ادائیگی"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "کل سود"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "کل ادائیگی"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "تخمینی ادائیگی کی مدت"
+                },
+                {
+                  "key": "metric-5",
+                  "label": "ادا شدہ اصل زر"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "جدول السداد",
+                "series": []
+              }
+            }
           }
         },
         "ur": {
@@ -351,7 +621,38 @@
                 "key": "extra",
                 "label": "اضافی ماہانہ ادائیگی"
               }
-            ]
+            ],
+            "results": {
+              "heading": "نتیجہ",
+              "summary": "تخمینی ماہانہ ادائیگی",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "基础月供"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "总利息"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "总还款额"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "预计还清期限"
+                },
+                {
+                  "key": "metric-5",
+                  "label": "已偿还本金"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "ادائیگی کا شیڈول",
+                "series": []
+              }
+            }
           }
         },
         "zh-CN": {
@@ -381,7 +682,38 @@
                 "key": "extra",
                 "label": "每月额外还款"
               }
-            ]
+            ],
+            "results": {
+              "heading": "结果",
+              "summary": "预计月供",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "基本月額返済"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "利息合計"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "返済総額"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "推定完済期間"
+                },
+                {
+                  "key": "metric-5",
+                  "label": "返済済み元金"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "还款计划",
+                "series": []
+              }
+            }
           }
         },
         "ja": {
@@ -411,7 +743,38 @@
                 "key": "extra",
                 "label": "毎月の追加返済額"
               }
-            ]
+            ],
+            "results": {
+              "heading": "結果",
+              "summary": "推定月額返済",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "Базовый ежемесячный платёж"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "Общая сумма процентов"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "Общая сумма выплат"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "Расчётный срок погашения"
+                },
+                {
+                  "key": "metric-5",
+                  "label": "Погашенная основная сумма"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "返済スケジュール",
+                "series": []
+              }
+            }
           }
         },
         "ru": {
@@ -441,12 +804,38 @@
                 "key": "extra",
                 "label": "Дополнительный ежемесячный платёж"
               }
-            ]
+            ],
+            "results": {
+              "heading": "Результат",
+              "summary": "Расчётный ежемесячный платёж",
+              "metrics": [
+                {
+                  "key": "metric-1"
+                },
+                {
+                  "key": "metric-2"
+                },
+                {
+                  "key": "metric-3"
+                },
+                {
+                  "key": "metric-4"
+                },
+                {
+                  "key": "metric-5"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "График платежей",
+                "series": []
+              }
+            }
           }
         }
       },
       "sourceExtractionStatus": "source-title-description-inputs-extracted",
-      "sourceTranslationStatus": "description-and-input-labels-drafted"
+      "sourceTranslationStatus": "description-inputs-and-results-drafted"
     },
     {
       "id": "loan",
@@ -473,7 +862,30 @@
             "key": "extra",
             "label": "Extra monthly payment"
           }
-        ]
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "ESTIMATED MONTHLY PAYMENT",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Base monthly payment"
+            },
+            {
+              "key": "metric-2",
+              "label": "Total interest"
+            },
+            {
+              "key": "metric-3",
+              "label": "Total paid"
+            },
+            {
+              "key": "metric-4",
+              "label": "Estimated payoff period"
+            }
+          ],
+          "breakdown": []
+        }
       },
       "locales": {
         "hi": {
@@ -499,7 +911,34 @@
                 "key": "extra",
                 "label": "अतिरिक्त मासिक भुगतान"
               }
-            ]
+            ],
+            "results": {
+              "heading": "परिणाम",
+              "summary": "Estimated monthly payment",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "القسط الشهري الأساسي"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "إجمالي الفائدة"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "إجمالي المدفوعات"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "مدة السداد المقدّرة"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "भुगतान अनुसूची",
+                "series": []
+              }
+            }
           }
         },
         "ar": {
@@ -525,7 +964,34 @@
                 "key": "extra",
                 "label": "دفعة شهرية إضافية"
               }
-            ]
+            ],
+            "results": {
+              "heading": "النتيجة",
+              "summary": "القسط الشهري المقدّر",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "بنیادی ماہانہ ادائیگی"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "کل سود"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "کل ادائیگی"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "تخمینی ادائیگی کی مدت"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "جدول السداد",
+                "series": []
+              }
+            }
           }
         },
         "ur": {
@@ -551,7 +1017,34 @@
                 "key": "extra",
                 "label": "اضافی ماہانہ ادائیگی"
               }
-            ]
+            ],
+            "results": {
+              "heading": "نتیجہ",
+              "summary": "تخمینی ماہانہ ادائیگی",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "基础月供"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "总利息"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "总还款额"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "预计还清期限"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "ادائیگی کا شیڈول",
+                "series": []
+              }
+            }
           }
         },
         "zh-CN": {
@@ -577,7 +1070,34 @@
                 "key": "extra",
                 "label": "每月额外还款"
               }
-            ]
+            ],
+            "results": {
+              "heading": "结果",
+              "summary": "预计月供",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "基本月額返済"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "利息合計"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "返済総額"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "推定完済期間"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "还款计划",
+                "series": []
+              }
+            }
           }
         },
         "ja": {
@@ -603,7 +1123,34 @@
                 "key": "extra",
                 "label": "毎月の追加返済額"
               }
-            ]
+            ],
+            "results": {
+              "heading": "結果",
+              "summary": "推定月額返済",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "Базовый ежемесячный платёж"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "Общая сумма процентов"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "Общая сумма выплат"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "Расчётный срок погашения"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "返済スケジュール",
+                "series": []
+              }
+            }
           }
         },
         "ru": {
@@ -629,12 +1176,35 @@
                 "key": "extra",
                 "label": "Дополнительный ежемесячный платёж"
               }
-            ]
+            ],
+            "results": {
+              "heading": "Результат",
+              "summary": "Расчётный ежемесячный платёж",
+              "metrics": [
+                {
+                  "key": "metric-1"
+                },
+                {
+                  "key": "metric-2"
+                },
+                {
+                  "key": "metric-3"
+                },
+                {
+                  "key": "metric-4"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "График платежей",
+                "series": []
+              }
+            }
           }
         }
       },
       "sourceExtractionStatus": "source-title-description-inputs-extracted",
-      "sourceTranslationStatus": "description-and-input-labels-drafted"
+      "sourceTranslationStatus": "description-inputs-and-results-drafted"
     },
     {
       "id": "emi",
@@ -657,7 +1227,30 @@
             "key": "years",
             "label": "Loan tenure (years)"
           }
-        ]
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "MONTHLY EMI",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Base monthly payment"
+            },
+            {
+              "key": "metric-2",
+              "label": "Total interest"
+            },
+            {
+              "key": "metric-3",
+              "label": "Total paid"
+            },
+            {
+              "key": "metric-4",
+              "label": "Estimated payoff period"
+            }
+          ],
+          "breakdown": []
+        }
       },
       "locales": {
         "hi": {
@@ -679,7 +1272,34 @@
                 "key": "years",
                 "label": "ऋण अवधि (वर्ष)"
               }
-            ]
+            ],
+            "results": {
+              "heading": "परिणाम",
+              "summary": "Monthly EMI",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "القسط الشهري الأساسي"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "إجمالي الفائدة"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "إجمالي المدفوعات"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "مدة السداد المقدّرة"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "भुगतान अनुसूची",
+                "series": []
+              }
+            }
           }
         },
         "ar": {
@@ -701,7 +1321,34 @@
                 "key": "years",
                 "label": "مدة القرض (بالسنوات)"
               }
-            ]
+            ],
+            "results": {
+              "heading": "النتيجة",
+              "summary": "القسط الشهري المتساوي",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "بنیادی ماہانہ ادائیگی"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "کل سود"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "کل ادائیگی"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "تخمینی ادائیگی کی مدت"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "جدول السداد",
+                "series": []
+              }
+            }
           }
         },
         "ur": {
@@ -723,7 +1370,34 @@
                 "key": "years",
                 "label": "قرض کی مدت (سال)"
               }
-            ]
+            ],
+            "results": {
+              "heading": "نتیجہ",
+              "summary": "مساوی ماہانہ قسط",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "基础月供"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "总利息"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "总还款额"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "预计还清期限"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "ادائیگی کا شیڈول",
+                "series": []
+              }
+            }
           }
         },
         "zh-CN": {
@@ -745,7 +1419,34 @@
                 "key": "years",
                 "label": "贷款期限（年）"
               }
-            ]
+            ],
+            "results": {
+              "heading": "结果",
+              "summary": "每月等额分期",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "基本月額返済"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "利息合計"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "返済総額"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "推定完済期間"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "还款计划",
+                "series": []
+              }
+            }
           }
         },
         "ja": {
@@ -767,7 +1468,34 @@
                 "key": "years",
                 "label": "返済期間（年）"
               }
-            ]
+            ],
+            "results": {
+              "heading": "結果",
+              "summary": "毎月の均等返済額",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "Базовый ежемесячный платёж"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "Общая сумма процентов"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "Общая сумма выплат"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "Расчётный срок погашения"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "返済スケジュール",
+                "series": []
+              }
+            }
           }
         },
         "ru": {
@@ -789,12 +1517,35 @@
                 "key": "years",
                 "label": "Срок кредита (лет)"
               }
-            ]
+            ],
+            "results": {
+              "heading": "Результат",
+              "summary": "Равный ежемесячный платёж",
+              "metrics": [
+                {
+                  "key": "metric-1"
+                },
+                {
+                  "key": "metric-2"
+                },
+                {
+                  "key": "metric-3"
+                },
+                {
+                  "key": "metric-4"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "График платежей",
+                "series": []
+              }
+            }
           }
         }
       },
       "sourceExtractionStatus": "source-title-description-inputs-extracted",
-      "sourceTranslationStatus": "description-and-input-labels-drafted"
+      "sourceTranslationStatus": "description-inputs-and-results-drafted"
     },
     {
       "id": "compound",
@@ -825,7 +1576,38 @@
             "key": "years",
             "label": "Time period (years)"
           }
-        ]
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "ILLUSTRATIVE FUTURE VALUE",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Starting amount"
+            },
+            {
+              "key": "metric-2",
+              "label": "Total deposits"
+            },
+            {
+              "key": "metric-3",
+              "label": "Total contributions"
+            },
+            {
+              "key": "metric-4",
+              "label": "Estimated growth"
+            },
+            {
+              "key": "metric-5",
+              "label": "Comparison future value"
+            },
+            {
+              "key": "metric-6",
+              "label": "Rate scenario difference"
+            }
+          ],
+          "breakdown": []
+        }
       },
       "locales": {
         "hi": {
@@ -855,7 +1637,42 @@
                 "key": "years",
                 "label": "समय अवधि (वर्ष)"
               }
-            ]
+            ],
+            "results": {
+              "heading": "परिणाम",
+              "summary": "Illustrative future value",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "المبلغ الابتدائي"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "إجمالي الإيداعات"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "إجمالي المساهمات"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "النمو المقدّر"
+                },
+                {
+                  "key": "metric-5",
+                  "label": "القيمة المستقبلية للمقارنة"
+                },
+                {
+                  "key": "metric-6",
+                  "label": "الفرق بين سيناريوهات المعدل"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "भुगतान अनुसूची",
+                "series": []
+              }
+            }
           }
         },
         "ar": {
@@ -885,7 +1702,42 @@
                 "key": "years",
                 "label": "الفترة الزمنية (بالسنوات)"
               }
-            ]
+            ],
+            "results": {
+              "heading": "النتيجة",
+              "summary": "القيمة المستقبلية التوضيحية",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "ابتدائی رقم"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "کل جمع"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "کل جمع شدہ رقوم"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "تخمینی اضافہ"
+                },
+                {
+                  "key": "metric-5",
+                  "label": "موازنے کی مستقبل کی قدر"
+                },
+                {
+                  "key": "metric-6",
+                  "label": "شرح کے منظرناموں کا فرق"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "جدول السداد",
+                "series": []
+              }
+            }
           }
         },
         "ur": {
@@ -915,7 +1767,42 @@
                 "key": "years",
                 "label": "مدت (سال)"
               }
-            ]
+            ],
+            "results": {
+              "heading": "نتیجہ",
+              "summary": "مثالی مستقبل کی قدر",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "初始金额"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "存款总额"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "累计投入金额"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "预计增长"
+                },
+                {
+                  "key": "metric-5",
+                  "label": "对比未来价值"
+                },
+                {
+                  "key": "metric-6",
+                  "label": "利率情景差额"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "ادائیگی کا شیڈول",
+                "series": []
+              }
+            }
           }
         },
         "zh-CN": {
@@ -945,7 +1832,42 @@
                 "key": "years",
                 "label": "期限（年）"
               }
-            ]
+            ],
+            "results": {
+              "heading": "结果",
+              "summary": "示例未来价值",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "初期金額"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "積立合計"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "拠出総額"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "推定増加額"
+                },
+                {
+                  "key": "metric-5",
+                  "label": "比較用将来価値"
+                },
+                {
+                  "key": "metric-6",
+                  "label": "金利シナリオの差"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "还款计划",
+                "series": []
+              }
+            }
           }
         },
         "ja": {
@@ -975,7 +1897,42 @@
                 "key": "years",
                 "label": "運用期間（年）"
               }
-            ]
+            ],
+            "results": {
+              "heading": "結果",
+              "summary": "試算将来価値",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "Начальная сумма"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "Всего взносов"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "Общая сумма взносов"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "Расчётный прируд"
+                },
+                {
+                  "key": "metric-5",
+                  "label": "Будущая стоимость для сравнения"
+                },
+                {
+                  "key": "metric-6",
+                  "label": "Разница сценариев ставок"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "返済スケジュール",
+                "series": []
+              }
+            }
           }
         },
         "ru": {
@@ -1005,12 +1962,41 @@
                 "key": "years",
                 "label": "Период (лет)"
               }
-            ]
+            ],
+            "results": {
+              "heading": "Результат",
+              "summary": "Иллюстративная будущая стоимость",
+              "metrics": [
+                {
+                  "key": "metric-1"
+                },
+                {
+                  "key": "metric-2"
+                },
+                {
+                  "key": "metric-3"
+                },
+                {
+                  "key": "metric-4"
+                },
+                {
+                  "key": "metric-5"
+                },
+                {
+                  "key": "metric-6"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "График платежей",
+                "series": []
+              }
+            }
           }
         }
       },
       "sourceExtractionStatus": "source-title-description-inputs-extracted",
-      "sourceTranslationStatus": "description-and-input-labels-drafted"
+      "sourceTranslationStatus": "description-inputs-and-results-drafted"
     },
     {
       "id": "percentage",
@@ -1033,7 +2019,22 @@
             "key": "b",
             "label": "Second value / percentage"
           }
-        ]
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "RESULT",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "First value"
+            },
+            {
+              "key": "metric-2",
+              "label": "Second value"
+            }
+          ],
+          "breakdown": []
+        }
       },
       "locales": {
         "hi": {
@@ -1055,7 +2056,26 @@
                 "key": "b",
                 "label": "दूसरा मान / प्रतिशत"
               }
-            ]
+            ],
+            "results": {
+              "heading": "परिणाम",
+              "summary": "Result",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "القيمة الأولى"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "القيمة الثانية"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "भुगतान अनुसूची",
+                "series": []
+              }
+            }
           }
         },
         "ar": {
@@ -1077,7 +2097,26 @@
                 "key": "b",
                 "label": "القيمة الثانية / النسبة المئوية"
               }
-            ]
+            ],
+            "results": {
+              "heading": "النتيجة",
+              "summary": "النتيجة",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "پہلی قدر"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "دوسری قدر"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "جدول السداد",
+                "series": []
+              }
+            }
           }
         },
         "ur": {
@@ -1099,7 +2138,26 @@
                 "key": "b",
                 "label": "دوسری قدر / فیصد"
               }
-            ]
+            ],
+            "results": {
+              "heading": "نتیجہ",
+              "summary": "نتیجہ",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "第一个数值"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "第二个数值"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "ادائیگی کا شیڈول",
+                "series": []
+              }
+            }
           }
         },
         "zh-CN": {
@@ -1121,7 +2179,26 @@
                 "key": "b",
                 "label": "第二个数值 / 百分比"
               }
-            ]
+            ],
+            "results": {
+              "heading": "结果",
+              "summary": "结果",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "1つ目の値"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "2つ目の値"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "还款计划",
+                "series": []
+              }
+            }
           }
         },
         "ja": {
@@ -1143,7 +2220,26 @@
                 "key": "b",
                 "label": "2つ目の値 / パーセント"
               }
-            ]
+            ],
+            "results": {
+              "heading": "結果",
+              "summary": "結果",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "Первое значение"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "Второе значение"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "返済スケジュール",
+                "series": []
+              }
+            }
           }
         },
         "ru": {
@@ -1165,12 +2261,29 @@
                 "key": "b",
                 "label": "Второе значение / процент"
               }
-            ]
+            ],
+            "results": {
+              "heading": "Результат",
+              "summary": "Результат",
+              "metrics": [
+                {
+                  "key": "metric-1"
+                },
+                {
+                  "key": "metric-2"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "График платежей",
+                "series": []
+              }
+            }
           }
         }
       },
       "sourceExtractionStatus": "source-title-description-inputs-extracted",
-      "sourceTranslationStatus": "description-and-input-labels-drafted"
+      "sourceTranslationStatus": "description-inputs-and-results-drafted"
     },
     {
       "id": "tip",
@@ -1193,7 +2306,30 @@
             "key": "people",
             "label": "Number of people"
           }
-        ]
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "TOTAL PER PERSON",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Tip amount"
+            },
+            {
+              "key": "metric-2",
+              "label": "Total bill"
+            },
+            {
+              "key": "metric-3",
+              "label": "Each person's share"
+            },
+            {
+              "key": "metric-4",
+              "label": "People"
+            }
+          ],
+          "breakdown": []
+        }
       },
       "locales": {
         "hi": {
@@ -1215,7 +2351,34 @@
                 "key": "people",
                 "label": "लोगों की संख्या"
               }
-            ]
+            ],
+            "results": {
+              "heading": "परिणाम",
+              "summary": "Total per person",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "مبلغ الإكرامية"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "إجمالي الفاتورة"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "حصة كل شخص"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "عدد الأشخاص"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "भुगतान अनुसूची",
+                "series": []
+              }
+            }
           }
         },
         "ar": {
@@ -1237,7 +2400,34 @@
                 "key": "people",
                 "label": "عدد الأشخاص"
               }
-            ]
+            ],
+            "results": {
+              "heading": "النتيجة",
+              "summary": "الإجمالي لكل شخص",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "ٹِپ کی رقم"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "کل بل"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "ہر فرد کا حصہ"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "افراد کی تعداد"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "جدول السداد",
+                "series": []
+              }
+            }
           }
         },
         "ur": {
@@ -1259,7 +2449,34 @@
                 "key": "people",
                 "label": "افراد کی تعداد"
               }
-            ]
+            ],
+            "results": {
+              "heading": "نتیجہ",
+              "summary": "فی فرد کل رقم",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "小费金额"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "账单总额"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "每人分摊金额"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "人数"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "ادائیگی کا شیڈول",
+                "series": []
+              }
+            }
           }
         },
         "zh-CN": {
@@ -1281,7 +2498,34 @@
                 "key": "people",
                 "label": "人数"
               }
-            ]
+            ],
+            "results": {
+              "heading": "结果",
+              "summary": "人均总额",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "チップ額"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "請求総額"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "一人当たりの負担額"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "人数"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "还款计划",
+                "series": []
+              }
+            }
           }
         },
         "ja": {
@@ -1303,7 +2547,34 @@
                 "key": "people",
                 "label": "人数"
               }
-            ]
+            ],
+            "results": {
+              "heading": "結果",
+              "summary": "一人当たりの合計",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "Сумма чаевых"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "Общий счёт"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "Доля каждого человека"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "Количество человек"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "返済スケジュール",
+                "series": []
+              }
+            }
           }
         },
         "ru": {
@@ -1325,12 +2596,35 @@
                 "key": "people",
                 "label": "Количество человек"
               }
-            ]
+            ],
+            "results": {
+              "heading": "Результат",
+              "summary": "Итого на человека",
+              "metrics": [
+                {
+                  "key": "metric-1"
+                },
+                {
+                  "key": "metric-2"
+                },
+                {
+                  "key": "metric-3"
+                },
+                {
+                  "key": "metric-4"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "График платежей",
+                "series": []
+              }
+            }
           }
         }
       },
       "sourceExtractionStatus": "source-title-description-inputs-extracted",
-      "sourceTranslationStatus": "description-and-input-labels-drafted"
+      "sourceTranslationStatus": "description-inputs-and-results-drafted"
     },
     {
       "id": "car",
@@ -1369,7 +2663,34 @@
             "key": "extra",
             "label": "Extra monthly payment"
           }
-        ]
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "ESTIMATED MONTHLY PAYMENT",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Base monthly payment"
+            },
+            {
+              "key": "metric-2",
+              "label": "Total interest"
+            },
+            {
+              "key": "metric-3",
+              "label": "Total paid"
+            },
+            {
+              "key": "metric-4",
+              "label": "Estimated payoff period"
+            },
+            {
+              "key": "metric-5",
+              "label": "Principal repaid"
+            }
+          ],
+          "breakdown": []
+        }
       },
       "locales": {
         "hi": {
@@ -1407,7 +2728,38 @@
                 "key": "extra",
                 "label": "अतिरिक्त मासिक भुगतान"
               }
-            ]
+            ],
+            "results": {
+              "heading": "परिणाम",
+              "summary": "Estimated monthly payment",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "القسط الشهري الأساسي"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "إجمالي الفائدة"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "إجمالي المدفوعات"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "مدة السداد المقدّرة"
+                },
+                {
+                  "key": "metric-5",
+                  "label": "أصل القرض المسدّد"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "भुगतान अनुसूची",
+                "series": []
+              }
+            }
           }
         },
         "ar": {
@@ -1445,7 +2797,38 @@
                 "key": "extra",
                 "label": "دفعة شهرية إضافية"
               }
-            ]
+            ],
+            "results": {
+              "heading": "النتيجة",
+              "summary": "القسط الشهري المقدّر",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "بنیادی ماہانہ ادائیگی"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "کل سود"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "کل ادائیگی"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "تخمینی ادائیگی کی مدت"
+                },
+                {
+                  "key": "metric-5",
+                  "label": "ادا شدہ اصل زر"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "جدول السداد",
+                "series": []
+              }
+            }
           }
         },
         "ur": {
@@ -1483,7 +2866,38 @@
                 "key": "extra",
                 "label": "اضافی ماہانہ ادائیگی"
               }
-            ]
+            ],
+            "results": {
+              "heading": "نتیجہ",
+              "summary": "تخمینی ماہانہ ادائیگی",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "基础月供"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "总利息"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "总还款额"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "预计还清期限"
+                },
+                {
+                  "key": "metric-5",
+                  "label": "已偿还本金"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "ادائیگی کا شیڈول",
+                "series": []
+              }
+            }
           }
         },
         "zh-CN": {
@@ -1521,7 +2935,38 @@
                 "key": "extra",
                 "label": "每月额外还款"
               }
-            ]
+            ],
+            "results": {
+              "heading": "结果",
+              "summary": "预计月供",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "基本月額返済"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "利息合計"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "返済総額"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "推定完済期間"
+                },
+                {
+                  "key": "metric-5",
+                  "label": "返済済み元金"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "还款计划",
+                "series": []
+              }
+            }
           }
         },
         "ja": {
@@ -1559,7 +3004,38 @@
                 "key": "extra",
                 "label": "毎月の追加返済額"
               }
-            ]
+            ],
+            "results": {
+              "heading": "結果",
+              "summary": "推定月額返済",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "Базовый ежемесячный платёж"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "Общая сумма процентов"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "Общая сумма выплат"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "Расчётный срок погашения"
+                },
+                {
+                  "key": "metric-5",
+                  "label": "Погашенная основная сумма"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "返済スケジュール",
+                "series": []
+              }
+            }
           }
         },
         "ru": {
@@ -1597,12 +3073,38 @@
                 "key": "extra",
                 "label": "Дополнительный ежемесячный платёж"
               }
-            ]
+            ],
+            "results": {
+              "heading": "Результат",
+              "summary": "Расчётный ежемесячный платёж",
+              "metrics": [
+                {
+                  "key": "metric-1"
+                },
+                {
+                  "key": "metric-2"
+                },
+                {
+                  "key": "metric-3"
+                },
+                {
+                  "key": "metric-4"
+                },
+                {
+                  "key": "metric-5"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "График платежей",
+                "series": []
+              }
+            }
           }
         }
       },
       "sourceExtractionStatus": "source-title-description-inputs-extracted",
-      "sourceTranslationStatus": "description-and-input-labels-drafted"
+      "sourceTranslationStatus": "description-inputs-and-results-drafted"
     },
     {
       "id": "amortization",
@@ -1629,7 +3131,38 @@
             "key": "extra",
             "label": "Extra monthly payment"
           }
-        ]
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "MONTHLY PAYMENT WITH EXTRA",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Base monthly payment"
+            },
+            {
+              "key": "metric-2",
+              "label": "Extra monthly payment"
+            },
+            {
+              "key": "metric-3",
+              "label": "Principal repaid"
+            },
+            {
+              "key": "metric-4",
+              "label": "Total interest"
+            },
+            {
+              "key": "metric-5",
+              "label": "Total paid"
+            },
+            {
+              "key": "metric-6",
+              "label": "Estimated payoff period"
+            }
+          ],
+          "breakdown": []
+        }
       },
       "locales": {
         "hi": {
@@ -1655,7 +3188,42 @@
                 "key": "extra",
                 "label": "अतिरिक्त मासिक भुगतान"
               }
-            ]
+            ],
+            "results": {
+              "heading": "परिणाम",
+              "summary": "Monthly payment with extra",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "القسط الشهري الأساسي"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "الدفعة الشهرية الإضافية"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "أصل القرض المسدّد"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "إجمالي الفائدة"
+                },
+                {
+                  "key": "metric-5",
+                  "label": "إجمالي المدفوعات"
+                },
+                {
+                  "key": "metric-6",
+                  "label": "مدة السداد المقدّرة"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "भुगतान अनुसूची",
+                "series": []
+              }
+            }
           }
         },
         "ar": {
@@ -1681,7 +3249,42 @@
                 "key": "extra",
                 "label": "دفعة شهرية إضافية"
               }
-            ]
+            ],
+            "results": {
+              "heading": "النتيجة",
+              "summary": "القسط الشهري مع الدفعة الإضافية",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "بنیادی ماہانہ ادائیگی"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "اضافی ماہانہ ادائیگی"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "ادا شدہ اصل زر"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "کل سود"
+                },
+                {
+                  "key": "metric-5",
+                  "label": "کل ادائیگی"
+                },
+                {
+                  "key": "metric-6",
+                  "label": "تخمینی ادائیگی کی مدت"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "جدول السداد",
+                "series": []
+              }
+            }
           }
         },
         "ur": {
@@ -1707,7 +3310,42 @@
                 "key": "extra",
                 "label": "اضافی ماہانہ ادائیگی"
               }
-            ]
+            ],
+            "results": {
+              "heading": "نتیجہ",
+              "summary": "اضافی ادائیگی سمیت ماہانہ قسط",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "基础月供"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "每月额外还款"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "已偿还本金"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "总利息"
+                },
+                {
+                  "key": "metric-5",
+                  "label": "总还款额"
+                },
+                {
+                  "key": "metric-6",
+                  "label": "预计还清期限"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "ادائیگی کا شیڈول",
+                "series": []
+              }
+            }
           }
         },
         "zh-CN": {
@@ -1733,7 +3371,42 @@
                 "key": "extra",
                 "label": "每月额外还款"
               }
-            ]
+            ],
+            "results": {
+              "heading": "结果",
+              "summary": "含额外还款的月供",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "基本月額返済"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "毎月の追加返済"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "返済済み元金"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "利息合計"
+                },
+                {
+                  "key": "metric-5",
+                  "label": "返済総額"
+                },
+                {
+                  "key": "metric-6",
+                  "label": "推定完済期間"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "还款计划",
+                "series": []
+              }
+            }
           }
         },
         "ja": {
@@ -1759,7 +3432,42 @@
                 "key": "extra",
                 "label": "毎月の追加返済額"
               }
-            ]
+            ],
+            "results": {
+              "heading": "結果",
+              "summary": "追加返済を含む月額返済",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "Базовый ежемесячный платёж"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "Дополнительный ежемесячный платёж"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "Погашенная основная сумма"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "Общая сумма процентов"
+                },
+                {
+                  "key": "metric-5",
+                  "label": "Общая сумма выплат"
+                },
+                {
+                  "key": "metric-6",
+                  "label": "Расчётный срок погашения"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "返済スケジュール",
+                "series": []
+              }
+            }
           }
         },
         "ru": {
@@ -1785,12 +3493,41 @@
                 "key": "extra",
                 "label": "Дополнительный ежемесячный платёж"
               }
-            ]
+            ],
+            "results": {
+              "heading": "Результат",
+              "summary": "Ежемесячный платёж с доплатой",
+              "metrics": [
+                {
+                  "key": "metric-1"
+                },
+                {
+                  "key": "metric-2"
+                },
+                {
+                  "key": "metric-3"
+                },
+                {
+                  "key": "metric-4"
+                },
+                {
+                  "key": "metric-5"
+                },
+                {
+                  "key": "metric-6"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "График платежей",
+                "series": []
+              }
+            }
           }
         }
       },
       "sourceExtractionStatus": "source-title-description-inputs-extracted",
-      "sourceTranslationStatus": "description-and-input-labels-drafted"
+      "sourceTranslationStatus": "description-inputs-and-results-drafted"
     },
     {
       "id": "savings",
@@ -1821,7 +3558,34 @@
             "key": "years",
             "label": "Time available (years)"
           }
-        ]
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "ESTIMATED MONTHLY SAVING",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Target"
+            },
+            {
+              "key": "metric-2",
+              "label": "Current savings"
+            },
+            {
+              "key": "metric-3",
+              "label": "Time available"
+            },
+            {
+              "key": "metric-4",
+              "label": "Required monthly deposit"
+            },
+            {
+              "key": "metric-5",
+              "label": "Alternative-rate deposit"
+            }
+          ],
+          "breakdown": []
+        }
       },
       "locales": {
         "hi": {
@@ -1851,7 +3615,38 @@
                 "key": "years",
                 "label": "लक्ष्य तक पहुँचने की अवधि"
               }
-            ]
+            ],
+            "results": {
+              "heading": "परिणाम",
+              "summary": "Estimated monthly saving",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "الهدف"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "المدخرات الحالية"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "الوقت المتاح"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "الإيداع الشهري المطلوب"
+                },
+                {
+                  "key": "metric-5",
+                  "label": "الإيداع بالمعدل البديل"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "भुगतान अनुसूची",
+                "series": []
+              }
+            }
           }
         },
         "ar": {
@@ -1881,7 +3676,38 @@
                 "key": "years",
                 "label": "المدة للوصول إلى الهدف"
               }
-            ]
+            ],
+            "results": {
+              "heading": "النتيجة",
+              "summary": "الادخار الشهري المقدّر",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "ہدف"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "موجودہ بچت"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "دستیاب وقت"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "درکار ماہانہ جمع"
+                },
+                {
+                  "key": "metric-5",
+                  "label": "متبادل شرح پر جمع"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "جدول السداد",
+                "series": []
+              }
+            }
           }
         },
         "ur": {
@@ -1911,7 +3737,38 @@
                 "key": "years",
                 "label": "ہدف تک پہنچنے کی مدت"
               }
-            ]
+            ],
+            "results": {
+              "heading": "نتیجہ",
+              "summary": "تخمینی ماہانہ بچت",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "目标"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "当前储蓄"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "可用时间"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "所需每月存款"
+                },
+                {
+                  "key": "metric-5",
+                  "label": "替代利率下的存款额"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "ادائیگی کا شیڈول",
+                "series": []
+              }
+            }
           }
         },
         "zh-CN": {
@@ -1941,7 +3798,38 @@
                 "key": "years",
                 "label": "达到目标所需时间"
               }
-            ]
+            ],
+            "results": {
+              "heading": "结果",
+              "summary": "预计每月储蓄额",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "目標"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "現在の貯蓄額"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "利用可能期間"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "必要な毎月の積立額"
+                },
+                {
+                  "key": "metric-5",
+                  "label": "代替金利での積立額"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "还款计划",
+                "series": []
+              }
+            }
           }
         },
         "ja": {
@@ -1971,7 +3859,38 @@
                 "key": "years",
                 "label": "目標達成までの期間"
               }
-            ]
+            ],
+            "results": {
+              "heading": "結果",
+              "summary": "推定毎月積立額",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "Цель"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "Текущие накопления"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "Доступный срок"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "Необходимый ежемесячный взнос"
+                },
+                {
+                  "key": "metric-5",
+                  "label": "Взнос при альтернативной ставке"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "返済スケジュール",
+                "series": []
+              }
+            }
           }
         },
         "ru": {
@@ -2001,12 +3920,38 @@
                 "key": "years",
                 "label": "Срок достижения цели"
               }
-            ]
+            ],
+            "results": {
+              "heading": "Результат",
+              "summary": "Расчётное ежемесячное накопление",
+              "metrics": [
+                {
+                  "key": "metric-1"
+                },
+                {
+                  "key": "metric-2"
+                },
+                {
+                  "key": "metric-3"
+                },
+                {
+                  "key": "metric-4"
+                },
+                {
+                  "key": "metric-5"
+                }
+              ],
+              "breakdown": [],
+              "chart": {
+                "title": "График платежей",
+                "series": []
+              }
+            }
           }
         }
       },
       "sourceExtractionStatus": "source-title-description-inputs-extracted",
-      "sourceTranslationStatus": "description-and-input-labels-drafted"
+      "sourceTranslationStatus": "description-inputs-and-results-drafted"
     },
     {
       "id": "freelance",
