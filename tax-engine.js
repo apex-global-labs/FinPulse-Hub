@@ -32,7 +32,7 @@ let stateTax=0,stateTaxableIncome=null,stateName="",stateNote="",stateTaxMode="n
 if(profileId.startsWith("US-")&&stateId&&stateId!=="none"){
 const st=window.FinPulseStateData.states[stateId];if(!st)throw Error("Choose a supported US state.");
 if(!["single","joint"].includes(stateStatus))throw Error("US state estimate currently supports Single or Married Filing Jointly only.");
-stateName=st.name;if(st.calculationMode==="automatic-zero"){stateTax=0;stateTaxMode="automatic-zero";stateNote="Official-source review confirms this state does not impose an individual income tax for tax year 2026. This is a state-level individual income-tax result only; other taxes and federal tax may still apply.";}else{stateTax=manualStateTax;stateTaxMode="manual";stateNote="State tax is a user-entered annual amount. No unverified 2026 state brackets, deductions, credits, local taxes or special rules were applied."; }
+stateName=st.name;if(st.calculationMode==="automatic-zero"){if(manualStateTax>0)throw Error("The selected state is verified as having no individual income tax for 2026; a manual state income-tax amount cannot be added.");stateTax=0;stateTaxMode="automatic-zero";stateNote="Official-source review confirms this state does not impose an individual income tax for tax year 2026. This is a state-level individual income-tax result only; other taxes and federal tax may still apply.";}else{stateTax=manualStateTax;stateTaxMode="manual";stateNote="State tax is a user-entered annual amount. No unverified 2026 state brackets, deductions, credits, local taxes or special rules were applied."; }
 if(stateTax>0){tax+=stateTax;breakdown.push({component:st.name+" state income tax (manual input)",tax:stateTax,manual:true});}
 }
 const beforeMinimum=tax;
