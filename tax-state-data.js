@@ -11,6 +11,10 @@ states.AR.highIncomeSchedule={threshold:94700,bands:[{upTo:4700,rate:2},{upTo:In
 states.AR.single.highIncomeSchedule=states.AR.highIncomeSchedule;states.AR.joint.highIncomeSchedule=states.AR.highIncomeSchedule;
 states.SC.specialNote="2026 Act 110 uses 1.99% up to $30,000 and 5.21% above, less $966; the $15,000/$30,000 income-adjusted deduction may phase down and is modeled as a standard starting amount only.";
 states.WV.source="https://tax.wv.gov/Individuals/Pages/PersonalIncomeTaxReductionBill.aspx";
+states.NY.source="https://www.tax.ny.gov/pdf/2026/inc/it2105i_2026.pdf";
+states.NY.sourceStatus="partially verified: 2026 NYS single and married-joint rate schedules and standard deductions checked against official NY tax publications; credits, NYC/Yonkers local taxes and other filing statuses remain unverified";
+states.NY.sourceDocuments={rateSchedules:"https://www.tax.ny.gov/pdf/2026/inc/it2105i_2026.pdf",standardDeduction:"https://www.tax.ny.gov/forms/html-instructions/2026/it/it2104i-2026.htm",earnedIncomeCredit:"https://www.tax.ny.gov/pit/credits/eitc-parameters.htm"};
+states.NY.verification={checkedOn:"2026-11-22",verifiedComponents:["New York State single and married-filing-jointly progressive rate thresholds and rates","2026 standard deduction: $8,000 single and $16,050 married filing jointly"],notVerified:["Head-of-household and other unsupported filing-status schedules in the engine","New York City and Yonkers local income taxes","Complete state credit and deduction catalogue","Surtaxes and special income cases"],status:"partial"};
 states.AR.source="https://www.arkleg.state.ar.us/Home/FTPDocument?path=%2FAssembly%2F2025%2F2026S1%2FFiscal+Impacts%2FSB1-DFA1.pdf";
 states.SC.source="https://dor.sc.gov/news/information-about-h-4216";
 const payroll={
@@ -19,5 +23,5 @@ UK:{primaryThreshold:12570,upperEarningsLimit:50270,mainRate:8,upperRate:2},
 CA:{cppBasicExemption:3500,cppMaximumPensionable:74600,cppRate:5.95,cpp2Maximum:85000,cpp2Rate:4,eiMaximumInsurable:68900,eiRate:1.63},
 QC:{qppBasicExemption:3500,qppMaximumPensionable:74600,qppRate:6.3,qpp2Maximum:85000,qpp2Rate:4,eiMaximumInsurable:68900,eiRate:1.3,qpipMaximumInsurable:103000,qpipRate:0.43}
 };
-window.FinPulseStateData={states,payroll,officialAuthorities,sourceAudit:{status:"incomplete",verifiedSchedules:0,totalStates:50,checkedOn:"2026-11-22",note:"Official agency portals are linked per state; the actual 2026 bracket, deduction, credit and local-tax schedules have not yet been independently verified for all 50 states. Do not label the data authoritative."}};
+window.FinPulseStateData={states,payroll,officialAuthorities,sourceAudit:{status:"incomplete",verifiedSchedules:0,partiallyVerifiedStates:["NY"],totalStates:50,checkedOn:"2026-11-22",note:"New York single and married-joint rate schedules and standard deductions have partial official-source verification only. No state is fully verified across brackets, deductions, credits, local taxes and supported filing statuses. All state estimates remain provisional."}};
 })();
