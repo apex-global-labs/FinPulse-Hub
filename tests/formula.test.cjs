@@ -64,6 +64,7 @@ test("2026 US federal single brackets apply the standard deduction and marginal 
 test("2026 US federal married filing jointly uses its own bracket schedule",()=>{const x=Tax.estimate("US-2026-joint",150000,0);near(x.taxableIncome,117800);near(x.tax,15340);});
 test("2026 UK England tax includes personal allowance and progressive bands",()=>{const x=Tax.estimate("UK-2026-eng",60000,0);near(x.taxableIncome,47430);near(x.tax,11432);});
 test("2026 UK personal allowance tapers above GBP 100000",()=>{const x=Tax.estimate("UK-2026-eng",110000,0);near(x.personalAllowance,7570);near(x.tax,33432);});
+test("eligible deductions reduce adjusted net income before UK personal allowance taper",()=>{const x=Tax.estimate("UK-2026-eng",110000,20000);near(x.personalAllowance,12570);near(x.taxableIncome,77530);});
 test("2026 Scotland uses separate Scottish marginal bands",()=>{const x=Tax.estimate("UK-2026-sct",60000,0);near(x.taxableIncome,47430);near(x.tax,13182.05,0.02);});
 test("Bangladesh AY 2026-27 applies general tax-free threshold and minimum tax",()=>{const x=Tax.estimate("BD-2026-general",1000000,0);near(x.taxableIncome,625000);near(x.tax,78750);});
 test("Bangladesh special taxpayer profiles use their distinct tax-free allowances",()=>{const a=Tax.estimate("BD-2026-general",500000,0),b=Tax.estimate("BD-2026-women-senior",500000,0);assert.ok(b.tax<a.tax);});
