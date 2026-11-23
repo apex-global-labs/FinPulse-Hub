@@ -12385,7 +12385,7 @@
               "pageLabel": "फ्रीलांस प्रति घंटा दर कैलकुलेटर",
               "formLabel": "कैलकुलेटर फ़ॉर्म",
               "resultAnnouncement": "गणना का परिणाम",
-              "chartLabel": null,
+              "chartLabel": "फ्रीलांस आय और कर अनुमान चार्ट",
               "controlLabels": [
                 {
                   "key": "income",
@@ -12660,7 +12660,7 @@
               "pageLabel": "حاسبة أجر الساعة للعمل الحر",
               "formLabel": "نموذج الحاسبة",
               "resultAnnouncement": "نتيجة الحساب",
-              "chartLabel": null,
+              "chartLabel": "مخطط تقدير دخل العمل الحر والضرائب",
               "controlLabels": [
                 {
                   "key": "income",
@@ -12935,7 +12935,7 @@
               "pageLabel": "فری لانس فی گھنٹہ ریٹ کیلکولیٹر",
               "formLabel": "کیلکولیٹر فارم",
               "resultAnnouncement": "حساب کا نتیجہ",
-              "chartLabel": null,
+              "chartLabel": "فری لانس آمدنی اور ٹیکس کے تخمینے کا چارٹ",
               "controlLabels": [
                 {
                   "key": "income",
@@ -13210,7 +13210,7 @@
               "pageLabel": "自由职业时薪计算器",
               "formLabel": "计算器表单",
               "resultAnnouncement": "计算结果",
-              "chartLabel": null,
+              "chartLabel": "自由职业收入与税款估算图",
               "controlLabels": [
                 {
                   "key": "income",
@@ -13485,7 +13485,7 @@
               "pageLabel": "フリーランス時給計算機",
               "formLabel": "計算フォーム",
               "resultAnnouncement": "計算結果",
-              "chartLabel": null,
+              "chartLabel": "フリーランス収入・税額見積もりチャート",
               "controlLabels": [
                 {
                   "key": "income",
@@ -13760,7 +13760,7 @@
               "pageLabel": "Калькулятор почасовой ставки фрилансера",
               "formLabel": "Форма калькулятора",
               "resultAnnouncement": "Результат расчёта",
-              "chartLabel": null,
+              "chartLabel": "График оценки дохода фрилансера и налогов",
               "controlLabels": [
                 {
                   "key": "income",
@@ -14209,7 +14209,7 @@
               "pageLabel": "लाभ मार्जिन कैलकुलेटर",
               "formLabel": "कैलकुलेटर फ़ॉर्म",
               "resultAnnouncement": "गणना का परिणाम",
-              "chartLabel": null,
+              "chartLabel": "लाभ मार्जिन विश्लेषण चार्ट",
               "controlLabels": [
                 {
                   "key": "revenue",
@@ -14456,7 +14456,7 @@
               "pageLabel": "حاسبة هامش الربح",
               "formLabel": "نموذج الحاسبة",
               "resultAnnouncement": "نتيجة الحساب",
-              "chartLabel": null,
+              "chartLabel": "مخطط تحليل هامش الربح",
               "controlLabels": [
                 {
                   "key": "revenue",
@@ -14703,7 +14703,7 @@
               "pageLabel": "منافع کے مارجن کا کیلکولیٹر",
               "formLabel": "کیلکولیٹر فارم",
               "resultAnnouncement": "حساب کا نتیجہ",
-              "chartLabel": null,
+              "chartLabel": "منافع کے مارجن کے تجزیے کا چارٹ",
               "controlLabels": [
                 {
                   "key": "revenue",
@@ -14950,7 +14950,7 @@
               "pageLabel": "利润率计算器",
               "formLabel": "计算器表单",
               "resultAnnouncement": "计算结果",
-              "chartLabel": null,
+              "chartLabel": "利润率分析图",
               "controlLabels": [
                 {
                   "key": "revenue",
@@ -15197,7 +15197,7 @@
               "pageLabel": "利益率計算機",
               "formLabel": "計算フォーム",
               "resultAnnouncement": "計算結果",
-              "chartLabel": null,
+              "chartLabel": "利益率分析チャート",
               "controlLabels": [
                 {
                   "key": "revenue",
@@ -15444,7 +15444,7 @@
               "pageLabel": "Калькулятор рентабельности",
               "formLabel": "Форма калькулятора",
               "resultAnnouncement": "Результат расчёта",
-              "chartLabel": null,
+              "chartLabel": "График анализа рентабельности",
               "controlLabels": [
                 {
                   "key": "revenue",
@@ -15966,7 +15966,7 @@
               "pageLabel": "बंधक वहनीयता कैलकुलेटर",
               "formLabel": "कैलकुलेटर फ़ॉर्म",
               "resultAnnouncement": "गणना का परिणाम",
-              "chartLabel": null,
+              "chartLabel": "घर खरीदने की वहनीयता चार्ट",
               "controlLabels": [
                 {
                   "key": "income",
@@ -16292,7 +16292,7 @@
               "pageLabel": "حاسبة القدرة على تحمّل الرهن العقاري",
               "formLabel": "نموذج الحاسبة",
               "resultAnnouncement": "نتيجة الحساب",
-              "chartLabel": null,
+              "chartLabel": "مخطط القدرة على تحمل تكلفة شراء المنزل",
               "controlLabels": [
                 {
                   "key": "income",
@@ -16618,7 +16618,7 @@
               "pageLabel": "رہن کی استطاعت کا کیلکولیٹر",
               "formLabel": "کیلکولیٹر فارم",
               "resultAnnouncement": "حساب کا نتیجہ",
-              "chartLabel": null,
+              "chartLabel": "گھر خریدنے کی استطاعت کا چارٹ",
               "controlLabels": [
                 {
                   "key": "income",
@@ -16944,7 +16944,7 @@
               "pageLabel": "房贷承受能力计算器",
               "formLabel": "计算器表单",
               "resultAnnouncement": "计算结果",
-              "chartLabel": null,
+              "chartLabel": "住房购买承受能力图",
               "controlLabels": [
                 {
                   "key": "income",
@@ -17270,7 +17270,7 @@
               "pageLabel": "住宅ローン借入可能額計算機",
               "formLabel": "計算フォーム",
               "resultAnnouncement": "計算結果",
-              "chartLabel": null,
+              "chartLabel": "住宅購入可能額チャート",
               "controlLabels": [
                 {
                   "key": "income",
@@ -17596,7 +17596,7 @@
               "pageLabel": "Калькулятор доступности ипотеки",
               "formLabel": "Форма калькулятора",
               "resultAnnouncement": "Результат расчёта",
-              "chartLabel": null,
+              "chartLabel": "График доступности покупки жилья",
               "controlLabels": [
                 {
                   "key": "income",
@@ -18045,7 +18045,7 @@
               "pageLabel": "बंधक शीघ्र भुगतान कैलकुलेटर",
               "formLabel": "कैलकुलेटर फ़ॉर्म",
               "resultAnnouncement": "गणना का परिणाम",
-              "chartLabel": null,
+              "chartLabel": "बंधक ऋण भुगतान प्रक्षेपण चार्ट",
               "controlLabels": [
                 {
                   "key": "balance",
@@ -18292,7 +18292,7 @@
               "pageLabel": "حاسبة سداد الرهن العقاري والدفعات الإضافية",
               "formLabel": "نموذج الحاسبة",
               "resultAnnouncement": "نتيجة الحساب",
-              "chartLabel": null,
+              "chartLabel": "مخطط توقع سداد الرهن العقاري",
               "controlLabels": [
                 {
                   "key": "balance",
@@ -18539,7 +18539,7 @@
               "pageLabel": "رہن کی ادائیگی اور اضافی قسط کا کیلکولیٹر",
               "formLabel": "کیلکولیٹر فارم",
               "resultAnnouncement": "حساب کا نتیجہ",
-              "chartLabel": null,
+              "chartLabel": "رہن قرض کی ادائیگی کے تخمینے کا چارٹ",
               "controlLabels": [
                 {
                   "key": "balance",
@@ -18786,7 +18786,7 @@
               "pageLabel": "房贷提前还款计算器",
               "formLabel": "计算器表单",
               "resultAnnouncement": "计算结果",
-              "chartLabel": null,
+              "chartLabel": "抵押贷款还清预测图",
               "controlLabels": [
                 {
                   "key": "balance",
@@ -19033,7 +19033,7 @@
               "pageLabel": "住宅ローン繰上返済計算機",
               "formLabel": "計算フォーム",
               "resultAnnouncement": "計算結果",
-              "chartLabel": null,
+              "chartLabel": "住宅ローン完済予測チャート",
               "controlLabels": [
                 {
                   "key": "balance",
@@ -19280,7 +19280,7 @@
               "pageLabel": "Калькулятор досрочного погашения ипотеки",
               "formLabel": "Форма калькулятора",
               "resultAnnouncement": "Результат расчёта",
-              "chartLabel": null,
+              "chartLabel": "График прогноза погашения ипотеки",
               "controlLabels": [
                 {
                   "key": "balance",
@@ -19747,7 +19747,7 @@
               "pageLabel": "बंधक पुनर्वित्त तुलना",
               "formLabel": "कैलकुलेटर फ़ॉर्म",
               "resultAnnouncement": "गणना का परिणाम",
-              "chartLabel": null,
+              "chartLabel": "बंधक पुनर्वित्त तुलना चार्ट",
               "controlLabels": [
                 {
                   "key": "balance",
@@ -20023,7 +20023,7 @@
               "pageLabel": "مقارنة إعادة تمويل الرهن العقاري",
               "formLabel": "نموذج الحاسبة",
               "resultAnnouncement": "نتيجة الحساب",
-              "chartLabel": null,
+              "chartLabel": "مخطط مقارنة إعادة تمويل الرهن العقاري",
               "controlLabels": [
                 {
                   "key": "balance",
@@ -20299,7 +20299,7 @@
               "pageLabel": "رہن کی ری فنانسنگ کا موازنہ",
               "formLabel": "کیلکولیٹر فارم",
               "resultAnnouncement": "حساب کا نتیجہ",
-              "chartLabel": null,
+              "chartLabel": "رہن قرض کی ری فنانسنگ کے موازنے کا چارٹ",
               "controlLabels": [
                 {
                   "key": "balance",
@@ -20575,7 +20575,7 @@
               "pageLabel": "房贷再融资比较",
               "formLabel": "计算器表单",
               "resultAnnouncement": "计算结果",
-              "chartLabel": null,
+              "chartLabel": "抵押贷款再融资比较图",
               "controlLabels": [
                 {
                   "key": "balance",
@@ -20851,7 +20851,7 @@
               "pageLabel": "住宅ローン借り換え比較",
               "formLabel": "計算フォーム",
               "resultAnnouncement": "計算結果",
-              "chartLabel": null,
+              "chartLabel": "住宅ローン借り換え比較チャート",
               "controlLabels": [
                 {
                   "key": "balance",
@@ -21127,7 +21127,7 @@
               "pageLabel": "Сравнение рефинансирования ипотеки",
               "formLabel": "Форма калькулятора",
               "resultAnnouncement": "Результат расчёта",
-              "chartLabel": null,
+              "chartLabel": "График сравнения рефинансирования ипотеки",
               "controlLabels": [
                 {
                   "key": "balance",
@@ -21493,8 +21493,8 @@
               },
               {
                 "key": "origination-fee-limit",
-                "message": null,
-                "recoveryHint": null
+                "message": "उत्पत्ति शुल्क 100 प्रतिशत से कम होना चाहिए।",
+                "recoveryHint": "100% से कम उत्पत्ति शुल्क दर्ज करें।"
               }
             ],
             "faqs": [
@@ -21594,7 +21594,7 @@
               "pageLabel": "व्यक्तिगत ऋण कैलकुलेटर",
               "formLabel": "कैलकुलेटर फ़ॉर्म",
               "resultAnnouncement": "गणना का परिणाम",
-              "chartLabel": null,
+              "chartLabel": "व्यक्तिगत ऋण भुगतान चार्ट",
               "controlLabels": [
                 {
                   "key": "principal",
@@ -21761,8 +21761,8 @@
               },
               {
                 "key": "origination-fee-limit",
-                "message": null,
-                "recoveryHint": null
+                "message": "يجب أن تكون رسوم الإنشاء أقل من 100٪.",
+                "recoveryHint": "أدخل رسوم إنشاء أقل من 100٪."
               }
             ],
             "faqs": [
@@ -21862,7 +21862,7 @@
               "pageLabel": "حاسبة القرض الشخصي",
               "formLabel": "نموذج الحاسبة",
               "resultAnnouncement": "نتيجة الحساب",
-              "chartLabel": null,
+              "chartLabel": "مخطط سداد القرض الشخصي",
               "controlLabels": [
                 {
                   "key": "principal",
@@ -22029,8 +22029,8 @@
               },
               {
                 "key": "origination-fee-limit",
-                "message": null,
-                "recoveryHint": null
+                "message": "قرض کی ابتدائی فیس 100 فیصد سے کم ہونی چاہیے۔",
+                "recoveryHint": "100٪ سے کم ابتدائی فیس درج کریں۔"
               }
             ],
             "faqs": [
@@ -22130,7 +22130,7 @@
               "pageLabel": "ذاتی قرض کیلکولیٹر",
               "formLabel": "کیلکولیٹر فارم",
               "resultAnnouncement": "حساب کا نتیجہ",
-              "chartLabel": null,
+              "chartLabel": "ذاتی قرض کی ادائیگی کا چارٹ",
               "controlLabels": [
                 {
                   "key": "principal",
@@ -22297,8 +22297,8 @@
               },
               {
                 "key": "origination-fee-limit",
-                "message": null,
-                "recoveryHint": null
+                "message": "贷款发放费必须低于 100%。",
+                "recoveryHint": "请输入低于 100% 的贷款发放费。"
               }
             ],
             "faqs": [
@@ -22398,7 +22398,7 @@
               "pageLabel": "个人贷款计算器",
               "formLabel": "计算器表单",
               "resultAnnouncement": "计算结果",
-              "chartLabel": null,
+              "chartLabel": "个人贷款还款图",
               "controlLabels": [
                 {
                   "key": "principal",
@@ -22565,8 +22565,8 @@
               },
               {
                 "key": "origination-fee-limit",
-                "message": null,
-                "recoveryHint": null
+                "message": "融資事務手数料は100%未満にしてください。",
+                "recoveryHint": "100%未満の融資事務手数料を入力してください。"
               }
             ],
             "faqs": [
@@ -22666,7 +22666,7 @@
               "pageLabel": "パーソナルローン計算機",
               "formLabel": "計算フォーム",
               "resultAnnouncement": "計算結果",
-              "chartLabel": null,
+              "chartLabel": "個人ローン返済チャート",
               "controlLabels": [
                 {
                   "key": "principal",
@@ -22833,8 +22833,8 @@
               },
               {
                 "key": "origination-fee-limit",
-                "message": null,
-                "recoveryHint": null
+                "message": "Комиссия за оформление должна быть меньше 100%.",
+                "recoveryHint": "Введите комиссию за оформление менее 100%."
               }
             ],
             "faqs": [
@@ -22934,7 +22934,7 @@
               "pageLabel": "Калькулятор потребительского кредита",
               "formLabel": "Форма калькулятора",
               "resultAnnouncement": "Результат расчёта",
-              "chartLabel": null,
+              "chartLabel": "График погашения личного кредита",
               "controlLabels": [
                 {
                   "key": "principal",
@@ -23364,7 +23364,7 @@
               "pageLabel": "छात्र ऋण पुनर्भुगतान कैलकुलेटर",
               "formLabel": "कैलकुलेटर फ़ॉर्म",
               "resultAnnouncement": "गणना का परिणाम",
-              "chartLabel": null,
+              "chartLabel": "छात्र ऋण भुगतान चार्ट",
               "controlLabels": [
                 {
                   "key": "principal",
@@ -23611,7 +23611,7 @@
               "pageLabel": "حاسبة سداد قرض الطلاب",
               "formLabel": "نموذج الحاسبة",
               "resultAnnouncement": "نتيجة الحساب",
-              "chartLabel": null,
+              "chartLabel": "مخطط سداد قرض الطالب",
               "controlLabels": [
                 {
                   "key": "principal",
@@ -23858,7 +23858,7 @@
               "pageLabel": "طلبہ قرض کی ادائیگی کا کیلکولیٹر",
               "formLabel": "کیلکولیٹر فارم",
               "resultAnnouncement": "حساب کا نتیجہ",
-              "chartLabel": null,
+              "chartLabel": "طلبہ قرض کی ادائیگی کا چارٹ",
               "controlLabels": [
                 {
                   "key": "principal",
@@ -24105,7 +24105,7 @@
               "pageLabel": "学生贷款还款计算器",
               "formLabel": "计算器表单",
               "resultAnnouncement": "计算结果",
-              "chartLabel": null,
+              "chartLabel": "学生贷款还款图",
               "controlLabels": [
                 {
                   "key": "principal",
@@ -24352,7 +24352,7 @@
               "pageLabel": "学生ローン返済計算機",
               "formLabel": "計算フォーム",
               "resultAnnouncement": "計算結果",
-              "chartLabel": null,
+              "chartLabel": "学生ローン返済チャート",
               "controlLabels": [
                 {
                   "key": "principal",
@@ -24599,7 +24599,7 @@
               "pageLabel": "Калькулятор погашения студенческого кредита",
               "formLabel": "Форма калькулятора",
               "resultAnnouncement": "Результат расчёта",
-              "chartLabel": null,
+              "chartLabel": "График погашения студенческого кредита",
               "controlLabels": [
                 {
                   "key": "principal",
@@ -25006,13 +25006,13 @@
               },
               {
                 "key": "rate-limit",
-                "message": null,
-                "recoveryHint": null
+                "message": "दर 1,000 प्रतिशत से अधिक नहीं होनी चाहिए।",
+                "recoveryHint": "1,000% या उससे कम वार्षिक दर दर्ज करें।"
               },
               {
                 "key": "day-basis",
-                "message": null,
-                "recoveryHint": null
+                "message": "दिन-गणना आधार 360, 365 या 366 होना चाहिए।",
+                "recoveryHint": "360, 365 या 366 दिन चुनें।"
               }
             ],
             "faqs": [
@@ -25107,7 +25107,7 @@
               "pageLabel": "साधारण ब्याज कैलकुलेटर",
               "formLabel": "कैलकुलेटर फ़ॉर्म",
               "resultAnnouncement": "गणना का परिणाम",
-              "chartLabel": null,
+              "chartLabel": "साधारण ब्याज वृद्धि चार्ट",
               "controlLabels": [
                 {
                   "key": "principal",
@@ -25291,13 +25291,13 @@
               },
               {
                 "key": "rate-limit",
-                "message": null,
-                "recoveryHint": null
+                "message": "يجب ألا يتجاوز المعدل 1,000٪.",
+                "recoveryHint": "أدخل معدلاً سنوياً لا يتجاوز 1,000٪."
               },
               {
                 "key": "day-basis",
-                "message": null,
-                "recoveryHint": null
+                "message": "يجب أن يكون أساس حساب الأيام 360 أو 365 أو 366.",
+                "recoveryHint": "اختر 360 أو 365 أو 366 يوماً."
               }
             ],
             "faqs": [
@@ -25392,7 +25392,7 @@
               "pageLabel": "حاسبة الفائدة البسيطة",
               "formLabel": "نموذج الحاسبة",
               "resultAnnouncement": "نتيجة الحساب",
-              "chartLabel": null,
+              "chartLabel": "مخطط نمو الفائدة البسيطة",
               "controlLabels": [
                 {
                   "key": "principal",
@@ -25576,13 +25576,13 @@
               },
               {
                 "key": "rate-limit",
-                "message": null,
-                "recoveryHint": null
+                "message": "شرح 1,000 فیصد سے زیادہ نہیں ہونی چاہیے۔",
+                "recoveryHint": "1,000٪ یا اس سے کم سالانہ شرح درج کریں۔"
               },
               {
                 "key": "day-basis",
-                "message": null,
-                "recoveryHint": null
+                "message": "دنوں کی بنیاد 360، 365 یا 366 ہونی چاہیے۔",
+                "recoveryHint": "360، 365 یا 366 دن منتخب کریں۔"
               }
             ],
             "faqs": [
@@ -25677,7 +25677,7 @@
               "pageLabel": "سادہ سود کیلکولیٹر",
               "formLabel": "کیلکولیٹر فارم",
               "resultAnnouncement": "حساب کا نتیجہ",
-              "chartLabel": null,
+              "chartLabel": "سادہ سود کی نمو کا چارٹ",
               "controlLabels": [
                 {
                   "key": "principal",
@@ -25861,13 +25861,13 @@
               },
               {
                 "key": "rate-limit",
-                "message": null,
-                "recoveryHint": null
+                "message": "利率不得超过 1,000%。",
+                "recoveryHint": "请输入不超过 1,000% 的年利率。"
               },
               {
                 "key": "day-basis",
-                "message": null,
-                "recoveryHint": null
+                "message": "计日基准必须为 360、365 或 366。",
+                "recoveryHint": "请选择 360、365 或 366 天。"
               }
             ],
             "faqs": [
@@ -25962,7 +25962,7 @@
               "pageLabel": "单利计算器",
               "formLabel": "计算器表单",
               "resultAnnouncement": "计算结果",
-              "chartLabel": null,
+              "chartLabel": "单利增长图",
               "controlLabels": [
                 {
                   "key": "principal",
@@ -26146,13 +26146,13 @@
               },
               {
                 "key": "rate-limit",
-                "message": null,
-                "recoveryHint": null
+                "message": "金利は1,000%を超えてはいけません。",
+                "recoveryHint": "年利率は1,000%以下で入力してください。"
               },
               {
                 "key": "day-basis",
-                "message": null,
-                "recoveryHint": null
+                "message": "日数基準は360、365、366のいずれかにしてください。",
+                "recoveryHint": "360日、365日、366日のいずれかを選択してください。"
               }
             ],
             "faqs": [
@@ -26247,7 +26247,7 @@
               "pageLabel": "単利計算機",
               "formLabel": "計算フォーム",
               "resultAnnouncement": "計算結果",
-              "chartLabel": null,
+              "chartLabel": "単利の増加チャート",
               "controlLabels": [
                 {
                   "key": "principal",
@@ -26431,13 +26431,13 @@
               },
               {
                 "key": "rate-limit",
-                "message": null,
-                "recoveryHint": null
+                "message": "Ставка не должна превышать 1 000%.",
+                "recoveryHint": "Введите годовую ставку не более 1 000%."
               },
               {
                 "key": "day-basis",
-                "message": null,
-                "recoveryHint": null
+                "message": "База расчёта дней должна быть 360, 365 или 366.",
+                "recoveryHint": "Выберите 360, 365 или 366 дней."
               }
             ],
             "faqs": [
@@ -26532,7 +26532,7 @@
               "pageLabel": "Калькулятор простых процентов",
               "formLabel": "Форма калькулятора",
               "resultAnnouncement": "Результат расчёта",
-              "chartLabel": null,
+              "chartLabel": "График начисления простых процентов",
               "controlLabels": [
                 {
                   "key": "principal",
