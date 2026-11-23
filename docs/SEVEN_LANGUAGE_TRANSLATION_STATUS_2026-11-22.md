@@ -34,9 +34,18 @@ Ten title candidates have AI terminology/meaning review notes. This is not nativ
 - First 10 result headings/summaries: 60/60 drafted; 270 metric labels and 66 breakdown labels translated with stable keys.
 - FAQ: 240 question/answer fields drafted; formula/explanation summary: 60 locale records; disclaimers: 60 records; source-derived validation errors: 198 message/recovery pairs.
 - SEO title, meta description, H1 and introduction: 60 locale records; accessibility page/form/result labels and input-control labels: 60 locale records.
-- Formula strings and technical identifiers remain unchanged. Detailed calculation steps are still source-English in the source registry and require per-locale translation before publication; no claim of full formula-step translation is made.
+- Formula strings and technical identifiers remain unchanged. Currency Converter calculation steps have now been translated into all six target locales (5/5 steps per locale); the other nine pilot tools still require detailed calculation-step translations.
 - Tool-page runtime rendering of these draft records is not yet enabled; records remain draft-only and fall back to English in production.
 - Seven-locale browser validation on the current PR head completed successfully in the CI desktop/mobile browser job; the job passed. This is automated coverage, not a substitute for visual native-speaker review on real devices.
 
 ## Release gate
 Latest PR-head validation (commit `75a1f871fbac21be1b54ead3f8ffe95fbfe9767f`): Finance Calculator CI run `45010483024` completed Success; `npm run check`, `npm test`, live Frankfurter API verification, and desktop/mobile Playwright browser tests all passed. Test log reports 17/17 passing tests, 0 failures. Candidate Lighthouse/CLS run `45010482974` completed Success: Mobile home Performance 90, Accessibility 96, Best Practices 96, SEO 100, CLS 0.00011, LCP 2416 ms, TBT 148 ms; Mobile tool Performance 95, Accessibility 100, Best Practices 96, SEO 100, CLS 0.03039, LCP 2771 ms, TBT 148 ms; Desktop home and tool Performance 100, Accessibility 100, Best Practices 96, SEO 100. The first-10 content remains draft-only: detailed calculation steps still need translation, tool-page runtime rendering/fallback is not implemented/verified, and native-speaker/domain review is pending. Automated locale tests do not constitute native-speaker approval. PR remains Draft. No merge or production deployment is authorized.
+
+
+## Incremental work — 2026-11-23
+- Added `explanations.steps[]` to the canonical content schema and locale template.
+- Drafted all five Currency Converter calculation steps in Hindi, Arabic, Urdu, Simplified Chinese, Japanese and Russian (30 translated step strings). Mathematical formulas and technical values were not modified.
+- Added an automated catalogue assertion for all six Currency Converter step arrays and source-aligned step counts.
+- Native-language and finance-domain review is still pending. This AI-generated draft is not approved for publication.
+- Finance Calculator CI run `45131372722` and Candidate Lighthouse run `45131372864` were queued/in progress at the time of this note; no result is claimed.
+- Next ordered item: translate and validate Mortgage Calculator calculation steps in all six target locales, then proceed through the remaining pilot tools in canonical order.
