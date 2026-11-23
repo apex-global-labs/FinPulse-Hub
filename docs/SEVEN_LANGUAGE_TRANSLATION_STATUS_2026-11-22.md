@@ -49,3 +49,11 @@ Latest PR-head validation (commit `75a1f871fbac21be1b54ead3f8ffe95fbfe9767f`): F
 - Native-language and finance-domain review is still pending. This AI-generated draft is not approved for publication.
 - Finance Calculator CI run `45131372722` and Candidate Lighthouse run `45131372864` were queued/in progress at the time of this note; no result is claimed.
 - Next ordered item: translate and validate Mortgage Calculator calculation steps in all six target locales, then proceed through the remaining pilot tools in canonical order.
+
+
+## Incremental work — 2026-11-23 (Mortgage Calculator)
+- Added all five Mortgage Calculator calculation steps in Hindi, Arabic, Urdu, Simplified Chinese, Japanese and Russian (30 additional draft step strings).
+- Extended the formula-step catalogue test to cover both Currency and Mortgage calculators, verifying each locale's step count matches its English source and contains no empty entries.
+- No formula expression, rate conversion constant, amortization behavior or technical identifier was changed.
+- Native-speaker and finance-domain review remains pending; these translations are draft-only.
+- Latest run status observed before this change: Finance CI and Lighthouse for the preceding documentation commit were in progress; this new change will trigger fresh validation.
