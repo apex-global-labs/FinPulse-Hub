@@ -57,3 +57,14 @@ Latest PR-head validation (commit `75a1f871fbac21be1b54ead3f8ffe95fbfe9767f`): F
 - No formula expression, rate conversion constant, amortization behavior or technical identifier was changed.
 - Native-speaker and finance-domain review remains pending; these translations are draft-only.
 - Latest run status observed before this change: Finance CI and Lighthouse for the preceding documentation commit were in progress; this new change will trigger fresh validation.
+
+
+## Incremental work — 2026-11-23 (Loan Calculator)
+- Drafted all five Loan Calculator calculation steps in Hindi, Arabic, Urdu, Simplified Chinese, Japanese and Russian (30 additional translated step strings).
+- Preserved the source APR-to-monthly-rate relationship, principal/term payment calculation, monthly interest basis, principal component and annual aggregation meaning. Formula notation and technical identifiers were not changed.
+- Extended the automated calculation-step test to verify Currency, Mortgage and Loan across all six target locales, including exact source-aligned step counts and non-empty step text.
+- During the fresh audit, the test file was found to assert only Currency despite the earlier Mortgage progress note; this coverage gap is now corrected by the three-tool assertion.
+- Progress for detailed calculation-step translation: 3 of 10 pilot tools (Currency, Mortgage, Loan); 30 translated step strings per tool across six locales, 90 total.
+- Existing CI run `45131743971` was still in progress on the preceding head `50fb4065ac2ee567f5bd780e532264dfc88e0e3a` during this work; it does not validate the new Loan content/test commits. Candidate Lighthouse run `45131744029` succeeded on that preceding head. Fresh CI/Lighthouse results for the new commits must be checked before claiming validation.
+- All six locale records remain `draft`. Native-speaker and finance-domain review is pending. Tool-page runtime rendering and English fallback remain release blockers.
+- Next in canonical order: EMI Calculator, followed by Compound Interest, Percentage, Tip, Car Loan, Amortization and Savings. No tools 11–20 will be started before the first-10 release gates pass.
