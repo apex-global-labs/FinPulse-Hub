@@ -144,7 +144,13 @@ test("first-ten tool pages render in all seven locales and keep draft or incompl
     formulaStep:tool.locales[locale].fields.explanations.steps[0],
     faq:tool.locales[locale].fields.faqs[0].question,
     seoTitle:tool.locales[locale].fields.seo.title,
-    metric:tool.locales[locale].fields.results.metrics[0].label
+    metric:tool.locales[locale].fields.results.metrics[0].label,
+    disclaimer:tool.locales[locale].fields.explanations.disclaimers[0],
+    negativeError:tool.locales[locale].fields.errors.find(item=>item.key==="negative").message.replace("{field}",tool.locales[locale].fields.inputs[0].label),
+    recoveryHint:tool.locales[locale].fields.errors.find(item=>item.key==="negative").recoveryHint,
+    pageLabel:tool.locales[locale].fields.accessibility.pageLabel,
+    formLabel:tool.locales[locale].fields.accessibility.formLabel,
+    chartLabel:tool.locales[locale].fields.accessibility.chartLabel
    }]));
   });
   for(const locale of ["hi","ar","ur","zh-CN","ja","ru"]){
@@ -159,6 +165,10 @@ test("first-ten tool pages render in all seven locales and keep draft or incompl
     faq:document.querySelector(".seo-content details summary")?.textContent.trim(),
     seoTitle:document.title,
     metric:document.querySelector("#metrics .metric span")?.textContent.trim(),
+    disclaimer:document.querySelector("#formula-panel .note-list li")?.textContent.trim(),
+    appLabel:document.querySelector("#app")?.getAttribute("aria-label"),
+    formLabel:document.querySelector("#form")?.getAttribute("aria-label"),
+    chartLabel:document.querySelector(".chart")?.getAttribute("aria-label"),
     direction:document.documentElement.dir,
     formula:document.querySelector("#formula-panel")?.textContent||""
    }));
@@ -169,8 +179,16 @@ test("first-ten tool pages render in all seven locales and keep draft or incompl
    assert.equal(actual.faq,expected.faq,locale+" approved FAQ rendering");
    assert.equal(actual.seoTitle,expected.seoTitle,locale+" approved SEO title rendering");
    assert.equal(actual.metric,expected.metric,locale+" approved result metric rendering");
+   assert.equal(actual.disclaimer,expected.disclaimer,locale+" approved disclaimer rendering");
+   assert.equal(actual.appLabel,expected.pageLabel,locale+" page accessibility label");
+   assert.equal(actual.formLabel,expected.formLabel,locale+" form accessibility label");
+   assert.equal(actual.chartLabel,expected.chartLabel,locale+" chart accessibility label");
    assert.equal(actual.direction,["ar","ur"].includes(locale)?"rtl":"ltr",locale+" approved direction");
    assert.ok(actual.formula.includes("PMT = P·i"),locale+" formula notation remains present");
+   await page.locator("#f-principal").fill("-1");
+   const errorText=await page.locator("#app .result .sub").textContent();
+   assert.ok(errorText.includes(expected.negativeError),locale+" translated negative-value validation");
+   assert.ok(errorText.includes(expected.recoveryHint),locale+" translated validation recovery hint");
   }
   await page.close();
  }finally{await browser.close();await new Promise(resolve=>server.close(resolve))}
