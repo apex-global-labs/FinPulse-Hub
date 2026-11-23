@@ -81,7 +81,7 @@ test("all seven locales preserve direction rules and expose complete first-batch
  }finally{await browser.close();await new Promise(resolve=>server.close(resolve))}
 });
 
-test("first-ten tool pages render in all seven locales and keep draft or incomplete translations on English fallback",async()=>{
+test("Batch 2 tool pages render in all seven locales, keep draft translations on English fallback and pass 70 axe WCAG audits",async()=>{
  const server=createServer(async(req,res)=>{
   const path=decodeURIComponent(req.url.split("?")[0]).replace(/^\//,"")||"index.html";
   try{const data=await readFile(path==="__axe.js"?axePath:join(process.cwd(),path));const type=path.endsWith(".css")?"text/css":path.endsWith(".js")?"text/javascript":path.endsWith(".json")?"application/json":"text/html";res.writeHead(200,{"content-type":type});res.end(data)}
@@ -97,7 +97,7 @@ test("first-ten tool pages render in all seven locales and keep draft or incompl
   await page.waitForFunction(()=>window.FinPulseToolRuntime?.loaded&&window.FinPulseI18nReady);
   const registry=await page.evaluate(async()=>{
    const content=await (await fetch("/translations/tool-content.json")).json();
-   const ids=["currency","mortgage","loan","emi","compound","percentage","tip","car","amortization","savings"];
+   const ids=["freelance","margin","affordability","payoff","refinance","personal-loan","student-loan","simple-interest","retirement","401k"];
    return ids.map(id=>{const tool=content.tools.find(item=>item.id===id);return{id,title:tool.source.title,description:tool.source.description,firstInput:tool.source.inputs[0],firstStep:tool.source.explanations.steps[0],translatedHiStep:tool.locales.hi.fields.explanations.steps[0]}})
   });
   const locales=["en","hi","ar","ur","zh-CN","ja","ru"];
