@@ -56,8 +56,13 @@ test("every canonical tool has six locale records with correct draft or pending 
     assert.ok(fields.results.breakdown.every(item=>typeof item.label==="string"&&item.label.trim()),tool.id+":"+locale+" translated breakdown labels");
     assert.deepEqual(fields.accessibility.controlLabels.map(item=>item.key),source.inputs.map(item=>item.key),tool.id+":"+locale+" accessible control keys");
     assert.ok(fields.accessibility.controlLabels.every(item=>typeof item.label==="string"&&item.label.trim()),tool.id+":"+locale+" translated accessible labels");
+    assert.ok(fields.accessibility.chartLabel&&fields.accessibility.chartLabel.trim(),tool.id+":"+locale+" translated chart accessibility label");
+    assert.ok(fields.guide.title&&fields.guide.introduction&&fields.guide.steps.length>0&&fields.guide.sections.length>0,tool.id+":"+locale+" translated guide content");
+    assert.ok(fields.guide.steps.every(item=>item.key&&item.title&&item.body),tool.id+":"+locale+" guide step keys and text");
+    assert.ok(fields.guide.sections.every(item=>item.key&&item.heading&&item.body),tool.id+":"+locale+" guide section keys and text");
+    assert.ok(fields.explanations.assumptions.every(item=>item&&item.trim())&&fields.explanations.notes.every(item=>item&&item.trim())&&fields.explanations.limitations.every(item=>item&&item.trim()),tool.id+":"+locale+" assumptions, notes and limitations");
     assert.deepEqual(fields.errors.map(item=>item.key),source.errors.map(item=>item.key),tool.id+":"+locale+" stable error keys");
-    assert.ok(fields.errors.filter(item=>item.message&&item.recoveryHint).length>=3,tool.id+":"+locale+" translated common validation errors");
+    assert.ok(fields.errors.every(item=>typeof item.message==="string"&&item.message.trim()&&typeof item.recoveryHint==="string"&&item.recoveryHint.trim()),tool.id+":"+locale+" all validation errors translated");
     assert.deepEqual(fields.faqs.map(item=>item.key),source.faqs.map(item=>item.key),tool.id+":"+locale+" stable FAQ keys");
     if(["freelance","margin","affordability","payoff","refinance","personal-loan","student-loan","simple-interest","retirement","401k"].includes(tool.id)){
      assert.ok(fields.faqs.every(item=>typeof item.question==="string"&&item.question.trim()&&typeof item.answer==="string"&&item.answer.trim()),tool.id+":"+locale+" translated FAQ content");
