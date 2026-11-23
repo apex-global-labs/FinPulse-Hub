@@ -151,3 +151,14 @@ The dedicated branch adds five Developer wrap-up tools, twelve Education & Study
 - Batch 2 source extraction: tools 11–20 are `freelance`, `margin`, `affordability`, `payoff`, `refinance`, `personal-loan`, `student-loan`, `simple-interest`, `retirement`, and `401k`. Source descriptions and stable input keys/labels have been extracted from `app.js` into `translations/tool-content.json`; 10/10 descriptions and 53 input labels are recorded. All six target locales remain `not-started`; translation drafting has not begun.
 - Extended catalogue regression test to require source extraction for the first 20 tools and unique stable input keys.
 - PR #73 remains Draft/unmerged; production `main` and GitHub Pages are unchanged. No translation activation, merge or deployment was performed.
+
+
+## Batch 2 complete source extraction — 2026-11-23
+
+- Latest-head prerequisite CI on commit `13c12604970cb9d46f7b94960d6ad0b3598416d7` completed successfully: Finance CI run [45147185955](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/45147185955) and Candidate Lighthouse/CLS run [45147186020](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/45147186020) both concluded `success`.
+- Finance CI log confirms 334/334 Node tests, 1/1 live API test and 30/30 Browser tests; the 220-tool functional audit artifact was uploaded successfully. Lighthouse/CLS job concluded successfully.
+- Batch 2 source fields were expanded for all 10 tools: `freelance`, `margin`, `affordability`, `payoff`, `refinance`, `personal-loan`, `student-loan`, `simple-interest`, `retirement`, and `401k`.
+- Extracted source now includes metadata, input labels, result heading/summary/metrics, available breakdown and chart labels, formulas, calculation steps, assumptions, notes/disclaimers/limitations, FAQs, validation errors/recovery hints, SEO metadata/FAQ and accessibility labels. The Simple Interest day-count selector retains the canonical options 365, 360 and 366.
+- Added `sourceCompletenessStatus: complete` to batch-two records while preserving the existing extraction status for compatibility. All six target locales remain `not-started`; no translation drafting or activation has occurred.
+- Added catalogue regression coverage for complete batch-two source fields, stable/unique keys, formula/step coverage, FAQ/error completeness, SEO/accessibility fields, and unchanged locale statuses.
+- The new source data and test commits are pending fresh Finance CI and Candidate Lighthouse/CLS validation on the latest branch head. PR #73 remains Draft/unmerged; production `main` and GitHub Pages remain unchanged.
