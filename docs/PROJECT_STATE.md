@@ -119,5 +119,15 @@ The dedicated branch adds five Developer wrap-up tools, twelve Education & Study
 - Corrected the browser test server to serve the installed axe-core file and moved WCAG 2.1 A/AA auditing inside the first-ten tool × locale loop, so each actual route is audited after navigation. Fix commits: `697d64bc3df951d28f5cf343e8355974cc6856f4` and `cf1e6517e55b9b541a16a5b0125fee41c79814ef`.
 - **Validation status:** no CI workflow run is currently visible for the latest head `cf1e6517e55b9b541a16a5b0125fee41c79814ef`; therefore the test fix and expanded 70 route/locale accessibility audit are not yet verified by CI. Fresh Finance CI and Lighthouse runs are required before this branch can pass the gate.
 - **RTL/LTR status:** automated direction assertions cover English/Hindi/Chinese/Japanese/Russian as LTR and Arabic/Urdu as RTL. Real-device/native visual review remains outstanding; automated checks do not establish visual sign-off.
-- **Human review:** native-speaker review for hi/ar/ur/zh-CN/ja/ru and finance-domain review remain pending. No reviewer identity or approval has been fabricated.
-- **Release decision:** PR #73 remains Draft and unmerged. No merge, Pages deployment or production release is authorized until fresh browser/RTL/LTR and Lighthouse checks pass and written human reviewer approvals are recorded.
+- **Human-review policy:** written native-speaker and finance-domain sign-offs are not mandatory release gates. Optional expert feedback may still be collected as a quality improvement, but absence of such reviews does not block release.
+- **Translation status:** all current locale records remain `draft`; this audit does not silently promote them to `approved`/`published`. English fallback remains active for these records until a separate, explicit translation-activation decision and its validation are completed.
+- **Release decision:** PR #73 remains Draft and unmerged. No merge, Pages deployment or production release is authorized until fresh latest-head Finance CI (including browser/RTL/LTR checks) and Lighthouse/CLS checks pass.
+
+
+## Multilingual release-gate policy update — 2026-11-23
+
+- User decision: remove mandatory written native-speaker and finance-domain reviewer sign-offs from the release gate.
+- These human reviews are optional quality feedback, not mandatory acceptance criteria.
+- Mandatory automated gates remain: latest-head Finance CI, Playwright browser coverage across seven locales and first-ten tools, RTL/LTR direction checks, per-route accessibility checks, mobile/desktop Lighthouse and CLS budgets.
+- Current translations remain `draft`; this policy change does not automatically approve or publish them. English fallback continues until translation activation is explicitly authorized and validated.
+- PR #73 remains Draft/unmerged; no production deployment is authorized by this policy update.
