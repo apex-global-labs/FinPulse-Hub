@@ -84,3 +84,18 @@ Latest PR-head validation (commit `75a1f871fbac21be1b54ead3f8ffe95fbfe9767f`): F
 
 
 - Cross-script test hardening: replaced an arbitrary 10-character minimum with a non-empty-string assertion. A valid concise Simplified Chinese step was shorter than 10 characters, so the previous threshold incorrectly treated natural concise CJK text as empty. The revised test checks actual presence without imposing a language-dependent length rule.
+
+
+## Tool-page runtime and review-gate implementation — 2026-11-23
+- Added `tool-content-runtime.js` and loaded it before `app.js`. Initial tool rendering now waits for both the shared locale catalogue and the tool-content JSON, while request failures retain the English source.
+- Runtime localization is deliberately approval-gated: only `approved` and `published` locale records can render. Every other status (including current `draft` records), missing records and incomplete records use the entire English tool definition.
+- The completeness contract checks metadata, stable input keys, result and breakdown keys, formula-step count, disclaimers, FAQ keys, validation-error keys, SEO fields and accessibility control-label keys before enabling a translation.
+- Integrated approved tool content into page title/description, tool title/category/description, input labels, result summary/metric labels/breakdown labels, formula explanations and steps, FAQ/SEO content, schedule tables and accessible region labels. Formula notation and calculator calculation functions remain source-controlled and unchanged.
+- Locale changes rerender the active tool while preserving entered field values. Arabic and Urdu retain RTL direction; English, Hindi, Simplified Chinese, Japanese and Russian retain LTR.
+- Translated UI strings for the calculator workspace, actions, schedule controls and table labels were added to the shared seven-locale catalogue.
+- Translated text inserted into metric HTML is escaped; translated content is otherwise rendered as text, not interpreted as HTML.
+- Added unit coverage for draft/missing/incomplete fallback and the approval completeness contract. A test-only in-memory approval fixture verifies all 60 first-ten locale records satisfy the current runtime completeness contract; no repository locale status was changed from `draft`.
+- Added browser coverage for the first ten tool routes across all seven locales (70 locale/tool combinations), asserting English fallback for draft records, document direction, and an axe-core WCAG 2.1 A/AA audit per locale. An additional in-memory approved Loan fixture checks end-to-end translated tool rendering for all six target locales without persisting approval.
+- Added `docs/FIRST_TEN_LOCALE_REVIEW_CHECKLIST.md` with a reviewer/sign-off matrix for six native languages and ten tools. Native-speaker and finance-domain review is still pending and cannot be claimed complete from automated checks.
+- Latest relevant workflow runs at this documentation update: Finance Calculator CI `45134585193` and Candidate Lighthouse/CLS `45134585066` were still in progress on code head `c3c94cad97f42aaf75ee0ff946128b173615825a`. Earlier run `45134348157` had completed syntax checks, the full Node test suite, live reference-rate API check and Playwright installation successfully; its browser test step was still running. Do not call the runtime/browser gate complete until the final head's CI and Lighthouse workflows finish successfully.
+- PR #73 remains Draft and unmerged. No production deployment has been made or authorized.
