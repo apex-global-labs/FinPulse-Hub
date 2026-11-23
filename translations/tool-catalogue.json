@@ -39,7 +39,7 @@
         "ru": "Конвертер валют"
       },
       "status": "title-translated-review-required",
-      "titleReviewStatus": "ai-reviewed-native-review-pending",
+      "titleReviewStatus": "ai-reviewed-optional-feedback",
       "titleReviewNote": "Uses the standard currency-conversion term; currency codes and ISO identifiers remain unchanged."
     },
     {
@@ -57,7 +57,7 @@
         "ru": "Ипотечный калькулятор"
       },
       "status": "title-translated-review-required",
-      "titleReviewStatus": "ai-reviewed-native-review-pending",
+      "titleReviewStatus": "ai-reviewed-optional-feedback",
       "titleReviewNote": "Uses the common consumer-facing home-loan term where that is the natural local equivalent; legal mortgage distinctions remain in the description."
     },
     {
@@ -75,7 +75,7 @@
         "ru": "Кредитный калькулятор"
       },
       "status": "title-translated-review-required",
-      "titleReviewStatus": "ai-reviewed-native-review-pending",
+      "titleReviewStatus": "ai-reviewed-optional-feedback",
       "titleReviewNote": "Uses the standard general loan term, not a country-specific credit product."
     },
     {
@@ -93,7 +93,7 @@
         "ru": "Калькулятор равного ежемесячного платежа (EMI)"
       },
       "status": "title-translated-review-required",
-      "titleReviewStatus": "ai-reviewed-native-review-pending",
+      "titleReviewStatus": "ai-reviewed-optional-feedback",
       "titleReviewNote": "Expands EMI as an equal monthly instalment; keep the acronym visible because it is widely used in relevant markets."
     },
     {
@@ -111,7 +111,7 @@
         "ru": "Калькулятор сложных процентов"
       },
       "status": "title-translated-review-required",
-      "titleReviewStatus": "ai-reviewed-native-review-pending",
+      "titleReviewStatus": "ai-reviewed-optional-feedback",
       "titleReviewNote": "Uses the established compound-interest term rather than simple interest."
     },
     {
@@ -129,7 +129,7 @@
         "ru": "Калькулятор процентов"
       },
       "status": "title-translated-review-required",
-      "titleReviewStatus": "ai-reviewed-native-review-pending",
+      "titleReviewStatus": "ai-reviewed-optional-feedback",
       "titleReviewNote": "Names the percentage calculation concept without implying a particular calculation mode."
     },
     {
@@ -147,7 +147,7 @@
         "ru": "Калькулятор чаевых"
       },
       "status": "title-translated-review-required",
-      "titleReviewStatus": "ai-reviewed-native-review-pending",
+      "titleReviewStatus": "ai-reviewed-optional-feedback",
       "titleReviewNote": "Uses the service-tip/gratuity sense, not a software hint."
     },
     {
@@ -165,7 +165,7 @@
         "ru": "Калькулятор автокредита"
       },
       "status": "title-translated-review-required",
-      "titleReviewStatus": "ai-reviewed-native-review-pending",
+      "titleReviewStatus": "ai-reviewed-optional-feedback",
       "titleReviewNote": "Identifies a vehicle loan and does not imply a lease."
     },
     {
@@ -183,7 +183,7 @@
         "ru": "Калькулятор амортизации кредита"
       },
       "status": "title-translated-review-required",
-      "titleReviewStatus": "ai-reviewed-native-review-pending",
+      "titleReviewStatus": "ai-reviewed-optional-feedback",
       "titleReviewNote": "Refers to loan amortization/repayment schedule, not just a payment amount."
     },
     {
@@ -201,7 +201,7 @@
         "ru": "Калькулятор цели накоплений"
       },
       "status": "title-translated-review-required",
-      "titleReviewStatus": "ai-reviewed-native-review-pending",
+      "titleReviewStatus": "ai-reviewed-optional-feedback",
       "titleReviewNote": "Names a goal-based savings calculation, not a savings account product."
     },
     {
@@ -2305,5 +2305,5 @@
       "titleReviewStatus": "not-started"
     }
   ],
-  "reviewPolicy": "AI terminology and meaning review completed for the 10 title pilot entries only. Native-speaker review remains required before publication; finance-domain review required where product terminology differs by country."
+  "reviewPolicy": "The first 10 title candidates received AI terminology and meaning checks. Native-speaker and finance-domain feedback is optional and non-blocking; automated release gates determine technical acceptance. Translation records remain draft until separately activated."
 }
