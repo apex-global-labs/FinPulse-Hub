@@ -38,6 +38,11 @@ function assertComplete(source,fields,id,locale){
  if(!same(fields.results.breakdown,source.results.breakdown)||!fields.results.breakdown.every(x=>x.label?.trim()))fail("breakdown key/label mismatch");
  if(!fields.explanations?.formulaTitle?.trim()||!fields.explanations.formulaDescription?.trim())fail("missing formula explanation");
  if(!Array.isArray(fields.explanations.steps)||fields.explanations.steps.length!==source.explanations.steps.length||!fields.explanations.steps.every(x=>typeof x==="string"&&x.trim()))fail("formula step count/content mismatch");
+ if(!Array.isArray(fields.explanations.assumptions)||!fields.explanations.assumptions.length||!fields.explanations.assumptions.every(x=>typeof x==="string"&&x.trim()))fail("missing assumptions");
+ if(!Array.isArray(fields.explanations.notes)||!fields.explanations.notes.length||!fields.explanations.notes.every(x=>typeof x==="string"&&x.trim()))fail("missing notes");
+ if(!Array.isArray(fields.explanations.limitations)||!fields.explanations.limitations.length||!fields.explanations.limitations.every(x=>typeof x==="string"&&x.trim()))fail("missing limitations");
+ if(!fields.guide?.title?.trim()||!fields.guide.introduction?.trim()||!fields.guide.steps?.length||!fields.guide.sections?.length)fail("missing guide content");
+ if(!fields.guide.steps.every(x=>x.key&&x.title?.trim()&&x.body?.trim())||!fields.guide.sections.every(x=>x.key&&x.heading?.trim()&&x.body?.trim()))fail("guide key/content mismatch");
  if(!Array.isArray(fields.explanations.disclaimers)||!fields.explanations.disclaimers.length||!fields.explanations.disclaimers.every(x=>x.trim()))fail("missing disclaimers");
  if(!same(fields.faqs,source.faqs)||!fields.faqs.every(x=>x.question?.trim()&&x.answer?.trim()))fail("FAQ key/content mismatch");
  if(!same(fields.errors,source.errors)||!fields.errors.every(x=>x.message?.trim()&&x.recoveryHint?.trim()))fail("validation-error key/content mismatch");
