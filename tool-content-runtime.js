@@ -42,12 +42,13 @@
   }
   function localizeDefinition(source,locale,recordOverride){
    if(!source||locale==="en"||!TARGET_LOCALES.includes(locale))return source;
-   const record=recordOverride||(content?.tools||[]).find(item=>item.id===source.id)?.locales?.[locale];
-   if(!record||!APPROVED.has(record.status)||!complete(source,record.fields))return source;
-   const fields=record.fields,meta=fields.metadata;
+   const toolRecord=(content?.tools||[]).find(item=>item.id===source.id);
+   const record=recordOverride||toolRecord?.locales?.[locale];
+   if(!record||!APPROVED.has(record.status)||!toolRecord?.source||!complete(toolRecord.source,record.fields))return source;
+   const fields=record.fields,meta=fields.metadata,inputLabels=new Map(fields.inputs.map(item=>[item.key,item.label]));
    return {
     ...source,n:meta.title,c:meta.category?.trim()||source.c,desc:meta.description,
-    f:source.f.map((field,index)=>[field[0],fields.inputs[index].label,...field.slice(2)]),
+    f:source.f.map(field=>[field[0],inputLabels.get(field[0])||field[1],...field.slice(2)]),
     seo:{intro:fields.seo.introduction,title:fields.seo.title,metaDescription:fields.seo.metaDescription,h1:fields.seo.h1,faqs:fields.faqs.map(item=>[item.question,item.answer])},
     _translation:fields,_translationLocale:locale
    };
