@@ -1,5 +1,5 @@
 const test=require("node:test");
-const axePath=require("path").join(require("path").dirname(require.resolve("axe-core")),"axe.min.js");
+const axePath=require.resolve("axe-core");
 const assert=require("node:assert/strict");
 const {chromium}=require("playwright");
 const {createServer}=require("node:http");
