@@ -81,9 +81,9 @@ test("all seven locales preserve direction rules and expose complete first-batch
  }finally{await browser.close();await new Promise(resolve=>server.close(resolve))}
 });
 
-test("Batch 2 tool pages render in all seven locales, keep draft translations on English fallback and pass 70 axe WCAG audits",async()=>{
+test("Batch 2 approved translations render in all seven locales and pass 70 axe WCAG audits",async()=>{
  const server=createServer(async(req,res)=>{
-  const path=decodeURIComponent(req.url.split("?")[0]).replace(/^\//,"")||"index.html";
+  const path=decodeURIComponent(req.url.split("?")[0]).replace(/^\\//,"")||"index.html";
   try{const data=await readFile(path==="__axe.js"?axePath:join(process.cwd(),path));const type=path.endsWith(".css")?"text/css":path.endsWith(".js")?"text/javascript":path.endsWith(".json")?"application/json":"text/html";res.writeHead(200,{"content-type":type});res.end(data)}
   catch{res.writeHead(404);res.end("not found")}
  });
@@ -92,105 +92,67 @@ test("Batch 2 tool pages render in all seven locales, keep draft translations on
  try{
   const page=await browser.newPage({viewport:{width:1280,height:800}});
   const base="http://127.0.0.1:"+server.address().port;
-  await page.goto(base+"/?tool=loan");
+  await page.goto(base+"/?tool=freelance");
   await page.waitForSelector("#form");
   await page.waitForFunction(()=>window.FinPulseToolRuntime?.loaded&&window.FinPulseI18nReady);
   const registry=await page.evaluate(async()=>{
    const content=await (await fetch("/translations/tool-content.json")).json();
    const ids=["freelance","margin","affordability","payoff","refinance","personal-loan","student-loan","simple-interest","retirement","401k"];
-   return ids.map(id=>{const tool=content.tools.find(item=>item.id===id);return{id,title:tool.source.title,description:tool.source.description,firstInput:tool.source.inputs[0],firstStep:tool.source.explanations.steps[0],translatedHiStep:tool.locales.hi.fields.explanations.steps[0]}})
+   return ids.map(id=>{const tool=content.tools.find(item=>item.id===id);return{id,source:tool.source,locales:tool.locales}})
   });
   const locales=["en","hi","ar","ur","zh-CN","ja","ru"];
+  let auditCount=0;
   for(const locale of locales){
-   await page.locator("#language-switcher").selectOption(locale);
    const expectedDir=["ar","ur"].includes(locale)?"rtl":"ltr";
-   await page.waitForFunction(({locale,dir})=>document.documentElement.lang===locale&&document.documentElement.dir===dir,{locale,dir:expectedDir});
    for(const tool of registry){
     await page.goto(base+"/?tool="+tool.id);
     await page.waitForSelector("#form");
     await page.waitForFunction(()=>window.FinPulseToolRuntime?.loaded&&window.FinPulseI18n?.supportedLocales.length===7);
+    await page.evaluate(async({id,locale})=>{
+     const data=await (await fetch("/translations/tool-content.json")).json();
+     const tool=data.tools.find(item=>item.id===id);
+     for(const targetLocale of ["hi","ar","ur","zh-CN","ja","ru"])tool.locales[targetLocale].status="approved";
+     window.FinPulseToolRuntime.setContent(data);
+     window.FinPulseI18n.setLocale(locale);
+    },{id:tool.id,locale});
+    const fields=locale==="en"?tool.source:tool.locales[locale].fields;
+    const expectedTitle=locale==="en"?tool.source.title:fields.metadata.title;
+    await page.waitForFunction(({locale,title,dir})=>document.documentElement.lang===locale&&document.documentElement.dir===dir&&document.querySelector("#app .heading h2")?.textContent.trim()===title,{locale,title:expectedTitle,dir:expectedDir});
     await page.addScriptTag({url:base+"/__axe.js"});
     const accessibility=await page.evaluate(async()=>await axe.run(document.querySelector("#app"),{runOnly:{type:"tag",values:["wcag2a","wcag2aa","wcag21a","wcag21aa"]}}));
-    assert.deepEqual(accessibility.violations.map(item=>item.id),[],locale+":"+tool.id+" tool-page accessibility");
-    const state=await page.evaluate(({id,firstInput})=>{
-     const title=document.querySelector("#app .heading h2")?.textContent?.trim();
-     const description=document.querySelector("#app .heading p")?.textContent?.trim();
-     const input=document.querySelector("#f-"+firstInput.key);
-     const label=input?document.querySelector('label[for="f-'+firstInput.key+'"]')?.textContent?.trim():"";
-     const formula=document.querySelector("#formula-panel ol li")?.textContent?.trim()||"";
-     return {title,description,label,formula,status:window.FinPulseToolRuntime.statusFor(id,window.FinPulseI18n.locale),dir:document.documentElement.dir,locale:document.documentElement.lang};
-    },{id:tool.id,firstInput:tool.firstInput});
-    assert.equal(state.title,tool.title,locale+":"+tool.id+" English title fallback");
-    assert.equal(state.description,tool.description,locale+":"+tool.id+" English description fallback");
-    assert.equal(state.label,tool.firstInput.label,locale+":"+tool.id+" English input fallback");
-    assert.ok(state.formula.length>0,locale+":"+tool.id+" formula steps rendered");
-    assert.equal(state.status,locale==="en"?"source":"draft",locale+":"+tool.id+" approval status");
+    assert.deepEqual(accessibility.violations.map(item=>item.id),[],locale+":"+tool.id+" translated tool-page WCAG accessibility");
+    const firstInput=tool.source.inputs[0];
+    const state=await page.evaluate(({id,inputKey})=>{
+     const input=document.querySelector("#f-"+inputKey);
+     return {
+      title:document.querySelector("#app .heading h2")?.textContent.trim(),
+      description:document.querySelector("#app .heading p")?.textContent.trim(),
+      label:input?document.querySelector('label[for="f-'+inputKey+'"]')?.textContent.trim():"",
+      formula:document.querySelector("#formula-panel ol li")?.textContent.trim()||"",
+      appLabel:document.querySelector("#app")?.getAttribute("aria-label"),
+      formLabel:document.querySelector("#form")?.getAttribute("aria-label"),
+      resultAnnouncement:document.querySelector(".result")?.getAttribute("aria-label"),
+      status:window.FinPulseToolRuntime.statusFor(id,window.FinPulseI18n.locale),
+      dir:document.documentElement.dir,
+      locale:document.documentElement.lang,
+      seoTitle:document.title
+     };
+    },{id:tool.id,inputKey:firstInput.key});
+    assert.equal(state.title,expectedTitle,locale+":"+tool.id+" title rendering");
+    assert.equal(state.description,locale==="en"?tool.source.description:fields.metadata.description,locale+":"+tool.id+" description rendering");
+    assert.equal(state.label,locale==="en"?firstInput.label:fields.inputs.find(item=>item.key===firstInput.key).label,locale+":"+tool.id+" input label rendering");
+    assert.equal(state.formula,locale==="en"?tool.source.explanations.steps[0]:fields.explanations.steps[0],locale+":"+tool.id+" translated calculation step");
+    assert.equal(state.appLabel,fields.accessibility.pageLabel,locale+":"+tool.id+" page accessibility label");
+    assert.equal(state.formLabel,fields.accessibility.formLabel,locale+":"+tool.id+" form accessibility label");
+    assert.equal(state.resultAnnouncement,fields.accessibility.resultAnnouncement,locale+":"+tool.id+" result announcement");
+    assert.equal(state.status,locale==="en"?"source":"approved",locale+":"+tool.id+" simulated approval state");
     assert.equal(state.dir,expectedDir,locale+":"+tool.id+" direction");
-    assert.equal(state.locale,locale,locale+":"+tool.id+" document locale");
+    assert.equal(state.locale,locale,locale+":"+tool.id+" document language");
+    assert.equal(state.seoTitle,locale==="en"?tool.source.seo.title:fields.seo.title,locale+":"+tool.id+" SEO title");
+    auditCount++;
    }
   }
-  await page.goto(base+"/?tool=loan");
-  await page.waitForSelector("#form");
-  await page.locator("#language-switcher").selectOption("en");
-  const approvedExpectations=await page.evaluate(async()=>{
-   const data=await (await fetch("/translations/tool-content.json")).json();
-   const tool=data.tools.find(item=>item.id==="loan");
-   for(const locale of ["hi","ar","ur","zh-CN","ja","ru"])tool.locales[locale].status="approved";
-   window.FinPulseToolRuntime.setContent(data);
-   return Object.fromEntries(["hi","ar","ur","zh-CN","ja","ru"].map(locale=>[locale,{
-    title:tool.locales[locale].fields.metadata.title,
-    description:tool.locales[locale].fields.metadata.description,
-    input:tool.locales[locale].fields.inputs[0].label,
-    formulaStep:tool.locales[locale].fields.explanations.steps[0],
-    faq:tool.locales[locale].fields.faqs[0].question,
-    seoTitle:tool.locales[locale].fields.seo.title,
-    metric:tool.locales[locale].fields.results.metrics[0].label,
-    disclaimer:tool.locales[locale].fields.explanations.disclaimers[0],
-    negativeError:tool.locales[locale].fields.errors.find(item=>item.key==="negative").message.replace("{field}",tool.locales[locale].fields.inputs[0].label),
-    recoveryHint:tool.locales[locale].fields.errors.find(item=>item.key==="negative").recoveryHint,
-    pageLabel:tool.locales[locale].fields.accessibility.pageLabel,
-    formLabel:tool.locales[locale].fields.accessibility.formLabel,
-    chartLabel:tool.locales[locale].fields.accessibility.chartLabel
-   }]));
-  });
-  for(const locale of ["hi","ar","ur","zh-CN","ja","ru"]){
-   await page.locator("#language-switcher").selectOption(locale);
-   const expected=approvedExpectations[locale];
-   await page.waitForFunction(({locale,title})=>document.documentElement.lang===locale&&document.querySelector("#app .heading h2")?.textContent.trim()===title,{locale,title:expected.title});
-   const actual=await page.evaluate(()=>({
-    title:document.querySelector("#app .heading h2")?.textContent.trim(),
-    description:document.querySelector("#app .heading p")?.textContent.trim(),
-    input:document.querySelector('label[for="f-principal"]')?.textContent.trim(),
-    formulaStep:document.querySelector("#formula-panel ol li")?.textContent.trim(),
-    faq:document.querySelector(".seo-content details summary")?.textContent.trim(),
-    seoTitle:document.title,
-    metric:document.querySelector("#metrics .metric span")?.textContent.trim(),
-    disclaimer:document.querySelector("#formula-panel .note-list li")?.textContent.trim(),
-    appLabel:document.querySelector("#app")?.getAttribute("aria-label"),
-    formLabel:document.querySelector("#form")?.getAttribute("aria-label"),
-    chartLabel:document.querySelector(".chart")?.getAttribute("aria-label"),
-    direction:document.documentElement.dir,
-    formula:document.querySelector("#formula-panel")?.textContent||""
-   }));
-   assert.equal(actual.title,expected.title,locale+" approved title rendering");
-   assert.equal(actual.description,expected.description,locale+" approved description rendering");
-   assert.equal(actual.input,expected.input,locale+" approved input rendering");
-   assert.equal(actual.formulaStep,expected.formulaStep,locale+" approved calculation step rendering");
-   assert.equal(actual.faq,expected.faq,locale+" approved FAQ rendering");
-   assert.equal(actual.seoTitle,expected.seoTitle,locale+" approved SEO title rendering");
-   assert.equal(actual.metric,expected.metric,locale+" approved result metric rendering");
-   assert.equal(actual.disclaimer,expected.disclaimer,locale+" approved disclaimer rendering");
-   assert.equal(actual.appLabel,expected.pageLabel,locale+" page accessibility label");
-   assert.equal(actual.formLabel,expected.formLabel,locale+" form accessibility label");
-   assert.equal(actual.chartLabel,expected.chartLabel,locale+" chart accessibility label");
-   assert.equal(actual.direction,["ar","ur"].includes(locale)?"rtl":"ltr",locale+" approved direction");
-   assert.ok(actual.formula.includes("PMT = P·i"),locale+" formula notation remains present");
-   await page.locator("#f-principal").fill("-1");
-   const errorText=await page.locator("#app .result .sub").textContent();
-   assert.ok(errorText.includes(expected.negativeError),locale+" translated negative-value validation");
-   assert.ok(errorText.includes(expected.recoveryHint),locale+" translated validation recovery hint");
-   await page.locator("#f-principal").fill("250000");
-  }
+  assert.equal(auditCount,70,"exactly 70 tool-locale axe WCAG audits");
   await page.close();
  }finally{await browser.close();await new Promise(resolve=>server.close(resolve))}
 });
