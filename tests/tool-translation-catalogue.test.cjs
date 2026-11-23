@@ -120,3 +120,28 @@ test("all first-ten calculation steps are localized with source-aligned counts i
   }
  }
 });
+
+test("first-ten translated content has no cross-locale script contamination",()=>{
+ const forbidden={
+  hi:[/[\\p{Script=Arabic}]/u,/[\\p{Script=Han}]/u,/[\\p{Script=Cyrillic}]/u],
+  ar:[/[\\p{Script=Devanagari}]/u,/[\\p{Script=Han}]/u,/[\\p{Script=Cyrillic}]/u],
+  ur:[/[\\p{Script=Devanagari}]/u,/[\\p{Script=Han}]/u,/[\\p{Script=Cyrillic}]/u],
+  "zh-CN":[/[\\p{Script=Devanagari}]/u,/[\\p{Script=Arabic}]/u,/[\\p{Script=Cyrillic}]/u,/[\\p{Script=Hiragana}\\p{Script=Katakana}]/u],
+  ja:[/[\\p{Script=Devanagari}]/u,/[\\p{Script=Arabic}]/u,/[\\p{Script=Cyrillic}]/u],
+  ru:[/[\\p{Script=Devanagari}]/u,/[\\p{Script=Arabic}]/u,/[\\p{Script=Han}]/u,/[\\p{Script=Hiragana}\\p{Script=Katakana}]/u]
+ };
+ function visit(value,path,checks,tool,locale){
+  if(typeof value==="string"){for(const pattern of checks)assert.doesNotMatch(value,pattern,tool+":"+locale+":"+path)}
+  else if(Array.isArray(value))value.forEach((item,index)=>visit(item,path+"["+index+"]",checks,tool,locale));
+  else if(value&&typeof value==="object")Object.entries(value).forEach(([key,item])=>visit(item,path+"."+key,checks,tool,locale));
+ }
+ for(const id of ["currency","mortgage","loan","emi","compound","percentage","tip","car","amortization","savings"]){
+  const tool=content.tools.find(item=>item.id===id);
+  for(const [locale,checks] of Object.entries(forbidden))visit(tool.locales[locale].fields,"fields",checks,id,locale);
+  for(const locale of locales){
+   const result=tool.locales[locale].fields.results;
+   assert.notEqual(result.summary,tool.source.results.summary,id+":"+locale+" result summary must be localized");
+   for(let i=0;i<result.metrics.length;i++)assert.notEqual(result.metrics[i].label,tool.source.results.metrics[i].label,id+":"+locale+" metric label "+i+" must be localized");
+  }
+ }
+});
