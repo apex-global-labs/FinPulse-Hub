@@ -49,10 +49,14 @@ function assertComplete(source,fields,id,locale){
  if(FOREIGN[locale].test(joined))fail("foreign locale script contamination detected");
 }
 function numberSnapshot(text,locale){
- let value=String(text||"");
- const digitMap=new Map(Array.from({length:10},(_,n)=>[new Intl.NumberFormat(locale,{useGrouping:false}).format(n),String(n)]));
- for(const [digit,ascii] of digitMap)value=value.split(digit).join(ascii);
- const parts=new Intl.NumberFormat(locale).formatToParts(12345.6);
+ const formatLocale=locale==="ar"?"ar-u-nu-arab":locale==="ur"?"ur-u-nu-arabext":locale;
+ const digitFormatter=new Intl.NumberFormat(formatLocale,{useGrouping:false});
+ const digits=Array.from({length:10},(_,n)=>digitFormatter.format(n));
+ let value=Array.from(String(text||"")).map(char=>{
+  const index=digits.indexOf(char);
+  return index<0?char:String(index);
+ }).join("");
+ const parts=new Intl.NumberFormat(formatLocale).formatToParts(12345.6);
  const group=parts.find(x=>x.type==="group")?.value;
  const decimal=parts.find(x=>x.type==="decimal")?.value;
  if(group)value=value.split(group).join("");
@@ -61,23 +65,13 @@ function numberSnapshot(text,locale){
  return match?Number(match[0]):null;
 }
 async function snapshot(page,locale){
- return page.evaluate(locale=>{
+ const captured=await page.evaluate(()=>{
   const numeric=[document.querySelector(".result .value")?.textContent||"",...Array.from(document.querySelectorAll("#metrics .metric strong"),x=>x.textContent)];
-  const canonical=numeric.map(text=>{
-   let value=String(text);
-   for(let n=0;n<10;n++)value=value.split(new Intl.NumberFormat(locale,{useGrouping:false}).format(n)).join(String(n));
-   const parts=new Intl.NumberFormat(locale).formatToParts(12345.6);
-   const group=parts.find(x=>x.type==="group")?.value,decimal=parts.find(x=>x.type==="decimal")?.value;
-   if(group)value=value.split(group).join("");
-   if(decimal&&decimal!==".")value=value.split(decimal).join(".");
-   const match=value.replace(/[^\d.+-]/g,"").match(/[-+]?\d+(?:\.\d+)?/);
-   return match?Number(match[0]):null;
-  });
   const formula=(Array.from(document.querySelectorAll("#formula-panel p")).map(x=>x.textContent.trim()).find(x=>x.includes("="))||"").replace(/^[^:：]+[:：]\s*/,"");
-  return {numeric:canonical,currencyCode:window.FinPulseGlobalContext?.get().currencyCode||null,values:Array.from(document.querySelectorAll("#form [name]"),x=>[x.name,x.value]),formula};
- },locale);
+  return {numericRaw:numeric,currencyCode:window.FinPulseGlobalContext?.get().currencyCode||null,values:Array.from(document.querySelectorAll("#form [name]"),x=>[x.name,x.value]),formula};
+ });
+ return {...captured,numeric:captured.numericRaw.map(value=>numberSnapshot(value,locale))};
 }
-
 test("first 10 persisted tool records are complete and locale-consistent",async()=>{
  content=JSON.parse(await readFile(join(process.cwd(),"translations/tool-content.json"),"utf8"));
  assert.equal(content.tools.length,220);
