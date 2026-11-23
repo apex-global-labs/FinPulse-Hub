@@ -108,8 +108,8 @@ test("first ten FAQ, formula, disclaimer, error, SEO and accessibility fields co
 });
 
 
-test("localized calculation steps for Currency, Mortgage and Loan match source step counts in all six locales",()=>{
- const ids=["currency","mortgage","loan"];
+test("all first-ten calculation steps are localized with source-aligned counts in all six locales",()=>{
+ const ids=["currency","mortgage","loan","emi","compound","percentage","tip","car","amortization","savings"];
  for(const id of ids){
   const tool=content.tools.find(item=>item.id===id);
   assert.ok(tool.source.explanations.steps.length>0,id+" source steps");
