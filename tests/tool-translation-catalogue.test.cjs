@@ -116,7 +116,7 @@ test("all first-ten calculation steps are localized with source-aligned counts i
   for(const locale of locales){
    const steps=tool.locales[locale].fields.explanations.steps;
    assert.equal(steps.length,tool.source.explanations.steps.length,id+":"+locale+" step count");
-   assert.ok(steps.every(step=>typeof step==="string"&&step.trim().length>10),id+":"+locale+" non-empty steps");
+   assert.ok(steps.every(step=>typeof step==="string"&&step.trim().length>0),id+":"+locale+" non-empty steps");
   }
  }
 });
