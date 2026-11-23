@@ -81,3 +81,6 @@ Latest PR-head validation (commit `75a1f871fbac21be1b54ead3f8ffe95fbfe9767f`): F
 - Native-speaker and finance-domain review remains pending. Actual tool-page runtime rendering and missing/unapproved-translation English fallback are not yet implemented/verified. Seven-locale browser and RTL/LTR tests remain outstanding.
 - Next work is the first-ten runtime rendering and fallback implementation, followed by integrated browser, accessibility, RTL/LTR and expert-review gates. No tools 11–20 are authorized before the first-ten gates pass.
 - PR #73 remains Draft and unmerged; production deployment is not authorized.
+
+
+- Cross-script test hardening: replaced an arbitrary 10-character minimum with a non-empty-string assertion. A valid concise Simplified Chinese step was shorter than 10 characters, so the previous threshold incorrectly treated natural concise CJK text as empty. The revised test checks actual presence without imposing a language-dependent length rule.
