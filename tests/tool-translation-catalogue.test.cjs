@@ -67,7 +67,7 @@ test("every canonical tool has six locale records with correct draft or pending 
      assert.ok(fields.explanations.steps.every(item=>item===null),tool.id+":"+locale+" untranslated steps use English fallback");
     }
     assert.deepEqual(fields.seo.faq.map(item=>item.key),source.seo.faq.map(item=>item.key),tool.id+":"+locale+" stable SEO FAQ keys");
-    if(tool.id==="freelance"){
+    if(["freelance","margin","affordability"].includes(tool.id)){
      assert.ok(fields.seo.faq.every(item=>typeof item.question==="string"&&item.question.trim()&&typeof item.answer==="string"&&item.answer.trim()),tool.id+":"+locale+" translated SEO FAQ content");
     }else{
      assert.ok(fields.seo.faq.every(item=>item.question===null&&item.answer===null),tool.id+":"+locale+" untranslated SEO FAQs use English fallback");
