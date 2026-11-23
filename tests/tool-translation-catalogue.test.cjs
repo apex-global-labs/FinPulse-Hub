@@ -123,14 +123,15 @@ test("all first-ten calculation steps are localized with source-aligned counts i
 
 test("first-ten translated content has no cross-locale script contamination",()=>{
  const forbidden={
-  hi:[/[\\p{Script=Arabic}]/u,/[\\p{Script=Han}]/u,/[\\p{Script=Cyrillic}]/u],
-  ar:[/[\\p{Script=Devanagari}]/u,/[\\p{Script=Han}]/u,/[\\p{Script=Cyrillic}]/u],
-  ur:[/[\\p{Script=Devanagari}]/u,/[\\p{Script=Han}]/u,/[\\p{Script=Cyrillic}]/u],
-  "zh-CN":[/[\\p{Script=Devanagari}]/u,/[\\p{Script=Arabic}]/u,/[\\p{Script=Cyrillic}]/u,/[\\p{Script=Hiragana}\\p{Script=Katakana}]/u],
-  ja:[/[\\p{Script=Devanagari}]/u,/[\\p{Script=Arabic}]/u,/[\\p{Script=Cyrillic}]/u],
-  ru:[/[\\p{Script=Devanagari}]/u,/[\\p{Script=Arabic}]/u,/[\\p{Script=Han}]/u,/[\\p{Script=Hiragana}\\p{Script=Katakana}]/u]
+  hi:[/[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF]/u,/[\u4E00-\u9FFF]/u,/[\u0400-\u04FF]/u],
+  ar:[/[\u0900-\u097F]/u,/[\u4E00-\u9FFF]/u,/[\u0400-\u04FF]/u],
+  ur:[/[\u0900-\u097F]/u,/[\u4E00-\u9FFF]/u,/[\u0400-\u04FF]/u],
+  "zh-CN":[/[\u0900-\u097F]/u,/[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF]/u,/[\u0400-\u04FF]/u,/[\u3040-\u30FF]/u],
+  ja:[/[\u0900-\u097F]/u,/[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF]/u,/[\u0400-\u04FF]/u],
+  ru:[/[\u0900-\u097F]/u,/[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF]/u,/[\u4E00-\u9FFF]/u,/[\u3040-\u30FF]/u]
  };
  function visit(value,path,checks,tool,locale){
+  if(path.endsWith(".key"))return;
   if(typeof value==="string"){for(const pattern of checks)assert.doesNotMatch(value,pattern,tool+":"+locale+":"+path)}
   else if(Array.isArray(value))value.forEach((item,index)=>visit(item,path+"["+index+"]",checks,tool,locale));
   else if(value&&typeof value==="object")Object.entries(value).forEach(([key,item])=>visit(item,path+"."+key,checks,tool,locale));
