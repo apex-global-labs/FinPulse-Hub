@@ -12148,23 +12148,23 @@
             "inputs": [
               {
                 "key": "income",
-                "label": "مطلوب سالانہ خالص آمدنی"
+                "label": null
               },
               {
                 "key": "costs",
-                "label": "سالانہ کاروباری اخراجات"
+                "label": null
               },
               {
                 "key": "tax",
-                "label": "تخمینی ٹیکس ریزرو (%)"
+                "label": null
               },
               {
                 "key": "hours",
-                "label": "فی ہفتہ قابلِ بلنگ گھنٹے"
+                "label": null
               },
               {
                 "key": "weeks",
-                "label": "سالانہ کام کے ہفتے"
+                "label": null
               }
             ],
             "actions": {
@@ -12208,7 +12208,7 @@
                 },
                 {
                   "key": "breakdown-3",
-                  "label": "سالانہ کاروباری اخراجات"
+                  "label": null
                 },
                 {
                   "key": "breakdown-4",
@@ -12260,23 +12260,23 @@
               "controlLabels": [
                 {
                   "key": "income",
-                  "label": "مطلوب سالانہ خالص آمدنی"
+                  "label": null
                 },
                 {
                   "key": "costs",
-                  "label": "سالانہ کاروباری اخراجات"
+                  "label": null
                 },
                 {
                   "key": "tax",
-                  "label": "تخمینی ٹیکس ریزرو (%)"
+                  "label": null
                 },
                 {
                   "key": "hours",
-                  "label": "فی ہفتہ قابلِ بلنگ گھنٹے"
+                  "label": null
                 },
                 {
                   "key": "weeks",
-                  "label": "سالانہ کام کے ہفتے"
+                  "label": null
                 }
               ]
             }
@@ -12294,23 +12294,23 @@
             "inputs": [
               {
                 "key": "income",
-                "label": "期望年度税后收入"
+                "label": null
               },
               {
                 "key": "costs",
-                "label": "年度经营成本"
+                "label": null
               },
               {
                 "key": "tax",
-                "label": "预计税款预留 (%)"
+                "label": null
               },
               {
                 "key": "hours",
-                "label": "每周可计费小时"
+                "label": null
               },
               {
                 "key": "weeks",
-                "label": "每年工作周数"
+                "label": null
               }
             ],
             "actions": {
@@ -12354,7 +12354,7 @@
                 },
                 {
                   "key": "breakdown-3",
-                  "label": "年度经营成本"
+                  "label": null
                 },
                 {
                   "key": "breakdown-4",
@@ -12406,23 +12406,23 @@
               "controlLabels": [
                 {
                   "key": "income",
-                  "label": "期望年度税后收入"
+                  "label": null
                 },
                 {
                   "key": "costs",
-                  "label": "年度经营成本"
+                  "label": null
                 },
                 {
                   "key": "tax",
-                  "label": "预计税款预留 (%)"
+                  "label": null
                 },
                 {
                   "key": "hours",
-                  "label": "每周可计费小时"
+                  "label": null
                 },
                 {
                   "key": "weeks",
-                  "label": "每年工作周数"
+                  "label": null
                 }
               ]
             }
@@ -12440,23 +12440,23 @@
             "inputs": [
               {
                 "key": "income",
-                "label": "希望する年間手取り収入"
+                "label": null
               },
               {
                 "key": "costs",
-                "label": "年間事業経費"
+                "label": null
               },
               {
                 "key": "tax",
-                "label": "推定税金準備率 (%)"
+                "label": null
               },
               {
                 "key": "hours",
-                "label": "週あたり請求可能時間"
+                "label": null
               },
               {
                 "key": "weeks",
-                "label": "年間稼働週数"
+                "label": null
               }
             ],
             "actions": {
@@ -12500,7 +12500,7 @@
                 },
                 {
                   "key": "breakdown-3",
-                  "label": "年間事業経費"
+                  "label": null
                 },
                 {
                   "key": "breakdown-4",
@@ -12552,23 +12552,23 @@
               "controlLabels": [
                 {
                   "key": "income",
-                  "label": "希望する年間手取り収入"
+                  "label": null
                 },
                 {
                   "key": "costs",
-                  "label": "年間事業経費"
+                  "label": null
                 },
                 {
                   "key": "tax",
-                  "label": "推定税金準備率 (%)"
+                  "label": null
                 },
                 {
                   "key": "hours",
-                  "label": "週あたり請求可能時間"
+                  "label": null
                 },
                 {
                   "key": "weeks",
-                  "label": "年間稼働週数"
+                  "label": null
                 }
               ]
             }
@@ -12586,23 +12586,23 @@
             "inputs": [
               {
                 "key": "income",
-                "label": "Желаемый годовой доход после налогов"
+                "label": null
               },
               {
                 "key": "costs",
-                "label": "Годовые расходы бизнеса"
+                "label": null
               },
               {
                 "key": "tax",
-                "label": "Расчётный резерв на налоги (%)"
+                "label": null
               },
               {
                 "key": "hours",
-                "label": "Оплачиваемые часы в неделю"
+                "label": null
               },
               {
                 "key": "weeks",
-                "label": "Рабочих недель в году"
+                "label": null
               }
             ],
             "actions": {
@@ -12646,7 +12646,7 @@
                 },
                 {
                   "key": "breakdown-3",
-                  "label": "Годовые расходы бизнеса"
+                  "label": null
                 },
                 {
                   "key": "breakdown-4",
@@ -12698,23 +12698,23 @@
               "controlLabels": [
                 {
                   "key": "income",
-                  "label": "Желаемый годовой доход после налогов"
+                  "label": null
                 },
                 {
                   "key": "costs",
-                  "label": "Годовые расходы бизнеса"
+                  "label": null
                 },
                 {
                   "key": "tax",
-                  "label": "Расчётный резерв на налоги (%)"
+                  "label": null
                 },
                 {
                   "key": "hours",
-                  "label": "Оплачиваемые часы в неделю"
+                  "label": null
                 },
                 {
                   "key": "weeks",
-                  "label": "Рабочих недель в году"
+                  "label": null
                 }
               ]
             }
@@ -13218,7 +13218,7 @@
               },
               {
                 "key": "cost",
-                "label": "کل اخراجات"
+                "label": null
               }
             ],
             "actions": {
@@ -13236,41 +13236,41 @@
               "metrics": [
                 {
                   "key": "metric-1",
-                  "label": "آمدنی"
+                  "label": null
                 },
                 {
                   "key": "metric-2",
-                  "label": "کل اخراجات"
+                  "label": null
                 },
                 {
                   "key": "metric-3",
-                  "label": "منافع"
+                  "label": null
                 },
                 {
                   "key": "metric-4",
-                  "label": "لاگت پر مارک اپ"
+                  "label": null
                 }
               ],
               "breakdown": [
                 {
                   "key": "breakdown-1",
-                  "label": "آمدنی"
+                  "label": null
                 },
                 {
                   "key": "breakdown-2",
-                  "label": "کل اخراجات"
+                  "label": null
                 },
                 {
                   "key": "breakdown-3",
-                  "label": "منافع"
+                  "label": null
                 },
                 {
                   "key": "breakdown-4",
-                  "label": "منافع کا مارجن"
+                  "label": null
                 },
                 {
                   "key": "breakdown-5",
-                  "label": "لاگت پر مارک اپ"
+                  "label": null
                 }
               ],
               "chart": {
@@ -13314,7 +13314,7 @@
                 },
                 {
                   "key": "cost",
-                  "label": "کل اخراجات"
+                  "label": null
                 }
               ]
             }
@@ -13336,7 +13336,7 @@
               },
               {
                 "key": "cost",
-                "label": "总成本"
+                "label": null
               }
             ],
             "actions": {
@@ -13354,41 +13354,41 @@
               "metrics": [
                 {
                   "key": "metric-1",
-                  "label": "收入"
+                  "label": null
                 },
                 {
                   "key": "metric-2",
-                  "label": "总成本"
+                  "label": null
                 },
                 {
                   "key": "metric-3",
-                  "label": "利润"
+                  "label": null
                 },
                 {
                   "key": "metric-4",
-                  "label": "成本加价率"
+                  "label": null
                 }
               ],
               "breakdown": [
                 {
                   "key": "breakdown-1",
-                  "label": "收入"
+                  "label": null
                 },
                 {
                   "key": "breakdown-2",
-                  "label": "总成本"
+                  "label": null
                 },
                 {
                   "key": "breakdown-3",
-                  "label": "利润"
+                  "label": null
                 },
                 {
                   "key": "breakdown-4",
-                  "label": "利润率"
+                  "label": null
                 },
                 {
                   "key": "breakdown-5",
-                  "label": "成本加价率"
+                  "label": null
                 }
               ],
               "chart": {
@@ -13432,7 +13432,7 @@
                 },
                 {
                   "key": "cost",
-                  "label": "总成本"
+                  "label": null
                 }
               ]
             }
@@ -13454,7 +13454,7 @@
               },
               {
                 "key": "cost",
-                "label": "総費用"
+                "label": null
               }
             ],
             "actions": {
@@ -13472,41 +13472,41 @@
               "metrics": [
                 {
                   "key": "metric-1",
-                  "label": "売上高"
+                  "label": null
                 },
                 {
                   "key": "metric-2",
-                  "label": "総費用"
+                  "label": null
                 },
                 {
                   "key": "metric-3",
-                  "label": "利益"
+                  "label": null
                 },
                 {
                   "key": "metric-4",
-                  "label": "原価に対する上乗せ率"
+                  "label": null
                 }
               ],
               "breakdown": [
                 {
                   "key": "breakdown-1",
-                  "label": "売上高"
+                  "label": null
                 },
                 {
                   "key": "breakdown-2",
-                  "label": "総費用"
+                  "label": null
                 },
                 {
                   "key": "breakdown-3",
-                  "label": "利益"
+                  "label": null
                 },
                 {
                   "key": "breakdown-4",
-                  "label": "利益率"
+                  "label": null
                 },
                 {
                   "key": "breakdown-5",
-                  "label": "原価に対する上乗せ率"
+                  "label": null
                 }
               ],
               "chart": {
@@ -13550,7 +13550,7 @@
                 },
                 {
                   "key": "cost",
-                  "label": "総費用"
+                  "label": null
                 }
               ]
             }
@@ -13572,7 +13572,7 @@
               },
               {
                 "key": "cost",
-                "label": "Общие затраты"
+                "label": null
               }
             ],
             "actions": {
@@ -13590,41 +13590,41 @@
               "metrics": [
                 {
                   "key": "metric-1",
-                  "label": "Выручка"
+                  "label": null
                 },
                 {
                   "key": "metric-2",
-                  "label": "Общие затраты"
+                  "label": null
                 },
                 {
                   "key": "metric-3",
-                  "label": "Прибыль"
+                  "label": null
                 },
                 {
                   "key": "metric-4",
-                  "label": "Наценка на затраты"
+                  "label": null
                 }
               ],
               "breakdown": [
                 {
                   "key": "breakdown-1",
-                  "label": "Выручка"
+                  "label": null
                 },
                 {
                   "key": "breakdown-2",
-                  "label": "Общие затраты"
+                  "label": null
                 },
                 {
                   "key": "breakdown-3",
-                  "label": "Прибыль"
+                  "label": null
                 },
                 {
                   "key": "breakdown-4",
-                  "label": "Рентабельность продаж"
+                  "label": null
                 },
                 {
                   "key": "breakdown-5",
-                  "label": "Наценка на затраты"
+                  "label": null
                 }
               ],
               "chart": {
@@ -13668,7 +13668,7 @@
                 },
                 {
                   "key": "cost",
-                  "label": "Общие затраты"
+                  "label": null
                 }
               ]
             }
@@ -14150,43 +14150,43 @@
             "inputs": [
               {
                 "key": "income",
-                "label": "گھرانے کی مجموعی ماہانہ آمدنی"
+                "label": null
               },
               {
                 "key": "debts",
-                "label": "ماہانہ قرض کی ادائیگیاں"
+                "label": null
               },
               {
                 "key": "down",
-                "label": "دستیاب پیشگی ادائیگی"
+                "label": null
               },
               {
                 "key": "rate",
-                "label": "سالانہ رہن کی شرح (%)"
+                "label": null
               },
               {
                 "key": "years",
-                "label": "رہن کی مدت (سال)"
+                "label": null
               },
               {
                 "key": "tax",
-                "label": "ماہانہ پراپرٹی ٹیکس"
+                "label": null
               },
               {
                 "key": "insurance",
-                "label": "ماہانہ ہوم انشورنس"
+                "label": null
               },
               {
                 "key": "hoa",
-                "label": "ماہانہ HOA / فیس"
+                "label": null
               },
               {
                 "key": "dti",
-                "label": "زیادہ سے زیادہ قرض بہ آمدنی تناسب (%)"
+                "label": null
               },
               {
                 "key": "housing",
-                "label": "زیادہ سے زیادہ رہائشی لاگت کا تناسب (%)"
+                "label": null
               }
             ],
             "actions": {
@@ -14265,43 +14265,43 @@
               "controlLabels": [
                 {
                   "key": "income",
-                  "label": "گھرانے کی مجموعی ماہانہ آمدنی"
+                  "label": null
                 },
                 {
                   "key": "debts",
-                  "label": "ماہانہ قرض کی ادائیگیاں"
+                  "label": null
                 },
                 {
                   "key": "down",
-                  "label": "دستیاب پیشگی ادائیگی"
+                  "label": null
                 },
                 {
                   "key": "rate",
-                  "label": "سالانہ رہن کی شرح (%)"
+                  "label": null
                 },
                 {
                   "key": "years",
-                  "label": "رہن کی مدت (سال)"
+                  "label": null
                 },
                 {
                   "key": "tax",
-                  "label": "ماہانہ پراپرٹی ٹیکس"
+                  "label": null
                 },
                 {
                   "key": "insurance",
-                  "label": "ماہانہ ہوم انشورنس"
+                  "label": null
                 },
                 {
                   "key": "hoa",
-                  "label": "ماہانہ HOA / فیس"
+                  "label": null
                 },
                 {
                   "key": "dti",
-                  "label": "زیادہ سے زیادہ قرض بہ آمدنی تناسب (%)"
+                  "label": null
                 },
                 {
                   "key": "housing",
-                  "label": "زیادہ سے زیادہ رہائشی لاگت کا تناسب (%)"
+                  "label": null
                 }
               ]
             }
@@ -14319,43 +14319,43 @@
             "inputs": [
               {
                 "key": "income",
-                "label": "家庭月总收入"
+                "label": null
               },
               {
                 "key": "debts",
-                "label": "每月债务还款"
+                "label": null
               },
               {
                 "key": "down",
-                "label": "可用首付款"
+                "label": null
               },
               {
                 "key": "rate",
-                "label": "年抵押贷款利率 (%)"
+                "label": null
               },
               {
                 "key": "years",
-                "label": "抵押贷款期限（年）"
+                "label": null
               },
               {
                 "key": "tax",
-                "label": "每月房产税"
+                "label": null
               },
               {
                 "key": "insurance",
-                "label": "每月房屋保险"
+                "label": null
               },
               {
                 "key": "hoa",
-                "label": "每月业主协会费用"
+                "label": null
               },
               {
                 "key": "dti",
-                "label": "最高总债务收入比 (%)"
+                "label": null
               },
               {
                 "key": "housing",
-                "label": "最高住房成本比率 (%)"
+                "label": null
               }
             ],
             "actions": {
@@ -14434,43 +14434,43 @@
               "controlLabels": [
                 {
                   "key": "income",
-                  "label": "家庭月总收入"
+                  "label": null
                 },
                 {
                   "key": "debts",
-                  "label": "每月债务还款"
+                  "label": null
                 },
                 {
                   "key": "down",
-                  "label": "可用首付款"
+                  "label": null
                 },
                 {
                   "key": "rate",
-                  "label": "年抵押贷款利率 (%)"
+                  "label": null
                 },
                 {
                   "key": "years",
-                  "label": "抵押贷款期限（年）"
+                  "label": null
                 },
                 {
                   "key": "tax",
-                  "label": "每月房产税"
+                  "label": null
                 },
                 {
                   "key": "insurance",
-                  "label": "每月房屋保险"
+                  "label": null
                 },
                 {
                   "key": "hoa",
-                  "label": "每月业主协会费用"
+                  "label": null
                 },
                 {
                   "key": "dti",
-                  "label": "最高总债务收入比 (%)"
+                  "label": null
                 },
                 {
                   "key": "housing",
-                  "label": "最高住房成本比率 (%)"
+                  "label": null
                 }
               ]
             }
@@ -14488,43 +14488,43 @@
             "inputs": [
               {
                 "key": "income",
-                "label": "世帯の月間総収入"
+                "label": null
               },
               {
                 "key": "debts",
-                "label": "毎月の債務返済額"
+                "label": null
               },
               {
                 "key": "down",
-                "label": "利用可能な頭金"
+                "label": null
               },
               {
                 "key": "rate",
-                "label": "年間住宅ローン金利 (%)"
+                "label": null
               },
               {
                 "key": "years",
-                "label": "住宅ローン期間（年）"
+                "label": null
               },
               {
                 "key": "tax",
-                "label": "毎月の固定資産税"
+                "label": null
               },
               {
                 "key": "insurance",
-                "label": "毎月の住宅保険"
+                "label": null
               },
               {
                 "key": "hoa",
-                "label": "毎月の管理組合費"
+                "label": null
               },
               {
                 "key": "dti",
-                "label": "最大総負債比率 (%)"
+                "label": null
               },
               {
                 "key": "housing",
-                "label": "最大住宅費比率 (%)"
+                "label": null
               }
             ],
             "actions": {
@@ -14603,43 +14603,43 @@
               "controlLabels": [
                 {
                   "key": "income",
-                  "label": "世帯の月間総収入"
+                  "label": null
                 },
                 {
                   "key": "debts",
-                  "label": "毎月の債務返済額"
+                  "label": null
                 },
                 {
                   "key": "down",
-                  "label": "利用可能な頭金"
+                  "label": null
                 },
                 {
                   "key": "rate",
-                  "label": "年間住宅ローン金利 (%)"
+                  "label": null
                 },
                 {
                   "key": "years",
-                  "label": "住宅ローン期間（年）"
+                  "label": null
                 },
                 {
                   "key": "tax",
-                  "label": "毎月の固定資産税"
+                  "label": null
                 },
                 {
                   "key": "insurance",
-                  "label": "毎月の住宅保険"
+                  "label": null
                 },
                 {
                   "key": "hoa",
-                  "label": "毎月の管理組合費"
+                  "label": null
                 },
                 {
                   "key": "dti",
-                  "label": "最大総負債比率 (%)"
+                  "label": null
                 },
                 {
                   "key": "housing",
-                  "label": "最大住宅費比率 (%)"
+                  "label": null
                 }
               ]
             }
@@ -14657,43 +14657,43 @@
             "inputs": [
               {
                 "key": "income",
-                "label": "Общий месячный доход семьи"
+                "label": null
               },
               {
                 "key": "debts",
-                "label": "Ежемесячные выплаты по долгам"
+                "label": null
               },
               {
                 "key": "down",
-                "label": "Доступный первоначальный взнос"
+                "label": null
               },
               {
                 "key": "rate",
-                "label": "Годовая ставка по ипотеке (%)"
+                "label": null
               },
               {
                 "key": "years",
-                "label": "Срок ипотеки (лет)"
+                "label": null
               },
               {
                 "key": "tax",
-                "label": "Ежемесячный налог на недвижимость"
+                "label": null
               },
               {
                 "key": "insurance",
-                "label": "Ежемесячная страховка жилья"
+                "label": null
               },
               {
                 "key": "hoa",
-                "label": "Ежемесячные взносы HOA / сборы"
+                "label": null
               },
               {
                 "key": "dti",
-                "label": "Максимальное отношение долга к доходу (%)"
+                "label": null
               },
               {
                 "key": "housing",
-                "label": "Максимальная доля расходов на жильё (%)"
+                "label": null
               }
             ],
             "actions": {
@@ -14772,43 +14772,43 @@
               "controlLabels": [
                 {
                   "key": "income",
-                  "label": "Общий месячный доход семьи"
+                  "label": null
                 },
                 {
                   "key": "debts",
-                  "label": "Ежемесячные выплаты по долгам"
+                  "label": null
                 },
                 {
                   "key": "down",
-                  "label": "Доступный первоначальный взнос"
+                  "label": null
                 },
                 {
                   "key": "rate",
-                  "label": "Годовая ставка по ипотеке (%)"
+                  "label": null
                 },
                 {
                   "key": "years",
-                  "label": "Срок ипотеки (лет)"
+                  "label": null
                 },
                 {
                   "key": "tax",
-                  "label": "Ежемесячный налог на недвижимость"
+                  "label": null
                 },
                 {
                   "key": "insurance",
-                  "label": "Ежемесячная страховка жилья"
+                  "label": null
                 },
                 {
                   "key": "hoa",
-                  "label": "Ежемесячные взносы HOA / сборы"
+                  "label": null
                 },
                 {
                   "key": "dti",
-                  "label": "Максимальное отношение долга к доходу (%)"
+                  "label": null
                 },
                 {
                   "key": "housing",
-                  "label": "Максимальная доля расходов на жильё (%)"
+                  "label": null
                 }
               ]
             }
@@ -15346,7 +15346,7 @@
               },
               {
                 "key": "rate",
-                "label": "سالانہ شرح سود (%)"
+                "label": null
               },
               {
                 "key": "years",
@@ -15437,7 +15437,7 @@
                 },
                 {
                   "key": "rate",
-                  "label": "سالانہ شرح سود (%)"
+                  "label": null
                 },
                 {
                   "key": "years",
@@ -15467,7 +15467,7 @@
               },
               {
                 "key": "rate",
-                "label": "年利率 (%)"
+                "label": null
               },
               {
                 "key": "years",
@@ -15558,7 +15558,7 @@
                 },
                 {
                   "key": "rate",
-                  "label": "年利率 (%)"
+                  "label": null
                 },
                 {
                   "key": "years",
@@ -15588,7 +15588,7 @@
               },
               {
                 "key": "rate",
-                "label": "年利 (%)"
+                "label": null
               },
               {
                 "key": "years",
@@ -15679,7 +15679,7 @@
                 },
                 {
                   "key": "rate",
-                  "label": "年利 (%)"
+                  "label": null
                 },
                 {
                   "key": "years",
@@ -15709,7 +15709,7 @@
               },
               {
                 "key": "rate",
-                "label": "Годовая процентная ставка (%)"
+                "label": null
               },
               {
                 "key": "years",
@@ -15800,7 +15800,7 @@
                 },
                 {
                   "key": "rate",
-                  "label": "Годовая процентная ставка (%)"
+                  "label": null
                 },
                 {
                   "key": "years",
@@ -16287,7 +16287,7 @@
               },
               {
                 "key": "costs",
-                "label": "تخمینی اختتامی اخراجات"
+                "label": null
               }
             ],
             "actions": {
@@ -16390,7 +16390,7 @@
                 },
                 {
                   "key": "costs",
-                  "label": "تخمینی اختتامی اخراجات"
+                  "label": null
                 }
               ]
             }
@@ -16428,7 +16428,7 @@
               },
               {
                 "key": "costs",
-                "label": "预计过户费用"
+                "label": null
               }
             ],
             "actions": {
@@ -16531,7 +16531,7 @@
                 },
                 {
                   "key": "costs",
-                  "label": "预计过户费用"
+                  "label": null
                 }
               ]
             }
@@ -16569,7 +16569,7 @@
               },
               {
                 "key": "costs",
-                "label": "推定諸費用"
+                "label": null
               }
             ],
             "actions": {
@@ -16672,7 +16672,7 @@
                 },
                 {
                   "key": "costs",
-                  "label": "推定諸費用"
+                  "label": null
                 }
               ]
             }
@@ -16710,7 +16710,7 @@
               },
               {
                 "key": "costs",
-                "label": "Расчётные расходы на оформление"
+                "label": null
               }
             ],
             "actions": {
@@ -16813,7 +16813,7 @@
                 },
                 {
                   "key": "costs",
-                  "label": "Расчётные расходы на оформление"
+                  "label": null
                 }
               ]
             }
@@ -17312,19 +17312,19 @@
               },
               {
                 "key": "rate",
-                "label": "سالانہ شرح سود (%)"
+                "label": null
               },
               {
                 "key": "years",
-                "label": "قرض کی مدت (سال)"
+                "label": null
               },
               {
                 "key": "fee",
-                "label": "قرض جاری کرنے کی فیس (%)"
+                "label": null
               },
               {
                 "key": "extra",
-                "label": "اضافی ماہانہ ادائیگی"
+                "label": null
               }
             ],
             "actions": {
@@ -17411,19 +17411,19 @@
                 },
                 {
                   "key": "rate",
-                  "label": "سالانہ شرح سود (%)"
+                  "label": null
                 },
                 {
                   "key": "years",
-                  "label": "قرض کی مدت (سال)"
+                  "label": null
                 },
                 {
                   "key": "fee",
-                  "label": "قرض جاری کرنے کی فیس (%)"
+                  "label": null
                 },
                 {
                   "key": "extra",
-                  "label": "اضافی ماہانہ ادائیگی"
+                  "label": null
                 }
               ]
             }
@@ -17445,19 +17445,19 @@
               },
               {
                 "key": "rate",
-                "label": "年利率 (%)"
+                "label": null
               },
               {
                 "key": "years",
-                "label": "贷款期限（年）"
+                "label": null
               },
               {
                 "key": "fee",
-                "label": "贷款发放费 (%)"
+                "label": null
               },
               {
                 "key": "extra",
-                "label": "每月额外还款"
+                "label": null
               }
             ],
             "actions": {
@@ -17544,19 +17544,19 @@
                 },
                 {
                   "key": "rate",
-                  "label": "年利率 (%)"
+                  "label": null
                 },
                 {
                   "key": "years",
-                  "label": "贷款期限（年）"
+                  "label": null
                 },
                 {
                   "key": "fee",
-                  "label": "贷款发放费 (%)"
+                  "label": null
                 },
                 {
                   "key": "extra",
-                  "label": "每月额外还款"
+                  "label": null
                 }
               ]
             }
@@ -17578,19 +17578,19 @@
               },
               {
                 "key": "rate",
-                "label": "年利 (%)"
+                "label": null
               },
               {
                 "key": "years",
-                "label": "ローン期間（年）"
+                "label": null
               },
               {
                 "key": "fee",
-                "label": "融資手数料 (%)"
+                "label": null
               },
               {
                 "key": "extra",
-                "label": "毎月の追加返済額"
+                "label": null
               }
             ],
             "actions": {
@@ -17677,19 +17677,19 @@
                 },
                 {
                   "key": "rate",
-                  "label": "年利 (%)"
+                  "label": null
                 },
                 {
                   "key": "years",
-                  "label": "ローン期間（年）"
+                  "label": null
                 },
                 {
                   "key": "fee",
-                  "label": "融資手数料 (%)"
+                  "label": null
                 },
                 {
                   "key": "extra",
-                  "label": "毎月の追加返済額"
+                  "label": null
                 }
               ]
             }
@@ -17711,19 +17711,19 @@
               },
               {
                 "key": "rate",
-                "label": "Годовая процентная ставка (%)"
+                "label": null
               },
               {
                 "key": "years",
-                "label": "Срок кредита (лет)"
+                "label": null
               },
               {
                 "key": "fee",
-                "label": "Комиссия за выдачу кредита (%)"
+                "label": null
               },
               {
                 "key": "extra",
-                "label": "Дополнительный ежемесячный платёж"
+                "label": null
               }
             ],
             "actions": {
@@ -17810,19 +17810,19 @@
                 },
                 {
                   "key": "rate",
-                  "label": "Годовая процентная ставка (%)"
+                  "label": null
                 },
                 {
                   "key": "years",
-                  "label": "Срок кредита (лет)"
+                  "label": null
                 },
                 {
                   "key": "fee",
-                  "label": "Комиссия за выдачу кредита (%)"
+                  "label": null
                 },
                 {
                   "key": "extra",
-                  "label": "Дополнительный ежемесячный платёж"
+                  "label": null
                 }
               ]
             }
@@ -18289,7 +18289,7 @@
               },
               {
                 "key": "rate",
-                "label": "سالانہ شرح سود (%)"
+                "label": null
               },
               {
                 "key": "years",
@@ -18297,7 +18297,7 @@
               },
               {
                 "key": "extra",
-                "label": "اضافی ماہانہ ادائیگی"
+                "label": null
               }
             ],
             "actions": {
@@ -18380,7 +18380,7 @@
                 },
                 {
                   "key": "rate",
-                  "label": "سالانہ شرح سود (%)"
+                  "label": null
                 },
                 {
                   "key": "years",
@@ -18388,7 +18388,7 @@
                 },
                 {
                   "key": "extra",
-                  "label": "اضافی ماہانہ ادائیگی"
+                  "label": null
                 }
               ]
             }
@@ -18410,7 +18410,7 @@
               },
               {
                 "key": "rate",
-                "label": "年利率 (%)"
+                "label": null
               },
               {
                 "key": "years",
@@ -18418,7 +18418,7 @@
               },
               {
                 "key": "extra",
-                "label": "每月额外还款"
+                "label": null
               }
             ],
             "actions": {
@@ -18501,7 +18501,7 @@
                 },
                 {
                   "key": "rate",
-                  "label": "年利率 (%)"
+                  "label": null
                 },
                 {
                   "key": "years",
@@ -18509,7 +18509,7 @@
                 },
                 {
                   "key": "extra",
-                  "label": "每月额外还款"
+                  "label": null
                 }
               ]
             }
@@ -18531,7 +18531,7 @@
               },
               {
                 "key": "rate",
-                "label": "年利 (%)"
+                "label": null
               },
               {
                 "key": "years",
@@ -18539,7 +18539,7 @@
               },
               {
                 "key": "extra",
-                "label": "毎月の追加返済額"
+                "label": null
               }
             ],
             "actions": {
@@ -18622,7 +18622,7 @@
                 },
                 {
                   "key": "rate",
-                  "label": "年利 (%)"
+                  "label": null
                 },
                 {
                   "key": "years",
@@ -18630,7 +18630,7 @@
                 },
                 {
                   "key": "extra",
-                  "label": "毎月の追加返済額"
+                  "label": null
                 }
               ]
             }
@@ -18652,7 +18652,7 @@
               },
               {
                 "key": "rate",
-                "label": "Годовая процентная ставка (%)"
+                "label": null
               },
               {
                 "key": "years",
@@ -18660,7 +18660,7 @@
               },
               {
                 "key": "extra",
-                "label": "Дополнительный ежемесячный платёж"
+                "label": null
               }
             ],
             "actions": {
@@ -18743,7 +18743,7 @@
                 },
                 {
                   "key": "rate",
-                  "label": "Годовая процентная ставка (%)"
+                  "label": null
                 },
                 {
                   "key": "years",
@@ -18751,7 +18751,7 @@
                 },
                 {
                   "key": "extra",
-                  "label": "Дополнительный ежемесячный платёж"
+                  "label": null
                 }
               ]
             }
@@ -19242,11 +19242,11 @@
               },
               {
                 "key": "days",
-                "label": "دنوں کی تعداد"
+                "label": null
               },
               {
                 "key": "basis",
-                "label": "دنوں کی بنیاد"
+                "label": null
               }
             ],
             "actions": {
@@ -19276,7 +19276,7 @@
                 },
                 {
                   "key": "metric-4",
-                  "label": "دنوں کی بنیاد"
+                  "label": null
                 },
                 {
                   "key": "metric-5",
@@ -19286,7 +19286,7 @@
               "breakdown": [
                 {
                   "key": "breakdown-1",
-                  "label": "اصل رقم"
+                  "label": null
                 },
                 {
                   "key": "breakdown-2",
@@ -19354,11 +19354,11 @@
                 },
                 {
                   "key": "days",
-                  "label": "دنوں کی تعداد"
+                  "label": null
                 },
                 {
                   "key": "basis",
-                  "label": "دنوں کی بنیاد"
+                  "label": null
                 }
               ]
             }
@@ -19384,11 +19384,11 @@
               },
               {
                 "key": "days",
-                "label": "天数"
+                "label": null
               },
               {
                 "key": "basis",
-                "label": "日计数基准"
+                "label": null
               }
             ],
             "actions": {
@@ -19418,7 +19418,7 @@
                 },
                 {
                   "key": "metric-4",
-                  "label": "日计数基准"
+                  "label": null
                 },
                 {
                   "key": "metric-5",
@@ -19428,7 +19428,7 @@
               "breakdown": [
                 {
                   "key": "breakdown-1",
-                  "label": "本金"
+                  "label": null
                 },
                 {
                   "key": "breakdown-2",
@@ -19496,11 +19496,11 @@
                 },
                 {
                   "key": "days",
-                  "label": "天数"
+                  "label": null
                 },
                 {
                   "key": "basis",
-                  "label": "日计数基准"
+                  "label": null
                 }
               ]
             }
@@ -19526,11 +19526,11 @@
               },
               {
                 "key": "days",
-                "label": "日数"
+                "label": null
               },
               {
                 "key": "basis",
-                "label": "日数計算基準"
+                "label": null
               }
             ],
             "actions": {
@@ -19560,7 +19560,7 @@
                 },
                 {
                   "key": "metric-4",
-                  "label": "日数計算基準"
+                  "label": null
                 },
                 {
                   "key": "metric-5",
@@ -19570,7 +19570,7 @@
               "breakdown": [
                 {
                   "key": "breakdown-1",
-                  "label": "元金"
+                  "label": null
                 },
                 {
                   "key": "breakdown-2",
@@ -19638,11 +19638,11 @@
                 },
                 {
                   "key": "days",
-                  "label": "日数"
+                  "label": null
                 },
                 {
                   "key": "basis",
-                  "label": "日数計算基準"
+                  "label": null
                 }
               ]
             }
@@ -19668,11 +19668,11 @@
               },
               {
                 "key": "days",
-                "label": "Количество дней"
+                "label": null
               },
               {
                 "key": "basis",
-                "label": "База подсчёта дней"
+                "label": null
               }
             ],
             "actions": {
@@ -19702,7 +19702,7 @@
                 },
                 {
                   "key": "metric-4",
-                  "label": "База подсчёта дней"
+                  "label": null
                 },
                 {
                   "key": "metric-5",
@@ -19712,7 +19712,7 @@
               "breakdown": [
                 {
                   "key": "breakdown-1",
-                  "label": "Основная сумма"
+                  "label": null
                 },
                 {
                   "key": "breakdown-2",
@@ -19780,11 +19780,11 @@
                 },
                 {
                   "key": "days",
-                  "label": "Количество дней"
+                  "label": null
                 },
                 {
                   "key": "basis",
-                  "label": "База подсчёта дней"
+                  "label": null
                 }
               ]
             }
@@ -20274,15 +20274,15 @@
             "inputs": [
               {
                 "key": "current",
-                "label": "موجودہ ریٹائرمنٹ بچت"
+                "label": null
               },
               {
                 "key": "monthly",
-                "label": "ماہانہ شراکت"
+                "label": null
               },
               {
                 "key": "rate",
-                "label": "متوقع سالانہ منافع (%)"
+                "label": null
               },
               {
                 "key": "altRate",
@@ -20290,7 +20290,7 @@
               },
               {
                 "key": "years",
-                "label": "ریٹائرمنٹ تک سال"
+                "label": null
               },
               {
                 "key": "inflation",
@@ -20365,15 +20365,15 @@
               "controlLabels": [
                 {
                   "key": "current",
-                  "label": "موجودہ ریٹائرمنٹ بچت"
+                  "label": null
                 },
                 {
                   "key": "monthly",
-                  "label": "ماہانہ شراکت"
+                  "label": null
                 },
                 {
                   "key": "rate",
-                  "label": "متوقع سالانہ منافع (%)"
+                  "label": null
                 },
                 {
                   "key": "altRate",
@@ -20381,7 +20381,7 @@
                 },
                 {
                   "key": "years",
-                  "label": "ریٹائرمنٹ تک سال"
+                  "label": null
                 },
                 {
                   "key": "inflation",
@@ -20403,15 +20403,15 @@
             "inputs": [
               {
                 "key": "current",
-                "label": "当前退休储蓄"
+                "label": null
               },
               {
                 "key": "monthly",
-                "label": "每月缴款"
+                "label": null
               },
               {
                 "key": "rate",
-                "label": "假设年回报率 (%)"
+                "label": null
               },
               {
                 "key": "altRate",
@@ -20419,7 +20419,7 @@
               },
               {
                 "key": "years",
-                "label": "距离退休年数"
+                "label": null
               },
               {
                 "key": "inflation",
@@ -20494,15 +20494,15 @@
               "controlLabels": [
                 {
                   "key": "current",
-                  "label": "当前退休储蓄"
+                  "label": null
                 },
                 {
                   "key": "monthly",
-                  "label": "每月缴款"
+                  "label": null
                 },
                 {
                   "key": "rate",
-                  "label": "假设年回报率 (%)"
+                  "label": null
                 },
                 {
                   "key": "altRate",
@@ -20510,7 +20510,7 @@
                 },
                 {
                   "key": "years",
-                  "label": "距离退休年数"
+                  "label": null
                 },
                 {
                   "key": "inflation",
@@ -20532,15 +20532,15 @@
             "inputs": [
               {
                 "key": "current",
-                "label": "現在の退職貯蓄"
+                "label": null
               },
               {
                 "key": "monthly",
-                "label": "毎月の拠出額"
+                "label": null
               },
               {
                 "key": "rate",
-                "label": "想定年間収益率 (%)"
+                "label": null
               },
               {
                 "key": "altRate",
@@ -20548,7 +20548,7 @@
               },
               {
                 "key": "years",
-                "label": "退職までの年数"
+                "label": null
               },
               {
                 "key": "inflation",
@@ -20623,15 +20623,15 @@
               "controlLabels": [
                 {
                   "key": "current",
-                  "label": "現在の退職貯蓄"
+                  "label": null
                 },
                 {
                   "key": "monthly",
-                  "label": "毎月の拠出額"
+                  "label": null
                 },
                 {
                   "key": "rate",
-                  "label": "想定年間収益率 (%)"
+                  "label": null
                 },
                 {
                   "key": "altRate",
@@ -20639,7 +20639,7 @@
                 },
                 {
                   "key": "years",
-                  "label": "退職までの年数"
+                  "label": null
                 },
                 {
                   "key": "inflation",
@@ -20661,15 +20661,15 @@
             "inputs": [
               {
                 "key": "current",
-                "label": "Текущие пенсионные накопления"
+                "label": null
               },
               {
                 "key": "monthly",
-                "label": "Ежемесячный взнос"
+                "label": null
               },
               {
                 "key": "rate",
-                "label": "Предполагаемая годовая доходность (%)"
+                "label": null
               },
               {
                 "key": "altRate",
@@ -20677,7 +20677,7 @@
               },
               {
                 "key": "years",
-                "label": "Лет до выхода на пенсию"
+                "label": null
               },
               {
                 "key": "inflation",
@@ -20752,15 +20752,15 @@
               "controlLabels": [
                 {
                   "key": "current",
-                  "label": "Текущие пенсионные накопления"
+                  "label": null
                 },
                 {
                   "key": "monthly",
-                  "label": "Ежемесячный взнос"
+                  "label": null
                 },
                 {
                   "key": "rate",
-                  "label": "Предполагаемая годовая доходность (%)"
+                  "label": null
                 },
                 {
                   "key": "altRate",
@@ -20768,7 +20768,7 @@
                 },
                 {
                   "key": "years",
-                  "label": "Лет до выхода на пенсию"
+                  "label": null
                 },
                 {
                   "key": "inflation",
@@ -21249,15 +21249,15 @@
             "inputs": [
               {
                 "key": "salary",
-                "label": "سالانہ تنخواہ"
+                "label": null
               },
               {
                 "key": "employee",
-                "label": "ملازم کی شراکت (%)"
+                "label": null
               },
               {
                 "key": "match",
-                "label": "آجر کی میچنگ شراکت (%)"
+                "label": null
               },
               {
                 "key": "limit",
@@ -21265,11 +21265,11 @@
               },
               {
                 "key": "current",
-                "label": "موجودہ 401(k) بیلنس"
+                "label": null
               },
               {
                 "key": "rate",
-                "label": "متوقع سالانہ منافع (%)"
+                "label": null
               },
               {
                 "key": "years",
@@ -21344,15 +21344,15 @@
               "controlLabels": [
                 {
                   "key": "salary",
-                  "label": "سالانہ تنخواہ"
+                  "label": null
                 },
                 {
                   "key": "employee",
-                  "label": "ملازم کی شراکت (%)"
+                  "label": null
                 },
                 {
                   "key": "match",
-                  "label": "آجر کی میچنگ شراکت (%)"
+                  "label": null
                 },
                 {
                   "key": "limit",
@@ -21360,11 +21360,11 @@
                 },
                 {
                   "key": "current",
-                  "label": "موجودہ 401(k) بیلنس"
+                  "label": null
                 },
                 {
                   "key": "rate",
-                  "label": "متوقع سالانہ منافع (%)"
+                  "label": null
                 },
                 {
                   "key": "years",
@@ -21386,15 +21386,15 @@
             "inputs": [
               {
                 "key": "salary",
-                "label": "年薪"
+                "label": null
               },
               {
                 "key": "employee",
-                "label": "员工缴款 (%)"
+                "label": null
               },
               {
                 "key": "match",
-                "label": "雇主匹配比例 (%)"
+                "label": null
               },
               {
                 "key": "limit",
@@ -21402,11 +21402,11 @@
               },
               {
                 "key": "current",
-                "label": "当前 401(k) 余额"
+                "label": null
               },
               {
                 "key": "rate",
-                "label": "假设年回报率 (%)"
+                "label": null
               },
               {
                 "key": "years",
@@ -21481,15 +21481,15 @@
               "controlLabels": [
                 {
                   "key": "salary",
-                  "label": "年薪"
+                  "label": null
                 },
                 {
                   "key": "employee",
-                  "label": "员工缴款 (%)"
+                  "label": null
                 },
                 {
                   "key": "match",
-                  "label": "雇主匹配比例 (%)"
+                  "label": null
                 },
                 {
                   "key": "limit",
@@ -21497,11 +21497,11 @@
                 },
                 {
                   "key": "current",
-                  "label": "当前 401(k) 余额"
+                  "label": null
                 },
                 {
                   "key": "rate",
-                  "label": "假设年回报率 (%)"
+                  "label": null
                 },
                 {
                   "key": "years",
@@ -21523,15 +21523,15 @@
             "inputs": [
               {
                 "key": "salary",
-                "label": "年収"
+                "label": null
               },
               {
                 "key": "employee",
-                "label": "従業員拠出率 (%)"
+                "label": null
               },
               {
                 "key": "match",
-                "label": "雇用主マッチ率 (%)"
+                "label": null
               },
               {
                 "key": "limit",
@@ -21539,11 +21539,11 @@
               },
               {
                 "key": "current",
-                "label": "現在の401(k)残高"
+                "label": null
               },
               {
                 "key": "rate",
-                "label": "想定年間収益率 (%)"
+                "label": null
               },
               {
                 "key": "years",
@@ -21618,15 +21618,15 @@
               "controlLabels": [
                 {
                   "key": "salary",
-                  "label": "年収"
+                  "label": null
                 },
                 {
                   "key": "employee",
-                  "label": "従業員拠出率 (%)"
+                  "label": null
                 },
                 {
                   "key": "match",
-                  "label": "雇用主マッチ率 (%)"
+                  "label": null
                 },
                 {
                   "key": "limit",
@@ -21634,11 +21634,11 @@
                 },
                 {
                   "key": "current",
-                  "label": "現在の401(k)残高"
+                  "label": null
                 },
                 {
                   "key": "rate",
-                  "label": "想定年間収益率 (%)"
+                  "label": null
                 },
                 {
                   "key": "years",
@@ -21660,15 +21660,15 @@
             "inputs": [
               {
                 "key": "salary",
-                "label": "Годовая зарплата"
+                "label": null
               },
               {
                 "key": "employee",
-                "label": "Взнос сотрудника (%)"
+                "label": null
               },
               {
                 "key": "match",
-                "label": "Взнос работодателя (%)"
+                "label": null
               },
               {
                 "key": "limit",
@@ -21676,11 +21676,11 @@
               },
               {
                 "key": "current",
-                "label": "Текущий баланс 401(k)"
+                "label": null
               },
               {
                 "key": "rate",
-                "label": "Предполагаемая годовая доходность (%)"
+                "label": null
               },
               {
                 "key": "years",
@@ -21755,15 +21755,15 @@
               "controlLabels": [
                 {
                   "key": "salary",
-                  "label": "Годовая зарплата"
+                  "label": null
                 },
                 {
                   "key": "employee",
-                  "label": "Взнос сотрудника (%)"
+                  "label": null
                 },
                 {
                   "key": "match",
-                  "label": "Взнос работодателя (%)"
+                  "label": null
                 },
                 {
                   "key": "limit",
@@ -21771,11 +21771,11 @@
                 },
                 {
                   "key": "current",
-                  "label": "Текущий баланс 401(k)"
+                  "label": null
                 },
                 {
                   "key": "rate",
-                  "label": "Предполагаемая годовая доходность (%)"
+                  "label": null
                 },
                 {
                   "key": "years",
