@@ -1,0 +1,466 @@
+{
+  "version": 1,
+  "language": "en",
+  "batch": "Finance calculator localization Batch 2",
+  "createdAt": "2026-11-23",
+  "status": "source-draft; domain-review-pending",
+  "sourceEvidence": {
+    "extractionFile": "docs/i18n/batch-02-source-extraction.json",
+    "extractionCommit": "de20d80b35c5b59860bbe050bbe0bc08347847e9",
+    "calculationFile": "finance-core.js",
+    "calculationBlobSha": "22de8b0d6f67123182b6fd838d73892e039747a5"
+  },
+  "rules": [
+    "Guide text is derived from the source catalogue and matching finance-core.js function implementations.",
+    "No translated guide content is approved by this source file.",
+    "No formula implementation, input key, output key, stable key or numeric constant is changed.",
+    "Review finance/tax language before any locale is approved."
+  ],
+  "tools": [
+    {
+      "id": "freelance",
+      "title": "Freelance Hourly Rate Calculator Guide",
+      "introduction": "Use this guide to estimate an hourly billing rate from your desired annual take-home income, business costs, tax reserve and expected billable time. The result is a planning estimate, not a tax assessment or a guarantee of work.",
+      "steps": [
+        {
+          "key": "freelance-guide-step-1",
+          "title": "Enter your income goal",
+          "body": "Enter the annual take-home income you want after setting aside the estimated tax reserve."
+        },
+        {
+          "key": "freelance-guide-step-2",
+          "title": "Add annual business costs",
+          "body": "Include the annual operating costs that must be covered by your freelance revenue."
+        },
+        {
+          "key": "freelance-guide-step-3",
+          "title": "Set the tax reserve and billable time",
+          "body": "Enter a tax-reserve percentage below 100%, billable hours per week and working weeks per year. Exclude unpaid administration time unless it is included in your hours."
+        },
+        {
+          "key": "freelance-guide-step-4",
+          "title": "Review the estimated hourly rate",
+          "body": "The calculator estimates annual billable hours, gross revenue needed and the hourly rate required to meet the entered targets."
+        }
+      ],
+      "sections": [
+        {
+          "key": "freelance-guide-section-1",
+          "heading": "How the estimate is calculated",
+          "body": "Annual billable hours = billable hours per week × working weeks. Annual revenue target = (desired take-home income + annual business costs) ÷ (1 − tax-reserve rate). Hourly billing rate = annual revenue target ÷ annual billable hours."
+        },
+        {
+          "key": "freelance-guide-section-2",
+          "heading": "Important limitations",
+          "body": "The tax reserve is a percentage assumption, not a jurisdiction-specific tax calculation. Actual tax obligations, unpaid work, leave, late payments and demand can change the rate you need."
+        }
+      ]
+    },
+    {
+      "id": "margin",
+      "title": "Profit Margin Calculator Guide",
+      "introduction": "Use this calculator to compare revenue with costs and understand both profit margin and markup. Enter revenue and costs for the same currency and reporting period.",
+      "steps": [
+        {
+          "key": "margin-guide-step-1",
+          "title": "Enter revenue",
+          "body": "Enter total sales or revenue for the period."
+        },
+        {
+          "key": "margin-guide-step-2",
+          "title": "Enter total costs",
+          "body": "Enter the costs associated with the same period and currency."
+        },
+        {
+          "key": "margin-guide-step-3",
+          "title": "Calculate profit and percentages",
+          "body": "The calculator subtracts costs from revenue, then calculates margin and markup when their denominators are non-zero."
+        },
+        {
+          "key": "margin-guide-step-4",
+          "title": "Review the result",
+          "body": "A negative profit or margin means costs exceed revenue. A percentage is undefined when its denominator is zero."
+        }
+      ],
+      "sections": [
+        {
+          "key": "margin-guide-section-1",
+          "heading": "Formulas",
+          "body": "Profit = revenue − costs. Profit margin (%) = profit ÷ revenue × 100. Markup on cost (%) = profit ÷ costs × 100."
+        },
+        {
+          "key": "margin-guide-section-2",
+          "heading": "Margin versus markup",
+          "body": "Margin expresses profit as a share of revenue. Markup expresses profit relative to cost; the two percentages use different denominators."
+        },
+        {
+          "key": "margin-guide-section-3",
+          "heading": "Important limitations",
+          "body": "This is a simple arithmetic comparison. It does not classify costs, account for tax, or determine whether revenue and costs have been recorded under an appropriate accounting method."
+        }
+      ]
+    },
+    {
+      "id": "affordability",
+      "title": "Mortgage Affordability Calculator Guide",
+      "introduction": "Estimate a possible home-price range using gross monthly income, existing debt payments, down payment, mortgage terms and recurring housing costs. This estimate is not a lender approval or borrowing offer.",
+      "steps": [
+        {
+          "key": "affordability-guide-step-1",
+          "title": "Enter household income and debts",
+          "body": "Use gross monthly household income and existing monthly debt payments."
+        },
+        {
+          "key": "affordability-guide-step-2",
+          "title": "Enter down payment and loan terms",
+          "body": "Provide the available down payment, annual mortgage rate and loan term."
+        },
+        {
+          "key": "affordability-guide-step-3",
+          "title": "Include recurring housing costs",
+          "body": "Enter monthly property tax, home insurance and HOA or similar fees."
+        },
+        {
+          "key": "affordability-guide-step-4",
+          "title": "Set affordability ratios",
+          "body": "Review the debt-to-income and housing-cost ratios used by the estimate."
+        },
+        {
+          "key": "affordability-guide-step-5",
+          "title": "Calculate the housing budget",
+          "body": "The calculator uses the lower of the entered housing-cost limit and debt-based limit, not below zero."
+        },
+        {
+          "key": "affordability-guide-step-6",
+          "title": "Review the estimated home price",
+          "body": "Taxes, insurance and HOA are deducted to estimate principal-and-interest capacity; the supported loan amount is combined with the down payment."
+        }
+      ],
+      "sections": [
+        {
+          "key": "affordability-guide-section-1",
+          "heading": "How the estimate works",
+          "body": "The housing-cost cap is gross monthly income × housing ratio. The debt cap is gross monthly income × maximum DTI − existing monthly debts. The lower non-negative amount is the estimated housing budget. Monthly tax, insurance and HOA costs are subtracted before calculating the supported loan amount."
+        },
+        {
+          "key": "affordability-guide-section-2",
+          "heading": "Important limitations",
+          "body": "Other ownership costs may not be included unless entered. Lenders may use different underwriting rules, income treatment, credit criteria, reserves and rate assumptions. This calculator does not provide preapproval."
+        }
+      ]
+    },
+    {
+      "id": "payoff",
+      "title": "Mortgage Payoff and Extra Payment Guide",
+      "introduction": "Compare a standard mortgage repayment schedule with a scenario that adds an extra monthly amount toward principal. The comparison assumes the same rate and remaining term for both schedules.",
+      "steps": [
+        {
+          "key": "payoff-guide-step-1",
+          "title": "Enter the current balance",
+          "body": "Use the outstanding mortgage principal, not the original amount borrowed."
+        },
+        {
+          "key": "payoff-guide-step-2",
+          "title": "Enter the rate and remaining term",
+          "body": "Provide the annual interest rate and remaining repayment term."
+        },
+        {
+          "key": "payoff-guide-step-3",
+          "title": "Add an extra monthly amount",
+          "body": "Enter the additional amount you expect to pay each month. The model assumes it reduces principal."
+        },
+        {
+          "key": "payoff-guide-step-4",
+          "title": "Calculate both schedules",
+          "body": "The calculator compares the standard payment with the accelerated payment and models monthly interest and balances."
+        },
+        {
+          "key": "payoff-guide-step-5",
+          "title": "Compare interest and payoff time",
+          "body": "Review estimated interest saved and months saved against the standard schedule."
+        }
+      ],
+      "sections": [
+        {
+          "key": "payoff-guide-section-1",
+          "heading": "Monthly calculation",
+          "body": "Monthly interest = opening balance × annual interest rate ÷ 1,200. The accelerated scenario adds the extra amount to the standard payment and applies it toward principal."
+        },
+        {
+          "key": "payoff-guide-section-2",
+          "heading": "Important limitations",
+          "body": "The model assumes the extra amount is applied to principal each month. Confirm your lender's payment-allocation rules, prepayment limits, fees and timing before relying on an estimate."
+        }
+      ]
+    },
+    {
+      "id": "refinance",
+      "title": "Mortgage Refinance Comparison Guide",
+      "introduction": "Compare the estimated payment and interest on your current mortgage with a refinance scenario that includes estimated closing costs. Different loan terms can change the overall comparison.",
+      "steps": [
+        {
+          "key": "refinance-guide-step-1",
+          "title": "Enter the current mortgage",
+          "body": "Provide the outstanding balance, current annual rate and remaining term."
+        },
+        {
+          "key": "refinance-guide-step-2",
+          "title": "Enter the refinance terms",
+          "body": "Provide the proposed annual rate and new loan term."
+        },
+        {
+          "key": "refinance-guide-step-3",
+          "title": "Add closing costs",
+          "body": "Enter estimated closing costs; this model adds them to the refinanced loan balance."
+        },
+        {
+          "key": "refinance-guide-step-4",
+          "title": "Compare monthly payments",
+          "body": "Review the current payment, proposed payment and their difference."
+        },
+        {
+          "key": "refinance-guide-step-5",
+          "title": "Review break-even and interest",
+          "body": "If monthly payment savings are positive, the calculator estimates simple break-even months. Also compare total interest over each loan's full term."
+        }
+      ],
+      "sections": [
+        {
+          "key": "refinance-guide-section-1",
+          "heading": "Break-even estimate",
+          "body": "Simple break-even months = closing costs ÷ positive monthly payment savings. If monthly savings are not positive, a simple break-even estimate is not provided."
+        },
+        {
+          "key": "refinance-guide-section-2",
+          "heading": "Important limitations",
+          "body": "This simple break-even calculation does not discount future payments or include every refinancing cost. Total-interest comparison uses each loan's full remaining or new term; terms may differ, and future rate changes or fees can affect the decision."
+        }
+      ]
+    },
+    {
+      "id": "personal-loan",
+      "title": "Personal Loan Calculator Guide",
+      "introduction": "Estimate scheduled loan payments, total interest, the effect of an extra monthly payment and the impact of an origination fee deducted from the loan proceeds.",
+      "steps": [
+        {
+          "key": "personal-loan-guide-step-1",
+          "title": "Enter the requested loan amount",
+          "body": "Use the principal amount stated in the loan offer."
+        },
+        {
+          "key": "personal-loan-guide-step-2",
+          "title": "Enter rate and term",
+          "body": "Provide the annual interest rate and repayment term."
+        },
+        {
+          "key": "personal-loan-guide-step-3",
+          "title": "Add fee and optional extra payment",
+          "body": "Enter the origination-fee percentage and any additional monthly payment. The fee must be below 100%."
+        },
+        {
+          "key": "personal-loan-guide-step-4",
+          "title": "Review cash received and repayment",
+          "body": "The calculator estimates the fee, net proceeds, scheduled payment and accelerated repayment schedule."
+        },
+        {
+          "key": "personal-loan-guide-step-5",
+          "title": "Compare borrowing cost",
+          "body": "Review total interest plus fee and the estimated fee-adjusted annualized cost."
+        }
+      ],
+      "sections": [
+        {
+          "key": "personal-loan-guide-section-1",
+          "heading": "Fee and annualized-cost estimates",
+          "body": "Origination fee = requested principal × fee percentage. Net proceeds = principal − fee. Total interest-plus-fee cost = modeled interest + origination fee. The fee-adjusted annualized estimate is derived from net proceeds and scheduled base payments."
+        },
+        {
+          "key": "personal-loan-guide-section-2",
+          "heading": "Important limitations",
+          "body": "The fee-adjusted annualized figure is an estimate, not a lender's legally disclosed APR. Actual APR may include other charges, payment timing and lender-specific conventions."
+        }
+      ]
+    },
+    {
+      "id": "student-loan",
+      "title": "Student Loan Repayment Calculator Guide",
+      "introduction": "Compare an illustrative fixed-rate student-loan repayment schedule with a scenario that adds an extra monthly payment toward principal.",
+      "steps": [
+        {
+          "key": "student-loan-guide-step-1",
+          "title": "Enter the loan balance",
+          "body": "Enter the outstanding student-loan principal."
+        },
+        {
+          "key": "student-loan-guide-step-2",
+          "title": "Enter the annual rate and term",
+          "body": "Provide the annual interest rate and repayment period."
+        },
+        {
+          "key": "student-loan-guide-step-3",
+          "title": "Enter any extra monthly payment",
+          "body": "The model assumes the extra amount is applied to principal after the scheduled payment."
+        },
+        {
+          "key": "student-loan-guide-step-4",
+          "title": "Calculate the schedules",
+          "body": "The calculator models standard and accelerated fixed-rate repayment."
+        },
+        {
+          "key": "student-loan-guide-step-5",
+          "title": "Compare interest and payoff time",
+          "body": "Review the estimated interest savings and reduction in repayment months."
+        }
+      ],
+      "sections": [
+        {
+          "key": "student-loan-guide-section-1",
+          "heading": "Monthly interest",
+          "body": "Monthly interest is calculated from the opening balance × annual rate ÷ 1,200. The scheduled payment and any extra amount are then applied to the balance."
+        },
+        {
+          "key": "student-loan-guide-section-2",
+          "heading": "Important limitations",
+          "body": "This illustration does not model income-driven repayment, government forgiveness, subsidies, deferment, capitalization or jurisdiction-specific rules. Servicer results may differ because of accrual methods, timing and payment-allocation policies."
+        }
+      ]
+    },
+    {
+      "id": "simple-interest",
+      "title": "Simple Interest Calculator Guide",
+      "introduction": "Calculate interest on an original principal over a number of days, using a selected 360-, 365- or 366-day year basis. A separate compound-interest comparison is provided for illustration.",
+      "steps": [
+        {
+          "key": "simple-interest-guide-step-1",
+          "title": "Enter the principal",
+          "body": "Enter the original amount on which simple interest will be calculated."
+        },
+        {
+          "key": "simple-interest-guide-step-2",
+          "title": "Enter the annual rate",
+          "body": "Provide the annual simple-interest rate as a percentage."
+        },
+        {
+          "key": "simple-interest-guide-step-3",
+          "title": "Enter the number of days and day basis",
+          "body": "Choose 360, 365 or 366 as the day-count basis used to convert days into years."
+        },
+        {
+          "key": "simple-interest-guide-step-4",
+          "title": "Review interest and total",
+          "body": "The calculator reports simple interest and adds it to principal. It also shows an illustrative annual-compounding comparison."
+        }
+      ],
+      "sections": [
+        {
+          "key": "simple-interest-guide-section-1",
+          "heading": "Formulas",
+          "body": "Time in years = number of days ÷ selected day-count basis. Simple interest = principal × (annual rate ÷ 100) × time. Total = principal + simple interest."
+        },
+        {
+          "key": "simple-interest-guide-section-2",
+          "heading": "Important limitations",
+          "body": "Simple interest is calculated on the original principal only. The compound comparison assumes annual compounding and is not part of the simple-interest amount."
+        }
+      ]
+    },
+    {
+      "id": "retirement",
+      "title": "Retirement Savings Calculator Guide",
+      "introduction": "Project a possible future retirement-savings balance from current savings, monthly contributions, an assumed annual return, a time horizon and an inflation assumption.",
+      "steps": [
+        {
+          "key": "retirement-guide-step-1",
+          "title": "Enter current savings",
+          "body": "Use the amount already saved for retirement."
+        },
+        {
+          "key": "retirement-guide-step-2",
+          "title": "Set monthly contributions",
+          "body": "Enter the amount you plan to contribute at the end of each month."
+        },
+        {
+          "key": "retirement-guide-step-3",
+          "title": "Choose return and time horizon",
+          "body": "Enter an assumed annual return and the number of years to project."
+        },
+        {
+          "key": "retirement-guide-step-4",
+          "title": "Add an inflation assumption",
+          "body": "Enter an annual inflation rate to estimate the future balance in today's purchasing-power terms."
+        },
+        {
+          "key": "retirement-guide-step-5",
+          "title": "Calculate the projection",
+          "body": "The model applies monthly growth to the opening balance and then adds the monthly contribution."
+        },
+        {
+          "key": "retirement-guide-step-6",
+          "title": "Review the projected values",
+          "body": "Compare future value, total contributions, estimated growth and inflation-adjusted value."
+        }
+      ],
+      "sections": [
+        {
+          "key": "retirement-guide-section-1",
+          "heading": "Projection method",
+          "body": "Each month, interest = opening balance × annual return ÷ 1,200. The monthly contribution is then added at month end. Inflation-adjusted value = projected future value ÷ (1 + inflation rate)^years."
+        },
+        {
+          "key": "retirement-guide-section-2",
+          "heading": "Important limitations",
+          "body": "The calculator assumes a constant return, monthly compounding and end-of-month contributions. Actual investment returns vary and may be negative; fees, taxes, contribution changes and market volatility are not forecast."
+        }
+      ]
+    },
+    {
+      "id": "401k",
+      "title": "401(k) Contribution Calculator Guide",
+      "introduction": "Estimate how employee contributions and an employer matching contribution could affect a projected 401(k) balance over time. The calculation is illustrative and does not replace plan documents or tax guidance.",
+      "steps": [
+        {
+          "key": "401k-guide-step-1",
+          "title": "Enter annual salary",
+          "body": "Use the salary amount on which your plan calculates contributions and matching."
+        },
+        {
+          "key": "401k-guide-step-2",
+          "title": "Enter employee contribution percentage",
+          "body": "Provide the percentage of salary you plan to contribute."
+        },
+        {
+          "key": "401k-guide-step-3",
+          "title": "Enter employer match terms",
+          "body": "Enter the employer match percentage and the eligible salary percentage."
+        },
+        {
+          "key": "401k-guide-step-4",
+          "title": "Enter current balance and assumptions",
+          "body": "Provide the starting 401(k) balance, assumed annual return and projection period."
+        },
+        {
+          "key": "401k-guide-step-5",
+          "title": "Calculate monthly contributions",
+          "body": "The model converts annual employee and employer contributions into monthly amounts and applies monthly growth."
+        },
+        {
+          "key": "401k-guide-step-6",
+          "title": "Review the projection",
+          "body": "Compare projected value and contribution totals, including the modeled employer match."
+        }
+      ],
+      "sections": [
+        {
+          "key": "401k-guide-section-1",
+          "heading": "Employer match calculation",
+          "body": "Annual employee contribution = salary × employee contribution percentage. Eligible match percentage is capped at the lower of employee contribution percentage and eligible salary percentage. Annual employer match = salary × eligible match percentage × employer match percentage."
+        },
+        {
+          "key": "401k-guide-section-2",
+          "heading": "Important limitations",
+          "body": "This illustration does not model annual contribution limits, vesting schedules, fees, taxes or plan-specific rules. Employer matching formulas vary by plan; verify the plan's exact terms."
+        }
+      ]
+    }
+  ]
+}
