@@ -170,8 +170,16 @@ test("batch-two tools have complete extracted result, formula, FAQ, error, SEO a
   assert.ok(source.seo.title&&source.seo.metaDescription&&source.seo.h1&&source.seo.introduction,id+" SEO source");
   assert.ok(source.accessibility.pageLabel&&source.accessibility.formLabel&&source.accessibility.resultAnnouncement,id+" accessibility source");
   assert.deepEqual(source.accessibility.controlLabels.map(x=>x.key),source.inputs.map(x=>x.key),id+" accessible input keys");
-  assert.equal(tool.sourceTranslationStatus,"not-started",id+" translation not started");
-  for(const locale of locales)assert.equal(tool.locales[locale].status,"not-started",id+":"+locale+" remains not started");
+  assert.equal(tool.sourceTranslationStatus,"draft",id+" translation draft started");
+  for(const locale of locales){
+   assert.equal(tool.locales[locale].status,"draft",id+":"+locale+" draft status");
+   const fields=tool.locales[locale].fields;
+   assert.ok(fields.metadata.title&&fields.metadata.description,id+":"+locale+" translated metadata");
+   assert.equal(fields.inputs.length,source.inputs.length,id+":"+locale+" stable input key count");
+   assert.ok(fields.inputs.every((item,index)=>item.key===source.inputs[index].key&&item.label===null),id+":"+locale+" untranslated inputs retain English fallback");
+   assert.equal(fields.results.metrics.length,source.results.metrics.length,id+":"+locale+" stable result metric keys");
+   assert.ok(fields.results.metrics.every((item,index)=>item.key===source.results.metrics[index].key&&item.label===null),id+":"+locale+" untranslated result labels retain English fallback");
+  }
  }
  const simple=content.tools.find(item=>item.id==="simple-interest").source.inputs.find(input=>input.key==="basis");
  assert.deepEqual(simple.options.map(option=>option.value),["365","360","366"]);
