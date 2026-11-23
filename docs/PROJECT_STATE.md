@@ -131,3 +131,13 @@ The dedicated branch adds five Developer wrap-up tools, twelve Education & Study
 - Mandatory automated gates remain: latest-head Finance CI, Playwright browser coverage across seven locales and first-ten tools, RTL/LTR direction checks, per-route accessibility checks, mobile/desktop Lighthouse and CLS budgets.
 - Current translations remain `draft`; this policy change does not automatically approve or publish them. English fallback continues until translation activation is explicitly authorized and validated.
 - PR #73 remains Draft/unmerged; no production deployment is authorized by this policy update.
+
+
+## Current multilingual candidate status — 2026-11-23
+
+- Candidate branch: `feat/seven-language-translation-engine-phase-1`; PR #73 remains Draft and unmerged.
+- Latest policy/documentation commits align the release process with the user's decision: written native-speaker and finance-domain sign-offs are optional, not mandatory.
+- Mandatory release gates are latest-head Finance CI (syntax, Node tests, live reference-rate API, Playwright), seven-locale RTL/LTR assertions, first-ten tool × locale accessibility checks (70 combinations), and mobile/desktop Lighthouse with CLS budgets.
+- Translation records remain `draft`; removing human sign-off does not auto-approve or publish translations. Runtime English fallback remains active for draft, missing and incomplete locale records.
+- The production branch `main` and GitHub Pages deployment have not been changed by this candidate work. The production verification date and commit above refer to the last verified production release, not the current candidate branch.
+- Do not merge or deploy until all mandatory automated gates pass on the exact latest PR head and the release decision is explicitly authorized.
