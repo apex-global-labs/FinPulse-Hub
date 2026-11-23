@@ -94,7 +94,8 @@
       "tool.closingBalance": "Closing balance",
       "tool.breakdownRegion": "Scrollable calculation breakdown",
       "tool.breakdownItem": "Breakdown item",
-      "tool.amount": "Amount"
+      "tool.amount": "Amount",
+      "tool.checkInputs": "Check your inputs"
     },
     "hi": {
       "nav.calculators": "कैलकुलेटर",
@@ -177,7 +178,8 @@
       "tool.closingBalance": "अंतिम शेष",
       "tool.breakdownRegion": "可滚动的计算明细",
       "tool.breakdownItem": "विवरण मद",
-      "tool.amount": "राशि"
+      "tool.amount": "राशि",
+      "tool.checkInputs": "अपने इनपुट जाँचें"
     },
     "ar": {
       "nav.calculators": "الحاسبات",
@@ -260,7 +262,8 @@
       "tool.closingBalance": "الرصيد الختامي",
       "tool.breakdownRegion": "تفصيل حساب قابل للتمرير",
       "tool.breakdownItem": "بند التفصيل",
-      "tool.amount": "المبلغ"
+      "tool.amount": "المبلغ",
+      "tool.checkInputs": "تحقّق من المدخلات"
     },
     "ur": {
       "nav.calculators": "کیلکولیٹرز",
@@ -343,7 +346,8 @@
       "tool.closingBalance": "اختتامی بیلنس",
       "tool.breakdownRegion": "اسکرول کے قابل حسابی تفصیل",
       "tool.breakdownItem": "تفصیل کا جزو",
-      "tool.amount": "رقم"
+      "tool.amount": "رقم",
+      "tool.checkInputs": "اپنے ان پٹس کی جانچ کریں"
     },
     "zh-CN": {
       "nav.calculators": "计算器",
@@ -426,7 +430,8 @@
       "tool.closingBalance": "期末余额",
       "tool.breakdownRegion": "可滚动的计算明细",
       "tool.breakdownItem": "明细项目",
-      "tool.amount": "金额"
+      "tool.amount": "金额",
+      "tool.checkInputs": "请检查输入项"
     },
     "ja": {
       "nav.calculators": "計算ツール",
@@ -509,7 +514,8 @@
       "tool.closingBalance": "期末残高",
       "tool.breakdownRegion": "スクロール可能な計算内訳",
       "tool.breakdownItem": "内訳項目",
-      "tool.amount": "金額"
+      "tool.amount": "金額",
+      "tool.checkInputs": "入力内容を確認してください"
     },
     "ru": {
       "nav.calculators": "Калькуляторы",
@@ -592,7 +598,8 @@
       "tool.closingBalance": "Конечный остаток",
       "tool.breakdownRegion": "Прокручиваемая разбивка расчёта",
       "tool.breakdownItem": "Позиция разбивки",
-      "tool.amount": "Сумма"
+      "tool.amount": "Сумма",
+      "tool.checkInputs": "Проверьте введённые данные"
     }
   }
 }
