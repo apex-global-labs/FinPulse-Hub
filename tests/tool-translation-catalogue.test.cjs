@@ -149,3 +149,30 @@ test("first-ten translated content has no cross-locale script contamination",()=
   }
  }
 });
+
+
+test("batch-two tools have complete extracted result, formula, FAQ, error, SEO and accessibility source fields",()=>{
+ const ids=["freelance","margin","affordability","payoff","refinance","personal-loan","student-loan","simple-interest","retirement","401k"];
+ for(const id of ids){
+  const tool=content.tools.find(item=>item.id===id);
+  const source=tool.source;
+  assert.equal(tool.sourceCompletenessStatus,"complete",id+" complete source extraction");
+  assert.ok(source.title&&source.category&&source.subcategory&&source.description,id+" source metadata");
+  assert.ok(source.results&&source.results.heading&&source.results.summary,id+" result heading/summary");
+  assert.ok(source.results.metrics.length>0,id+" result metrics");
+  assert.equal(new Set(source.results.metrics.map(item=>item.key)).size,source.results.metrics.length,id+" unique metric keys");
+  assert.ok(Array.isArray(source.results.breakdown),id+" breakdown array");
+  assert.equal(new Set(source.results.breakdown.map(item=>item.key)).size,source.results.breakdown.length,id+" unique breakdown keys");
+  assert.ok(source.explanations.formula&&source.explanations.steps.length>=3,id+" formula and steps");
+  assert.ok(source.explanations.assumptions.length>0&&source.explanations.disclaimers.length>0&&source.explanations.limitations.length>0,id+" assumptions and limitations");
+  assert.ok(source.faqs.length>=4&&source.faqs.every(f=>f.key&&f.question&&f.answer),id+" complete FAQs");
+  assert.ok(source.errors.length>=3&&source.errors.every(e=>e.key&&e.message&&e.recoveryHint),id+" complete validation errors");
+  assert.ok(source.seo.title&&source.seo.metaDescription&&source.seo.h1&&source.seo.introduction,id+" SEO source");
+  assert.ok(source.accessibility.pageLabel&&source.accessibility.formLabel&&source.accessibility.resultAnnouncement,id+" accessibility source");
+  assert.deepEqual(source.accessibility.controlLabels.map(x=>x.key),source.inputs.map(x=>x.key),id+" accessible input keys");
+  assert.equal(tool.sourceTranslationStatus,"not-started",id+" translation not started");
+  for(const locale of locales)assert.equal(tool.locales[locale].status,"not-started",id+":"+locale+" remains not started");
+ }
+ const simple=content.tools.find(item=>item.id==="simple-interest").source.inputs.find(input=>input.key==="basis");
+ assert.deepEqual(simple.options.map(option=>option.value),["365","360","366"]);
+});
