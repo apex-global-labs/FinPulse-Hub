@@ -156,4 +156,43 @@ test("Batch 2 ten tools × 6 locales render persisted translations without chang
  }
 });
 
+
+test("Batch 2 accessibility contract audit: 10 tools × 7 languages = 70 checks",async t=>{
+ const auditLocales=["en",...LOCALES];
+ let auditCount=0;
+ for(const id of TOOL_IDS){
+  await t.test(id,async st=>{
+   const page=await browser.newPage({viewport:{width:1280,height:800}});
+   try{
+    const tool=sourceById.get(id);
+    await page.goto(base+"?tool="+id);
+    await page.locator("#app .heading h2").waitFor();
+    await page.waitForFunction(()=>window.FinPulseToolRuntime?.loaded===true);
+    for(const locale of auditLocales){
+     const fields=locale==="en"?tool.source:tool.locales[locale].fields;
+     await page.evaluate(locale=>window.FinPulseGlobalContext.setLocale(locale),locale);
+     const expectedTitle=locale==="en"?tool.source.title:fields.metadata.title;
+     await page.waitForFunction(({locale,title})=>document.documentElement.lang===locale&&document.querySelector("#app .heading h2")?.textContent===title,{locale,title:expectedTitle},{timeout:10000});
+     const direction=locale==="ar"||locale==="ur"?"rtl":"ltr";
+     assert.equal(await page.locator("html").getAttribute("dir"),direction,id+"/"+locale+" direction");
+     const a=fields.accessibility;
+     assert.equal(await page.locator("#app").getAttribute("aria-label"),a.pageLabel,id+"/"+locale+" page label");
+     assert.equal(await page.locator("#form").getAttribute("aria-label"),a.formLabel,id+"/"+locale+" form label");
+     assert.equal(await page.locator(".result").getAttribute("aria-label"),a.resultAnnouncement,id+"/"+locale+" result announcement");
+     const labelPairs=await page.locator("#form label[for]").evaluateAll(labels=>labels.map(label=>({for:label.htmlFor,text:label.textContent.trim(),exists:!!document.getElementById(label.htmlFor)})));
+     assert.ok(labelPairs.length>=tool.source.inputs.length,id+"/"+locale+" visible form labels");
+     assert.ok(labelPairs.every(x=>x.exists&&x.text.length>0),id+"/"+locale+" labels point to named controls");
+     for(const input of tool.source.inputs)assert.ok(labelPairs.some(x=>x.for==="f-"+input.key),id+"/"+locale+" input label "+input.key);
+     const unnamed=await page.locator("button").evaluateAll(nodes=>nodes.filter(node=>!(node.getAttribute("aria-label")||node.innerText.trim())).length);
+     assert.equal(unnamed,0,id+"/"+locale+" all buttons have accessible names");
+     const headingLevels=await page.locator("h1,h2,h3,h4,h5,h6").evaluateAll(nodes=>nodes.map(node=>Number(node.tagName.slice(1))));
+     assert.ok(headingLevels.length>0&&headingLevels[0]<=2,id+"/"+locale+" heading hierarchy starts at h1/h2");
+     auditCount++;
+    }
+   }finally{await page.close()}
+  });
+ }
+ assert.equal(auditCount,70,"exactly 70 tool-language accessibility contract checks");
+});
+
 test.after(async()=>{if(browser)await browser.close();if(server)await new Promise(resolve=>server.close(resolve))});
