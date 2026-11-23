@@ -42,6 +42,7 @@ test("homepage exposes the accessible locale selector and loads the local engine
  assert.match(html,/<script src="translation-engine\.js" defer><\/script>/);
  assert.match(css,/html\[dir="rtl"\] header/);
  assert.match(deploy,/cp translations\/\*\.json _site\/translations\//);
+ assert.ok(deploy.includes("tool-content-runtime.js"),"Pages artifact must include the tool translation runtime");
 });
 
 test("homepage category headings have stable locale keys without changing tool IDs",()=>{
