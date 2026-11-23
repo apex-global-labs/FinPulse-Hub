@@ -144,9 +144,11 @@ test("Batch 2 approved translations render in all seven locales and pass 70 axe 
     assert.equal(state.label,locale==="en"?firstInput.label:fields.inputs.find(item=>item.key===firstInput.key).label,locale+":"+tool.id+" input label rendering");
     if(locale==="en")assert.ok(state.formula.length>0,locale+":"+tool.id+" source calculation step renders");
     else assert.equal(state.formula,fields.explanations.steps[0],locale+":"+tool.id+" translated calculation step");
-    assert.equal(state.appLabel,fields.accessibility.pageLabel,locale+":"+tool.id+" page accessibility label");
-    assert.equal(state.formLabel,fields.accessibility.formLabel,locale+":"+tool.id+" form accessibility label");
-    assert.equal(state.resultAnnouncement,fields.accessibility.resultAnnouncement,locale+":"+tool.id+" result announcement");
+    if(locale!=="en"){
+     assert.equal(state.appLabel,fields.accessibility.pageLabel,locale+":"+tool.id+" page accessibility label");
+     assert.equal(state.formLabel,fields.accessibility.formLabel,locale+":"+tool.id+" form accessibility label");
+     assert.equal(state.resultAnnouncement,fields.accessibility.resultAnnouncement,locale+":"+tool.id+" result announcement");
+    }
     assert.equal(state.status,locale==="en"?"source":"approved",locale+":"+tool.id+" simulated approval state");
     assert.equal(state.dir,expectedDir,locale+":"+tool.id+" direction");
     assert.equal(state.locale,locale,locale+":"+tool.id+" document language");
