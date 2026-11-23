@@ -36,7 +36,7 @@ test("approved complete locale records localize tool metadata and input labels w
  assert.deepEqual(localized.f.map(field=>field[0]),source.f.map(field=>field[0]));
  assert.deepEqual(localized.f.map(field=>field[2]),source.f.map(field=>field[2]));
  assert.deepEqual(localized.f.map(field=>field[1]),approved.fields.inputs.map(field=>field.label));
- assert.equal(localized._translation.explanations.steps.length,source.f.length+1);
+ assert.equal(localized._translation.explanations.steps.length,tool.source.explanations.steps.length);
  assert.equal(localized._translationLocale,"hi");
 });
 test("missing or incomplete approved records fall back to the entire English tool definition",()=>{
