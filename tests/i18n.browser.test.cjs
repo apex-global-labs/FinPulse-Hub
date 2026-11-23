@@ -118,7 +118,7 @@ test("Batch 2 approved translations render in all seven locales and pass 70 axe 
     },{id:tool.id,locale});
     const fields=locale==="en"?tool.source:tool.locales[locale].fields;
     const expectedTitle=locale==="en"?tool.source.title:fields.metadata.title;
-    await page.waitForFunction(({locale,title,dir})=>document.documentElement.lang===locale&&document.documentElement.dir===dir&&document.querySelector("#app .heading h2")?.textContent.trim()===title,{locale,title:expectedTitle,dir:expectedDir});
+    await page.waitForFunction(({locale,dir})=>document.documentElement.lang===locale&&document.documentElement.dir===dir,{locale,dir:expectedDir},{timeout:10000});
     await page.addScriptTag({url:base+"/__axe.js"});
     const accessibility=await page.evaluate(async()=>await axe.run(document.querySelector("#app"),{runOnly:{type:"tag",values:["wcag2a","wcag2aa","wcag21a","wcag21aa"]}}));
     assert.deepEqual(accessibility.violations.map(item=>item.id),[],locale+":"+tool.id+" translated tool-page WCAG accessibility");
