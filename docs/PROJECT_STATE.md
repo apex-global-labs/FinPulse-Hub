@@ -141,3 +141,13 @@ The dedicated branch adds five Developer wrap-up tools, twelve Education & Study
 - Translation records remain `draft`; removing human sign-off does not auto-approve or publish translations. Runtime English fallback remains active for draft, missing and incomplete locale records.
 - The production branch `main` and GitHub Pages deployment have not been changed by this candidate work. The production verification date and commit above refer to the last verified production release, not the current candidate branch.
 - Do not merge or deploy until all mandatory automated gates pass on the exact latest PR head and the release decision is explicitly authorized.
+
+## Translation Engine — Batch 2 source extraction — 2026-11-23
+
+- Latest verified release-gate head: `e5e743cb3ed5235f46689fcdf0b659fb31c044c2`; Finance CI run `45145145252` and Candidate Lighthouse/CLS run `45145145355` both completed successfully on that exact head.
+- Finance CI: 334/334 Node tests, 1/1 live API test, 30/30 Browser tests; the 220-tool Desktop/Mobile functional audit passed 440/440 executions with zero runtime errors.
+- Candidate Lighthouse: Mobile homepage 96 Performance / 96 Accessibility / 100 SEO / CLS 0; Mobile tool 92 / 100 / 100 / CLS 0.0307; Desktop homepage 100 / 100 / 100 / CLS 0; Desktop tool 100 / 100 / 100 / CLS 0.0087. All four CLS results are within the 0.10 budget.
+- First-ten translation catalogue: all 10 tools have six target-locale records, all status `draft`; full English fallback remains active. No locale was promoted to `approved` or `published`.
+- Batch 2 source extraction: tools 11–20 are `freelance`, `margin`, `affordability`, `payoff`, `refinance`, `personal-loan`, `student-loan`, `simple-interest`, `retirement`, and `401k`. Source descriptions and stable input keys/labels have been extracted from `app.js` into `translations/tool-content.json`; 10/10 descriptions and 51 input labels are recorded. All six target locales remain `not-started`; translation drafting has not begun.
+- Extended catalogue regression test to require source extraction for the first 20 tools and unique stable input keys.
+- PR #73 remains Draft/unmerged; production `main` and GitHub Pages are unchanged. No translation activation, merge or deployment was performed.
