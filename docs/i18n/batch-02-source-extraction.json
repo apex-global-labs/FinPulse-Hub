@@ -1,0 +1,2093 @@
+{
+  "extractionVersion": 1,
+  "batch": "Finance calculator localization Batch 2",
+  "extractedAt": "2026-11-23",
+  "branch": "feat/seven-language-translation-engine-phase-1",
+  "status": "source-extracted; translations-not-started",
+  "locales": [
+    "en",
+    "hi",
+    "ar",
+    "ur",
+    "zh-CN",
+    "ja",
+    "ru"
+  ],
+  "targetLocales": [
+    "hi",
+    "ar",
+    "ur",
+    "zh-CN",
+    "ja",
+    "ru"
+  ],
+  "evidence": {
+    "catalogue": {
+      "path": "translations/tool-content.json",
+      "blobSha": "581642ac0eb5e413ff9210140151226e7095db48"
+    },
+    "calculationCore": {
+      "path": "finance-core.js",
+      "blobSha": "22de8b0d6f67123182b6fd838d73892e039747a5"
+    },
+    "runtimeDefinitions": {
+      "path": "app.js",
+      "blobSha": "8241a18368ff64e87a64cc1f5947e42ff4cb26de"
+    },
+    "schema": {
+      "path": "translations/content-schema.json",
+      "blobSha": "1ac0cd0e8b228ff5e3d822860ddbfd6369c0506e"
+    }
+  },
+  "fieldCoverage": {
+    "extractedFromAuthoritativeCatalogue": [
+      "metadata",
+      "inputs",
+      "results",
+      "formula",
+      "steps",
+      "assumptions",
+      "notes",
+      "disclaimers",
+      "limitations",
+      "errors",
+      "faqs",
+      "seo",
+      "accessibility"
+    ],
+    "notPresentInCurrentSourceRecords": [
+      "guide.title",
+      "guide.introduction",
+      "guide.steps",
+      "guide.sections",
+      "formulaTitle"
+    ],
+    "policy": "Do not invent missing guide content or infer tool-specific instructions. Guide fields remain pending source-authoring/review. The source formula is retained verbatim as formula; formulaTitle must be a separately authored generic label only if the schema explicitly permits it."
+  },
+  "formulaIntegrity": {
+    "calculationImplementationIsAuthoritative": true,
+    "translationsMustNeverModifyCalculationCode": true,
+    "preserve": [
+      "function names",
+      "input keys",
+      "formula operators",
+      "numeric constants",
+      "rate conversions",
+      "day-count options",
+      "error keys",
+      "placeholder tokens",
+      "FAQ/error stable keys",
+      "result metric keys"
+    ]
+  },
+  "tools": [
+    {
+      "id": "freelance",
+      "title": "Freelance Hourly Rate Calculator",
+      "sourceFile": "app.js",
+      "sourceRecord": {
+        "title": "Freelance Hourly Rate Calculator",
+        "category": "Finance & Money",
+        "subcategory": "Business & Freelance Calculators",
+        "file": "app.js",
+        "description": "Estimate an hourly billing rate from income goals, costs and billable time.",
+        "inputs": [
+          {
+            "key": "income",
+            "label": "Desired annual take-home income"
+          },
+          {
+            "key": "costs",
+            "label": "Annual business costs"
+          },
+          {
+            "key": "tax",
+            "label": "Estimated tax reserve (%)"
+          },
+          {
+            "key": "hours",
+            "label": "Billable hours per week"
+          },
+          {
+            "key": "weeks",
+            "label": "Working weeks per year"
+          }
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "SUGGESTED BILLING RATE",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Annual billable hours"
+            },
+            {
+              "key": "metric-2",
+              "label": "Annual revenue target"
+            },
+            {
+              "key": "metric-3",
+              "label": "Annual costs"
+            },
+            {
+              "key": "metric-4",
+              "label": "Tax reserve"
+            }
+          ],
+          "breakdown": [
+            {
+              "key": "breakdown-1",
+              "label": "Annual billable hours"
+            },
+            {
+              "key": "breakdown-2",
+              "label": "Desired take-home income"
+            },
+            {
+              "key": "breakdown-3",
+              "label": "Annual business costs"
+            },
+            {
+              "key": "breakdown-4",
+              "label": "Tax reserve"
+            },
+            {
+              "key": "breakdown-5",
+              "label": "Annual revenue target"
+            },
+            {
+              "key": "breakdown-6",
+              "label": "Hourly rate"
+            }
+          ]
+        },
+        "explanations": {
+          "formula": "Annual billable hours = billable hours per week × working weeks. Annual revenue target = (desired annual take-home income + annual business costs) ÷ (1 − tax reserve percentage). Suggested hourly rate = annual revenue target ÷ annual billable hours.",
+          "steps": [
+            "Multiply billable hours per week by working weeks per year to estimate annual billable hours.",
+            "Add desired take-home income and annual business costs.",
+            "Divide that amount by one minus the tax-reserve percentage to estimate the annual revenue target.",
+            "Divide the annual revenue target by annual billable hours to estimate the hourly billing rate."
+          ],
+          "assumptions": [
+            "The tax reserve is an estimated percentage of the required annual revenue, not a jurisdiction-specific tax calculation.",
+            "Billable hours exclude unpaid administration and other non-billable work unless included in the entered hours."
+          ],
+          "notes": [
+            "Planning estimate only. Tax rules vary by location; include unpaid administration time in your billable-hours assumptions."
+          ],
+          "disclaimers": [
+            "Planning estimate only. Tax rules vary by location; include unpaid administration time in your billable-hours assumptions."
+          ],
+          "limitations": [
+            "Planning estimate only. Tax rules vary by location; include unpaid administration time in your billable-hours assumptions."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-freelance-1",
+            "question": "What does this calculator estimate?",
+            "answer": "It estimates an hourly billing rate from take-home income goals, annual business costs, a tax reserve and billable time."
+          },
+          {
+            "key": "faq-freelance-2",
+            "question": "How are annual billable hours calculated?",
+            "answer": "Annual billable hours equal billable hours per week multiplied by working weeks per year."
+          },
+          {
+            "key": "faq-freelance-3",
+            "question": "Why is a tax reserve included?",
+            "answer": "The reserve increases the revenue target so the estimate accounts for the percentage set aside for taxes."
+          },
+          {
+            "key": "faq-freelance-4",
+            "question": "Does this determine my actual tax rate?",
+            "answer": "No. Tax rules vary by location; the tax reserve is an assumption you enter."
+          }
+        ],
+        "errors": [
+          {
+            "key": "invalid-number",
+            "message": "{field} must be a finite number.",
+            "recoveryHint": "Enter a valid number and try again."
+          },
+          {
+            "key": "negative",
+            "message": "{field} must not be negative.",
+            "recoveryHint": "Enter zero or a positive value."
+          },
+          {
+            "key": "positive",
+            "message": "{field} must be greater than zero.",
+            "recoveryHint": "Enter a value greater than zero."
+          },
+          {
+            "key": "tax-reserve-limit",
+            "message": "Tax reserve must be below 100 percent.",
+            "recoveryHint": "Enter a tax reserve below 100%."
+          }
+        ],
+        "seo": {
+          "title": "Freelance Hourly Rate Calculator | FinPulse Hub",
+          "metaDescription": "Estimate an hourly billing rate from income goals, costs and billable time.",
+          "h1": "Freelance Hourly Rate Calculator",
+          "introduction": "Estimate an hourly billing rate from income goals, costs and billable time.",
+          "faq": [
+            {
+              "key": "faq-freelance-1",
+              "question": "What does this calculator estimate?",
+              "answer": "It estimates an hourly billing rate from take-home income goals, annual business costs, a tax reserve and billable time."
+            },
+            {
+              "key": "faq-freelance-2",
+              "question": "How are annual billable hours calculated?",
+              "answer": "Annual billable hours equal billable hours per week multiplied by working weeks per year."
+            },
+            {
+              "key": "faq-freelance-3",
+              "question": "Why is a tax reserve included?",
+              "answer": "The reserve increases the revenue target so the estimate accounts for the percentage set aside for taxes."
+            },
+            {
+              "key": "faq-freelance-4",
+              "question": "Does this determine my actual tax rate?",
+              "answer": "No. Tax rules vary by location; the tax reserve is an assumption you enter."
+            }
+          ]
+        },
+        "accessibility": {
+          "pageLabel": "Freelance Hourly Rate Calculator",
+          "formLabel": "Calculator form",
+          "resultAnnouncement": "Calculation result",
+          "chartLabel": "",
+          "controlLabels": [
+            {
+              "key": "income",
+              "label": "Desired annual take-home income"
+            },
+            {
+              "key": "costs",
+              "label": "Annual business costs"
+            },
+            {
+              "key": "tax",
+              "label": "Estimated tax reserve (%)"
+            },
+            {
+              "key": "hours",
+              "label": "Billable hours per week"
+            },
+            {
+              "key": "weeks",
+              "label": "Working weeks per year"
+            }
+          ]
+        }
+      },
+      "calculationImplementation": {
+        "file": "finance-core.js",
+        "functionName": "freelanceRate",
+        "sourceCode": "function freelanceRate(income,costs,tax,hours,weeks){nonnegative(income,\"Income target\");nonnegative(costs,\"Annual costs\");nonnegative(tax,\"Tax reserve\");if(tax>=100)throw Error(\"Tax reserve must be below 100 percent\");positive(hours,\"Billable hours per week\");positive(weeks,\"Working weeks\");const annualBillableHours=hours*weeks,annualRevenueTarget=(income+costs)/(1-tax/100);return{hourlyRate:annualRevenueTarget/annualBillableHours,annualBillableHours,annualRevenueTarget,taxReserve:annualRevenueTarget*tax/100}}"
+      }
+    },
+    {
+      "id": "margin",
+      "title": "Profit Margin Calculator",
+      "sourceFile": "app.js",
+      "sourceRecord": {
+        "title": "Profit Margin Calculator",
+        "category": "Finance & Money",
+        "subcategory": "Business & Freelance Calculators",
+        "file": "app.js",
+        "description": "Calculate profit, profit margin and markup from revenue and costs.",
+        "inputs": [
+          {
+            "key": "revenue",
+            "label": "Revenue / selling price"
+          },
+          {
+            "key": "cost",
+            "label": "Total costs"
+          }
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "PROFIT MARGIN",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Revenue"
+            },
+            {
+              "key": "metric-2",
+              "label": "Total costs"
+            },
+            {
+              "key": "metric-3",
+              "label": "Profit"
+            },
+            {
+              "key": "metric-4",
+              "label": "Markup on cost"
+            }
+          ],
+          "breakdown": [
+            {
+              "key": "breakdown-1",
+              "label": "Revenue"
+            },
+            {
+              "key": "breakdown-2",
+              "label": "Total costs"
+            },
+            {
+              "key": "breakdown-3",
+              "label": "Profit"
+            },
+            {
+              "key": "breakdown-4",
+              "label": "Profit margin"
+            },
+            {
+              "key": "breakdown-5",
+              "label": "Markup on cost"
+            }
+          ],
+          "chart": {
+            "title": "Revenue, costs and profit",
+            "series": [
+              {
+                "key": "series-1",
+                "label": "Revenue"
+              },
+              {
+                "key": "series-2",
+                "label": "Costs"
+              },
+              {
+                "key": "series-3",
+                "label": "Profit"
+              }
+            ]
+          }
+        },
+        "explanations": {
+          "formula": "Profit = revenue − total costs. Profit margin = profit ÷ revenue × 100. Markup on cost = profit ÷ total costs × 100.",
+          "steps": [
+            "Subtract total costs from revenue to calculate profit.",
+            "Divide profit by revenue and multiply by 100 to calculate profit margin.",
+            "Divide profit by total costs and multiply by 100 to calculate markup on cost.",
+            "If the denominator is zero, the corresponding percentage is undefined."
+          ],
+          "assumptions": [
+            "Revenue and costs must be entered in the same currency and reporting period."
+          ],
+          "notes": [
+            "Margin is profit divided by revenue. Markup is profit divided by cost."
+          ],
+          "disclaimers": [
+            "Margin is profit divided by revenue. Markup is profit divided by cost."
+          ],
+          "limitations": [
+            "Margin is profit divided by revenue. Markup is profit divided by cost."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-margin-1",
+            "question": "What is profit margin?",
+            "answer": "Profit margin is profit divided by revenue, expressed as a percentage."
+          },
+          {
+            "key": "faq-margin-2",
+            "question": "What is the difference between margin and markup?",
+            "answer": "Margin divides profit by revenue; markup divides profit by total costs."
+          },
+          {
+            "key": "faq-margin-3",
+            "question": "Why can a percentage be undefined?",
+            "answer": "The calculator returns an undefined value when revenue or costs—the relevant denominator—is zero."
+          },
+          {
+            "key": "faq-margin-4",
+            "question": "Can costs exceed revenue?",
+            "answer": "Yes. The calculation can show a negative profit and negative margin when costs exceed revenue."
+          }
+        ],
+        "errors": [
+          {
+            "key": "invalid-number",
+            "message": "{field} must be a finite number.",
+            "recoveryHint": "Enter a valid number and try again."
+          },
+          {
+            "key": "negative",
+            "message": "{field} must not be negative.",
+            "recoveryHint": "Enter zero or a positive value."
+          },
+          {
+            "key": "positive",
+            "message": "{field} must be greater than zero.",
+            "recoveryHint": "Enter a value greater than zero."
+          }
+        ],
+        "seo": {
+          "title": "Profit Margin Calculator | FinPulse Hub",
+          "metaDescription": "Calculate profit, profit margin and markup from revenue and costs.",
+          "h1": "Profit Margin Calculator",
+          "introduction": "Calculate profit, profit margin and markup from revenue and costs.",
+          "faq": [
+            {
+              "key": "faq-margin-1",
+              "question": "What is profit margin?",
+              "answer": "Profit margin is profit divided by revenue, expressed as a percentage."
+            },
+            {
+              "key": "faq-margin-2",
+              "question": "What is the difference between margin and markup?",
+              "answer": "Margin divides profit by revenue; markup divides profit by total costs."
+            },
+            {
+              "key": "faq-margin-3",
+              "question": "Why can a percentage be undefined?",
+              "answer": "The calculator returns an undefined value when revenue or costs—the relevant denominator—is zero."
+            },
+            {
+              "key": "faq-margin-4",
+              "question": "Can costs exceed revenue?",
+              "answer": "Yes. The calculation can show a negative profit and negative margin when costs exceed revenue."
+            }
+          ]
+        },
+        "accessibility": {
+          "pageLabel": "Profit Margin Calculator",
+          "formLabel": "Calculator form",
+          "resultAnnouncement": "Calculation result",
+          "chartLabel": "Profit Margin Calculator chart",
+          "controlLabels": [
+            {
+              "key": "revenue",
+              "label": "Revenue / selling price"
+            },
+            {
+              "key": "cost",
+              "label": "Total costs"
+            }
+          ]
+        }
+      },
+      "calculationImplementation": {
+        "file": "finance-core.js",
+        "functionName": "profitMargin",
+        "sourceCode": "function profitMargin(revenue,costs){nonnegative(revenue,\"Revenue\");nonnegative(costs,\"Costs\");const profit=revenue-costs;return{profit,margin:revenue===0?null:profit/revenue*100,markup:costs===0?null:profit/costs*100}}"
+      }
+    },
+    {
+      "id": "affordability",
+      "title": "Mortgage Affordability Calculator",
+      "sourceFile": "app.js",
+      "sourceRecord": {
+        "title": "Mortgage Affordability Calculator",
+        "category": "Finance & Money",
+        "subcategory": "Mortgage Calculators",
+        "file": "app.js",
+        "description": "Estimate a home-price range using income, debts, down payment, taxes, insurance and debt-to-income limits.",
+        "inputs": [
+          {
+            "key": "income",
+            "label": "Gross monthly household income"
+          },
+          {
+            "key": "debts",
+            "label": "Monthly debt payments"
+          },
+          {
+            "key": "down",
+            "label": "Available down payment"
+          },
+          {
+            "key": "rate",
+            "label": "Annual mortgage rate (%)"
+          },
+          {
+            "key": "years",
+            "label": "Mortgage term (years)"
+          },
+          {
+            "key": "tax",
+            "label": "Monthly property tax"
+          },
+          {
+            "key": "insurance",
+            "label": "Monthly home insurance"
+          },
+          {
+            "key": "hoa",
+            "label": "Monthly HOA / fees"
+          },
+          {
+            "key": "dti",
+            "label": "Maximum total debt-to-income (%)"
+          },
+          {
+            "key": "housing",
+            "label": "Maximum housing-cost ratio (%)"
+          }
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "ESTIMATED MAXIMUM HOME PRICE",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Estimated maximum loan"
+            },
+            {
+              "key": "metric-2",
+              "label": "Down payment"
+            },
+            {
+              "key": "metric-3",
+              "label": "Principal & interest budget"
+            },
+            {
+              "key": "metric-4",
+              "label": "Estimated housing budget"
+            },
+            {
+              "key": "metric-5",
+              "label": "Estimated total debt ratio"
+            },
+            {
+              "key": "metric-6",
+              "label": "Loan term"
+            }
+          ],
+          "breakdown": []
+        },
+        "explanations": {
+          "formula": "Maximum housing budget = max(0, min(monthly income × housing-cost ratio, monthly income × total debt-to-income limit − monthly debts)). Principal-and-interest budget = max(0, housing budget − property tax − home insurance − HOA/fees). Maximum loan is the present value of that monthly budget over the selected term at the entered monthly mortgage rate. Estimated home price = maximum loan + down payment.",
+          "steps": [
+            "Calculate the housing-cost limit from gross monthly household income and the entered housing-cost ratio.",
+            "Calculate the total-debt limit after subtracting existing monthly debt payments.",
+            "Use the lower non-negative limit as the estimated monthly housing budget.",
+            "Subtract monthly property tax, home insurance and HOA/fees to estimate the principal-and-interest budget.",
+            "Calculate the maximum loan supported by that budget, mortgage rate and term.",
+            "Add the available down payment to estimate the maximum home price."
+          ],
+          "assumptions": [
+            "The entered debt-to-income and housing-cost ratios determine the affordability limits.",
+            "Property tax, home insurance and HOA/fees are treated as monthly costs.",
+            "The estimate does not include other ownership costs unless entered."
+          ],
+          "notes": [
+            "Uses the lower of the housing-cost ratio and total-debt ratio limits entered. Taxes, insurance and HOA are deducted before estimating principal-and-interest capacity."
+          ],
+          "disclaimers": [
+            "Uses the lower of the housing-cost ratio and total-debt ratio limits entered. Taxes, insurance and HOA are deducted before estimating principal-and-interest capacity."
+          ],
+          "limitations": [
+            "Uses the lower of the housing-cost ratio and total-debt ratio limits entered. Taxes, insurance and HOA are deducted before estimating principal-and-interest capacity."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-affordability-1",
+            "question": "What does the maximum home price represent?",
+            "answer": "It is an estimate based on the entered income, debts, down payment, mortgage rate, term and monthly housing costs."
+          },
+          {
+            "key": "faq-affordability-2",
+            "question": "How do debt-to-income limits affect the estimate?",
+            "answer": "The calculator compares the housing-cost limit with the total-debt limit after existing monthly debts and uses the lower limit."
+          },
+          {
+            "key": "faq-affordability-3",
+            "question": "Are property taxes and insurance included?",
+            "answer": "Yes. Monthly property tax, home insurance and HOA/fees are deducted before estimating the principal-and-interest budget."
+          },
+          {
+            "key": "faq-affordability-4",
+            "question": "Is this a mortgage pre-approval?",
+            "answer": "No. It is a planning estimate and does not represent a lender decision or offer."
+          }
+        ],
+        "errors": [
+          {
+            "key": "invalid-number",
+            "message": "{field} must be a finite number.",
+            "recoveryHint": "Enter a valid number and try again."
+          },
+          {
+            "key": "negative",
+            "message": "{field} must not be negative.",
+            "recoveryHint": "Enter zero or a positive value."
+          },
+          {
+            "key": "positive",
+            "message": "{field} must be greater than zero.",
+            "recoveryHint": "Enter a value greater than zero."
+          }
+        ],
+        "seo": {
+          "title": "Mortgage Affordability Calculator | FinPulse Hub",
+          "metaDescription": "Estimate a home-price range using income, debts, down payment, taxes, insurance and debt-to-income limits.",
+          "h1": "Mortgage Affordability Calculator",
+          "introduction": "Estimate a home-price range using income, debts, down payment, taxes, insurance and debt-to-income limits.",
+          "faq": [
+            {
+              "key": "faq-affordability-1",
+              "question": "What does the maximum home price represent?",
+              "answer": "It is an estimate based on the entered income, debts, down payment, mortgage rate, term and monthly housing costs."
+            },
+            {
+              "key": "faq-affordability-2",
+              "question": "How do debt-to-income limits affect the estimate?",
+              "answer": "The calculator compares the housing-cost limit with the total-debt limit after existing monthly debts and uses the lower limit."
+            },
+            {
+              "key": "faq-affordability-3",
+              "question": "Are property taxes and insurance included?",
+              "answer": "Yes. Monthly property tax, home insurance and HOA/fees are deducted before estimating the principal-and-interest budget."
+            },
+            {
+              "key": "faq-affordability-4",
+              "question": "Is this a mortgage pre-approval?",
+              "answer": "No. It is a planning estimate and does not represent a lender decision or offer."
+            }
+          ]
+        },
+        "accessibility": {
+          "pageLabel": "Mortgage Affordability Calculator",
+          "formLabel": "Calculator form",
+          "resultAnnouncement": "Calculation result",
+          "chartLabel": "",
+          "controlLabels": [
+            {
+              "key": "income",
+              "label": "Gross monthly household income"
+            },
+            {
+              "key": "debts",
+              "label": "Monthly debt payments"
+            },
+            {
+              "key": "down",
+              "label": "Available down payment"
+            },
+            {
+              "key": "rate",
+              "label": "Annual mortgage rate (%)"
+            },
+            {
+              "key": "years",
+              "label": "Mortgage term (years)"
+            },
+            {
+              "key": "tax",
+              "label": "Monthly property tax"
+            },
+            {
+              "key": "insurance",
+              "label": "Monthly home insurance"
+            },
+            {
+              "key": "hoa",
+              "label": "Monthly HOA / fees"
+            },
+            {
+              "key": "dti",
+              "label": "Maximum total debt-to-income (%)"
+            },
+            {
+              "key": "housing",
+              "label": "Maximum housing-cost ratio (%)"
+            }
+          ]
+        }
+      },
+      "calculationImplementation": {
+        "file": "finance-core.js",
+        "functionName": "mortgageAffordability",
+        "sourceCode": "function mortgageAffordability(income,debts,down,rate,years,tax,insurance,hoa,maxDti=36,housingRatio=28){nonnegative(income,\"Gross monthly income\");nonnegative(debts,\"Monthly debt payments\");nonnegative(down,\"Down payment\");nonnegative(rate,\"Annual rate\");nonnegative(tax,\"Monthly property tax\");nonnegative(insurance,\"Monthly home insurance\");nonnegative(hoa,\"Monthly HOA\");positive(years,\"Loan term\");if(maxDti<=0||maxDti>100||housingRatio<=0||housingRatio>100)throw Error(\"Debt and housing ratios must be above 0 and at most 100 percent\");const n=months(years*12),maxHousing=Math.max(0,Math.min(income*housingRatio/100,income*maxDti/100-debts)),principalBudget=Math.max(0,maxHousing-tax-insurance-hoa),r=rate/1200,maxLoan=r===0?principalBudget*n:principalBudget*(1-Math.pow(1+r,-n))/r,homePrice=maxLoan+down,estimatedHousing=maxHousing,monthlyDebtRatio=income===0?null:(debts+estimatedHousing)/income*100,loanSchedule=loan(maxLoan,rate,n);return{maxLoan,homePrice,downPayment:down,principalPaymentBudget:principalBudget,maxHousing,monthlyDebtRatio,monthlyDebtCapacity:Math.max(0,income*maxDti/100-debts),balances:loanSchedule.balances,months:n,monthlySchedule:loanSchedule.monthlySchedule,yearlySchedule:loanSchedule.yearlySchedule,note:\"Uses the lower of the housing-cost ratio and total-debt ratio limits entered. Taxes, insurance and HOA are deducted before estimating principal-and-interest capacity.\"}}"
+      }
+    },
+    {
+      "id": "payoff",
+      "title": "Mortgage Payoff & Extra Payment Calculator",
+      "sourceFile": "app.js",
+      "sourceRecord": {
+        "title": "Mortgage Payoff & Extra Payment Calculator",
+        "category": "Finance & Money",
+        "subcategory": "Mortgage Calculators",
+        "file": "app.js",
+        "description": "Compare a standard mortgage schedule with extra monthly principal payments, including interest and time saved.",
+        "inputs": [
+          {
+            "key": "balance",
+            "label": "Current mortgage balance"
+          },
+          {
+            "key": "rate",
+            "label": "Annual interest rate (%)"
+          },
+          {
+            "key": "years",
+            "label": "Remaining term (years)"
+          },
+          {
+            "key": "extra",
+            "label": "Extra monthly principal payment"
+          }
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "ESTIMATED INTEREST SAVED",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Standard monthly payment"
+            },
+            {
+              "key": "metric-2",
+              "label": "Payment with extra amount"
+            },
+            {
+              "key": "metric-3",
+              "label": "Standard payoff time"
+            },
+            {
+              "key": "metric-4",
+              "label": "Accelerated payoff time"
+            },
+            {
+              "key": "metric-5",
+              "label": "Time saved"
+            },
+            {
+              "key": "metric-6",
+              "label": "Interest with extra payments"
+            }
+          ],
+          "breakdown": []
+        },
+        "explanations": {
+          "formula": "Monthly interest = opening loan balance × annual interest rate ÷ 1,200. Accelerated monthly payment = standard fixed payment + extra monthly principal payment. Interest and payoff time are compared with the standard schedule.",
+          "steps": [
+            "Calculate the standard fixed monthly payment for the current balance, annual rate and remaining term.",
+            "Calculate monthly interest from the opening balance and monthly rate.",
+            "Apply the scheduled payment and extra monthly amount, with the extra amount reducing principal.",
+            "Repeat the monthly balance and interest calculation until the loan is paid off.",
+            "Compare total interest and payoff time with the standard schedule."
+          ],
+          "assumptions": [
+            "The extra amount is assumed to reduce principal monthly.",
+            "The standard and accelerated schedules use the same annual interest rate and remaining term."
+          ],
+          "notes": [
+            "Extra amount is assumed to reduce principal monthly. Check lender rules for prepayment limits, fees and payment allocation."
+          ],
+          "disclaimers": [
+            "Extra amount is assumed to reduce principal monthly. Check lender rules for prepayment limits, fees and payment allocation."
+          ],
+          "limitations": [
+            "Extra amount is assumed to reduce principal monthly. Check lender rules for prepayment limits, fees and payment allocation."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-payoff-1",
+            "question": "How is interest saved estimated?",
+            "answer": "The calculator compares total interest in the standard schedule with total interest in the schedule that includes extra monthly payments."
+          },
+          {
+            "key": "faq-payoff-2",
+            "question": "How is the extra payment applied?",
+            "answer": "The extra amount is assumed to reduce principal monthly."
+          },
+          {
+            "key": "faq-payoff-3",
+            "question": "Can extra payments shorten the loan term?",
+            "answer": "The calculator estimates the earlier payoff month produced by the extra monthly amount."
+          },
+          {
+            "key": "faq-payoff-4",
+            "question": "Should I check with my lender?",
+            "answer": "Yes. Check lender rules for prepayment limits, fees and payment allocation."
+          }
+        ],
+        "errors": [
+          {
+            "key": "invalid-number",
+            "message": "{field} must be a finite number.",
+            "recoveryHint": "Enter a valid number and try again."
+          },
+          {
+            "key": "negative",
+            "message": "{field} must not be negative.",
+            "recoveryHint": "Enter zero or a positive value."
+          },
+          {
+            "key": "positive",
+            "message": "{field} must be greater than zero.",
+            "recoveryHint": "Enter a value greater than zero."
+          }
+        ],
+        "seo": {
+          "title": "Mortgage Payoff & Extra Payment Calculator | FinPulse Hub",
+          "metaDescription": "Compare a standard mortgage schedule with extra monthly principal payments, including interest and time saved.",
+          "h1": "Mortgage Payoff & Extra Payment Calculator",
+          "introduction": "Compare a standard mortgage schedule with extra monthly principal payments, including interest and time saved.",
+          "faq": [
+            {
+              "key": "faq-payoff-1",
+              "question": "How is interest saved estimated?",
+              "answer": "The calculator compares total interest in the standard schedule with total interest in the schedule that includes extra monthly payments."
+            },
+            {
+              "key": "faq-payoff-2",
+              "question": "How is the extra payment applied?",
+              "answer": "The extra amount is assumed to reduce principal monthly."
+            },
+            {
+              "key": "faq-payoff-3",
+              "question": "Can extra payments shorten the loan term?",
+              "answer": "The calculator estimates the earlier payoff month produced by the extra monthly amount."
+            },
+            {
+              "key": "faq-payoff-4",
+              "question": "Should I check with my lender?",
+              "answer": "Yes. Check lender rules for prepayment limits, fees and payment allocation."
+            }
+          ]
+        },
+        "accessibility": {
+          "pageLabel": "Mortgage Payoff & Extra Payment Calculator",
+          "formLabel": "Calculator form",
+          "resultAnnouncement": "Calculation result",
+          "chartLabel": "",
+          "controlLabels": [
+            {
+              "key": "balance",
+              "label": "Current mortgage balance"
+            },
+            {
+              "key": "rate",
+              "label": "Annual interest rate (%)"
+            },
+            {
+              "key": "years",
+              "label": "Remaining term (years)"
+            },
+            {
+              "key": "extra",
+              "label": "Extra monthly principal payment"
+            }
+          ]
+        }
+      },
+      "calculationImplementation": {
+        "file": "finance-core.js",
+        "functionName": "mortgagePayoff",
+        "sourceCode": "function mortgagePayoff(balance,rate,years,extra=0){nonnegative(balance,\"Mortgage balance\");nonnegative(rate,\"Annual rate\");nonnegative(extra,\"Extra monthly payment\");positive(years,\"Remaining term\");const n=months(years*12),standard=loan(balance,rate,n,0),accelerated=loan(balance,rate,n,extra);return{standardPayment:standard.basePayment,acceleratedPayment:standard.basePayment+extra,standardInterest:standard.totalInterest,acceleratedInterest:accelerated.totalInterest,standardSchedule:standard.monthlySchedule,acceleratedSchedule:accelerated.monthlySchedule,yearlyStandardSchedule:standard.yearlySchedule,yearlyAcceleratedSchedule:accelerated.yearlySchedule,interestSaved:Math.max(0,standard.totalInterest-accelerated.totalInterest),monthsSaved:Math.max(0,standard.months-accelerated.months),standardMonths:standard.months,acceleratedMonths:accelerated.months,standardBalances:standard.balances,balances:accelerated.balances,totalPaid:accelerated.totalPaid}}"
+      }
+    },
+    {
+      "id": "refinance",
+      "title": "Mortgage Refinance Comparison",
+      "sourceFile": "app.js",
+      "sourceRecord": {
+        "title": "Mortgage Refinance Comparison",
+        "category": "Finance & Money",
+        "subcategory": "Mortgage Calculators",
+        "file": "app.js",
+        "description": "Compare current and new mortgage payments, closing costs, estimated break-even and full-term interest.",
+        "inputs": [
+          {
+            "key": "balance",
+            "label": "Current mortgage balance"
+          },
+          {
+            "key": "currentRate",
+            "label": "Current annual rate (%)"
+          },
+          {
+            "key": "currentYears",
+            "label": "Remaining current term (years)"
+          },
+          {
+            "key": "newRate",
+            "label": "New annual rate (%)"
+          },
+          {
+            "key": "newYears",
+            "label": "New refinance term (years)"
+          },
+          {
+            "key": "costs",
+            "label": "Estimated closing costs"
+          }
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "MONTHLY PAYMENT DIFFERENCE",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Current monthly payment"
+            },
+            {
+              "key": "metric-2",
+              "label": "New monthly payment"
+            },
+            {
+              "key": "metric-3",
+              "label": "Closing costs"
+            },
+            {
+              "key": "metric-4",
+              "label": "Simple break-even"
+            },
+            {
+              "key": "metric-5",
+              "label": "Current remaining interest"
+            },
+            {
+              "key": "metric-6",
+              "label": "New loan interest"
+            },
+            {
+              "key": "metric-7",
+              "label": "New-vs-current interest cost"
+            }
+          ],
+          "breakdown": []
+        },
+        "explanations": {
+          "formula": "Monthly payment difference = current monthly payment − new refinance payment. The refinance loan balance includes the entered closing costs. Simple break-even months = closing costs ÷ monthly payment savings when monthly savings are positive. Interest cost difference = new-loan interest − current-loan interest.",
+          "steps": [
+            "Calculate the current mortgage payment and remaining interest using the current balance, rate and remaining term.",
+            "Add estimated closing costs to the refinance balance and calculate the new payment and interest over the new term.",
+            "Subtract the new payment from the current payment to estimate the monthly payment difference.",
+            "When monthly savings are positive, divide closing costs by monthly savings to estimate simple break-even months.",
+            "Compare the full-term interest amounts and review the difference alongside the payment and term changes."
+          ],
+          "assumptions": [
+            "Closing costs are added to the refinanced loan balance in this comparison.",
+            "Break-even is a simple payment-savings estimate and does not discount future payments.",
+            "The current and new loans may have different terms."
+          ],
+          "notes": [
+            "Break-even is a simple closing-cost divided by monthly-payment-savings estimate. Total interest comparison uses each loan's full remaining/new term; different terms and future rate changes can alter the result."
+          ],
+          "disclaimers": [
+            "Break-even is a simple closing-cost divided by monthly-payment-savings estimate. Total interest comparison uses each loan's full remaining/new term; different terms and future rate changes can alter the result."
+          ],
+          "limitations": [
+            "Break-even is a simple closing-cost divided by monthly-payment-savings estimate. Total interest comparison uses each loan's full remaining/new term; different terms and future rate changes can alter the result."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-refinance-1",
+            "question": "What does monthly payment difference mean?",
+            "answer": "It is the current estimated monthly payment minus the estimated new refinance payment; a positive value means the new payment is lower."
+          },
+          {
+            "key": "faq-refinance-2",
+            "question": "How are closing costs treated?",
+            "answer": "The entered closing costs are added to the refinance balance in the calculation."
+          },
+          {
+            "key": "faq-refinance-3",
+            "question": "How is break-even estimated?",
+            "answer": "When monthly savings are positive, closing costs are divided by monthly payment savings."
+          },
+          {
+            "key": "faq-refinance-4",
+            "question": "Does the comparison guarantee savings?",
+            "answer": "No. It is an estimate; different loan terms and future rate changes can alter the result."
+          }
+        ],
+        "errors": [
+          {
+            "key": "invalid-number",
+            "message": "{field} must be a finite number.",
+            "recoveryHint": "Enter a valid number and try again."
+          },
+          {
+            "key": "negative",
+            "message": "{field} must not be negative.",
+            "recoveryHint": "Enter zero or a positive value."
+          },
+          {
+            "key": "positive",
+            "message": "{field} must be greater than zero.",
+            "recoveryHint": "Enter a value greater than zero."
+          }
+        ],
+        "seo": {
+          "title": "Mortgage Refinance Comparison | FinPulse Hub",
+          "metaDescription": "Compare current and new mortgage payments, closing costs, estimated break-even and full-term interest.",
+          "h1": "Mortgage Refinance Comparison",
+          "introduction": "Compare current and new mortgage payments, closing costs, estimated break-even and full-term interest.",
+          "faq": [
+            {
+              "key": "faq-refinance-1",
+              "question": "What does monthly payment difference mean?",
+              "answer": "It is the current estimated monthly payment minus the estimated new refinance payment; a positive value means the new payment is lower."
+            },
+            {
+              "key": "faq-refinance-2",
+              "question": "How are closing costs treated?",
+              "answer": "The entered closing costs are added to the refinance balance in the calculation."
+            },
+            {
+              "key": "faq-refinance-3",
+              "question": "How is break-even estimated?",
+              "answer": "When monthly savings are positive, closing costs are divided by monthly payment savings."
+            },
+            {
+              "key": "faq-refinance-4",
+              "question": "Does the comparison guarantee savings?",
+              "answer": "No. It is an estimate; different loan terms and future rate changes can alter the result."
+            }
+          ]
+        },
+        "accessibility": {
+          "pageLabel": "Mortgage Refinance Comparison",
+          "formLabel": "Calculator form",
+          "resultAnnouncement": "Calculation result",
+          "chartLabel": "",
+          "controlLabels": [
+            {
+              "key": "balance",
+              "label": "Current mortgage balance"
+            },
+            {
+              "key": "currentRate",
+              "label": "Current annual rate (%)"
+            },
+            {
+              "key": "currentYears",
+              "label": "Remaining current term (years)"
+            },
+            {
+              "key": "newRate",
+              "label": "New annual rate (%)"
+            },
+            {
+              "key": "newYears",
+              "label": "New refinance term (years)"
+            },
+            {
+              "key": "costs",
+              "label": "Estimated closing costs"
+            }
+          ]
+        }
+      },
+      "calculationImplementation": {
+        "file": "finance-core.js",
+        "functionName": "mortgageRefinance",
+        "sourceCode": "function mortgageRefinance(balance,currentRate,currentYears,newRate,newYears,closingCosts=0){nonnegative(balance,\"Current mortgage balance\");nonnegative(currentRate,\"Current annual rate\");nonnegative(newRate,\"New annual rate\");nonnegative(closingCosts,\"Closing costs\");positive(currentYears,\"Current remaining term\");positive(newYears,\"New loan term\");const current=loan(balance,currentRate,currentYears*12),refinanced=loan(balance+closingCosts,newRate,newYears*12),monthlySavings=current.basePayment-refinanced.basePayment,breakEvenMonths=monthlySavings>0?closingCosts/monthlySavings:null,interestCostDifference=refinanced.totalInterest-current.totalInterest;return{currentPayment:current.basePayment,newPayment:refinanced.basePayment,currentSchedule:current.monthlySchedule,newSchedule:refinanced.monthlySchedule,currentYearlySchedule:current.yearlySchedule,newYearlySchedule:refinanced.yearlySchedule,monthlySavings,currentInterest:current.totalInterest,newInterest:refinanced.totalInterest,closingCosts,breakEvenMonths,interestCostDifference,currentMonths:current.months,newMonths:refinanced.months,balances:refinanced.balances,note:\"Break-even is a simple closing-cost divided by monthly-payment-savings estimate. Total interest comparison uses each loan's full remaining/new term; different terms and future rate changes can alter the result.\"}}"
+      }
+    },
+    {
+      "id": "personal-loan",
+      "title": "Personal Loan Calculator",
+      "sourceFile": "app.js",
+      "sourceRecord": {
+        "title": "Personal Loan Calculator",
+        "category": "Finance & Money",
+        "subcategory": "Loan Calculators",
+        "file": "app.js",
+        "description": "Estimate monthly payments, origination-fee impact, cash received and fee-adjusted annualized borrowing cost.",
+        "inputs": [
+          {
+            "key": "principal",
+            "label": "Requested loan amount"
+          },
+          {
+            "key": "rate",
+            "label": "Annual interest rate (%)"
+          },
+          {
+            "key": "years",
+            "label": "Loan term (years)"
+          },
+          {
+            "key": "fee",
+            "label": "Origination fee (%)"
+          },
+          {
+            "key": "extra",
+            "label": "Extra monthly payment"
+          }
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "ESTIMATED BASE MONTHLY PAYMENT",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Requested loan amount"
+            },
+            {
+              "key": "metric-2",
+              "label": "Estimated cash received"
+            },
+            {
+              "key": "metric-3",
+              "label": "Origination fee"
+            },
+            {
+              "key": "metric-4",
+              "label": "Total interest"
+            },
+            {
+              "key": "metric-5",
+              "label": "Interest + fee cost"
+            },
+            {
+              "key": "metric-6",
+              "label": "Fee-adjusted annualized cost"
+            },
+            {
+              "key": "metric-7",
+              "label": "Payoff time with extra amount"
+            }
+          ],
+          "breakdown": []
+        },
+        "explanations": {
+          "formula": "Origination fee = requested loan amount × fee percentage. Estimated cash received = requested loan amount − origination fee. Total cost = total interest + origination fee. Fee-adjusted annualized cost is derived from the effective monthly rate that equates net proceeds with the scheduled base payments, annualized as (1 + monthly effective rate)^12 − 1.",
+          "steps": [
+            "Calculate the origination fee as a percentage of the requested loan amount.",
+            "Subtract the fee from the requested amount to estimate cash received.",
+            "Calculate the scheduled loan repayment using the requested principal, annual rate and term, including any extra monthly payment for the accelerated schedule.",
+            "Calculate total interest and add the origination fee to estimate interest-plus-fee cost.",
+            "Estimate the monthly effective borrowing rate from net proceeds and scheduled base payments, then annualize it."
+          ],
+          "assumptions": [
+            "The origination fee is assumed to be deducted from the amount disbursed.",
+            "The fee-adjusted annualized cost is based on the scheduled base payment, not the extra-payment schedule."
+          ],
+          "notes": [
+            "Origination fee is assumed deducted from the amount disbursed. Fee-adjusted annualized cost is an estimate based on the scheduled base payment; actual lender APR disclosures may include other charges."
+          ],
+          "disclaimers": [
+            "Origination fee is assumed deducted from the amount disbursed. Fee-adjusted annualized cost is an estimate based on the scheduled base payment; actual lender APR disclosures may include other charges."
+          ],
+          "limitations": [
+            "Origination fee is assumed deducted from the amount disbursed. Fee-adjusted annualized cost is an estimate based on the scheduled base payment; actual lender APR disclosures may include other charges."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-personal-loan-1",
+            "question": "How is cash received calculated?",
+            "answer": "The origination fee is deducted from the requested loan amount to estimate net proceeds."
+          },
+          {
+            "key": "faq-personal-loan-2",
+            "question": "What does interest + fee cost include?",
+            "answer": "It adds the estimated total loan interest and the origination fee."
+          },
+          {
+            "key": "faq-personal-loan-3",
+            "question": "Is the fee-adjusted annualized cost the lender's APR?",
+            "answer": "No. It is an estimate based on the scheduled base payment; actual lender APR disclosures may include other charges."
+          },
+          {
+            "key": "faq-personal-loan-4",
+            "question": "How is the extra monthly payment used?",
+            "answer": "It is included in the accelerated repayment schedule and can change the estimated payoff time."
+          }
+        ],
+        "errors": [
+          {
+            "key": "invalid-number",
+            "message": "{field} must be a finite number.",
+            "recoveryHint": "Enter a valid number and try again."
+          },
+          {
+            "key": "negative",
+            "message": "{field} must not be negative.",
+            "recoveryHint": "Enter zero or a positive value."
+          },
+          {
+            "key": "positive",
+            "message": "{field} must be greater than zero.",
+            "recoveryHint": "Enter a value greater than zero."
+          },
+          {
+            "key": "origination-fee-limit",
+            "message": "Origination fee must be below 100 percent.",
+            "recoveryHint": "Enter an origination fee below 100%."
+          }
+        ],
+        "seo": {
+          "title": "Personal Loan Calculator | FinPulse Hub",
+          "metaDescription": "Estimate monthly payments, origination-fee impact, cash received and fee-adjusted annualized borrowing cost.",
+          "h1": "Personal Loan Calculator",
+          "introduction": "Estimate monthly payments, origination-fee impact, cash received and fee-adjusted annualized borrowing cost.",
+          "faq": [
+            {
+              "key": "faq-personal-loan-1",
+              "question": "How is cash received calculated?",
+              "answer": "The origination fee is deducted from the requested loan amount to estimate net proceeds."
+            },
+            {
+              "key": "faq-personal-loan-2",
+              "question": "What does interest + fee cost include?",
+              "answer": "It adds the estimated total loan interest and the origination fee."
+            },
+            {
+              "key": "faq-personal-loan-3",
+              "question": "Is the fee-adjusted annualized cost the lender's APR?",
+              "answer": "No. It is an estimate based on the scheduled base payment; actual lender APR disclosures may include other charges."
+            },
+            {
+              "key": "faq-personal-loan-4",
+              "question": "How is the extra monthly payment used?",
+              "answer": "It is included in the accelerated repayment schedule and can change the estimated payoff time."
+            }
+          ]
+        },
+        "accessibility": {
+          "pageLabel": "Personal Loan Calculator",
+          "formLabel": "Calculator form",
+          "resultAnnouncement": "Calculation result",
+          "chartLabel": "",
+          "controlLabels": [
+            {
+              "key": "principal",
+              "label": "Requested loan amount"
+            },
+            {
+              "key": "rate",
+              "label": "Annual interest rate (%)"
+            },
+            {
+              "key": "years",
+              "label": "Loan term (years)"
+            },
+            {
+              "key": "fee",
+              "label": "Origination fee (%)"
+            },
+            {
+              "key": "extra",
+              "label": "Extra monthly payment"
+            }
+          ]
+        }
+      },
+      "calculationImplementation": {
+        "file": "finance-core.js",
+        "functionName": "personalLoan",
+        "sourceCode": "function personalLoan(principal,rate,years,feePercent=0,extra=0){nonnegative(principal,\"Loan amount\");nonnegative(rate,\"Annual rate\");nonnegative(feePercent,\"Origination fee\");nonnegative(extra,\"Extra monthly payment\");positive(years,\"Loan term\");if(feePercent>=100)throw Error(\"Origination fee must be below 100 percent\");const fee=principal*feePercent/100,netProceeds=principal-fee,x=loan(principal,rate,years*12,extra),baseSchedule=loan(principal,rate,years*12,0),n=baseSchedule.months,pmt=baseSchedule.basePayment;let lo=0,hi=1;for(let i=0;i<100;i++){const mid=(lo+hi)/2,pv=mid===0?pmt*n:pmt*(1-Math.pow(1+mid,-n))/mid;if(pv>netProceeds)lo=mid;else hi=mid}const monthlyEffective=(lo+hi)/2,effectiveAnnualCost=(Math.pow(1+monthlyEffective,12)-1)*100;return{...x,fee,netProceeds,totalInterest:x.totalInterest,totalCost:x.totalInterest+fee,effectiveAnnualCost,balances:x.balances,note:\"Origination fee is assumed deducted from the amount disbursed. Fee-adjusted annualized cost is an estimate based on the scheduled base payment; actual lender APR disclosures may include other charges.\"}}"
+      }
+    },
+    {
+      "id": "student-loan",
+      "title": "Student Loan Repayment Calculator",
+      "sourceFile": "app.js",
+      "sourceRecord": {
+        "title": "Student Loan Repayment Calculator",
+        "category": "Finance & Money",
+        "subcategory": "Loan Calculators",
+        "file": "app.js",
+        "description": "Compare standard fixed-rate repayment with an optional extra monthly payment and see time and interest saved.",
+        "inputs": [
+          {
+            "key": "principal",
+            "label": "Student loan balance"
+          },
+          {
+            "key": "rate",
+            "label": "Annual interest rate (%)"
+          },
+          {
+            "key": "years",
+            "label": "Repayment term (years)"
+          },
+          {
+            "key": "extra",
+            "label": "Extra monthly payment"
+          }
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "ESTIMATED INTEREST SAVED",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Standard monthly payment"
+            },
+            {
+              "key": "metric-2",
+              "label": "Payment with extra amount"
+            },
+            {
+              "key": "metric-3",
+              "label": "Standard payoff time"
+            },
+            {
+              "key": "metric-4",
+              "label": "Accelerated payoff time"
+            },
+            {
+              "key": "metric-5",
+              "label": "Time saved"
+            },
+            {
+              "key": "metric-6",
+              "label": "Interest with extra amount"
+            }
+          ],
+          "breakdown": []
+        },
+        "explanations": {
+          "formula": "Monthly interest = opening loan balance × annual interest rate ÷ 1,200. Accelerated monthly payment = standard fixed payment + extra monthly payment. Interest saved = max(0, standard total interest − accelerated total interest).",
+          "steps": [
+            "Calculate the standard fixed payment from the loan balance, annual percentage rate and repayment term.",
+            "Calculate monthly interest from the opening balance multiplied by the annual rate divided by 1,200.",
+            "Apply the scheduled payment and extra amount to reduce principal.",
+            "Repeat the monthly interest and balance calculation until payoff.",
+            "Compare accelerated interest and payoff time with the standard fixed-rate schedule."
+          ],
+          "assumptions": [
+            "The model uses fixed-rate level-payment repayment.",
+            "The extra amount is assumed to reduce principal after the scheduled payment.",
+            "The model does not include income-driven repayment, forgiveness, subsidies, deferment, capitalization or jurisdiction-specific student-loan rules."
+          ],
+          "notes": [
+            "Illustrative fixed-rate repayment only. It does not model government forgiveness, income-driven plans, subsidies, deferment, capitalization or jurisdiction-specific student-loan rules."
+          ],
+          "disclaimers": [
+            "Illustrative fixed-rate repayment only. It does not model government forgiveness, income-driven plans, subsidies, deferment, capitalization or jurisdiction-specific student-loan rules."
+          ],
+          "limitations": [
+            "Illustrative fixed-rate repayment only. It does not model government forgiveness, income-driven plans, subsidies, deferment, capitalization or jurisdiction-specific student-loan rules."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-student-loan-1",
+            "question": "Does this model income-driven repayment?",
+            "answer": "No. It models fixed-rate level payments only."
+          },
+          {
+            "key": "faq-student-loan-2",
+            "question": "How does extra payment work?",
+            "answer": "The extra amount is assumed to reduce principal after the scheduled payment."
+          },
+          {
+            "key": "faq-student-loan-3",
+            "question": "Are forgiveness programs included?",
+            "answer": "No. Eligibility and forgiveness programs are not modeled."
+          },
+          {
+            "key": "faq-student-loan-4",
+            "question": "Why may servicer figures differ?",
+            "answer": "Accrual method, payment timing and servicer rules may change results."
+          }
+        ],
+        "errors": [
+          {
+            "key": "invalid-number",
+            "message": "{field} must be a finite number.",
+            "recoveryHint": "Enter a valid number and try again."
+          },
+          {
+            "key": "negative",
+            "message": "{field} must not be negative.",
+            "recoveryHint": "Enter zero or a positive value."
+          },
+          {
+            "key": "positive",
+            "message": "{field} must be greater than zero.",
+            "recoveryHint": "Enter a value greater than zero."
+          }
+        ],
+        "seo": {
+          "title": "Student Loan Repayment Calculator | FinPulse Hub",
+          "metaDescription": "Compare standard fixed-rate repayment with an optional extra monthly payment and see time and interest saved.",
+          "h1": "Student Loan Repayment Calculator",
+          "introduction": "Compare standard fixed-rate repayment with an optional extra monthly payment and see time and interest saved.",
+          "faq": [
+            {
+              "key": "faq-student-loan-1",
+              "question": "Does this model income-driven repayment?",
+              "answer": "No. It models fixed-rate level payments only."
+            },
+            {
+              "key": "faq-student-loan-2",
+              "question": "How does extra payment work?",
+              "answer": "The extra amount is assumed to reduce principal after the scheduled payment."
+            },
+            {
+              "key": "faq-student-loan-3",
+              "question": "Are forgiveness programs included?",
+              "answer": "No. Eligibility and forgiveness programs are not modeled."
+            },
+            {
+              "key": "faq-student-loan-4",
+              "question": "Why may servicer figures differ?",
+              "answer": "Accrual method, payment timing and servicer rules may change results."
+            }
+          ]
+        },
+        "accessibility": {
+          "pageLabel": "Student Loan Repayment Calculator",
+          "formLabel": "Calculator form",
+          "resultAnnouncement": "Calculation result",
+          "chartLabel": "",
+          "controlLabels": [
+            {
+              "key": "principal",
+              "label": "Student loan balance"
+            },
+            {
+              "key": "rate",
+              "label": "Annual interest rate (%)"
+            },
+            {
+              "key": "years",
+              "label": "Repayment term (years)"
+            },
+            {
+              "key": "extra",
+              "label": "Extra monthly payment"
+            }
+          ]
+        }
+      },
+      "calculationImplementation": {
+        "file": "finance-core.js",
+        "functionName": "studentLoan",
+        "sourceCode": "function studentLoan(principal,rate,years,extra=0){nonnegative(principal,\"Student loan balance\");nonnegative(rate,\"Annual rate\");nonnegative(extra,\"Extra monthly payment\");positive(years,\"Repayment term\");const standard=loan(principal,rate,years*12,0),accelerated=loan(principal,rate,years*12,extra);return{standardPayment:standard.basePayment,acceleratedPayment:standard.basePayment+extra,standardInterest:standard.totalInterest,acceleratedInterest:accelerated.totalInterest,standardSchedule:standard.monthlySchedule,acceleratedSchedule:accelerated.monthlySchedule,yearlyStandardSchedule:standard.yearlySchedule,yearlyAcceleratedSchedule:accelerated.yearlySchedule,interestSaved:Math.max(0,standard.totalInterest-accelerated.totalInterest),monthsSaved:Math.max(0,standard.months-accelerated.months),standardMonths:standard.months,acceleratedMonths:accelerated.months,totalPaid:accelerated.totalPaid,balances:accelerated.balances,note:\"Illustrative fixed-rate repayment only. It does not model government forgiveness, income-driven plans, subsidies, deferment, capitalization or jurisdiction-specific student-loan rules.\"}}"
+      }
+    },
+    {
+      "id": "simple-interest",
+      "title": "Simple Interest Calculator",
+      "sourceFile": "app.js",
+      "sourceRecord": {
+        "title": "Simple Interest Calculator",
+        "category": "Finance & Money",
+        "subcategory": "Investment & Return Calculators",
+        "file": "app.js",
+        "description": "Calculate non-compounding interest using a selectable 360-, 365- or 366-day basis, with a visual balance path.",
+        "inputs": [
+          {
+            "key": "principal",
+            "label": "Principal amount"
+          },
+          {
+            "key": "rate",
+            "label": "Annual simple interest rate (%)"
+          },
+          {
+            "key": "days",
+            "label": "Number of days"
+          },
+          {
+            "key": "basis",
+            "label": "Day-count basis",
+            "options": [
+              {
+                "value": "365",
+                "label": "365 days"
+              },
+              {
+                "value": "360",
+                "label": "360 days"
+              },
+              {
+                "value": "366",
+                "label": "366 days"
+              }
+            ]
+          }
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "SIMPLE INTEREST EARNED",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Original principal"
+            },
+            {
+              "key": "metric-2",
+              "label": "Total amount"
+            },
+            {
+              "key": "metric-3",
+              "label": "Time period"
+            },
+            {
+              "key": "metric-4",
+              "label": "Day-count basis"
+            },
+            {
+              "key": "metric-5",
+              "label": "Compound comparison"
+            }
+          ],
+          "breakdown": [
+            {
+              "key": "breakdown-1",
+              "label": "Principal"
+            },
+            {
+              "key": "breakdown-2",
+              "label": "Annual rate"
+            },
+            {
+              "key": "breakdown-3",
+              "label": "Days / day basis"
+            },
+            {
+              "key": "breakdown-4",
+              "label": "Simple interest"
+            },
+            {
+              "key": "breakdown-5",
+              "label": "Total amount"
+            },
+            {
+              "key": "breakdown-6",
+              "label": "Compound comparison"
+            }
+          ]
+        },
+        "explanations": {
+          "formula": "Time in years = number of days ÷ selected day-count basis. Simple interest = principal × (annual rate ÷ 100) × time in years. Total amount = principal + simple interest. Compound comparison = principal × ((1 + annual rate ÷ 100)^time − 1).",
+          "steps": [
+            "Divide the entered number of days by the selected 360-, 365- or 366-day basis to convert the period to years.",
+            "Calculate simple interest on the original principal only.",
+            "Add simple interest to the original principal to calculate the total amount.",
+            "Calculate the separate annual-compounding comparison for illustration."
+          ],
+          "assumptions": [
+            "Simple interest is calculated on the original principal only.",
+            "The compound comparison is illustrative and assumes annual compounding.",
+            "The selected day-count basis must be 360, 365 or 366."
+          ],
+          "notes": [
+            "Simple interest is calculated on the original principal only. The compound comparison is illustrative and assumes annual compounding."
+          ],
+          "disclaimers": [
+            "Simple interest is calculated on the original principal only. The compound comparison is illustrative and assumes annual compounding."
+          ],
+          "limitations": [
+            "Simple interest is calculated on the original principal only. The compound comparison is illustrative and assumes annual compounding."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-simple-interest-1",
+            "question": "How is simple interest calculated?",
+            "answer": "It is calculated on the original principal using the annual rate and the selected day-count basis."
+          },
+          {
+            "key": "faq-simple-interest-2",
+            "question": "Which day-count bases are available?",
+            "answer": "You can select 360, 365 or 366 days."
+          },
+          {
+            "key": "faq-simple-interest-3",
+            "question": "Does the simple-interest amount compound?",
+            "answer": "No. The simple-interest calculation uses the original principal only."
+          },
+          {
+            "key": "faq-simple-interest-4",
+            "question": "What is the compound comparison?",
+            "answer": "It is an illustrative comparison that assumes annual compounding over the same period."
+          }
+        ],
+        "errors": [
+          {
+            "key": "invalid-number",
+            "message": "{field} must be a finite number.",
+            "recoveryHint": "Enter a valid number and try again."
+          },
+          {
+            "key": "negative",
+            "message": "{field} must not be negative.",
+            "recoveryHint": "Enter zero or a positive value."
+          },
+          {
+            "key": "positive",
+            "message": "{field} must be greater than zero.",
+            "recoveryHint": "Enter a value greater than zero."
+          },
+          {
+            "key": "rate-limit",
+            "message": "Rate must not exceed 1,000 percent.",
+            "recoveryHint": "Enter an annual rate of 1,000% or less."
+          },
+          {
+            "key": "day-basis",
+            "message": "Day-count basis must be 360, 365 or 366.",
+            "recoveryHint": "Choose 360, 365 or 366 days."
+          }
+        ],
+        "seo": {
+          "title": "Simple Interest Calculator | FinPulse Hub",
+          "metaDescription": "Calculate non-compounding interest using a selectable 360-, 365- or 366-day basis, with a visual balance path.",
+          "h1": "Simple Interest Calculator",
+          "introduction": "Calculate non-compounding interest using a selectable 360-, 365- or 366-day basis, with a visual balance path.",
+          "faq": [
+            {
+              "key": "faq-simple-interest-1",
+              "question": "How is simple interest calculated?",
+              "answer": "It is calculated on the original principal using the annual rate and the selected day-count basis."
+            },
+            {
+              "key": "faq-simple-interest-2",
+              "question": "Which day-count bases are available?",
+              "answer": "You can select 360, 365 or 366 days."
+            },
+            {
+              "key": "faq-simple-interest-3",
+              "question": "Does the simple-interest amount compound?",
+              "answer": "No. The simple-interest calculation uses the original principal only."
+            },
+            {
+              "key": "faq-simple-interest-4",
+              "question": "What is the compound comparison?",
+              "answer": "It is an illustrative comparison that assumes annual compounding over the same period."
+            }
+          ]
+        },
+        "accessibility": {
+          "pageLabel": "Simple Interest Calculator",
+          "formLabel": "Calculator form",
+          "resultAnnouncement": "Calculation result",
+          "chartLabel": "",
+          "controlLabels": [
+            {
+              "key": "principal",
+              "label": "Principal amount"
+            },
+            {
+              "key": "rate",
+              "label": "Annual simple interest rate (%)"
+            },
+            {
+              "key": "days",
+              "label": "Number of days"
+            },
+            {
+              "key": "basis",
+              "label": "Day-count basis"
+            }
+          ]
+        }
+      },
+      "calculationImplementation": {
+        "file": "finance-core.js",
+        "functionName": "simpleInterest",
+        "sourceCode": "function simpleInterest(principal,rate,days,dayBasis=365){nonnegative(principal,\"Principal\");nonnegative(rate,\"Annual simple interest rate\");positive(days,\"Number of days\");if(rate>1000)throw Error(\"Rate must not exceed 1,000 percent\");if(![360,365,366].includes(dayBasis))throw Error(\"Day-count basis must be 360, 365 or 366\");const years=days/dayBasis,interest=principal*(rate/100)*years,total=principal+interest,compoundEquivalent=principal*(Math.pow(1+rate/100,years)-1),balances=Array.from({length:13},(_,i)=>principal+interest*i/12);return{interest,total,years,days,dayBasis,compoundEquivalent,balances,note:\"Simple interest is calculated on the original principal only. The compound comparison is illustrative and assumes annual compounding.\"}}"
+      }
+    },
+    {
+      "id": "retirement",
+      "title": "Retirement Savings Calculator",
+      "sourceFile": "app.js",
+      "sourceRecord": {
+        "title": "Retirement Savings Calculator",
+        "category": "Finance & Money",
+        "subcategory": "Investment & Return Calculators",
+        "file": "app.js",
+        "description": "Project retirement savings with monthly contributions, assumed return and inflation.",
+        "inputs": [
+          {
+            "key": "current",
+            "label": "Current retirement savings"
+          },
+          {
+            "key": "monthly",
+            "label": "Monthly contribution"
+          },
+          {
+            "key": "rate",
+            "label": "Assumed annual return (%)"
+          },
+          {
+            "key": "altRate",
+            "label": "Comparison annual return (%)"
+          },
+          {
+            "key": "years",
+            "label": "Years until retirement"
+          },
+          {
+            "key": "inflation",
+            "label": "Assumed annual inflation (%)"
+          }
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "PROJECTED RETIREMENT BALANCE",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Total contributions"
+            },
+            {
+              "key": "metric-2",
+              "label": "Estimated growth"
+            },
+            {
+              "key": "metric-3",
+              "label": "Inflation-adjusted value"
+            },
+            {
+              "key": "metric-4",
+              "label": "Alternative return balance"
+            }
+          ],
+          "breakdown": []
+        },
+        "explanations": {
+          "formula": "Each month, interest = opening balance × assumed annual return ÷ 1,200, then the monthly contribution is added. Future value is the resulting balance after all months. Inflation-adjusted value = future value ÷ (1 + annual inflation rate)^years.",
+          "steps": [
+            "Start with the current retirement savings balance.",
+            "For each month, calculate growth using the opening balance and the assumed annual return divided by 1,200.",
+            "Add the monthly contribution at the end of each month.",
+            "Repeat for the number of months in the selected time horizon.",
+            "Calculate estimated growth by subtracting total contributions from the projected balance.",
+            "Adjust the projected balance for the assumed annual inflation rate to estimate purchasing power."
+          ],
+          "assumptions": [
+            "The calculator assumes a constant annual return, monthly compounding and end-of-month contributions.",
+            "The alternative return is calculated as a separate comparison scenario.",
+            "The inflation-adjusted value is a purchasing-power estimate, not a forecast."
+          ],
+          "notes": [
+            "Assumes a constant return, monthly compounding and end-of-month contributions. Inflation-adjusted value is a purchasing-power estimate, not a forecast."
+          ],
+          "disclaimers": [
+            "Assumes a constant return, monthly compounding and end-of-month contributions. Inflation-adjusted value is a purchasing-power estimate, not a forecast."
+          ],
+          "limitations": [
+            "Assumes a constant return, monthly compounding and end-of-month contributions. Inflation-adjusted value is a purchasing-power estimate, not a forecast."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-retirement-1",
+            "question": "How are monthly contributions handled?",
+            "answer": "The entered monthly contribution is added at the end of each month in the projection."
+          },
+          {
+            "key": "faq-retirement-2",
+            "question": "Is the assumed return guaranteed?",
+            "answer": "No. The return is a user-entered assumption and actual investment returns vary."
+          },
+          {
+            "key": "faq-retirement-3",
+            "question": "What does inflation-adjusted value show?",
+            "answer": "It estimates the future balance in today's purchasing-power terms using the entered inflation assumption."
+          },
+          {
+            "key": "faq-retirement-4",
+            "question": "Does this predict an actual retirement outcome?",
+            "answer": "No. It is an illustrative projection based on constant-return and contribution assumptions."
+          }
+        ],
+        "errors": [
+          {
+            "key": "invalid-number",
+            "message": "{field} must be a finite number.",
+            "recoveryHint": "Enter a valid number and try again."
+          },
+          {
+            "key": "negative",
+            "message": "{field} must not be negative.",
+            "recoveryHint": "Enter zero or a positive value."
+          },
+          {
+            "key": "positive",
+            "message": "{field} must be greater than zero.",
+            "recoveryHint": "Enter a value greater than zero."
+          }
+        ],
+        "seo": {
+          "title": "Retirement Savings Calculator | FinPulse Hub",
+          "metaDescription": "Project retirement savings with monthly contributions, assumed return and inflation.",
+          "h1": "Retirement Savings Calculator",
+          "introduction": "Project retirement savings with monthly contributions, assumed return and inflation.",
+          "faq": [
+            {
+              "key": "faq-retirement-1",
+              "question": "How are monthly contributions handled?",
+              "answer": "The entered monthly contribution is added at the end of each month in the projection."
+            },
+            {
+              "key": "faq-retirement-2",
+              "question": "Is the assumed return guaranteed?",
+              "answer": "No. The return is a user-entered assumption and actual investment returns vary."
+            },
+            {
+              "key": "faq-retirement-3",
+              "question": "What does inflation-adjusted value show?",
+              "answer": "It estimates the future balance in today's purchasing-power terms using the entered inflation assumption."
+            },
+            {
+              "key": "faq-retirement-4",
+              "question": "Does this predict an actual retirement outcome?",
+              "answer": "No. It is an illustrative projection based on constant-return and contribution assumptions."
+            }
+          ]
+        },
+        "accessibility": {
+          "pageLabel": "Retirement Savings Calculator",
+          "formLabel": "Calculator form",
+          "resultAnnouncement": "Calculation result",
+          "chartLabel": "",
+          "controlLabels": [
+            {
+              "key": "current",
+              "label": "Current retirement savings"
+            },
+            {
+              "key": "monthly",
+              "label": "Monthly contribution"
+            },
+            {
+              "key": "rate",
+              "label": "Assumed annual return (%)"
+            },
+            {
+              "key": "altRate",
+              "label": "Comparison annual return (%)"
+            },
+            {
+              "key": "years",
+              "label": "Years until retirement"
+            },
+            {
+              "key": "inflation",
+              "label": "Assumed annual inflation (%)"
+            }
+          ]
+        }
+      },
+      "calculationImplementation": {
+        "file": "finance-core.js",
+        "functionName": "retirementSavings",
+        "sourceCode": "function retirementSavings(c,m,r,y,i=0){nonnegative(c,\"Current savings\");nonnegative(m,\"Monthly contribution\");nonnegative(r,\"Annual return\");nonnegative(i,\"Inflation\");positive(y,\"Years\");if(y>100)throw Error(\"Years must not exceed 100\");const n=months(y*12),q=r/1200;let b=c,t=c,a=[b],monthlySchedule=[];for(let k=1;k<=n;k++){const openingBalance=b,interest=openingBalance*q;b=openingBalance+interest+m;t+=m;monthlySchedule.push({month:k,openingBalance,payment:m,principal:m,interest,closingBalance:b});if(k%Math.max(1,Math.floor(n/60))===0||k===n)a.push(b)}return{futureValue:b,totalContributions:t,estimatedGrowth:b-t,inflationAdjustedValue:b/Math.pow(1+i/100,y),months:n,balances:a,monthlySchedule,yearlySchedule:yearlyProjection(monthlySchedule,[\"payment\",\"principal\",\"interest\"]),note:\"Assumes a constant return, monthly compounding and end-of-month contributions. Inflation-adjusted value is a purchasing-power estimate, not a forecast.\"}}"
+      }
+    },
+    {
+      "id": "401k",
+      "title": "401k Contribution Calculator",
+      "sourceFile": "app.js",
+      "sourceRecord": {
+        "title": "401k Contribution Calculator",
+        "category": "Finance & Money",
+        "subcategory": "Investment & Return Calculators",
+        "file": "app.js",
+        "description": "Estimate employee contributions, employer match and projected account growth.",
+        "inputs": [
+          {
+            "key": "salary",
+            "label": "Annual salary"
+          },
+          {
+            "key": "employee",
+            "label": "Employee contribution (%)"
+          },
+          {
+            "key": "match",
+            "label": "Employer match (%)"
+          },
+          {
+            "key": "limit",
+            "label": "Salary percentage eligible for match (%)"
+          },
+          {
+            "key": "current",
+            "label": "Current 401(k) balance"
+          },
+          {
+            "key": "rate",
+            "label": "Assumed annual return (%)"
+          },
+          {
+            "key": "years",
+            "label": "Years invested"
+          }
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "PROJECTED 401(k) BALANCE",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Employee contributions"
+            },
+            {
+              "key": "metric-2",
+              "label": "Employer contributions"
+            },
+            {
+              "key": "metric-3",
+              "label": "Annual employer match"
+            },
+            {
+              "key": "metric-4",
+              "label": "Without employer match"
+            }
+          ],
+          "breakdown": []
+        },
+        "explanations": {
+          "formula": "Annual employee contribution = annual salary × employee contribution percentage. Annual employer match = annual salary × min(employee contribution percentage, eligible salary percentage) × employer match percentage. Monthly investment growth is calculated from the opening balance × assumed annual return ÷ 1,200, then monthly employee and employer contributions are added.",
+          "steps": [
+            "Calculate the annual employee contribution from salary and employee contribution percentage.",
+            "Determine the salary percentage eligible for the employer match, capped at the employee contribution percentage.",
+            "Calculate the annual employer match using the match percentage.",
+            "Divide annual employee and employer contributions into monthly contributions.",
+            "For each month, calculate growth from the opening balance and assumed annual return, then add both contributions.",
+            "Compare the projected balance with the separate scenario that excludes employer match."
+          ],
+          "assumptions": [
+            "The employer match is limited to the entered eligible salary percentage.",
+            "The model assumes constant annual return and monthly contributions.",
+            "Annual contribution limits, vesting, fees, taxes and plan-specific rules are not modeled."
+          ],
+          "notes": [
+            "Illustrative employer match and investment growth only. Annual contribution limits, vesting, fees, taxes and plan-specific rules are not modeled."
+          ],
+          "disclaimers": [
+            "Illustrative employer match and investment growth only. Annual contribution limits, vesting, fees, taxes and plan-specific rules are not modeled."
+          ],
+          "limitations": [
+            "Illustrative employer match and investment growth only. Annual contribution limits, vesting, fees, taxes and plan-specific rules are not modeled."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-401k-1",
+            "question": "How is the employer match estimated?",
+            "answer": "The match is based on the lower of the employee contribution percentage and the eligible salary percentage, multiplied by the employer match percentage."
+          },
+          {
+            "key": "faq-401k-2",
+            "question": "Does the calculator include my current balance?",
+            "answer": "Yes. The current 401(k) balance is the starting balance for the projection."
+          },
+          {
+            "key": "faq-401k-3",
+            "question": "Are annual contribution limits included?",
+            "answer": "No. Annual contribution limits, vesting, fees, taxes and plan-specific rules are not modeled."
+          },
+          {
+            "key": "faq-401k-4",
+            "question": "Is the projected return guaranteed?",
+            "answer": "No. The assumed annual return is an input for an illustrative projection, not a guarantee."
+          }
+        ],
+        "errors": [
+          {
+            "key": "invalid-number",
+            "message": "{field} must be a finite number.",
+            "recoveryHint": "Enter a valid number and try again."
+          },
+          {
+            "key": "negative",
+            "message": "{field} must not be negative.",
+            "recoveryHint": "Enter zero or a positive value."
+          },
+          {
+            "key": "positive",
+            "message": "{field} must be greater than zero.",
+            "recoveryHint": "Enter a value greater than zero."
+          },
+          {
+            "key": "percentage-limit",
+            "message": "Percentages and years must be at most 100.",
+            "recoveryHint": "Enter percentages and years no greater than 100."
+          }
+        ],
+        "seo": {
+          "title": "401k Contribution Calculator | FinPulse Hub",
+          "metaDescription": "Estimate employee contributions, employer match and projected account growth.",
+          "h1": "401k Contribution Calculator",
+          "introduction": "Estimate employee contributions, employer match and projected account growth.",
+          "faq": [
+            {
+              "key": "faq-401k-1",
+              "question": "How is the employer match estimated?",
+              "answer": "The match is based on the lower of the employee contribution percentage and the eligible salary percentage, multiplied by the employer match percentage."
+            },
+            {
+              "key": "faq-401k-2",
+              "question": "Does the calculator include my current balance?",
+              "answer": "Yes. The current 401(k) balance is the starting balance for the projection."
+            },
+            {
+              "key": "faq-401k-3",
+              "question": "Are annual contribution limits included?",
+              "answer": "No. Annual contribution limits, vesting, fees, taxes and plan-specific rules are not modeled."
+            },
+            {
+              "key": "faq-401k-4",
+              "question": "Is the projected return guaranteed?",
+              "answer": "No. The assumed annual return is an input for an illustrative projection, not a guarantee."
+            }
+          ]
+        },
+        "accessibility": {
+          "pageLabel": "401k Contribution Calculator",
+          "formLabel": "Calculator form",
+          "resultAnnouncement": "Calculation result",
+          "chartLabel": "",
+          "controlLabels": [
+            {
+              "key": "salary",
+              "label": "Annual salary"
+            },
+            {
+              "key": "employee",
+              "label": "Employee contribution (%)"
+            },
+            {
+              "key": "match",
+              "label": "Employer match (%)"
+            },
+            {
+              "key": "limit",
+              "label": "Salary percentage eligible for match (%)"
+            },
+            {
+              "key": "current",
+              "label": "Current 401(k) balance"
+            },
+            {
+              "key": "rate",
+              "label": "Assumed annual return (%)"
+            },
+            {
+              "key": "years",
+              "label": "Years invested"
+            }
+          ]
+        }
+      },
+      "calculationImplementation": {
+        "file": "finance-core.js",
+        "functionName": "retirement401k",
+        "sourceCode": "function retirement401k(s,e,mp,ml,c,r,y){[s,e,mp,ml,c,r].forEach((v)=>nonnegative(v,\"Input\"));positive(y,\"Years\");if(e>100||mp>100||ml>100||y>100)throw Error(\"Percentages and years must be at most 100\");const ea=s*e/100,ma=s*Math.min(e,ml)/100*mp/100,n=months(y*12),q=r/1200;let b=c,et=0,mt=0,a=[b],monthlySchedule=[];for(let k=1;k<=n;k++){const openingBalance=b,interest=openingBalance*q,employee=ea/12,employer=ma/12,contribution=employee+employer;b=openingBalance+interest+contribution;et+=employee;mt+=employer;monthlySchedule.push({month:k,openingBalance,payment:contribution,principal:contribution,interest,closingBalance:b,employeeContribution:employee,employerContribution:employer});if(k%Math.max(1,Math.floor(n/60))===0||k===n)a.push(b)}return{futureValue:b,employeeContributions:et,employerContributions:mt,totalContributions:c+et+mt,employerMatchAnnual:ma,balances:a,monthlySchedule,yearlySchedule:yearlyProjection(monthlySchedule,[\"payment\",\"principal\",\"interest\",\"employeeContribution\",\"employerContribution\"]),note:\"Illustrative employer match and investment growth only. Annual contribution limits, vesting, fees, taxes and plan-specific rules are not modeled.\"}}"
+      }
+    }
+  ]
+}
