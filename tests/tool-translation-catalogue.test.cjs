@@ -108,12 +108,15 @@ test("first ten FAQ, formula, disclaimer, error, SEO and accessibility fields co
 });
 
 
-test("first ten formula calculation steps are localized with source-aligned step counts",()=>{
- const tool=content.tools.find(item=>item.id==="currency");
- assert.ok(tool.source.explanations.steps.length>0);
- for(const locale of locales){
-  const steps=tool.locales[locale].fields.explanations.steps;
-  assert.equal(steps.length,tool.source.explanations.steps.length,"currency:"+locale+" step count");
-  assert.ok(steps.every(step=>typeof step==="string"&&step.trim().length>10),"currency:"+locale+" non-empty steps");
+test("localized calculation steps for Currency, Mortgage and Loan match source step counts in all six locales",()=>{
+ const ids=["currency","mortgage","loan"];
+ for(const id of ids){
+  const tool=content.tools.find(item=>item.id===id);
+  assert.ok(tool.source.explanations.steps.length>0,id+" source steps");
+  for(const locale of locales){
+   const steps=tool.locales[locale].fields.explanations.steps;
+   assert.equal(steps.length,tool.source.explanations.steps.length,id+":"+locale+" step count");
+   assert.ok(steps.every(step=>typeof step==="string"&&step.trim().length>10),id+":"+locale+" non-empty steps");
+  }
  }
 });
