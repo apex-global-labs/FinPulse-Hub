@@ -173,3 +173,15 @@ The dedicated branch adds five Developer wrap-up tools, twelve Education & Study
 - This is a **partial translation draft**, not a completed translation: currently localized fields are metadata title/description/category, SEO title/description/H1/introduction, and accessibility page label. Untranslated input/result labels and all remaining fields are null so the runtime must use the English source fallback. Follow-up work must translate and validate every remaining schema field, including inputs, results, formulas/steps, assumptions, notes, disclaimers, limitations, errors, FAQs, guides, SEO FAQs and accessibility labels.
 - Added regression assertions for all 10 tools × 6 locales to confirm draft status, translated metadata, stable input/result keys, and null English-fallback values for fields not yet translated.
 - Fresh Finance CI and Lighthouse/CLS runs are required for the new draft/test/docs commits. PR #73 remains Draft/unmerged; production `main` and GitHub Pages remain unchanged.
+
+
+## Batch 2 six-locale translation draft expansion — 2026-11-23
+
+- Confirmed corrected commit `4c3dc2e0e9873b75fc6ddd1b5f928488b2321205` Finance CI [45150958993](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/45150958993) and Lighthouse/CLS [45150958960](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/45150958960) both completed successfully.
+- Finance CI: 335/335 Node tests, 1/1 live API test, 30/30 Browser tests, 440/440 desktop/mobile executions across 220 tools, zero runtime errors. Functional audit artifact ID `14805579111`.
+- Lighthouse: Mobile homepage Performance 95 / Accessibility 96 / SEO 100 / CLS 0; Mobile tool 91 / 100 / 100 / CLS 0.0307; Desktop homepage 100 / 100 / 100 / CLS 0; Desktop tool 100 / 100 / 100 / CLS 0.0087.
+- Expanded batch-two draft records for all 10 tools × six locales. Localized fields currently include metadata, all input labels, all result metric and breakdown labels, action labels, common validation messages, chart labels where mapped, SEO title/meta/H1/introduction, and accessibility page/control labels.
+- Remaining fields deliberately retain null/English fallback until translated: formula descriptions, calculation steps, assumptions, notes, disclaimers, limitations, tool-specific validation messages, FAQs/SEO FAQs, guide copy, and unmapped chart text. This is **not yet a complete translation batch** and none of the locale records are approved or activated.
+- Simple Interest day-count option values remain unchanged and in source order `[365, 360, 366]`; only their display labels are localized.
+- Added regression assertions for batch-two stable input/result/breakdown/error/FAQ keys, translated label coverage, accessibility control-label parity, English fallback for untranslated FAQs/steps, and unchanged Simple Interest day-count values.
+- Fresh Finance CI and Lighthouse/CLS runs are required for the expanded translation content and updated tests. PR #73 remains Draft/unmerged; production `main` and GitHub Pages remain unchanged.
