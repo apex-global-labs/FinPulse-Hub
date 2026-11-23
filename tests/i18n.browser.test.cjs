@@ -129,6 +129,49 @@ test("first-ten tool pages render in all seven locales and keep draft or incompl
     assert.equal(state.locale,locale,locale+":"+tool.id+" document locale");
    }
   }
+  await page.goto(base+"/?tool=loan");
+  await page.waitForSelector("#form");
+  await page.locator("#language-switcher").selectOption("en");
+  const approvedExpectations=await page.evaluate(async()=>{
+   const data=await (await fetch("/translations/tool-content.json")).json();
+   const tool=data.tools.find(item=>item.id==="loan");
+   for(const locale of ["hi","ar","ur","zh-CN","ja","ru"])tool.locales[locale].status="approved";
+   window.FinPulseToolRuntime.setContent(data);
+   return Object.fromEntries(["hi","ar","ur","zh-CN","ja","ru"].map(locale=>[locale,{
+    title:tool.locales[locale].fields.metadata.title,
+    description:tool.locales[locale].fields.metadata.description,
+    input:tool.locales[locale].fields.inputs[0].label,
+    formulaStep:tool.locales[locale].fields.explanations.steps[0],
+    faq:tool.locales[locale].fields.faqs[0].question,
+    seoTitle:tool.locales[locale].fields.seo.title,
+    metric:tool.locales[locale].fields.results.metrics[0].label
+   }]));
+  });
+  for(const locale of ["hi","ar","ur","zh-CN","ja","ru"]){
+   await page.locator("#language-switcher").selectOption(locale);
+   const expected=approvedExpectations[locale];
+   await page.waitForFunction(({locale,title})=>document.documentElement.lang===locale&&document.querySelector("#app .heading h2")?.textContent.trim()===title,{locale,title:expected.title});
+   const actual=await page.evaluate(()=>({
+    title:document.querySelector("#app .heading h2")?.textContent.trim(),
+    description:document.querySelector("#app .heading p")?.textContent.trim(),
+    input:document.querySelector('label[for="f-principal"]')?.textContent.trim(),
+    formulaStep:document.querySelector("#formula-panel ol li")?.textContent.trim(),
+    faq:document.querySelector(".seo-content details summary")?.textContent.trim(),
+    seoTitle:document.title,
+    metric:document.querySelector("#metrics .metric span")?.textContent.trim(),
+    direction:document.documentElement.dir,
+    formula:document.querySelector("#formula-panel")?.textContent||""
+   }));
+   assert.equal(actual.title,expected.title,locale+" approved title rendering");
+   assert.equal(actual.description,expected.description,locale+" approved description rendering");
+   assert.equal(actual.input,expected.input,locale+" approved input rendering");
+   assert.equal(actual.formulaStep,expected.formulaStep,locale+" approved calculation step rendering");
+   assert.equal(actual.faq,expected.faq,locale+" approved FAQ rendering");
+   assert.equal(actual.seoTitle,expected.seoTitle,locale+" approved SEO title rendering");
+   assert.equal(actual.metric,expected.metric,locale+" approved result metric rendering");
+   assert.equal(actual.direction,["ar","ur"].includes(locale)?"rtl":"ltr",locale+" approved direction");
+   assert.ok(actual.formula.includes("PMT = P·i"),locale+" formula notation remains present");
+  }
   await page.close();
  }finally{await browser.close();await new Promise(resolve=>server.close(resolve))}
 });
