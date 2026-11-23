@@ -13,9 +13,11 @@ test("tool translation inventory covers all 220 canonical IDs exactly once",()=>
  assert.deepEqual(catalogue.tools.map(t=>t.id).sort(),mapping.tools.map(t=>t.id).sort());
 });
 
-test("first ten tool titles have terminology review notes and native-review gate",()=>{
- const pilot=catalogue.tools.filter(t=>t.titleReviewStatus==="ai-reviewed-native-review-pending");
+test("first ten tool titles have terminology notes and optional human feedback policy",()=>{
+ const pilot=catalogue.tools.filter(t=>t.titleReviewStatus==="ai-reviewed-optional-feedback");
  assert.equal(pilot.length,10);
+ assert.match(catalogue.reviewPolicy,/optional and non-blocking/);
+ assert.doesNotMatch(catalogue.reviewPolicy,/required before publication/i);
  for(const tool of pilot){
   assert.ok(tool.titleReviewNote && tool.titleReviewNote.length>20);
   for(const locale of locales)assert.ok(tool.title[locale] && tool.title[locale].trim().length>0,tool.id+":"+locale);
