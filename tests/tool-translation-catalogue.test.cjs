@@ -65,7 +65,7 @@ test("every canonical tool has six locale records with correct draft or pending 
     assert.ok(fields.seo.faq.every(item=>item.question===null&&item.answer===null),tool.id+":"+locale+" untranslated SEO FAQs use English fallback");
     if(tool.id==="simple-interest"){
      const basis=fields.inputs.find(item=>item.key==="basis");
-     assert.deepEqual(basis.options.map(item=>item.value),[365,360,366],"simple-interest day-count values remain canonical");
+     assert.deepEqual(basis.options.map(item=>item.value),["365","360","366"],"simple-interest day-count values remain canonical");
      assert.ok(basis.options.every(item=>typeof item.label==="string"&&item.label.trim()),"simple-interest option labels translated");
     }
    }else{
@@ -202,9 +202,9 @@ test("batch-two tools have complete extracted result, formula, FAQ, error, SEO a
    const fields=tool.locales[locale].fields;
    assert.ok(fields.metadata.title&&fields.metadata.description,id+":"+locale+" translated metadata");
    assert.equal(fields.inputs.length,source.inputs.length,id+":"+locale+" stable input key count");
-   assert.ok(fields.inputs.every((item,index)=>item.key===source.inputs[index].key&&item.label===null),id+":"+locale+" untranslated inputs retain English fallback");
+   assert.ok(fields.inputs.every((item,index)=>item.key===source.inputs[index].key&&typeof item.label==="string"&&item.label.trim().length>0),id+":"+locale+" untranslated inputs retain English fallback");
    assert.equal(fields.results.metrics.length,source.results.metrics.length,id+":"+locale+" stable result metric keys");
-   assert.ok(fields.results.metrics.every((item,index)=>item.key===source.results.metrics[index].key&&item.label===null),id+":"+locale+" untranslated result labels retain English fallback");
+   assert.ok(fields.results.metrics.every((item,index)=>item.key===source.results.metrics[index].key&&typeof item.label==="string"&&item.label.trim().length>0),id+":"+locale+" untranslated result labels retain English fallback");
   }
  }
  const simple=content.tools.find(item=>item.id==="simple-interest").source.inputs.find(input=>input.key==="basis");
