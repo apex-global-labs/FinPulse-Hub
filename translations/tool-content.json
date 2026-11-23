@@ -177,7 +177,7 @@
             ],
             "results": {
               "heading": "परिणाम",
-              "summary": "Estimated received amount",
+              "summary": "अनुमानित प्राप्त राशि",
               "metrics": [
                 {
                   "key": "metric-1",
@@ -575,19 +575,19 @@
               "metrics": [
                 {
                   "key": "metric-1",
-                  "label": "शुल्क से पहले परिवर्तित राशि"
+                  "label": "فیس سے پہلے تبدیل شدہ رقم"
                 },
                 {
                   "key": "metric-2",
-                  "label": "अनुमानित शुल्क"
+                  "label": "تخمینی فیس"
                 },
                 {
                   "key": "metric-3",
-                  "label": "प्रयुक्त विनिमय दर"
+                  "label": "استعمال شدہ شرح"
                 },
                 {
                   "key": "metric-4",
-                  "label": "दर की तारीख"
+                  "label": "شرح کی تاریخ"
                 }
               ],
               "breakdown": [
@@ -772,19 +772,19 @@
               "metrics": [
                 {
                   "key": "metric-1",
-                  "label": "शुल्क से पहले परिवर्तित राशि"
+                  "label": "扣费前的兑换金额"
                 },
                 {
                   "key": "metric-2",
-                  "label": "अनुमानित शुल्क"
+                  "label": "预计费用"
                 },
                 {
                   "key": "metric-3",
-                  "label": "प्रयुक्त विनिमय दर"
+                  "label": "使用的汇率"
                 },
                 {
                   "key": "metric-4",
-                  "label": "दर की तारीख"
+                  "label": "汇率日期"
                 }
               ],
               "breakdown": [
@@ -969,19 +969,19 @@
               "metrics": [
                 {
                   "key": "metric-1",
-                  "label": "शुल्क से पहले परिवर्तित राशि"
+                  "label": "手数料控除前の換算額"
                 },
                 {
                   "key": "metric-2",
-                  "label": "अनुमानित शुल्क"
+                  "label": "推定手数料"
                 },
                 {
                   "key": "metric-3",
-                  "label": "प्रयुक्त विनिमय दर"
+                  "label": "使用した為替レート"
                 },
                 {
                   "key": "metric-4",
-                  "label": "दर की तारीख"
+                  "label": "レートの日付"
                 }
               ],
               "breakdown": [
@@ -1166,19 +1166,19 @@
               "metrics": [
                 {
                   "key": "metric-1",
-                  "label": "शुल्क से पहले परिवर्तित राशि"
+                  "label": "Сумма конвертации до комиссии"
                 },
                 {
                   "key": "metric-2",
-                  "label": "अनुमानित शुल्क"
+                  "label": "Расчётная комиссия"
                 },
                 {
                   "key": "metric-3",
-                  "label": "प्रयुक्त विनिमय दर"
+                  "label": "Использованный курс"
                 },
                 {
                   "key": "metric-4",
-                  "label": "दर की तारीख"
+                  "label": "Дата курса"
                 }
               ],
               "breakdown": [
@@ -1479,7 +1479,7 @@
             ],
             "results": {
               "heading": "परिणाम",
-              "summary": "Estimated monthly payment",
+              "summary": "अनुमानित मासिक किस्त",
               "metrics": [
                 {
                   "key": "metric-1",
@@ -1853,23 +1853,23 @@
               "metrics": [
                 {
                   "key": "metric-1",
-                  "label": "मूल मासिक भुगतान"
+                  "label": "بنیادی ماہانہ قسط"
                 },
                 {
                   "key": "metric-2",
-                  "label": "कुल ब्याज"
+                  "label": "کل سود"
                 },
                 {
                   "key": "metric-3",
-                  "label": "कुल भुगतान"
+                  "label": "کل ادا شدہ رقم"
                 },
                 {
                   "key": "metric-4",
-                  "label": "अनुमानित भुगतान अवधि"
+                  "label": "تخمینی ادائیگی کی مدت"
                 },
                 {
                   "key": "metric-5",
-                  "label": "चुकाया गया मूलधन"
+                  "label": "ادا شدہ اصل زر"
                 }
               ],
               "breakdown": [],
@@ -2038,23 +2038,23 @@
               "metrics": [
                 {
                   "key": "metric-1",
-                  "label": "मूल मासिक भुगतान"
+                  "label": "基础月供"
                 },
                 {
                   "key": "metric-2",
-                  "label": "कुल ब्याज"
+                  "label": "总利息"
                 },
                 {
                   "key": "metric-3",
-                  "label": "कुल भुगतान"
+                  "label": "已支付总额"
                 },
                 {
                   "key": "metric-4",
-                  "label": "अनुमानित भुगतान अवधि"
+                  "label": "预计还清期限"
                 },
                 {
                   "key": "metric-5",
-                  "label": "चुकाया गया मूलधन"
+                  "label": "已偿还本金"
                 }
               ],
               "breakdown": [],
@@ -2223,23 +2223,23 @@
               "metrics": [
                 {
                   "key": "metric-1",
-                  "label": "मूल मासिक भुगतान"
+                  "label": "基本月額返済額"
                 },
                 {
                   "key": "metric-2",
-                  "label": "कुल ब्याज"
+                  "label": "利息合計"
                 },
                 {
                   "key": "metric-3",
-                  "label": "कुल भुगतान"
+                  "label": "支払総額"
                 },
                 {
                   "key": "metric-4",
-                  "label": "अनुमानित भुगतान अवधि"
+                  "label": "推定完済期間"
                 },
                 {
                   "key": "metric-5",
-                  "label": "चुकाया गया मूलधन"
+                  "label": "返済済み元金"
                 }
               ],
               "breakdown": [],
@@ -2408,23 +2408,23 @@
               "metrics": [
                 {
                   "key": "metric-1",
-                  "label": "मूल मासिक भुगतान"
+                  "label": "Базовый ежемесячный платёж"
                 },
                 {
                   "key": "metric-2",
-                  "label": "कुल ब्याज"
+                  "label": "Общая сумма процентов"
                 },
                 {
                   "key": "metric-3",
-                  "label": "कुल भुगतान"
+                  "label": "Всего выплачено"
                 },
                 {
                   "key": "metric-4",
-                  "label": "अनुमानित भुगतान अवधि"
+                  "label": "Расчётный срок погашения"
                 },
                 {
                   "key": "metric-5",
-                  "label": "चुकाया गया मूलधन"
+                  "label": "Погашенная основная сумма"
                 }
               ],
               "breakdown": [],
@@ -2692,7 +2692,7 @@
             ],
             "results": {
               "heading": "परिणाम",
-              "summary": "Estimated monthly payment",
+              "summary": "अनुमानित मासिक किस्त",
               "metrics": [
                 {
                   "key": "metric-1",
@@ -3032,19 +3032,19 @@
               "metrics": [
                 {
                   "key": "metric-1",
-                  "label": "मूल मासिक भुगतान"
+                  "label": "بنیادی ماہانہ قسط"
                 },
                 {
                   "key": "metric-2",
-                  "label": "कुल ब्याज"
+                  "label": "کل سود"
                 },
                 {
                   "key": "metric-3",
-                  "label": "कुल भुगतान"
+                  "label": "کل ادا شدہ رقم"
                 },
                 {
                   "key": "metric-4",
-                  "label": "अनुमानित भुगतान अवधि"
+                  "label": "تخمینی ادائیگی کی مدت"
                 }
               ],
               "breakdown": [],
@@ -3200,19 +3200,19 @@
               "metrics": [
                 {
                   "key": "metric-1",
-                  "label": "मूल मासिक भुगतान"
+                  "label": "基础月供"
                 },
                 {
                   "key": "metric-2",
-                  "label": "कुल ब्याज"
+                  "label": "总利息"
                 },
                 {
                   "key": "metric-3",
-                  "label": "कुल भुगतान"
+                  "label": "已支付总额"
                 },
                 {
                   "key": "metric-4",
-                  "label": "अनुमानित भुगतान अवधि"
+                  "label": "预计还清期限"
                 }
               ],
               "breakdown": [],
@@ -3368,19 +3368,19 @@
               "metrics": [
                 {
                   "key": "metric-1",
-                  "label": "मूल मासिक भुगतान"
+                  "label": "基本月額返済額"
                 },
                 {
                   "key": "metric-2",
-                  "label": "कुल ब्याज"
+                  "label": "利息合計"
                 },
                 {
                   "key": "metric-3",
-                  "label": "कुल भुगतान"
+                  "label": "支払総額"
                 },
                 {
                   "key": "metric-4",
-                  "label": "अनुमानित भुगतान अवधि"
+                  "label": "推定完済期間"
                 }
               ],
               "breakdown": [],
@@ -3536,19 +3536,19 @@
               "metrics": [
                 {
                   "key": "metric-1",
-                  "label": "मूल मासिक भुगतान"
+                  "label": "Базовый ежемесячный платёж"
                 },
                 {
                   "key": "metric-2",
-                  "label": "कुल ब्याज"
+                  "label": "Общая сумма процентов"
                 },
                 {
                   "key": "metric-3",
-                  "label": "कुल भुगतान"
+                  "label": "Всего выплачено"
                 },
                 {
                   "key": "metric-4",
-                  "label": "अनुमानित भुगतान अवधि"
+                  "label": "Расчётный срок погашения"
                 }
               ],
               "breakdown": [],
@@ -3799,7 +3799,7 @@
             ],
             "results": {
               "heading": "परिणाम",
-              "summary": "Monthly EMI",
+              "summary": "समान मासिक किस्त (EMI)",
               "metrics": [
                 {
                   "key": "metric-1",
@@ -4123,19 +4123,19 @@
               "metrics": [
                 {
                   "key": "metric-1",
-                  "label": "मूल मासिक भुगतान"
+                  "label": "بنیادی ماہانہ قسط"
                 },
                 {
                   "key": "metric-2",
-                  "label": "कुल ब्याज"
+                  "label": "کل سود"
                 },
                 {
                   "key": "metric-3",
-                  "label": "कुल भुगतान"
+                  "label": "کل ادا شدہ رقم"
                 },
                 {
                   "key": "metric-4",
-                  "label": "अनुमानित भुगतान अवधि"
+                  "label": "تخمینی ادائیگی کی مدت"
                 }
               ],
               "breakdown": [],
@@ -4283,19 +4283,19 @@
               "metrics": [
                 {
                   "key": "metric-1",
-                  "label": "मूल मासिक भुगतान"
+                  "label": "基础月供"
                 },
                 {
                   "key": "metric-2",
-                  "label": "कुल ब्याज"
+                  "label": "总利息"
                 },
                 {
                   "key": "metric-3",
-                  "label": "कुल भुगतान"
+                  "label": "已支付总额"
                 },
                 {
                   "key": "metric-4",
-                  "label": "अनुमानित भुगतान अवधि"
+                  "label": "预计还清期限"
                 }
               ],
               "breakdown": [],
@@ -4443,19 +4443,19 @@
               "metrics": [
                 {
                   "key": "metric-1",
-                  "label": "मूल मासिक भुगतान"
+                  "label": "基本月額返済額"
                 },
                 {
                   "key": "metric-2",
-                  "label": "कुल ब्याज"
+                  "label": "利息合計"
                 },
                 {
                   "key": "metric-3",
-                  "label": "कुल भुगतान"
+                  "label": "支払総額"
                 },
                 {
                   "key": "metric-4",
-                  "label": "अनुमानित भुगतान अवधि"
+                  "label": "推定完済期間"
                 }
               ],
               "breakdown": [],
@@ -4603,19 +4603,19 @@
               "metrics": [
                 {
                   "key": "metric-1",
-                  "label": "मूल मासिक भुगतान"
+                  "label": "Базовый ежемесячный платёж"
                 },
                 {
                   "key": "metric-2",
-                  "label": "कुल ब्याज"
+                  "label": "Общая сумма процентов"
                 },
                 {
                   "key": "metric-3",
-                  "label": "कुल भुगतान"
+                  "label": "Всего выплачено"
                 },
                 {
                   "key": "metric-4",
-                  "label": "अनुमानित भुगतान अवधि"
+                  "label": "Расчётный срок погашения"
                 }
               ],
               "breakdown": [],
@@ -4886,7 +4886,7 @@
             ],
             "results": {
               "heading": "परिणाम",
-              "summary": "Illustrative future value",
+              "summary": "उदाहरणात्मक भविष्य मूल्य",
               "metrics": [
                 {
                   "key": "metric-1",
@@ -5258,27 +5258,27 @@
               "metrics": [
                 {
                   "key": "metric-1",
-                  "label": "शुरुआती राशि"
+                  "label": "ابتدائی رقم"
                 },
                 {
                   "key": "metric-2",
-                  "label": "कुल जमा"
+                  "label": "کل ماہانہ جمع"
                 },
                 {
                   "key": "metric-3",
-                  "label": "कुल योगदान"
+                  "label": "کل جمع شدہ سرمایہ"
                 },
                 {
                   "key": "metric-4",
-                  "label": "अनुमानित वृद्धि"
+                  "label": "تخمینی نمو"
                 },
                 {
                   "key": "metric-5",
-                  "label": "तुलना का भविष्य मूल्य"
+                  "label": "متبادل شرح پر مستقبل کی قدر"
                 },
                 {
                   "key": "metric-6",
-                  "label": "दर परिदृश्यों का अंतर"
+                  "label": "شرح کے منظرناموں کا فرق"
                 }
               ],
               "breakdown": [],
@@ -5442,27 +5442,27 @@
               "metrics": [
                 {
                   "key": "metric-1",
-                  "label": "शुरुआती राशि"
+                  "label": "期初金额"
                 },
                 {
                   "key": "metric-2",
-                  "label": "कुल जमा"
+                  "label": "累计存款"
                 },
                 {
                   "key": "metric-3",
-                  "label": "कुल योगदान"
+                  "label": "累计投入金额"
                 },
                 {
                   "key": "metric-4",
-                  "label": "अनुमानित वृद्धि"
+                  "label": "预计增长额"
                 },
                 {
                   "key": "metric-5",
-                  "label": "तुलना का भविष्य मूल्य"
+                  "label": "对比情景的未来价值"
                 },
                 {
                   "key": "metric-6",
-                  "label": "दर परिदृश्यों का अंतर"
+                  "label": "不同利率情景的差额"
                 }
               ],
               "breakdown": [],
@@ -5626,27 +5626,27 @@
               "metrics": [
                 {
                   "key": "metric-1",
-                  "label": "शुरुआती राशि"
+                  "label": "開始時の金額"
                 },
                 {
                   "key": "metric-2",
-                  "label": "कुल जमा"
+                  "label": "積立総額"
                 },
                 {
                   "key": "metric-3",
-                  "label": "कुल योगदान"
+                  "label": "拠出総額"
                 },
                 {
                   "key": "metric-4",
-                  "label": "अनुमानित वृद्धि"
+                  "label": "推定増加額"
                 },
                 {
                   "key": "metric-5",
-                  "label": "तुलना का भविष्य मूल्य"
+                  "label": "比較金利での将来価値"
                 },
                 {
                   "key": "metric-6",
-                  "label": "दर परिदृश्यों का अंतर"
+                  "label": "金利シナリオ間の差額"
                 }
               ],
               "breakdown": [],
@@ -5810,27 +5810,27 @@
               "metrics": [
                 {
                   "key": "metric-1",
-                  "label": "शुरुआती राशि"
+                  "label": "Начальная сумма"
                 },
                 {
                   "key": "metric-2",
-                  "label": "कुल जमा"
+                  "label": "Общая сумма взносов"
                 },
                 {
                   "key": "metric-3",
-                  "label": "कुल योगदान"
+                  "label": "Общий объём вложений"
                 },
                 {
                   "key": "metric-4",
-                  "label": "अनुमानित वृद्धि"
+                  "label": "Расчётный прирост"
                 },
                 {
                   "key": "metric-5",
-                  "label": "तुलना का भविष्य मूल्य"
+                  "label": "Будущая стоимость при альтернативной ставке"
                 },
                 {
                   "key": "metric-6",
-                  "label": "दर परिदृश्यों का अंतर"
+                  "label": "Разница между сценариями ставок"
                 }
               ],
               "breakdown": [],
@@ -6087,7 +6087,7 @@
             ],
             "results": {
               "heading": "परिणाम",
-              "summary": "Result",
+              "summary": "परिणाम",
               "metrics": [
                 {
                   "key": "metric-1",
@@ -6415,11 +6415,11 @@
               "metrics": [
                 {
                   "key": "metric-1",
-                  "label": "पहला मान"
+                  "label": "پہلی قدر"
                 },
                 {
                   "key": "metric-2",
-                  "label": "दूसरा मान"
+                  "label": "دوسری قدر"
                 }
               ],
               "breakdown": [],
@@ -6577,11 +6577,11 @@
               "metrics": [
                 {
                   "key": "metric-1",
-                  "label": "पहला मान"
+                  "label": "第一个数值"
                 },
                 {
                   "key": "metric-2",
-                  "label": "दूसरा मान"
+                  "label": "第二个数值"
                 }
               ],
               "breakdown": [],
@@ -6739,11 +6739,11 @@
               "metrics": [
                 {
                   "key": "metric-1",
-                  "label": "पहला मान"
+                  "label": "最初の値"
                 },
                 {
                   "key": "metric-2",
-                  "label": "दूसरा मान"
+                  "label": "2番目の値"
                 }
               ],
               "breakdown": [],
@@ -6901,11 +6901,11 @@
               "metrics": [
                 {
                   "key": "metric-1",
-                  "label": "पहला मान"
+                  "label": "Первое значение"
                 },
                 {
                   "key": "metric-2",
-                  "label": "दूसरा मान"
+                  "label": "Второе значение"
                 }
               ],
               "breakdown": [],
@@ -7186,7 +7186,7 @@
             ],
             "results": {
               "heading": "परिणाम",
-              "summary": "Total per person",
+              "summary": "प्रति व्यक्ति कुल राशि",
               "metrics": [
                 {
                   "key": "metric-1",
@@ -7558,19 +7558,19 @@
               "metrics": [
                 {
                   "key": "metric-1",
-                  "label": "टिप राशि"
+                  "label": "ٹِپ کی رقم"
                 },
                 {
                   "key": "metric-2",
-                  "label": "कुल बिल"
+                  "label": "کل بل"
                 },
                 {
                   "key": "metric-3",
-                  "label": "प्रत्येक व्यक्ति का हिस्सा"
+                  "label": "ہر فرد کا حصہ"
                 },
                 {
                   "key": "metric-4",
-                  "label": "लोगों की संख्या"
+                  "label": "افراد کی تعداد"
                 }
               ],
               "breakdown": [
@@ -7742,19 +7742,19 @@
               "metrics": [
                 {
                   "key": "metric-1",
-                  "label": "टिप राशि"
+                  "label": "小费金额"
                 },
                 {
                   "key": "metric-2",
-                  "label": "कुल बिल"
+                  "label": "账单总额"
                 },
                 {
                   "key": "metric-3",
-                  "label": "प्रत्येक व्यक्ति का हिस्सा"
+                  "label": "每人应付金额"
                 },
                 {
                   "key": "metric-4",
-                  "label": "लोगों की संख्या"
+                  "label": "人数"
                 }
               ],
               "breakdown": [
@@ -7926,19 +7926,19 @@
               "metrics": [
                 {
                   "key": "metric-1",
-                  "label": "टिप राशि"
+                  "label": "チップ額"
                 },
                 {
                   "key": "metric-2",
-                  "label": "कुल बिल"
+                  "label": "請求総額"
                 },
                 {
                   "key": "metric-3",
-                  "label": "प्रत्येक व्यक्ति का हिस्सा"
+                  "label": "一人当たりの金額"
                 },
                 {
                   "key": "metric-4",
-                  "label": "लोगों की संख्या"
+                  "label": "人数"
                 }
               ],
               "breakdown": [
@@ -8110,19 +8110,19 @@
               "metrics": [
                 {
                   "key": "metric-1",
-                  "label": "टिप राशि"
+                  "label": "Сумма чаевых"
                 },
                 {
                   "key": "metric-2",
-                  "label": "कुल बिल"
+                  "label": "Общая сумма счёта"
                 },
                 {
                   "key": "metric-3",
-                  "label": "प्रत्येक व्यक्ति का हिस्सा"
+                  "label": "Доля каждого человека"
                 },
                 {
                   "key": "metric-4",
-                  "label": "लोगों की संख्या"
+                  "label": "Количество человек"
                 }
               ],
               "breakdown": [
@@ -8429,7 +8429,7 @@
             ],
             "results": {
               "heading": "परिणाम",
-              "summary": "Estimated monthly payment",
+              "summary": "अनुमानित मासिक किस्त",
               "metrics": [
                 {
                   "key": "metric-1",
@@ -8825,23 +8825,23 @@
               "metrics": [
                 {
                   "key": "metric-1",
-                  "label": "मूल मासिक भुगतान"
+                  "label": "بنیادی ماہانہ قسط"
                 },
                 {
                   "key": "metric-2",
-                  "label": "कुल ब्याज"
+                  "label": "کل سود"
                 },
                 {
                   "key": "metric-3",
-                  "label": "कुल भुगतान"
+                  "label": "کل ادا شدہ رقم"
                 },
                 {
                   "key": "metric-4",
-                  "label": "अनुमानित भुगतान अवधि"
+                  "label": "تخمینی ادائیگی کی مدت"
                 },
                 {
                   "key": "metric-5",
-                  "label": "चुकाया गया मूलधन"
+                  "label": "ادا شدہ اصل زر"
                 }
               ],
               "breakdown": [],
@@ -9021,23 +9021,23 @@
               "metrics": [
                 {
                   "key": "metric-1",
-                  "label": "मूल मासिक भुगतान"
+                  "label": "基础月供"
                 },
                 {
                   "key": "metric-2",
-                  "label": "कुल ब्याज"
+                  "label": "总利息"
                 },
                 {
                   "key": "metric-3",
-                  "label": "कुल भुगतान"
+                  "label": "已支付总额"
                 },
                 {
                   "key": "metric-4",
-                  "label": "अनुमानित भुगतान अवधि"
+                  "label": "预计还清期限"
                 },
                 {
                   "key": "metric-5",
-                  "label": "चुकाया गया मूलधन"
+                  "label": "已偿还本金"
                 }
               ],
               "breakdown": [],
@@ -9217,23 +9217,23 @@
               "metrics": [
                 {
                   "key": "metric-1",
-                  "label": "मूल मासिक भुगतान"
+                  "label": "基本月額返済額"
                 },
                 {
                   "key": "metric-2",
-                  "label": "कुल ब्याज"
+                  "label": "利息合計"
                 },
                 {
                   "key": "metric-3",
-                  "label": "कुल भुगतान"
+                  "label": "支払総額"
                 },
                 {
                   "key": "metric-4",
-                  "label": "अनुमानित भुगतान अवधि"
+                  "label": "推定完済期間"
                 },
                 {
                   "key": "metric-5",
-                  "label": "चुकाया गया मूलधन"
+                  "label": "返済済み元金"
                 }
               ],
               "breakdown": [],
@@ -9413,23 +9413,23 @@
               "metrics": [
                 {
                   "key": "metric-1",
-                  "label": "मूल मासिक भुगतान"
+                  "label": "Базовый ежемесячный платёж"
                 },
                 {
                   "key": "metric-2",
-                  "label": "कुल ब्याज"
+                  "label": "Общая сумма процентов"
                 },
                 {
                   "key": "metric-3",
-                  "label": "कुल भुगतान"
+                  "label": "Всего выплачено"
                 },
                 {
                   "key": "metric-4",
-                  "label": "अनुमानित भुगतान अवधि"
+                  "label": "Расчётный срок погашения"
                 },
                 {
                   "key": "metric-5",
-                  "label": "चुकाया गया मूलधन"
+                  "label": "Погашенная основная сумма"
                 }
               ],
               "breakdown": [],
@@ -9708,7 +9708,7 @@
             ],
             "results": {
               "heading": "परिणाम",
-              "summary": "Monthly payment with extra",
+              "summary": "अतिरिक्त भुगतान सहित मासिक किस्त",
               "metrics": [
                 {
                   "key": "metric-1",
@@ -10064,27 +10064,27 @@
               "metrics": [
                 {
                   "key": "metric-1",
-                  "label": "मूल मासिक भुगतान"
+                  "label": "بنیادی ماہانہ قسط"
                 },
                 {
                   "key": "metric-2",
-                  "label": "अतिरिक्त मासिक भुगतान"
+                  "label": "اضافی ماہانہ ادائیگی"
                 },
                 {
                   "key": "metric-3",
-                  "label": "चुकाया गया मूलधन"
+                  "label": "ادا شدہ اصل زر"
                 },
                 {
                   "key": "metric-4",
-                  "label": "कुल ब्याज"
+                  "label": "کل سود"
                 },
                 {
                   "key": "metric-5",
-                  "label": "कुल भुगतान"
+                  "label": "کل ادا شدہ رقم"
                 },
                 {
                   "key": "metric-6",
-                  "label": "अनुमानित भुगतान अवधि"
+                  "label": "تخمینی ادائیگی کی مدت"
                 }
               ],
               "breakdown": [],
@@ -10240,27 +10240,27 @@
               "metrics": [
                 {
                   "key": "metric-1",
-                  "label": "मूल मासिक भुगतान"
+                  "label": "基础月供"
                 },
                 {
                   "key": "metric-2",
-                  "label": "अतिरिक्त मासिक भुगतान"
+                  "label": "额外月供"
                 },
                 {
                   "key": "metric-3",
-                  "label": "चुकाया गया मूलधन"
+                  "label": "已偿还本金"
                 },
                 {
                   "key": "metric-4",
-                  "label": "कुल ब्याज"
+                  "label": "总利息"
                 },
                 {
                   "key": "metric-5",
-                  "label": "कुल भुगतान"
+                  "label": "已支付总额"
                 },
                 {
                   "key": "metric-6",
-                  "label": "अनुमानित भुगतान अवधि"
+                  "label": "预计还清期限"
                 }
               ],
               "breakdown": [],
@@ -10416,27 +10416,27 @@
               "metrics": [
                 {
                   "key": "metric-1",
-                  "label": "मूल मासिक भुगतान"
+                  "label": "基本月額返済額"
                 },
                 {
                   "key": "metric-2",
-                  "label": "अतिरिक्त मासिक भुगतान"
+                  "label": "追加月額返済額"
                 },
                 {
                   "key": "metric-3",
-                  "label": "चुकाया गया मूलधन"
+                  "label": "返済済み元金"
                 },
                 {
                   "key": "metric-4",
-                  "label": "कुल ब्याज"
+                  "label": "利息合計"
                 },
                 {
                   "key": "metric-5",
-                  "label": "कुल भुगतान"
+                  "label": "支払総額"
                 },
                 {
                   "key": "metric-6",
-                  "label": "अनुमानित भुगतान अवधि"
+                  "label": "推定完済期間"
                 }
               ],
               "breakdown": [],
@@ -10592,27 +10592,27 @@
               "metrics": [
                 {
                   "key": "metric-1",
-                  "label": "मूल मासिक भुगतान"
+                  "label": "Базовый ежемесячный платёж"
                 },
                 {
                   "key": "metric-2",
-                  "label": "अतिरिक्त मासिक भुगतान"
+                  "label": "Дополнительный ежемесячный платёж"
                 },
                 {
                   "key": "metric-3",
-                  "label": "चुकाया गया मूलधन"
+                  "label": "Погашенная основная сумма"
                 },
                 {
                   "key": "metric-4",
-                  "label": "कुल ब्याज"
+                  "label": "Общая сумма процентов"
                 },
                 {
                   "key": "metric-5",
-                  "label": "कुल भुगतान"
+                  "label": "Всего выплачено"
                 },
                 {
                   "key": "metric-6",
-                  "label": "अनुमानित भुगतान अवधि"
+                  "label": "Расчётный срок погашения"
                 }
               ],
               "breakdown": [],
@@ -10883,7 +10883,7 @@
             ],
             "results": {
               "heading": "परिणाम",
-              "summary": "Estimated monthly saving",
+              "summary": "अनुमानित मासिक बचत",
               "metrics": [
                 {
                   "key": "metric-1",
@@ -11247,23 +11247,23 @@
               "metrics": [
                 {
                   "key": "metric-1",
-                  "label": "लक्ष्य"
+                  "label": "ہدف"
                 },
                 {
                   "key": "metric-2",
-                  "label": "वर्तमान बचत"
+                  "label": "موجودہ بچت"
                 },
                 {
                   "key": "metric-3",
-                  "label": "उपलब्ध समय"
+                  "label": "دستیاب مدت"
                 },
                 {
                   "key": "metric-4",
-                  "label": "आवश्यक मासिक जमा"
+                  "label": "درکار ماہانہ جمع"
                 },
                 {
                   "key": "metric-5",
-                  "label": "वैकल्पिक दर पर जमा"
+                  "label": "متبادل شرح پر ماہانہ جمع"
                 }
               ],
               "breakdown": [],
@@ -11427,23 +11427,23 @@
               "metrics": [
                 {
                   "key": "metric-1",
-                  "label": "लक्ष्य"
+                  "label": "储蓄目标"
                 },
                 {
                   "key": "metric-2",
-                  "label": "वर्तमान बचत"
+                  "label": "当前储蓄"
                 },
                 {
                   "key": "metric-3",
-                  "label": "उपलब्ध समय"
+                  "label": "可用时间"
                 },
                 {
                   "key": "metric-4",
-                  "label": "आवश्यक मासिक जमा"
+                  "label": "所需每月存款"
                 },
                 {
                   "key": "metric-5",
-                  "label": "वैकल्पिक दर पर जमा"
+                  "label": "替代利率下的每月存款"
                 }
               ],
               "breakdown": [],
@@ -11607,23 +11607,23 @@
               "metrics": [
                 {
                   "key": "metric-1",
-                  "label": "लक्ष्य"
+                  "label": "目標額"
                 },
                 {
                   "key": "metric-2",
-                  "label": "वर्तमान बचत"
+                  "label": "現在の貯蓄額"
                 },
                 {
                   "key": "metric-3",
-                  "label": "उपलब्ध समय"
+                  "label": "利用可能な期間"
                 },
                 {
                   "key": "metric-4",
-                  "label": "आवश्यक मासिक जमा"
+                  "label": "必要な毎月の積立額"
                 },
                 {
                   "key": "metric-5",
-                  "label": "वैकल्पिक दर पर जमा"
+                  "label": "代替金利での毎月の積立額"
                 }
               ],
               "breakdown": [],
@@ -11787,23 +11787,23 @@
               "metrics": [
                 {
                   "key": "metric-1",
-                  "label": "लक्ष्य"
+                  "label": "Цель накоплений"
                 },
                 {
                   "key": "metric-2",
-                  "label": "वर्तमान बचत"
+                  "label": "Текущие сбережения"
                 },
                 {
                   "key": "metric-3",
-                  "label": "उपलब्ध समय"
+                  "label": "Доступный срок"
                 },
                 {
                   "key": "metric-4",
-                  "label": "आवश्यक मासिक जमा"
+                  "label": "Необходимый ежемесячный взнос"
                 },
                 {
                   "key": "metric-5",
-                  "label": "वैकल्पिक दर पर जमा"
+                  "label": "Ежемесячный взнос при альтернативной ставке"
                 }
               ],
               "breakdown": [],
