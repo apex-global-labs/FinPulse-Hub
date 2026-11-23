@@ -44,10 +44,30 @@ test("every canonical tool has six locale records with correct draft or pending 
     assert.deepEqual(tool.locales[locale].fields.inputs.map(input=>input.key),tool.source.inputs.map(input=>input.key),tool.id+":"+locale+" stable input keys");
     assert.ok(tool.locales[locale].fields.inputs.every(input=>input.label && input.label.trim()),tool.id+":"+locale+" input labels");
    }else if(batchTwoIds.includes(tool.id)){
-    assert.equal(tool.locales[locale].status,"draft",tool.id+":"+locale);
-    assert.ok(tool.locales[locale].fields.metadata.title&&tool.locales[locale].fields.metadata.description,tool.id+":"+locale+" translated metadata");
-    assert.deepEqual(tool.locales[locale].fields.inputs.map(input=>input.key),tool.source.inputs.map(input=>input.key),tool.id+":"+locale+" stable input keys");
-    assert.ok(tool.locales[locale].fields.inputs.every(input=>input.label===null),tool.id+":"+locale+" untranslated inputs retain fallback");
+    const fields=tool.locales[locale].fields,source=tool.source;
+    assert.equal(tool.locales[locale].status,"draft",tool.id+":"+locale+" draft status");
+    assert.equal(tool.sourceTranslationStatus,"draft",tool.id+" source translation draft status");
+    assert.ok(fields.metadata.title&&fields.metadata.description,tool.id+":"+locale+" translated metadata");
+    assert.deepEqual(fields.inputs.map(input=>input.key),source.inputs.map(input=>input.key),tool.id+":"+locale+" stable input keys");
+    assert.ok(fields.inputs.every(input=>typeof input.label==="string"&&input.label.trim()),tool.id+":"+locale+" translated input labels");
+    assert.deepEqual(fields.results.metrics.map(item=>item.key),source.results.metrics.map(item=>item.key),tool.id+":"+locale+" stable result metric keys");
+    assert.ok(fields.results.metrics.every(item=>typeof item.label==="string"&&item.label.trim()),tool.id+":"+locale+" translated metric labels");
+    assert.deepEqual(fields.results.breakdown.map(item=>item.key),source.results.breakdown.map(item=>item.key),tool.id+":"+locale+" stable breakdown keys");
+    assert.ok(fields.results.breakdown.every(item=>typeof item.label==="string"&&item.label.trim()),tool.id+":"+locale+" translated breakdown labels");
+    assert.deepEqual(fields.accessibility.controlLabels.map(item=>item.key),source.inputs.map(item=>item.key),tool.id+":"+locale+" accessible control keys");
+    assert.ok(fields.accessibility.controlLabels.every(item=>typeof item.label==="string"&&item.label.trim()),tool.id+":"+locale+" translated accessible labels");
+    assert.deepEqual(fields.errors.map(item=>item.key),source.errors.map(item=>item.key),tool.id+":"+locale+" stable error keys");
+    assert.ok(fields.errors.filter(item=>item.message&&item.recoveryHint).length>=3,tool.id+":"+locale+" translated common validation errors");
+    assert.deepEqual(fields.faqs.map(item=>item.key),source.faqs.map(item=>item.key),tool.id+":"+locale+" stable FAQ keys");
+    assert.ok(fields.faqs.every(item=>item.question===null&&item.answer===null),tool.id+":"+locale+" untranslated FAQs use English fallback");
+    assert.ok(fields.explanations.steps.every(item=>item===null),tool.id+":"+locale+" untranslated steps use English fallback");
+    assert.deepEqual(fields.seo.faq.map(item=>item.key),source.seo.faq.map(item=>item.key),tool.id+":"+locale+" stable SEO FAQ keys");
+    assert.ok(fields.seo.faq.every(item=>item.question===null&&item.answer===null),tool.id+":"+locale+" untranslated SEO FAQs use English fallback");
+    if(tool.id==="simple-interest"){
+     const basis=fields.inputs.find(item=>item.key==="basis");
+     assert.deepEqual(basis.options.map(item=>item.value),[365,360,366],"simple-interest day-count values remain canonical");
+     assert.ok(basis.options.every(item=>typeof item.label==="string"&&item.label.trim()),"simple-interest option labels translated");
+    }
    }else{
     assert.equal(tool.locales[locale].status,"not-started",tool.id+":"+locale);
     assert.deepEqual(tool.locales[locale].fields,{});
