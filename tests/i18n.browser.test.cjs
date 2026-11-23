@@ -105,13 +105,13 @@ test("first-ten tool pages render in all seven locales and keep draft or incompl
    await page.locator("#language-switcher").selectOption(locale);
    const expectedDir=["ar","ur"].includes(locale)?"rtl":"ltr";
    await page.waitForFunction(({locale,dir})=>document.documentElement.lang===locale&&document.documentElement.dir===dir,{locale,dir:expectedDir});
-   await page.addScriptTag({url:base+"/__axe.js"});
-   const accessibility=await page.evaluate(async()=>await axe.run(document.querySelector("#app"),{runOnly:{type:"tag",values:["wcag2a","wcag2aa","wcag21a","wcag21aa"]}}));
-   assert.deepEqual(accessibility.violations.map(item=>item.id),[],locale+" tool-page accessibility");
    for(const tool of registry){
     await page.goto(base+"/?tool="+tool.id);
     await page.waitForSelector("#form");
     await page.waitForFunction(()=>window.FinPulseToolRuntime?.loaded&&window.FinPulseI18n?.supportedLocales.length===7);
+    await page.addScriptTag({url:base+"/__axe.js"});
+    const accessibility=await page.evaluate(async()=>await axe.run(document.querySelector("#app"),{runOnly:{type:"tag",values:["wcag2a","wcag2aa","wcag21a","wcag21aa"]}}));
+    assert.deepEqual(accessibility.violations.map(item=>item.id),[],locale+":"+tool.id+" tool-page accessibility");
     const state=await page.evaluate(({id,firstInput})=>{
      const title=document.querySelector("#app .heading h2")?.textContent?.trim();
      const description=document.querySelector("#app .heading p")?.textContent?.trim();
