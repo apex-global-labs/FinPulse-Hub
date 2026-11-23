@@ -59,7 +59,7 @@ test("every canonical tool has six locale records with correct draft or pending 
     assert.deepEqual(fields.errors.map(item=>item.key),source.errors.map(item=>item.key),tool.id+":"+locale+" stable error keys");
     assert.ok(fields.errors.filter(item=>item.message&&item.recoveryHint).length>=3,tool.id+":"+locale+" translated common validation errors");
     assert.deepEqual(fields.faqs.map(item=>item.key),source.faqs.map(item=>item.key),tool.id+":"+locale+" stable FAQ keys");
-    if(tool.id==="freelance"){
+    if(["freelance","margin"].includes(tool.id)){
      assert.ok(fields.faqs.every(item=>typeof item.question==="string"&&item.question.trim()&&typeof item.answer==="string"&&item.answer.trim()),tool.id+":"+locale+" translated FAQ content");
      assert.ok(fields.explanations.steps.length===source.explanations.steps.length&&fields.explanations.steps.every(item=>typeof item==="string"&&item.trim()),tool.id+":"+locale+" translated formula steps");
     }else{
