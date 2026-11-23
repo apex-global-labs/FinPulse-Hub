@@ -73,9 +73,9 @@ test("app waits for translation data and uses runtime fields for tool pages, for
  const fs=require("node:fs"),path=require("node:path"),root=path.join(__dirname,"..");
  const app=fs.readFileSync(path.join(root,"app.js"),"utf8");
  const html=fs.readFileSync(path.join(root,"index.html"),"utf8");
- assert.match(html,/<script src="tool-content-runtime\\.js" defer><\\/script>/);
- assert.match(app,/FinPulseToolRuntime\\?\\.localizeDefinition\\(source,requestedLocale\\)/);
- assert.match(app,/translated\\.metrics\\[index\\]\\?\\.label/);
- assert.match(app,/translated\\?\\.steps\\|\\|spec\\[1\\]/);
- assert.match(app,/FinPulseToolRuntime\\?\\.load\\(\\)/);
+ assert.ok(html.includes('<script src="tool-content-runtime.js" defer></script>'));
+ assert.ok(app.includes("FinPulseToolRuntime?.localizeDefinition(source,requestedLocale)"));
+ assert.ok(app.includes("translated.metrics[index]?.label"));
+ assert.ok(app.includes("translated?.steps||spec[1]"));
+ assert.ok(app.includes("FinPulseToolRuntime?.load()"));
 });
