@@ -114,6 +114,9 @@ test("Batch 2 approved translations render in all seven locales and pass 70 axe 
      const tool=data.tools.find(item=>item.id===id);
      for(const targetLocale of ["hi","ar","ur","zh-CN","ja","ru"])tool.locales[targetLocale].status="approved";
      window.FinPulseToolRuntime.setContent(data);
+     // Force a locale transition so the app rerenders after injecting approved test records,
+     // even when the browser context already persists the target locale from the prior route.
+     window.FinPulseGlobalContext.setLocale(locale==="en"?"hi":"en");
      window.FinPulseGlobalContext.setLocale(locale);
     },{id:tool.id,locale});
     const fields=locale==="en"?tool.source:tool.locales[locale].fields;
