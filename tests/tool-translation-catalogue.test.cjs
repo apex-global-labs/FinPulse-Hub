@@ -51,13 +51,14 @@ test("every canonical tool has six locale records with correct draft or pending 
 });
 
 
-test("first ten tools have source descriptions and stable input-label keys extracted",()=>{
- const firstTen=["currency","mortgage","loan","emi","compound","percentage","tip","car","amortization","savings"];
- for(const id of firstTen){
+test("first twenty tools have source descriptions and stable input-label keys extracted",()=>{
+ const firstTwenty=["currency","mortgage","loan","emi","compound","percentage","tip","car","amortization","savings","freelance","margin","affordability","payoff","refinance","personal-loan","student-loan","simple-interest","retirement","401k"];
+ for(const id of firstTwenty){
   const tool=content.tools.find(item=>item.id===id);
   assert.ok(tool.source.description && tool.source.description.length>15,id+" description");
   assert.ok(Array.isArray(tool.source.inputs) && tool.source.inputs.length>0,id+" inputs");
   assert.equal(new Set(tool.source.inputs.map(input=>input.key)).size,tool.source.inputs.length,id+" duplicate input key");
+  assert.equal(tool.sourceExtractionStatus,"source-title-description-inputs-extracted",id+" extraction status");
  }
 });
 
