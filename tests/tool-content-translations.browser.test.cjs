@@ -25,7 +25,10 @@ function translatedStrings(fields){
  ...fields.seo?.faq?.flatMap(x=>[x.question,x.answer]),
  fields.accessibility?.pageLabel,fields.accessibility?.formLabel,
  fields.accessibility?.resultAnnouncement,fields.accessibility?.chartLabel,
- ...fields.accessibility?.controlLabels?.map(x=>x.label)];
+ ...fields.accessibility?.controlLabels?.map(x=>x.label),
+ fields.guide?.title,fields.guide?.introduction,
+ ...fields.guide?.steps?.flatMap(x=>[x.title,x.body]),
+ ...fields.guide?.sections?.flatMap(x=>[x.heading,x.body])];
  return out.filter(x=>typeof x==="string"&&x.trim());
 }
 function assertComplete(source,fields,id,locale){
