@@ -83,7 +83,8 @@ test("all seven locales preserve direction rules and expose complete first-batch
 
 test("Batch 2 approved translations render in all seven locales and pass 70 axe WCAG audits",async()=>{
  const server=createServer(async(req,res)=>{
-  const path=decodeURIComponent(req.url.split("?")[0]).replace(/^\\//,"")||"index.html";
+  const rawPath=decodeURIComponent(req.url.split("?")[0]);
+  const path=(rawPath.startsWith("/")?rawPath.slice(1):rawPath)||"index.html";
   try{const data=await readFile(path==="__axe.js"?axePath:join(process.cwd(),path));const type=path.endsWith(".css")?"text/css":path.endsWith(".js")?"text/javascript":path.endsWith(".json")?"application/json":"text/html";res.writeHead(200,{"content-type":type});res.end(data)}
   catch{res.writeHead(404);res.end("not found")}
  });
