@@ -34,6 +34,7 @@ test("every canonical tool has six locale records with correct draft or pending 
  assert.equal(content.tools.length,220);
  assert.deepEqual(content.tools.map(t=>t.id).sort(),mapping.tools.map(t=>t.id).sort());
  const pilotIds=["currency","mortgage","loan","emi","compound","percentage","tip","car","amortization","savings"];
+ const batchTwoIds=["freelance","margin","affordability","payoff","refinance","personal-loan","student-loan","simple-interest","retirement","401k"];
  for(const tool of content.tools){
   assert.deepEqual(Object.keys(tool.locales).sort(),locales.slice().sort());
   for(const locale of locales){
@@ -42,6 +43,11 @@ test("every canonical tool has six locale records with correct draft or pending 
     assert.ok(tool.locales[locale].fields.metadata.description,tool.id+":"+locale+" description");
     assert.deepEqual(tool.locales[locale].fields.inputs.map(input=>input.key),tool.source.inputs.map(input=>input.key),tool.id+":"+locale+" stable input keys");
     assert.ok(tool.locales[locale].fields.inputs.every(input=>input.label && input.label.trim()),tool.id+":"+locale+" input labels");
+   }else if(batchTwoIds.includes(tool.id)){
+    assert.equal(tool.locales[locale].status,"draft",tool.id+":"+locale);
+    assert.ok(tool.locales[locale].fields.metadata.title&&tool.locales[locale].fields.metadata.description,tool.id+":"+locale+" translated metadata");
+    assert.deepEqual(tool.locales[locale].fields.inputs.map(input=>input.key),tool.source.inputs.map(input=>input.key),tool.id+":"+locale+" stable input keys");
+    assert.ok(tool.locales[locale].fields.inputs.every(input=>input.label===null),tool.id+":"+locale+" untranslated inputs retain fallback");
    }else{
     assert.equal(tool.locales[locale].status,"not-started",tool.id+":"+locale);
     assert.deepEqual(tool.locales[locale].fields,{});
