@@ -68,3 +68,16 @@ Latest PR-head validation (commit `75a1f871fbac21be1b54ead3f8ffe95fbfe9767f`): F
 - Existing CI run `45131743971` was still in progress on the preceding head `50fb4065ac2ee567f5bd780e532264dfc88e0e3a` during this work; it does not validate the new Loan content/test commits. Candidate Lighthouse run `45131744029` succeeded on that preceding head. Fresh CI/Lighthouse results for the new commits must be checked before claiming validation.
 - All six locale records remain `draft`. Native-speaker and finance-domain review is pending. Tool-page runtime rendering and English fallback remain release blockers.
 - Next in canonical order: EMI Calculator, followed by Compound Interest, Percentage, Tip, Car Loan, Amortization and Savings. No tools 11–20 will be started before the first-10 release gates pass.
+
+
+## First-ten calculation-step batch completed — 2026-11-23
+- Completed the remaining seven pilot tools in canonical order: EMI, Compound Interest, Percentage, Tip, Car Loan, Amortization and Savings.
+- Each tool's English source step sequence was translated into Hindi, Arabic, Urdu, Simplified Chinese, Japanese and Russian. The source step count was preserved for every locale; Tip has four source steps and the other seven tools in this batch have five each.
+- Added 204 translated step strings in this continuation (34 source steps × 6 locales). Together with Currency, Mortgage and Loan, all 10 pilot tools now have 294 localized calculation-step strings (49 source steps × 6 locales).
+- Expanded the automated calculation-step test to cover all 10 pilot tools and all six target locales, checking exact source-aligned step counts and non-empty step strings.
+- Formula expressions, calculation logic, technical identifiers, source step order and source step counts were not changed. All translation records remain `draft`.
+- Latest validation for the preceding Loan-only head `21757645b240664d3012fcf4b1dfe5d1d72bfa29`: Finance Calculator CI run `45132213125` and Candidate Lighthouse/CLS run `45132213242` both completed Success. These runs do not validate the subsequent seven-tool content and expanded test commits.
+- Fresh CI and Lighthouse runs must complete successfully on the new all-ten test head before this batch can be called regression-validated.
+- Native-speaker and finance-domain review remains pending. Actual tool-page runtime rendering and missing/unapproved-translation English fallback are not yet implemented/verified. Seven-locale browser and RTL/LTR tests remain outstanding.
+- Next work is the first-ten runtime rendering and fallback implementation, followed by integrated browser, accessibility, RTL/LTR and expert-review gates. No tools 11–20 are authorized before the first-ten gates pass.
+- PR #73 remains Draft and unmerged; production deployment is not authorized.
