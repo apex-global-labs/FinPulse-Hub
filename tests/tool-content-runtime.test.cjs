@@ -56,3 +56,26 @@ test("unsupported locale and English source always use canonical English definit
  assert.strictEqual(runtime.localizeDefinition(source,"en"),source);
  assert.strictEqual(runtime.localizeDefinition(source,"fr"),source);
 });
+
+test("all first-ten locale records satisfy the runtime completeness contract when reviewed and approved",()=>{
+ const runtime=create({});runtime.setContent(content);
+ for(const id of pilot){
+  const tool=content.tools.find(item=>item.id===id),source=definition(tool);
+  for(const locale of locales){
+   const reviewed=structuredClone(tool.locales[locale]);reviewed.status="approved";
+   const localized=runtime.localizeDefinition(source,locale,reviewed);
+   assert.notStrictEqual(localized,source,id+":"+locale+" complete record should be renderable after approval");
+   assert.equal(localized._translationLocale,locale);
+  }
+ }
+});
+test("app waits for translation data and uses runtime fields for tool pages, formulas and results",()=>{
+ const fs=require("node:fs"),path=require("node:path"),root=path.join(__dirname,"..");
+ const app=fs.readFileSync(path.join(root,"app.js"),"utf8");
+ const html=fs.readFileSync(path.join(root,"index.html"),"utf8");
+ assert.match(html,/<script src="tool-content-runtime\\.js" defer><\\/script>/);
+ assert.match(app,/FinPulseToolRuntime\\?\\.localizeDefinition\\(source,requestedLocale\\)/);
+ assert.match(app,/translated\\.metrics\\[index\\]\\?\\.label/);
+ assert.match(app,/translated\\?\\.steps\\|\\|spec\\[1\\]/);
+ assert.match(app,/FinPulseToolRuntime\\?\\.load\\(\\)/);
+});
