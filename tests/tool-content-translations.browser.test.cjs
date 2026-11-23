@@ -74,7 +74,7 @@ async function snapshot(page,locale){
    return match?Number(match[0]):null;
   });
   const formula=Array.from(document.querySelectorAll("#formula-panel p")).map(x=>x.textContent.trim()).find(x=>x.includes("="))||"";
-  return {numeric:canonical,values:Array.from(document.querySelectorAll("#form [name]"),x=>[x.name,x.value]),formula};
+  return {numeric:canonical,currencyCode:window.FinPulseGlobalContext?.get().currencyCode||null,values:Array.from(document.querySelectorAll("#form [name]"),x=>[x.name,x.value]),formula};
  },locale);
 }
 
@@ -148,6 +148,7 @@ test("10 tools × 6 locales render persisted translations without changing calcu
      assert.equal(await page.locator("html").getAttribute("dir"),DIRECTIONS[locale],id+" / "+locale+" text direction");
      const localized=await snapshot(page,locale);
      assert.deepEqual(localized.values,english.values,id+" / "+locale+" numeric/currency input preservation");
+     assert.equal(localized.currencyCode,english.currencyCode,id+" / "+locale+" display currency unchanged");
      assert.equal(localized.formula,english.formula,id+" / "+locale+" source formula unchanged");
      assert.deepEqual(localized.numeric,english.numeric,id+" / "+locale+" calculation output unchanged");
     }
