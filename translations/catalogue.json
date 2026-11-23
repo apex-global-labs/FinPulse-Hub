@@ -92,7 +92,9 @@
       "tool.principal": "Principal",
       "tool.interest": "Interest",
       "tool.closingBalance": "Closing balance",
-      "tool.breakdownRegion": "Scrollable calculation breakdown"
+      "tool.breakdownRegion": "Scrollable calculation breakdown",
+      "tool.breakdownItem": "Breakdown item",
+      "tool.amount": "Amount"
     },
     "hi": {
       "nav.calculators": "कैलकुलेटर",
@@ -173,7 +175,9 @@
       "tool.principal": "मूलधन",
       "tool.interest": "ब्याज",
       "tool.closingBalance": "अंतिम शेष",
-      "tool.breakdownRegion": "可滚动的计算明细"
+      "tool.breakdownRegion": "可滚动的计算明细",
+      "tool.breakdownItem": "विवरण मद",
+      "tool.amount": "राशि"
     },
     "ar": {
       "nav.calculators": "الحاسبات",
@@ -254,7 +258,9 @@
       "tool.principal": "أصل الدين",
       "tool.interest": "الفائدة",
       "tool.closingBalance": "الرصيد الختامي",
-      "tool.breakdownRegion": "تفصيل حساب قابل للتمرير"
+      "tool.breakdownRegion": "تفصيل حساب قابل للتمرير",
+      "tool.breakdownItem": "بند التفصيل",
+      "tool.amount": "المبلغ"
     },
     "ur": {
       "nav.calculators": "کیلکولیٹرز",
@@ -335,7 +341,9 @@
       "tool.principal": "اصل زر",
       "tool.interest": "سود",
       "tool.closingBalance": "اختتامی بیلنس",
-      "tool.breakdownRegion": "اسکرول کے قابل حسابی تفصیل"
+      "tool.breakdownRegion": "اسکرول کے قابل حسابی تفصیل",
+      "tool.breakdownItem": "تفصیل کا جزو",
+      "tool.amount": "رقم"
     },
     "zh-CN": {
       "nav.calculators": "计算器",
@@ -416,7 +424,9 @@
       "tool.principal": "本金",
       "tool.interest": "利息",
       "tool.closingBalance": "期末余额",
-      "tool.breakdownRegion": "可滚动的计算明细"
+      "tool.breakdownRegion": "可滚动的计算明细",
+      "tool.breakdownItem": "明细项目",
+      "tool.amount": "金额"
     },
     "ja": {
       "nav.calculators": "計算ツール",
@@ -497,7 +507,9 @@
       "tool.principal": "元金",
       "tool.interest": "利息",
       "tool.closingBalance": "期末残高",
-      "tool.breakdownRegion": "スクロール可能な計算内訳"
+      "tool.breakdownRegion": "スクロール可能な計算内訳",
+      "tool.breakdownItem": "内訳項目",
+      "tool.amount": "金額"
     },
     "ru": {
       "nav.calculators": "Калькуляторы",
@@ -578,7 +590,9 @@
       "tool.principal": "Основной долг",
       "tool.interest": "Проценты",
       "tool.closingBalance": "Конечный остаток",
-      "tool.breakdownRegion": "Прокручиваемая разбивка расчёта"
+      "tool.breakdownRegion": "Прокручиваемая разбивка расчёта",
+      "tool.breakdownItem": "Позиция разбивки",
+      "tool.amount": "Сумма"
     }
   }
 }
