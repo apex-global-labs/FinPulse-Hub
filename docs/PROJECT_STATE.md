@@ -162,3 +162,14 @@ The dedicated branch adds five Developer wrap-up tools, twelve Education & Study
 - Added `sourceCompletenessStatus: complete` to batch-two records while preserving the existing extraction status for compatibility. All six target locales remain `not-started`; no translation drafting or activation has occurred.
 - Added catalogue regression coverage for complete batch-two source fields, stable/unique keys, formula/step coverage, FAQ/error completeness, SEO/accessibility fields, and unchanged locale statuses.
 - The new source data and test commits are pending fresh Finance CI and Candidate Lighthouse/CLS validation on the latest branch head. PR #73 remains Draft/unmerged; production `main` and GitHub Pages remain unchanged.
+
+
+## Batch 2 source validation and six-locale draft start — 2026-11-23
+
+- Latest batch-two validation commit `71def693aecd4c7a17e7e5947baf9fb26fc4cd1d` passed Finance CI run [45149697274](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/45149697274) and Lighthouse/CLS run [45149696689](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/45149696689).
+- Finance CI log confirms `npm run check` success, `npm test` success with 335/335 Node tests, live reference API 1/1, Browser tests 30/30, and final 220-tool audit 440/440 executions (220 desktop + 220 mobile), zero failures and zero runtime errors. Audit artifact uploaded as ID `14805263531`.
+- Batch-two source extraction is marked structurally validated by this CI gate. The extracted source records cover metadata, input labels, result metrics/breakdown, formula and calculation steps, assumptions, notes/disclaimers/limitations, FAQs, validation errors, SEO and accessibility.
+- Started draft metadata translations for all six target locales (`hi`, `ar`, `ur`, `zh-CN`, `ja`, `ru`) across all 10 batch-two tools. All records remain `draft`; no locale has been approved or activated.
+- This is a **partial translation draft**, not a completed translation: currently localized fields are metadata title/description/category, SEO title/description/H1/introduction, and accessibility page label. Untranslated input/result labels and all remaining fields are null so the runtime must use the English source fallback. Follow-up work must translate and validate every remaining schema field, including inputs, results, formulas/steps, assumptions, notes, disclaimers, limitations, errors, FAQs, guides, SEO FAQs and accessibility labels.
+- Added regression assertions for all 10 tools × 6 locales to confirm draft status, translated metadata, stable input/result keys, and null English-fallback values for fields not yet translated.
+- Fresh Finance CI and Lighthouse/CLS runs are required for the new draft/test/docs commits. PR #73 remains Draft/unmerged; production `main` and GitHub Pages remain unchanged.
