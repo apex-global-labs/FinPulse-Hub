@@ -78,4 +78,5 @@ test("app waits for translation data and uses runtime fields for tool pages, for
  assert.ok(app.includes("translated.metrics[index]?.label"));
  assert.ok(app.includes("translated?.steps||spec[1]"));
  assert.ok(app.includes("FinPulseToolRuntime?.load()"));
+ assert.ok(app.includes("escapeHtml(m[0])")&&app.includes("escapeHtml(m[1])"),"translated metric labels and values must be rendered as text");
 });
