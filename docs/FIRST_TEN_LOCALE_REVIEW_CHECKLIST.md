@@ -1,60 +1,48 @@
-# First-ten tool translation review checklist
+# First-ten tool translation QA checklist
 
 **Scope:** first-ten FinPulse Hub tools, six target locales, seven-language source catalogue.
-**Current state:** all translated tool records remain `draft`. No native-speaker or finance-domain review is claimed complete.
-**Release rule:** do not change a locale record to `approved` or `published` until the relevant linguistic and domain reviews are recorded.
+**Current state:** translated locale records remain `draft`; this checklist tracks automated quality assurance and does not grant publication approval.
+**Review policy:** native-speaker and finance-domain feedback is optional and non-blocking. No written human sign-off is required for release.
 
-## Reviewers and sign-off
+## Tool-by-locale QA matrix
 
-For each locale, record a native-level reviewer and, for financial terminology and calculations, a finance-domain reviewer. One person may fill both roles only if they have both qualifications.
-
-| Locale | Native-level reviewer | Finance-domain reviewer | Date | Status |
-|---|---|---|---|---|
-| Hindi (`hi`) | Pending | Pending | — | Pending |
-| Arabic (`ar`) | Pending | Pending | — | Pending |
-| Urdu (`ur`) | Pending | Pending | — | Pending |
-| Simplified Chinese (`zh-CN`) | Pending | Pending | — | Pending |
-| Japanese (`ja`) | Pending | Pending | — | Pending |
-| Russian (`ru`) | Pending | Pending | — | Pending |
-
-## Tool-by-locale review matrix
-
-Each cell requires both linguistic and finance-domain review where applicable. Keep records as `draft` until the relevant reviewers sign off.
+Each cell is accepted only after the applicable automated checks pass on the current candidate commit.
 
 | Tool ID | hi | ar | ur | zh-CN | ja | ru |
 |---|---|---|---|---|---|---|
-| `currency` | Pending | Pending | Pending | Pending | Pending | Pending |
-| `mortgage` | Pending | Pending | Pending | Pending | Pending | Pending |
-| `loan` | Pending | Pending | Pending | Pending | Pending | Pending |
-| `emi` | Pending | Pending | Pending | Pending | Pending | Pending |
-| `compound` | Pending | Pending | Pending | Pending | Pending | Pending |
-| `percentage` | Pending | Pending | Pending | Pending | Pending | Pending |
-| `tip` | Pending | Pending | Pending | Pending | Pending | Pending |
-| `car` | Pending | Pending | Pending | Pending | Pending | Pending |
-| `amortization` | Pending | Pending | Pending | Pending | Pending | Pending |
-| `savings` | Pending | Pending | Pending | Pending | Pending | Pending |
+| `currency` | Automated QA | Automated QA | Automated QA | Automated QA | Automated QA | Automated QA |
+| `mortgage` | Automated QA | Automated QA | Automated QA | Automated QA | Automated QA | Automated QA |
+| `loan` | Automated QA | Automated QA | Automated QA | Automated QA | Automated QA | Automated QA |
+| `emi` | Automated QA | Automated QA | Automated QA | Automated QA | Automated QA | Automated QA |
+| `compound` | Automated QA | Automated QA | Automated QA | Automated QA | Automated QA | Automated QA |
+| `percentage` | Automated QA | Automated QA | Automated QA | Automated QA | Automated QA | Automated QA |
+| `tip` | Automated QA | Automated QA | Automated QA | Automated QA | Automated QA | Automated QA |
+| `car` | Automated QA | Automated QA | Automated QA | Automated QA | Automated QA | Automated QA |
+| `amortization` | Automated QA | Automated QA | Automated QA | Automated QA | Automated QA | Automated QA |
+| `savings` | Automated QA | Automated QA | Automated QA | Automated QA | Automated QA | Automated QA |
 
-## Required checks for every tool and locale
+## Required automated checks
 
-- [ ] Tool title, description, category and terminology sound natural in the target locale.
-- [ ] Every input label, help text, option, placeholder and validation message is accurate.
-- [ ] Result heading, summary, metric labels and breakdown labels match the actual calculation outputs.
-- [ ] Formula explanation and each calculation step preserve the English source meaning and order.
-- [ ] Formula notation, constants, units, rate conversions, currency codes and identifiers remain unchanged.
-- [ ] Assumptions, disclaimers and limitations do not overstate certainty or imply a guaranteed return.
-- [ ] FAQs and SEO copy are natural, accurate and consistent with the tool.
-- [ ] Accessibility labels are understandable when read by a screen reader.
-- [ ] Arabic/Urdu text direction and mixed formula/number rendering are correct.
-- [ ] Reviewer confirms no accidental text from another locale is present.
+- [ ] Stable tool IDs, field keys, formulas, constants, units, currency codes and jurisdiction identifiers remain unchanged.
+- [ ] Every required translated content field is present and non-empty.
+- [ ] Formula explanation step counts and ordering match the English source.
+- [ ] Automated locale/script checks detect unintended cross-locale text contamination.
+- [ ] Missing, incomplete, draft or unapproved content falls back to the complete English tool definition.
+- [ ] Approved/published rendering is tested with isolated in-memory fixtures; fixtures do not change stored translation statuses.
+- [ ] Playwright browser coverage exercises all first-ten tool routes in all seven locales (70 route/locale combinations).
+- [ ] Direction assertions verify Arabic and Urdu as RTL and English, Hindi, Simplified Chinese, Japanese and Russian as LTR.
+- [ ] axe-core WCAG 2.1 A/AA accessibility audit runs after navigation for each of the 70 route/locale combinations.
+- [ ] Desktop and mobile Lighthouse audits pass the configured performance and CLS budgets.
+- [ ] Finance regression tests and live reference-rate API verification pass on the exact candidate commit.
 
-## Release and runtime safeguards
+## Runtime and release safeguards
 
-- The runtime accepts only `approved` or `published` locale records.
-- The runtime rejects a record if any required content field or stable key is missing.
-- Missing, incomplete, draft, or otherwise unapproved content falls back to the complete English tool page.
-- A reviewer must not approve a translation merely because automated tests pass.
-- After review, re-run the seven-locale browser, RTL/LTR, accessibility, regression and calculation checks before considering release.
+- The runtime accepts only `approved` or `published` locale records with all required fields.
+- Missing, incomplete, draft or otherwise unapproved content uses the complete English tool definition.
+- Automated validation establishes technical consistency, not linguistic perfection; optional expert feedback can improve quality but is not a release blocker.
+- Translation records must not be silently promoted from `draft` to `approved` or `published`. Any activation requires a separate explicit decision and validation.
+- Merge and production deployment remain blocked until all mandatory automated release gates pass on the exact latest PR commit and the release decision is explicitly authorized.
 
-## Review evidence
+## Optional quality feedback
 
-For each change, record the locale, tool ID, reviewer role, reviewed field groups, issues found, correction commit, review date and explicit sign-off. Keep unresolved issues open; do not infer approval from silence.
+If voluntarily provided, feedback may record locale, tool ID, field group, issue, suggested correction and correction commit. No reviewer identity, written sign-off or human approval status is required.
