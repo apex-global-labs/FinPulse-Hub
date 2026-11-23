@@ -84,7 +84,7 @@ test("all seven locales preserve direction rules and expose complete first-batch
 test("first-ten tool pages render in all seven locales and keep draft or incomplete translations on English fallback",async()=>{
  const server=createServer(async(req,res)=>{
   const path=decodeURIComponent(req.url.split("?")[0]).replace(/^\//,"")||"index.html";
-  try{const data=await readFile(join(process.cwd(),path));const type=path.endsWith(".css")?"text/css":path.endsWith(".js")?"text/javascript":path.endsWith(".json")?"application/json":"text/html";res.writeHead(200,{"content-type":type});res.end(data)}
+  try{const data=await readFile(path==="__axe.js"?axePath:join(process.cwd(),path));const type=path.endsWith(".css")?"text/css":path.endsWith(".js")?"text/javascript":path.endsWith(".json")?"application/json":"text/html";res.writeHead(200,{"content-type":type});res.end(data)}
   catch{res.writeHead(404);res.end("not found")}
  });
  await new Promise(resolve=>server.listen(0,"127.0.0.1",resolve));
