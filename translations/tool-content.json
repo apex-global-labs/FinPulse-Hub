@@ -11940,7 +11940,30 @@
         "title": "Freelance Hourly Rate Calculator",
         "category": "Finance & Money",
         "subcategory": "Business & Freelance Calculators",
-        "file": "app.js"
+        "file": "app.js",
+        "description": "Estimate an hourly billing rate from income goals, costs and billable time.",
+        "inputs": [
+          {
+            "key": "income",
+            "label": "Desired annual take-home income"
+          },
+          {
+            "key": "costs",
+            "label": "Annual business costs"
+          },
+          {
+            "key": "tax",
+            "label": "Estimated tax reserve (%)"
+          },
+          {
+            "key": "hours",
+            "label": "Billable hours per week"
+          },
+          {
+            "key": "weeks",
+            "label": "Working weeks per year"
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -11967,7 +11990,9 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceTranslationStatus": "not-started"
     },
     {
       "id": "margin",
@@ -11975,7 +12000,18 @@
         "title": "Profit Margin Calculator",
         "category": "Finance & Money",
         "subcategory": "Business & Freelance Calculators",
-        "file": "app.js"
+        "file": "app.js",
+        "description": "Calculate profit, profit margin and markup from revenue and costs.",
+        "inputs": [
+          {
+            "key": "revenue",
+            "label": "Revenue / selling price"
+          },
+          {
+            "key": "cost",
+            "label": "Total costs"
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -12002,7 +12038,9 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceTranslationStatus": "not-started"
     },
     {
       "id": "affordability",
@@ -12010,7 +12048,50 @@
         "title": "Mortgage Affordability Calculator",
         "category": "Finance & Money",
         "subcategory": "Mortgage Calculators",
-        "file": "app.js"
+        "file": "app.js",
+        "description": "Estimate a home-price range using income, debts, down payment, taxes, insurance and debt-to-income limits.",
+        "inputs": [
+          {
+            "key": "income",
+            "label": "Gross monthly household income"
+          },
+          {
+            "key": "debts",
+            "label": "Monthly debt payments"
+          },
+          {
+            "key": "down",
+            "label": "Available down payment"
+          },
+          {
+            "key": "rate",
+            "label": "Annual mortgage rate (%)"
+          },
+          {
+            "key": "years",
+            "label": "Mortgage term (years)"
+          },
+          {
+            "key": "tax",
+            "label": "Monthly property tax"
+          },
+          {
+            "key": "insurance",
+            "label": "Monthly home insurance"
+          },
+          {
+            "key": "hoa",
+            "label": "Monthly HOA / fees"
+          },
+          {
+            "key": "dti",
+            "label": "Maximum total debt-to-income (%)"
+          },
+          {
+            "key": "housing",
+            "label": "Maximum housing-cost ratio (%)"
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -12037,7 +12118,9 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceTranslationStatus": "not-started"
     },
     {
       "id": "payoff",
@@ -12045,7 +12128,26 @@
         "title": "Mortgage Payoff & Extra Payment Calculator",
         "category": "Finance & Money",
         "subcategory": "Mortgage Calculators",
-        "file": "app.js"
+        "file": "app.js",
+        "description": "Compare a standard mortgage schedule with extra monthly principal payments, including interest and time saved.",
+        "inputs": [
+          {
+            "key": "balance",
+            "label": "Current mortgage balance"
+          },
+          {
+            "key": "rate",
+            "label": "Annual interest rate (%)"
+          },
+          {
+            "key": "years",
+            "label": "Remaining term (years)"
+          },
+          {
+            "key": "extra",
+            "label": "Extra monthly principal payment"
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -12072,7 +12174,9 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceTranslationStatus": "not-started"
     },
     {
       "id": "refinance",
@@ -12080,7 +12184,34 @@
         "title": "Mortgage Refinance Comparison",
         "category": "Finance & Money",
         "subcategory": "Mortgage Calculators",
-        "file": "app.js"
+        "file": "app.js",
+        "description": "Compare current and new mortgage payments, closing costs, estimated break-even and full-term interest.",
+        "inputs": [
+          {
+            "key": "balance",
+            "label": "Current mortgage balance"
+          },
+          {
+            "key": "currentRate",
+            "label": "Current annual rate (%)"
+          },
+          {
+            "key": "currentYears",
+            "label": "Remaining current term (years)"
+          },
+          {
+            "key": "newRate",
+            "label": "New annual rate (%)"
+          },
+          {
+            "key": "newYears",
+            "label": "New refinance term (years)"
+          },
+          {
+            "key": "costs",
+            "label": "Estimated closing costs"
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -12107,7 +12238,9 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceTranslationStatus": "not-started"
     },
     {
       "id": "personal-loan",
@@ -12115,7 +12248,30 @@
         "title": "Personal Loan Calculator",
         "category": "Finance & Money",
         "subcategory": "Loan Calculators",
-        "file": "app.js"
+        "file": "app.js",
+        "description": "Estimate monthly payments, origination-fee impact, cash received and fee-adjusted annualized borrowing cost.",
+        "inputs": [
+          {
+            "key": "principal",
+            "label": "Requested loan amount"
+          },
+          {
+            "key": "rate",
+            "label": "Annual interest rate (%)"
+          },
+          {
+            "key": "years",
+            "label": "Loan term (years)"
+          },
+          {
+            "key": "fee",
+            "label": "Origination fee (%)"
+          },
+          {
+            "key": "extra",
+            "label": "Extra monthly payment"
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -12142,7 +12298,9 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceTranslationStatus": "not-started"
     },
     {
       "id": "student-loan",
@@ -12150,7 +12308,26 @@
         "title": "Student Loan Repayment Calculator",
         "category": "Finance & Money",
         "subcategory": "Loan Calculators",
-        "file": "app.js"
+        "file": "app.js",
+        "description": "Compare standard fixed-rate repayment with an optional extra monthly payment and see time and interest saved.",
+        "inputs": [
+          {
+            "key": "principal",
+            "label": "Student loan balance"
+          },
+          {
+            "key": "rate",
+            "label": "Annual interest rate (%)"
+          },
+          {
+            "key": "years",
+            "label": "Repayment term (years)"
+          },
+          {
+            "key": "extra",
+            "label": "Extra monthly payment"
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -12177,7 +12354,9 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceTranslationStatus": "not-started"
     },
     {
       "id": "simple-interest",
@@ -12185,7 +12364,26 @@
         "title": "Simple Interest Calculator",
         "category": "Finance & Money",
         "subcategory": "Investment & Return Calculators",
-        "file": "app.js"
+        "file": "app.js",
+        "description": "Calculate non-compounding interest using a selectable 360-, 365- or 366-day basis, with a visual balance path.",
+        "inputs": [
+          {
+            "key": "principal",
+            "label": "Principal amount"
+          },
+          {
+            "key": "rate",
+            "label": "Annual simple interest rate (%)"
+          },
+          {
+            "key": "days",
+            "label": "Number of days"
+          },
+          {
+            "key": "basis",
+            "label": "Day-count basis"
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -12212,7 +12410,9 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceTranslationStatus": "not-started"
     },
     {
       "id": "retirement",
@@ -12220,7 +12420,34 @@
         "title": "Retirement Savings Calculator",
         "category": "Finance & Money",
         "subcategory": "Investment & Return Calculators",
-        "file": "app.js"
+        "file": "app.js",
+        "description": "Project retirement savings with monthly contributions, assumed return and inflation.",
+        "inputs": [
+          {
+            "key": "current",
+            "label": "Current retirement savings"
+          },
+          {
+            "key": "monthly",
+            "label": "Monthly contribution"
+          },
+          {
+            "key": "rate",
+            "label": "Assumed annual return (%)"
+          },
+          {
+            "key": "altRate",
+            "label": "Comparison annual return (%)"
+          },
+          {
+            "key": "years",
+            "label": "Years until retirement"
+          },
+          {
+            "key": "inflation",
+            "label": "Assumed annual inflation (%)"
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -12247,7 +12474,9 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceTranslationStatus": "not-started"
     },
     {
       "id": "401k",
@@ -12255,7 +12484,38 @@
         "title": "401k Contribution Calculator",
         "category": "Finance & Money",
         "subcategory": "Investment & Return Calculators",
-        "file": "app.js"
+        "file": "app.js",
+        "description": "Estimate employee contributions, employer match and projected account growth.",
+        "inputs": [
+          {
+            "key": "salary",
+            "label": "Annual salary"
+          },
+          {
+            "key": "employee",
+            "label": "Employee contribution (%)"
+          },
+          {
+            "key": "match",
+            "label": "Employer match (%)"
+          },
+          {
+            "key": "limit",
+            "label": "Salary percentage eligible for match (%)"
+          },
+          {
+            "key": "current",
+            "label": "Current 401(k) balance"
+          },
+          {
+            "key": "rate",
+            "label": "Assumed annual return (%)"
+          },
+          {
+            "key": "years",
+            "label": "Years invested"
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -12282,7 +12542,9 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceTranslationStatus": "not-started"
     },
     {
       "id": "ira",
