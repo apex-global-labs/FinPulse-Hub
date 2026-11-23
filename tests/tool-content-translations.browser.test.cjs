@@ -107,10 +107,10 @@ test("10 tools × 6 locales render persisted translations without changing calcu
     await page.waitForFunction(()=>window.FinPulseToolRuntime?.loaded===true);
     if(id==="currency"){
      await page.locator("#f-amount").fill("100");
-     await page.locator("#f-rate").fill("1.25");
      await page.locator("#f-fee").fill("2");
      await page.locator("#f-from").selectOption("USD");
      await page.locator("#f-to").selectOption("EUR");
+     await page.locator("#f-rate").fill("1.25");
      await page.locator("#manual-rate").click();
     }else{
      await page.locator("#form").evaluate(form=>form.requestSubmit());
