@@ -189,6 +189,7 @@ test("first-ten tool pages render in all seven locales and keep draft or incompl
    const errorText=await page.locator("#app .result .sub").textContent();
    assert.ok(errorText.includes(expected.negativeError),locale+" translated negative-value validation");
    assert.ok(errorText.includes(expected.recoveryHint),locale+" translated validation recovery hint");
+   await page.locator("#f-principal").fill("250000");
   }
   await page.close();
  }finally{await browser.close();await new Promise(resolve=>server.close(resolve))}
