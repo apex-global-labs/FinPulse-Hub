@@ -99,3 +99,11 @@ Latest PR-head validation (commit `75a1f871fbac21be1b54ead3f8ffe95fbfe9767f`): F
 - Added `docs/FIRST_TEN_LOCALE_REVIEW_CHECKLIST.md` with a reviewer/sign-off matrix for six native languages and ten tools. Native-speaker and finance-domain review is still pending and cannot be claimed complete from automated checks.
 - Latest relevant workflow runs at this documentation update: Finance Calculator CI `45134585193` and Candidate Lighthouse/CLS `45134585066` were still in progress on code head `c3c94cad97f42aaf75ee0ff946128b173615825a`. Earlier run `45134348157` had completed syntax checks, the full Node test suite, live reference-rate API check and Playwright installation successfully; its browser test step was still running. Do not call the runtime/browser gate complete until the final head's CI and Lighthouse workflows finish successfully.
 - PR #73 remains Draft and unmerged. No production deployment has been made or authorized.
+
+
+## Translation QA correction — 2026-11-23
+- A Unicode-script audit found that all 45 result metric labels per locale in Urdu, Simplified Chinese, Japanese and Russian had inadvertently retained Hindi text (180 affected labels total). This was not caught by the earlier non-empty/schema checks.
+- Replaced all 180 labels with locale-appropriate draft translations and localized the 10 Hindi result summaries that were still English.
+- Re-ran the first-ten locale-field script audit: zero cross-locale script contamination findings across 60 tool/locale records. Technical IDs and stable field keys are excluded from the script-content check.
+- Added a regression test that rejects foreign-script contamination and untranslated result summaries/metric labels in the first ten tools.
+- All changes remain draft and require native-speaker/finance-domain sign-off; automated script checks are not a substitute for human linguistic review.
