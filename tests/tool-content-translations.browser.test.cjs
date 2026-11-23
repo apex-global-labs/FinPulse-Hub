@@ -73,7 +73,7 @@ async function snapshot(page,locale){
    const match=value.replace(/[^\d.+-]/g,"").match(/[-+]?\d+(?:\.\d+)?/);
    return match?Number(match[0]):null;
   });
-  const formula=Array.from(document.querySelectorAll("#formula-panel p")).map(x=>x.textContent.trim()).find(x=>x.includes("="))||"";
+  const formula=(Array.from(document.querySelectorAll("#formula-panel p")).map(x=>x.textContent.trim()).find(x=>x.includes("="))||"").replace(/^[^:：]+[:：]\s*/,"");
   return {numeric:canonical,currencyCode:window.FinPulseGlobalContext?.get().currencyCode||null,values:Array.from(document.querySelectorAll("#form [name]"),x=>[x.name,x.value]),formula};
  },locale);
 }
