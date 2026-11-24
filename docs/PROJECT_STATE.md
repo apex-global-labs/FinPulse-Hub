@@ -185,3 +185,20 @@ The dedicated branch adds five Developer wrap-up tools, twelve Education & Study
 - Simple Interest day-count option values remain unchanged and in source order `[365, 360, 366]`; only their display labels are localized.
 - Added regression assertions for batch-two stable input/result/breakdown/error/FAQ keys, translated label coverage, accessibility control-label parity, English fallback for untranslated FAQs/steps, and unchanged Simple Interest day-count values.
 - Fresh Finance CI and Lighthouse/CLS runs are required for the expanded translation content and updated tests. PR #73 remains Draft/unmerged; production `main` and GitHub Pages remain unchanged.
+
+
+## Multilingual candidate CI and Lighthouse verification — 2026-11-24
+
+- Exact tested candidate head: `fa96a01e5865e60c965bc956a6e5a422f64ee513` on `feat/seven-language-translation-engine-phase-1`, PR #73.
+- Finance Calculator CI [run #45174997930](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/45174997930) completed successfully. Job log confirms `npm run check` passed, `npm test` passed with 335/335 tests and 0 failures, live Frankfurter API check passed (1/1), and Playwright browser suite passed 30/30 with 0 failures.
+- Batch 2 browser test explicitly completed: all 10 tools × 7 locales = 70 route/locale axe-core WCAG 2.1 A/AA audits passed. The test verifies localized page title, description, first input label, translated calculation step, accessibility labels, SEO title and LTR/RTL direction. The test fixture temporarily simulates approved records in memory; persisted translation records remain `draft`.
+- Full 220-tool functional audit passed 440/440 executions: Desktop 220/220 and Mobile 220/220, with no failures and zero runtime errors. Artifact `220-tool-functional-audit` uploaded successfully (artifact ID `14819256288`).
+- Candidate Lighthouse and CLS [run #45174997999](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/45174997999) completed successfully. Four fresh audits:
+  - Mobile homepage: Performance 98, Accessibility 96, Best Practices 96, SEO 100; CLS 0.0001133.
+  - Mobile tool route (`hydration-log-tracker`): Performance 88, Accessibility 100, Best Practices 96, SEO 100; CLS 0.0303892.
+  - Desktop homepage: Performance 100, Accessibility 100, Best Practices 96, SEO 100; CLS 0.
+  - Desktop tool route: Performance 99, Accessibility 100, Best Practices 96, SEO 100; CLS 0.0086751.
+  All four CLS values satisfy the workflow's 0.10 budget. Lighthouse reports uploaded as artifact ID `14818039864`.
+- The Browser Test timeout seen on prior head `2f798baaab965463c8a7fc5ce944eea62ca468b0` was addressed by forcing a locale transition after injecting in-memory test fixtures. The resulting 30/30 and 70/70 outcomes above are from the exact newer tested head `fa96a01...`.
+- Translation content remains `draft`; this validation does not approve or activate any locale. No formula, calculation data or numeric option values were changed by this test correction.
+- PR #73 remains Draft/unmerged. Production `main` and GitHub Pages were not modified or deployed. These results validate the candidate CI gates only; no production-release claim is made.
