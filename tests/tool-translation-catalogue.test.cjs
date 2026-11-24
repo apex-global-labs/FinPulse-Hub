@@ -336,3 +336,14 @@ test("batch-three 2026 tax engine paths match controlled profile and payroll fix
  assert.equal(payroll.items.length,3);assert.equal(payroll.total,7650);
  globalThis.window=oldWindow;globalThis.FinPulseTaxData=oldTax;globalThis.FinPulseStateData=oldState;
 });
+
+
+test("batch-three editorial source includes derived step-by-step guides",()=>{
+ const ids=["ira","inflation","cd","apy","tax","income-tax","sales-tax","vat-gst","tax-refund","salary","paycheck","payroll","overtime","discount","exchange-fees","transfer-compare","freelance-project","freelancer-net-income","markup","break-even"];
+ for(const id of ids){
+  const source=content.tools.find(t=>t.id===id).source;
+  assert.ok(source.guide.title&&source.guide.introduction,id+" guide metadata");
+  assert.ok(source.guide.steps.length>=3&&source.guide.steps.every(s=>s.key&&s.title&&s.body),id+" guide steps");
+  assert.ok(source.guide.sections.length>=2&&source.guide.sections.every(s=>s.key&&s.heading&&s.body),id+" guide sections");
+ }
+});
