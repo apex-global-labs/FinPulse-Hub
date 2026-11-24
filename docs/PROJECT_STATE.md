@@ -215,3 +215,13 @@ The dedicated branch adds five Developer wrap-up tools, twelve Education & Study
 - Batch 3 six-locale translations have deliberately not started yet: all 120 locale slots remain `not-started` with empty fields until the authoritative source extraction is complete. No placeholder or invented financial/tax guidance is being introduced.
 - Added a catalogue regression test to assert the exact 20-tool batch order, all 88 input labels, unique stable keys, partial extraction state, and no premature translation activation. New test commit: `4358fe7e03887673350af808fe8206d2011f580a`; Batch 3 source/catalogue commits: `c68410b`, `b1add4d`, `001fb18`, `a0acb1d`.
 - This is candidate-branch work only. PR #73 remains Draft/unmerged; production `main` and GitHub Pages are unchanged. Fresh Finance CI and Lighthouse/CLS validation are required for the new candidate head.
+
+
+## Batch 3 source evidence capture — 2026-11-24
+
+- Captured the exact runtime definition from `app.js` for all 20 Batch 3 tools, including result headings, metric/breakdown labels, chart configuration, notes and inline SEO/FAQ blocks where present.
+- Captured the exact calculation implementation for all 20 tools: 18 functions from `finance-core.js`, plus `FinPulseTaxEngine.estimate` for Income Tax and `estimate` + `payroll` for Salary. Source blob SHAs are recorded in `docs/i18n/batch-03-source-extraction.json`.
+- Tool-specific inline SEO/FAQ exists in the runtime definitions for only four Batch 3 tools: Freelance Project Pricing, Freelancer Net Income, Markup and Break-even. The other 16 do not provide inline FAQ/SEO copy. Shared accessibility labels are provided by the app template; per-tool page/form/result/chart labels need a clearly marked derived editorial record. Do not describe these missing fields as verbatim source extraction.
+- Ordered steps, formula explanations, assumptions, FAQs for the remaining tools, SEO copy, error recovery hints and accessibility labels are still pending source authoring/verification. Batch 3 remains `in-progress`; all 120 target-locale slots remain `not-started`. No Batch 3 translations have started and no translation has been activated.
+- Validation: Finance CI run #45350333245 failed at the existing Batch 3 manifest-status assertion (335/336 Node tests passed; one test expected manifest.status=`in-progress`). The manifest status was restored to `in-progress` in corrective commit `4eb7cfaa58d077548054462be5c46519a2a97a14`. Fresh CI for that corrective head has not yet been confirmed. Candidate Lighthouse run #45350333144 is still in progress on the preceding source-evidence commit `49a1b4074808ef6621e78b2c31b3ec18c240cda9`.
+- PR #73 remains Draft/unmerged. Production `main` and GitHub Pages remain unchanged.
