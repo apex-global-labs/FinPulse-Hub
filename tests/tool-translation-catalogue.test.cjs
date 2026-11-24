@@ -204,7 +204,7 @@ test("batch-two tools have complete extracted result, formula, FAQ, error, SEO a
   assert.ok(source.errors.length>=3&&source.errors.every(e=>e.key&&e.message&&e.recoveryHint),id+" complete validation errors");
   assert.ok(source.seo.title&&source.seo.metaDescription&&source.seo.h1&&source.seo.introduction,id+" SEO source");
   assert.ok(source.accessibility.pageLabel&&source.accessibility.formLabel&&source.accessibility.resultAnnouncement,id+" accessibility source");
-  assert.deepEqual(source.accessibility.controlLabels.map(x=>x.key),source.inputs.map(x=>x.key),id+" accessible input keys");
+  assert.deepEqual(source.accessibility.controlLabels.map(x=>x.key),[...source.inputs.map(x=>x.key),...(source.selectors||[]).map(x=>x.key)],id+" accessible input and selector keys");
   assert.equal(tool.sourceTranslationStatus,"draft",id+" translation draft started");
   for(const locale of locales){
    assert.equal(tool.locales[locale].status,"draft",id+":"+locale+" draft status");
