@@ -30319,7 +30319,146 @@
             "key": "futureTax",
             "label": "Future tax rate (%)"
           }
-        ]
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "ROTH ILLUSTRATIVE AFTER-TAX VALUE",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Traditional balance before tax"
+            },
+            {
+              "key": "metric-2",
+              "label": "Traditional after-tax value"
+            },
+            {
+              "key": "metric-3",
+              "label": "Roth after-tax value"
+            },
+            {
+              "key": "metric-4",
+              "label": "Roth minus traditional"
+            }
+          ],
+          "breakdown": []
+        },
+        "explanations": {
+          "formula": "Monthly interest = opening balance × annual return ÷ 1,200. Roth monthly contribution = annual budget ÷ 12 × (1 − current tax rate ÷ 100). Traditional monthly contribution = annual budget ÷ 12. Traditional after-tax value = projected Traditional balance × (1 − future tax rate ÷ 100). Compare this with the projected Roth balance.",
+          "steps": [
+            "Divide the annual contribution budget by 12.",
+            "Each month, calculate interest on the opening balance using the annual return divided by 1,200.",
+            "Add the after-current-tax contribution to Roth and the full contribution to Traditional.",
+            "Repeat for the selected number of months.",
+            "Apply the future tax rate to the Traditional balance and compare after-tax values."
+          ],
+          "assumptions": [
+            "Equal gross contribution budgets and monthly contributions are assumed.",
+            "Current Traditional tax savings are not reinvested.",
+            "Future tax applies to the entire Traditional balance; eligibility, statutory limits and tax law are not modeled."
+          ],
+          "notes": [
+            "Planning estimate only; review the displayed calculation note and verify inputs and applicable rules."
+          ],
+          "disclaimers": [
+            "This calculator provides an estimate based on entered values and assumptions. It is not financial, legal or tax advice."
+          ],
+          "limitations": [
+            "Equal gross contribution budgets and monthly contributions are assumed.",
+            "Current Traditional tax savings are not reinvested.",
+            "Future tax applies to the entire Traditional balance; eligibility, statutory limits and tax law are not modeled."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-ira-1",
+            "question": "What does this comparison show?",
+            "answer": "It compares simplified projected Roth and Traditional balances after the entered current and future tax assumptions."
+          },
+          {
+            "key": "faq-ira-2",
+            "question": "Are contributions monthly?",
+            "answer": "Yes. The annual contribution budget is divided into 12 equal monthly contributions."
+          },
+          {
+            "key": "faq-ira-3",
+            "question": "Does it determine which IRA is best?",
+            "answer": "No. Eligibility, contribution limits, withdrawal rules and actual tax law are not modeled."
+          }
+        ],
+        "seo": {
+          "title": "Roth vs Traditional IRA Comparison | FinPulse Hub",
+          "metaDescription": "Compare simplified Roth and Traditional IRA balances using a contribution budget, assumed return and current and future tax rates.",
+          "h1": "Roth vs Traditional IRA Comparison",
+          "introduction": "Compare simplified Roth and Traditional IRA balances using a contribution budget, assumed return and current and future tax rates.",
+          "faq": [
+            {
+              "key": "faq-ira-1",
+              "question": "What does this comparison show?",
+              "answer": "It compares simplified projected Roth and Traditional balances after the entered current and future tax assumptions."
+            },
+            {
+              "key": "faq-ira-2",
+              "question": "Are contributions monthly?",
+              "answer": "Yes. The annual contribution budget is divided into 12 equal monthly contributions."
+            },
+            {
+              "key": "faq-ira-3",
+              "question": "Does it determine which IRA is best?",
+              "answer": "No. Eligibility, contribution limits, withdrawal rules and actual tax law are not modeled."
+            }
+          ]
+        },
+        "errors": [
+          {
+            "key": "invalid-number",
+            "message": "{field} must be a finite number.",
+            "recoveryHint": "Enter a valid number and try again."
+          },
+          {
+            "key": "negative",
+            "message": "{field} must not be negative.",
+            "recoveryHint": "Enter zero or a positive value."
+          },
+          {
+            "key": "positive",
+            "message": "{field} must be greater than zero.",
+            "recoveryHint": "Enter a value greater than zero."
+          },
+          {
+            "key": "tax-rates",
+            "message": "Tax rates must be 0–100 and years at most 100",
+            "recoveryHint": "Enter tax rates from 0% to 100% and an investment period no longer than 100 years."
+          }
+        ],
+        "accessibility": {
+          "pageLabel": "Roth vs Traditional IRA Comparison",
+          "formLabel": "Roth vs Traditional IRA Comparison calculator form",
+          "resultAnnouncement": "Calculation result for Roth vs Traditional IRA Comparison",
+          "chartLabel": "Chart showing ROTH ILLUSTRATIVE AFTER-TAX VALUE for Roth vs Traditional IRA Comparison",
+          "controlLabels": [
+            {
+              "key": "contribution",
+              "label": "Annual contribution budget"
+            },
+            {
+              "key": "years",
+              "label": "Years invested"
+            },
+            {
+              "key": "rate",
+              "label": "Assumed annual return (%)"
+            },
+            {
+              "key": "currentTax",
+              "label": "Current tax rate (%)"
+            },
+            {
+              "key": "futureTax",
+              "label": "Future tax rate (%)"
+            }
+          ]
+        }
       },
       "locales": {
         "hi": {
@@ -30372,7 +30511,136 @@
             "key": "years",
             "label": "Number of years"
           }
-        ]
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "ESTIMATED FUTURE COST",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Current amount"
+            },
+            {
+              "key": "metric-2",
+              "label": "Estimated cost increase"
+            },
+            {
+              "key": "metric-3",
+              "label": "Cumulative increase"
+            },
+            {
+              "key": "metric-4",
+              "label": "Future purchasing power"
+            }
+          ],
+          "breakdown": []
+        },
+        "explanations": {
+          "formula": "Future cost = current amount × (1 + inflation rate ÷ 100)^years. Future purchasing power = current amount ÷ (1 + inflation rate ÷ 100)^years. Cost increase = future cost − current amount.",
+          "steps": [
+            "Enter the current amount, annual inflation rate and number of years.",
+            "Convert the inflation percentage to a decimal rate.",
+            "Compound the amount by the inflation factor over the selected years.",
+            "Divide the current amount by the same factor to estimate future purchasing power.",
+            "Subtract the current amount from future cost to estimate the increase."
+          ],
+          "assumptions": [
+            "The same annual inflation rate is assumed for every year.",
+            "Actual prices, spending patterns and future inflation may vary."
+          ],
+          "notes": [
+            "Planning estimate only; review the displayed calculation note and verify inputs and applicable rules."
+          ],
+          "disclaimers": [
+            "This calculator provides an estimate based on entered values and assumptions. It is not financial, legal or tax advice."
+          ],
+          "limitations": [
+            "The same annual inflation rate is assumed for every year.",
+            "Actual prices, spending patterns and future inflation may vary."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-inflation-1",
+            "question": "What does future cost mean?",
+            "answer": "It estimates the cost after the selected years if the same annual inflation rate applied throughout."
+          },
+          {
+            "key": "faq-inflation-2",
+            "question": "What is future purchasing power?",
+            "answer": "It estimates the current amount's purchasing power after applying the same compounded inflation factor."
+          },
+          {
+            "key": "faq-inflation-3",
+            "question": "Is this an inflation forecast?",
+            "answer": "No. It is a scenario calculation; actual inflation varies over time and by category."
+          }
+        ],
+        "seo": {
+          "title": "Inflation Calculator | FinPulse Hub",
+          "metaDescription": "Estimate how an amount's future cost and purchasing power could change under a constant annual inflation assumption.",
+          "h1": "Inflation Calculator",
+          "introduction": "Estimate how an amount's future cost and purchasing power could change under a constant annual inflation assumption.",
+          "faq": [
+            {
+              "key": "faq-inflation-1",
+              "question": "What does future cost mean?",
+              "answer": "It estimates the cost after the selected years if the same annual inflation rate applied throughout."
+            },
+            {
+              "key": "faq-inflation-2",
+              "question": "What is future purchasing power?",
+              "answer": "It estimates the current amount's purchasing power after applying the same compounded inflation factor."
+            },
+            {
+              "key": "faq-inflation-3",
+              "question": "Is this an inflation forecast?",
+              "answer": "No. It is a scenario calculation; actual inflation varies over time and by category."
+            }
+          ]
+        },
+        "errors": [
+          {
+            "key": "invalid-number",
+            "message": "{field} must be a finite number.",
+            "recoveryHint": "Enter a valid number and try again."
+          },
+          {
+            "key": "negative",
+            "message": "{field} must not be negative.",
+            "recoveryHint": "Enter zero or a positive value."
+          },
+          {
+            "key": "positive",
+            "message": "{field} must be greater than zero.",
+            "recoveryHint": "Enter a value greater than zero."
+          },
+          {
+            "key": "range",
+            "message": "Years or rate outside supported range",
+            "recoveryHint": "Use a non-negative inflation rate no higher than 1,000% and a period no longer than 100 years."
+          }
+        ],
+        "accessibility": {
+          "pageLabel": "Inflation Calculator",
+          "formLabel": "Inflation Calculator calculator form",
+          "resultAnnouncement": "Calculation result for Inflation Calculator",
+          "chartLabel": "Chart showing ESTIMATED FUTURE COST for Inflation Calculator",
+          "controlLabels": [
+            {
+              "key": "amount",
+              "label": "Current cost / amount"
+            },
+            {
+              "key": "rate",
+              "label": "Annual inflation (%)"
+            },
+            {
+              "key": "years",
+              "label": "Number of years"
+            }
+          ]
+        }
       },
       "locales": {
         "hi": {
@@ -30425,7 +30693,157 @@
             "key": "term",
             "label": "Term (months)"
           }
-        ]
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "ESTIMATED MATURITY VALUE",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Initial deposit"
+            },
+            {
+              "key": "metric-2",
+              "label": "Interest earned"
+            },
+            {
+              "key": "metric-3",
+              "label": "APY"
+            },
+            {
+              "key": "metric-4",
+              "label": "Term"
+            }
+          ],
+          "breakdown": [
+            {
+              "key": "breakdown-1",
+              "label": "Initial deposit"
+            },
+            {
+              "key": "breakdown-2",
+              "label": "APY"
+            },
+            {
+              "key": "breakdown-3",
+              "label": "Term"
+            },
+            {
+              "key": "breakdown-4",
+              "label": "Interest earned"
+            },
+            {
+              "key": "breakdown-5",
+              "label": "Maturity value"
+            }
+          ]
+        },
+        "explanations": {
+          "formula": "Maturity value = deposit × (1 + APY ÷ 100)^(term months ÷ 12). Interest earned = maturity value − deposit.",
+          "steps": [
+            "Enter the initial deposit, APY and term in whole months.",
+            "Convert APY to a decimal growth factor.",
+            "Raise the annual factor to the term expressed in years.",
+            "Multiply the deposit by the factor to estimate maturity value.",
+            "Subtract the deposit to estimate interest earned."
+          ],
+          "assumptions": [
+            "APY is assumed fixed for the full term.",
+            "Withdrawals, fees, additional deposits and early-withdrawal penalties are excluded."
+          ],
+          "notes": [
+            "Planning estimate only; review the displayed calculation note and verify inputs and applicable rules."
+          ],
+          "disclaimers": [
+            "This calculator provides an estimate based on entered values and assumptions. It is not financial, legal or tax advice."
+          ],
+          "limitations": [
+            "APY is assumed fixed for the full term.",
+            "Withdrawals, fees, additional deposits and early-withdrawal penalties are excluded."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-cd-1",
+            "question": "How is maturity value estimated?",
+            "answer": "The deposit is multiplied by the APY growth factor for the term expressed in years."
+          },
+          {
+            "key": "faq-cd-2",
+            "question": "Must the term be whole months?",
+            "answer": "Yes. The term must be a positive whole number of months."
+          },
+          {
+            "key": "faq-cd-3",
+            "question": "Are fees or early withdrawal penalties included?",
+            "answer": "No. The estimate assumes no withdrawals, fees or early-withdrawal penalty."
+          }
+        ],
+        "seo": {
+          "title": "CD Calculator | FinPulse Hub",
+          "metaDescription": "Estimate a certificate of deposit's maturity value and interest using an initial deposit, fixed APY and whole-month term.",
+          "h1": "CD Calculator",
+          "introduction": "Estimate a certificate of deposit's maturity value and interest using an initial deposit, fixed APY and whole-month term.",
+          "faq": [
+            {
+              "key": "faq-cd-1",
+              "question": "How is maturity value estimated?",
+              "answer": "The deposit is multiplied by the APY growth factor for the term expressed in years."
+            },
+            {
+              "key": "faq-cd-2",
+              "question": "Must the term be whole months?",
+              "answer": "Yes. The term must be a positive whole number of months."
+            },
+            {
+              "key": "faq-cd-3",
+              "question": "Are fees or early withdrawal penalties included?",
+              "answer": "No. The estimate assumes no withdrawals, fees or early-withdrawal penalty."
+            }
+          ]
+        },
+        "errors": [
+          {
+            "key": "invalid-number",
+            "message": "{field} must be a finite number.",
+            "recoveryHint": "Enter a valid number and try again."
+          },
+          {
+            "key": "negative",
+            "message": "{field} must not be negative.",
+            "recoveryHint": "Enter zero or a positive value."
+          },
+          {
+            "key": "positive",
+            "message": "{field} must be greater than zero.",
+            "recoveryHint": "Enter a value greater than zero."
+          },
+          {
+            "key": "term",
+            "message": "APY must be at most 1,000 percent and term must be a whole number of months",
+            "recoveryHint": "Enter APY from 0% to 1,000% and a positive whole-number term up to 1,200 months."
+          }
+        ],
+        "accessibility": {
+          "pageLabel": "CD Calculator",
+          "formLabel": "CD Calculator calculator form",
+          "resultAnnouncement": "Calculation result for CD Calculator",
+          "chartLabel": "Chart showing ESTIMATED MATURITY VALUE for CD Calculator",
+          "controlLabels": [
+            {
+              "key": "principal",
+              "label": "Initial deposit"
+            },
+            {
+              "key": "apy",
+              "label": "Certificate APY (%)"
+            },
+            {
+              "key": "term",
+              "label": "Term (months)"
+            }
+          ]
+        }
       },
       "locales": {
         "hi": {
@@ -30478,7 +30896,165 @@
             "key": "frequency",
             "label": "Compounding periods per year"
           }
-        ]
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "ANNUAL PERCENTAGE YIELD (APY)",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Starting deposit"
+            },
+            {
+              "key": "metric-2",
+              "label": "One-year interest"
+            },
+            {
+              "key": "metric-3",
+              "label": "One-year balance"
+            },
+            {
+              "key": "metric-4",
+              "label": "Rate per period"
+            }
+          ],
+          "breakdown": [
+            {
+              "key": "breakdown-1",
+              "label": "Starting deposit"
+            },
+            {
+              "key": "breakdown-2",
+              "label": "Nominal annual rate"
+            },
+            {
+              "key": "breakdown-3",
+              "label": "Compounding periods"
+            },
+            {
+              "key": "breakdown-4",
+              "label": "Rate per period"
+            },
+            {
+              "key": "breakdown-5",
+              "label": "APY"
+            },
+            {
+              "key": "breakdown-6",
+              "label": "One-year interest"
+            },
+            {
+              "key": "breakdown-7",
+              "label": "One-year balance"
+            }
+          ]
+        },
+        "explanations": {
+          "formula": "Periodic rate = nominal annual rate ÷ (100 × compounding periods). One-year balance = principal × (1 + periodic rate)^periods. APY = ((1 + periodic rate)^periods − 1) × 100.",
+          "steps": [
+            "Enter principal, nominal annual rate and compounding frequency.",
+            "Divide the nominal rate by the number of periods to get the periodic rate.",
+            "Compound the principal for the selected number of periods.",
+            "Subtract principal to estimate one-year interest.",
+            "Convert the accumulated growth to APY."
+          ],
+          "assumptions": [
+            "The nominal rate is fixed for one year and compounding periods are equal.",
+            "Fees and changing rates are excluded."
+          ],
+          "notes": [
+            "Planning estimate only; review the displayed calculation note and verify inputs and applicable rules."
+          ],
+          "disclaimers": [
+            "This calculator provides an estimate based on entered values and assumptions. It is not financial, legal or tax advice."
+          ],
+          "limitations": [
+            "The nominal rate is fixed for one year and compounding periods are equal.",
+            "Fees and changing rates are excluded."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-apy-1",
+            "question": "What is APY?",
+            "answer": "APY expresses one-year percentage growth after accounting for compounding frequency."
+          },
+          {
+            "key": "faq-apy-2",
+            "question": "How does compounding frequency affect APY?",
+            "answer": "At the same nominal rate, changing the frequency changes the effective annual yield."
+          },
+          {
+            "key": "faq-apy-3",
+            "question": "Are fees included?",
+            "answer": "No. The calculation excludes fees and changing rates."
+          }
+        ],
+        "seo": {
+          "title": "APY Calculator | FinPulse Hub",
+          "metaDescription": "Convert a nominal annual interest rate and compounding frequency into annual percentage yield and a one-year balance.",
+          "h1": "APY Calculator",
+          "introduction": "Convert a nominal annual interest rate and compounding frequency into annual percentage yield and a one-year balance.",
+          "faq": [
+            {
+              "key": "faq-apy-1",
+              "question": "What is APY?",
+              "answer": "APY expresses one-year percentage growth after accounting for compounding frequency."
+            },
+            {
+              "key": "faq-apy-2",
+              "question": "How does compounding frequency affect APY?",
+              "answer": "At the same nominal rate, changing the frequency changes the effective annual yield."
+            },
+            {
+              "key": "faq-apy-3",
+              "question": "Are fees included?",
+              "answer": "No. The calculation excludes fees and changing rates."
+            }
+          ]
+        },
+        "errors": [
+          {
+            "key": "invalid-number",
+            "message": "{field} must be a finite number.",
+            "recoveryHint": "Enter a valid number and try again."
+          },
+          {
+            "key": "negative",
+            "message": "{field} must not be negative.",
+            "recoveryHint": "Enter zero or a positive value."
+          },
+          {
+            "key": "positive",
+            "message": "{field} must be greater than zero.",
+            "recoveryHint": "Enter a value greater than zero."
+          },
+          {
+            "key": "frequency",
+            "message": "Rate must be at most 1,000 percent and compounding frequency must be a whole number",
+            "recoveryHint": "Enter a nominal rate up to 1,000% and a positive whole-number frequency no higher than 365."
+          }
+        ],
+        "accessibility": {
+          "pageLabel": "APY Calculator",
+          "formLabel": "APY Calculator calculator form",
+          "resultAnnouncement": "Calculation result for APY Calculator",
+          "chartLabel": "Chart showing ANNUAL PERCENTAGE YIELD (APY) for APY Calculator",
+          "controlLabels": [
+            {
+              "key": "principal",
+              "label": "Starting deposit"
+            },
+            {
+              "key": "rate",
+              "label": "Nominal annual rate (%)"
+            },
+            {
+              "key": "frequency",
+              "label": "Compounding periods per year"
+            }
+          ]
+        }
       },
       "locales": {
         "hi": {
@@ -30531,7 +31107,160 @@
             "key": "credits",
             "label": "Tax credits"
           }
-        ]
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "ESTIMATED TAX AFTER CREDITS",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Tax before credits"
+            },
+            {
+              "key": "metric-2",
+              "label": "Credits applied"
+            },
+            {
+              "key": "metric-3",
+              "label": "After-tax amount"
+            },
+            {
+              "key": "metric-4",
+              "label": "Effective tax rate"
+            }
+          ],
+          "breakdown": [
+            {
+              "key": "breakdown-1",
+              "label": "Taxable amount"
+            },
+            {
+              "key": "breakdown-2",
+              "label": "Flat tax rate"
+            },
+            {
+              "key": "breakdown-3",
+              "label": "Tax before credits"
+            },
+            {
+              "key": "breakdown-4",
+              "label": "Credits applied"
+            },
+            {
+              "key": "breakdown-5",
+              "label": "Estimated tax"
+            },
+            {
+              "key": "breakdown-6",
+              "label": "After-tax amount"
+            }
+          ]
+        },
+        "explanations": {
+          "formula": "Gross tax = taxable amount × tax rate ÷ 100. Tax after credits = max(0, gross tax − credits). After-tax amount = taxable amount − tax after credits.",
+          "steps": [
+            "Enter taxable amount, flat tax rate and credits.",
+            "Multiply the amount by the rate to estimate gross tax.",
+            "Subtract credits, with tax floored at zero.",
+            "Subtract tax after credits from the amount to estimate the after-tax amount."
+          ],
+          "assumptions": [
+            "Uses one user-entered flat rate, not progressive brackets.",
+            "Credits are limited to gross tax; unused credits are not modeled as a refund."
+          ],
+          "notes": [
+            "Planning estimate only; review the displayed calculation note and verify inputs and applicable rules."
+          ],
+          "disclaimers": [
+            "This calculator provides an estimate based on entered values and assumptions. It is not financial, legal or tax advice."
+          ],
+          "limitations": [
+            "Uses one user-entered flat rate, not progressive brackets.",
+            "Credits are limited to gross tax; unused credits are not modeled as a refund."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-tax-1",
+            "question": "Does this use official brackets?",
+            "answer": "No. It applies the single tax rate entered by the user."
+          },
+          {
+            "key": "faq-tax-2",
+            "question": "Can credits make tax negative?",
+            "answer": "No. Tax after credits cannot fall below zero."
+          },
+          {
+            "key": "faq-tax-3",
+            "question": "Is this a tax return?",
+            "answer": "No. It is a simplified, non-jurisdiction-specific estimate."
+          }
+        ],
+        "seo": {
+          "title": "Tax Calculator | FinPulse Hub",
+          "metaDescription": "Estimate tax after entered credits using a single flat tax-rate assumption and view the estimated after-tax amount.",
+          "h1": "Tax Calculator",
+          "introduction": "Estimate tax after entered credits using a single flat tax-rate assumption and view the estimated after-tax amount.",
+          "faq": [
+            {
+              "key": "faq-tax-1",
+              "question": "Does this use official brackets?",
+              "answer": "No. It applies the single tax rate entered by the user."
+            },
+            {
+              "key": "faq-tax-2",
+              "question": "Can credits make tax negative?",
+              "answer": "No. Tax after credits cannot fall below zero."
+            },
+            {
+              "key": "faq-tax-3",
+              "question": "Is this a tax return?",
+              "answer": "No. It is a simplified, non-jurisdiction-specific estimate."
+            }
+          ]
+        },
+        "errors": [
+          {
+            "key": "invalid-number",
+            "message": "{field} must be a finite number.",
+            "recoveryHint": "Enter a valid number and try again."
+          },
+          {
+            "key": "negative",
+            "message": "{field} must not be negative.",
+            "recoveryHint": "Enter zero or a positive value."
+          },
+          {
+            "key": "positive",
+            "message": "{field} must be greater than zero.",
+            "recoveryHint": "Enter a value greater than zero."
+          },
+          {
+            "key": "rate",
+            "message": "Tax rate must not exceed 100 percent",
+            "recoveryHint": "Enter a tax rate from 0% to 100%."
+          }
+        ],
+        "accessibility": {
+          "pageLabel": "Tax Calculator",
+          "formLabel": "Tax Calculator calculator form",
+          "resultAnnouncement": "Calculation result for Tax Calculator",
+          "chartLabel": "Chart showing ESTIMATED TAX AFTER CREDITS for Tax Calculator",
+          "controlLabels": [
+            {
+              "key": "amount",
+              "label": "Taxable income / amount"
+            },
+            {
+              "key": "rate",
+              "label": "Estimated tax rate (%)"
+            },
+            {
+              "key": "credits",
+              "label": "Tax credits"
+            }
+          ]
+        }
       },
       "locales": {
         "hi": {
@@ -30580,7 +31309,158 @@
             "key": "deduction",
             "label": "Eligible deductions entered"
           }
-        ]
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "ESTIMATED INCOME TAX",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Taxable income"
+            },
+            {
+              "key": "metric-2",
+              "label": "Standard allowance"
+            },
+            {
+              "key": "metric-3",
+              "label": "State taxable income"
+            },
+            {
+              "key": "metric-4",
+              "label": "State income tax"
+            },
+            {
+              "key": "metric-5",
+              "label": "After-tax income"
+            },
+            {
+              "key": "metric-6",
+              "label": "Effective tax rate"
+            },
+            {
+              "key": "metric-7",
+              "label": "Marginal rate"
+            }
+          ],
+          "breakdown": []
+        },
+        "explanations": {
+          "formula": "The selected 2026 profile supplies allowances and progressive bands. Taxable income = max(0, gross income − deductions − applicable allowance). Tax is calculated progressively by band; profile components and selected supported US state tax may be added. Effective rate = total estimated tax ÷ gross income × 100.",
+          "steps": [
+            "Select a supported 2026 jurisdiction profile and, for supported US profiles, optional state and filing status.",
+            "Enter annual gross income and eligible deductions.",
+            "The engine applies the selected profile's allowance and progressive bands; some profiles calculate separate components.",
+            "For supported US state selections, the state estimate is calculated using the selected filing-status table and added.",
+            "Review taxable income, tax breakdown, marginal rate, effective rate and source/date note."
+          ],
+          "assumptions": [
+            "Uses bundled tax data for selected supported 2026 profiles; it is not a universal global tax engine.",
+            "Only modeled allowances, brackets, components and optional supported US state tables are applied.",
+            "Canadian federal and most provincial basic personal amount/non-refundable credits are not fully modeled and may cause material overestimation.",
+            "US state tables require verification against the relevant official state revenue authority; local taxes and many state credits are not modeled."
+          ],
+          "notes": [
+            "Planning estimate only; review the displayed calculation note and verify inputs and applicable rules."
+          ],
+          "disclaimers": [
+            "This calculator provides an estimate based on entered values and assumptions. It is not financial, legal or tax advice."
+          ],
+          "limitations": [
+            "Uses bundled tax data for selected supported 2026 profiles; it is not a universal global tax engine.",
+            "Only modeled allowances, brackets, components and optional supported US state tables are applied.",
+            "Canadian federal and most provincial basic personal amount/non-refundable credits are not fully modeled and may cause material overestimation.",
+            "US state tables require verification against the relevant official state revenue authority; local taxes and many state credits are not modeled."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-income-tax-1",
+            "question": "Which tax rules are used?",
+            "answer": "The calculator uses the selected supported 2026 jurisdiction profile and bundled tax data; coverage varies by profile."
+          },
+          {
+            "key": "faq-income-tax-2",
+            "question": "Does it include every deduction and credit?",
+            "answer": "No. Many individual credits, reliefs, exemptions, local taxes and special surtaxes are not modeled."
+          },
+          {
+            "key": "faq-income-tax-3",
+            "question": "Is this an official assessment?",
+            "answer": "No. It is an educational estimate. Confirm current rules and personal circumstances with the relevant tax authority or a qualified professional."
+          }
+        ],
+        "seo": {
+          "title": "Income Tax Calculator | FinPulse Hub",
+          "metaDescription": "Estimate income tax using a supported 2026 jurisdiction profile, entered deductions and progressive brackets. Results are educational estimates, not official assessments.",
+          "h1": "Income Tax Calculator",
+          "introduction": "Estimate income tax using a supported 2026 jurisdiction profile, entered deductions and progressive brackets. Results are educational estimates, not official assessments.",
+          "faq": [
+            {
+              "key": "faq-income-tax-1",
+              "question": "Which tax rules are used?",
+              "answer": "The calculator uses the selected supported 2026 jurisdiction profile and bundled tax data; coverage varies by profile."
+            },
+            {
+              "key": "faq-income-tax-2",
+              "question": "Does it include every deduction and credit?",
+              "answer": "No. Many individual credits, reliefs, exemptions, local taxes and special surtaxes are not modeled."
+            },
+            {
+              "key": "faq-income-tax-3",
+              "question": "Is this an official assessment?",
+              "answer": "No. It is an educational estimate. Confirm current rules and personal circumstances with the relevant tax authority or a qualified professional."
+            }
+          ]
+        },
+        "errors": [
+          {
+            "key": "invalid-number",
+            "message": "{field} must be a finite number.",
+            "recoveryHint": "Enter a valid number and try again."
+          },
+          {
+            "key": "negative",
+            "message": "{field} must not be negative.",
+            "recoveryHint": "Enter zero or a positive value."
+          },
+          {
+            "key": "positive",
+            "message": "{field} must be greater than zero.",
+            "recoveryHint": "Enter a value greater than zero."
+          },
+          {
+            "key": "profile",
+            "message": "Choose a supported tax jurisdiction and year.",
+            "recoveryHint": "Select one of the supported tax jurisdiction and year profiles."
+          },
+          {
+            "key": "deduction",
+            "message": "Deductions cannot exceed gross income.",
+            "recoveryHint": "Enter deductions no greater than gross income."
+          },
+          {
+            "key": "state",
+            "message": "Choose a supported US state.",
+            "recoveryHint": "Select a state included in the supported state list."
+          }
+        ],
+        "accessibility": {
+          "pageLabel": "Income Tax Calculator",
+          "formLabel": "Income Tax Calculator calculator form",
+          "resultAnnouncement": "Calculation result for Income Tax Calculator",
+          "chartLabel": "Chart showing ESTIMATED INCOME TAX for Income Tax Calculator",
+          "controlLabels": [
+            {
+              "key": "income",
+              "label": "Annual gross income"
+            },
+            {
+              "key": "deduction",
+              "label": "Eligible deductions entered"
+            }
+          ]
+        }
       },
       "locales": {
         "hi": {
@@ -30637,7 +31517,167 @@
             "key": "mode",
             "label": "Subtotal mode"
           }
-        ]
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "ESTIMATED FINAL TOTAL",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Pre-discount amount"
+            },
+            {
+              "key": "metric-2",
+              "label": "Discount"
+            },
+            {
+              "key": "metric-3",
+              "label": "Taxable amount"
+            },
+            {
+              "key": "metric-4",
+              "label": "Sales tax"
+            },
+            {
+              "key": "metric-5",
+              "label": "Final total"
+            }
+          ],
+          "breakdown": [
+            {
+              "key": "breakdown-1",
+              "label": "Pre-discount base"
+            },
+            {
+              "key": "breakdown-2",
+              "label": "Discount"
+            },
+            {
+              "key": "breakdown-3",
+              "label": "Taxable amount"
+            },
+            {
+              "key": "breakdown-4",
+              "label": "Sales tax"
+            },
+            {
+              "key": "breakdown-5",
+              "label": "Final total"
+            }
+          ]
+        },
+        "explanations": {
+          "formula": "Tax-inclusive base = subtotal ÷ (1 + rate ÷ 100); tax-exclusive base = subtotal. Discount = base × discount percentage ÷ 100. Taxable amount = base − discount. Tax = taxable amount × rate ÷ 100. Final total = taxable amount + tax.",
+          "steps": [
+            "Enter subtotal, discount, tax rate and subtotal mode.",
+            "If tax-inclusive, remove included tax to derive the base amount.",
+            "Apply the discount to the base.",
+            "Calculate tax on the discounted taxable amount.",
+            "Add tax to the discounted amount for the final total."
+          ],
+          "assumptions": [
+            "Mode determines whether the entered subtotal includes tax.",
+            "Discount is applied before tax; tax-inclusive mode recalculates tax after discount.",
+            "Exemptions, local rules and product-specific tax treatment are excluded."
+          ],
+          "notes": [
+            "Planning estimate only; review the displayed calculation note and verify inputs and applicable rules."
+          ],
+          "disclaimers": [
+            "This calculator provides an estimate based on entered values and assumptions. It is not financial, legal or tax advice."
+          ],
+          "limitations": [
+            "Mode determines whether the entered subtotal includes tax.",
+            "Discount is applied before tax; tax-inclusive mode recalculates tax after discount.",
+            "Exemptions, local rules and product-specific tax treatment are excluded."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-sales-tax-1",
+            "question": "Is discount applied before tax?",
+            "answer": "Yes. The discount is applied to the base amount before sales tax."
+          },
+          {
+            "key": "faq-sales-tax-2",
+            "question": "What does tax-inclusive mode do?",
+            "answer": "It derives the pre-tax base from the gross amount, applies the discount and recalculates tax."
+          },
+          {
+            "key": "faq-sales-tax-3",
+            "question": "Are local exemptions included?",
+            "answer": "No. Local exemptions and jurisdiction rules are not modeled."
+          }
+        ],
+        "seo": {
+          "title": "Sales Tax Calculator | FinPulse Hub",
+          "metaDescription": "Calculate sales tax, discounts and an estimated checkout total with a tax-inclusive or tax-exclusive subtotal.",
+          "h1": "Sales Tax Calculator",
+          "introduction": "Calculate sales tax, discounts and an estimated checkout total with a tax-inclusive or tax-exclusive subtotal.",
+          "faq": [
+            {
+              "key": "faq-sales-tax-1",
+              "question": "Is discount applied before tax?",
+              "answer": "Yes. The discount is applied to the base amount before sales tax."
+            },
+            {
+              "key": "faq-sales-tax-2",
+              "question": "What does tax-inclusive mode do?",
+              "answer": "It derives the pre-tax base from the gross amount, applies the discount and recalculates tax."
+            },
+            {
+              "key": "faq-sales-tax-3",
+              "question": "Are local exemptions included?",
+              "answer": "No. Local exemptions and jurisdiction rules are not modeled."
+            }
+          ]
+        },
+        "errors": [
+          {
+            "key": "invalid-number",
+            "message": "{field} must be a finite number.",
+            "recoveryHint": "Enter a valid number and try again."
+          },
+          {
+            "key": "negative",
+            "message": "{field} must not be negative.",
+            "recoveryHint": "Enter zero or a positive value."
+          },
+          {
+            "key": "positive",
+            "message": "{field} must be greater than zero.",
+            "recoveryHint": "Enter a value greater than zero."
+          },
+          {
+            "key": "percent",
+            "message": "Discount and tax rates must not exceed 100 percent",
+            "recoveryHint": "Enter discount and sales-tax rates from 0% to 100%."
+          }
+        ],
+        "accessibility": {
+          "pageLabel": "Sales Tax Calculator",
+          "formLabel": "Sales Tax Calculator calculator form",
+          "resultAnnouncement": "Calculation result for Sales Tax Calculator",
+          "chartLabel": "Chart showing ESTIMATED FINAL TOTAL for Sales Tax Calculator",
+          "controlLabels": [
+            {
+              "key": "subtotal",
+              "label": "Subtotal / tax-inclusive total"
+            },
+            {
+              "key": "discount",
+              "label": "Discount (%)"
+            },
+            {
+              "key": "rate",
+              "label": "Sales tax rate (%)"
+            },
+            {
+              "key": "mode",
+              "label": "Subtotal mode"
+            }
+          ]
+        }
       },
       "locales": {
         "hi": {
@@ -30690,7 +31730,149 @@
             "key": "mode",
             "label": "Calculation"
           }
-        ]
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "TOTAL INCLUDING VAT / GST",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Net amount"
+            },
+            {
+              "key": "metric-2",
+              "label": "VAT / GST amount"
+            },
+            {
+              "key": "metric-3",
+              "label": "Gross total"
+            }
+          ],
+          "breakdown": [
+            {
+              "key": "breakdown-1",
+              "label": "Net / extracted base"
+            },
+            {
+              "key": "breakdown-2",
+              "label": "VAT / GST"
+            },
+            {
+              "key": "breakdown-3",
+              "label": "Gross total"
+            },
+            {
+              "key": "breakdown-4",
+              "label": "Mode"
+            }
+          ]
+        },
+        "explanations": {
+          "formula": "Add mode: tax = net amount × rate ÷ 100; gross = net + tax. Remove mode: net = gross ÷ (1 + rate ÷ 100); included tax = gross − net.",
+          "steps": [
+            "Enter amount and VAT/GST rate.",
+            "Choose add tax to a net amount or remove included tax from a gross amount.",
+            "In add mode, calculate tax on the net amount and add it.",
+            "In remove mode, divide gross by one plus the rate and calculate tax as the difference.",
+            "Review net amount, tax and gross total."
+          ],
+          "assumptions": [
+            "Uses only the entered rate and mode.",
+            "Registration, exemptions, place-of-supply rules, rounding and jurisdiction-specific treatment are not modeled."
+          ],
+          "notes": [
+            "Planning estimate only; review the displayed calculation note and verify inputs and applicable rules."
+          ],
+          "disclaimers": [
+            "This calculator provides an estimate based on entered values and assumptions. It is not financial, legal or tax advice."
+          ],
+          "limitations": [
+            "Uses only the entered rate and mode.",
+            "Registration, exemptions, place-of-supply rules, rounding and jurisdiction-specific treatment are not modeled."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-vat-gst-1",
+            "question": "Can I add or remove VAT/GST?",
+            "answer": "Yes. Choose add for a net amount or remove to extract tax included in a gross amount."
+          },
+          {
+            "key": "faq-vat-gst-2",
+            "question": "How is included tax extracted?",
+            "answer": "Divide the gross amount by one plus the entered rate; the difference is included tax."
+          },
+          {
+            "key": "faq-vat-gst-3",
+            "question": "Does this determine the legal rate?",
+            "answer": "No. Enter the applicable rate yourself; rules vary by jurisdiction."
+          }
+        ],
+        "seo": {
+          "title": "VAT / GST Calculator | FinPulse Hub",
+          "metaDescription": "Add VAT/GST to a net amount or extract included tax from a gross amount using an entered rate.",
+          "h1": "VAT / GST Calculator",
+          "introduction": "Add VAT/GST to a net amount or extract included tax from a gross amount using an entered rate.",
+          "faq": [
+            {
+              "key": "faq-vat-gst-1",
+              "question": "Can I add or remove VAT/GST?",
+              "answer": "Yes. Choose add for a net amount or remove to extract tax included in a gross amount."
+            },
+            {
+              "key": "faq-vat-gst-2",
+              "question": "How is included tax extracted?",
+              "answer": "Divide the gross amount by one plus the entered rate; the difference is included tax."
+            },
+            {
+              "key": "faq-vat-gst-3",
+              "question": "Does this determine the legal rate?",
+              "answer": "No. Enter the applicable rate yourself; rules vary by jurisdiction."
+            }
+          ]
+        },
+        "errors": [
+          {
+            "key": "invalid-number",
+            "message": "{field} must be a finite number.",
+            "recoveryHint": "Enter a valid number and try again."
+          },
+          {
+            "key": "negative",
+            "message": "{field} must not be negative.",
+            "recoveryHint": "Enter zero or a positive value."
+          },
+          {
+            "key": "positive",
+            "message": "{field} must be greater than zero.",
+            "recoveryHint": "Enter a value greater than zero."
+          },
+          {
+            "key": "rate",
+            "message": "VAT/GST rate must not exceed 100 percent",
+            "recoveryHint": "Enter a VAT/GST rate from 0% to 100%."
+          }
+        ],
+        "accessibility": {
+          "pageLabel": "VAT / GST Calculator",
+          "formLabel": "VAT / GST Calculator calculator form",
+          "resultAnnouncement": "Calculation result for VAT / GST Calculator",
+          "chartLabel": "Chart showing TOTAL INCLUDING VAT / GST for VAT / GST Calculator",
+          "controlLabels": [
+            {
+              "key": "amount",
+              "label": "Amount"
+            },
+            {
+              "key": "rate",
+              "label": "VAT / GST rate (%)"
+            },
+            {
+              "key": "mode",
+              "label": "Calculation"
+            }
+          ]
+        }
       },
       "locales": {
         "hi": {
@@ -30743,7 +31925,156 @@
             "key": "credits",
             "label": "Additional credits or prepayments"
           }
-        ]
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Tax liability"
+            },
+            {
+              "key": "metric-2",
+              "label": "Withholding"
+            },
+            {
+              "key": "metric-3",
+              "label": "Credits / prepayments"
+            },
+            {
+              "key": "metric-4",
+              "label": "Total paid"
+            }
+          ],
+          "breakdown": [
+            {
+              "key": "breakdown-1",
+              "label": "Estimated tax liability"
+            },
+            {
+              "key": "breakdown-2",
+              "label": "Withholding"
+            },
+            {
+              "key": "breakdown-3",
+              "label": "Credits / prepayments"
+            },
+            {
+              "key": "breakdown-4",
+              "label": "Total paid"
+            },
+            {
+              "key": "breakdown-5",
+              "label": "Estimated refund"
+            },
+            {
+              "key": "breakdown-6",
+              "label": "Estimated amount due"
+            }
+          ]
+        },
+        "explanations": {
+          "formula": "Total paid = withholding + credits/prepayments. Difference = total paid − estimated liability. Refund = max(0, difference); amount due = max(0, −difference).",
+          "steps": [
+            "Enter estimated total tax liability.",
+            "Enter tax withheld or already paid.",
+            "Enter additional credits or prepayments.",
+            "Add withholding and credits to get total paid.",
+            "Compare total paid with liability; show a refund estimate or amount due."
+          ],
+          "assumptions": [
+            "Uses only the liability, withholding and credits entered.",
+            "Does not prepare or file a return or verify credit eligibility."
+          ],
+          "notes": [
+            "Planning estimate only; review the displayed calculation note and verify inputs and applicable rules."
+          ],
+          "disclaimers": [
+            "This calculator provides an estimate based on entered values and assumptions. It is not financial, legal or tax advice."
+          ],
+          "limitations": [
+            "Uses only the liability, withholding and credits entered.",
+            "Does not prepare or file a return or verify credit eligibility."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-tax-refund-1",
+            "question": "How is a refund estimated?",
+            "answer": "It is the amount by which entered withholding and credits exceed estimated liability, if any."
+          },
+          {
+            "key": "faq-tax-refund-2",
+            "question": "What if payments are lower than liability?",
+            "answer": "The difference is shown as an estimated amount due."
+          },
+          {
+            "key": "faq-tax-refund-3",
+            "question": "Is a refund guaranteed?",
+            "answer": "No. This is a planning estimate, not a filed return or guarantee."
+          }
+        ],
+        "seo": {
+          "title": "Tax Refund Estimator | FinPulse Hub",
+          "metaDescription": "Compare estimated tax liability with withholding and credits to estimate a possible refund or amount due.",
+          "h1": "Tax Refund Estimator",
+          "introduction": "Compare estimated tax liability with withholding and credits to estimate a possible refund or amount due.",
+          "faq": [
+            {
+              "key": "faq-tax-refund-1",
+              "question": "How is a refund estimated?",
+              "answer": "It is the amount by which entered withholding and credits exceed estimated liability, if any."
+            },
+            {
+              "key": "faq-tax-refund-2",
+              "question": "What if payments are lower than liability?",
+              "answer": "The difference is shown as an estimated amount due."
+            },
+            {
+              "key": "faq-tax-refund-3",
+              "question": "Is a refund guaranteed?",
+              "answer": "No. This is a planning estimate, not a filed return or guarantee."
+            }
+          ]
+        },
+        "errors": [
+          {
+            "key": "invalid-number",
+            "message": "{field} must be a finite number.",
+            "recoveryHint": "Enter a valid number and try again."
+          },
+          {
+            "key": "negative",
+            "message": "{field} must not be negative.",
+            "recoveryHint": "Enter zero or a positive value."
+          },
+          {
+            "key": "positive",
+            "message": "{field} must be greater than zero.",
+            "recoveryHint": "Enter a value greater than zero."
+          }
+        ],
+        "accessibility": {
+          "pageLabel": "Tax Refund Estimator",
+          "formLabel": "Tax Refund Estimator calculator form",
+          "resultAnnouncement": "Calculation result for Tax Refund Estimator",
+          "chartLabel": "Chart showing calculation results for Tax Refund Estimator",
+          "controlLabels": [
+            {
+              "key": "liability",
+              "label": "Estimated total tax liability"
+            },
+            {
+              "key": "withholding",
+              "label": "Tax already withheld / paid"
+            },
+            {
+              "key": "credits",
+              "label": "Additional credits or prepayments"
+            }
+          ]
+        }
       },
       "locales": {
         "hi": {
@@ -30808,7 +32139,196 @@
             "key": "periods",
             "label": "Pay periods per year"
           }
-        ]
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "ESTIMATED TAKE-HOME PER PAYCHECK",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Net annual income"
+            },
+            {
+              "key": "metric-2",
+              "label": "Net monthly income"
+            },
+            {
+              "key": "metric-3",
+              "label": "Progressive income tax (federal + state where selected)"
+            },
+            {
+              "key": "metric-4",
+              "label": "Retirement contributions"
+            },
+            {
+              "key": "metric-5",
+              "label": "Insurance and other deductions"
+            }
+          ],
+          "breakdown": [
+            {
+              "key": "breakdown-1",
+              "label": "Gross annual salary"
+            },
+            {
+              "key": "breakdown-2",
+              "label": "Income tax"
+            },
+            {
+              "key": "breakdown-3",
+              "label": "Employee payroll contributions"
+            },
+            {
+              "key": "breakdown-4",
+              "label": "Retirement contributions"
+            },
+            {
+              "key": "breakdown-5",
+              "label": "Insurance"
+            },
+            {
+              "key": "breakdown-6",
+              "label": "Other deductions"
+            },
+            {
+              "key": "breakdown-7",
+              "label": "Estimated net annual pay"
+            }
+          ]
+        },
+        "explanations": {
+          "formula": "Annual take-home = gross salary − estimated income tax − modeled employee payroll contributions − retirement contribution − annualized insurance and other deductions. Monthly take-home = annual take-home ÷ 12. Per-paycheck estimate = annual take-home ÷ selected pay periods.",
+          "steps": [
+            "Select a supported 2026 tax profile and, where applicable, supported US state and filing status.",
+            "Enter gross annual salary and eligible deductions.",
+            "Enter retirement percentage and monthly insurance/benefits and other deductions.",
+            "The tax engine estimates income tax and supported employee payroll contributions.",
+            "Subtract tax, payroll contributions and annualized deductions from gross salary.",
+            "Divide annual take-home by 12 and by selected pay periods."
+          ],
+          "assumptions": [
+            "Uses selected 2026 profile and modeled payroll contribution rules; coverage varies by jurisdiction.",
+            "Retirement percentage and monthly deductions are user-entered assumptions.",
+            "Prior-employer year-to-date amounts, special payroll exemptions, pay-period rounding and all local taxes are not modeled.",
+            "Canadian tax credits and some US state rules may be incomplete; review jurisdiction-specific notes."
+          ],
+          "notes": [
+            "Planning estimate only; review the displayed calculation note and verify inputs and applicable rules."
+          ],
+          "disclaimers": [
+            "This calculator provides an estimate based on entered values and assumptions. It is not financial, legal or tax advice."
+          ],
+          "limitations": [
+            "Uses selected 2026 profile and modeled payroll contribution rules; coverage varies by jurisdiction.",
+            "Retirement percentage and monthly deductions are user-entered assumptions.",
+            "Prior-employer year-to-date amounts, special payroll exemptions, pay-period rounding and all local taxes are not modeled.",
+            "Canadian tax credits and some US state rules may be incomplete; review jurisdiction-specific notes."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-salary-1",
+            "question": "What is included in take-home pay?",
+            "answer": "It subtracts estimated income tax, modeled employee payroll contributions, entered retirement percentage and annualized deductions from gross salary."
+          },
+          {
+            "key": "faq-salary-2",
+            "question": "Are payroll contributions the same everywhere?",
+            "answer": "No. Only selected supported contribution profiles are modeled."
+          },
+          {
+            "key": "faq-salary-3",
+            "question": "Is the paycheck amount exact?",
+            "answer": "No. It is an annualized estimate and may differ because of rounding, year-to-date earnings, exemptions and local rules."
+          }
+        ],
+        "seo": {
+          "title": "Salary Take-Home Calculator | FinPulse Hub",
+          "metaDescription": "Estimate annual, monthly and per-paycheck salary take-home using a supported 2026 tax profile and entered deductions.",
+          "h1": "Salary Take-Home Calculator",
+          "introduction": "Estimate annual, monthly and per-paycheck salary take-home using a supported 2026 tax profile and entered deductions.",
+          "faq": [
+            {
+              "key": "faq-salary-1",
+              "question": "What is included in take-home pay?",
+              "answer": "It subtracts estimated income tax, modeled employee payroll contributions, entered retirement percentage and annualized deductions from gross salary."
+            },
+            {
+              "key": "faq-salary-2",
+              "question": "Are payroll contributions the same everywhere?",
+              "answer": "No. Only selected supported contribution profiles are modeled."
+            },
+            {
+              "key": "faq-salary-3",
+              "question": "Is the paycheck amount exact?",
+              "answer": "No. It is an annualized estimate and may differ because of rounding, year-to-date earnings, exemptions and local rules."
+            }
+          ]
+        },
+        "errors": [
+          {
+            "key": "invalid-number",
+            "message": "{field} must be a finite number.",
+            "recoveryHint": "Enter a valid number and try again."
+          },
+          {
+            "key": "negative",
+            "message": "{field} must not be negative.",
+            "recoveryHint": "Enter zero or a positive value."
+          },
+          {
+            "key": "positive",
+            "message": "{field} must be greater than zero.",
+            "recoveryHint": "Enter a value greater than zero."
+          },
+          {
+            "key": "profile",
+            "message": "Choose a supported tax jurisdiction and year.",
+            "recoveryHint": "Select a supported tax profile before calculating."
+          },
+          {
+            "key": "gross",
+            "message": "Gross income must be a valid non-negative amount.",
+            "recoveryHint": "Enter a valid gross annual salary of zero or more."
+          },
+          {
+            "key": "deduction",
+            "message": "Deductions cannot exceed gross income.",
+            "recoveryHint": "Reduce deductions so they do not exceed gross salary."
+          }
+        ],
+        "accessibility": {
+          "pageLabel": "Salary Take-Home Calculator",
+          "formLabel": "Salary Take-Home Calculator calculator form",
+          "resultAnnouncement": "Calculation result for Salary Take-Home Calculator",
+          "chartLabel": "Chart showing ESTIMATED TAKE-HOME PER PAYCHECK for Salary Take-Home Calculator",
+          "controlLabels": [
+            {
+              "key": "gross",
+              "label": "Gross annual salary"
+            },
+            {
+              "key": "deduction",
+              "label": "Eligible deductions entered"
+            },
+            {
+              "key": "retirement",
+              "label": "Retirement contribution (%)"
+            },
+            {
+              "key": "insurance",
+              "label": "Monthly insurance / benefits"
+            },
+            {
+              "key": "other",
+              "label": "Other monthly deductions"
+            },
+            {
+              "key": "periods",
+              "label": "Pay periods per year"
+            }
+          ]
+        }
       },
       "locales": {
         "hi": {
@@ -30885,7 +32405,205 @@
             "key": "other",
             "label": "Other deductions"
           }
-        ]
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "ESTIMATED TAKE-HOME PAY",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Gross pay"
+            },
+            {
+              "key": "metric-2",
+              "label": "Regular earnings"
+            },
+            {
+              "key": "metric-3",
+              "label": "Overtime earnings"
+            },
+            {
+              "key": "metric-4",
+              "label": "Estimated withholding"
+            },
+            {
+              "key": "metric-5",
+              "label": "Retirement deduction"
+            },
+            {
+              "key": "metric-6",
+              "label": "Benefits and other deductions"
+            }
+          ],
+          "breakdown": [
+            {
+              "key": "breakdown-1",
+              "label": "Regular earnings"
+            },
+            {
+              "key": "breakdown-2",
+              "label": "Overtime earnings"
+            },
+            {
+              "key": "breakdown-3",
+              "label": "Bonus / commission"
+            },
+            {
+              "key": "breakdown-4",
+              "label": "Gross pay"
+            },
+            {
+              "key": "breakdown-5",
+              "label": "Tax withholding"
+            },
+            {
+              "key": "breakdown-6",
+              "label": "Retirement"
+            },
+            {
+              "key": "breakdown-7",
+              "label": "Benefits"
+            },
+            {
+              "key": "breakdown-8",
+              "label": "Other deductions"
+            },
+            {
+              "key": "breakdown-9",
+              "label": "Net pay"
+            }
+          ]
+        },
+        "explanations": {
+          "formula": "Regular pay = hourly rate × regular hours. Overtime pay = hourly rate × overtime hours × multiplier. Gross = regular pay + overtime pay + bonus. Net = gross − withholding − retirement deduction − benefits − other deductions.",
+          "steps": [
+            "Enter hourly rate, regular hours and overtime hours.",
+            "Enter overtime multiplier and bonus/commission.",
+            "Enter withholding and retirement percentages and fixed deductions.",
+            "Calculate regular and overtime earnings and add bonus to get gross pay.",
+            "Subtract percentage-based and fixed deductions to estimate net pay."
+          ],
+          "assumptions": [
+            "Uses user-entered hours, multiplier, bonus and deductions for one pay period.",
+            "Does not determine legal overtime eligibility or jurisdiction-specific withholding."
+          ],
+          "notes": [
+            "Planning estimate only; review the displayed calculation note and verify inputs and applicable rules."
+          ],
+          "disclaimers": [
+            "This calculator provides an estimate based on entered values and assumptions. It is not financial, legal or tax advice."
+          ],
+          "limitations": [
+            "Uses user-entered hours, multiplier, bonus and deductions for one pay period.",
+            "Does not determine legal overtime eligibility or jurisdiction-specific withholding."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-paycheck-1",
+            "question": "How is overtime pay calculated?",
+            "answer": "Hourly rate is multiplied by overtime hours and the entered multiplier."
+          },
+          {
+            "key": "faq-paycheck-2",
+            "question": "Are taxes calculated automatically?",
+            "answer": "No. You enter an estimated withholding percentage."
+          },
+          {
+            "key": "faq-paycheck-3",
+            "question": "Is this an exact payslip amount?",
+            "answer": "No. It is an estimate; actual withholding, benefits and employment rules vary."
+          }
+        ],
+        "seo": {
+          "title": "Paycheck Calculator | FinPulse Hub",
+          "metaDescription": "Estimate one paycheck from regular hours, overtime, bonus, withholding and entered deductions.",
+          "h1": "Paycheck Calculator",
+          "introduction": "Estimate one paycheck from regular hours, overtime, bonus, withholding and entered deductions.",
+          "faq": [
+            {
+              "key": "faq-paycheck-1",
+              "question": "How is overtime pay calculated?",
+              "answer": "Hourly rate is multiplied by overtime hours and the entered multiplier."
+            },
+            {
+              "key": "faq-paycheck-2",
+              "question": "Are taxes calculated automatically?",
+              "answer": "No. You enter an estimated withholding percentage."
+            },
+            {
+              "key": "faq-paycheck-3",
+              "question": "Is this an exact payslip amount?",
+              "answer": "No. It is an estimate; actual withholding, benefits and employment rules vary."
+            }
+          ]
+        },
+        "errors": [
+          {
+            "key": "invalid-number",
+            "message": "{field} must be a finite number.",
+            "recoveryHint": "Enter a valid number and try again."
+          },
+          {
+            "key": "negative",
+            "message": "{field} must not be negative.",
+            "recoveryHint": "Enter zero or a positive value."
+          },
+          {
+            "key": "positive",
+            "message": "{field} must be greater than zero.",
+            "recoveryHint": "Enter a value greater than zero."
+          },
+          {
+            "key": "deductions",
+            "message": "Rates must not exceed 100 percent and fixed deductions must not exceed gross pay",
+            "recoveryHint": "Keep percentage deductions at or below 100% and fixed deductions no greater than gross pay."
+          }
+        ],
+        "accessibility": {
+          "pageLabel": "Paycheck Calculator",
+          "formLabel": "Paycheck Calculator calculator form",
+          "resultAnnouncement": "Calculation result for Paycheck Calculator",
+          "chartLabel": "Chart showing ESTIMATED TAKE-HOME PAY for Paycheck Calculator",
+          "controlLabels": [
+            {
+              "key": "hourly",
+              "label": "Hourly pay rate"
+            },
+            {
+              "key": "regular",
+              "label": "Regular hours this pay period"
+            },
+            {
+              "key": "overtime",
+              "label": "Overtime hours this pay period"
+            },
+            {
+              "key": "multiplier",
+              "label": "Overtime pay multiplier"
+            },
+            {
+              "key": "bonus",
+              "label": "Bonus / commission this period"
+            },
+            {
+              "key": "tax",
+              "label": "Estimated withholding (%)"
+            },
+            {
+              "key": "retirement",
+              "label": "Retirement deduction (%)"
+            },
+            {
+              "key": "benefits",
+              "label": "Benefits / insurance deduction"
+            },
+            {
+              "key": "other",
+              "label": "Other deductions"
+            }
+          ]
+        }
       },
       "locales": {
         "hi": {
@@ -30946,7 +32664,177 @@
             "key": "other",
             "label": "Other monthly payroll costs"
           }
-        ]
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "ESTIMATED TOTAL MONTHLY PAYROLL COST",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Annual employer cost"
+            },
+            {
+              "key": "metric-2",
+              "label": "Gross monthly wages"
+            },
+            {
+              "key": "metric-3",
+              "label": "Employer taxes / contributions"
+            },
+            {
+              "key": "metric-4",
+              "label": "Benefits"
+            },
+            {
+              "key": "metric-5",
+              "label": "Other monthly costs"
+            },
+            {
+              "key": "metric-6",
+              "label": "Employees"
+            }
+          ],
+          "breakdown": [
+            {
+              "key": "breakdown-1",
+              "label": "Gross monthly wages"
+            },
+            {
+              "key": "breakdown-2",
+              "label": "Employer taxes / contributions"
+            },
+            {
+              "key": "breakdown-3",
+              "label": "Benefits"
+            },
+            {
+              "key": "breakdown-4",
+              "label": "Other monthly costs"
+            },
+            {
+              "key": "breakdown-5",
+              "label": "Total monthly payroll"
+            },
+            {
+              "key": "breakdown-6",
+              "label": "Total annual payroll"
+            }
+          ]
+        },
+        "explanations": {
+          "formula": "Gross monthly wages = employees × average gross monthly pay. Employer taxes = gross wages × employer tax rate ÷ 100. Benefits = employees × benefits per employee. Monthly cost = gross wages + employer taxes + benefits + other monthly costs. Annual cost = monthly cost × 12.",
+          "steps": [
+            "Enter a positive whole-number employee count.",
+            "Enter average gross monthly pay per employee.",
+            "Enter employer tax/contribution rate and monthly benefits per employee.",
+            "Enter other monthly payroll costs.",
+            "Calculate gross wages, employer contributions and benefits, then annualize the monthly total."
+          ],
+          "assumptions": [
+            "Uses average monthly pay and employer rate entered by the user.",
+            "Statutory employer rules, jurisdiction contributions, employee-level pay differences and one-off costs are not assumed."
+          ],
+          "notes": [
+            "Planning estimate only; review the displayed calculation note and verify inputs and applicable rules."
+          ],
+          "disclaimers": [
+            "This calculator provides an estimate based on entered values and assumptions. It is not financial, legal or tax advice."
+          ],
+          "limitations": [
+            "Uses average monthly pay and employer rate entered by the user.",
+            "Statutory employer rules, jurisdiction contributions, employee-level pay differences and one-off costs are not assumed."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-payroll-1",
+            "question": "What is included in employer payroll cost?",
+            "answer": "Gross wages, entered employer tax percentage, benefits per employee and other monthly costs."
+          },
+          {
+            "key": "faq-payroll-2",
+            "question": "Does it calculate statutory employer taxes?",
+            "answer": "No. The employer rate is entered by the user; statutory and local rules are not assumed."
+          },
+          {
+            "key": "faq-payroll-3",
+            "question": "Why must employee count be whole?",
+            "answer": "It represents a count of employees and therefore must be a positive integer."
+          }
+        ],
+        "seo": {
+          "title": "Payroll Calculator | FinPulse Hub",
+          "metaDescription": "Estimate monthly and annual employer payroll costs from employee count, average pay, employer contribution rate and benefits.",
+          "h1": "Payroll Calculator",
+          "introduction": "Estimate monthly and annual employer payroll costs from employee count, average pay, employer contribution rate and benefits.",
+          "faq": [
+            {
+              "key": "faq-payroll-1",
+              "question": "What is included in employer payroll cost?",
+              "answer": "Gross wages, entered employer tax percentage, benefits per employee and other monthly costs."
+            },
+            {
+              "key": "faq-payroll-2",
+              "question": "Does it calculate statutory employer taxes?",
+              "answer": "No. The employer rate is entered by the user; statutory and local rules are not assumed."
+            },
+            {
+              "key": "faq-payroll-3",
+              "question": "Why must employee count be whole?",
+              "answer": "It represents a count of employees and therefore must be a positive integer."
+            }
+          ]
+        },
+        "errors": [
+          {
+            "key": "invalid-number",
+            "message": "{field} must be a finite number.",
+            "recoveryHint": "Enter a valid number and try again."
+          },
+          {
+            "key": "negative",
+            "message": "{field} must not be negative.",
+            "recoveryHint": "Enter zero or a positive value."
+          },
+          {
+            "key": "positive",
+            "message": "{field} must be greater than zero.",
+            "recoveryHint": "Enter a value greater than zero."
+          },
+          {
+            "key": "employee-count",
+            "message": "Employee count must be a whole number and employer tax rate cannot exceed 100 percent",
+            "recoveryHint": "Enter a positive whole-number employee count and employer rate from 0% to 100%."
+          }
+        ],
+        "accessibility": {
+          "pageLabel": "Payroll Calculator",
+          "formLabel": "Payroll Calculator calculator form",
+          "resultAnnouncement": "Calculation result for Payroll Calculator",
+          "chartLabel": "Chart showing ESTIMATED TOTAL MONTHLY PAYROLL COST for Payroll Calculator",
+          "controlLabels": [
+            {
+              "key": "employees",
+              "label": "Number of employees"
+            },
+            {
+              "key": "salary",
+              "label": "Average gross monthly pay per employee"
+            },
+            {
+              "key": "tax",
+              "label": "Employer payroll tax / contribution (%)"
+            },
+            {
+              "key": "benefits",
+              "label": "Monthly benefits per employee"
+            },
+            {
+              "key": "other",
+              "label": "Other monthly payroll costs"
+            }
+          ]
+        }
       },
       "locales": {
         "hi": {
@@ -31003,7 +32891,156 @@
             "key": "multiplier",
             "label": "Overtime pay multiplier"
           }
-        ]
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "TOTAL ESTIMATED GROSS PAY",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Regular earnings"
+            },
+            {
+              "key": "metric-2",
+              "label": "Overtime earnings"
+            },
+            {
+              "key": "metric-3",
+              "label": "Total hours"
+            },
+            {
+              "key": "metric-4",
+              "label": "Blended hourly rate"
+            }
+          ],
+          "breakdown": [
+            {
+              "key": "breakdown-1",
+              "label": "Regular earnings"
+            },
+            {
+              "key": "breakdown-2",
+              "label": "Overtime earnings"
+            },
+            {
+              "key": "breakdown-3",
+              "label": "Total gross pay"
+            },
+            {
+              "key": "breakdown-4",
+              "label": "Total hours"
+            },
+            {
+              "key": "breakdown-5",
+              "label": "Blended hourly rate"
+            }
+          ]
+        },
+        "explanations": {
+          "formula": "Regular earnings = hourly rate × regular hours. Overtime earnings = hourly rate × overtime hours × multiplier. Gross = regular + overtime. Blended rate = gross ÷ total hours when total hours are positive.",
+          "steps": [
+            "Enter hourly rate, regular hours and overtime hours.",
+            "Enter the overtime multiplier.",
+            "Multiply rate by regular hours for regular earnings.",
+            "Multiply rate by overtime hours and multiplier for overtime earnings.",
+            "Add earnings and divide by total hours for blended rate."
+          ],
+          "assumptions": [
+            "Uses the user-entered multiplier and hour categories.",
+            "Does not determine legal overtime eligibility or the legally required multiplier."
+          ],
+          "notes": [
+            "Planning estimate only; review the displayed calculation note and verify inputs and applicable rules."
+          ],
+          "disclaimers": [
+            "This calculator provides an estimate based on entered values and assumptions. It is not financial, legal or tax advice."
+          ],
+          "limitations": [
+            "Uses the user-entered multiplier and hour categories.",
+            "Does not determine legal overtime eligibility or the legally required multiplier."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-overtime-1",
+            "question": "How is overtime calculated?",
+            "answer": "Overtime hours are multiplied by hourly rate and the multiplier you enter."
+          },
+          {
+            "key": "faq-overtime-2",
+            "question": "Is 1.5× always required by law?",
+            "answer": "No. Rules depend on location, job classification and employment law."
+          },
+          {
+            "key": "faq-overtime-3",
+            "question": "Does this include tax?",
+            "answer": "No. It estimates gross earnings before tax and deductions."
+          }
+        ],
+        "seo": {
+          "title": "Overtime Pay Calculator | FinPulse Hub",
+          "metaDescription": "Estimate regular and overtime gross earnings using hourly rate, hours and a chosen overtime multiplier.",
+          "h1": "Overtime Pay Calculator",
+          "introduction": "Estimate regular and overtime gross earnings using hourly rate, hours and a chosen overtime multiplier.",
+          "faq": [
+            {
+              "key": "faq-overtime-1",
+              "question": "How is overtime calculated?",
+              "answer": "Overtime hours are multiplied by hourly rate and the multiplier you enter."
+            },
+            {
+              "key": "faq-overtime-2",
+              "question": "Is 1.5× always required by law?",
+              "answer": "No. Rules depend on location, job classification and employment law."
+            },
+            {
+              "key": "faq-overtime-3",
+              "question": "Does this include tax?",
+              "answer": "No. It estimates gross earnings before tax and deductions."
+            }
+          ]
+        },
+        "errors": [
+          {
+            "key": "invalid-number",
+            "message": "{field} must be a finite number.",
+            "recoveryHint": "Enter a valid number and try again."
+          },
+          {
+            "key": "negative",
+            "message": "{field} must not be negative.",
+            "recoveryHint": "Enter zero or a positive value."
+          },
+          {
+            "key": "positive",
+            "message": "{field} must be greater than zero.",
+            "recoveryHint": "Enter a value greater than zero."
+          }
+        ],
+        "accessibility": {
+          "pageLabel": "Overtime Pay Calculator",
+          "formLabel": "Overtime Pay Calculator calculator form",
+          "resultAnnouncement": "Calculation result for Overtime Pay Calculator",
+          "chartLabel": "Chart showing TOTAL ESTIMATED GROSS PAY for Overtime Pay Calculator",
+          "controlLabels": [
+            {
+              "key": "rate",
+              "label": "Hourly pay rate"
+            },
+            {
+              "key": "regular",
+              "label": "Regular hours"
+            },
+            {
+              "key": "overtime",
+              "label": "Overtime hours"
+            },
+            {
+              "key": "multiplier",
+              "label": "Overtime pay multiplier"
+            }
+          ]
+        }
       },
       "locales": {
         "hi": {
@@ -31064,7 +33101,183 @@
             "key": "shipping",
             "label": "Shipping cost"
           }
-        ]
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "ESTIMATED FINAL PRICE",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Original price"
+            },
+            {
+              "key": "metric-2",
+              "label": "First discount"
+            },
+            {
+              "key": "metric-3",
+              "label": "Coupon discount"
+            },
+            {
+              "key": "metric-4",
+              "label": "Total savings"
+            },
+            {
+              "key": "metric-5",
+              "label": "Tax"
+            },
+            {
+              "key": "metric-6",
+              "label": "Shipping"
+            }
+          ],
+          "breakdown": [
+            {
+              "key": "breakdown-1",
+              "label": "Original price"
+            },
+            {
+              "key": "breakdown-2",
+              "label": "First discount"
+            },
+            {
+              "key": "breakdown-3",
+              "label": "Coupon discount"
+            },
+            {
+              "key": "breakdown-4",
+              "label": "Discounted subtotal"
+            },
+            {
+              "key": "breakdown-5",
+              "label": "Tax"
+            },
+            {
+              "key": "breakdown-6",
+              "label": "Shipping"
+            },
+            {
+              "key": "breakdown-7",
+              "label": "Final price"
+            }
+          ]
+        },
+        "explanations": {
+          "formula": "First discount = price × first rate ÷ 100. Coupon = price after first discount × coupon rate ÷ 100. Subtotal = price after both discounts. Tax = discounted subtotal × tax rate ÷ 100. Total = subtotal + tax + shipping.",
+          "steps": [
+            "Enter original price, first discount, coupon, tax and shipping.",
+            "Apply the first discount to original price.",
+            "Apply coupon to the remaining price.",
+            "Calculate tax on the discounted subtotal.",
+            "Add shipping to subtotal and tax for the final total."
+          ],
+          "assumptions": [
+            "Coupon is applied after the first discount.",
+            "Tax is calculated on the discounted subtotal; shipping is added afterward and is not in the tax base.",
+            "Store-specific coupon, tax and shipping rules may differ."
+          ],
+          "notes": [
+            "Planning estimate only; review the displayed calculation note and verify inputs and applicable rules."
+          ],
+          "disclaimers": [
+            "This calculator provides an estimate based on entered values and assumptions. It is not financial, legal or tax advice."
+          ],
+          "limitations": [
+            "Coupon is applied after the first discount.",
+            "Tax is calculated on the discounted subtotal; shipping is added afterward and is not in the tax base.",
+            "Store-specific coupon, tax and shipping rules may differ."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-discount-1",
+            "question": "Is coupon applied after the first discount?",
+            "answer": "Yes. The coupon rate applies to the price remaining after the first discount."
+          },
+          {
+            "key": "faq-discount-2",
+            "question": "Is tax calculated after discounts?",
+            "answer": "Yes. Tax is calculated on the subtotal after both discounts."
+          },
+          {
+            "key": "faq-discount-3",
+            "question": "Is shipping taxed?",
+            "answer": "No. Shipping is added after tax in this calculator; store rules may differ."
+          }
+        ],
+        "seo": {
+          "title": "Discount Calculator | FinPulse Hub",
+          "metaDescription": "Combine a percentage discount and coupon, estimate tax on the discounted subtotal, and add shipping to calculate a final price.",
+          "h1": "Discount Calculator",
+          "introduction": "Combine a percentage discount and coupon, estimate tax on the discounted subtotal, and add shipping to calculate a final price.",
+          "faq": [
+            {
+              "key": "faq-discount-1",
+              "question": "Is coupon applied after the first discount?",
+              "answer": "Yes. The coupon rate applies to the price remaining after the first discount."
+            },
+            {
+              "key": "faq-discount-2",
+              "question": "Is tax calculated after discounts?",
+              "answer": "Yes. Tax is calculated on the subtotal after both discounts."
+            },
+            {
+              "key": "faq-discount-3",
+              "question": "Is shipping taxed?",
+              "answer": "No. Shipping is added after tax in this calculator; store rules may differ."
+            }
+          ]
+        },
+        "errors": [
+          {
+            "key": "invalid-number",
+            "message": "{field} must be a finite number.",
+            "recoveryHint": "Enter a valid number and try again."
+          },
+          {
+            "key": "negative",
+            "message": "{field} must not be negative.",
+            "recoveryHint": "Enter zero or a positive value."
+          },
+          {
+            "key": "positive",
+            "message": "{field} must be greater than zero.",
+            "recoveryHint": "Enter a value greater than zero."
+          },
+          {
+            "key": "percent",
+            "message": "Discount, coupon and tax rates must not exceed 100 percent",
+            "recoveryHint": "Enter each discount and tax rate from 0% to 100%."
+          }
+        ],
+        "accessibility": {
+          "pageLabel": "Discount Calculator",
+          "formLabel": "Discount Calculator calculator form",
+          "resultAnnouncement": "Calculation result for Discount Calculator",
+          "chartLabel": "Chart showing ESTIMATED FINAL PRICE for Discount Calculator",
+          "controlLabels": [
+            {
+              "key": "price",
+              "label": "Original price"
+            },
+            {
+              "key": "discount",
+              "label": "First discount (%)"
+            },
+            {
+              "key": "coupon",
+              "label": "Additional coupon (%)"
+            },
+            {
+              "key": "tax",
+              "label": "Estimated sales tax (%)"
+            },
+            {
+              "key": "shipping",
+              "label": "Shipping cost"
+            }
+          ]
+        }
       },
       "locales": {
         "hi": {
@@ -31133,7 +33346,192 @@
             "key": "to",
             "label": "Recipient currency"
           }
-        ]
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "ESTIMATED RECIPIENT AMOUNT",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Customer exchange rate"
+            },
+            {
+              "key": "metric-2",
+              "label": "Transfer fee"
+            },
+            {
+              "key": "metric-3",
+              "label": "Mid-market value"
+            },
+            {
+              "key": "metric-4",
+              "label": "Estimated FX spread cost"
+            },
+            {
+              "key": "metric-5",
+              "label": "Total estimated cost vs mid-market"
+            },
+            {
+              "key": "metric-6",
+              "label": "Effective rate"
+            }
+          ],
+          "breakdown": [
+            {
+              "key": "breakdown-1",
+              "label": "Amount sent"
+            },
+            {
+              "key": "breakdown-2",
+              "label": "Mid-market rate"
+            },
+            {
+              "key": "breakdown-3",
+              "label": "Customer rate"
+            },
+            {
+              "key": "breakdown-4",
+              "label": "Transfer fee"
+            },
+            {
+              "key": "breakdown-5",
+              "label": "FX spread cost"
+            },
+            {
+              "key": "breakdown-6",
+              "label": "Recipient amount"
+            }
+          ]
+        },
+        "explanations": {
+          "formula": "Fee = fixed fee + send amount × percentage fee ÷ 100. Customer rate = mid-market rate × (1 − markup percentage ÷ 100). Recipient amount = (send amount − fee) × customer rate. FX spread cost = send amount × (mid-market rate − customer rate).",
+          "steps": [
+            "Enter send amount and mid-market rate.",
+            "Enter exchange-rate markup, percentage fee and fixed fee.",
+            "Calculate total fee and customer rate after markup.",
+            "Subtract fee and convert the remainder at customer rate.",
+            "Compare recipient amount with mid-market value and review estimated spread and cost."
+          ],
+          "assumptions": [
+            "Uses the single mid-market rate and fee assumptions entered.",
+            "Provider quotes, recipient-side fees, taxes, delivery times and rate guarantees may differ.",
+            "When a fee is charged, the combined fee must be less than the send amount."
+          ],
+          "notes": [
+            "Planning estimate only; review the displayed calculation note and verify inputs and applicable rules."
+          ],
+          "disclaimers": [
+            "This calculator provides an estimate based on entered values and assumptions. It is not financial, legal or tax advice."
+          ],
+          "limitations": [
+            "Uses the single mid-market rate and fee assumptions entered.",
+            "Provider quotes, recipient-side fees, taxes, delivery times and rate guarantees may differ.",
+            "When a fee is charged, the combined fee must be less than the send amount."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-exchange-fees-1",
+            "question": "What is exchange-rate markup?",
+            "answer": "It is the percentage reduction applied to the entered mid-market rate."
+          },
+          {
+            "key": "faq-exchange-fees-2",
+            "question": "Which fees are included?",
+            "answer": "The entered percentage transfer fee and fixed fee."
+          },
+          {
+            "key": "faq-exchange-fees-3",
+            "question": "Is this a live provider quote?",
+            "answer": "No. It is an illustrative estimate; provider and recipient-side charges may differ."
+          }
+        ],
+        "seo": {
+          "title": "Exchange Fee & Markup Calculator | FinPulse Hub",
+          "metaDescription": "Estimate how exchange-rate markup and percentage or fixed transfer fees affect the recipient amount.",
+          "h1": "Exchange Fee & Markup Calculator",
+          "introduction": "Estimate how exchange-rate markup and percentage or fixed transfer fees affect the recipient amount.",
+          "faq": [
+            {
+              "key": "faq-exchange-fees-1",
+              "question": "What is exchange-rate markup?",
+              "answer": "It is the percentage reduction applied to the entered mid-market rate."
+            },
+            {
+              "key": "faq-exchange-fees-2",
+              "question": "Which fees are included?",
+              "answer": "The entered percentage transfer fee and fixed fee."
+            },
+            {
+              "key": "faq-exchange-fees-3",
+              "question": "Is this a live provider quote?",
+              "answer": "No. It is an illustrative estimate; provider and recipient-side charges may differ."
+            }
+          ]
+        },
+        "errors": [
+          {
+            "key": "invalid-number",
+            "message": "{field} must be a finite number.",
+            "recoveryHint": "Enter a valid number and try again."
+          },
+          {
+            "key": "negative",
+            "message": "{field} must not be negative.",
+            "recoveryHint": "Enter zero or a positive value."
+          },
+          {
+            "key": "positive",
+            "message": "{field} must be greater than zero.",
+            "recoveryHint": "Enter a value greater than zero."
+          },
+          {
+            "key": "fee",
+            "message": "Transfer fees must be less than the amount sent",
+            "recoveryHint": "Reduce fees so the combined fixed and percentage fee is below the send amount."
+          },
+          {
+            "key": "percent",
+            "message": "Markup and transfer fee rates must not exceed 100 percent",
+            "recoveryHint": "Enter markup and percentage fee rates from 0% to 100%."
+          }
+        ],
+        "accessibility": {
+          "pageLabel": "Exchange Fee & Markup Calculator",
+          "formLabel": "Exchange Fee & Markup Calculator calculator form",
+          "resultAnnouncement": "Calculation result for Exchange Fee & Markup Calculator",
+          "chartLabel": "Chart showing ESTIMATED RECIPIENT AMOUNT for Exchange Fee & Markup Calculator",
+          "controlLabels": [
+            {
+              "key": "amount",
+              "label": "Amount to send"
+            },
+            {
+              "key": "rate",
+              "label": "Mid-market exchange rate"
+            },
+            {
+              "key": "markup",
+              "label": "Exchange-rate markup (%)"
+            },
+            {
+              "key": "fee",
+              "label": "Transfer fee (%)"
+            },
+            {
+              "key": "fixed",
+              "label": "Fixed transfer fee"
+            },
+            {
+              "key": "from",
+              "label": "Source currency"
+            },
+            {
+              "key": "to",
+              "label": "Recipient currency"
+            }
+          ]
+        }
       },
       "locales": {
         "hi": {
@@ -31214,7 +33612,208 @@
             "key": "to",
             "label": "Recipient currency"
           }
-        ]
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "HIGHER ESTIMATED RECIPIENT AMOUNT — ",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Provider A receives"
+            },
+            {
+              "key": "metric-2",
+              "label": "Provider B receives"
+            },
+            {
+              "key": "metric-3",
+              "label": "Recipient difference"
+            },
+            {
+              "key": "metric-4",
+              "label": "Provider A total fees"
+            },
+            {
+              "key": "metric-5",
+              "label": "Provider B total fees"
+            },
+            {
+              "key": "metric-6",
+              "label": "Provider A effective rate"
+            },
+            {
+              "key": "metric-7",
+              "label": "Provider B effective rate"
+            }
+          ],
+          "breakdown": [
+            {
+              "key": "breakdown-1",
+              "label": "Provider A recipient amount"
+            },
+            {
+              "key": "breakdown-2",
+              "label": "Provider A fees"
+            },
+            {
+              "key": "breakdown-3",
+              "label": "Provider B recipient amount"
+            },
+            {
+              "key": "breakdown-4",
+              "label": "Provider B fees"
+            },
+            {
+              "key": "breakdown-5",
+              "label": "Recipient difference"
+            },
+            {
+              "key": "breakdown-6",
+              "label": "Higher recipient amount"
+            }
+          ]
+        },
+        "explanations": {
+          "formula": "Calculate each provider's fee and customer exchange rate using the same send amount and mid-market rate. Compare converted recipient amounts. Recipient difference = absolute difference between the two converted amounts.",
+          "steps": [
+            "Enter send amount and one mid-market rate.",
+            "Enter Provider A fixed fee, percentage fee and markup.",
+            "Enter Provider B fixed fee, percentage fee and markup.",
+            "Calculate each provider's fee and customer rate using the same base values.",
+            "Compare estimated recipient amounts and their difference."
+          ],
+          "assumptions": [
+            "Both hypothetical providers use the same entered mid-market rate and send amount.",
+            "Live quotes, delivery time, recipient fees, rate guarantees and other charges are not modeled.",
+            "The higher calculated recipient amount is not a provider recommendation."
+          ],
+          "notes": [
+            "Planning estimate only; review the displayed calculation note and verify inputs and applicable rules."
+          ],
+          "disclaimers": [
+            "This calculator provides an estimate based on entered values and assumptions. It is not financial, legal or tax advice."
+          ],
+          "limitations": [
+            "Both hypothetical providers use the same entered mid-market rate and send amount.",
+            "Live quotes, delivery time, recipient fees, rate guarantees and other charges are not modeled.",
+            "The higher calculated recipient amount is not a provider recommendation."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-transfer-compare-1",
+            "question": "How are providers compared?",
+            "answer": "Each fee structure is applied to the same send amount and rate, then recipient amounts are compared."
+          },
+          {
+            "key": "faq-transfer-compare-2",
+            "question": "Are live exchange rates used?",
+            "answer": "No. The calculator uses the mid-market rate you enter."
+          },
+          {
+            "key": "faq-transfer-compare-3",
+            "question": "Should I choose the higher result?",
+            "answer": "Confirm live quotes, delivery time, recipient fees and rate guarantees before transferring."
+          }
+        ],
+        "seo": {
+          "title": "International Money Transfer Cost Calculator | FinPulse Hub",
+          "metaDescription": "Compare two hypothetical international transfer fee structures and estimate which produces the larger recipient amount.",
+          "h1": "International Money Transfer Cost Calculator",
+          "introduction": "Compare two hypothetical international transfer fee structures and estimate which produces the larger recipient amount.",
+          "faq": [
+            {
+              "key": "faq-transfer-compare-1",
+              "question": "How are providers compared?",
+              "answer": "Each fee structure is applied to the same send amount and rate, then recipient amounts are compared."
+            },
+            {
+              "key": "faq-transfer-compare-2",
+              "question": "Are live exchange rates used?",
+              "answer": "No. The calculator uses the mid-market rate you enter."
+            },
+            {
+              "key": "faq-transfer-compare-3",
+              "question": "Should I choose the higher result?",
+              "answer": "Confirm live quotes, delivery time, recipient fees and rate guarantees before transferring."
+            }
+          ]
+        },
+        "errors": [
+          {
+            "key": "invalid-number",
+            "message": "{field} must be a finite number.",
+            "recoveryHint": "Enter a valid number and try again."
+          },
+          {
+            "key": "negative",
+            "message": "{field} must not be negative.",
+            "recoveryHint": "Enter zero or a positive value."
+          },
+          {
+            "key": "positive",
+            "message": "{field} must be greater than zero.",
+            "recoveryHint": "Enter a value greater than zero."
+          },
+          {
+            "key": "rate",
+            "message": "Mid-market rate must be greater than zero",
+            "recoveryHint": "Enter a positive mid-market exchange rate."
+          },
+          {
+            "key": "fee",
+            "message": "Transfer fees must be less than the amount sent",
+            "recoveryHint": "Ensure each provider's combined fixed and percentage fee is less than the send amount."
+          }
+        ],
+        "accessibility": {
+          "pageLabel": "International Money Transfer Cost Calculator",
+          "formLabel": "International Money Transfer Cost Calculator calculator form",
+          "resultAnnouncement": "Calculation result for International Money Transfer Cost Calculator",
+          "chartLabel": "Chart showing HIGHER ESTIMATED RECIPIENT AMOUNT —  for International Money Transfer Cost Calculator",
+          "controlLabels": [
+            {
+              "key": "amount",
+              "label": "Amount to send"
+            },
+            {
+              "key": "rate",
+              "label": "Mid-market exchange rate"
+            },
+            {
+              "key": "aFixed",
+              "label": "Provider A fixed fee"
+            },
+            {
+              "key": "aFee",
+              "label": "Provider A transfer fee (%)"
+            },
+            {
+              "key": "aMarkup",
+              "label": "Provider A rate markup (%)"
+            },
+            {
+              "key": "bFixed",
+              "label": "Provider B fixed fee"
+            },
+            {
+              "key": "bFee",
+              "label": "Provider B transfer fee (%)"
+            },
+            {
+              "key": "bMarkup",
+              "label": "Provider B rate markup (%)"
+            },
+            {
+              "key": "from",
+              "label": "Source currency"
+            },
+            {
+              "key": "to",
+              "label": "Recipient currency"
+            }
+          ]
+        }
       },
       "locales": {
         "hi": {
@@ -31275,7 +33874,180 @@
             "key": "margin",
             "label": "Target gross margin (%)"
           }
-        ]
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "ILLUSTRATIVE PROJECT QUOTE",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Labor cost"
+            },
+            {
+              "key": "metric-2",
+              "label": "Base cost"
+            },
+            {
+              "key": "metric-3",
+              "label": "Contingency"
+            },
+            {
+              "key": "metric-4",
+              "label": "Total cost"
+            },
+            {
+              "key": "metric-5",
+              "label": "Estimated profit"
+            },
+            {
+              "key": "metric-6",
+              "label": "Target gross margin"
+            }
+          ],
+          "breakdown": [
+            {
+              "key": "breakdown-1",
+              "label": "Labor"
+            },
+            {
+              "key": "breakdown-2",
+              "label": "Expenses"
+            },
+            {
+              "key": "breakdown-3",
+              "label": "Contingency"
+            },
+            {
+              "key": "breakdown-4",
+              "label": "Total cost"
+            },
+            {
+              "key": "breakdown-5",
+              "label": "Quoted price"
+            },
+            {
+              "key": "breakdown-6",
+              "label": "Estimated profit"
+            }
+          ]
+        },
+        "explanations": {
+          "formula": "Labor = hours × hourly rate. Base cost = labor + expenses. Contingency = base cost × contingency rate ÷ 100. Total cost = base cost + contingency. Quote = total cost ÷ (1 − target gross margin ÷ 100). Profit = quote − total cost.",
+          "steps": [
+            "Enter project hours and hourly rate.",
+            "Add expenses and contingency percentage.",
+            "Enter a target gross margin below 90%.",
+            "Calculate labor, base cost, contingency and total cost.",
+            "Divide total cost by one minus target margin to get quote.",
+            "Subtract total cost from quote to estimate profit."
+          ],
+          "assumptions": [
+            "Contingency is applied to labor plus expenses.",
+            "Gross margin is profit divided by quoted price, not markup divided by cost.",
+            "Tax, payment fees, scope changes and market-rate validation are excluded."
+          ],
+          "notes": [
+            "Planning estimate only; review the displayed calculation note and verify inputs and applicable rules."
+          ],
+          "disclaimers": [
+            "This calculator provides an estimate based on entered values and assumptions. It is not financial, legal or tax advice."
+          ],
+          "limitations": [
+            "Contingency is applied to labor plus expenses.",
+            "Gross margin is profit divided by quoted price, not markup divided by cost.",
+            "Tax, payment fees, scope changes and market-rate validation are excluded."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-freelance-project-1",
+            "question": "How is a project quote calculated?",
+            "answer": "Labor hours are multiplied by the hourly rate, expenses and contingency are added, then cost is grossed up to target margin."
+          },
+          {
+            "key": "faq-freelance-project-2",
+            "question": "Is gross margin the same as markup?",
+            "answer": "No. Gross margin is profit divided by selling price; markup is profit divided by cost."
+          },
+          {
+            "key": "faq-freelance-project-3",
+            "question": "Does this include tax?",
+            "answer": "No. Tax, payment fees, scope changes and local requirements are excluded."
+          }
+        ],
+        "seo": {
+          "title": "Freelance Project Pricing Calculator | FinPulse Hub",
+          "metaDescription": "Estimate a freelance project quote using hours, hourly rate, expenses, contingency and target gross margin. This is a planning calculation, not a market-rate recommendation.",
+          "h1": "Freelance Project Pricing Calculator",
+          "introduction": "Estimate a freelance project quote using hours, hourly rate, expenses, contingency and target gross margin. This is a planning calculation, not a market-rate recommendation.",
+          "faq": [
+            {
+              "key": "faq-freelance-project-1",
+              "question": "How is a project quote calculated?",
+              "answer": "Labor hours are multiplied by the hourly rate, expenses and contingency are added, then cost is grossed up to target margin."
+            },
+            {
+              "key": "faq-freelance-project-2",
+              "question": "Is gross margin the same as markup?",
+              "answer": "No. Gross margin is profit divided by selling price; markup is profit divided by cost."
+            },
+            {
+              "key": "faq-freelance-project-3",
+              "question": "Does this include tax?",
+              "answer": "No. Tax, payment fees, scope changes and local requirements are excluded."
+            }
+          ]
+        },
+        "errors": [
+          {
+            "key": "invalid-number",
+            "message": "{field} must be a finite number.",
+            "recoveryHint": "Enter a valid number and try again."
+          },
+          {
+            "key": "negative",
+            "message": "{field} must not be negative.",
+            "recoveryHint": "Enter zero or a positive value."
+          },
+          {
+            "key": "positive",
+            "message": "{field} must be greater than zero.",
+            "recoveryHint": "Enter a value greater than zero."
+          },
+          {
+            "key": "margin",
+            "message": "Contingency must be at most 100% and target margin below 90%",
+            "recoveryHint": "Keep contingency at or below 100% and target gross margin below 90%."
+          }
+        ],
+        "accessibility": {
+          "pageLabel": "Freelance Project Pricing Calculator",
+          "formLabel": "Freelance Project Pricing Calculator calculator form",
+          "resultAnnouncement": "Calculation result for Freelance Project Pricing Calculator",
+          "chartLabel": "Chart showing ILLUSTRATIVE PROJECT QUOTE for Freelance Project Pricing Calculator",
+          "controlLabels": [
+            {
+              "key": "hours",
+              "label": "Estimated project hours"
+            },
+            {
+              "key": "rate",
+              "label": "Hourly billing rate"
+            },
+            {
+              "key": "expenses",
+              "label": "Project expenses"
+            },
+            {
+              "key": "contingency",
+              "label": "Contingency allowance (%)"
+            },
+            {
+              "key": "margin",
+              "label": "Target gross margin (%)"
+            }
+          ]
+        }
       },
       "locales": {
         "hi": {
@@ -31328,7 +34100,163 @@
             "key": "tax",
             "label": "Estimated tax reserve (%)"
           }
-        ]
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "ESTIMATED NET INCOME",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Gross revenue"
+            },
+            {
+              "key": "metric-2",
+              "label": "Business expenses"
+            },
+            {
+              "key": "metric-3",
+              "label": "Profit before reserve"
+            },
+            {
+              "key": "metric-4",
+              "label": "Tax reserve"
+            },
+            {
+              "key": "metric-5",
+              "label": "Net income rate"
+            }
+          ],
+          "breakdown": [
+            {
+              "key": "breakdown-1",
+              "label": "Gross revenue"
+            },
+            {
+              "key": "breakdown-2",
+              "label": "Business expenses"
+            },
+            {
+              "key": "breakdown-3",
+              "label": "Profit before reserve"
+            },
+            {
+              "key": "breakdown-4",
+              "label": "Tax reserve"
+            },
+            {
+              "key": "breakdown-5",
+              "label": "Estimated net income"
+            }
+          ]
+        },
+        "explanations": {
+          "formula": "Profit = gross revenue − expenses. Tax reserve = profit × reserve rate ÷ 100. Net income = profit − reserve. Effective net rate = net income ÷ revenue × 100 when revenue is non-zero.",
+          "steps": [
+            "Enter gross freelance revenue and business expenses.",
+            "Enter the tax reserve percentage.",
+            "Subtract expenses from revenue to estimate profit.",
+            "Apply the reserve percentage to profit.",
+            "Subtract reserve to estimate net income and compare it with revenue."
+          ],
+          "assumptions": [
+            "Expenses cannot exceed revenue in this simplified model.",
+            "The reserve is applied to profit after expenses, not gross revenue.",
+            "The reserve is a user-selected planning assumption, not a jurisdiction-specific tax calculation."
+          ],
+          "notes": [
+            "Planning estimate only; review the displayed calculation note and verify inputs and applicable rules."
+          ],
+          "disclaimers": [
+            "This calculator provides an estimate based on entered values and assumptions. It is not financial, legal or tax advice."
+          ],
+          "limitations": [
+            "Expenses cannot exceed revenue in this simplified model.",
+            "The reserve is applied to profit after expenses, not gross revenue.",
+            "The reserve is a user-selected planning assumption, not a jurisdiction-specific tax calculation."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-freelancer-net-income-1",
+            "question": "What counts as business expenses?",
+            "answer": "Examples include software, equipment, payment fees, insurance and other genuine business costs."
+          },
+          {
+            "key": "faq-freelancer-net-income-2",
+            "question": "How is tax reserve calculated?",
+            "answer": "The entered percentage is applied to profit after business expenses."
+          },
+          {
+            "key": "faq-freelancer-net-income-3",
+            "question": "Does this calculate actual income tax?",
+            "answer": "No. The reserve is a planning assumption, not a jurisdiction-specific tax calculation."
+          }
+        ],
+        "seo": {
+          "title": "Freelancer Net Income After Costs Calculator | FinPulse Hub",
+          "metaDescription": "See how business expenses and a chosen tax reserve affect freelance take-home income. Treat the reserve as a planning assumption.",
+          "h1": "Freelancer Net Income After Costs Calculator",
+          "introduction": "See how business expenses and a chosen tax reserve affect freelance take-home income. Treat the reserve as a planning assumption.",
+          "faq": [
+            {
+              "key": "faq-freelancer-net-income-1",
+              "question": "What counts as business expenses?",
+              "answer": "Examples include software, equipment, payment fees, insurance and other genuine business costs."
+            },
+            {
+              "key": "faq-freelancer-net-income-2",
+              "question": "How is tax reserve calculated?",
+              "answer": "The entered percentage is applied to profit after business expenses."
+            },
+            {
+              "key": "faq-freelancer-net-income-3",
+              "question": "Does this calculate actual income tax?",
+              "answer": "No. The reserve is a planning assumption, not a jurisdiction-specific tax calculation."
+            }
+          ]
+        },
+        "errors": [
+          {
+            "key": "invalid-number",
+            "message": "{field} must be a finite number.",
+            "recoveryHint": "Enter a valid number and try again."
+          },
+          {
+            "key": "negative",
+            "message": "{field} must not be negative.",
+            "recoveryHint": "Enter zero or a positive value."
+          },
+          {
+            "key": "positive",
+            "message": "{field} must be greater than zero.",
+            "recoveryHint": "Enter a value greater than zero."
+          },
+          {
+            "key": "expenses",
+            "message": "Expenses cannot exceed revenue in this simplified model; tax reserve must be 0–100%",
+            "recoveryHint": "Enter expenses no greater than revenue and a tax reserve from 0% to 100%."
+          }
+        ],
+        "accessibility": {
+          "pageLabel": "Freelancer Net Income After Costs Calculator",
+          "formLabel": "Freelancer Net Income After Costs Calculator calculator form",
+          "resultAnnouncement": "Calculation result for Freelancer Net Income After Costs Calculator",
+          "chartLabel": "Chart showing ESTIMATED NET INCOME for Freelancer Net Income After Costs Calculator",
+          "controlLabels": [
+            {
+              "key": "revenue",
+              "label": "Gross freelance revenue"
+            },
+            {
+              "key": "expenses",
+              "label": "Annual business expenses"
+            },
+            {
+              "key": "tax",
+              "label": "Estimated tax reserve (%)"
+            }
+          ]
+        }
       },
       "locales": {
         "hi": {
@@ -31377,7 +34305,154 @@
             "key": "markup",
             "label": "Markup (%)"
           }
-        ]
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "SELLING PRICE",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Unit cost"
+            },
+            {
+              "key": "metric-2",
+              "label": "Markup amount"
+            },
+            {
+              "key": "metric-3",
+              "label": "Markup rate"
+            },
+            {
+              "key": "metric-4",
+              "label": "Equivalent gross margin"
+            }
+          ],
+          "breakdown": [
+            {
+              "key": "breakdown-1",
+              "label": "Unit cost"
+            },
+            {
+              "key": "breakdown-2",
+              "label": "Markup amount"
+            },
+            {
+              "key": "breakdown-3",
+              "label": "Selling price"
+            },
+            {
+              "key": "breakdown-4",
+              "label": "Markup rate"
+            },
+            {
+              "key": "breakdown-5",
+              "label": "Gross margin"
+            }
+          ]
+        },
+        "explanations": {
+          "formula": "Markup amount = cost × markup percentage ÷ 100. Selling price = cost + markup amount. Gross margin = markup amount ÷ selling price × 100 when selling price is positive.",
+          "steps": [
+            "Enter unit cost and markup percentage.",
+            "Multiply cost by markup percentage to calculate markup amount.",
+            "Add markup to cost to calculate selling price.",
+            "Divide markup amount by selling price to calculate gross margin."
+          ],
+          "assumptions": [
+            "Markup is a percentage of cost.",
+            "Gross margin is profit divided by selling price; it differs from markup.",
+            "Tax, fees, overhead and market-price constraints are excluded."
+          ],
+          "notes": [
+            "Planning estimate only; review the displayed calculation note and verify inputs and applicable rules."
+          ],
+          "disclaimers": [
+            "This calculator provides an estimate based on entered values and assumptions. It is not financial, legal or tax advice."
+          ],
+          "limitations": [
+            "Markup is a percentage of cost.",
+            "Gross margin is profit divided by selling price; it differs from markup.",
+            "Tax, fees, overhead and market-price constraints are excluded."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-markup-1",
+            "question": "What is markup?",
+            "answer": "Markup is the amount added to cost, expressed as a percentage of cost."
+          },
+          {
+            "key": "faq-markup-2",
+            "question": "How is selling price calculated?",
+            "answer": "Selling price equals cost multiplied by one plus the markup percentage."
+          },
+          {
+            "key": "faq-markup-3",
+            "question": "How is gross margin different?",
+            "answer": "Gross margin divides profit by selling price; markup divides profit by cost."
+          }
+        ],
+        "seo": {
+          "title": "Markup Calculator | FinPulse Hub",
+          "metaDescription": "Turn a unit cost and markup percentage into a selling price, then compare markup with gross margin.",
+          "h1": "Markup Calculator",
+          "introduction": "Turn a unit cost and markup percentage into a selling price, then compare markup with gross margin.",
+          "faq": [
+            {
+              "key": "faq-markup-1",
+              "question": "What is markup?",
+              "answer": "Markup is the amount added to cost, expressed as a percentage of cost."
+            },
+            {
+              "key": "faq-markup-2",
+              "question": "How is selling price calculated?",
+              "answer": "Selling price equals cost multiplied by one plus the markup percentage."
+            },
+            {
+              "key": "faq-markup-3",
+              "question": "How is gross margin different?",
+              "answer": "Gross margin divides profit by selling price; markup divides profit by cost."
+            }
+          ]
+        },
+        "errors": [
+          {
+            "key": "invalid-number",
+            "message": "{field} must be a finite number.",
+            "recoveryHint": "Enter a valid number and try again."
+          },
+          {
+            "key": "negative",
+            "message": "{field} must not be negative.",
+            "recoveryHint": "Enter zero or a positive value."
+          },
+          {
+            "key": "positive",
+            "message": "{field} must be greater than zero.",
+            "recoveryHint": "Enter a value greater than zero."
+          },
+          {
+            "key": "markup",
+            "message": "Markup must not exceed 10,000%",
+            "recoveryHint": "Enter a markup percentage from 0% to 10,000%."
+          }
+        ],
+        "accessibility": {
+          "pageLabel": "Markup Calculator",
+          "formLabel": "Markup Calculator calculator form",
+          "resultAnnouncement": "Calculation result for Markup Calculator",
+          "chartLabel": "Chart showing SELLING PRICE for Markup Calculator",
+          "controlLabels": [
+            {
+              "key": "cost",
+              "label": "Unit cost"
+            },
+            {
+              "key": "markup",
+              "label": "Markup (%)"
+            }
+          ]
+        }
       },
       "locales": {
         "hi": {
@@ -31430,7 +34505,171 @@
             "key": "variable",
             "label": "Variable cost per unit"
           }
-        ]
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "BREAK-EVEN SALES VOLUME",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Contribution per unit"
+            },
+            {
+              "key": "metric-2",
+              "label": "Contribution margin"
+            },
+            {
+              "key": "metric-3",
+              "label": "Exact break-even units"
+            },
+            {
+              "key": "metric-4",
+              "label": "Whole units required"
+            },
+            {
+              "key": "metric-5",
+              "label": "Break-even revenue"
+            },
+            {
+              "key": "metric-6",
+              "label": "Total costs"
+            }
+          ],
+          "breakdown": [
+            {
+              "key": "breakdown-1",
+              "label": "Fixed costs"
+            },
+            {
+              "key": "breakdown-2",
+              "label": "Contribution per unit"
+            },
+            {
+              "key": "breakdown-3",
+              "label": "Exact break-even quantity"
+            },
+            {
+              "key": "breakdown-4",
+              "label": "Whole units required"
+            },
+            {
+              "key": "breakdown-5",
+              "label": "Revenue at break-even"
+            },
+            {
+              "key": "breakdown-6",
+              "label": "Total costs at break-even"
+            }
+          ]
+        },
+        "explanations": {
+          "formula": "Contribution per unit = selling price − variable cost. Exact units = fixed costs ÷ contribution per unit (or zero when fixed costs are zero). Whole units = ceiling(exact units). Break-even revenue = whole units × selling price.",
+          "steps": [
+            "Enter fixed costs, selling price per unit and variable cost per unit.",
+            "Subtract variable cost from selling price to calculate contribution.",
+            "Divide fixed costs by contribution to get exact break-even volume.",
+            "Round units up to the next whole number.",
+            "Multiply whole units by selling price to estimate break-even revenue and calculate total costs."
+          ],
+          "assumptions": [
+            "Selling price, variable cost and fixed costs are assumed constant.",
+            "Whole units are rounded up because fractional units are not treated as sellable.",
+            "Product mix, capacity, tax, financing and changing costs/prices are excluded."
+          ],
+          "notes": [
+            "Planning estimate only; review the displayed calculation note and verify inputs and applicable rules."
+          ],
+          "disclaimers": [
+            "This calculator provides an estimate based on entered values and assumptions. It is not financial, legal or tax advice."
+          ],
+          "limitations": [
+            "Selling price, variable cost and fixed costs are assumed constant.",
+            "Whole units are rounded up because fractional units are not treated as sellable.",
+            "Product mix, capacity, tax, financing and changing costs/prices are excluded."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-break-even-1",
+            "question": "What is contribution per unit?",
+            "answer": "Selling price per unit minus variable cost per unit."
+          },
+          {
+            "key": "faq-break-even-2",
+            "question": "Why round units up?",
+            "answer": "A business generally cannot sell a fraction of a unit, so the practical target rounds up."
+          },
+          {
+            "key": "faq-break-even-3",
+            "question": "Are taxes included?",
+            "answer": "No. Financing, tax, product mix and capacity constraints are excluded."
+          }
+        ],
+        "seo": {
+          "title": "Break-even Calculator | FinPulse Hub",
+          "metaDescription": "Calculate contribution per unit, break-even volume and revenue using fixed costs, selling price and variable cost.",
+          "h1": "Break-even Calculator",
+          "introduction": "Calculate contribution per unit, break-even volume and revenue using fixed costs, selling price and variable cost.",
+          "faq": [
+            {
+              "key": "faq-break-even-1",
+              "question": "What is contribution per unit?",
+              "answer": "Selling price per unit minus variable cost per unit."
+            },
+            {
+              "key": "faq-break-even-2",
+              "question": "Why round units up?",
+              "answer": "A business generally cannot sell a fraction of a unit, so the practical target rounds up."
+            },
+            {
+              "key": "faq-break-even-3",
+              "question": "Are taxes included?",
+              "answer": "No. Financing, tax, product mix and capacity constraints are excluded."
+            }
+          ]
+        },
+        "errors": [
+          {
+            "key": "invalid-number",
+            "message": "{field} must be a finite number.",
+            "recoveryHint": "Enter a valid number and try again."
+          },
+          {
+            "key": "negative",
+            "message": "{field} must not be negative.",
+            "recoveryHint": "Enter zero or a positive value."
+          },
+          {
+            "key": "positive",
+            "message": "{field} must be greater than zero.",
+            "recoveryHint": "Enter a value greater than zero."
+          },
+          {
+            "key": "contribution",
+            "message": "Selling price must exceed variable cost per unit to produce a break-even volume",
+            "recoveryHint": "Increase selling price or reduce variable cost so selling price exceeds variable cost per unit."
+          }
+        ],
+        "accessibility": {
+          "pageLabel": "Break-even Calculator",
+          "formLabel": "Break-even Calculator calculator form",
+          "resultAnnouncement": "Calculation result for Break-even Calculator",
+          "chartLabel": "Chart showing BREAK-EVEN SALES VOLUME for Break-even Calculator",
+          "controlLabels": [
+            {
+              "key": "fixed",
+              "label": "Total fixed costs"
+            },
+            {
+              "key": "price",
+              "label": "Selling price per unit"
+            },
+            {
+              "key": "variable",
+              "label": "Variable cost per unit"
+            }
+          ]
+        }
       },
       "locales": {
         "hi": {
