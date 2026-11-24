@@ -82,6 +82,10 @@
       "sourceFile": "app.js",
       "inputs": [
         {
+          "key": "contribution",
+          "label": "Annual contribution budget"
+        },
+        {
           "key": "years",
           "label": "Years invested"
         },
@@ -114,6 +118,10 @@
       "sourceFile": "app.js",
       "inputs": [
         {
+          "key": "amount",
+          "label": "Current cost / amount"
+        },
+        {
           "key": "rate",
           "label": "Annual inflation (%)"
         },
@@ -137,6 +145,10 @@
       "description": "Estimate certificate-of-deposit maturity value and interest from a fixed APY and term.",
       "sourceFile": "app.js",
       "inputs": [
+        {
+          "key": "principal",
+          "label": "Initial deposit"
+        },
         {
           "key": "apy",
           "label": "Certificate APY (%)"
@@ -162,6 +174,10 @@
       "sourceFile": "app.js",
       "inputs": [
         {
+          "key": "principal",
+          "label": "Starting deposit"
+        },
+        {
           "key": "rate",
           "label": "Nominal annual rate (%)"
         },
@@ -185,6 +201,10 @@
       "description": "Estimate tax after a flat tax rate and entered credits.",
       "sourceFile": "app.js",
       "inputs": [
+        {
+          "key": "amount",
+          "label": "Taxable income / amount"
+        },
         {
           "key": "rate",
           "label": "Estimated tax rate (%)"
@@ -210,6 +230,10 @@
       "sourceFile": "app.js",
       "inputs": [
         {
+          "key": "income",
+          "label": "Annual gross income"
+        },
+        {
           "key": "deduction",
           "label": "Eligible deductions entered"
         }
@@ -227,6 +251,10 @@
       "description": "Calculate sales tax, discounts and final checkout total.",
       "sourceFile": "app.js",
       "inputs": [
+        {
+          "key": "subtotal",
+          "label": "Subtotal / tax-inclusive total"
+        },
         {
           "key": "discount",
           "label": "Discount (%)"
@@ -260,6 +288,10 @@
       "sourceFile": "app.js",
       "inputs": [
         {
+          "key": "amount",
+          "label": "Amount"
+        },
+        {
           "key": "rate",
           "label": "VAT / GST rate (%)"
         },
@@ -288,6 +320,10 @@
       "sourceFile": "app.js",
       "inputs": [
         {
+          "key": "liability",
+          "label": "Estimated total tax liability"
+        },
+        {
           "key": "withholding",
           "label": "Tax already withheld / paid"
         },
@@ -311,6 +347,10 @@
       "description": "Estimate annual, monthly and per-paycheck take-home using 2026 income-tax brackets and employee payroll contributions.",
       "sourceFile": "app.js",
       "inputs": [
+        {
+          "key": "gross",
+          "label": "Gross annual salary"
+        },
         {
           "key": "deduction",
           "label": "Eligible deductions entered"
@@ -349,6 +389,10 @@
       "description": "Estimate one paycheck from hourly earnings, overtime, bonus and entered deductions.",
       "sourceFile": "app.js",
       "inputs": [
+        {
+          "key": "hourly",
+          "label": "Hourly pay rate"
+        },
         {
           "key": "regular",
           "label": "Regular hours this pay period"
@@ -398,6 +442,10 @@
       "sourceFile": "app.js",
       "inputs": [
         {
+          "key": "employees",
+          "label": "Number of employees"
+        },
+        {
           "key": "salary",
           "label": "Average gross monthly pay per employee"
         },
@@ -430,6 +478,10 @@
       "sourceFile": "app.js",
       "inputs": [
         {
+          "key": "rate",
+          "label": "Hourly pay rate"
+        },
+        {
           "key": "regular",
           "label": "Regular hours"
         },
@@ -457,6 +509,10 @@
       "description": "Combine a percentage discount and coupon, then add estimated tax and shipping.",
       "sourceFile": "app.js",
       "inputs": [
+        {
+          "key": "price",
+          "label": "Original price"
+        },
         {
           "key": "discount",
           "label": "First discount (%)"
@@ -489,6 +545,10 @@
       "description": "Estimate the impact of an exchange-rate markup, percentage transfer fee and fixed fee.",
       "sourceFile": "app.js",
       "inputs": [
+        {
+          "key": "amount",
+          "label": "Amount to send"
+        },
         {
           "key": "rate",
           "label": "Mid-market exchange rate"
@@ -529,6 +589,10 @@
       "description": "Compare two hypothetical transfer providers by recipient amount after fees and exchange-rate markup.",
       "sourceFile": "app.js",
       "inputs": [
+        {
+          "key": "amount",
+          "label": "Amount to send"
+        },
         {
           "key": "rate",
           "label": "Mid-market exchange rate"
@@ -582,6 +646,10 @@
       "sourceFile": "app.js",
       "inputs": [
         {
+          "key": "hours",
+          "label": "Estimated project hours"
+        },
+        {
           "key": "rate",
           "label": "Hourly billing rate"
         },
@@ -614,6 +682,10 @@
       "sourceFile": "app.js",
       "inputs": [
         {
+          "key": "revenue",
+          "label": "Gross freelance revenue"
+        },
+        {
           "key": "expenses",
           "label": "Annual business expenses"
         },
@@ -638,6 +710,10 @@
       "sourceFile": "app.js",
       "inputs": [
         {
+          "key": "cost",
+          "label": "Unit cost"
+        },
+        {
           "key": "markup",
           "label": "Markup (%)"
         }
@@ -657,6 +733,10 @@
       "description": "Estimate unit sales and revenue needed to cover fixed and variable costs.",
       "sourceFile": "app.js",
       "inputs": [
+        {
+          "key": "fixed",
+          "label": "Total fixed costs"
+        },
         {
           "key": "price",
           "label": "Selling price per unit"
