@@ -3,7 +3,7 @@
   "batch": "Finance calculator localization Batch 3",
   "startedAt": "2026-11-24",
   "branch": "feat/seven-language-translation-engine-phase-1",
-  "status": "in-progress",
+  "status": "runtime-and-calculation-evidence-captured; editorial-source-copy-pending",
   "toolRange": {
     "from": 21,
     "to": 40
@@ -37,6 +37,14 @@
     "calculationSources": "finance-core.js; FinPulseTaxEngine for jurisdiction-based income tax and salary estimates",
     "catalogue": {
       "path": "translations/tool-content.json"
+    },
+    "calculationCore": {
+      "path": "finance-core.js",
+      "blobSha": "22de8b0d6f67123182b6fd838d73892e039747a5"
+    },
+    "taxEngine": {
+      "path": "tax-engine.js",
+      "blobSha": "ad9fa603a517c4904b7be73092645c471d9ab8a6"
     }
   },
   "scopeRules": [
@@ -54,24 +62,21 @@
       "metadata.category",
       "metadata.description",
       "inputs[].key",
-      "inputs[].label"
+      "inputs[].label",
+      "runtime result headings/metrics/breakdown/chart labels/notes",
+      "exact calculation implementation source code (finance-core.js or tax-engine.js)",
+      "inline FAQ/SEO where present"
     ],
-    "pending": [
-      "results",
-      "explanations.formula",
-      "explanations.steps",
-      "assumptions",
-      "notes",
-      "disclaimers",
-      "limitations",
-      "errors",
-      "faqs",
-      "seo",
-      "accessibility",
-      "calculationImplementation evidence",
-      "guide content"
+    "authoredFromImplementationPending": [
+      "formula explanation and ordered steps",
+      "assumptions/disclaimers/limitations",
+      "FAQs for tools without inline FAQs",
+      "SEO title/meta description/H1/introduction for tools without inline SEO",
+      "localized error recovery hints",
+      "tool-specific accessibility labels derived from shared template"
     ],
-    "note": "This manifest records the initial source pass only. It does not claim that any tool has complete source extraction or completed translations."
+    "guideContent": "No tool-specific guide source is present in the captured runtime definitions; keep guide translation fields pending rather than inventing instructional content.",
+    "policy": "Keep every source-derived value traceable to its file and blob SHA. Editorially authored explanations and FAQs must be labeled as authored from verified implementation, not represented as verbatim source copy. Do not alter calculation functions or numeric datasets."
   },
   "tools": [
     {
@@ -108,7 +113,29 @@
       "usesTaxEngine": false,
       "usesCurrencyDisplay": true,
       "hasInlineSeo": false,
-      "extractionStatus": "metadata-and-input-labels-captured; full-source-extraction-pending"
+      "extractionStatus": "runtime-results-and-calculation-implementation-evidence-captured; editorial-steps-faq-seo-accessibility-copy-pending",
+      "runtimeDefinition": "{id:\"ira\",n:\"Roth vs Traditional IRA Comparison\",c:\"Retirement & investing\",desc:\"Compare simplified after-tax balances using current and future tax assumptions.\",f:[[\"contribution\",\"Annual contribution budget\",7000],[\"years\",\"Years invested\",25],[\"rate\",\"Assumed annual return (%)\",6],[\"currentTax\",\"Current tax rate (%)\",22],[\"futureTax\",\"Future tax rate (%)\",22]],run:v=>{const x=Core.iraComparison(v.contribution,v.years,v.rate,v.currentTax,v.futureTax);return{main:fmt(x.rothAfterTax),assetValue:x.rothAfterTax,label:\"ROTH ILLUSTRATIVE AFTER-TAX VALUE\",metrics:[[\"Traditional balance before tax\",fmt(x.traditionalBalance)],[\"Traditional after-tax value\",fmt(x.traditionalAfterTax)],[\"Roth after-tax value\",fmt(x.rothAfterTax)],[\"Roth minus traditional\",fmt(x.difference)]],series:[x.traditionalAfterTax,x.rothAfterTax],chartLabels:[\"Traditional after-tax\",\"Roth after-tax\"],chartType:\"bar\",note:x.note,schedule:{monthly:x.monthlySchedule,yearly:x.yearlySchedule,comparison:{...x.traditionalSchedule,label:\"Traditional after-tax\"},label:\"Roth after-tax\"}}}}",
+      "runtimeDefinitionEvidence": {
+        "file": "app.js",
+        "blobSha": "acc1271f96e8d605a15a76e1dafce635820641cf",
+        "includesResultLabels": true,
+        "includesInlineSeo": false
+      },
+      "calculationImplementation": {
+        "file": "finance-core.js",
+        "blobSha": "22de8b0d6f67123182b6fd838d73892e039747a5",
+        "functionName": "iraComparison",
+        "sourceCode": "function iraComparison(c,y,r,ct,ft){nonnegative(c,\"Annual contribution\");positive(y,\"Years\");nonnegative(r,\"Return\");if(ct>100||ft>100||y>100)throw Error(\"Tax rates must be 0–100 and years at most 100\");const n=months(y*12),q=r/1200,m=c/12;let t=0,o=0,monthlySchedule=[],traditionalRows=[];for(let k=1;k<=n;k++){const rothOpen=o,tradOpen=t,rothInterest=rothOpen*q,tradInterest=tradOpen*q;o=rothOpen+rothInterest+m*(1-ct/100);t=tradOpen+tradInterest+m;monthlySchedule.push({month:k,openingBalance:rothOpen,payment:m*(1-ct/100),principal:m*(1-ct/100),interest:rothInterest,closingBalance:o});traditionalRows.push({month:k,openingBalance:tradOpen*(1-ft/100),payment:m*(1-ft/100),principal:m*(1-ft/100),interest:tradInterest*(1-ft/100),closingBalance:t*(1-ft/100)})}return{traditionalBalance:t,traditionalAfterTax:t*(1-ft/100),rothBalance:o,rothAfterTax:o,difference:o-t*(1-ft/100),annualContribution:c,months:n,monthlySchedule,yearlySchedule:yearlyProjection(monthlySchedule,[\"payment\",\"principal\",\"interest\"]),traditionalSchedule:{monthly:traditionalRows,yearly:yearlyProjection(traditionalRows,[\"payment\",\"principal\",\"interest\"])},note:\"Simplified comparison assumes equal gross annual contribution budgets, current tax savings are not reinvested, and future tax applies to the traditional balance. Eligibility, limits and tax law are not modeled.\"}}"
+      },
+      "sourceAvailability": {
+        "results": "captured-verbatim-in-runtimeDefinition",
+        "formula": "implementation-captured; human-readable explanation must be derived and checked against sourceCode",
+        "steps": "no tool-specific step array in runtime definition; derive only from implementation and mark authored",
+        "faq": "no inline tool-specific FAQ; author from verified implementation",
+        "seo": "no inline tool-specific SEO; author from verified description/implementation",
+        "errors": "validation/error messages captured in calculationImplementation sourceCode; localized recovery hints require authored copy",
+        "accessibility": "shared labels/template captured in app.js; per-tool page/form/result/chart labels are derived from title and shared template"
+      }
     },
     {
       "id": "inflation",
@@ -136,7 +163,29 @@
       "usesTaxEngine": false,
       "usesCurrencyDisplay": true,
       "hasInlineSeo": false,
-      "extractionStatus": "metadata-and-input-labels-captured; full-source-extraction-pending"
+      "extractionStatus": "runtime-results-and-calculation-implementation-evidence-captured; editorial-steps-faq-seo-accessibility-copy-pending",
+      "runtimeDefinition": "{id:\"inflation\",n:\"Inflation Calculator\",c:\"Everyday finance\",desc:\"Estimate how prices and purchasing power change under constant assumed inflation.\",f:[[\"amount\",\"Current cost / amount\",1000],[\"rate\",\"Annual inflation (%)\",3],[\"years\",\"Number of years\",10]],run:v=>{const x=Core.inflationCalculator(v.amount,v.rate,v.years);const n=Math.min(61,Math.max(2,Math.round(v.years)+1));return{main:fmt(x.futureCost),label:\"ESTIMATED FUTURE COST\",metrics:[[\"Current amount\",fmt(v.amount)],[\"Estimated cost increase\",fmt(x.costIncrease)],[\"Cumulative increase\",num(x.increasePercent)+\"%\"],[\"Future purchasing power\",fmt(x.purchasingPower)]],series:Array.from({length:n},(_,i)=>v.amount*Math.pow(1+v.rate/100,v.years*i/(n-1))),note:x.note}}}",
+      "runtimeDefinitionEvidence": {
+        "file": "app.js",
+        "blobSha": "acc1271f96e8d605a15a76e1dafce635820641cf",
+        "includesResultLabels": true,
+        "includesInlineSeo": false
+      },
+      "calculationImplementation": {
+        "file": "finance-core.js",
+        "blobSha": "22de8b0d6f67123182b6fd838d73892e039747a5",
+        "functionName": "inflationCalculator",
+        "sourceCode": "function inflationCalculator(a,r,y){nonnegative(a,\"Amount\");nonnegative(r,\"Inflation\");nonnegative(y,\"Years\");if(y>100||r>1000)throw Error(\"Years or rate outside supported range\");const f=a*Math.pow(1+r/100,y),p=a/Math.pow(1+r/100,y);return{futureCost:f,purchasingPower:p,costIncrease:f-a,increasePercent:a?(f/a-1)*100:0,note:\"Assumes constant annual inflation. Actual inflation varies over time and by spending category.\"}}"
+      },
+      "sourceAvailability": {
+        "results": "captured-verbatim-in-runtimeDefinition",
+        "formula": "implementation-captured; human-readable explanation must be derived and checked against sourceCode",
+        "steps": "no tool-specific step array in runtime definition; derive only from implementation and mark authored",
+        "faq": "no inline tool-specific FAQ; author from verified implementation",
+        "seo": "no inline tool-specific SEO; author from verified description/implementation",
+        "errors": "validation/error messages captured in calculationImplementation sourceCode; localized recovery hints require authored copy",
+        "accessibility": "shared labels/template captured in app.js; per-tool page/form/result/chart labels are derived from title and shared template"
+      }
     },
     {
       "id": "cd",
@@ -164,7 +213,29 @@
       "usesTaxEngine": false,
       "usesCurrencyDisplay": true,
       "hasInlineSeo": false,
-      "extractionStatus": "metadata-and-input-labels-captured; full-source-extraction-pending"
+      "extractionStatus": "runtime-results-and-calculation-implementation-evidence-captured; editorial-steps-faq-seo-accessibility-copy-pending",
+      "runtimeDefinition": "{id:\"cd\",n:\"CD Calculator\",c:\"Savings & growth\",desc:\"Estimate certificate-of-deposit maturity value and interest from a fixed APY and term.\",f:[[\"principal\",\"Initial deposit\",10000],[\"apy\",\"Certificate APY (%)\",4.5],[\"term\",\"Term (months)\",12]],run:v=>{const x=Core.certificateDeposit(v.principal,v.apy,v.term);return{main:fmt(x.futureValue),label:\"ESTIMATED MATURITY VALUE\",metrics:[[\"Initial deposit\",fmt(x.principal)],[\"Interest earned\",fmt(x.interestEarned)],[\"APY\",num(x.apy)+\"%\"],[\"Term\",x.months+\" months\"]],series:[v.principal,x.futureValue],breakdown:[{item:\"Initial deposit\",value:fmt(x.principal)},{item:\"APY\",value:num(x.apy)+\"%\"},{item:\"Term\",value:x.months+\" months\"},{item:\"Interest earned\",value:fmt(x.interestEarned)},{item:\"Maturity value\",value:fmt(x.futureValue)}],note:x.note}}}",
+      "runtimeDefinitionEvidence": {
+        "file": "app.js",
+        "blobSha": "acc1271f96e8d605a15a76e1dafce635820641cf",
+        "includesResultLabels": true,
+        "includesInlineSeo": false
+      },
+      "calculationImplementation": {
+        "file": "finance-core.js",
+        "blobSha": "22de8b0d6f67123182b6fd838d73892e039747a5",
+        "functionName": "certificateDeposit",
+        "sourceCode": "function certificateDeposit(p,a,m){nonnegative(p,\"Deposit\");nonnegative(a,\"APY\");positive(m,\"Term months\");if(a>1000||m>1200||!Number.isInteger(m))throw Error(\"APY must be at most 1,000 percent and term must be a whole number of months\");const f=p*Math.pow(1+a/100,m/12);return{futureValue:f,interestEarned:f-p,principal:p,apy:a,months:Math.round(m),note:\"Assumes fixed APY for the full term, with no withdrawals, fees or early-withdrawal penalty.\"}}"
+      },
+      "sourceAvailability": {
+        "results": "captured-verbatim-in-runtimeDefinition",
+        "formula": "implementation-captured; human-readable explanation must be derived and checked against sourceCode",
+        "steps": "no tool-specific step array in runtime definition; derive only from implementation and mark authored",
+        "faq": "no inline tool-specific FAQ; author from verified implementation",
+        "seo": "no inline tool-specific SEO; author from verified description/implementation",
+        "errors": "validation/error messages captured in calculationImplementation sourceCode; localized recovery hints require authored copy",
+        "accessibility": "shared labels/template captured in app.js; per-tool page/form/result/chart labels are derived from title and shared template"
+      }
     },
     {
       "id": "apy",
@@ -192,7 +263,29 @@
       "usesTaxEngine": false,
       "usesCurrencyDisplay": true,
       "hasInlineSeo": false,
-      "extractionStatus": "metadata-and-input-labels-captured; full-source-extraction-pending"
+      "extractionStatus": "runtime-results-and-calculation-implementation-evidence-captured; editorial-steps-faq-seo-accessibility-copy-pending",
+      "runtimeDefinition": "{id:\"apy\",n:\"APY Calculator\",c:\"Savings & growth\",desc:\"Convert nominal annual interest and compounding frequency into annual percentage yield.\",f:[[\"principal\",\"Starting deposit\",10000],[\"rate\",\"Nominal annual rate (%)\",4.25],[\"frequency\",\"Compounding periods per year\",12]],run:v=>{const x=Core.apyCalculator(v.principal,v.rate,v.frequency);return{main:num(x.apy,4)+\"%\",label:\"ANNUAL PERCENTAGE YIELD (APY)\",metrics:[[\"Starting deposit\",fmt(v.principal)],[\"One-year interest\",fmt(x.interestEarned)],[\"One-year balance\",fmt(x.balance)],[\"Rate per period\",num(x.periodicRate,5)+\"%\"]],breakdown:[{item:\"Starting deposit\",value:fmt(v.principal)},{item:\"Nominal annual rate\",value:num(v.rate)+\"%\"},{item:\"Compounding periods\",value:String(x.compoundingPeriods)},{item:\"Rate per period\",value:num(x.periodicRate,5)+\"%\"},{item:\"APY\",value:num(x.apy,4)+\"%\"},{item:\"One-year interest\",value:fmt(x.interestEarned)},{item:\"One-year balance\",value:fmt(x.balance)}],note:x.note}}}",
+      "runtimeDefinitionEvidence": {
+        "file": "app.js",
+        "blobSha": "acc1271f96e8d605a15a76e1dafce635820641cf",
+        "includesResultLabels": true,
+        "includesInlineSeo": false
+      },
+      "calculationImplementation": {
+        "file": "finance-core.js",
+        "blobSha": "22de8b0d6f67123182b6fd838d73892e039747a5",
+        "functionName": "apyCalculator",
+        "sourceCode": "function apyCalculator(p,r,f){nonnegative(p,\"Principal\");nonnegative(r,\"Nominal rate\");positive(f,\"Compounding periods\");if(r>1000||f>365||!Number.isInteger(f))throw Error(\"Rate must be at most 1,000 percent and compounding frequency must be a whole number\");const n=Math.round(f),q=r/100/n,b=p*Math.pow(1+q,n),apy=(Math.pow(1+q,n)-1)*100;return{apy,balance:b,interestEarned:b-p,periodicRate:q*100,compoundingPeriods:n,note:\"Assumes a fixed nominal rate compounded at the selected frequency for one year. Fees and changing rates are excluded.\"}}"
+      },
+      "sourceAvailability": {
+        "results": "captured-verbatim-in-runtimeDefinition",
+        "formula": "implementation-captured; human-readable explanation must be derived and checked against sourceCode",
+        "steps": "no tool-specific step array in runtime definition; derive only from implementation and mark authored",
+        "faq": "no inline tool-specific FAQ; author from verified implementation",
+        "seo": "no inline tool-specific SEO; author from verified description/implementation",
+        "errors": "validation/error messages captured in calculationImplementation sourceCode; localized recovery hints require authored copy",
+        "accessibility": "shared labels/template captured in app.js; per-tool page/form/result/chart labels are derived from title and shared template"
+      }
     },
     {
       "id": "tax",
@@ -220,7 +313,29 @@
       "usesTaxEngine": false,
       "usesCurrencyDisplay": true,
       "hasInlineSeo": false,
-      "extractionStatus": "metadata-and-input-labels-captured; full-source-extraction-pending"
+      "extractionStatus": "runtime-results-and-calculation-implementation-evidence-captured; editorial-steps-faq-seo-accessibility-copy-pending",
+      "runtimeDefinition": "{id:\"tax\",n:\"Tax Calculator\",c:\"Tax & income\",desc:\"Estimate tax after a flat tax rate and entered credits.\",f:[[\"amount\",\"Taxable income / amount\",50000],[\"rate\",\"Estimated tax rate (%)\",20],[\"credits\",\"Tax credits\",1000]],run:v=>{const x=Core.taxEstimate(v.amount,v.rate,v.credits);return{main:fmt(x.tax),label:\"ESTIMATED TAX AFTER CREDITS\",metrics:[[\"Tax before credits\",fmt(x.grossTax)],[\"Credits applied\",fmt(x.creditsApplied)],[\"After-tax amount\",fmt(x.afterTax)],[\"Effective tax rate\",num(x.effectiveRate)+\"%\"]],breakdown:[{item:\"Taxable amount\",value:fmt(v.amount)},{item:\"Flat tax rate\",value:num(v.rate)+\"%\"},{item:\"Tax before credits\",value:fmt(x.grossTax)},{item:\"Credits applied\",value:fmt(x.creditsApplied)},{item:\"Estimated tax\",value:fmt(x.tax)},{item:\"After-tax amount\",value:fmt(x.afterTax)}],note:x.note}}}",
+      "runtimeDefinitionEvidence": {
+        "file": "app.js",
+        "blobSha": "acc1271f96e8d605a15a76e1dafce635820641cf",
+        "includesResultLabels": true,
+        "includesInlineSeo": false
+      },
+      "calculationImplementation": {
+        "file": "finance-core.js",
+        "blobSha": "22de8b0d6f67123182b6fd838d73892e039747a5",
+        "functionName": "taxEstimate",
+        "sourceCode": "function taxEstimate(amount,rate,credits=0){nonnegative(amount,\"Taxable amount\");nonnegative(rate,\"Tax rate\");nonnegative(credits,\"Tax credits\");if(rate>100)throw Error(\"Tax rate must not exceed 100 percent\");const grossTax=amount*rate/100,tax=Math.max(0,grossTax-credits);return{grossTax,creditsApplied:Math.min(grossTax,credits),tax,afterTax:amount-tax,effectiveRate:amount===0?0:tax/amount*100,note:\"Uses the single tax rate and tax credits you enter. It is not a jurisdiction-specific tax return.\"}}"
+      },
+      "sourceAvailability": {
+        "results": "captured-verbatim-in-runtimeDefinition",
+        "formula": "implementation-captured; human-readable explanation must be derived and checked against sourceCode",
+        "steps": "no tool-specific step array in runtime definition; derive only from implementation and mark authored",
+        "faq": "no inline tool-specific FAQ; author from verified implementation",
+        "seo": "no inline tool-specific SEO; author from verified description/implementation",
+        "errors": "validation/error messages captured in calculationImplementation sourceCode; localized recovery hints require authored copy",
+        "accessibility": "shared labels/template captured in app.js; per-tool page/form/result/chart labels are derived from title and shared template"
+      }
     },
     {
       "id": "income-tax",
@@ -242,7 +357,33 @@
       "usesTaxEngine": true,
       "usesCurrencyDisplay": true,
       "hasInlineSeo": false,
-      "extractionStatus": "metadata-and-input-labels-captured; full-source-extraction-pending"
+      "extractionStatus": "runtime-results-and-calculation-implementation-evidence-captured; editorial-steps-faq-seo-accessibility-copy-pending",
+      "runtimeDefinition": "{id:\"income-tax\",n:\"Income Tax Calculator\",c:\"Tax & income\",desc:\"Estimate income tax using a selected 2026 jurisdiction and its published progressive brackets.\",f:[[\"income\",\"Annual gross income\",80000],[\"deduction\",\"Eligible deductions entered\",0]],run:v=>{const pid=$(\"#tax-profile\").value,x=window.FinPulseTaxEngine.estimate(pid,v.income,v.deduction,$(\"#tax-state\").value,$(\"#tax-state-status\").value);return{main:fmt(x.tax,x.currency),label:\"ESTIMATED INCOME TAX\",metrics:[[\"Taxable income\",fmt(x.taxableIncome,x.currency)],[\"Standard allowance\",fmt(x.personalAllowance,x.currency)],...(x.stateName?[[\"State taxable income\",fmt(x.stateTaxableIncome,x.currency)],[\"State income tax\",fmt(x.stateTax,x.currency)]]:[]),[\"After-tax income\",fmt(v.income-x.tax,x.currency)],[\"Effective tax rate\",num(x.effectiveRate)+\"%\"],[\"Marginal rate\",num(x.marginalRate)+\"%\"]],series:x.breakdown.map(b=>b.tax),chartLabels:x.breakdown.map(b=>b.component||(\"Bracket \"+num(b.rate??b.marginalRate??0)+\"%\")),chartType:\"bar\",breakdown:x.breakdown.map(b=>({component:b.component||\"Tax bracket\",...(b.taxableIncome!==undefined?{taxableIncome:fmt(b.taxableIncome,x.currency)}:{}),...(b.portion!==undefined?{portion:fmt(b.portion,x.currency)}:{}),...(b.rate!==undefined?{rate:b.rate}:{}),...(b.marginalRate!==undefined?{marginalRate:b.marginalRate}:{}),...(b.credit!==undefined?{credit:fmt(b.credit,x.currency)}:{}),tax:fmt(b.tax,x.currency)})),note:x.note+(x.stateName?\" \"+x.stateName+\" state income tax estimate included. \":\" \")+\"Selected: \"+x.profile+\" Source: \"+window.FinPulseTaxData.sources[pid.slice(0,2)]+\" (checked \"+window.FinPulseTaxData.checkedOn+\").\"}}}",
+      "runtimeDefinitionEvidence": {
+        "file": "app.js",
+        "blobSha": "acc1271f96e8d605a15a76e1dafce635820641cf",
+        "includesResultLabels": true,
+        "includesInlineSeo": false
+      },
+      "calculationImplementation": {
+        "file": "tax-engine.js",
+        "blobSha": "ad9fa603a517c4904b7be73092645c471d9ab8a6",
+        "functionNames": [
+          "estimate"
+        ],
+        "sourceCode": [
+          "function estimate(profileId,gross,deductions=0,stateId=\"none\",stateStatus=\"single\"){\nconst p=window.FinPulseTaxData.profiles[profileId];if(!p)throw Error(\"Choose a supported tax jurisdiction and year.\");\nfor(const [v,n] of [[gross,\"Gross income\"],[deductions,\"Deductions\"]])if(!Number.isFinite(v)||v<0)throw Error(n+\" must be a valid non-negative amount.\");\nif(deductions>gross)throw Error(\"Deductions cannot exceed gross income.\");\nlet allowance=p.allowance||0;const adjustedNetIncome=Math.max(0,gross-deductions);if(p.taperAllowanceAbove&&adjustedNetIncome>p.taperAllowanceAbove)allowance=Math.max(0,allowance-(adjustedNetIncome-p.taperAllowanceAbove)/2);\nconst taxable=Math.max(0,gross-deductions-allowance);let tax=0,breakdown=[],marginalRate=0;\nif(p.components){for(const c of p.components){const componentTaxable=Math.max(0,gross-deductions-(c.allowance||0));const x=progressive(componentTaxable,c.bands);const due=Math.max(0,x.tax-(c.credit||0));tax+=due;marginalRate+=x.marginalRate;breakdown.push({component:c.name,tax:due,marginalRate:x.marginalRate,taxableIncome:componentTaxable,credit:c.credit||0});}}\nelse{const x=progressive(taxable,p.bands);tax=x.tax;marginalRate=x.marginalRate;breakdown=x.breakdown;}\nlet stateTax=0,stateTaxableIncome=0,stateName=\"\",stateNote=\"\";\nif(profileId.startsWith(\"US-\")&&stateId&&stateId!==\"none\"){\nconst st=window.FinPulseStateData.states[stateId];if(!st)throw Error(\"Choose a supported US state.\");\nconst config=st[stateStatus===\"joint\"?\"joint\":\"single\"];stateName=st.name;stateTaxableIncome=Math.max(0,gross-deductions-config.standardDeduction);const special=stateId===\"AR\"&&stateTaxableIncome>94700?st.highIncomeSchedule:null,sx=progressive(stateTaxableIncome,special?special.bands:config.bands);stateTax=sx.tax;stateNote=special?special.note:(st.specialNote||\"\");tax+=stateTax;breakdown.push({component:st.name+\" state income tax\",tax:stateTax,marginalRate:sx.marginalRate,taxableIncome:stateTaxableIncome});\n}\nconst beforeMinimum=tax;if(p.minimumTax&&gross>allowance)tax=Math.max(tax,p.minimumTax);\nreturn{profile:p.label,currency:p.currency,grossIncome:gross,deductions,personalAllowance:allowance,taxableIncome:taxable,stateTaxableIncome,stateTax,stateName,tax,effectiveRate:gross?tax/gross*100:0,marginalRate,breakdown,minimumTaxApplied:tax>beforeMinimum,note:\"Educational estimate using selected 2026 brackets and standard deductions only. State-specific exemptions, credits, recapture, local taxes and special surtaxes may change US state liability. Payroll contributions are calculated separately; credits, reliefs and individual eligibility rules may change actual liability. \"+(profileId.startsWith(\"CA-2026-\")?\" Important: Canadian federal and most provincial basic personal amount / non-refundable tax credits are not fully modeled; this estimate may materially overstate income tax. \":\"\")+(profileId.startsWith(\"US-\")&&stateId&&stateId!==\"none\"?\" US state tables require verification against the relevant official state revenue authority; local taxes and many state-specific credits are not modeled. \":\"\")+stateNote};\n}"
+        ]
+      },
+      "sourceAvailability": {
+        "results": "captured-verbatim-in-runtimeDefinition",
+        "formula": "implementation-captured; human-readable explanation must be derived and checked against sourceCode",
+        "steps": "no tool-specific step array in runtime definition; derive only from implementation and mark authored",
+        "faq": "no inline tool-specific FAQ; author from verified implementation",
+        "seo": "no inline tool-specific SEO; author from verified description/implementation",
+        "errors": "validation/error messages captured in calculationImplementation sourceCode; localized recovery hints require authored copy",
+        "accessibility": "shared labels/template captured in app.js; per-tool page/form/result/chart labels are derived from title and shared template"
+      }
     },
     {
       "id": "sales-tax",
@@ -274,7 +415,29 @@
       "usesTaxEngine": false,
       "usesCurrencyDisplay": true,
       "hasInlineSeo": false,
-      "extractionStatus": "metadata-and-input-labels-captured; full-source-extraction-pending"
+      "extractionStatus": "runtime-results-and-calculation-implementation-evidence-captured; editorial-steps-faq-seo-accessibility-copy-pending",
+      "runtimeDefinition": "{id:\"sales-tax\",n:\"Sales Tax Calculator\",c:\"Tax & income\",desc:\"Calculate sales tax, discounts and final checkout total.\",f:[[\"subtotal\",\"Subtotal / tax-inclusive total\",120],[\"discount\",\"Discount (%)\",10],[\"rate\",\"Sales tax rate (%)\",8.25],[\"mode\",\"Subtotal mode\",\"add\",\"select\",[\"add\",\"included\"]]],run:v=>{const x=Core.salesTax(v.subtotal,v.discount,v.rate,v.mode);return{main:fmt(x.finalTotal),label:\"ESTIMATED FINAL TOTAL\",metrics:[[\"Pre-discount amount\",fmt(x.originalSubtotal)],[\"Discount\",fmt(x.discount)],[\"Taxable amount\",fmt(x.taxableAmount)],[\"Sales tax\",fmt(x.tax)],[\"Final total\",fmt(x.finalTotal)]],breakdown:[{item:\"Pre-discount base\",value:fmt(x.originalSubtotal)},{item:\"Discount\",value:fmt(x.discount)},{item:\"Taxable amount\",value:fmt(x.taxableAmount)},{item:\"Sales tax\",value:fmt(x.tax)},{item:\"Final total\",value:fmt(x.finalTotal)}],note:x.note}}}",
+      "runtimeDefinitionEvidence": {
+        "file": "app.js",
+        "blobSha": "acc1271f96e8d605a15a76e1dafce635820641cf",
+        "includesResultLabels": true,
+        "includesInlineSeo": false
+      },
+      "calculationImplementation": {
+        "file": "finance-core.js",
+        "blobSha": "22de8b0d6f67123182b6fd838d73892e039747a5",
+        "functionName": "salesTax",
+        "sourceCode": "function salesTax(subtotal,discountPct,rate,mode=\"add\"){nonnegative(subtotal,\"Subtotal\");nonnegative(discountPct,\"Discount percent\");nonnegative(rate,\"Sales tax rate\");if(discountPct>100||rate>100)throw Error(\"Discount and tax rates must not exceed 100 percent\");const base=mode===\"included\"?subtotal/(1+rate/100):subtotal,discount=base*discountPct/100,taxable=base-discount,tax=taxable*rate/100,total=taxable+tax;return{originalSubtotal:base,discount,taxableAmount:taxable,tax,total,finalTotal:total,preTaxTotal:taxable,note:mode===\"included\"?\"Input subtotal is treated as tax-inclusive before discount; tax is recalculated after discount.\":\"Sales tax is added after discount. Exemptions and local rules are not modeled.\"}}"
+      },
+      "sourceAvailability": {
+        "results": "captured-verbatim-in-runtimeDefinition",
+        "formula": "implementation-captured; human-readable explanation must be derived and checked against sourceCode",
+        "steps": "no tool-specific step array in runtime definition; derive only from implementation and mark authored",
+        "faq": "no inline tool-specific FAQ; author from verified implementation",
+        "seo": "no inline tool-specific SEO; author from verified description/implementation",
+        "errors": "validation/error messages captured in calculationImplementation sourceCode; localized recovery hints require authored copy",
+        "accessibility": "shared labels/template captured in app.js; per-tool page/form/result/chart labels are derived from title and shared template"
+      }
     },
     {
       "id": "vat-gst",
@@ -302,7 +465,29 @@
       "usesTaxEngine": false,
       "usesCurrencyDisplay": true,
       "hasInlineSeo": false,
-      "extractionStatus": "metadata-and-input-labels-captured; full-source-extraction-pending"
+      "extractionStatus": "runtime-results-and-calculation-implementation-evidence-captured; editorial-steps-faq-seo-accessibility-copy-pending",
+      "runtimeDefinition": "{id:\"vat-gst\",n:\"VAT / GST Calculator\",c:\"Tax & income\",desc:\"Add VAT/GST to a net price or extract tax from a gross price.\",f:[[\"amount\",\"Amount\",1000],[\"rate\",\"VAT / GST rate (%)\",15],[\"mode\",\"Calculation\",\"add\",\"select\",[\"add\",\"remove\"]]],run:v=>{const x=Core.vatGst(v.amount,v.rate,v.mode);return{main:fmt(x.total),label:\"TOTAL INCLUDING VAT / GST\",metrics:[[\"Net amount\",fmt(x.base)],[\"VAT / GST amount\",fmt(x.tax)],[\"Gross total\",fmt(x.total)]],breakdown:[{item:\"Net / extracted base\",value:fmt(x.base)},{item:\"VAT / GST\",value:fmt(x.tax)},{item:\"Gross total\",value:fmt(x.total)},{item:\"Mode\",value:v.mode}],note:x.note}}}",
+      "runtimeDefinitionEvidence": {
+        "file": "app.js",
+        "blobSha": "acc1271f96e8d605a15a76e1dafce635820641cf",
+        "includesResultLabels": true,
+        "includesInlineSeo": false
+      },
+      "calculationImplementation": {
+        "file": "finance-core.js",
+        "blobSha": "22de8b0d6f67123182b6fd838d73892e039747a5",
+        "functionName": "vatGst",
+        "sourceCode": "function vatGst(amount,rate,mode=\"add\"){nonnegative(amount,\"Amount\");nonnegative(rate,\"VAT/GST rate\");if(rate>100)throw Error(\"VAT/GST rate must not exceed 100 percent\");if(mode===\"remove\"){const base=amount/(1+rate/100),tax=amount-base;return{base,tax,total:amount,mode,note:\"Extracts tax included in the entered gross amount.\"}}const tax=amount*rate/100;return{base:amount,tax,total:amount+tax,mode:\"add\",note:\"Adds the entered VAT/GST rate to the net amount. Actual registration, exemptions and place-of-supply rules vary.\"}}"
+      },
+      "sourceAvailability": {
+        "results": "captured-verbatim-in-runtimeDefinition",
+        "formula": "implementation-captured; human-readable explanation must be derived and checked against sourceCode",
+        "steps": "no tool-specific step array in runtime definition; derive only from implementation and mark authored",
+        "faq": "no inline tool-specific FAQ; author from verified implementation",
+        "seo": "no inline tool-specific SEO; author from verified description/implementation",
+        "errors": "validation/error messages captured in calculationImplementation sourceCode; localized recovery hints require authored copy",
+        "accessibility": "shared labels/template captured in app.js; per-tool page/form/result/chart labels are derived from title and shared template"
+      }
     },
     {
       "id": "tax-refund",
@@ -330,7 +515,29 @@
       "usesTaxEngine": false,
       "usesCurrencyDisplay": true,
       "hasInlineSeo": false,
-      "extractionStatus": "metadata-and-input-labels-captured; full-source-extraction-pending"
+      "extractionStatus": "runtime-results-and-calculation-implementation-evidence-captured; editorial-steps-faq-seo-accessibility-copy-pending",
+      "runtimeDefinition": "{id:\"tax-refund\",n:\"Tax Refund Estimator\",c:\"Tax & income\",desc:\"Compare estimated tax liability with withholding and credits to estimate refund or amount due.\",f:[[\"liability\",\"Estimated total tax liability\",9000],[\"withholding\",\"Tax already withheld / paid\",10500],[\"credits\",\"Additional credits or prepayments\",0]],run:v=>{const x=Core.taxRefund(v.liability,v.withholding,v.credits);return{main:x.refund>0?fmt(x.refund):fmt(x.amountDue),label:x.refund>0?\"ESTIMATED REFUND\":\"ESTIMATED AMOUNT DUE\",metrics:[[\"Tax liability\",fmt(x.estimatedLiability)],[\"Withholding\",fmt(x.withholding)],[\"Credits / prepayments\",fmt(x.credits)],[\"Total paid\",fmt(x.totalPaid)]],breakdown:[{item:\"Estimated tax liability\",value:fmt(x.estimatedLiability)},{item:\"Withholding\",value:fmt(x.withholding)},{item:\"Credits / prepayments\",value:fmt(x.credits)},{item:\"Total paid\",value:fmt(x.totalPaid)},{item:\"Estimated refund\",value:fmt(x.refund)},{item:\"Estimated amount due\",value:fmt(x.amountDue)}],note:x.note}}}",
+      "runtimeDefinitionEvidence": {
+        "file": "app.js",
+        "blobSha": "acc1271f96e8d605a15a76e1dafce635820641cf",
+        "includesResultLabels": true,
+        "includesInlineSeo": false
+      },
+      "calculationImplementation": {
+        "file": "finance-core.js",
+        "blobSha": "22de8b0d6f67123182b6fd838d73892e039747a5",
+        "functionName": "taxRefund",
+        "sourceCode": "function taxRefund(estimatedLiability,withholding,credits=0){nonnegative(estimatedLiability,\"Estimated tax liability\");nonnegative(withholding,\"Tax withheld\");nonnegative(credits,\"Additional tax credits\");const paid=withholding+credits,difference=paid-estimatedLiability;return{withholding,credits,totalPaid:paid,estimatedLiability,refund:Math.max(0,difference),amountDue:Math.max(0,-difference),note:\"A planning estimate based only on the liability, withholding and credits entered. It is not a filed return or a guarantee of a refund.\"}}"
+      },
+      "sourceAvailability": {
+        "results": "captured-verbatim-in-runtimeDefinition",
+        "formula": "implementation-captured; human-readable explanation must be derived and checked against sourceCode",
+        "steps": "no tool-specific step array in runtime definition; derive only from implementation and mark authored",
+        "faq": "no inline tool-specific FAQ; author from verified implementation",
+        "seo": "no inline tool-specific SEO; author from verified description/implementation",
+        "errors": "validation/error messages captured in calculationImplementation sourceCode; localized recovery hints require authored copy",
+        "accessibility": "shared labels/template captured in app.js; per-tool page/form/result/chart labels are derived from title and shared template"
+      }
     },
     {
       "id": "salary",
@@ -368,7 +575,35 @@
       "usesTaxEngine": true,
       "usesCurrencyDisplay": true,
       "hasInlineSeo": false,
-      "extractionStatus": "metadata-and-input-labels-captured; full-source-extraction-pending"
+      "extractionStatus": "runtime-results-and-calculation-implementation-evidence-captured; editorial-steps-faq-seo-accessibility-copy-pending",
+      "runtimeDefinition": "{id:\"salary\",n:\"Salary Take-Home Calculator\",c:\"Tax & income\",desc:\"Estimate annual, monthly and per-paycheck take-home using 2026 income-tax brackets and employee payroll contributions.\",f:[[\"gross\",\"Gross annual salary\",75000],[\"deduction\",\"Eligible deductions entered\",0],[\"retirement\",\"Retirement contribution (%)\",5],[\"insurance\",\"Monthly insurance / benefits\",250],[\"other\",\"Other monthly deductions\",50],[\"periods\",\"Pay periods per year\",26,\"select\",[\"12\",\"24\",\"26\",\"52\"]]],run:v=>{const pid=$(\"#tax-profile\").value,x=window.FinPulseTaxEngine.estimate(pid,v.gross,v.deduction,$(\"#tax-state\").value,$(\"#tax-state-status\").value),pay=window.FinPulseTaxEngine.payroll(pid,v.gross),retirement=v.gross*v.retirement/100,insurance=v.insurance*12,other=v.other*12,net=v.gross-x.tax-pay.total-retirement-insurance-other;return{main:fmt(net/Number(v.periods),x.currency),label:\"ESTIMATED TAKE-HOME PER PAYCHECK\",metrics:[[\"Net annual income\",fmt(net,x.currency)],[\"Net monthly income\",fmt(net/12,x.currency)],[\"Progressive income tax (federal + state where selected)\",fmt(x.tax,x.currency)],...pay.items.map(i=>[i.name,fmt(i.amount,x.currency)]),[\"Retirement contributions\",fmt(retirement,x.currency)],[\"Insurance and other deductions\",fmt(insurance+other,x.currency)]],breakdown:[{item:\"Gross annual salary\",value:fmt(v.gross,x.currency)},{item:\"Income tax\",value:fmt(x.tax,x.currency)},{item:\"Employee payroll contributions\",value:fmt(pay.total,x.currency)},{item:\"Retirement contributions\",value:fmt(retirement,x.currency)},{item:\"Insurance\",value:fmt(insurance,x.currency)},{item:\"Other deductions\",value:fmt(other,x.currency)},{item:\"Estimated net annual pay\",value:fmt(net,x.currency)}],note:x.note+\" \"+pay.note+\" This annualized estimate does not model prior-employer year-to-date amounts, special payroll exemptions, pay-period rounding or all local taxes.\"}}}",
+      "runtimeDefinitionEvidence": {
+        "file": "app.js",
+        "blobSha": "acc1271f96e8d605a15a76e1dafce635820641cf",
+        "includesResultLabels": true,
+        "includesInlineSeo": false
+      },
+      "calculationImplementation": {
+        "file": "tax-engine.js",
+        "blobSha": "ad9fa603a517c4904b7be73092645c471d9ab8a6",
+        "functionNames": [
+          "estimate",
+          "payroll"
+        ],
+        "sourceCode": [
+          "function estimate(profileId,gross,deductions=0,stateId=\"none\",stateStatus=\"single\"){\nconst p=window.FinPulseTaxData.profiles[profileId];if(!p)throw Error(\"Choose a supported tax jurisdiction and year.\");\nfor(const [v,n] of [[gross,\"Gross income\"],[deductions,\"Deductions\"]])if(!Number.isFinite(v)||v<0)throw Error(n+\" must be a valid non-negative amount.\");\nif(deductions>gross)throw Error(\"Deductions cannot exceed gross income.\");\nlet allowance=p.allowance||0;const adjustedNetIncome=Math.max(0,gross-deductions);if(p.taperAllowanceAbove&&adjustedNetIncome>p.taperAllowanceAbove)allowance=Math.max(0,allowance-(adjustedNetIncome-p.taperAllowanceAbove)/2);\nconst taxable=Math.max(0,gross-deductions-allowance);let tax=0,breakdown=[],marginalRate=0;\nif(p.components){for(const c of p.components){const componentTaxable=Math.max(0,gross-deductions-(c.allowance||0));const x=progressive(componentTaxable,c.bands);const due=Math.max(0,x.tax-(c.credit||0));tax+=due;marginalRate+=x.marginalRate;breakdown.push({component:c.name,tax:due,marginalRate:x.marginalRate,taxableIncome:componentTaxable,credit:c.credit||0});}}\nelse{const x=progressive(taxable,p.bands);tax=x.tax;marginalRate=x.marginalRate;breakdown=x.breakdown;}\nlet stateTax=0,stateTaxableIncome=0,stateName=\"\",stateNote=\"\";\nif(profileId.startsWith(\"US-\")&&stateId&&stateId!==\"none\"){\nconst st=window.FinPulseStateData.states[stateId];if(!st)throw Error(\"Choose a supported US state.\");\nconst config=st[stateStatus===\"joint\"?\"joint\":\"single\"];stateName=st.name;stateTaxableIncome=Math.max(0,gross-deductions-config.standardDeduction);const special=stateId===\"AR\"&&stateTaxableIncome>94700?st.highIncomeSchedule:null,sx=progressive(stateTaxableIncome,special?special.bands:config.bands);stateTax=sx.tax;stateNote=special?special.note:(st.specialNote||\"\");tax+=stateTax;breakdown.push({component:st.name+\" state income tax\",tax:stateTax,marginalRate:sx.marginalRate,taxableIncome:stateTaxableIncome});\n}\nconst beforeMinimum=tax;if(p.minimumTax&&gross>allowance)tax=Math.max(tax,p.minimumTax);\nreturn{profile:p.label,currency:p.currency,grossIncome:gross,deductions,personalAllowance:allowance,taxableIncome:taxable,stateTaxableIncome,stateTax,stateName,tax,effectiveRate:gross?tax/gross*100:0,marginalRate,breakdown,minimumTaxApplied:tax>beforeMinimum,note:\"Educational estimate using selected 2026 brackets and standard deductions only. State-specific exemptions, credits, recapture, local taxes and special surtaxes may change US state liability. Payroll contributions are calculated separately; credits, reliefs and individual eligibility rules may change actual liability. \"+(profileId.startsWith(\"CA-2026-\")?\" Important: Canadian federal and most provincial basic personal amount / non-refundable tax credits are not fully modeled; this estimate may materially overstate income tax. \":\"\")+(profileId.startsWith(\"US-\")&&stateId&&stateId!==\"none\"?\" US state tables require verification against the relevant official state revenue authority; local taxes and many state-specific credits are not modeled. \":\"\")+stateNote};\n}",
+          "function payroll(profileId,gross,filingStatus=\"single\"){\nif(!Number.isFinite(gross)||gross<0)throw Error(\"Gross income must be a valid non-negative amount.\");\nconst items=[];const add=(name,amount)=>items.push({name,amount:Math.max(0,amount)});\nif(profileId.startsWith(\"US-\")){const p=window.FinPulseStateData.payroll.US;const status=profileId.endsWith(\"joint\")?\"joint\":profileId.endsWith(\"separate\")?\"separate\":profileId.endsWith(\"hoh\")?\"hoh\":\"single\";add(\"Social Security (6.2%, wage-base limited)\",Math.min(gross,p.socialSecurityWageBase)*p.socialSecurityRate/100);add(\"Medicare (1.45%)\",gross*p.medicareRate/100);add(\"Additional Medicare (0.9%)\",Math.max(0,gross-p.additionalMedicareThreshold[status])*p.additionalMedicareRate/100);}\nelse if(profileId.startsWith(\"UK-2026-\")){const p=window.FinPulseStateData.payroll.UK;add(\"Employee National Insurance — Class 1\",Math.max(0,Math.min(gross,p.upperEarningsLimit)-p.primaryThreshold)*p.mainRate/100+Math.max(0,gross-p.upperEarningsLimit)*p.upperRate/100);}\nelse if(profileId.startsWith(\"CA-2026-\")){const qc=profileId.endsWith(\"-QC\"),p=window.FinPulseStateData.payroll[qc?\"QC\":\"CA\"],basic=qc?p.qppBasicExemption:p.cppBasicExemption,max=qc?p.qppMaximumPensionable:p.cppMaximumPensionable,rate=qc?p.qppRate:p.cppRate,max2=qc?p.qpp2Maximum:p.cpp2Maximum,rate2=qc?p.qpp2Rate:p.cpp2Rate;const base=Math.max(0,Math.min(gross,max)-basic);add(qc?\"Québec Pension Plan (QPP)\":\"Canada Pension Plan (CPP)\",base*rate/100);add(qc?\"QPP second additional contribution\":\"CPP second additional contribution\",Math.max(0,Math.min(gross,max2)-max)*rate2/100);add(\"Employment Insurance (EI)\",Math.min(gross,p.eiMaximumInsurable)*p.eiRate/100);if(qc)add(\"Québec Parental Insurance Plan (QPIP)\",Math.min(gross,p.qpipMaximumInsurable)*p.qpipRate/100);}\nconst total=items.reduce((a,x)=>a+x.amount,0);return{items,total,note:items.length?\"Estimated employee payroll contributions for a full calendar / tax year. Employer-side contributions, prior-employer year-to-date earnings, special exemptions and pay-period rounding are not included.\":\"No statutory employee payroll contribution profile is configured for this jurisdiction.\"};\n}"
+        ]
+      },
+      "sourceAvailability": {
+        "results": "captured-verbatim-in-runtimeDefinition",
+        "formula": "implementation-captured; human-readable explanation must be derived and checked against sourceCode",
+        "steps": "no tool-specific step array in runtime definition; derive only from implementation and mark authored",
+        "faq": "no inline tool-specific FAQ; author from verified implementation",
+        "seo": "no inline tool-specific SEO; author from verified description/implementation",
+        "errors": "validation/error messages captured in calculationImplementation sourceCode; localized recovery hints require authored copy",
+        "accessibility": "shared labels/template captured in app.js; per-tool page/form/result/chart labels are derived from title and shared template"
+      }
     },
     {
       "id": "paycheck",
@@ -420,7 +655,29 @@
       "usesTaxEngine": false,
       "usesCurrencyDisplay": true,
       "hasInlineSeo": false,
-      "extractionStatus": "metadata-and-input-labels-captured; full-source-extraction-pending"
+      "extractionStatus": "runtime-results-and-calculation-implementation-evidence-captured; editorial-steps-faq-seo-accessibility-copy-pending",
+      "runtimeDefinition": "{id:\"paycheck\",n:\"Paycheck Calculator\",c:\"Payroll & pay\",desc:\"Estimate one paycheck from hourly earnings, overtime, bonus and entered deductions.\",f:[[\"hourly\",\"Hourly pay rate\",30],[\"regular\",\"Regular hours this pay period\",80],[\"overtime\",\"Overtime hours this pay period\",0],[\"multiplier\",\"Overtime pay multiplier\",1.5],[\"bonus\",\"Bonus / commission this period\",0],[\"tax\",\"Estimated withholding (%)\",18],[\"retirement\",\"Retirement deduction (%)\",5],[\"benefits\",\"Benefits / insurance deduction\",100],[\"other\",\"Other deductions\",25]],run:v=>{const x=Core.paycheck(v.hourly,v.regular,v.overtime,v.multiplier,v.bonus,v.tax,v.retirement,v.benefits,v.other);return{main:fmt(x.net),label:\"ESTIMATED TAKE-HOME PAY\",metrics:[[\"Gross pay\",fmt(x.gross)],[\"Regular earnings\",fmt(x.regularPay)],[\"Overtime earnings\",fmt(x.overtimePay)],[\"Estimated withholding\",fmt(x.tax)],[\"Retirement deduction\",fmt(x.retirement)],[\"Benefits and other deductions\",fmt(x.benefits+x.other)]],breakdown:[{item:\"Regular earnings\",value:fmt(x.regularPay)},{item:\"Overtime earnings\",value:fmt(x.overtimePay)},{item:\"Bonus / commission\",value:fmt(x.bonus)},{item:\"Gross pay\",value:fmt(x.gross)},{item:\"Tax withholding\",value:fmt(x.tax)},{item:\"Retirement\",value:fmt(x.retirement)},{item:\"Benefits\",value:fmt(x.benefits)},{item:\"Other deductions\",value:fmt(x.other)},{item:\"Net pay\",value:fmt(x.net)}],note:x.note}}}",
+      "runtimeDefinitionEvidence": {
+        "file": "app.js",
+        "blobSha": "acc1271f96e8d605a15a76e1dafce635820641cf",
+        "includesResultLabels": true,
+        "includesInlineSeo": false
+      },
+      "calculationImplementation": {
+        "file": "finance-core.js",
+        "blobSha": "22de8b0d6f67123182b6fd838d73892e039747a5",
+        "functionName": "paycheck",
+        "sourceCode": "function paycheck(hourlyRate,regularHours,overtimeHours,overtimeMultiplier,bonus,taxRate,retirementRate,benefits,other){[hourlyRate,regularHours,overtimeHours,bonus,taxRate,retirementRate,benefits,other].forEach(v=>nonnegative(v,\"Paycheck input\"));positive(overtimeMultiplier,\"Overtime multiplier\");if(taxRate>100||retirementRate>100||benefits+other>hourlyRate*(regularHours+overtimeHours*overtimeMultiplier)+bonus)throw Error(\"Rates must not exceed 100 percent and fixed deductions must not exceed gross pay\");const regularPay=hourlyRate*regularHours,overtimePay=hourlyRate*overtimeHours*overtimeMultiplier,gross=regularPay+overtimePay+bonus,tax=gross*taxRate/100,retirement=gross*retirementRate/100,net=gross-tax-retirement-benefits-other;return{regularPay,overtimePay,bonus,gross,tax,retirement,benefits,other,net,effectiveDeductions:gross-net,note:\"One-pay-period estimate using the hours, overtime multiplier and deductions entered. Withholding and employment rules vary by location.\"}}"
+      },
+      "sourceAvailability": {
+        "results": "captured-verbatim-in-runtimeDefinition",
+        "formula": "implementation-captured; human-readable explanation must be derived and checked against sourceCode",
+        "steps": "no tool-specific step array in runtime definition; derive only from implementation and mark authored",
+        "faq": "no inline tool-specific FAQ; author from verified implementation",
+        "seo": "no inline tool-specific SEO; author from verified description/implementation",
+        "errors": "validation/error messages captured in calculationImplementation sourceCode; localized recovery hints require authored copy",
+        "accessibility": "shared labels/template captured in app.js; per-tool page/form/result/chart labels are derived from title and shared template"
+      }
     },
     {
       "id": "payroll",
@@ -456,7 +713,29 @@
       "usesTaxEngine": false,
       "usesCurrencyDisplay": true,
       "hasInlineSeo": false,
-      "extractionStatus": "metadata-and-input-labels-captured; full-source-extraction-pending"
+      "extractionStatus": "runtime-results-and-calculation-implementation-evidence-captured; editorial-steps-faq-seo-accessibility-copy-pending",
+      "runtimeDefinition": "{id:\"payroll\",n:\"Payroll Calculator\",c:\"Payroll & pay\",desc:\"Estimate total monthly and annual employer payroll cost from average pay and employer-paid costs.\",f:[[\"employees\",\"Number of employees\",8],[\"salary\",\"Average gross monthly pay per employee\",4000],[\"tax\",\"Employer payroll tax / contribution (%)\",7],[\"benefits\",\"Monthly benefits per employee\",250],[\"other\",\"Other monthly payroll costs\",500]],run:v=>{const x=Core.payroll(v.employees,v.salary,v.tax,v.benefits,v.other);return{main:fmt(x.totalMonthly),label:\"ESTIMATED TOTAL MONTHLY PAYROLL COST\",metrics:[[\"Annual employer cost\",fmt(x.totalAnnual)],[\"Gross monthly wages\",fmt(x.grossMonthly)],[\"Employer taxes / contributions\",fmt(x.employerTaxesMonthly)],[\"Benefits\",fmt(x.benefitsMonthly)],[\"Other monthly costs\",fmt(x.otherMonthlyCosts)],[\"Employees\",num(x.employees,0)]],breakdown:[{item:\"Gross monthly wages\",value:fmt(x.grossMonthly)},{item:\"Employer taxes / contributions\",value:fmt(x.employerTaxesMonthly)},{item:\"Benefits\",value:fmt(x.benefitsMonthly)},{item:\"Other monthly costs\",value:fmt(x.otherMonthlyCosts)},{item:\"Total monthly payroll\",value:fmt(x.totalMonthly)},{item:\"Total annual payroll\",value:fmt(x.totalAnnual)}],note:x.note}}}",
+      "runtimeDefinitionEvidence": {
+        "file": "app.js",
+        "blobSha": "acc1271f96e8d605a15a76e1dafce635820641cf",
+        "includesResultLabels": true,
+        "includesInlineSeo": false
+      },
+      "calculationImplementation": {
+        "file": "finance-core.js",
+        "blobSha": "22de8b0d6f67123182b6fd838d73892e039747a5",
+        "functionName": "payroll",
+        "sourceCode": "function payroll(employees,averageMonthlyGross,employerTaxRate,benefitsPerEmployee,otherMonthlyCosts=0){[averageMonthlyGross,employerTaxRate,benefitsPerEmployee,otherMonthlyCosts].forEach(v=>nonnegative(v,\"Payroll input\"));positive(employees,\"Employee count\");if(!Number.isInteger(employees)||employerTaxRate>100)throw Error(\"Employee count must be a whole number and employer tax rate cannot exceed 100 percent\");const gross=employees*averageMonthlyGross,employerTaxes=gross*employerTaxRate/100,benefits=employees*benefitsPerEmployee,totalMonthly=gross+employerTaxes+benefits+otherMonthlyCosts;return{employees,grossMonthly:gross,employerTaxesMonthly:employerTaxes,benefitsMonthly:benefits,otherMonthlyCosts,totalMonthly,totalAnnual:totalMonthly*12,averageMonthlyGross,employerTaxRate,note:\"Employer-cost estimate based only on the entered average pay, employer tax percentage, benefits and other costs. Statutory payroll rules and local contributions are not assumed.\"}}"
+      },
+      "sourceAvailability": {
+        "results": "captured-verbatim-in-runtimeDefinition",
+        "formula": "implementation-captured; human-readable explanation must be derived and checked against sourceCode",
+        "steps": "no tool-specific step array in runtime definition; derive only from implementation and mark authored",
+        "faq": "no inline tool-specific FAQ; author from verified implementation",
+        "seo": "no inline tool-specific SEO; author from verified description/implementation",
+        "errors": "validation/error messages captured in calculationImplementation sourceCode; localized recovery hints require authored copy",
+        "accessibility": "shared labels/template captured in app.js; per-tool page/form/result/chart labels are derived from title and shared template"
+      }
     },
     {
       "id": "overtime",
@@ -488,7 +767,29 @@
       "usesTaxEngine": false,
       "usesCurrencyDisplay": true,
       "hasInlineSeo": false,
-      "extractionStatus": "metadata-and-input-labels-captured; full-source-extraction-pending"
+      "extractionStatus": "runtime-results-and-calculation-implementation-evidence-captured; editorial-steps-faq-seo-accessibility-copy-pending",
+      "runtimeDefinition": "{id:\"overtime\",n:\"Overtime Pay Calculator\",c:\"Payroll & pay\",desc:\"Estimate regular and overtime earnings using your own overtime hours and pay multiplier.\",f:[[\"rate\",\"Hourly pay rate\",25],[\"regular\",\"Regular hours\",40],[\"overtime\",\"Overtime hours\",8],[\"multiplier\",\"Overtime pay multiplier\",1.5]],run:v=>{const x=Core.overtimePay(v.rate,v.regular,v.overtime,v.multiplier);return{main:fmt(x.gross),label:\"TOTAL ESTIMATED GROSS PAY\",metrics:[[\"Regular earnings\",fmt(x.regular)],[\"Overtime earnings\",fmt(x.overtime)],[\"Total hours\",num(x.totalHours,2)],[\"Blended hourly rate\",fmt(x.blendedRate)]],breakdown:[{item:\"Regular earnings\",value:fmt(x.regular)},{item:\"Overtime earnings\",value:fmt(x.overtime)},{item:\"Total gross pay\",value:fmt(x.gross)},{item:\"Total hours\",value:num(x.totalHours,2)},{item:\"Blended hourly rate\",value:fmt(x.blendedRate)}],note:x.note}}}",
+      "runtimeDefinitionEvidence": {
+        "file": "app.js",
+        "blobSha": "acc1271f96e8d605a15a76e1dafce635820641cf",
+        "includesResultLabels": true,
+        "includesInlineSeo": false
+      },
+      "calculationImplementation": {
+        "file": "finance-core.js",
+        "blobSha": "22de8b0d6f67123182b6fd838d73892e039747a5",
+        "functionName": "overtimePay",
+        "sourceCode": "function overtimePay(hourlyRate,regularHours,overtimeHours,multiplier=1.5){nonnegative(hourlyRate,\"Hourly rate\");nonnegative(regularHours,\"Regular hours\");nonnegative(overtimeHours,\"Overtime hours\");positive(multiplier,\"Overtime multiplier\");const regular=hourlyRate*regularHours,overtime=hourlyRate*overtimeHours*multiplier,totalHours=regularHours+overtimeHours,gross=regular+overtime;return{regular,overtime,gross,totalHours,blendedRate:totalHours?gross/totalHours:0,note:\"Uses the overtime multiplier and hour categories you enter. It does not determine whether hours legally qualify for overtime in your location.\"}}"
+      },
+      "sourceAvailability": {
+        "results": "captured-verbatim-in-runtimeDefinition",
+        "formula": "implementation-captured; human-readable explanation must be derived and checked against sourceCode",
+        "steps": "no tool-specific step array in runtime definition; derive only from implementation and mark authored",
+        "faq": "no inline tool-specific FAQ; author from verified implementation",
+        "seo": "no inline tool-specific SEO; author from verified description/implementation",
+        "errors": "validation/error messages captured in calculationImplementation sourceCode; localized recovery hints require authored copy",
+        "accessibility": "shared labels/template captured in app.js; per-tool page/form/result/chart labels are derived from title and shared template"
+      }
     },
     {
       "id": "discount",
@@ -524,7 +825,29 @@
       "usesTaxEngine": false,
       "usesCurrencyDisplay": true,
       "hasInlineSeo": false,
-      "extractionStatus": "metadata-and-input-labels-captured; full-source-extraction-pending"
+      "extractionStatus": "runtime-results-and-calculation-implementation-evidence-captured; editorial-steps-faq-seo-accessibility-copy-pending",
+      "runtimeDefinition": "{id:\"discount\",n:\"Discount Calculator\",c:\"Shopping & pricing\",desc:\"Combine a percentage discount and coupon, then add estimated tax and shipping.\",f:[[\"price\",\"Original price\",120],[\"discount\",\"First discount (%)\",20],[\"coupon\",\"Additional coupon (%)\",5],[\"tax\",\"Estimated sales tax (%)\",8],[\"shipping\",\"Shipping cost\",5]],run:v=>{const x=Core.discountCalculator(v.price,v.discount,v.coupon,v.tax,v.shipping);return{main:fmt(x.total),label:\"ESTIMATED FINAL PRICE\",metrics:[[\"Original price\",fmt(x.originalPrice)],[\"First discount\",fmt(x.firstDiscount)],[\"Coupon discount\",fmt(x.couponDiscount)],[\"Total savings\",fmt(x.totalDiscount)],[\"Tax\",fmt(x.tax)],[\"Shipping\",fmt(x.shipping)]],breakdown:[{item:\"Original price\",value:fmt(x.originalPrice)},{item:\"First discount\",value:fmt(x.firstDiscount)},{item:\"Coupon discount\",value:fmt(x.couponDiscount)},{item:\"Discounted subtotal\",value:fmt(x.discountedSubtotal)},{item:\"Tax\",value:fmt(x.tax)},{item:\"Shipping\",value:fmt(x.shipping)},{item:\"Final price\",value:fmt(x.total)}],note:x.note}}}",
+      "runtimeDefinitionEvidence": {
+        "file": "app.js",
+        "blobSha": "acc1271f96e8d605a15a76e1dafce635820641cf",
+        "includesResultLabels": true,
+        "includesInlineSeo": false
+      },
+      "calculationImplementation": {
+        "file": "finance-core.js",
+        "blobSha": "22de8b0d6f67123182b6fd838d73892e039747a5",
+        "functionName": "discountCalculator",
+        "sourceCode": "function discountCalculator(price,discountPct,couponPct,taxRate,shipping=0){[price,discountPct,couponPct,taxRate,shipping].forEach(v=>nonnegative(v,\"Discount input\"));if(discountPct>100||couponPct>100||taxRate>100)throw Error(\"Discount, coupon and tax rates must not exceed 100 percent\");const first=price*discountPct/100,afterFirst=price-first,coupon=afterFirst*couponPct/100,subtotal=afterFirst-coupon,tax=subtotal*taxRate/100,total=subtotal+tax+shipping;return{originalPrice:price,firstDiscount:first,couponDiscount:coupon,totalDiscount:first+coupon,discountedSubtotal:subtotal,tax,shipping,total,savings:price-subtotal,note:\"Applies the coupon after the first discount, then calculates tax on the discounted subtotal and adds shipping. Store rules may differ.\"}}"
+      },
+      "sourceAvailability": {
+        "results": "captured-verbatim-in-runtimeDefinition",
+        "formula": "implementation-captured; human-readable explanation must be derived and checked against sourceCode",
+        "steps": "no tool-specific step array in runtime definition; derive only from implementation and mark authored",
+        "faq": "no inline tool-specific FAQ; author from verified implementation",
+        "seo": "no inline tool-specific SEO; author from verified description/implementation",
+        "errors": "validation/error messages captured in calculationImplementation sourceCode; localized recovery hints require authored copy",
+        "accessibility": "shared labels/template captured in app.js; per-tool page/form/result/chart labels are derived from title and shared template"
+      }
     },
     {
       "id": "exchange-fees",
@@ -568,7 +891,29 @@
       "usesTaxEngine": false,
       "usesCurrencyDisplay": true,
       "hasInlineSeo": false,
-      "extractionStatus": "metadata-and-input-labels-captured; full-source-extraction-pending"
+      "extractionStatus": "runtime-results-and-calculation-implementation-evidence-captured; editorial-steps-faq-seo-accessibility-copy-pending",
+      "runtimeDefinition": "{id:\"exchange-fees\",n:\"Exchange Fee & Markup Calculator\",c:\"Currency & transfers\",desc:\"Estimate the impact of an exchange-rate markup, percentage transfer fee and fixed fee.\",f:[[\"amount\",\"Amount to send\",1000],[\"rate\",\"Mid-market exchange rate\",1.08],[\"markup\",\"Exchange-rate markup (%)\",2],[\"fee\",\"Transfer fee (%)\",1],[\"fixed\",\"Fixed transfer fee\",5],[\"from\",\"Source currency\",\"USD\",\"currency\"],[\"to\",\"Recipient currency\",\"EUR\",\"currency\"]],run:v=>{const x=Core.exchangeFeeMarkup(v.amount,v.rate,v.markup,v.fee,v.fixed);return{main:fmt(x.convertedAmount,v.to),label:\"ESTIMATED RECIPIENT AMOUNT\",metrics:[[\"Customer exchange rate\",num(x.customerRate,6)],[\"Transfer fee\",fmt(x.fee,v.from)],[\"Mid-market value\",fmt(x.marketValue,v.to)],[\"Estimated FX spread cost\",fmt(x.fxSpreadCost,v.to)],[\"Total estimated cost vs mid-market\",fmt(x.totalCost,v.to)],[\"Effective rate\",num(x.effectiveRate,6)]],breakdown:[{item:\"Amount sent\",value:fmt(x.amount,v.from)},{item:\"Mid-market rate\",value:num(x.midRate,6)},{item:\"Customer rate\",value:num(x.customerRate,6)},{item:\"Transfer fee\",value:fmt(x.fee,v.from)},{item:\"FX spread cost\",value:fmt(x.fxSpreadCost,v.to)},{item:\"Recipient amount\",value:fmt(x.convertedAmount,v.to)}],note:x.note}}}",
+      "runtimeDefinitionEvidence": {
+        "file": "app.js",
+        "blobSha": "acc1271f96e8d605a15a76e1dafce635820641cf",
+        "includesResultLabels": true,
+        "includesInlineSeo": false
+      },
+      "calculationImplementation": {
+        "file": "finance-core.js",
+        "blobSha": "22de8b0d6f67123182b6fd838d73892e039747a5",
+        "functionName": "exchangeFeeMarkup",
+        "sourceCode": "function exchangeFeeMarkup(amount,midRate,markupPct,transferFeePct,fixedFee=0){nonnegative(amount,\"Send amount\");positive(midRate,\"Mid-market rate\");[markupPct,transferFeePct,fixedFee].forEach(v=>nonnegative(v,\"Fee or markup\"));if(markupPct>100||transferFeePct>100)throw Error(\"Markup and transfer fee rates must not exceed 100 percent\");const fee=fixedFee+amount*transferFeePct/100;if(fee>=amount&&fee>0)throw Error(\"Transfer fees must be less than the amount sent\");const customerRate=midRate*(1-markupPct/100),convertedAmount=(amount-fee)*customerRate,marketValue=amount*midRate,fxSpreadCost=amount*(midRate-customerRate),totalCost=marketValue-convertedAmount,effectiveRate=amount?convertedAmount/amount:0;return{amount,midRate,customerRate,fee,convertedAmount,marketValue,fxSpreadCost,totalCost,effectiveRate,note:\"Illustrative comparison using the entered mid-market rate, exchange-rate markup and transfer fees. Provider quotes and recipient-side charges may differ.\"}}"
+      },
+      "sourceAvailability": {
+        "results": "captured-verbatim-in-runtimeDefinition",
+        "formula": "implementation-captured; human-readable explanation must be derived and checked against sourceCode",
+        "steps": "no tool-specific step array in runtime definition; derive only from implementation and mark authored",
+        "faq": "no inline tool-specific FAQ; author from verified implementation",
+        "seo": "no inline tool-specific SEO; author from verified description/implementation",
+        "errors": "validation/error messages captured in calculationImplementation sourceCode; localized recovery hints require authored copy",
+        "accessibility": "shared labels/template captured in app.js; per-tool page/form/result/chart labels are derived from title and shared template"
+      }
     },
     {
       "id": "transfer-compare",
@@ -624,7 +969,29 @@
       "usesTaxEngine": false,
       "usesCurrencyDisplay": true,
       "hasInlineSeo": false,
-      "extractionStatus": "metadata-and-input-labels-captured; full-source-extraction-pending"
+      "extractionStatus": "runtime-results-and-calculation-implementation-evidence-captured; editorial-steps-faq-seo-accessibility-copy-pending",
+      "runtimeDefinition": "{id:\"transfer-compare\",n:\"International Money Transfer Cost Calculator\",c:\"Currency & transfers\",desc:\"Compare two hypothetical transfer providers by recipient amount after fees and exchange-rate markup.\",f:[[\"amount\",\"Amount to send\",1000],[\"rate\",\"Mid-market exchange rate\",1.08],[\"aFixed\",\"Provider A fixed fee\",5],[\"aFee\",\"Provider A transfer fee (%)\",1],[\"aMarkup\",\"Provider A rate markup (%)\",2],[\"bFixed\",\"Provider B fixed fee\",2],[\"bFee\",\"Provider B transfer fee (%)\",1.5],[\"bMarkup\",\"Provider B rate markup (%)\",1],[\"from\",\"Source currency\",\"USD\",\"currency\"],[\"to\",\"Recipient currency\",\"EUR\",\"currency\"]],run:v=>{const x=Core.internationalTransferCompare(v.amount,v.rate,v.aFixed,v.aFee,v.aMarkup,v.bFixed,v.bFee,v.bMarkup);return{main:fmt(Math.max(x.providerA.convertedAmount,x.providerB.convertedAmount),v.to),label:\"HIGHER ESTIMATED RECIPIENT AMOUNT — \"+(x.bestProvider===\"A\"?\"PROVIDER A\":\"PROVIDER B\"),metrics:[[\"Provider A receives\",fmt(x.providerA.convertedAmount,v.to)],[\"Provider B receives\",fmt(x.providerB.convertedAmount,v.to)],[\"Recipient difference\",fmt(x.recipientDifference,v.to)],[\"Provider A total fees\",fmt(x.providerA.fee,v.from)],[\"Provider B total fees\",fmt(x.providerB.fee,v.from)],[\"Provider A effective rate\",num(x.providerA.effectiveRate,6)],[\"Provider B effective rate\",num(x.providerB.effectiveRate,6)]],breakdown:[{item:\"Provider A recipient amount\",value:fmt(x.providerA.convertedAmount,v.to)},{item:\"Provider A fees\",value:fmt(x.providerA.fee,v.from)},{item:\"Provider B recipient amount\",value:fmt(x.providerB.convertedAmount,v.to)},{item:\"Provider B fees\",value:fmt(x.providerB.fee,v.from)},{item:\"Recipient difference\",value:fmt(x.recipientDifference,v.to)},{item:\"Higher recipient amount\",value:x.bestProvider}],note:x.note}}}",
+      "runtimeDefinitionEvidence": {
+        "file": "app.js",
+        "blobSha": "acc1271f96e8d605a15a76e1dafce635820641cf",
+        "includesResultLabels": true,
+        "includesInlineSeo": false
+      },
+      "calculationImplementation": {
+        "file": "finance-core.js",
+        "blobSha": "22de8b0d6f67123182b6fd838d73892e039747a5",
+        "functionName": "internationalTransferCompare",
+        "sourceCode": "function internationalTransferCompare(amount,midRate,aFixed,aPct,aMarkup,bFixed,bPct,bMarkup){const a=exchangeFeeMarkup(amount,midRate,aMarkup,aPct,aFixed),b=exchangeFeeMarkup(amount,midRate,bMarkup,bPct,bFixed),best=a.convertedAmount>=b.convertedAmount?\"A\":\"B\";return{providerA:a,providerB:b,bestProvider:best,recipientDifference:Math.abs(a.convertedAmount-b.convertedAmount),note:\"Compares two hypothetical fee structures using one entered mid-market rate. Confirm provider quotes, delivery time, recipient fees and exchange-rate guarantees before making a transfer.\"}}"
+      },
+      "sourceAvailability": {
+        "results": "captured-verbatim-in-runtimeDefinition",
+        "formula": "implementation-captured; human-readable explanation must be derived and checked against sourceCode",
+        "steps": "no tool-specific step array in runtime definition; derive only from implementation and mark authored",
+        "faq": "no inline tool-specific FAQ; author from verified implementation",
+        "seo": "no inline tool-specific SEO; author from verified description/implementation",
+        "errors": "validation/error messages captured in calculationImplementation sourceCode; localized recovery hints require authored copy",
+        "accessibility": "shared labels/template captured in app.js; per-tool page/form/result/chart labels are derived from title and shared template"
+      }
     },
     {
       "id": "freelance-project",
@@ -660,7 +1027,29 @@
       "usesTaxEngine": false,
       "usesCurrencyDisplay": true,
       "hasInlineSeo": true,
-      "extractionStatus": "metadata-and-input-labels-captured; full-source-extraction-pending"
+      "extractionStatus": "runtime-results-and-calculation-implementation-evidence-captured; editorial-steps-faq-seo-accessibility-copy-pending",
+      "runtimeDefinition": "{id:\"freelance-project\",n:\"Freelance Project Pricing Calculator\",c:\"Freelance & business\",desc:\"Build a project quote from labor hours, expenses, contingency and target gross margin.\",f:[[\"hours\",\"Estimated project hours\",40],[\"rate\",\"Hourly billing rate\",60],[\"expenses\",\"Project expenses\",500],[\"contingency\",\"Contingency allowance (%)\",10],[\"margin\",\"Target gross margin (%)\",25]],run:v=>{const x=Core.freelanceProjectPricing(v.hours,v.rate,v.expenses,v.contingency,v.margin);return{main:fmt(x.quotedPrice),label:\"ILLUSTRATIVE PROJECT QUOTE\",metrics:[[\"Labor cost\",fmt(x.labor)],[\"Base cost\",fmt(x.baseCost)],[\"Contingency\",fmt(x.contingency)],[\"Total cost\",fmt(x.totalCost)],[\"Estimated profit\",fmt(x.profit)],[\"Target gross margin\",num(x.targetMarginPct)+\"%\"]],series:x.series,chartLabels:[\"Labor\",\"Expenses\",\"Contingency\",\"Profit\",\"Quote\"],chartType:\"bar\",breakdown:[{item:\"Labor\",value:fmt(x.labor)},{item:\"Expenses\",value:fmt(v.expenses)},{item:\"Contingency\",value:fmt(x.contingency)},{item:\"Total cost\",value:fmt(x.totalCost)},{item:\"Quoted price\",value:fmt(x.quotedPrice)},{item:\"Estimated profit\",value:fmt(x.profit)}],note:x.note,seo:{intro:\"Estimate a freelance project quote using your own hours, hourly rate, expenses, contingency and target gross margin. This is a planning calculation, not a market-rate recommendation.\",faqs:[[\"How is a project quote calculated?\",\"Labor hours are multiplied by the hourly rate, expenses and contingency are added, and the cost is grossed up to the target gross margin.\"],[\"Is gross margin the same as markup?\",\"No. Gross margin is profit divided by selling price; markup is profit divided by cost.\"],[\"Does this include tax?\",\"No. Tax, payment fees, scope changes and local legal requirements are excluded.\"]]}}}}",
+      "runtimeDefinitionEvidence": {
+        "file": "app.js",
+        "blobSha": "acc1271f96e8d605a15a76e1dafce635820641cf",
+        "includesResultLabels": true,
+        "includesInlineSeo": true
+      },
+      "calculationImplementation": {
+        "file": "finance-core.js",
+        "blobSha": "22de8b0d6f67123182b6fd838d73892e039747a5",
+        "functionName": "freelanceProjectPricing",
+        "sourceCode": "function freelanceProjectPricing(h,r,e,k,m){[h,e,k,m].forEach(v=>nonnegative(v,\"Project input\"));positive(r,\"Hourly rate\");if(k>100||m>=90)throw Error(\"Contingency must be at most 100% and target margin below 90%\");const labor=h*r,base=labor+e,cont=base*k/100,cost=base+cont,price=cost/(1-m/100),profit=price-cost;return{labor,baseCost:base,contingency:cont,totalCost:cost,quotedPrice:price,profit,targetMarginPct:m,series:[labor,e,cont,profit,price],note:\"Labor plus expenses and contingency, grossed up to the target gross margin. Excludes tax, scope changes and market-rate validation.\"}}"
+      },
+      "sourceAvailability": {
+        "results": "captured-verbatim-in-runtimeDefinition",
+        "formula": "implementation-captured; human-readable explanation must be derived and checked against sourceCode",
+        "steps": "no tool-specific step array in runtime definition; derive only from implementation and mark authored",
+        "faq": "inline-tool-faq-present",
+        "seo": "inline-tool-seo-present",
+        "errors": "validation/error messages captured in calculationImplementation sourceCode; localized recovery hints require authored copy",
+        "accessibility": "shared labels/template captured in app.js; per-tool page/form/result/chart labels are derived from title and shared template"
+      }
     },
     {
       "id": "freelancer-net-income",
@@ -688,7 +1077,29 @@
       "usesTaxEngine": false,
       "usesCurrencyDisplay": true,
       "hasInlineSeo": true,
-      "extractionStatus": "metadata-and-input-labels-captured; full-source-extraction-pending"
+      "extractionStatus": "runtime-results-and-calculation-implementation-evidence-captured; editorial-steps-faq-seo-accessibility-copy-pending",
+      "runtimeDefinition": "{id:\"freelancer-net-income\",n:\"Freelancer Net Income After Costs Calculator\",c:\"Freelance & business\",desc:\"Estimate freelance income after business expenses and a user-selected tax reserve.\",f:[[\"revenue\",\"Gross freelance revenue\",60000],[\"expenses\",\"Annual business expenses\",12000],[\"tax\",\"Estimated tax reserve (%)\",20]],run:v=>{const x=Core.freelancerNetIncome(v.revenue,v.expenses,v.tax);return{main:fmt(x.netIncome),label:\"ESTIMATED NET INCOME\",metrics:[[\"Gross revenue\",fmt(x.revenue)],[\"Business expenses\",fmt(x.expenses)],[\"Profit before reserve\",fmt(x.profit)],[\"Tax reserve\",fmt(x.taxReserve)],[\"Net income rate\",num(x.effectiveNetRate)+\"%\"]],series:x.series,chartLabels:[\"Revenue\",\"Expenses\",\"Profit\",\"Reserve\",\"Net\"],chartType:\"bar\",breakdown:[{item:\"Gross revenue\",value:fmt(x.revenue)},{item:\"Business expenses\",value:fmt(x.expenses)},{item:\"Profit before reserve\",value:fmt(x.profit)},{item:\"Tax reserve\",value:fmt(x.taxReserve)},{item:\"Estimated net income\",value:fmt(x.netIncome)}],note:x.note,seo:{intro:\"See how entered business expenses and a chosen tax reserve affect freelance take-home income. Treat the tax reserve as a planning assumption.\",faqs:[[\"What counts as business expenses?\",\"Examples include software, equipment, payment fees, insurance and other genuine business costs.\"],[\"Does this calculate my actual tax?\",\"No. It applies only the reserve percentage entered and does not model jurisdiction-specific tax rules.\"],[\"Is the result guaranteed?\",\"No. Revenue, costs, collections and tax obligations can change.\"]]}}}}",
+      "runtimeDefinitionEvidence": {
+        "file": "app.js",
+        "blobSha": "acc1271f96e8d605a15a76e1dafce635820641cf",
+        "includesResultLabels": true,
+        "includesInlineSeo": true
+      },
+      "calculationImplementation": {
+        "file": "finance-core.js",
+        "blobSha": "22de8b0d6f67123182b6fd838d73892e039747a5",
+        "functionName": "freelancerNetIncome",
+        "sourceCode": "function freelancerNetIncome(revenue,expenses,tax){[revenue,expenses,tax].forEach(v=>nonnegative(v,\"Freelancer input\"));if(expenses>revenue||tax>100)throw Error(\"Expenses cannot exceed revenue in this simplified model; tax reserve must be 0–100%\");const profit=revenue-expenses,reserve=profit*tax/100,net=profit-reserve;return{revenue,expenses,profit,taxReserve:reserve,netIncome:net,effectiveNetRate:revenue?net/revenue*100:0,series:[revenue,expenses,profit,reserve,net],note:\"Gross revenue less entered expenses and a user-selected reserve on positive profit. Not a jurisdiction-specific tax calculation.\"}}"
+      },
+      "sourceAvailability": {
+        "results": "captured-verbatim-in-runtimeDefinition",
+        "formula": "implementation-captured; human-readable explanation must be derived and checked against sourceCode",
+        "steps": "no tool-specific step array in runtime definition; derive only from implementation and mark authored",
+        "faq": "inline-tool-faq-present",
+        "seo": "inline-tool-seo-present",
+        "errors": "validation/error messages captured in calculationImplementation sourceCode; localized recovery hints require authored copy",
+        "accessibility": "shared labels/template captured in app.js; per-tool page/form/result/chart labels are derived from title and shared template"
+      }
     },
     {
       "id": "markup",
@@ -712,7 +1123,29 @@
       "usesTaxEngine": false,
       "usesCurrencyDisplay": true,
       "hasInlineSeo": true,
-      "extractionStatus": "metadata-and-input-labels-captured; full-source-extraction-pending"
+      "extractionStatus": "runtime-results-and-calculation-implementation-evidence-captured; editorial-steps-faq-seo-accessibility-copy-pending",
+      "runtimeDefinition": "{id:\"markup\",n:\"Markup Calculator\",c:\"Freelance & business\",desc:\"Calculate markup amount, selling price and equivalent gross margin from cost.\",f:[[\"cost\",\"Unit cost\",80],[\"markup\",\"Markup (%)\",40]],run:v=>{const x=Core.markupCalculator(v.cost,v.markup);return{main:fmt(x.sellingPrice),label:\"SELLING PRICE\",metrics:[[\"Unit cost\",fmt(x.cost)],[\"Markup amount\",fmt(x.markupAmount)],[\"Markup rate\",num(x.markupPct)+\"%\"],[\"Equivalent gross margin\",num(x.grossMargin)+\"%\"]],series:x.series,chartLabels:[\"Cost\",\"Markup\",\"Selling price\"],chartType:\"bar\",breakdown:[{item:\"Unit cost\",value:fmt(x.cost)},{item:\"Markup amount\",value:fmt(x.markupAmount)},{item:\"Selling price\",value:fmt(x.sellingPrice)},{item:\"Markup rate\",value:num(x.markupPct)+\"%\"},{item:\"Gross margin\",value:num(x.grossMargin)+\"%\"}],note:x.note,seo:{intro:\"Turn a unit cost and markup percentage into a selling price, then compare markup with gross margin.\",faqs:[[\"What is markup?\",\"Markup is the amount added to cost, expressed as a percentage of cost.\"],[\"How is selling price calculated?\",\"Selling price equals cost multiplied by one plus the markup rate.\"],[\"Is a 40% markup a 40% margin?\",\"No. A 40% markup produces a lower gross-margin percentage, about 28.6%.\"]]}}}}",
+      "runtimeDefinitionEvidence": {
+        "file": "app.js",
+        "blobSha": "acc1271f96e8d605a15a76e1dafce635820641cf",
+        "includesResultLabels": true,
+        "includesInlineSeo": true
+      },
+      "calculationImplementation": {
+        "file": "finance-core.js",
+        "blobSha": "22de8b0d6f67123182b6fd838d73892e039747a5",
+        "functionName": "markupCalculator",
+        "sourceCode": "function markupCalculator(cost,rate){nonnegative(cost,\"Cost\");nonnegative(rate,\"Markup\");if(rate>10000)throw Error(\"Markup must not exceed 10,000%\");const amount=cost*rate/100,price=cost+amount;return{cost,markupPct:rate,markupAmount:amount,sellingPrice:price,grossMargin:price?amount/price*100:0,series:[cost,amount,price],note:\"Markup is profit divided by cost; gross margin is profit divided by selling price.\"}}"
+      },
+      "sourceAvailability": {
+        "results": "captured-verbatim-in-runtimeDefinition",
+        "formula": "implementation-captured; human-readable explanation must be derived and checked against sourceCode",
+        "steps": "no tool-specific step array in runtime definition; derive only from implementation and mark authored",
+        "faq": "inline-tool-faq-present",
+        "seo": "inline-tool-seo-present",
+        "errors": "validation/error messages captured in calculationImplementation sourceCode; localized recovery hints require authored copy",
+        "accessibility": "shared labels/template captured in app.js; per-tool page/form/result/chart labels are derived from title and shared template"
+      }
     },
     {
       "id": "break-even",
@@ -740,7 +1173,29 @@
       "usesTaxEngine": false,
       "usesCurrencyDisplay": true,
       "hasInlineSeo": true,
-      "extractionStatus": "metadata-and-input-labels-captured; full-source-extraction-pending"
+      "extractionStatus": "runtime-results-and-calculation-implementation-evidence-captured; editorial-steps-faq-seo-accessibility-copy-pending",
+      "runtimeDefinition": "{id:\"break-even\",n:\"Break-even Calculator\",c:\"Freelance & business\",desc:\"Estimate unit sales and revenue needed to cover fixed and variable costs.\",f:[[\"fixed\",\"Total fixed costs\",12000],[\"price\",\"Selling price per unit\",50],[\"variable\",\"Variable cost per unit\",20]],run:v=>{const x=Core.breakEvenCalculator(v.fixed,v.price,v.variable);return{main:num(x.units,0)+\" units\",label:\"BREAK-EVEN SALES VOLUME\",metrics:[[\"Contribution per unit\",fmt(x.contribution)],[\"Contribution margin\",num(x.contributionMargin)+\"%\"],[\"Exact break-even units\",num(x.unitsExact,2)],[\"Whole units required\",num(x.units,0)],[\"Break-even revenue\",fmt(x.revenue)],[\"Total costs\",fmt(x.totalCosts)]],series:x.series,chartLabels:[\"Fixed costs\",\"Variable costs\",\"Revenue at break-even\"],chartType:\"bar\",breakdown:[{item:\"Fixed costs\",value:fmt(v.fixed)},{item:\"Contribution per unit\",value:fmt(x.contribution)},{item:\"Exact break-even quantity\",value:num(x.unitsExact,3)},{item:\"Whole units required\",value:num(x.units,0)},{item:\"Revenue at break-even\",value:fmt(x.revenue)},{item:\"Total costs at break-even\",value:fmt(x.totalCosts)}],note:x.note,seo:{intro:\"Calculate contribution per unit, break-even volume and revenue using your fixed costs, selling price and variable cost.\",faqs:[[\"What is contribution per unit?\",\"Selling price per unit minus variable cost per unit.\"],[\"Why round units up?\",\"A business generally cannot sell a fraction of a unit, so the practical target rounds up.\"],[\"Are taxes included?\",\"No. Financing, tax, product mix and capacity constraints are excluded.\"]]}}}}",
+      "runtimeDefinitionEvidence": {
+        "file": "app.js",
+        "blobSha": "acc1271f96e8d605a15a76e1dafce635820641cf",
+        "includesResultLabels": true,
+        "includesInlineSeo": true
+      },
+      "calculationImplementation": {
+        "file": "finance-core.js",
+        "blobSha": "22de8b0d6f67123182b6fd838d73892e039747a5",
+        "functionName": "breakEvenCalculator",
+        "sourceCode": "function breakEvenCalculator(fixed,price,variable){[fixed,price,variable].forEach(v=>nonnegative(v,\"Break-even input\"));if(price<=variable)throw Error(\"Selling price must exceed variable cost per unit to produce a break-even volume\");const contribution=price-variable,exact=fixed===0?0:fixed/contribution,units=Math.ceil(exact),revenue=units*price,variableCosts=units*variable;return{contribution,contributionMargin:price?contribution/price*100:0,unitsExact:exact,units,revenue,variableCosts,totalCosts:fixed+variableCosts,series:[fixed,variableCosts,revenue],note:\"Whole units are rounded up. Assumes constant price, variable cost and fixed costs; product mix and capacity are excluded.\"}}"
+      },
+      "sourceAvailability": {
+        "results": "captured-verbatim-in-runtimeDefinition",
+        "formula": "implementation-captured; human-readable explanation must be derived and checked against sourceCode",
+        "steps": "no tool-specific step array in runtime definition; derive only from implementation and mark authored",
+        "faq": "inline-tool-faq-present",
+        "seo": "inline-tool-seo-present",
+        "errors": "validation/error messages captured in calculationImplementation sourceCode; localized recovery hints require authored copy",
+        "accessibility": "shared labels/template captured in app.js; per-tool page/form/result/chart labels are derived from title and shared template"
+      }
     }
   ]
 }
