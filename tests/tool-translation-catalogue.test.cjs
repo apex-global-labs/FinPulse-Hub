@@ -219,3 +219,27 @@ test("batch-two tools have complete extracted result, formula, FAQ, error, SEO a
  const simple=content.tools.find(item=>item.id==="simple-interest").source.inputs.find(input=>input.key==="basis");
  assert.deepEqual(simple.options.map(option=>option.value),["365","360","366"]);
 });
+
+
+test("batch-three source extraction captures 20 tools and 88 stable input labels without activating translations",()=>{
+ const batchThreeIds=["ira","inflation","cd","apy","tax","income-tax","sales-tax","vat-gst","tax-refund","salary","paycheck","payroll","overtime","discount","exchange-fees","transfer-compare","freelance-project","freelancer-net-income","markup","break-even"];
+ const manifest=require("../docs/i18n/batch-03-source-extraction.json");
+ assert.equal(manifest.status,"in-progress");
+ assert.equal(manifest.tools.length,20);
+ assert.deepEqual(manifest.tools.map(item=>item.id),batchThreeIds);
+ assert.equal(manifest.tools.reduce((total,item)=>total+item.inputs.length,0),88);
+ for(const id of batchThreeIds){
+  const tool=content.tools.find(item=>item.id===id);
+  const extracted=manifest.tools.find(item=>item.id===id);
+  assert.ok(tool.source.description&&tool.source.description.length>15,id+" source description");
+  assert.deepEqual(tool.source.inputs,extracted.inputs,id+" source input labels match extraction manifest");
+  assert.equal(tool.sourceExtractionStatus,"source-title-description-inputs-extracted",id+" initial extraction status");
+  assert.equal(tool.sourceCompletenessStatus,"partial",id+" source remains explicitly partial");
+  assert.equal(tool.sourceTranslationStatus,"not-started",id+" translation not started before source completion");
+  assert.equal(new Set(tool.source.inputs.map(input=>input.key)).size,tool.source.inputs.length,id+" unique stable input keys");
+  for(const locale of locales){
+   assert.equal(tool.locales[locale].status,"not-started",id+":"+locale+" locale not activated");
+   assert.deepEqual(tool.locales[locale].fields,{},id+":"+locale+" no premature translation draft");
+  }
+ }
+});
