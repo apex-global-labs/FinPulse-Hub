@@ -30458,6 +30458,49 @@
               "label": "Future tax rate (%)"
             }
           ]
+        },
+        "guide": {
+          "title": "Roth vs Traditional IRA Comparison Guide",
+          "introduction": "Compare simplified after-tax balances using current and future tax assumptions.",
+          "steps": [
+            {
+              "key": "ira-guide-step-1",
+              "title": "Step 1",
+              "body": "Divide the annual contribution budget by 12."
+            },
+            {
+              "key": "ira-guide-step-2",
+              "title": "Step 2",
+              "body": "Each month, calculate interest on the opening balance using the annual return divided by 1,200."
+            },
+            {
+              "key": "ira-guide-step-3",
+              "title": "Step 3",
+              "body": "Add the after-current-tax contribution to Roth and the full contribution to Traditional."
+            },
+            {
+              "key": "ira-guide-step-4",
+              "title": "Step 4",
+              "body": "Repeat for the selected number of months."
+            },
+            {
+              "key": "ira-guide-step-5",
+              "title": "Step 5",
+              "body": "Apply the future tax rate to the Traditional balance and compare after-tax values."
+            }
+          ],
+          "sections": [
+            {
+              "key": "ira-guide-section-1",
+              "heading": "Calculation method",
+              "body": "Monthly interest = opening balance × annual return ÷ 1,200. Roth monthly contribution = annual budget ÷ 12 × (1 − current tax rate ÷ 100). Traditional monthly contribution = annual budget ÷ 12. Traditional after-tax value = projected Traditional balance × (1 − future tax rate ÷ 100). Compare this with the projected Roth balance."
+            },
+            {
+              "key": "ira-guide-section-2",
+              "heading": "Assumptions and limitations",
+              "body": "Equal gross contribution budgets and monthly contributions are assumed. Current Traditional tax savings are not reinvested. Future tax applies to the entire Traditional balance; eligibility, statutory limits and tax law are not modeled."
+            }
+          ]
         }
       },
       "locales": {
@@ -30633,6 +30676,49 @@
             {
               "key": "years",
               "label": "Number of years"
+            }
+          ]
+        },
+        "guide": {
+          "title": "Inflation Calculator Guide",
+          "introduction": "Estimate how prices and purchasing power change under constant assumed inflation.",
+          "steps": [
+            {
+              "key": "inflation-guide-step-1",
+              "title": "Step 1",
+              "body": "Enter the current amount, annual inflation rate and number of years."
+            },
+            {
+              "key": "inflation-guide-step-2",
+              "title": "Step 2",
+              "body": "Convert the inflation percentage to a decimal rate."
+            },
+            {
+              "key": "inflation-guide-step-3",
+              "title": "Step 3",
+              "body": "Compound the amount by the inflation factor over the selected years."
+            },
+            {
+              "key": "inflation-guide-step-4",
+              "title": "Step 4",
+              "body": "Divide the current amount by the same factor to estimate future purchasing power."
+            },
+            {
+              "key": "inflation-guide-step-5",
+              "title": "Step 5",
+              "body": "Subtract the current amount from future cost to estimate the increase."
+            }
+          ],
+          "sections": [
+            {
+              "key": "inflation-guide-section-1",
+              "heading": "Calculation method",
+              "body": "Future cost = current amount × (1 + inflation rate ÷ 100)^years. Future purchasing power = current amount ÷ (1 + inflation rate ÷ 100)^years. Cost increase = future cost − current amount."
+            },
+            {
+              "key": "inflation-guide-section-2",
+              "heading": "Assumptions and limitations",
+              "body": "The same annual inflation rate is assumed for every year. Actual prices, spending patterns and future inflation may vary."
             }
           ]
         }
@@ -30836,6 +30922,49 @@
             {
               "key": "term",
               "label": "Term (months)"
+            }
+          ]
+        },
+        "guide": {
+          "title": "CD Calculator Guide",
+          "introduction": "Estimate certificate-of-deposit maturity value and interest from a fixed APY and term.",
+          "steps": [
+            {
+              "key": "cd-guide-step-1",
+              "title": "Step 1",
+              "body": "Enter the initial deposit, APY and term in whole months."
+            },
+            {
+              "key": "cd-guide-step-2",
+              "title": "Step 2",
+              "body": "Convert APY to a decimal growth factor."
+            },
+            {
+              "key": "cd-guide-step-3",
+              "title": "Step 3",
+              "body": "Raise the annual factor to the term expressed in years."
+            },
+            {
+              "key": "cd-guide-step-4",
+              "title": "Step 4",
+              "body": "Multiply the deposit by the factor to estimate maturity value."
+            },
+            {
+              "key": "cd-guide-step-5",
+              "title": "Step 5",
+              "body": "Subtract the deposit to estimate interest earned."
+            }
+          ],
+          "sections": [
+            {
+              "key": "cd-guide-section-1",
+              "heading": "Calculation method",
+              "body": "Maturity value = deposit × (1 + APY ÷ 100)^(term months ÷ 12). Interest earned = maturity value − deposit."
+            },
+            {
+              "key": "cd-guide-section-2",
+              "heading": "Assumptions and limitations",
+              "body": "APY is assumed fixed for the full term. Withdrawals, fees, additional deposits and early-withdrawal penalties are excluded."
             }
           ]
         }
@@ -31049,6 +31178,49 @@
               "label": "Compounding periods per year"
             }
           ]
+        },
+        "guide": {
+          "title": "APY Calculator Guide",
+          "introduction": "Convert nominal annual interest and compounding frequency into annual percentage yield.",
+          "steps": [
+            {
+              "key": "apy-guide-step-1",
+              "title": "Step 1",
+              "body": "Enter principal, nominal annual rate and compounding frequency."
+            },
+            {
+              "key": "apy-guide-step-2",
+              "title": "Step 2",
+              "body": "Divide the nominal rate by the number of periods to get the periodic rate."
+            },
+            {
+              "key": "apy-guide-step-3",
+              "title": "Step 3",
+              "body": "Compound the principal for the selected number of periods."
+            },
+            {
+              "key": "apy-guide-step-4",
+              "title": "Step 4",
+              "body": "Subtract principal to estimate one-year interest."
+            },
+            {
+              "key": "apy-guide-step-5",
+              "title": "Step 5",
+              "body": "Convert the accumulated growth to APY."
+            }
+          ],
+          "sections": [
+            {
+              "key": "apy-guide-section-1",
+              "heading": "Calculation method",
+              "body": "Periodic rate = nominal annual rate ÷ (100 × compounding periods). One-year balance = principal × (1 + periodic rate)^periods. APY = ((1 + periodic rate)^periods − 1) × 100."
+            },
+            {
+              "key": "apy-guide-section-2",
+              "heading": "Assumptions and limitations",
+              "body": "The nominal rate is fixed for one year and compounding periods are equal. Fees and changing rates are excluded."
+            }
+          ]
         }
       },
       "locales": {
@@ -31250,6 +31422,44 @@
               "label": "Tax credits"
             }
           ]
+        },
+        "guide": {
+          "title": "Tax Calculator Guide",
+          "introduction": "Estimate tax after a flat tax rate and entered credits.",
+          "steps": [
+            {
+              "key": "tax-guide-step-1",
+              "title": "Step 1",
+              "body": "Enter taxable amount, flat tax rate and credits."
+            },
+            {
+              "key": "tax-guide-step-2",
+              "title": "Step 2",
+              "body": "Multiply the amount by the rate to estimate gross tax."
+            },
+            {
+              "key": "tax-guide-step-3",
+              "title": "Step 3",
+              "body": "Subtract credits, with tax floored at zero."
+            },
+            {
+              "key": "tax-guide-step-4",
+              "title": "Step 4",
+              "body": "Subtract tax after credits from the amount to estimate the after-tax amount."
+            }
+          ],
+          "sections": [
+            {
+              "key": "tax-guide-section-1",
+              "heading": "Calculation method",
+              "body": "Gross tax = taxable amount × tax rate ÷ 100. Tax after credits = max(0, gross tax − credits). After-tax amount = taxable amount − tax after credits."
+            },
+            {
+              "key": "tax-guide-section-2",
+              "heading": "Assumptions and limitations",
+              "body": "Uses one user-entered flat rate, not progressive brackets. Credits are limited to gross tax; unused credits are not modeled as a refund."
+            }
+          ]
         }
       },
       "locales": {
@@ -31433,6 +31643,49 @@
             {
               "key": "deduction",
               "label": "Eligible deductions entered"
+            }
+          ]
+        },
+        "guide": {
+          "title": "Income Tax Calculator Guide",
+          "introduction": "Estimate income tax using a selected 2026 jurisdiction and its published progressive brackets.",
+          "steps": [
+            {
+              "key": "income-tax-guide-step-1",
+              "title": "Step 1",
+              "body": "Select a supported 2026 jurisdiction profile and, for supported US profiles, optional state and filing status."
+            },
+            {
+              "key": "income-tax-guide-step-2",
+              "title": "Step 2",
+              "body": "Enter annual gross income and eligible deductions."
+            },
+            {
+              "key": "income-tax-guide-step-3",
+              "title": "Step 3",
+              "body": "The engine applies the selected profile's allowance and progressive bands; some profiles calculate separate components."
+            },
+            {
+              "key": "income-tax-guide-step-4",
+              "title": "Step 4",
+              "body": "For supported US state selections, the state estimate is calculated using the selected filing-status table and added."
+            },
+            {
+              "key": "income-tax-guide-step-5",
+              "title": "Step 5",
+              "body": "Review taxable income, tax breakdown, marginal rate, effective rate and source/date note."
+            }
+          ],
+          "sections": [
+            {
+              "key": "income-tax-guide-section-1",
+              "heading": "Calculation method",
+              "body": "The selected 2026 profile supplies allowances and progressive bands. Taxable income = max(0, gross income − deductions − applicable allowance). Tax is calculated progressively by band; profile components and selected supported US state tax may be added. Effective rate = total estimated tax ÷ gross income × 100."
+            },
+            {
+              "key": "income-tax-guide-section-2",
+              "heading": "Assumptions and limitations",
+              "body": "Uses bundled tax data for selected supported 2026 profiles; it is not a universal global tax engine. Only modeled allowances, brackets, components and optional supported US state tables are applied. Canadian federal and most provincial basic personal amount/non-refundable credits are not fully modeled and may cause material overestimation. US state tables require verification against the relevant official state revenue authority; local taxes and many state credits are not modeled."
             }
           ]
         }
@@ -31647,6 +31900,49 @@
               "label": "Subtotal mode"
             }
           ]
+        },
+        "guide": {
+          "title": "Sales Tax Calculator Guide",
+          "introduction": "Calculate sales tax, discounts and final checkout total.",
+          "steps": [
+            {
+              "key": "sales-tax-guide-step-1",
+              "title": "Step 1",
+              "body": "Enter subtotal, discount, tax rate and subtotal mode."
+            },
+            {
+              "key": "sales-tax-guide-step-2",
+              "title": "Step 2",
+              "body": "If tax-inclusive, remove included tax to derive the base amount."
+            },
+            {
+              "key": "sales-tax-guide-step-3",
+              "title": "Step 3",
+              "body": "Apply the discount to the base."
+            },
+            {
+              "key": "sales-tax-guide-step-4",
+              "title": "Step 4",
+              "body": "Calculate tax on the discounted taxable amount."
+            },
+            {
+              "key": "sales-tax-guide-step-5",
+              "title": "Step 5",
+              "body": "Add tax to the discounted amount for the final total."
+            }
+          ],
+          "sections": [
+            {
+              "key": "sales-tax-guide-section-1",
+              "heading": "Calculation method",
+              "body": "Tax-inclusive base = subtotal ÷ (1 + rate ÷ 100); tax-exclusive base = subtotal. Discount = base × discount percentage ÷ 100. Taxable amount = base − discount. Tax = taxable amount × rate ÷ 100. Final total = taxable amount + tax."
+            },
+            {
+              "key": "sales-tax-guide-section-2",
+              "heading": "Assumptions and limitations",
+              "body": "Mode determines whether the entered subtotal includes tax. Discount is applied before tax; tax-inclusive mode recalculates tax after discount. Exemptions, local rules and product-specific tax treatment are excluded."
+            }
+          ]
         }
       },
       "locales": {
@@ -31835,6 +32131,49 @@
             {
               "key": "mode",
               "label": "Calculation"
+            }
+          ]
+        },
+        "guide": {
+          "title": "VAT / GST Calculator Guide",
+          "introduction": "Add VAT/GST to a net price or extract tax from a gross price.",
+          "steps": [
+            {
+              "key": "vat-gst-guide-step-1",
+              "title": "Step 1",
+              "body": "Enter amount and VAT/GST rate."
+            },
+            {
+              "key": "vat-gst-guide-step-2",
+              "title": "Step 2",
+              "body": "Choose add tax to a net amount or remove included tax from a gross amount."
+            },
+            {
+              "key": "vat-gst-guide-step-3",
+              "title": "Step 3",
+              "body": "In add mode, calculate tax on the net amount and add it."
+            },
+            {
+              "key": "vat-gst-guide-step-4",
+              "title": "Step 4",
+              "body": "In remove mode, divide gross by one plus the rate and calculate tax as the difference."
+            },
+            {
+              "key": "vat-gst-guide-step-5",
+              "title": "Step 5",
+              "body": "Review net amount, tax and gross total."
+            }
+          ],
+          "sections": [
+            {
+              "key": "vat-gst-guide-section-1",
+              "heading": "Calculation method",
+              "body": "Add mode: tax = net amount × rate ÷ 100; gross = net + tax. Remove mode: net = gross ÷ (1 + rate ÷ 100); included tax = gross − net."
+            },
+            {
+              "key": "vat-gst-guide-section-2",
+              "heading": "Assumptions and limitations",
+              "body": "Uses only the entered rate and mode. Registration, exemptions, place-of-supply rules, rounding and jurisdiction-specific treatment are not modeled."
             }
           ]
         }
@@ -32032,6 +32371,49 @@
             {
               "key": "credits",
               "label": "Additional credits or prepayments"
+            }
+          ]
+        },
+        "guide": {
+          "title": "Tax Refund Estimator Guide",
+          "introduction": "Compare estimated tax liability with withholding and credits to estimate refund or amount due.",
+          "steps": [
+            {
+              "key": "tax-refund-guide-step-1",
+              "title": "Step 1",
+              "body": "Enter estimated total tax liability."
+            },
+            {
+              "key": "tax-refund-guide-step-2",
+              "title": "Step 2",
+              "body": "Enter tax withheld or already paid."
+            },
+            {
+              "key": "tax-refund-guide-step-3",
+              "title": "Step 3",
+              "body": "Enter additional credits or prepayments."
+            },
+            {
+              "key": "tax-refund-guide-step-4",
+              "title": "Step 4",
+              "body": "Add withholding and credits to get total paid."
+            },
+            {
+              "key": "tax-refund-guide-step-5",
+              "title": "Step 5",
+              "body": "Compare total paid with liability; show a refund estimate or amount due."
+            }
+          ],
+          "sections": [
+            {
+              "key": "tax-refund-guide-section-1",
+              "heading": "Calculation method",
+              "body": "Total paid = withholding + credits/prepayments. Difference = total paid − estimated liability. Refund = max(0, difference); amount due = max(0, −difference)."
+            },
+            {
+              "key": "tax-refund-guide-section-2",
+              "heading": "Assumptions and limitations",
+              "body": "Uses only the liability, withholding and credits entered. Does not prepare or file a return or verify credit eligibility."
             }
           ]
         }
@@ -32271,6 +32653,54 @@
             {
               "key": "periods",
               "label": "Pay periods per year"
+            }
+          ]
+        },
+        "guide": {
+          "title": "Salary Take-Home Calculator Guide",
+          "introduction": "Estimate annual, monthly and per-paycheck take-home using 2026 income-tax brackets and employee payroll contributions.",
+          "steps": [
+            {
+              "key": "salary-guide-step-1",
+              "title": "Step 1",
+              "body": "Select a supported 2026 tax profile and, where applicable, supported US state and filing status."
+            },
+            {
+              "key": "salary-guide-step-2",
+              "title": "Step 2",
+              "body": "Enter gross annual salary and eligible deductions."
+            },
+            {
+              "key": "salary-guide-step-3",
+              "title": "Step 3",
+              "body": "Enter retirement percentage and monthly insurance/benefits and other deductions."
+            },
+            {
+              "key": "salary-guide-step-4",
+              "title": "Step 4",
+              "body": "The tax engine estimates income tax and supported employee payroll contributions."
+            },
+            {
+              "key": "salary-guide-step-5",
+              "title": "Step 5",
+              "body": "Subtract tax, payroll contributions and annualized deductions from gross salary."
+            },
+            {
+              "key": "salary-guide-step-6",
+              "title": "Step 6",
+              "body": "Divide annual take-home by 12 and by selected pay periods."
+            }
+          ],
+          "sections": [
+            {
+              "key": "salary-guide-section-1",
+              "heading": "Calculation method",
+              "body": "Annual take-home = gross salary − estimated income tax − modeled employee payroll contributions − retirement contribution − annualized insurance and other deductions. Monthly take-home = annual take-home ÷ 12. Per-paycheck estimate = annual take-home ÷ selected pay periods."
+            },
+            {
+              "key": "salary-guide-section-2",
+              "heading": "Assumptions and limitations",
+              "body": "Uses selected 2026 profile and modeled payroll contribution rules; coverage varies by jurisdiction. Retirement percentage and monthly deductions are user-entered assumptions. Prior-employer year-to-date amounts, special payroll exemptions, pay-period rounding and all local taxes are not modeled. Canadian tax credits and some US state rules may be incomplete; review jurisdiction-specific notes."
             }
           ]
         }
@@ -32548,6 +32978,49 @@
               "label": "Other deductions"
             }
           ]
+        },
+        "guide": {
+          "title": "Paycheck Calculator Guide",
+          "introduction": "Estimate one paycheck from hourly earnings, overtime, bonus and entered deductions.",
+          "steps": [
+            {
+              "key": "paycheck-guide-step-1",
+              "title": "Step 1",
+              "body": "Enter hourly rate, regular hours and overtime hours."
+            },
+            {
+              "key": "paycheck-guide-step-2",
+              "title": "Step 2",
+              "body": "Enter overtime multiplier and bonus/commission."
+            },
+            {
+              "key": "paycheck-guide-step-3",
+              "title": "Step 3",
+              "body": "Enter withholding and retirement percentages and fixed deductions."
+            },
+            {
+              "key": "paycheck-guide-step-4",
+              "title": "Step 4",
+              "body": "Calculate regular and overtime earnings and add bonus to get gross pay."
+            },
+            {
+              "key": "paycheck-guide-step-5",
+              "title": "Step 5",
+              "body": "Subtract percentage-based and fixed deductions to estimate net pay."
+            }
+          ],
+          "sections": [
+            {
+              "key": "paycheck-guide-section-1",
+              "heading": "Calculation method",
+              "body": "Regular pay = hourly rate × regular hours. Overtime pay = hourly rate × overtime hours × multiplier. Gross = regular pay + overtime pay + bonus. Net = gross − withholding − retirement deduction − benefits − other deductions."
+            },
+            {
+              "key": "paycheck-guide-section-2",
+              "heading": "Assumptions and limitations",
+              "body": "Uses user-entered hours, multiplier, bonus and deductions for one pay period. Does not determine legal overtime eligibility or jurisdiction-specific withholding."
+            }
+          ]
         }
       },
       "locales": {
@@ -32779,6 +33252,49 @@
               "label": "Other monthly payroll costs"
             }
           ]
+        },
+        "guide": {
+          "title": "Payroll Calculator Guide",
+          "introduction": "Estimate total monthly and annual employer payroll cost from average pay and employer-paid costs.",
+          "steps": [
+            {
+              "key": "payroll-guide-step-1",
+              "title": "Step 1",
+              "body": "Enter a positive whole-number employee count."
+            },
+            {
+              "key": "payroll-guide-step-2",
+              "title": "Step 2",
+              "body": "Enter average gross monthly pay per employee."
+            },
+            {
+              "key": "payroll-guide-step-3",
+              "title": "Step 3",
+              "body": "Enter employer tax/contribution rate and monthly benefits per employee."
+            },
+            {
+              "key": "payroll-guide-step-4",
+              "title": "Step 4",
+              "body": "Enter other monthly payroll costs."
+            },
+            {
+              "key": "payroll-guide-step-5",
+              "title": "Step 5",
+              "body": "Calculate gross wages, employer contributions and benefits, then annualize the monthly total."
+            }
+          ],
+          "sections": [
+            {
+              "key": "payroll-guide-section-1",
+              "heading": "Calculation method",
+              "body": "Gross monthly wages = employees × average gross monthly pay. Employer taxes = gross wages × employer tax rate ÷ 100. Benefits = employees × benefits per employee. Monthly cost = gross wages + employer taxes + benefits + other monthly costs. Annual cost = monthly cost × 12."
+            },
+            {
+              "key": "payroll-guide-section-2",
+              "heading": "Assumptions and limitations",
+              "body": "Uses average monthly pay and employer rate entered by the user. Statutory employer rules, jurisdiction contributions, employee-level pay differences and one-off costs are not assumed."
+            }
+          ]
         }
       },
       "locales": {
@@ -32983,6 +33499,49 @@
             {
               "key": "multiplier",
               "label": "Overtime pay multiplier"
+            }
+          ]
+        },
+        "guide": {
+          "title": "Overtime Pay Calculator Guide",
+          "introduction": "Estimate regular and overtime earnings using your own overtime hours and pay multiplier.",
+          "steps": [
+            {
+              "key": "overtime-guide-step-1",
+              "title": "Step 1",
+              "body": "Enter hourly rate, regular hours and overtime hours."
+            },
+            {
+              "key": "overtime-guide-step-2",
+              "title": "Step 2",
+              "body": "Enter the overtime multiplier."
+            },
+            {
+              "key": "overtime-guide-step-3",
+              "title": "Step 3",
+              "body": "Multiply rate by regular hours for regular earnings."
+            },
+            {
+              "key": "overtime-guide-step-4",
+              "title": "Step 4",
+              "body": "Multiply rate by overtime hours and multiplier for overtime earnings."
+            },
+            {
+              "key": "overtime-guide-step-5",
+              "title": "Step 5",
+              "body": "Add earnings and divide by total hours for blended rate."
+            }
+          ],
+          "sections": [
+            {
+              "key": "overtime-guide-section-1",
+              "heading": "Calculation method",
+              "body": "Regular earnings = hourly rate × regular hours. Overtime earnings = hourly rate × overtime hours × multiplier. Gross = regular + overtime. Blended rate = gross ÷ total hours when total hours are positive."
+            },
+            {
+              "key": "overtime-guide-section-2",
+              "heading": "Assumptions and limitations",
+              "body": "Uses the user-entered multiplier and hour categories. Does not determine legal overtime eligibility or the legally required multiplier."
             }
           ]
         }
@@ -33215,6 +33774,49 @@
             {
               "key": "shipping",
               "label": "Shipping cost"
+            }
+          ]
+        },
+        "guide": {
+          "title": "Discount Calculator Guide",
+          "introduction": "Combine a percentage discount and coupon, then add estimated tax and shipping.",
+          "steps": [
+            {
+              "key": "discount-guide-step-1",
+              "title": "Step 1",
+              "body": "Enter original price, first discount, coupon, tax and shipping."
+            },
+            {
+              "key": "discount-guide-step-2",
+              "title": "Step 2",
+              "body": "Apply the first discount to original price."
+            },
+            {
+              "key": "discount-guide-step-3",
+              "title": "Step 3",
+              "body": "Apply coupon to the remaining price."
+            },
+            {
+              "key": "discount-guide-step-4",
+              "title": "Step 4",
+              "body": "Calculate tax on the discounted subtotal."
+            },
+            {
+              "key": "discount-guide-step-5",
+              "title": "Step 5",
+              "body": "Add shipping to subtotal and tax for the final total."
+            }
+          ],
+          "sections": [
+            {
+              "key": "discount-guide-section-1",
+              "heading": "Calculation method",
+              "body": "First discount = price × first rate ÷ 100. Coupon = price after first discount × coupon rate ÷ 100. Subtotal = price after both discounts. Tax = discounted subtotal × tax rate ÷ 100. Total = subtotal + tax + shipping."
+            },
+            {
+              "key": "discount-guide-section-2",
+              "heading": "Assumptions and limitations",
+              "body": "Coupon is applied after the first discount. Tax is calculated on the discounted subtotal; shipping is added afterward and is not in the tax base. Store-specific coupon, tax and shipping rules may differ."
             }
           ]
         }
@@ -33469,6 +34071,49 @@
             {
               "key": "to",
               "label": "Recipient currency"
+            }
+          ]
+        },
+        "guide": {
+          "title": "Exchange Fee & Markup Calculator Guide",
+          "introduction": "Estimate the impact of an exchange-rate markup, percentage transfer fee and fixed fee.",
+          "steps": [
+            {
+              "key": "exchange-fees-guide-step-1",
+              "title": "Step 1",
+              "body": "Enter send amount and mid-market rate."
+            },
+            {
+              "key": "exchange-fees-guide-step-2",
+              "title": "Step 2",
+              "body": "Enter exchange-rate markup, percentage fee and fixed fee."
+            },
+            {
+              "key": "exchange-fees-guide-step-3",
+              "title": "Step 3",
+              "body": "Calculate total fee and customer rate after markup."
+            },
+            {
+              "key": "exchange-fees-guide-step-4",
+              "title": "Step 4",
+              "body": "Subtract fee and convert the remainder at customer rate."
+            },
+            {
+              "key": "exchange-fees-guide-step-5",
+              "title": "Step 5",
+              "body": "Compare recipient amount with mid-market value and review estimated spread and cost."
+            }
+          ],
+          "sections": [
+            {
+              "key": "exchange-fees-guide-section-1",
+              "heading": "Calculation method",
+              "body": "Fee = fixed fee + send amount × percentage fee ÷ 100. Customer rate = mid-market rate × (1 − markup percentage ÷ 100). Recipient amount = (send amount − fee) × customer rate. FX spread cost = send amount × (mid-market rate − customer rate)."
+            },
+            {
+              "key": "exchange-fees-guide-section-2",
+              "heading": "Assumptions and limitations",
+              "body": "Uses the single mid-market rate and fee assumptions entered. Provider quotes, recipient-side fees, taxes, delivery times and rate guarantees may differ. When a fee is charged, the combined fee must be less than the send amount."
             }
           ]
         }
@@ -33753,6 +34398,49 @@
               "label": "Recipient currency"
             }
           ]
+        },
+        "guide": {
+          "title": "International Money Transfer Cost Calculator Guide",
+          "introduction": "Compare two hypothetical transfer providers by recipient amount after fees and exchange-rate markup.",
+          "steps": [
+            {
+              "key": "transfer-compare-guide-step-1",
+              "title": "Step 1",
+              "body": "Enter send amount and one mid-market rate."
+            },
+            {
+              "key": "transfer-compare-guide-step-2",
+              "title": "Step 2",
+              "body": "Enter Provider A fixed fee, percentage fee and markup."
+            },
+            {
+              "key": "transfer-compare-guide-step-3",
+              "title": "Step 3",
+              "body": "Enter Provider B fixed fee, percentage fee and markup."
+            },
+            {
+              "key": "transfer-compare-guide-step-4",
+              "title": "Step 4",
+              "body": "Calculate each provider's fee and customer rate using the same base values."
+            },
+            {
+              "key": "transfer-compare-guide-step-5",
+              "title": "Step 5",
+              "body": "Compare estimated recipient amounts and their difference."
+            }
+          ],
+          "sections": [
+            {
+              "key": "transfer-compare-guide-section-1",
+              "heading": "Calculation method",
+              "body": "Calculate each provider's fee and customer exchange rate using the same send amount and mid-market rate. Compare converted recipient amounts. Recipient difference = absolute difference between the two converted amounts."
+            },
+            {
+              "key": "transfer-compare-guide-section-2",
+              "heading": "Assumptions and limitations",
+              "body": "Both hypothetical providers use the same entered mid-market rate and send amount. Live quotes, delivery time, recipient fees, rate guarantees and other charges are not modeled. The higher calculated recipient amount is not a provider recommendation."
+            }
+          ]
         }
       },
       "locales": {
@@ -33987,6 +34675,54 @@
               "label": "Target gross margin (%)"
             }
           ]
+        },
+        "guide": {
+          "title": "Freelance Project Pricing Calculator Guide",
+          "introduction": "Build a project quote from labor hours, expenses, contingency and target gross margin.",
+          "steps": [
+            {
+              "key": "freelance-project-guide-step-1",
+              "title": "Step 1",
+              "body": "Enter project hours and hourly rate."
+            },
+            {
+              "key": "freelance-project-guide-step-2",
+              "title": "Step 2",
+              "body": "Add expenses and contingency percentage."
+            },
+            {
+              "key": "freelance-project-guide-step-3",
+              "title": "Step 3",
+              "body": "Enter a target gross margin below 90%."
+            },
+            {
+              "key": "freelance-project-guide-step-4",
+              "title": "Step 4",
+              "body": "Calculate labor, base cost, contingency and total cost."
+            },
+            {
+              "key": "freelance-project-guide-step-5",
+              "title": "Step 5",
+              "body": "Divide total cost by one minus target margin to get quote."
+            },
+            {
+              "key": "freelance-project-guide-step-6",
+              "title": "Step 6",
+              "body": "Subtract total cost from quote to estimate profit."
+            }
+          ],
+          "sections": [
+            {
+              "key": "freelance-project-guide-section-1",
+              "heading": "Calculation method",
+              "body": "Labor = hours × hourly rate. Base cost = labor + expenses. Contingency = base cost × contingency rate ÷ 100. Total cost = base cost + contingency. Quote = total cost ÷ (1 − target gross margin ÷ 100). Profit = quote − total cost."
+            },
+            {
+              "key": "freelance-project-guide-section-2",
+              "heading": "Assumptions and limitations",
+              "body": "Contingency is applied to labor plus expenses. Gross margin is profit divided by quoted price, not markup divided by cost. Tax, payment fees, scope changes and market-rate validation are excluded."
+            }
+          ]
         }
       },
       "locales": {
@@ -34191,6 +34927,49 @@
               "label": "Estimated tax reserve (%)"
             }
           ]
+        },
+        "guide": {
+          "title": "Freelancer Net Income After Costs Calculator Guide",
+          "introduction": "Estimate freelance income after business expenses and a user-selected tax reserve.",
+          "steps": [
+            {
+              "key": "freelancer-net-income-guide-step-1",
+              "title": "Step 1",
+              "body": "Enter gross freelance revenue and business expenses."
+            },
+            {
+              "key": "freelancer-net-income-guide-step-2",
+              "title": "Step 2",
+              "body": "Enter the tax reserve percentage."
+            },
+            {
+              "key": "freelancer-net-income-guide-step-3",
+              "title": "Step 3",
+              "body": "Subtract expenses from revenue to estimate profit."
+            },
+            {
+              "key": "freelancer-net-income-guide-step-4",
+              "title": "Step 4",
+              "body": "Apply the reserve percentage to profit."
+            },
+            {
+              "key": "freelancer-net-income-guide-step-5",
+              "title": "Step 5",
+              "body": "Subtract reserve to estimate net income and compare it with revenue."
+            }
+          ],
+          "sections": [
+            {
+              "key": "freelancer-net-income-guide-section-1",
+              "heading": "Calculation method",
+              "body": "Profit = gross revenue − expenses. Tax reserve = profit × reserve rate ÷ 100. Net income = profit − reserve. Effective net rate = net income ÷ revenue × 100 when revenue is non-zero."
+            },
+            {
+              "key": "freelancer-net-income-guide-section-2",
+              "heading": "Assumptions and limitations",
+              "body": "Expenses cannot exceed revenue in this simplified model. The reserve is applied to profit after expenses, not gross revenue. The reserve is a user-selected planning assumption, not a jurisdiction-specific tax calculation."
+            }
+          ]
         }
       },
       "locales": {
@@ -34380,6 +35159,44 @@
             {
               "key": "markup",
               "label": "Markup (%)"
+            }
+          ]
+        },
+        "guide": {
+          "title": "Markup Calculator Guide",
+          "introduction": "Calculate markup amount, selling price and equivalent gross margin from cost.",
+          "steps": [
+            {
+              "key": "markup-guide-step-1",
+              "title": "Step 1",
+              "body": "Enter unit cost and markup percentage."
+            },
+            {
+              "key": "markup-guide-step-2",
+              "title": "Step 2",
+              "body": "Multiply cost by markup percentage to calculate markup amount."
+            },
+            {
+              "key": "markup-guide-step-3",
+              "title": "Step 3",
+              "body": "Add markup to cost to calculate selling price."
+            },
+            {
+              "key": "markup-guide-step-4",
+              "title": "Step 4",
+              "body": "Divide markup amount by selling price to calculate gross margin."
+            }
+          ],
+          "sections": [
+            {
+              "key": "markup-guide-section-1",
+              "heading": "Calculation method",
+              "body": "Markup amount = cost × markup percentage ÷ 100. Selling price = cost + markup amount. Gross margin = markup amount ÷ selling price × 100 when selling price is positive."
+            },
+            {
+              "key": "markup-guide-section-2",
+              "heading": "Assumptions and limitations",
+              "body": "Markup is a percentage of cost. Gross margin is profit divided by selling price; it differs from markup. Tax, fees, overhead and market-price constraints are excluded."
             }
           ]
         }
@@ -34592,6 +35409,49 @@
             {
               "key": "variable",
               "label": "Variable cost per unit"
+            }
+          ]
+        },
+        "guide": {
+          "title": "Break-even Calculator Guide",
+          "introduction": "Estimate unit sales and revenue needed to cover fixed and variable costs.",
+          "steps": [
+            {
+              "key": "break-even-guide-step-1",
+              "title": "Step 1",
+              "body": "Enter fixed costs, selling price per unit and variable cost per unit."
+            },
+            {
+              "key": "break-even-guide-step-2",
+              "title": "Step 2",
+              "body": "Subtract variable cost from selling price to calculate contribution."
+            },
+            {
+              "key": "break-even-guide-step-3",
+              "title": "Step 3",
+              "body": "Divide fixed costs by contribution to get exact break-even volume."
+            },
+            {
+              "key": "break-even-guide-step-4",
+              "title": "Step 4",
+              "body": "Round units up to the next whole number."
+            },
+            {
+              "key": "break-even-guide-step-5",
+              "title": "Step 5",
+              "body": "Multiply whole units by selling price to estimate break-even revenue and calculate total costs."
+            }
+          ],
+          "sections": [
+            {
+              "key": "break-even-guide-section-1",
+              "heading": "Calculation method",
+              "body": "Contribution per unit = selling price − variable cost. Exact units = fixed costs ÷ contribution per unit (or zero when fixed costs are zero). Whole units = ceiling(exact units). Break-even revenue = whole units × selling price."
+            },
+            {
+              "key": "break-even-guide-section-2",
+              "heading": "Assumptions and limitations",
+              "body": "Selling price, variable cost and fixed costs are assumed constant. Whole units are rounded up because fractional units are not treated as sellable. Product mix, capacity, tax, financing and changing costs/prices are excluded."
             }
           ]
         }
