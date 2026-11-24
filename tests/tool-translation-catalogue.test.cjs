@@ -243,3 +243,39 @@ test("batch-three source extraction captures 20 tools and 88 stable input labels
   }
  }
 });
+
+
+test("batch-three source records contain implementation-derived content and keep all target locales inactive",()=>{
+ const ids=["ira","inflation","cd","apy","tax","income-tax","sales-tax","vat-gst","tax-refund","salary","paycheck","payroll","overtime","discount","exchange-fees","transfer-compare","freelance-project","freelancer-net-income","markup","break-even"];
+ const manifest=require("../docs/i18n/batch-03-source-extraction.json");
+ assert.equal(manifest.status,"in-progress");
+ assert.deepEqual(manifest.tools.map(t=>t.id),ids);
+ for(const id of ids){
+  const tool=content.tools.find(t=>t.id===id);
+  const record=manifest.tools.find(t=>t.id===id);
+  const source=tool.source;
+  assert.ok(record.calculationImplementation.sourceCode.length>0,id+" exact implementation source captured");
+  assert.ok(record.editorialSource.formula.length>40,id+" formula explanation");
+  assert.ok(record.editorialSource.steps.length>=3,id+" ordered steps");
+  assert.ok(record.editorialSource.assumptions.length>=2,id+" assumptions");
+  assert.equal(record.editorialSource.faqs.length,3,id+" FAQ count");
+  assert.ok(source.results.summary&&source.results.metrics.length>=1,id+" runtime result labels");
+  assert.ok(source.explanations.formula&&source.explanations.steps.length>=3,id+" explanation fields");
+  assert.equal(source.faqs.length,3,id+" catalogue FAQs");
+  assert.ok(source.errors.length>=1&&source.errors.every(e=>e.key&&e.message&&e.recoveryHint),id+" error messages and recovery");
+  assert.ok(source.seo.title&&source.seo.metaDescription&&source.seo.h1&&source.seo.introduction,id+" SEO copy");
+  assert.ok(source.accessibility.pageLabel&&source.accessibility.formLabel&&source.accessibility.resultAnnouncement&&source.accessibility.chartLabel,id+" accessibility labels");
+  assert.deepEqual(source.accessibility.controlLabels.map(x=>x.key),source.inputs.map(x=>x.key),id+" accessibility stable control keys");
+  assert.equal(tool.sourceCompletenessStatus,"partial",id+" not yet source-verified");
+  assert.equal(tool.sourceTranslationStatus,"not-started",id+" no translations before verification");
+  for(const locale of locales){
+   assert.equal(tool.locales[locale].status,"not-started",id+":"+locale+" remains not started");
+   assert.deepEqual(tool.locales[locale].fields,{},id+":"+locale+" no premature translation content");
+  }
+ }
+ const incomeTax=manifest.tools.find(t=>t.id==="income-tax").calculationImplementation;
+ const salary=manifest.tools.find(t=>t.id==="salary").calculationImplementation;
+ assert.ok(incomeTax.sourceCode[0].includes("function estimate("),"income tax exact estimate implementation");
+ assert.ok(salary.sourceCode.some(x=>x.includes("function payroll(")),"salary exact payroll implementation");
+ assert.ok(incomeTax.sharedDependencies.some(x=>x.name==="progressive"),"progressive bracket helper evidence");
+});
