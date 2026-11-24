@@ -2,7 +2,7 @@
   "version": 1,
   "batch": "Batch 3 tools 21–40",
   "date": "2026-11-24",
-  "status": "draft-source-content-created-pending-independent-verification",
+  "status": "source-complete; translation-draft-pending",
   "sourceEvidence": {
     "inventory": {
       "path": "tool-category-mapping.json",
