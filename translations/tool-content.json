@@ -31415,21 +31415,6 @@
         },
         "errors": [
           {
-            "key": "invalid-number",
-            "message": "{field} must be a finite number.",
-            "recoveryHint": "Enter a valid number and try again."
-          },
-          {
-            "key": "negative",
-            "message": "{field} must not be negative.",
-            "recoveryHint": "Enter zero or a positive value."
-          },
-          {
-            "key": "positive",
-            "message": "{field} must be greater than zero.",
-            "recoveryHint": "Enter a value greater than zero."
-          },
-          {
             "key": "profile",
             "message": "Choose a supported tax jurisdiction and year.",
             "recoveryHint": "Select one of the supported tax jurisdiction and year profiles."
@@ -32266,21 +32251,6 @@
           ]
         },
         "errors": [
-          {
-            "key": "invalid-number",
-            "message": "{field} must be a finite number.",
-            "recoveryHint": "Enter a valid number and try again."
-          },
-          {
-            "key": "negative",
-            "message": "{field} must not be negative.",
-            "recoveryHint": "Enter zero or a positive value."
-          },
-          {
-            "key": "positive",
-            "message": "{field} must be greater than zero.",
-            "recoveryHint": "Enter a value greater than zero."
-          },
           {
             "key": "profile",
             "message": "Choose a supported tax jurisdiction and year.",
