@@ -266,10 +266,6 @@
         {
           "key": "mode",
           "label": "Subtotal mode"
-        },
-        {
-          "key": "add",
-          "label": "included"
         }
       ],
       "calculationFunctions": [
@@ -298,10 +294,6 @@
         {
           "key": "mode",
           "label": "Calculation"
-        },
-        {
-          "key": "add",
-          "label": "remove"
         }
       ],
       "calculationFunctions": [
@@ -370,10 +362,6 @@
         {
           "key": "periods",
           "label": "Pay periods per year"
-        },
-        {
-          "key": "12",
-          "label": "24"
         }
       ],
       "calculationFunctions": [],
