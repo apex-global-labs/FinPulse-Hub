@@ -30611,11 +30611,6 @@
             "recoveryHint": "Enter zero or a positive value."
           },
           {
-            "key": "positive",
-            "message": "{field} must be greater than zero.",
-            "recoveryHint": "Enter a value greater than zero."
-          },
-          {
             "key": "range",
             "message": "Years or rate outside supported range",
             "recoveryHint": "Use a non-negative inflation rate no higher than 1,000% and a period no longer than 100 years."
@@ -31231,11 +31226,6 @@
             "recoveryHint": "Enter zero or a positive value."
           },
           {
-            "key": "positive",
-            "message": "{field} must be greater than zero.",
-            "recoveryHint": "Enter a value greater than zero."
-          },
-          {
             "key": "rate",
             "message": "Tax rate must not exceed 100 percent",
             "recoveryHint": "Enter a tax rate from 0% to 100%."
@@ -31629,11 +31619,6 @@
             "recoveryHint": "Enter zero or a positive value."
           },
           {
-            "key": "positive",
-            "message": "{field} must be greater than zero.",
-            "recoveryHint": "Enter a value greater than zero."
-          },
-          {
             "key": "percent",
             "message": "Discount and tax rates must not exceed 100 percent",
             "recoveryHint": "Enter discount and sales-tax rates from 0% to 100%."
@@ -31828,11 +31813,6 @@
             "recoveryHint": "Enter zero or a positive value."
           },
           {
-            "key": "positive",
-            "message": "{field} must be greater than zero.",
-            "recoveryHint": "Enter a value greater than zero."
-          },
-          {
             "key": "rate",
             "message": "VAT/GST rate must not exceed 100 percent",
             "recoveryHint": "Enter a VAT/GST rate from 0% to 100%."
@@ -31913,7 +31893,7 @@
         ],
         "results": {
           "heading": "RESULT",
-          "summary": "",
+          "summary": "ESTIMATED REFUND / ESTIMATED AMOUNT DUE",
           "metrics": [
             {
               "key": "metric-1",
@@ -32033,11 +32013,6 @@
             "key": "negative",
             "message": "{field} must not be negative.",
             "recoveryHint": "Enter zero or a positive value."
-          },
-          {
-            "key": "positive",
-            "message": "{field} must be greater than zero.",
-            "recoveryHint": "Enter a value greater than zero."
           }
         ],
         "accessibility": {
@@ -33210,11 +33185,6 @@
             "recoveryHint": "Enter zero or a positive value."
           },
           {
-            "key": "positive",
-            "message": "{field} must be greater than zero.",
-            "recoveryHint": "Enter a value greater than zero."
-          },
-          {
             "key": "percent",
             "message": "Discount, coupon and tax rates must not exceed 100 percent",
             "recoveryHint": "Enter each discount and tax rate from 0% to 100%."
@@ -34197,11 +34167,6 @@
             "recoveryHint": "Enter zero or a positive value."
           },
           {
-            "key": "positive",
-            "message": "{field} must be greater than zero.",
-            "recoveryHint": "Enter a value greater than zero."
-          },
-          {
             "key": "expenses",
             "message": "Expenses cannot exceed revenue in this simplified model; tax reserve must be 0–100%",
             "recoveryHint": "Enter expenses no greater than revenue and a tax reserve from 0% to 100%."
@@ -34395,11 +34360,6 @@
             "key": "negative",
             "message": "{field} must not be negative.",
             "recoveryHint": "Enter zero or a positive value."
-          },
-          {
-            "key": "positive",
-            "message": "{field} must be greater than zero.",
-            "recoveryHint": "Enter a value greater than zero."
           },
           {
             "key": "markup",
@@ -34608,11 +34568,6 @@
             "key": "negative",
             "message": "{field} must not be negative.",
             "recoveryHint": "Enter zero or a positive value."
-          },
-          {
-            "key": "positive",
-            "message": "{field} must be greater than zero.",
-            "recoveryHint": "Enter a value greater than zero."
           },
           {
             "key": "contribution",
