@@ -350,7 +350,7 @@ test("batch-three editorial source includes derived step-by-step guides",()=>{
 
 
 test("batch-three IRA and inflation drafts are complete across all six target locales",()=>{
- for(const id of ["ira","inflation"]){
+ for(const id of ["ira","inflation","cd","apy"]){
   const tool=content.tools.find(t=>t.id===id);
   for(const locale of locales){
    const record=tool.locales[locale];
