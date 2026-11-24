@@ -1,0 +1,678 @@
+{
+  "extractionVersion": 1,
+  "batch": "Finance calculator localization Batch 3",
+  "startedAt": "2026-11-24",
+  "branch": "feat/seven-language-translation-engine-phase-1",
+  "status": "in-progress",
+  "toolRange": {
+    "from": 21,
+    "to": 40
+  },
+  "locales": [
+    "en",
+    "hi",
+    "ar",
+    "ur",
+    "zh-CN",
+    "ja",
+    "ru"
+  ],
+  "targetLocales": [
+    "hi",
+    "ar",
+    "ur",
+    "zh-CN",
+    "ja",
+    "ru"
+  ],
+  "sourceEvidence": {
+    "inventory": {
+      "path": "tool-category-mapping.json",
+      "blobSha": "f5d618a8f17e4bd83817c060b280eb9d81642626"
+    },
+    "runtimeDefinitions": {
+      "path": "app.js",
+      "blobSha": "acc1271f96e8d605a15a76e1dafce635820641cf"
+    },
+    "calculationSources": "finance-core.js; FinPulseTaxEngine for jurisdiction-based income tax and salary estimates",
+    "catalogue": {
+      "path": "translations/tool-content.json"
+    }
+  },
+  "scopeRules": [
+    "Capture source title, category, description, stable input keys and input labels verbatim from app.js.",
+    "Extract result headings, summaries, metrics, breakdowns, chart labels, FAQs, SEO copy, error messages and accessibility labels only when supported by the authoritative runtime/source files.",
+    "Trace each Core function to finance-core.js and preserve its implementation verbatim as evidence; do not modify formulas or numeric constants.",
+    "For income-tax and salary, identify FinPulseTaxEngine and tax-profile/source metadata separately; do not translate or alter jurisdiction keys, tax brackets, source dates, rates or numeric tax data.",
+    "Do not invent formula explanations, steps, assumptions, limitations or guide copy where source evidence is absent; mark such fields pending authoring/review.",
+    "Create six locale drafts only after source fields and schema parity have been validated. Keep all locale statuses draft and English fallback active.",
+    "Never activate, approve, merge or deploy as part of source extraction."
+  ],
+  "fieldCoverage": {
+    "captured": [
+      "metadata.title",
+      "metadata.category",
+      "metadata.description",
+      "inputs[].key",
+      "inputs[].label"
+    ],
+    "pending": [
+      "results",
+      "explanations.formula",
+      "explanations.steps",
+      "assumptions",
+      "notes",
+      "disclaimers",
+      "limitations",
+      "errors",
+      "faqs",
+      "seo",
+      "accessibility",
+      "calculationImplementation evidence",
+      "guide content"
+    ],
+    "note": "This manifest records the initial source pass only. It does not claim that any tool has complete source extraction or completed translations."
+  },
+  "tools": [
+    {
+      "id": "ira",
+      "title": "Roth vs Traditional IRA Comparison",
+      "category": "Retirement & investing",
+      "description": "Compare simplified after-tax balances using current and future tax assumptions.",
+      "sourceFile": "app.js",
+      "inputs": [
+        {
+          "key": "years",
+          "label": "Years invested"
+        },
+        {
+          "key": "rate",
+          "label": "Assumed annual return (%)"
+        },
+        {
+          "key": "currentTax",
+          "label": "Current tax rate (%)"
+        },
+        {
+          "key": "futureTax",
+          "label": "Future tax rate (%)"
+        }
+      ],
+      "calculationFunctions": [
+        "iraComparison"
+      ],
+      "usesTaxEngine": false,
+      "usesCurrencyDisplay": true,
+      "hasInlineSeo": false,
+      "extractionStatus": "metadata-and-input-labels-captured; full-source-extraction-pending"
+    },
+    {
+      "id": "inflation",
+      "title": "Inflation Calculator",
+      "category": "Everyday finance",
+      "description": "Estimate how prices and purchasing power change under constant assumed inflation.",
+      "sourceFile": "app.js",
+      "inputs": [
+        {
+          "key": "rate",
+          "label": "Annual inflation (%)"
+        },
+        {
+          "key": "years",
+          "label": "Number of years"
+        }
+      ],
+      "calculationFunctions": [
+        "inflationCalculator"
+      ],
+      "usesTaxEngine": false,
+      "usesCurrencyDisplay": true,
+      "hasInlineSeo": false,
+      "extractionStatus": "metadata-and-input-labels-captured; full-source-extraction-pending"
+    },
+    {
+      "id": "cd",
+      "title": "CD Calculator",
+      "category": "Savings & growth",
+      "description": "Estimate certificate-of-deposit maturity value and interest from a fixed APY and term.",
+      "sourceFile": "app.js",
+      "inputs": [
+        {
+          "key": "apy",
+          "label": "Certificate APY (%)"
+        },
+        {
+          "key": "term",
+          "label": "Term (months)"
+        }
+      ],
+      "calculationFunctions": [
+        "certificateDeposit"
+      ],
+      "usesTaxEngine": false,
+      "usesCurrencyDisplay": true,
+      "hasInlineSeo": false,
+      "extractionStatus": "metadata-and-input-labels-captured; full-source-extraction-pending"
+    },
+    {
+      "id": "apy",
+      "title": "APY Calculator",
+      "category": "Savings & growth",
+      "description": "Convert nominal annual interest and compounding frequency into annual percentage yield.",
+      "sourceFile": "app.js",
+      "inputs": [
+        {
+          "key": "rate",
+          "label": "Nominal annual rate (%)"
+        },
+        {
+          "key": "frequency",
+          "label": "Compounding periods per year"
+        }
+      ],
+      "calculationFunctions": [
+        "apyCalculator"
+      ],
+      "usesTaxEngine": false,
+      "usesCurrencyDisplay": true,
+      "hasInlineSeo": false,
+      "extractionStatus": "metadata-and-input-labels-captured; full-source-extraction-pending"
+    },
+    {
+      "id": "tax",
+      "title": "Tax Calculator",
+      "category": "Tax & income",
+      "description": "Estimate tax after a flat tax rate and entered credits.",
+      "sourceFile": "app.js",
+      "inputs": [
+        {
+          "key": "rate",
+          "label": "Estimated tax rate (%)"
+        },
+        {
+          "key": "credits",
+          "label": "Tax credits"
+        }
+      ],
+      "calculationFunctions": [
+        "taxEstimate"
+      ],
+      "usesTaxEngine": false,
+      "usesCurrencyDisplay": true,
+      "hasInlineSeo": false,
+      "extractionStatus": "metadata-and-input-labels-captured; full-source-extraction-pending"
+    },
+    {
+      "id": "income-tax",
+      "title": "Income Tax Calculator",
+      "category": "Tax & income",
+      "description": "Estimate income tax using a selected 2026 jurisdiction and its published progressive brackets.",
+      "sourceFile": "app.js",
+      "inputs": [
+        {
+          "key": "deduction",
+          "label": "Eligible deductions entered"
+        }
+      ],
+      "calculationFunctions": [],
+      "usesTaxEngine": true,
+      "usesCurrencyDisplay": true,
+      "hasInlineSeo": false,
+      "extractionStatus": "metadata-and-input-labels-captured; full-source-extraction-pending"
+    },
+    {
+      "id": "sales-tax",
+      "title": "Sales Tax Calculator",
+      "category": "Tax & income",
+      "description": "Calculate sales tax, discounts and final checkout total.",
+      "sourceFile": "app.js",
+      "inputs": [
+        {
+          "key": "discount",
+          "label": "Discount (%)"
+        },
+        {
+          "key": "rate",
+          "label": "Sales tax rate (%)"
+        },
+        {
+          "key": "mode",
+          "label": "Subtotal mode"
+        },
+        {
+          "key": "add",
+          "label": "included"
+        }
+      ],
+      "calculationFunctions": [
+        "salesTax"
+      ],
+      "usesTaxEngine": false,
+      "usesCurrencyDisplay": true,
+      "hasInlineSeo": false,
+      "extractionStatus": "metadata-and-input-labels-captured; full-source-extraction-pending"
+    },
+    {
+      "id": "vat-gst",
+      "title": "VAT / GST Calculator",
+      "category": "Tax & income",
+      "description": "Add VAT/GST to a net price or extract tax from a gross price.",
+      "sourceFile": "app.js",
+      "inputs": [
+        {
+          "key": "rate",
+          "label": "VAT / GST rate (%)"
+        },
+        {
+          "key": "mode",
+          "label": "Calculation"
+        },
+        {
+          "key": "add",
+          "label": "remove"
+        }
+      ],
+      "calculationFunctions": [
+        "vatGst"
+      ],
+      "usesTaxEngine": false,
+      "usesCurrencyDisplay": true,
+      "hasInlineSeo": false,
+      "extractionStatus": "metadata-and-input-labels-captured; full-source-extraction-pending"
+    },
+    {
+      "id": "tax-refund",
+      "title": "Tax Refund Estimator",
+      "category": "Tax & income",
+      "description": "Compare estimated tax liability with withholding and credits to estimate refund or amount due.",
+      "sourceFile": "app.js",
+      "inputs": [
+        {
+          "key": "withholding",
+          "label": "Tax already withheld / paid"
+        },
+        {
+          "key": "credits",
+          "label": "Additional credits or prepayments"
+        }
+      ],
+      "calculationFunctions": [
+        "taxRefund"
+      ],
+      "usesTaxEngine": false,
+      "usesCurrencyDisplay": true,
+      "hasInlineSeo": false,
+      "extractionStatus": "metadata-and-input-labels-captured; full-source-extraction-pending"
+    },
+    {
+      "id": "salary",
+      "title": "Salary Take-Home Calculator",
+      "category": "Tax & income",
+      "description": "Estimate annual, monthly and per-paycheck take-home using 2026 income-tax brackets and employee payroll contributions.",
+      "sourceFile": "app.js",
+      "inputs": [
+        {
+          "key": "deduction",
+          "label": "Eligible deductions entered"
+        },
+        {
+          "key": "retirement",
+          "label": "Retirement contribution (%)"
+        },
+        {
+          "key": "insurance",
+          "label": "Monthly insurance / benefits"
+        },
+        {
+          "key": "other",
+          "label": "Other monthly deductions"
+        },
+        {
+          "key": "periods",
+          "label": "Pay periods per year"
+        },
+        {
+          "key": "12",
+          "label": "24"
+        }
+      ],
+      "calculationFunctions": [],
+      "usesTaxEngine": true,
+      "usesCurrencyDisplay": true,
+      "hasInlineSeo": false,
+      "extractionStatus": "metadata-and-input-labels-captured; full-source-extraction-pending"
+    },
+    {
+      "id": "paycheck",
+      "title": "Paycheck Calculator",
+      "category": "Payroll & pay",
+      "description": "Estimate one paycheck from hourly earnings, overtime, bonus and entered deductions.",
+      "sourceFile": "app.js",
+      "inputs": [
+        {
+          "key": "regular",
+          "label": "Regular hours this pay period"
+        },
+        {
+          "key": "overtime",
+          "label": "Overtime hours this pay period"
+        },
+        {
+          "key": "multiplier",
+          "label": "Overtime pay multiplier"
+        },
+        {
+          "key": "bonus",
+          "label": "Bonus / commission this period"
+        },
+        {
+          "key": "tax",
+          "label": "Estimated withholding (%)"
+        },
+        {
+          "key": "retirement",
+          "label": "Retirement deduction (%)"
+        },
+        {
+          "key": "benefits",
+          "label": "Benefits / insurance deduction"
+        },
+        {
+          "key": "other",
+          "label": "Other deductions"
+        }
+      ],
+      "calculationFunctions": [
+        "paycheck"
+      ],
+      "usesTaxEngine": false,
+      "usesCurrencyDisplay": true,
+      "hasInlineSeo": false,
+      "extractionStatus": "metadata-and-input-labels-captured; full-source-extraction-pending"
+    },
+    {
+      "id": "payroll",
+      "title": "Payroll Calculator",
+      "category": "Payroll & pay",
+      "description": "Estimate total monthly and annual employer payroll cost from average pay and employer-paid costs.",
+      "sourceFile": "app.js",
+      "inputs": [
+        {
+          "key": "salary",
+          "label": "Average gross monthly pay per employee"
+        },
+        {
+          "key": "tax",
+          "label": "Employer payroll tax / contribution (%)"
+        },
+        {
+          "key": "benefits",
+          "label": "Monthly benefits per employee"
+        },
+        {
+          "key": "other",
+          "label": "Other monthly payroll costs"
+        }
+      ],
+      "calculationFunctions": [
+        "payroll"
+      ],
+      "usesTaxEngine": false,
+      "usesCurrencyDisplay": true,
+      "hasInlineSeo": false,
+      "extractionStatus": "metadata-and-input-labels-captured; full-source-extraction-pending"
+    },
+    {
+      "id": "overtime",
+      "title": "Overtime Pay Calculator",
+      "category": "Payroll & pay",
+      "description": "Estimate regular and overtime earnings using your own overtime hours and pay multiplier.",
+      "sourceFile": "app.js",
+      "inputs": [
+        {
+          "key": "regular",
+          "label": "Regular hours"
+        },
+        {
+          "key": "overtime",
+          "label": "Overtime hours"
+        },
+        {
+          "key": "multiplier",
+          "label": "Overtime pay multiplier"
+        }
+      ],
+      "calculationFunctions": [
+        "overtimePay"
+      ],
+      "usesTaxEngine": false,
+      "usesCurrencyDisplay": true,
+      "hasInlineSeo": false,
+      "extractionStatus": "metadata-and-input-labels-captured; full-source-extraction-pending"
+    },
+    {
+      "id": "discount",
+      "title": "Discount Calculator",
+      "category": "Shopping & pricing",
+      "description": "Combine a percentage discount and coupon, then add estimated tax and shipping.",
+      "sourceFile": "app.js",
+      "inputs": [
+        {
+          "key": "discount",
+          "label": "First discount (%)"
+        },
+        {
+          "key": "coupon",
+          "label": "Additional coupon (%)"
+        },
+        {
+          "key": "tax",
+          "label": "Estimated sales tax (%)"
+        },
+        {
+          "key": "shipping",
+          "label": "Shipping cost"
+        }
+      ],
+      "calculationFunctions": [
+        "discountCalculator"
+      ],
+      "usesTaxEngine": false,
+      "usesCurrencyDisplay": true,
+      "hasInlineSeo": false,
+      "extractionStatus": "metadata-and-input-labels-captured; full-source-extraction-pending"
+    },
+    {
+      "id": "exchange-fees",
+      "title": "Exchange Fee & Markup Calculator",
+      "category": "Currency & transfers",
+      "description": "Estimate the impact of an exchange-rate markup, percentage transfer fee and fixed fee.",
+      "sourceFile": "app.js",
+      "inputs": [
+        {
+          "key": "rate",
+          "label": "Mid-market exchange rate"
+        },
+        {
+          "key": "markup",
+          "label": "Exchange-rate markup (%)"
+        },
+        {
+          "key": "fee",
+          "label": "Transfer fee (%)"
+        },
+        {
+          "key": "fixed",
+          "label": "Fixed transfer fee"
+        },
+        {
+          "key": "from",
+          "label": "Source currency"
+        },
+        {
+          "key": "to",
+          "label": "Recipient currency"
+        }
+      ],
+      "calculationFunctions": [
+        "exchangeFeeMarkup"
+      ],
+      "usesTaxEngine": false,
+      "usesCurrencyDisplay": true,
+      "hasInlineSeo": false,
+      "extractionStatus": "metadata-and-input-labels-captured; full-source-extraction-pending"
+    },
+    {
+      "id": "transfer-compare",
+      "title": "International Money Transfer Cost Calculator",
+      "category": "Currency & transfers",
+      "description": "Compare two hypothetical transfer providers by recipient amount after fees and exchange-rate markup.",
+      "sourceFile": "app.js",
+      "inputs": [
+        {
+          "key": "rate",
+          "label": "Mid-market exchange rate"
+        },
+        {
+          "key": "aFixed",
+          "label": "Provider A fixed fee"
+        },
+        {
+          "key": "aFee",
+          "label": "Provider A transfer fee (%)"
+        },
+        {
+          "key": "aMarkup",
+          "label": "Provider A rate markup (%)"
+        },
+        {
+          "key": "bFixed",
+          "label": "Provider B fixed fee"
+        },
+        {
+          "key": "bFee",
+          "label": "Provider B transfer fee (%)"
+        },
+        {
+          "key": "bMarkup",
+          "label": "Provider B rate markup (%)"
+        },
+        {
+          "key": "from",
+          "label": "Source currency"
+        },
+        {
+          "key": "to",
+          "label": "Recipient currency"
+        }
+      ],
+      "calculationFunctions": [
+        "internationalTransferCompare"
+      ],
+      "usesTaxEngine": false,
+      "usesCurrencyDisplay": true,
+      "hasInlineSeo": false,
+      "extractionStatus": "metadata-and-input-labels-captured; full-source-extraction-pending"
+    },
+    {
+      "id": "freelance-project",
+      "title": "Freelance Project Pricing Calculator",
+      "category": "Freelance & business",
+      "description": "Build a project quote from labor hours, expenses, contingency and target gross margin.",
+      "sourceFile": "app.js",
+      "inputs": [
+        {
+          "key": "rate",
+          "label": "Hourly billing rate"
+        },
+        {
+          "key": "expenses",
+          "label": "Project expenses"
+        },
+        {
+          "key": "contingency",
+          "label": "Contingency allowance (%)"
+        },
+        {
+          "key": "margin",
+          "label": "Target gross margin (%)"
+        }
+      ],
+      "calculationFunctions": [
+        "freelanceProjectPricing"
+      ],
+      "usesTaxEngine": false,
+      "usesCurrencyDisplay": true,
+      "hasInlineSeo": true,
+      "extractionStatus": "metadata-and-input-labels-captured; full-source-extraction-pending"
+    },
+    {
+      "id": "freelancer-net-income",
+      "title": "Freelancer Net Income After Costs Calculator",
+      "category": "Freelance & business",
+      "description": "Estimate freelance income after business expenses and a user-selected tax reserve.",
+      "sourceFile": "app.js",
+      "inputs": [
+        {
+          "key": "expenses",
+          "label": "Annual business expenses"
+        },
+        {
+          "key": "tax",
+          "label": "Estimated tax reserve (%)"
+        }
+      ],
+      "calculationFunctions": [
+        "freelancerNetIncome"
+      ],
+      "usesTaxEngine": false,
+      "usesCurrencyDisplay": true,
+      "hasInlineSeo": true,
+      "extractionStatus": "metadata-and-input-labels-captured; full-source-extraction-pending"
+    },
+    {
+      "id": "markup",
+      "title": "Markup Calculator",
+      "category": "Freelance & business",
+      "description": "Calculate markup amount, selling price and equivalent gross margin from cost.",
+      "sourceFile": "app.js",
+      "inputs": [
+        {
+          "key": "markup",
+          "label": "Markup (%)"
+        }
+      ],
+      "calculationFunctions": [
+        "markupCalculator"
+      ],
+      "usesTaxEngine": false,
+      "usesCurrencyDisplay": true,
+      "hasInlineSeo": true,
+      "extractionStatus": "metadata-and-input-labels-captured; full-source-extraction-pending"
+    },
+    {
+      "id": "break-even",
+      "title": "Break-even Calculator",
+      "category": "Freelance & business",
+      "description": "Estimate unit sales and revenue needed to cover fixed and variable costs.",
+      "sourceFile": "app.js",
+      "inputs": [
+        {
+          "key": "price",
+          "label": "Selling price per unit"
+        },
+        {
+          "key": "variable",
+          "label": "Variable cost per unit"
+        }
+      ],
+      "calculationFunctions": [
+        "breakEvenCalculator"
+      ],
+      "usesTaxEngine": false,
+      "usesCurrencyDisplay": true,
+      "hasInlineSeo": true,
+      "extractionStatus": "metadata-and-input-labels-captured; full-source-extraction-pending"
+    }
+  ]
+}
