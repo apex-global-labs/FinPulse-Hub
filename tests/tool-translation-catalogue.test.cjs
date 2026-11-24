@@ -279,3 +279,60 @@ test("batch-three source records contain implementation-derived content and keep
  assert.ok(salary.sourceCode.some(x=>x.includes("function payroll(")),"salary exact payroll implementation");
  assert.ok(incomeTax.sharedDependencies.some(x=>x.name==="progressive"),"progressive bracket helper evidence");
 });
+
+
+test("batch-three finance implementations match deterministic reference examples",()=>{
+ const core=require("../finance-core.js");
+ const close=(actual,expected,message)=>assert.ok(Math.abs(actual-expected)<1e-7,message+" expected "+expected+" got "+actual);
+ const ira=core.iraComparison(1200,1,0,0,0);
+ close(ira.rothAfterTax,1200,"IRA Roth balance");close(ira.traditionalAfterTax,1200,"IRA Traditional after-tax balance");
+ const inflation=core.inflationCalculator(100,10,2);
+ close(inflation.futureCost,121,"inflation future cost");close(inflation.purchasingPower,100/1.21,"inflation purchasing power");
+ const cd=core.certificateDeposit(1000,12,12);
+ close(cd.futureValue,1120,"CD maturity value");close(cd.interestEarned,120,"CD interest");
+ const apy=core.apyCalculator(1000,12,12);
+ close(apy.apy,(Math.pow(1.01,12)-1)*100,"APY");close(apy.balance,1000*Math.pow(1.01,12),"APY balance");
+ const tax=core.taxEstimate(1000,10,50);
+ close(tax.grossTax,100,"flat gross tax");close(tax.tax,50,"flat tax after credits");close(tax.afterTax,950,"flat after-tax amount");
+ const sales=core.salesTax(100,10,10,"add");
+ close(sales.discount,10,"sales discount");close(sales.tax,9,"sales tax after discount");close(sales.total,99,"sales final total");
+ const vat=core.vatGst(110,10,"remove");
+ close(vat.base,100,"VAT net amount");close(vat.tax,10,"VAT extracted");
+ const refund=core.taxRefund(100,80,10);
+ close(refund.refund,0,"tax refund");close(refund.amountDue,10,"tax amount due");
+ const check=core.paycheck(20,40,5,1.5,100,10,5,20,10);
+ close(check.gross,1050,"paycheck gross");close(check.net,862.5,"paycheck net");
+ const payroll=core.payroll(2,3000,10,100,50);
+ close(payroll.totalMonthly,6850,"employer monthly payroll");close(payroll.totalAnnual,82200,"employer annual payroll");
+ const overtime=core.overtimePay(20,40,5,1.5);
+ close(overtime.gross,950,"overtime gross");close(overtime.blendedRate,950/45,"overtime blended rate");
+ const discount=core.discountCalculator(100,10,10,10,5);
+ close(discount.discountedSubtotal,81,"discounted subtotal");close(discount.total,94.1,"discount final total");
+ const exchange=core.exchangeFeeMarkup(1000,1.2,2,1,5);
+ close(exchange.fee,15,"exchange transfer fee");close(exchange.convertedAmount,1158.36,"exchange recipient amount");
+ const compare=core.internationalTransferCompare(1000,1.2,5,1,2,10,0.5,1);
+ assert.equal(compare.bestProvider,"B");close(compare.recipientDifference,11.82,"transfer comparison difference");
+ const project=core.freelanceProjectPricing(10,50,100,10,20);
+ close(project.totalCost,660,"project total cost");close(project.quotedPrice,825,"project quote");close(project.profit,165,"project profit");
+ const freelancer=core.freelancerNetIncome(1000,200,20);
+ close(freelancer.netIncome,640,"freelancer net income");
+ const markup=core.markupCalculator(100,25);
+ close(markup.sellingPrice,125,"markup selling price");close(markup.grossMargin,20,"markup gross margin");
+ const breakeven=core.breakEvenCalculator(1000,50,20);
+ assert.equal(breakeven.units,34);close(breakeven.revenue,1700,"break-even revenue");close(breakeven.totalCosts,1680,"break-even total costs");
+});
+
+test("batch-three 2026 tax engine paths match controlled profile and payroll fixtures",()=>{
+ const oldWindow=globalThis.window,oldTax=globalThis.FinPulseTaxData,oldState=globalThis.FinPulseStateData;
+ globalThis.window=globalThis;
+ globalThis.FinPulseTaxData={profiles:{"TEST-2026":{label:"Test profile",currency:"USD",allowance:100,bands:[{upTo:1000,rate:10},{upTo:Infinity,rate:20}]}}};
+ globalThis.FinPulseStateData={payroll:{US:{socialSecurityWageBase:100000,socialSecurityRate:6.2,medicareRate:1.45,additionalMedicareThreshold:{single:200000},additionalMedicareRate:0.9}}};
+ delete require.cache[require.resolve("../tax-engine.js")];
+ require("../tax-engine.js");
+ const engine=globalThis.FinPulseTaxEngine;
+ const tax=engine.estimate("TEST-2026",1000,0);
+ assert.equal(tax.taxableIncome,900);assert.equal(tax.tax,90);assert.equal(tax.effectiveRate,9);
+ const payroll=engine.payroll("US-2026-single",100000);
+ assert.equal(payroll.items.length,3);assert.equal(payroll.total,7650);
+ globalThis.window=oldWindow;globalThis.FinPulseTaxData=oldTax;globalThis.FinPulseStateData=oldState;
+});
