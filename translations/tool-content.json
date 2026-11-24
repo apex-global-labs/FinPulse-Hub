@@ -30529,9 +30529,9 @@
           "fields": {}
         }
       },
-      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceExtractionStatus": "source-record-complete",
       "sourceTranslationStatus": "not-started",
-      "sourceCompletenessStatus": "partial"
+      "sourceCompletenessStatus": "complete"
     },
     {
       "id": "inflation",
@@ -30749,9 +30749,9 @@
           "fields": {}
         }
       },
-      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceExtractionStatus": "source-record-complete",
       "sourceTranslationStatus": "not-started",
-      "sourceCompletenessStatus": "partial"
+      "sourceCompletenessStatus": "complete"
     },
     {
       "id": "cd",
@@ -30995,9 +30995,9 @@
           "fields": {}
         }
       },
-      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceExtractionStatus": "source-record-complete",
       "sourceTranslationStatus": "not-started",
-      "sourceCompletenessStatus": "partial"
+      "sourceCompletenessStatus": "complete"
     },
     {
       "id": "apy",
@@ -31249,9 +31249,9 @@
           "fields": {}
         }
       },
-      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceExtractionStatus": "source-record-complete",
       "sourceTranslationStatus": "not-started",
-      "sourceCompletenessStatus": "partial"
+      "sourceCompletenessStatus": "complete"
     },
     {
       "id": "tax",
@@ -31488,9 +31488,9 @@
           "fields": {}
         }
       },
-      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceExtractionStatus": "source-record-complete",
       "sourceTranslationStatus": "not-started",
-      "sourceCompletenessStatus": "partial"
+      "sourceCompletenessStatus": "complete"
     },
     {
       "id": "income-tax",
@@ -31716,9 +31716,9 @@
           "fields": {}
         }
       },
-      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceExtractionStatus": "source-record-complete",
       "sourceTranslationStatus": "not-started",
-      "sourceCompletenessStatus": "partial"
+      "sourceCompletenessStatus": "complete"
     },
     {
       "id": "sales-tax",
@@ -31971,9 +31971,9 @@
           "fields": {}
         }
       },
-      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceExtractionStatus": "source-record-complete",
       "sourceTranslationStatus": "not-started",
-      "sourceCompletenessStatus": "partial"
+      "sourceCompletenessStatus": "complete"
     },
     {
       "id": "vat-gst",
@@ -32204,9 +32204,9 @@
           "fields": {}
         }
       },
-      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceExtractionStatus": "source-record-complete",
       "sourceTranslationStatus": "not-started",
-      "sourceCompletenessStatus": "partial"
+      "sourceCompletenessStatus": "complete"
     },
     {
       "id": "tax-refund",
@@ -32444,9 +32444,9 @@
           "fields": {}
         }
       },
-      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceExtractionStatus": "source-record-complete",
       "sourceTranslationStatus": "not-started",
-      "sourceCompletenessStatus": "partial"
+      "sourceCompletenessStatus": "complete"
     },
     {
       "id": "salary",
@@ -32731,9 +32731,9 @@
           "fields": {}
         }
       },
-      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceExtractionStatus": "source-record-complete",
       "sourceTranslationStatus": "not-started",
-      "sourceCompletenessStatus": "partial"
+      "sourceCompletenessStatus": "complete"
     },
     {
       "id": "paycheck",
@@ -33049,9 +33049,9 @@
           "fields": {}
         }
       },
-      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceExtractionStatus": "source-record-complete",
       "sourceTranslationStatus": "not-started",
-      "sourceCompletenessStatus": "partial"
+      "sourceCompletenessStatus": "complete"
     },
     {
       "id": "payroll",
@@ -33323,9 +33323,9 @@
           "fields": {}
         }
       },
-      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceExtractionStatus": "source-record-complete",
       "sourceTranslationStatus": "not-started",
-      "sourceCompletenessStatus": "partial"
+      "sourceCompletenessStatus": "complete"
     },
     {
       "id": "overtime",
@@ -33572,9 +33572,9 @@
           "fields": {}
         }
       },
-      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceExtractionStatus": "source-record-complete",
       "sourceTranslationStatus": "not-started",
-      "sourceCompletenessStatus": "partial"
+      "sourceCompletenessStatus": "complete"
     },
     {
       "id": "discount",
@@ -33847,9 +33847,9 @@
           "fields": {}
         }
       },
-      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceExtractionStatus": "source-record-complete",
       "sourceTranslationStatus": "not-started",
-      "sourceCompletenessStatus": "partial"
+      "sourceCompletenessStatus": "complete"
     },
     {
       "id": "exchange-fees",
@@ -34144,9 +34144,9 @@
           "fields": {}
         }
       },
-      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceExtractionStatus": "source-record-complete",
       "sourceTranslationStatus": "not-started",
-      "sourceCompletenessStatus": "partial"
+      "sourceCompletenessStatus": "complete"
     },
     {
       "id": "transfer-compare",
@@ -34469,9 +34469,9 @@
           "fields": {}
         }
       },
-      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceExtractionStatus": "source-record-complete",
       "sourceTranslationStatus": "not-started",
-      "sourceCompletenessStatus": "partial"
+      "sourceCompletenessStatus": "complete"
     },
     {
       "id": "freelance-project",
@@ -34751,9 +34751,9 @@
           "fields": {}
         }
       },
-      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceExtractionStatus": "source-record-complete",
       "sourceTranslationStatus": "not-started",
-      "sourceCompletenessStatus": "partial"
+      "sourceCompletenessStatus": "complete"
     },
     {
       "id": "freelancer-net-income",
@@ -34998,9 +34998,9 @@
           "fields": {}
         }
       },
-      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceExtractionStatus": "source-record-complete",
       "sourceTranslationStatus": "not-started",
-      "sourceCompletenessStatus": "partial"
+      "sourceCompletenessStatus": "complete"
     },
     {
       "id": "markup",
@@ -35227,9 +35227,9 @@
           "fields": {}
         }
       },
-      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceExtractionStatus": "source-record-complete",
       "sourceTranslationStatus": "not-started",
-      "sourceCompletenessStatus": "partial"
+      "sourceCompletenessStatus": "complete"
     },
     {
       "id": "break-even",
@@ -35482,9 +35482,9 @@
           "fields": {}
         }
       },
-      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceExtractionStatus": "source-record-complete",
       "sourceTranslationStatus": "not-started",
-      "sourceCompletenessStatus": "partial"
+      "sourceCompletenessStatus": "complete"
     },
     {
       "id": "business-roi",
