@@ -30296,7 +30296,30 @@
         "title": "Roth vs Traditional IRA Comparison",
         "category": "Finance & Money",
         "subcategory": "Investment & Return Calculators",
-        "file": "app.js"
+        "file": "app.js",
+        "description": "Compare simplified after-tax balances using current and future tax assumptions.",
+        "inputs": [
+          {
+            "key": "contribution",
+            "label": "Annual contribution budget"
+          },
+          {
+            "key": "years",
+            "label": "Years invested"
+          },
+          {
+            "key": "rate",
+            "label": "Assumed annual return (%)"
+          },
+          {
+            "key": "currentTax",
+            "label": "Current tax rate (%)"
+          },
+          {
+            "key": "futureTax",
+            "label": "Future tax rate (%)"
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -30323,7 +30346,10 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceTranslationStatus": "not-started",
+      "sourceCompletenessStatus": "partial"
     },
     {
       "id": "inflation",
@@ -30331,7 +30357,22 @@
         "title": "Inflation Calculator",
         "category": "Finance & Money",
         "subcategory": "Savings & Personal Finance",
-        "file": "app.js"
+        "file": "app.js",
+        "description": "Estimate how prices and purchasing power change under constant assumed inflation.",
+        "inputs": [
+          {
+            "key": "amount",
+            "label": "Current cost / amount"
+          },
+          {
+            "key": "rate",
+            "label": "Annual inflation (%)"
+          },
+          {
+            "key": "years",
+            "label": "Number of years"
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -30358,7 +30399,10 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceTranslationStatus": "not-started",
+      "sourceCompletenessStatus": "partial"
     },
     {
       "id": "cd",
@@ -30366,7 +30410,22 @@
         "title": "CD Calculator",
         "category": "Finance & Money",
         "subcategory": "Savings & Personal Finance",
-        "file": "app.js"
+        "file": "app.js",
+        "description": "Estimate certificate-of-deposit maturity value and interest from a fixed APY and term.",
+        "inputs": [
+          {
+            "key": "principal",
+            "label": "Initial deposit"
+          },
+          {
+            "key": "apy",
+            "label": "Certificate APY (%)"
+          },
+          {
+            "key": "term",
+            "label": "Term (months)"
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -30393,7 +30452,10 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceTranslationStatus": "not-started",
+      "sourceCompletenessStatus": "partial"
     },
     {
       "id": "apy",
@@ -30401,7 +30463,22 @@
         "title": "APY Calculator",
         "category": "Finance & Money",
         "subcategory": "Savings & Personal Finance",
-        "file": "app.js"
+        "file": "app.js",
+        "description": "Convert nominal annual interest and compounding frequency into annual percentage yield.",
+        "inputs": [
+          {
+            "key": "principal",
+            "label": "Starting deposit"
+          },
+          {
+            "key": "rate",
+            "label": "Nominal annual rate (%)"
+          },
+          {
+            "key": "frequency",
+            "label": "Compounding periods per year"
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -30428,7 +30505,10 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceTranslationStatus": "not-started",
+      "sourceCompletenessStatus": "partial"
     },
     {
       "id": "tax",
@@ -30436,7 +30516,22 @@
         "title": "Tax Calculator",
         "category": "Finance & Money",
         "subcategory": "Tax Calculators",
-        "file": "app.js"
+        "file": "app.js",
+        "description": "Estimate tax after a flat tax rate and entered credits.",
+        "inputs": [
+          {
+            "key": "amount",
+            "label": "Taxable income / amount"
+          },
+          {
+            "key": "rate",
+            "label": "Estimated tax rate (%)"
+          },
+          {
+            "key": "credits",
+            "label": "Tax credits"
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -30463,7 +30558,10 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceTranslationStatus": "not-started",
+      "sourceCompletenessStatus": "partial"
     },
     {
       "id": "income-tax",
@@ -30471,7 +30569,18 @@
         "title": "Income Tax Calculator",
         "category": "Finance & Money",
         "subcategory": "Tax Calculators",
-        "file": "app.js"
+        "file": "app.js",
+        "description": "Estimate income tax using a selected 2026 jurisdiction and its published progressive brackets.",
+        "inputs": [
+          {
+            "key": "income",
+            "label": "Annual gross income"
+          },
+          {
+            "key": "deduction",
+            "label": "Eligible deductions entered"
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -30498,7 +30607,10 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceTranslationStatus": "not-started",
+      "sourceCompletenessStatus": "partial"
     },
     {
       "id": "sales-tax",
@@ -30506,7 +30618,26 @@
         "title": "Sales Tax Calculator",
         "category": "Finance & Money",
         "subcategory": "Tax Calculators",
-        "file": "app.js"
+        "file": "app.js",
+        "description": "Calculate sales tax, discounts and final checkout total.",
+        "inputs": [
+          {
+            "key": "subtotal",
+            "label": "Subtotal / tax-inclusive total"
+          },
+          {
+            "key": "discount",
+            "label": "Discount (%)"
+          },
+          {
+            "key": "rate",
+            "label": "Sales tax rate (%)"
+          },
+          {
+            "key": "mode",
+            "label": "Subtotal mode"
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -30533,7 +30664,10 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceTranslationStatus": "not-started",
+      "sourceCompletenessStatus": "partial"
     },
     {
       "id": "vat-gst",
@@ -30541,7 +30675,22 @@
         "title": "VAT / GST Calculator",
         "category": "Finance & Money",
         "subcategory": "Tax Calculators",
-        "file": "app.js"
+        "file": "app.js",
+        "description": "Add VAT/GST to a net price or extract tax from a gross price.",
+        "inputs": [
+          {
+            "key": "amount",
+            "label": "Amount"
+          },
+          {
+            "key": "rate",
+            "label": "VAT / GST rate (%)"
+          },
+          {
+            "key": "mode",
+            "label": "Calculation"
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -30568,7 +30717,10 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceTranslationStatus": "not-started",
+      "sourceCompletenessStatus": "partial"
     },
     {
       "id": "tax-refund",
@@ -30576,7 +30728,22 @@
         "title": "Tax Refund Estimator",
         "category": "Finance & Money",
         "subcategory": "Tax Calculators",
-        "file": "app.js"
+        "file": "app.js",
+        "description": "Compare estimated tax liability with withholding and credits to estimate refund or amount due.",
+        "inputs": [
+          {
+            "key": "liability",
+            "label": "Estimated total tax liability"
+          },
+          {
+            "key": "withholding",
+            "label": "Tax already withheld / paid"
+          },
+          {
+            "key": "credits",
+            "label": "Additional credits or prepayments"
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -30603,7 +30770,10 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceTranslationStatus": "not-started",
+      "sourceCompletenessStatus": "partial"
     },
     {
       "id": "salary",
@@ -30611,7 +30781,34 @@
         "title": "Salary Take-Home Calculator",
         "category": "Finance & Money",
         "subcategory": "Salary & Payroll Calculators",
-        "file": "app.js"
+        "file": "app.js",
+        "description": "Estimate annual, monthly and per-paycheck take-home using 2026 income-tax brackets and employee payroll contributions.",
+        "inputs": [
+          {
+            "key": "gross",
+            "label": "Gross annual salary"
+          },
+          {
+            "key": "deduction",
+            "label": "Eligible deductions entered"
+          },
+          {
+            "key": "retirement",
+            "label": "Retirement contribution (%)"
+          },
+          {
+            "key": "insurance",
+            "label": "Monthly insurance / benefits"
+          },
+          {
+            "key": "other",
+            "label": "Other monthly deductions"
+          },
+          {
+            "key": "periods",
+            "label": "Pay periods per year"
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -30638,7 +30835,10 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceTranslationStatus": "not-started",
+      "sourceCompletenessStatus": "partial"
     },
     {
       "id": "paycheck",
@@ -30646,7 +30846,46 @@
         "title": "Paycheck Calculator",
         "category": "Finance & Money",
         "subcategory": "Salary & Payroll Calculators",
-        "file": "app.js"
+        "file": "app.js",
+        "description": "Estimate one paycheck from hourly earnings, overtime, bonus and entered deductions.",
+        "inputs": [
+          {
+            "key": "hourly",
+            "label": "Hourly pay rate"
+          },
+          {
+            "key": "regular",
+            "label": "Regular hours this pay period"
+          },
+          {
+            "key": "overtime",
+            "label": "Overtime hours this pay period"
+          },
+          {
+            "key": "multiplier",
+            "label": "Overtime pay multiplier"
+          },
+          {
+            "key": "bonus",
+            "label": "Bonus / commission this period"
+          },
+          {
+            "key": "tax",
+            "label": "Estimated withholding (%)"
+          },
+          {
+            "key": "retirement",
+            "label": "Retirement deduction (%)"
+          },
+          {
+            "key": "benefits",
+            "label": "Benefits / insurance deduction"
+          },
+          {
+            "key": "other",
+            "label": "Other deductions"
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -30673,7 +30912,10 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceTranslationStatus": "not-started",
+      "sourceCompletenessStatus": "partial"
     },
     {
       "id": "payroll",
@@ -30681,7 +30923,30 @@
         "title": "Payroll Calculator",
         "category": "Finance & Money",
         "subcategory": "Salary & Payroll Calculators",
-        "file": "app.js"
+        "file": "app.js",
+        "description": "Estimate total monthly and annual employer payroll cost from average pay and employer-paid costs.",
+        "inputs": [
+          {
+            "key": "employees",
+            "label": "Number of employees"
+          },
+          {
+            "key": "salary",
+            "label": "Average gross monthly pay per employee"
+          },
+          {
+            "key": "tax",
+            "label": "Employer payroll tax / contribution (%)"
+          },
+          {
+            "key": "benefits",
+            "label": "Monthly benefits per employee"
+          },
+          {
+            "key": "other",
+            "label": "Other monthly payroll costs"
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -30708,7 +30973,10 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceTranslationStatus": "not-started",
+      "sourceCompletenessStatus": "partial"
     },
     {
       "id": "overtime",
@@ -30716,7 +30984,26 @@
         "title": "Overtime Pay Calculator",
         "category": "Finance & Money",
         "subcategory": "Salary & Payroll Calculators",
-        "file": "app.js"
+        "file": "app.js",
+        "description": "Estimate regular and overtime earnings using your own overtime hours and pay multiplier.",
+        "inputs": [
+          {
+            "key": "rate",
+            "label": "Hourly pay rate"
+          },
+          {
+            "key": "regular",
+            "label": "Regular hours"
+          },
+          {
+            "key": "overtime",
+            "label": "Overtime hours"
+          },
+          {
+            "key": "multiplier",
+            "label": "Overtime pay multiplier"
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -30743,7 +31030,10 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceTranslationStatus": "not-started",
+      "sourceCompletenessStatus": "partial"
     },
     {
       "id": "discount",
@@ -30751,7 +31041,30 @@
         "title": "Discount Calculator",
         "category": "Finance & Money",
         "subcategory": "Shopping & Everyday Calculators",
-        "file": "app.js"
+        "file": "app.js",
+        "description": "Combine a percentage discount and coupon, then add estimated tax and shipping.",
+        "inputs": [
+          {
+            "key": "price",
+            "label": "Original price"
+          },
+          {
+            "key": "discount",
+            "label": "First discount (%)"
+          },
+          {
+            "key": "coupon",
+            "label": "Additional coupon (%)"
+          },
+          {
+            "key": "tax",
+            "label": "Estimated sales tax (%)"
+          },
+          {
+            "key": "shipping",
+            "label": "Shipping cost"
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -30778,7 +31091,10 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceTranslationStatus": "not-started",
+      "sourceCompletenessStatus": "partial"
     },
     {
       "id": "exchange-fees",
@@ -30786,7 +31102,38 @@
         "title": "Exchange Fee & Markup Calculator",
         "category": "Finance & Money",
         "subcategory": "Currency & Money Transfer",
-        "file": "app.js"
+        "file": "app.js",
+        "description": "Estimate the impact of an exchange-rate markup, percentage transfer fee and fixed fee.",
+        "inputs": [
+          {
+            "key": "amount",
+            "label": "Amount to send"
+          },
+          {
+            "key": "rate",
+            "label": "Mid-market exchange rate"
+          },
+          {
+            "key": "markup",
+            "label": "Exchange-rate markup (%)"
+          },
+          {
+            "key": "fee",
+            "label": "Transfer fee (%)"
+          },
+          {
+            "key": "fixed",
+            "label": "Fixed transfer fee"
+          },
+          {
+            "key": "from",
+            "label": "Source currency"
+          },
+          {
+            "key": "to",
+            "label": "Recipient currency"
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -30813,7 +31160,10 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceTranslationStatus": "not-started",
+      "sourceCompletenessStatus": "partial"
     },
     {
       "id": "transfer-compare",
@@ -30821,7 +31171,50 @@
         "title": "International Money Transfer Cost Calculator",
         "category": "Finance & Money",
         "subcategory": "Currency & Money Transfer",
-        "file": "app.js"
+        "file": "app.js",
+        "description": "Compare two hypothetical transfer providers by recipient amount after fees and exchange-rate markup.",
+        "inputs": [
+          {
+            "key": "amount",
+            "label": "Amount to send"
+          },
+          {
+            "key": "rate",
+            "label": "Mid-market exchange rate"
+          },
+          {
+            "key": "aFixed",
+            "label": "Provider A fixed fee"
+          },
+          {
+            "key": "aFee",
+            "label": "Provider A transfer fee (%)"
+          },
+          {
+            "key": "aMarkup",
+            "label": "Provider A rate markup (%)"
+          },
+          {
+            "key": "bFixed",
+            "label": "Provider B fixed fee"
+          },
+          {
+            "key": "bFee",
+            "label": "Provider B transfer fee (%)"
+          },
+          {
+            "key": "bMarkup",
+            "label": "Provider B rate markup (%)"
+          },
+          {
+            "key": "from",
+            "label": "Source currency"
+          },
+          {
+            "key": "to",
+            "label": "Recipient currency"
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -30848,7 +31241,10 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceTranslationStatus": "not-started",
+      "sourceCompletenessStatus": "partial"
     },
     {
       "id": "freelance-project",
@@ -30856,7 +31252,30 @@
         "title": "Freelance Project Pricing Calculator",
         "category": "Finance & Money",
         "subcategory": "Business & Freelance Calculators",
-        "file": "app.js"
+        "file": "app.js",
+        "description": "Build a project quote from labor hours, expenses, contingency and target gross margin.",
+        "inputs": [
+          {
+            "key": "hours",
+            "label": "Estimated project hours"
+          },
+          {
+            "key": "rate",
+            "label": "Hourly billing rate"
+          },
+          {
+            "key": "expenses",
+            "label": "Project expenses"
+          },
+          {
+            "key": "contingency",
+            "label": "Contingency allowance (%)"
+          },
+          {
+            "key": "margin",
+            "label": "Target gross margin (%)"
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -30883,7 +31302,10 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceTranslationStatus": "not-started",
+      "sourceCompletenessStatus": "partial"
     },
     {
       "id": "freelancer-net-income",
@@ -30891,7 +31313,22 @@
         "title": "Freelancer Net Income After Costs Calculator",
         "category": "Finance & Money",
         "subcategory": "Business & Freelance Calculators",
-        "file": "app.js"
+        "file": "app.js",
+        "description": "Estimate freelance income after business expenses and a user-selected tax reserve.",
+        "inputs": [
+          {
+            "key": "revenue",
+            "label": "Gross freelance revenue"
+          },
+          {
+            "key": "expenses",
+            "label": "Annual business expenses"
+          },
+          {
+            "key": "tax",
+            "label": "Estimated tax reserve (%)"
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -30918,7 +31355,10 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceTranslationStatus": "not-started",
+      "sourceCompletenessStatus": "partial"
     },
     {
       "id": "markup",
@@ -30926,7 +31366,18 @@
         "title": "Markup Calculator",
         "category": "Finance & Money",
         "subcategory": "Business & Freelance Calculators",
-        "file": "app.js"
+        "file": "app.js",
+        "description": "Calculate markup amount, selling price and equivalent gross margin from cost.",
+        "inputs": [
+          {
+            "key": "cost",
+            "label": "Unit cost"
+          },
+          {
+            "key": "markup",
+            "label": "Markup (%)"
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -30953,7 +31404,10 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceTranslationStatus": "not-started",
+      "sourceCompletenessStatus": "partial"
     },
     {
       "id": "break-even",
@@ -30961,7 +31415,22 @@
         "title": "Break-even Calculator",
         "category": "Finance & Money",
         "subcategory": "Business & Freelance Calculators",
-        "file": "app.js"
+        "file": "app.js",
+        "description": "Estimate unit sales and revenue needed to cover fixed and variable costs.",
+        "inputs": [
+          {
+            "key": "fixed",
+            "label": "Total fixed costs"
+          },
+          {
+            "key": "price",
+            "label": "Selling price per unit"
+          },
+          {
+            "key": "variable",
+            "label": "Variable cost per unit"
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -30988,7 +31457,10 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-title-description-inputs-extracted",
+      "sourceTranslationStatus": "not-started",
+      "sourceCompletenessStatus": "partial"
     },
     {
       "id": "business-roi",
