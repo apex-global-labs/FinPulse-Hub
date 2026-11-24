@@ -37001,6 +37001,18 @@
             {
               "key": "deduction",
               "label": "Eligible deductions entered"
+            },
+            {
+              "key": "tax-profile",
+              "label": "Country / region and tax year"
+            },
+            {
+              "key": "tax-state",
+              "label": "US state (applies only to US profiles)"
+            },
+            {
+              "key": "tax-state-status",
+              "label": "US state filing status"
             }
           ]
         },
@@ -37046,7 +37058,263 @@
               "body": "Uses bundled tax data for selected supported 2026 profiles; it is not a universal global tax engine. Only modeled allowances, brackets, components and optional supported US state tables are applied. Canadian federal and most provincial basic personal amount/non-refundable credits are not fully modeled and may cause material overestimation. US state tables require verification against the relevant official state revenue authority; local taxes and many state credits are not modeled."
             }
           ]
-        }
+        },
+        "selectors": [
+          {
+            "key": "tax-profile",
+            "label": "Country / region and tax year",
+            "options": [
+              {
+                "value": "US-2026-single",
+                "label": "United States — Federal · Single · 2026"
+              },
+              {
+                "value": "US-2026-joint",
+                "label": "United States — Federal · Married filing jointly · 2026"
+              },
+              {
+                "value": "US-2026-separate",
+                "label": "United States — Federal · Married filing separately · 2026"
+              },
+              {
+                "value": "US-2026-hoh",
+                "label": "United States — Federal · Head of household · 2026"
+              },
+              {
+                "value": "UK-2026-eng",
+                "label": "United Kingdom — England, Wales & Northern Ireland · 2026–27"
+              },
+              {
+                "value": "UK-2026-sct",
+                "label": "United Kingdom — Scotland · 2026–27"
+              }
+            ]
+          },
+          {
+            "key": "tax-state",
+            "label": "US state (applies only to US profiles)",
+            "options": [
+              {
+                "value": "none",
+                "label": "Do not include a state estimate"
+              },
+              {
+                "value": "AL",
+                "label": "Alabama"
+              },
+              {
+                "value": "AK",
+                "label": "Alaska"
+              },
+              {
+                "value": "AZ",
+                "label": "Arizona"
+              },
+              {
+                "value": "AR",
+                "label": "Arkansas"
+              },
+              {
+                "value": "CA",
+                "label": "California"
+              },
+              {
+                "value": "CO",
+                "label": "Colorado"
+              },
+              {
+                "value": "CT",
+                "label": "Connecticut"
+              },
+              {
+                "value": "DE",
+                "label": "Delaware"
+              },
+              {
+                "value": "FL",
+                "label": "Florida"
+              },
+              {
+                "value": "GA",
+                "label": "Georgia"
+              },
+              {
+                "value": "HI",
+                "label": "Hawaii"
+              },
+              {
+                "value": "ID",
+                "label": "Idaho"
+              },
+              {
+                "value": "IL",
+                "label": "Illinois"
+              },
+              {
+                "value": "IN",
+                "label": "Indiana"
+              },
+              {
+                "value": "IA",
+                "label": "Iowa"
+              },
+              {
+                "value": "KS",
+                "label": "Kansas"
+              },
+              {
+                "value": "KY",
+                "label": "Kentucky"
+              },
+              {
+                "value": "LA",
+                "label": "Louisiana"
+              },
+              {
+                "value": "ME",
+                "label": "Maine"
+              },
+              {
+                "value": "MD",
+                "label": "Maryland"
+              },
+              {
+                "value": "MA",
+                "label": "Massachusetts"
+              },
+              {
+                "value": "MI",
+                "label": "Michigan"
+              },
+              {
+                "value": "MN",
+                "label": "Minnesota"
+              },
+              {
+                "value": "MS",
+                "label": "Mississippi"
+              },
+              {
+                "value": "MO",
+                "label": "Missouri"
+              },
+              {
+                "value": "MT",
+                "label": "Montana"
+              },
+              {
+                "value": "NE",
+                "label": "Nebraska"
+              },
+              {
+                "value": "NV",
+                "label": "Nevada"
+              },
+              {
+                "value": "NH",
+                "label": "New Hampshire"
+              },
+              {
+                "value": "NJ",
+                "label": "New Jersey"
+              },
+              {
+                "value": "NM",
+                "label": "New Mexico"
+              },
+              {
+                "value": "NY",
+                "label": "New York"
+              },
+              {
+                "value": "NC",
+                "label": "North Carolina"
+              },
+              {
+                "value": "ND",
+                "label": "North Dakota"
+              },
+              {
+                "value": "OH",
+                "label": "Ohio"
+              },
+              {
+                "value": "OK",
+                "label": "Oklahoma"
+              },
+              {
+                "value": "OR",
+                "label": "Oregon"
+              },
+              {
+                "value": "PA",
+                "label": "Pennsylvania"
+              },
+              {
+                "value": "RI",
+                "label": "Rhode Island"
+              },
+              {
+                "value": "SC",
+                "label": "South Carolina"
+              },
+              {
+                "value": "SD",
+                "label": "South Dakota"
+              },
+              {
+                "value": "TN",
+                "label": "Tennessee"
+              },
+              {
+                "value": "TX",
+                "label": "Texas"
+              },
+              {
+                "value": "UT",
+                "label": "Utah"
+              },
+              {
+                "value": "VT",
+                "label": "Vermont"
+              },
+              {
+                "value": "VA",
+                "label": "Virginia"
+              },
+              {
+                "value": "WA",
+                "label": "Washington"
+              },
+              {
+                "value": "WV",
+                "label": "West Virginia"
+              },
+              {
+                "value": "WI",
+                "label": "Wisconsin"
+              },
+              {
+                "value": "WY",
+                "label": "Wyoming"
+              }
+            ]
+          },
+          {
+            "key": "tax-state-status",
+            "label": "US state filing status",
+            "options": [
+              {
+                "value": "single",
+                "label": "Single"
+              },
+              {
+                "value": "joint",
+                "label": "Married filing jointly"
+              }
+            ]
+          }
+        ]
       },
       "locales": {
         "hi": {
@@ -37101,7 +37369,17 @@
           },
           {
             "key": "mode",
-            "label": "Subtotal mode"
+            "label": "Subtotal mode",
+            "options": [
+              {
+                "value": "add",
+                "label": "Add tax to subtotal"
+              },
+              {
+                "value": "included",
+                "label": "Subtotal already includes tax"
+              }
+            ]
           }
         ],
         "results": {
@@ -37352,7 +37630,17 @@
           },
           {
             "key": "mode",
-            "label": "Calculation"
+            "label": "Calculation",
+            "options": [
+              {
+                "value": "add",
+                "label": "Add VAT / GST"
+              },
+              {
+                "value": "remove",
+                "label": "Remove included VAT / GST"
+              }
+            ]
           }
         ],
         "results": {
@@ -37837,7 +38125,25 @@
           },
           {
             "key": "periods",
-            "label": "Pay periods per year"
+            "label": "Pay periods per year",
+            "options": [
+              {
+                "value": "12",
+                "label": "12"
+              },
+              {
+                "value": "24",
+                "label": "24"
+              },
+              {
+                "value": "26",
+                "label": "26"
+              },
+              {
+                "value": "52",
+                "label": "52"
+              }
+            ]
           }
         ],
         "results": {
@@ -38011,6 +38317,18 @@
             {
               "key": "periods",
               "label": "Pay periods per year"
+            },
+            {
+              "key": "tax-profile",
+              "label": "Country / region and tax year"
+            },
+            {
+              "key": "tax-state",
+              "label": "US state (applies only to US profiles)"
+            },
+            {
+              "key": "tax-state-status",
+              "label": "US state filing status"
             }
           ]
         },
@@ -38061,7 +38379,263 @@
               "body": "Uses selected 2026 profile and modeled payroll contribution rules; coverage varies by jurisdiction. Retirement percentage and monthly deductions are user-entered assumptions. Prior-employer year-to-date amounts, special payroll exemptions, pay-period rounding and all local taxes are not modeled. Canadian tax credits and some US state rules may be incomplete; review jurisdiction-specific notes."
             }
           ]
-        }
+        },
+        "selectors": [
+          {
+            "key": "tax-profile",
+            "label": "Country / region and tax year",
+            "options": [
+              {
+                "value": "US-2026-single",
+                "label": "United States — Federal · Single · 2026"
+              },
+              {
+                "value": "US-2026-joint",
+                "label": "United States — Federal · Married filing jointly · 2026"
+              },
+              {
+                "value": "US-2026-separate",
+                "label": "United States — Federal · Married filing separately · 2026"
+              },
+              {
+                "value": "US-2026-hoh",
+                "label": "United States — Federal · Head of household · 2026"
+              },
+              {
+                "value": "UK-2026-eng",
+                "label": "United Kingdom — England, Wales & Northern Ireland · 2026–27"
+              },
+              {
+                "value": "UK-2026-sct",
+                "label": "United Kingdom — Scotland · 2026–27"
+              }
+            ]
+          },
+          {
+            "key": "tax-state",
+            "label": "US state (applies only to US profiles)",
+            "options": [
+              {
+                "value": "none",
+                "label": "Do not include a state estimate"
+              },
+              {
+                "value": "AL",
+                "label": "Alabama"
+              },
+              {
+                "value": "AK",
+                "label": "Alaska"
+              },
+              {
+                "value": "AZ",
+                "label": "Arizona"
+              },
+              {
+                "value": "AR",
+                "label": "Arkansas"
+              },
+              {
+                "value": "CA",
+                "label": "California"
+              },
+              {
+                "value": "CO",
+                "label": "Colorado"
+              },
+              {
+                "value": "CT",
+                "label": "Connecticut"
+              },
+              {
+                "value": "DE",
+                "label": "Delaware"
+              },
+              {
+                "value": "FL",
+                "label": "Florida"
+              },
+              {
+                "value": "GA",
+                "label": "Georgia"
+              },
+              {
+                "value": "HI",
+                "label": "Hawaii"
+              },
+              {
+                "value": "ID",
+                "label": "Idaho"
+              },
+              {
+                "value": "IL",
+                "label": "Illinois"
+              },
+              {
+                "value": "IN",
+                "label": "Indiana"
+              },
+              {
+                "value": "IA",
+                "label": "Iowa"
+              },
+              {
+                "value": "KS",
+                "label": "Kansas"
+              },
+              {
+                "value": "KY",
+                "label": "Kentucky"
+              },
+              {
+                "value": "LA",
+                "label": "Louisiana"
+              },
+              {
+                "value": "ME",
+                "label": "Maine"
+              },
+              {
+                "value": "MD",
+                "label": "Maryland"
+              },
+              {
+                "value": "MA",
+                "label": "Massachusetts"
+              },
+              {
+                "value": "MI",
+                "label": "Michigan"
+              },
+              {
+                "value": "MN",
+                "label": "Minnesota"
+              },
+              {
+                "value": "MS",
+                "label": "Mississippi"
+              },
+              {
+                "value": "MO",
+                "label": "Missouri"
+              },
+              {
+                "value": "MT",
+                "label": "Montana"
+              },
+              {
+                "value": "NE",
+                "label": "Nebraska"
+              },
+              {
+                "value": "NV",
+                "label": "Nevada"
+              },
+              {
+                "value": "NH",
+                "label": "New Hampshire"
+              },
+              {
+                "value": "NJ",
+                "label": "New Jersey"
+              },
+              {
+                "value": "NM",
+                "label": "New Mexico"
+              },
+              {
+                "value": "NY",
+                "label": "New York"
+              },
+              {
+                "value": "NC",
+                "label": "North Carolina"
+              },
+              {
+                "value": "ND",
+                "label": "North Dakota"
+              },
+              {
+                "value": "OH",
+                "label": "Ohio"
+              },
+              {
+                "value": "OK",
+                "label": "Oklahoma"
+              },
+              {
+                "value": "OR",
+                "label": "Oregon"
+              },
+              {
+                "value": "PA",
+                "label": "Pennsylvania"
+              },
+              {
+                "value": "RI",
+                "label": "Rhode Island"
+              },
+              {
+                "value": "SC",
+                "label": "South Carolina"
+              },
+              {
+                "value": "SD",
+                "label": "South Dakota"
+              },
+              {
+                "value": "TN",
+                "label": "Tennessee"
+              },
+              {
+                "value": "TX",
+                "label": "Texas"
+              },
+              {
+                "value": "UT",
+                "label": "Utah"
+              },
+              {
+                "value": "VT",
+                "label": "Vermont"
+              },
+              {
+                "value": "VA",
+                "label": "Virginia"
+              },
+              {
+                "value": "WA",
+                "label": "Washington"
+              },
+              {
+                "value": "WV",
+                "label": "West Virginia"
+              },
+              {
+                "value": "WI",
+                "label": "Wisconsin"
+              },
+              {
+                "value": "WY",
+                "label": "Wyoming"
+              }
+            ]
+          },
+          {
+            "key": "tax-state-status",
+            "label": "US state filing status",
+            "options": [
+              {
+                "value": "single",
+                "label": "Single"
+              },
+              {
+                "value": "joint",
+                "label": "Married filing jointly"
+              }
+            ]
+          }
+        ]
       },
       "locales": {
         "hi": {
