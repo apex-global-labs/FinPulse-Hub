@@ -277,7 +277,7 @@ test("batch-three source records contain implementation-derived content and keep
   assert.ok(source.errors.length>=1&&source.errors.every(e=>e.key&&e.message&&e.recoveryHint),id+" error messages and recovery");
   assert.ok(source.seo.title&&source.seo.metaDescription&&source.seo.h1&&source.seo.introduction,id+" SEO copy");
   assert.ok(source.accessibility.pageLabel&&source.accessibility.formLabel&&source.accessibility.resultAnnouncement&&source.accessibility.chartLabel,id+" accessibility labels");
-  assert.deepEqual(source.accessibility.controlLabels.map(x=>x.key),source.inputs.map(x=>x.key),id+" accessibility stable control keys");
+  assert.deepEqual(source.accessibility.controlLabels.map(x=>x.key),[...source.inputs.map(x=>x.key),...(source.selectors||[]).map(x=>x.key)],id+" accessibility stable input and selector keys");
   assert.equal(tool.sourceCompletenessStatus,"complete",id+" requested source fields complete");
   const draftStarted=["ira","inflation","cd","apy"].includes(id);
   assert.equal(tool.sourceTranslationStatus,draftStarted?"draft":"not-started",id+" translation state matches draft boundary");
