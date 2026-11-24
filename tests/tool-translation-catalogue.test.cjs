@@ -224,7 +224,7 @@ test("batch-two tools have complete extracted result, formula, FAQ, error, SEO a
 test("batch-three source extraction captures 20 tools and 88 stable input labels without activating translations",()=>{
  const batchThreeIds=["ira","inflation","cd","apy","tax","income-tax","sales-tax","vat-gst","tax-refund","salary","paycheck","payroll","overtime","discount","exchange-fees","transfer-compare","freelance-project","freelancer-net-income","markup","break-even"];
  const manifest=require("../docs/i18n/batch-03-source-extraction.json");
- assert.equal(manifest.status,"in-progress");
+ assert.equal(manifest.status,"source-complete; translation-draft-pending");
  assert.equal(manifest.tools.length,20);
  assert.deepEqual(manifest.tools.map(item=>item.id),batchThreeIds);
  assert.equal(manifest.tools.reduce((total,item)=>total+item.inputs.length,0),88);
@@ -233,8 +233,8 @@ test("batch-three source extraction captures 20 tools and 88 stable input labels
   const extracted=manifest.tools.find(item=>item.id===id);
   assert.ok(tool.source.description&&tool.source.description.length>15,id+" source description");
   assert.deepEqual(tool.source.inputs,extracted.inputs,id+" source input labels match extraction manifest");
-  assert.equal(tool.sourceExtractionStatus,"source-title-description-inputs-extracted",id+" initial extraction status");
-  assert.equal(tool.sourceCompletenessStatus,"partial",id+" source remains explicitly partial");
+  assert.equal(tool.sourceExtractionStatus,"source-record-complete",id+" complete source extraction status");
+  assert.equal(tool.sourceCompletenessStatus,"complete",id+" requested source fields complete");
   assert.equal(tool.sourceTranslationStatus,"not-started",id+" translation not started before source completion");
   assert.equal(new Set(tool.source.inputs.map(input=>input.key)).size,tool.source.inputs.length,id+" unique stable input keys");
   for(const locale of locales){
@@ -266,7 +266,7 @@ test("batch-three source records contain implementation-derived content and keep
   assert.ok(source.seo.title&&source.seo.metaDescription&&source.seo.h1&&source.seo.introduction,id+" SEO copy");
   assert.ok(source.accessibility.pageLabel&&source.accessibility.formLabel&&source.accessibility.resultAnnouncement&&source.accessibility.chartLabel,id+" accessibility labels");
   assert.deepEqual(source.accessibility.controlLabels.map(x=>x.key),source.inputs.map(x=>x.key),id+" accessibility stable control keys");
-  assert.equal(tool.sourceCompletenessStatus,"partial",id+" not yet source-verified");
+  assert.equal(tool.sourceCompletenessStatus,"complete",id+" requested source fields complete");
   assert.equal(tool.sourceTranslationStatus,"not-started",id+" no translations before verification");
   for(const locale of locales){
    assert.equal(tool.locales[locale].status,"not-started",id+":"+locale+" remains not started");
