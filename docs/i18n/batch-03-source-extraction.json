@@ -115,7 +115,7 @@
       "usesTaxEngine": false,
       "usesCurrencyDisplay": true,
       "hasInlineSeo": false,
-      "extractionStatus": "metadata-inputs-results-and-implementation-derived-editorial-captured; verification-pending",
+      "extractionStatus": "source-metadata-inputs-results-and-implementation-derived-editorial-captured; automated-verification-pending",
       "runtimeDefinition": "{id:\"ira\",n:\"Roth vs Traditional IRA Comparison\",c:\"Retirement & investing\",desc:\"Compare simplified after-tax balances using current and future tax assumptions.\",f:[[\"contribution\",\"Annual contribution budget\",7000],[\"years\",\"Years invested\",25],[\"rate\",\"Assumed annual return (%)\",6],[\"currentTax\",\"Current tax rate (%)\",22],[\"futureTax\",\"Future tax rate (%)\",22]],run:v=>{const x=Core.iraComparison(v.contribution,v.years,v.rate,v.currentTax,v.futureTax);return{main:fmt(x.rothAfterTax),assetValue:x.rothAfterTax,label:\"ROTH ILLUSTRATIVE AFTER-TAX VALUE\",metrics:[[\"Traditional balance before tax\",fmt(x.traditionalBalance)],[\"Traditional after-tax value\",fmt(x.traditionalAfterTax)],[\"Roth after-tax value\",fmt(x.rothAfterTax)],[\"Roth minus traditional\",fmt(x.difference)]],series:[x.traditionalAfterTax,x.rothAfterTax],chartLabels:[\"Traditional after-tax\",\"Roth after-tax\"],chartType:\"bar\",note:x.note,schedule:{monthly:x.monthlySchedule,yearly:x.yearlySchedule,comparison:{...x.traditionalSchedule,label:\"Traditional after-tax\"},label:\"Roth after-tax\"}}}}",
       "runtimeDefinitionEvidence": {
         "file": "app.js",
@@ -300,7 +300,7 @@
       "usesTaxEngine": false,
       "usesCurrencyDisplay": true,
       "hasInlineSeo": false,
-      "extractionStatus": "metadata-inputs-results-and-implementation-derived-editorial-captured; verification-pending",
+      "extractionStatus": "source-metadata-inputs-results-and-implementation-derived-editorial-captured; automated-verification-pending",
       "runtimeDefinition": "{id:\"inflation\",n:\"Inflation Calculator\",c:\"Everyday finance\",desc:\"Estimate how prices and purchasing power change under constant assumed inflation.\",f:[[\"amount\",\"Current cost / amount\",1000],[\"rate\",\"Annual inflation (%)\",3],[\"years\",\"Number of years\",10]],run:v=>{const x=Core.inflationCalculator(v.amount,v.rate,v.years);const n=Math.min(61,Math.max(2,Math.round(v.years)+1));return{main:fmt(x.futureCost),label:\"ESTIMATED FUTURE COST\",metrics:[[\"Current amount\",fmt(v.amount)],[\"Estimated cost increase\",fmt(x.costIncrease)],[\"Cumulative increase\",num(x.increasePercent)+\"%\"],[\"Future purchasing power\",fmt(x.purchasingPower)]],series:Array.from({length:n},(_,i)=>v.amount*Math.pow(1+v.rate/100,v.years*i/(n-1))),note:x.note}}}",
       "runtimeDefinitionEvidence": {
         "file": "app.js",
@@ -394,11 +394,6 @@
             "recoveryHint": "Enter zero or a positive value."
           },
           {
-            "key": "positive",
-            "message": "{field} must be greater than zero.",
-            "recoveryHint": "Enter a value greater than zero."
-          },
-          {
             "key": "range",
             "message": "Years or rate outside supported range",
             "recoveryHint": "Use a non-negative inflation rate no higher than 1,000% and a period no longer than 100 years."
@@ -476,7 +471,7 @@
       "usesTaxEngine": false,
       "usesCurrencyDisplay": true,
       "hasInlineSeo": false,
-      "extractionStatus": "metadata-inputs-results-and-implementation-derived-editorial-captured; verification-pending",
+      "extractionStatus": "source-metadata-inputs-results-and-implementation-derived-editorial-captured; automated-verification-pending",
       "runtimeDefinition": "{id:\"cd\",n:\"CD Calculator\",c:\"Savings & growth\",desc:\"Estimate certificate-of-deposit maturity value and interest from a fixed APY and term.\",f:[[\"principal\",\"Initial deposit\",10000],[\"apy\",\"Certificate APY (%)\",4.5],[\"term\",\"Term (months)\",12]],run:v=>{const x=Core.certificateDeposit(v.principal,v.apy,v.term);return{main:fmt(x.futureValue),label:\"ESTIMATED MATURITY VALUE\",metrics:[[\"Initial deposit\",fmt(x.principal)],[\"Interest earned\",fmt(x.interestEarned)],[\"APY\",num(x.apy)+\"%\"],[\"Term\",x.months+\" months\"]],series:[v.principal,x.futureValue],breakdown:[{item:\"Initial deposit\",value:fmt(x.principal)},{item:\"APY\",value:num(x.apy)+\"%\"},{item:\"Term\",value:x.months+\" months\"},{item:\"Interest earned\",value:fmt(x.interestEarned)},{item:\"Maturity value\",value:fmt(x.futureValue)}],note:x.note}}}",
       "runtimeDefinitionEvidence": {
         "file": "app.js",
@@ -673,7 +668,7 @@
       "usesTaxEngine": false,
       "usesCurrencyDisplay": true,
       "hasInlineSeo": false,
-      "extractionStatus": "metadata-inputs-results-and-implementation-derived-editorial-captured; verification-pending",
+      "extractionStatus": "source-metadata-inputs-results-and-implementation-derived-editorial-captured; automated-verification-pending",
       "runtimeDefinition": "{id:\"apy\",n:\"APY Calculator\",c:\"Savings & growth\",desc:\"Convert nominal annual interest and compounding frequency into annual percentage yield.\",f:[[\"principal\",\"Starting deposit\",10000],[\"rate\",\"Nominal annual rate (%)\",4.25],[\"frequency\",\"Compounding periods per year\",12]],run:v=>{const x=Core.apyCalculator(v.principal,v.rate,v.frequency);return{main:num(x.apy,4)+\"%\",label:\"ANNUAL PERCENTAGE YIELD (APY)\",metrics:[[\"Starting deposit\",fmt(v.principal)],[\"One-year interest\",fmt(x.interestEarned)],[\"One-year balance\",fmt(x.balance)],[\"Rate per period\",num(x.periodicRate,5)+\"%\"]],breakdown:[{item:\"Starting deposit\",value:fmt(v.principal)},{item:\"Nominal annual rate\",value:num(v.rate)+\"%\"},{item:\"Compounding periods\",value:String(x.compoundingPeriods)},{item:\"Rate per period\",value:num(x.periodicRate,5)+\"%\"},{item:\"APY\",value:num(x.apy,4)+\"%\"},{item:\"One-year interest\",value:fmt(x.interestEarned)},{item:\"One-year balance\",value:fmt(x.balance)}],note:x.note}}}",
       "runtimeDefinitionEvidence": {
         "file": "app.js",
@@ -878,7 +873,7 @@
       "usesTaxEngine": false,
       "usesCurrencyDisplay": true,
       "hasInlineSeo": false,
-      "extractionStatus": "metadata-inputs-results-and-implementation-derived-editorial-captured; verification-pending",
+      "extractionStatus": "source-metadata-inputs-results-and-implementation-derived-editorial-captured; automated-verification-pending",
       "runtimeDefinition": "{id:\"tax\",n:\"Tax Calculator\",c:\"Tax & income\",desc:\"Estimate tax after a flat tax rate and entered credits.\",f:[[\"amount\",\"Taxable income / amount\",50000],[\"rate\",\"Estimated tax rate (%)\",20],[\"credits\",\"Tax credits\",1000]],run:v=>{const x=Core.taxEstimate(v.amount,v.rate,v.credits);return{main:fmt(x.tax),label:\"ESTIMATED TAX AFTER CREDITS\",metrics:[[\"Tax before credits\",fmt(x.grossTax)],[\"Credits applied\",fmt(x.creditsApplied)],[\"After-tax amount\",fmt(x.afterTax)],[\"Effective tax rate\",num(x.effectiveRate)+\"%\"]],breakdown:[{item:\"Taxable amount\",value:fmt(v.amount)},{item:\"Flat tax rate\",value:num(v.rate)+\"%\"},{item:\"Tax before credits\",value:fmt(x.grossTax)},{item:\"Credits applied\",value:fmt(x.creditsApplied)},{item:\"Estimated tax\",value:fmt(x.tax)},{item:\"After-tax amount\",value:fmt(x.afterTax)}],note:x.note}}}",
       "runtimeDefinitionEvidence": {
         "file": "app.js",
@@ -969,11 +964,6 @@
             "key": "negative",
             "message": "{field} must not be negative.",
             "recoveryHint": "Enter zero or a positive value."
-          },
-          {
-            "key": "positive",
-            "message": "{field} must be greater than zero.",
-            "recoveryHint": "Enter a value greater than zero."
           },
           {
             "key": "rate",
@@ -1072,7 +1062,7 @@
       "usesTaxEngine": true,
       "usesCurrencyDisplay": true,
       "hasInlineSeo": false,
-      "extractionStatus": "metadata-inputs-results-and-implementation-derived-editorial-captured; verification-pending",
+      "extractionStatus": "source-metadata-inputs-results-and-implementation-derived-editorial-captured; automated-verification-pending",
       "runtimeDefinition": "{id:\"income-tax\",n:\"Income Tax Calculator\",c:\"Tax & income\",desc:\"Estimate income tax using a selected 2026 jurisdiction and its published progressive brackets.\",f:[[\"income\",\"Annual gross income\",80000],[\"deduction\",\"Eligible deductions entered\",0]],run:v=>{const pid=$(\"#tax-profile\").value,x=window.FinPulseTaxEngine.estimate(pid,v.income,v.deduction,$(\"#tax-state\").value,$(\"#tax-state-status\").value);return{main:fmt(x.tax,x.currency),label:\"ESTIMATED INCOME TAX\",metrics:[[\"Taxable income\",fmt(x.taxableIncome,x.currency)],[\"Standard allowance\",fmt(x.personalAllowance,x.currency)],...(x.stateName?[[\"State taxable income\",fmt(x.stateTaxableIncome,x.currency)],[\"State income tax\",fmt(x.stateTax,x.currency)]]:[]),[\"After-tax income\",fmt(v.income-x.tax,x.currency)],[\"Effective tax rate\",num(x.effectiveRate)+\"%\"],[\"Marginal rate\",num(x.marginalRate)+\"%\"]],series:x.breakdown.map(b=>b.tax),chartLabels:x.breakdown.map(b=>b.component||(\"Bracket \"+num(b.rate??b.marginalRate??0)+\"%\")),chartType:\"bar\",breakdown:x.breakdown.map(b=>({component:b.component||\"Tax bracket\",...(b.taxableIncome!==undefined?{taxableIncome:fmt(b.taxableIncome,x.currency)}:{}),...(b.portion!==undefined?{portion:fmt(b.portion,x.currency)}:{}),...(b.rate!==undefined?{rate:b.rate}:{}),...(b.marginalRate!==undefined?{marginalRate:b.marginalRate}:{}),...(b.credit!==undefined?{credit:fmt(b.credit,x.currency)}:{}),tax:fmt(b.tax,x.currency)})),note:x.note+(x.stateName?\" \"+x.stateName+\" state income tax estimate included. \":\" \")+\"Selected: \"+x.profile+\" Source: \"+window.FinPulseTaxData.sources[pid.slice(0,2)]+\" (checked \"+window.FinPulseTaxData.checkedOn+\").\"}}}",
       "runtimeDefinitionEvidence": {
         "file": "app.js",
@@ -1170,21 +1160,6 @@
           ]
         },
         "errors": [
-          {
-            "key": "invalid-number",
-            "message": "{field} must be a finite number.",
-            "recoveryHint": "Enter a valid number and try again."
-          },
-          {
-            "key": "negative",
-            "message": "{field} must not be negative.",
-            "recoveryHint": "Enter zero or a positive value."
-          },
-          {
-            "key": "positive",
-            "message": "{field} must be greater than zero.",
-            "recoveryHint": "Enter a value greater than zero."
-          },
           {
             "key": "profile",
             "message": "Choose a supported tax jurisdiction and year.",
@@ -1285,7 +1260,7 @@
       "usesTaxEngine": false,
       "usesCurrencyDisplay": true,
       "hasInlineSeo": false,
-      "extractionStatus": "metadata-inputs-results-and-implementation-derived-editorial-captured; verification-pending",
+      "extractionStatus": "source-metadata-inputs-results-and-implementation-derived-editorial-captured; automated-verification-pending",
       "runtimeDefinition": "{id:\"sales-tax\",n:\"Sales Tax Calculator\",c:\"Tax & income\",desc:\"Calculate sales tax, discounts and final checkout total.\",f:[[\"subtotal\",\"Subtotal / tax-inclusive total\",120],[\"discount\",\"Discount (%)\",10],[\"rate\",\"Sales tax rate (%)\",8.25],[\"mode\",\"Subtotal mode\",\"add\",\"select\",[\"add\",\"included\"]]],run:v=>{const x=Core.salesTax(v.subtotal,v.discount,v.rate,v.mode);return{main:fmt(x.finalTotal),label:\"ESTIMATED FINAL TOTAL\",metrics:[[\"Pre-discount amount\",fmt(x.originalSubtotal)],[\"Discount\",fmt(x.discount)],[\"Taxable amount\",fmt(x.taxableAmount)],[\"Sales tax\",fmt(x.tax)],[\"Final total\",fmt(x.finalTotal)]],breakdown:[{item:\"Pre-discount base\",value:fmt(x.originalSubtotal)},{item:\"Discount\",value:fmt(x.discount)},{item:\"Taxable amount\",value:fmt(x.taxableAmount)},{item:\"Sales tax\",value:fmt(x.tax)},{item:\"Final total\",value:fmt(x.finalTotal)}],note:x.note}}}",
       "runtimeDefinitionEvidence": {
         "file": "app.js",
@@ -1378,11 +1353,6 @@
             "key": "negative",
             "message": "{field} must not be negative.",
             "recoveryHint": "Enter zero or a positive value."
-          },
-          {
-            "key": "positive",
-            "message": "{field} must be greater than zero.",
-            "recoveryHint": "Enter a value greater than zero."
           },
           {
             "key": "percent",
@@ -1491,7 +1461,7 @@
       "usesTaxEngine": false,
       "usesCurrencyDisplay": true,
       "hasInlineSeo": false,
-      "extractionStatus": "metadata-inputs-results-and-implementation-derived-editorial-captured; verification-pending",
+      "extractionStatus": "source-metadata-inputs-results-and-implementation-derived-editorial-captured; automated-verification-pending",
       "runtimeDefinition": "{id:\"vat-gst\",n:\"VAT / GST Calculator\",c:\"Tax & income\",desc:\"Add VAT/GST to a net price or extract tax from a gross price.\",f:[[\"amount\",\"Amount\",1000],[\"rate\",\"VAT / GST rate (%)\",15],[\"mode\",\"Calculation\",\"add\",\"select\",[\"add\",\"remove\"]]],run:v=>{const x=Core.vatGst(v.amount,v.rate,v.mode);return{main:fmt(x.total),label:\"TOTAL INCLUDING VAT / GST\",metrics:[[\"Net amount\",fmt(x.base)],[\"VAT / GST amount\",fmt(x.tax)],[\"Gross total\",fmt(x.total)]],breakdown:[{item:\"Net / extracted base\",value:fmt(x.base)},{item:\"VAT / GST\",value:fmt(x.tax)},{item:\"Gross total\",value:fmt(x.total)},{item:\"Mode\",value:v.mode}],note:x.note}}}",
       "runtimeDefinitionEvidence": {
         "file": "app.js",
@@ -1585,11 +1555,6 @@
             "recoveryHint": "Enter zero or a positive value."
           },
           {
-            "key": "positive",
-            "message": "{field} must be greater than zero.",
-            "recoveryHint": "Enter a value greater than zero."
-          },
-          {
             "key": "rate",
             "message": "VAT/GST rate must not exceed 100 percent",
             "recoveryHint": "Enter a VAT/GST rate from 0% to 100%."
@@ -1680,7 +1645,7 @@
       "usesTaxEngine": false,
       "usesCurrencyDisplay": true,
       "hasInlineSeo": false,
-      "extractionStatus": "metadata-inputs-results-and-implementation-derived-editorial-captured; verification-pending",
+      "extractionStatus": "source-metadata-inputs-results-and-implementation-derived-editorial-captured; automated-verification-pending",
       "runtimeDefinition": "{id:\"tax-refund\",n:\"Tax Refund Estimator\",c:\"Tax & income\",desc:\"Compare estimated tax liability with withholding and credits to estimate refund or amount due.\",f:[[\"liability\",\"Estimated total tax liability\",9000],[\"withholding\",\"Tax already withheld / paid\",10500],[\"credits\",\"Additional credits or prepayments\",0]],run:v=>{const x=Core.taxRefund(v.liability,v.withholding,v.credits);return{main:x.refund>0?fmt(x.refund):fmt(x.amountDue),label:x.refund>0?\"ESTIMATED REFUND\":\"ESTIMATED AMOUNT DUE\",metrics:[[\"Tax liability\",fmt(x.estimatedLiability)],[\"Withholding\",fmt(x.withholding)],[\"Credits / prepayments\",fmt(x.credits)],[\"Total paid\",fmt(x.totalPaid)]],breakdown:[{item:\"Estimated tax liability\",value:fmt(x.estimatedLiability)},{item:\"Withholding\",value:fmt(x.withholding)},{item:\"Credits / prepayments\",value:fmt(x.credits)},{item:\"Total paid\",value:fmt(x.totalPaid)},{item:\"Estimated refund\",value:fmt(x.refund)},{item:\"Estimated amount due\",value:fmt(x.amountDue)}],note:x.note}}}",
       "runtimeDefinitionEvidence": {
         "file": "app.js",
@@ -1772,11 +1737,6 @@
             "key": "negative",
             "message": "{field} must not be negative.",
             "recoveryHint": "Enter zero or a positive value."
-          },
-          {
-            "key": "positive",
-            "message": "{field} must be greater than zero.",
-            "recoveryHint": "Enter a value greater than zero."
           }
         ],
         "accessibility": {
@@ -1801,7 +1761,7 @@
         },
         "results": {
           "heading": "RESULT",
-          "summary": "",
+          "summary": "ESTIMATED REFUND / ESTIMATED AMOUNT DUE",
           "metrics": [
             {
               "key": "metric-1",
@@ -1886,7 +1846,7 @@
       "usesTaxEngine": true,
       "usesCurrencyDisplay": true,
       "hasInlineSeo": false,
-      "extractionStatus": "metadata-inputs-results-and-implementation-derived-editorial-captured; verification-pending",
+      "extractionStatus": "source-metadata-inputs-results-and-implementation-derived-editorial-captured; automated-verification-pending",
       "runtimeDefinition": "{id:\"salary\",n:\"Salary Take-Home Calculator\",c:\"Tax & income\",desc:\"Estimate annual, monthly and per-paycheck take-home using 2026 income-tax brackets and employee payroll contributions.\",f:[[\"gross\",\"Gross annual salary\",75000],[\"deduction\",\"Eligible deductions entered\",0],[\"retirement\",\"Retirement contribution (%)\",5],[\"insurance\",\"Monthly insurance / benefits\",250],[\"other\",\"Other monthly deductions\",50],[\"periods\",\"Pay periods per year\",26,\"select\",[\"12\",\"24\",\"26\",\"52\"]]],run:v=>{const pid=$(\"#tax-profile\").value,x=window.FinPulseTaxEngine.estimate(pid,v.gross,v.deduction,$(\"#tax-state\").value,$(\"#tax-state-status\").value),pay=window.FinPulseTaxEngine.payroll(pid,v.gross),retirement=v.gross*v.retirement/100,insurance=v.insurance*12,other=v.other*12,net=v.gross-x.tax-pay.total-retirement-insurance-other;return{main:fmt(net/Number(v.periods),x.currency),label:\"ESTIMATED TAKE-HOME PER PAYCHECK\",metrics:[[\"Net annual income\",fmt(net,x.currency)],[\"Net monthly income\",fmt(net/12,x.currency)],[\"Progressive income tax (federal + state where selected)\",fmt(x.tax,x.currency)],...pay.items.map(i=>[i.name,fmt(i.amount,x.currency)]),[\"Retirement contributions\",fmt(retirement,x.currency)],[\"Insurance and other deductions\",fmt(insurance+other,x.currency)]],breakdown:[{item:\"Gross annual salary\",value:fmt(v.gross,x.currency)},{item:\"Income tax\",value:fmt(x.tax,x.currency)},{item:\"Employee payroll contributions\",value:fmt(pay.total,x.currency)},{item:\"Retirement contributions\",value:fmt(retirement,x.currency)},{item:\"Insurance\",value:fmt(insurance,x.currency)},{item:\"Other deductions\",value:fmt(other,x.currency)},{item:\"Estimated net annual pay\",value:fmt(net,x.currency)}],note:x.note+\" \"+pay.note+\" This annualized estimate does not model prior-employer year-to-date amounts, special payroll exemptions, pay-period rounding or all local taxes.\"}}}",
       "runtimeDefinitionEvidence": {
         "file": "app.js",
@@ -1988,21 +1948,6 @@
           ]
         },
         "errors": [
-          {
-            "key": "invalid-number",
-            "message": "{field} must be a finite number.",
-            "recoveryHint": "Enter a valid number and try again."
-          },
-          {
-            "key": "negative",
-            "message": "{field} must not be negative.",
-            "recoveryHint": "Enter zero or a positive value."
-          },
-          {
-            "key": "positive",
-            "message": "{field} must be greater than zero.",
-            "recoveryHint": "Enter a value greater than zero."
-          },
           {
             "key": "profile",
             "message": "Choose a supported tax jurisdiction and year.",
@@ -2160,7 +2105,7 @@
       "usesTaxEngine": false,
       "usesCurrencyDisplay": true,
       "hasInlineSeo": false,
-      "extractionStatus": "metadata-inputs-results-and-implementation-derived-editorial-captured; verification-pending",
+      "extractionStatus": "source-metadata-inputs-results-and-implementation-derived-editorial-captured; automated-verification-pending",
       "runtimeDefinition": "{id:\"paycheck\",n:\"Paycheck Calculator\",c:\"Payroll & pay\",desc:\"Estimate one paycheck from hourly earnings, overtime, bonus and entered deductions.\",f:[[\"hourly\",\"Hourly pay rate\",30],[\"regular\",\"Regular hours this pay period\",80],[\"overtime\",\"Overtime hours this pay period\",0],[\"multiplier\",\"Overtime pay multiplier\",1.5],[\"bonus\",\"Bonus / commission this period\",0],[\"tax\",\"Estimated withholding (%)\",18],[\"retirement\",\"Retirement deduction (%)\",5],[\"benefits\",\"Benefits / insurance deduction\",100],[\"other\",\"Other deductions\",25]],run:v=>{const x=Core.paycheck(v.hourly,v.regular,v.overtime,v.multiplier,v.bonus,v.tax,v.retirement,v.benefits,v.other);return{main:fmt(x.net),label:\"ESTIMATED TAKE-HOME PAY\",metrics:[[\"Gross pay\",fmt(x.gross)],[\"Regular earnings\",fmt(x.regularPay)],[\"Overtime earnings\",fmt(x.overtimePay)],[\"Estimated withholding\",fmt(x.tax)],[\"Retirement deduction\",fmt(x.retirement)],[\"Benefits and other deductions\",fmt(x.benefits+x.other)]],breakdown:[{item:\"Regular earnings\",value:fmt(x.regularPay)},{item:\"Overtime earnings\",value:fmt(x.overtimePay)},{item:\"Bonus / commission\",value:fmt(x.bonus)},{item:\"Gross pay\",value:fmt(x.gross)},{item:\"Tax withholding\",value:fmt(x.tax)},{item:\"Retirement\",value:fmt(x.retirement)},{item:\"Benefits\",value:fmt(x.benefits)},{item:\"Other deductions\",value:fmt(x.other)},{item:\"Net pay\",value:fmt(x.net)}],note:x.note}}}",
       "runtimeDefinitionEvidence": {
         "file": "app.js",
@@ -2413,7 +2358,7 @@
       "usesTaxEngine": false,
       "usesCurrencyDisplay": true,
       "hasInlineSeo": false,
-      "extractionStatus": "metadata-inputs-results-and-implementation-derived-editorial-captured; verification-pending",
+      "extractionStatus": "source-metadata-inputs-results-and-implementation-derived-editorial-captured; automated-verification-pending",
       "runtimeDefinition": "{id:\"payroll\",n:\"Payroll Calculator\",c:\"Payroll & pay\",desc:\"Estimate total monthly and annual employer payroll cost from average pay and employer-paid costs.\",f:[[\"employees\",\"Number of employees\",8],[\"salary\",\"Average gross monthly pay per employee\",4000],[\"tax\",\"Employer payroll tax / contribution (%)\",7],[\"benefits\",\"Monthly benefits per employee\",250],[\"other\",\"Other monthly payroll costs\",500]],run:v=>{const x=Core.payroll(v.employees,v.salary,v.tax,v.benefits,v.other);return{main:fmt(x.totalMonthly),label:\"ESTIMATED TOTAL MONTHLY PAYROLL COST\",metrics:[[\"Annual employer cost\",fmt(x.totalAnnual)],[\"Gross monthly wages\",fmt(x.grossMonthly)],[\"Employer taxes / contributions\",fmt(x.employerTaxesMonthly)],[\"Benefits\",fmt(x.benefitsMonthly)],[\"Other monthly costs\",fmt(x.otherMonthlyCosts)],[\"Employees\",num(x.employees,0)]],breakdown:[{item:\"Gross monthly wages\",value:fmt(x.grossMonthly)},{item:\"Employer taxes / contributions\",value:fmt(x.employerTaxesMonthly)},{item:\"Benefits\",value:fmt(x.benefitsMonthly)},{item:\"Other monthly costs\",value:fmt(x.otherMonthlyCosts)},{item:\"Total monthly payroll\",value:fmt(x.totalMonthly)},{item:\"Total annual payroll\",value:fmt(x.totalAnnual)}],note:x.note}}}",
       "runtimeDefinitionEvidence": {
         "file": "app.js",
@@ -2634,7 +2579,7 @@
       "usesTaxEngine": false,
       "usesCurrencyDisplay": true,
       "hasInlineSeo": false,
-      "extractionStatus": "metadata-inputs-results-and-implementation-derived-editorial-captured; verification-pending",
+      "extractionStatus": "source-metadata-inputs-results-and-implementation-derived-editorial-captured; automated-verification-pending",
       "runtimeDefinition": "{id:\"overtime\",n:\"Overtime Pay Calculator\",c:\"Payroll & pay\",desc:\"Estimate regular and overtime earnings using your own overtime hours and pay multiplier.\",f:[[\"rate\",\"Hourly pay rate\",25],[\"regular\",\"Regular hours\",40],[\"overtime\",\"Overtime hours\",8],[\"multiplier\",\"Overtime pay multiplier\",1.5]],run:v=>{const x=Core.overtimePay(v.rate,v.regular,v.overtime,v.multiplier);return{main:fmt(x.gross),label:\"TOTAL ESTIMATED GROSS PAY\",metrics:[[\"Regular earnings\",fmt(x.regular)],[\"Overtime earnings\",fmt(x.overtime)],[\"Total hours\",num(x.totalHours,2)],[\"Blended hourly rate\",fmt(x.blendedRate)]],breakdown:[{item:\"Regular earnings\",value:fmt(x.regular)},{item:\"Overtime earnings\",value:fmt(x.overtime)},{item:\"Total gross pay\",value:fmt(x.gross)},{item:\"Total hours\",value:num(x.totalHours,2)},{item:\"Blended hourly rate\",value:fmt(x.blendedRate)}],note:x.note}}}",
       "runtimeDefinitionEvidence": {
         "file": "app.js",
@@ -2838,7 +2783,7 @@
       "usesTaxEngine": false,
       "usesCurrencyDisplay": true,
       "hasInlineSeo": false,
-      "extractionStatus": "metadata-inputs-results-and-implementation-derived-editorial-captured; verification-pending",
+      "extractionStatus": "source-metadata-inputs-results-and-implementation-derived-editorial-captured; automated-verification-pending",
       "runtimeDefinition": "{id:\"discount\",n:\"Discount Calculator\",c:\"Shopping & pricing\",desc:\"Combine a percentage discount and coupon, then add estimated tax and shipping.\",f:[[\"price\",\"Original price\",120],[\"discount\",\"First discount (%)\",20],[\"coupon\",\"Additional coupon (%)\",5],[\"tax\",\"Estimated sales tax (%)\",8],[\"shipping\",\"Shipping cost\",5]],run:v=>{const x=Core.discountCalculator(v.price,v.discount,v.coupon,v.tax,v.shipping);return{main:fmt(x.total),label:\"ESTIMATED FINAL PRICE\",metrics:[[\"Original price\",fmt(x.originalPrice)],[\"First discount\",fmt(x.firstDiscount)],[\"Coupon discount\",fmt(x.couponDiscount)],[\"Total savings\",fmt(x.totalDiscount)],[\"Tax\",fmt(x.tax)],[\"Shipping\",fmt(x.shipping)]],breakdown:[{item:\"Original price\",value:fmt(x.originalPrice)},{item:\"First discount\",value:fmt(x.firstDiscount)},{item:\"Coupon discount\",value:fmt(x.couponDiscount)},{item:\"Discounted subtotal\",value:fmt(x.discountedSubtotal)},{item:\"Tax\",value:fmt(x.tax)},{item:\"Shipping\",value:fmt(x.shipping)},{item:\"Final price\",value:fmt(x.total)}],note:x.note}}}",
       "runtimeDefinitionEvidence": {
         "file": "app.js",
@@ -2931,11 +2876,6 @@
             "key": "negative",
             "message": "{field} must not be negative.",
             "recoveryHint": "Enter zero or a positive value."
-          },
-          {
-            "key": "positive",
-            "message": "{field} must be greater than zero.",
-            "recoveryHint": "Enter a value greater than zero."
           },
           {
             "key": "percent",
@@ -3076,7 +3016,7 @@
       "usesTaxEngine": false,
       "usesCurrencyDisplay": true,
       "hasInlineSeo": false,
-      "extractionStatus": "metadata-inputs-results-and-implementation-derived-editorial-captured; verification-pending",
+      "extractionStatus": "source-metadata-inputs-results-and-implementation-derived-editorial-captured; automated-verification-pending",
       "runtimeDefinition": "{id:\"exchange-fees\",n:\"Exchange Fee & Markup Calculator\",c:\"Currency & transfers\",desc:\"Estimate the impact of an exchange-rate markup, percentage transfer fee and fixed fee.\",f:[[\"amount\",\"Amount to send\",1000],[\"rate\",\"Mid-market exchange rate\",1.08],[\"markup\",\"Exchange-rate markup (%)\",2],[\"fee\",\"Transfer fee (%)\",1],[\"fixed\",\"Fixed transfer fee\",5],[\"from\",\"Source currency\",\"USD\",\"currency\"],[\"to\",\"Recipient currency\",\"EUR\",\"currency\"]],run:v=>{const x=Core.exchangeFeeMarkup(v.amount,v.rate,v.markup,v.fee,v.fixed);return{main:fmt(x.convertedAmount,v.to),label:\"ESTIMATED RECIPIENT AMOUNT\",metrics:[[\"Customer exchange rate\",num(x.customerRate,6)],[\"Transfer fee\",fmt(x.fee,v.from)],[\"Mid-market value\",fmt(x.marketValue,v.to)],[\"Estimated FX spread cost\",fmt(x.fxSpreadCost,v.to)],[\"Total estimated cost vs mid-market\",fmt(x.totalCost,v.to)],[\"Effective rate\",num(x.effectiveRate,6)]],breakdown:[{item:\"Amount sent\",value:fmt(x.amount,v.from)},{item:\"Mid-market rate\",value:num(x.midRate,6)},{item:\"Customer rate\",value:num(x.customerRate,6)},{item:\"Transfer fee\",value:fmt(x.fee,v.from)},{item:\"FX spread cost\",value:fmt(x.fxSpreadCost,v.to)},{item:\"Recipient amount\",value:fmt(x.convertedAmount,v.to)}],note:x.note}}}",
       "runtimeDefinitionEvidence": {
         "file": "app.js",
@@ -3335,7 +3275,7 @@
       "usesTaxEngine": false,
       "usesCurrencyDisplay": true,
       "hasInlineSeo": false,
-      "extractionStatus": "metadata-inputs-results-and-implementation-derived-editorial-captured; verification-pending",
+      "extractionStatus": "source-metadata-inputs-results-and-implementation-derived-editorial-captured; automated-verification-pending",
       "runtimeDefinition": "{id:\"transfer-compare\",n:\"International Money Transfer Cost Calculator\",c:\"Currency & transfers\",desc:\"Compare two hypothetical transfer providers by recipient amount after fees and exchange-rate markup.\",f:[[\"amount\",\"Amount to send\",1000],[\"rate\",\"Mid-market exchange rate\",1.08],[\"aFixed\",\"Provider A fixed fee\",5],[\"aFee\",\"Provider A transfer fee (%)\",1],[\"aMarkup\",\"Provider A rate markup (%)\",2],[\"bFixed\",\"Provider B fixed fee\",2],[\"bFee\",\"Provider B transfer fee (%)\",1.5],[\"bMarkup\",\"Provider B rate markup (%)\",1],[\"from\",\"Source currency\",\"USD\",\"currency\"],[\"to\",\"Recipient currency\",\"EUR\",\"currency\"]],run:v=>{const x=Core.internationalTransferCompare(v.amount,v.rate,v.aFixed,v.aFee,v.aMarkup,v.bFixed,v.bFee,v.bMarkup);return{main:fmt(Math.max(x.providerA.convertedAmount,x.providerB.convertedAmount),v.to),label:\"HIGHER ESTIMATED RECIPIENT AMOUNT — \"+(x.bestProvider===\"A\"?\"PROVIDER A\":\"PROVIDER B\"),metrics:[[\"Provider A receives\",fmt(x.providerA.convertedAmount,v.to)],[\"Provider B receives\",fmt(x.providerB.convertedAmount,v.to)],[\"Recipient difference\",fmt(x.recipientDifference,v.to)],[\"Provider A total fees\",fmt(x.providerA.fee,v.from)],[\"Provider B total fees\",fmt(x.providerB.fee,v.from)],[\"Provider A effective rate\",num(x.providerA.effectiveRate,6)],[\"Provider B effective rate\",num(x.providerB.effectiveRate,6)]],breakdown:[{item:\"Provider A recipient amount\",value:fmt(x.providerA.convertedAmount,v.to)},{item:\"Provider A fees\",value:fmt(x.providerA.fee,v.from)},{item:\"Provider B recipient amount\",value:fmt(x.providerB.convertedAmount,v.to)},{item:\"Provider B fees\",value:fmt(x.providerB.fee,v.from)},{item:\"Recipient difference\",value:fmt(x.recipientDifference,v.to)},{item:\"Higher recipient amount\",value:x.bestProvider}],note:x.note}}}",
       "runtimeDefinitionEvidence": {
         "file": "app.js",
@@ -3590,7 +3530,7 @@
       "usesTaxEngine": false,
       "usesCurrencyDisplay": true,
       "hasInlineSeo": true,
-      "extractionStatus": "metadata-inputs-results-and-implementation-derived-editorial-captured; verification-pending",
+      "extractionStatus": "source-metadata-inputs-results-and-implementation-derived-editorial-captured; automated-verification-pending",
       "runtimeDefinition": "{id:\"freelance-project\",n:\"Freelance Project Pricing Calculator\",c:\"Freelance & business\",desc:\"Build a project quote from labor hours, expenses, contingency and target gross margin.\",f:[[\"hours\",\"Estimated project hours\",40],[\"rate\",\"Hourly billing rate\",60],[\"expenses\",\"Project expenses\",500],[\"contingency\",\"Contingency allowance (%)\",10],[\"margin\",\"Target gross margin (%)\",25]],run:v=>{const x=Core.freelanceProjectPricing(v.hours,v.rate,v.expenses,v.contingency,v.margin);return{main:fmt(x.quotedPrice),label:\"ILLUSTRATIVE PROJECT QUOTE\",metrics:[[\"Labor cost\",fmt(x.labor)],[\"Base cost\",fmt(x.baseCost)],[\"Contingency\",fmt(x.contingency)],[\"Total cost\",fmt(x.totalCost)],[\"Estimated profit\",fmt(x.profit)],[\"Target gross margin\",num(x.targetMarginPct)+\"%\"]],series:x.series,chartLabels:[\"Labor\",\"Expenses\",\"Contingency\",\"Profit\",\"Quote\"],chartType:\"bar\",breakdown:[{item:\"Labor\",value:fmt(x.labor)},{item:\"Expenses\",value:fmt(v.expenses)},{item:\"Contingency\",value:fmt(x.contingency)},{item:\"Total cost\",value:fmt(x.totalCost)},{item:\"Quoted price\",value:fmt(x.quotedPrice)},{item:\"Estimated profit\",value:fmt(x.profit)}],note:x.note,seo:{intro:\"Estimate a freelance project quote using your own hours, hourly rate, expenses, contingency and target gross margin. This is a planning calculation, not a market-rate recommendation.\",faqs:[[\"How is a project quote calculated?\",\"Labor hours are multiplied by the hourly rate, expenses and contingency are added, and the cost is grossed up to the target gross margin.\"],[\"Is gross margin the same as markup?\",\"No. Gross margin is profit divided by selling price; markup is profit divided by cost.\"],[\"Does this include tax?\",\"No. Tax, payment fees, scope changes and local legal requirements are excluded.\"]]}}}}",
       "runtimeDefinitionEvidence": {
         "file": "app.js",
@@ -3809,7 +3749,7 @@
       "usesTaxEngine": false,
       "usesCurrencyDisplay": true,
       "hasInlineSeo": true,
-      "extractionStatus": "metadata-inputs-results-and-implementation-derived-editorial-captured; verification-pending",
+      "extractionStatus": "source-metadata-inputs-results-and-implementation-derived-editorial-captured; automated-verification-pending",
       "runtimeDefinition": "{id:\"freelancer-net-income\",n:\"Freelancer Net Income After Costs Calculator\",c:\"Freelance & business\",desc:\"Estimate freelance income after business expenses and a user-selected tax reserve.\",f:[[\"revenue\",\"Gross freelance revenue\",60000],[\"expenses\",\"Annual business expenses\",12000],[\"tax\",\"Estimated tax reserve (%)\",20]],run:v=>{const x=Core.freelancerNetIncome(v.revenue,v.expenses,v.tax);return{main:fmt(x.netIncome),label:\"ESTIMATED NET INCOME\",metrics:[[\"Gross revenue\",fmt(x.revenue)],[\"Business expenses\",fmt(x.expenses)],[\"Profit before reserve\",fmt(x.profit)],[\"Tax reserve\",fmt(x.taxReserve)],[\"Net income rate\",num(x.effectiveNetRate)+\"%\"]],series:x.series,chartLabels:[\"Revenue\",\"Expenses\",\"Profit\",\"Reserve\",\"Net\"],chartType:\"bar\",breakdown:[{item:\"Gross revenue\",value:fmt(x.revenue)},{item:\"Business expenses\",value:fmt(x.expenses)},{item:\"Profit before reserve\",value:fmt(x.profit)},{item:\"Tax reserve\",value:fmt(x.taxReserve)},{item:\"Estimated net income\",value:fmt(x.netIncome)}],note:x.note,seo:{intro:\"See how entered business expenses and a chosen tax reserve affect freelance take-home income. Treat the tax reserve as a planning assumption.\",faqs:[[\"What counts as business expenses?\",\"Examples include software, equipment, payment fees, insurance and other genuine business costs.\"],[\"Does this calculate my actual tax?\",\"No. It applies only the reserve percentage entered and does not model jurisdiction-specific tax rules.\"],[\"Is the result guaranteed?\",\"No. Revenue, costs, collections and tax obligations can change.\"]]}}}}",
       "runtimeDefinitionEvidence": {
         "file": "app.js",
@@ -3902,11 +3842,6 @@
             "key": "negative",
             "message": "{field} must not be negative.",
             "recoveryHint": "Enter zero or a positive value."
-          },
-          {
-            "key": "positive",
-            "message": "{field} must be greater than zero.",
-            "recoveryHint": "Enter a value greater than zero."
           },
           {
             "key": "expenses",
@@ -4007,7 +3942,7 @@
       "usesTaxEngine": false,
       "usesCurrencyDisplay": true,
       "hasInlineSeo": true,
-      "extractionStatus": "metadata-inputs-results-and-implementation-derived-editorial-captured; verification-pending",
+      "extractionStatus": "source-metadata-inputs-results-and-implementation-derived-editorial-captured; automated-verification-pending",
       "runtimeDefinition": "{id:\"markup\",n:\"Markup Calculator\",c:\"Freelance & business\",desc:\"Calculate markup amount, selling price and equivalent gross margin from cost.\",f:[[\"cost\",\"Unit cost\",80],[\"markup\",\"Markup (%)\",40]],run:v=>{const x=Core.markupCalculator(v.cost,v.markup);return{main:fmt(x.sellingPrice),label:\"SELLING PRICE\",metrics:[[\"Unit cost\",fmt(x.cost)],[\"Markup amount\",fmt(x.markupAmount)],[\"Markup rate\",num(x.markupPct)+\"%\"],[\"Equivalent gross margin\",num(x.grossMargin)+\"%\"]],series:x.series,chartLabels:[\"Cost\",\"Markup\",\"Selling price\"],chartType:\"bar\",breakdown:[{item:\"Unit cost\",value:fmt(x.cost)},{item:\"Markup amount\",value:fmt(x.markupAmount)},{item:\"Selling price\",value:fmt(x.sellingPrice)},{item:\"Markup rate\",value:num(x.markupPct)+\"%\"},{item:\"Gross margin\",value:num(x.grossMargin)+\"%\"}],note:x.note,seo:{intro:\"Turn a unit cost and markup percentage into a selling price, then compare markup with gross margin.\",faqs:[[\"What is markup?\",\"Markup is the amount added to cost, expressed as a percentage of cost.\"],[\"How is selling price calculated?\",\"Selling price equals cost multiplied by one plus the markup rate.\"],[\"Is a 40% markup a 40% margin?\",\"No. A 40% markup produces a lower gross-margin percentage, about 28.6%.\"]]}}}}",
       "runtimeDefinitionEvidence": {
         "file": "app.js",
@@ -4099,11 +4034,6 @@
             "key": "negative",
             "message": "{field} must not be negative.",
             "recoveryHint": "Enter zero or a positive value."
-          },
-          {
-            "key": "positive",
-            "message": "{field} must be greater than zero.",
-            "recoveryHint": "Enter a value greater than zero."
           },
           {
             "key": "markup",
@@ -4200,7 +4130,7 @@
       "usesTaxEngine": false,
       "usesCurrencyDisplay": true,
       "hasInlineSeo": true,
-      "extractionStatus": "metadata-inputs-results-and-implementation-derived-editorial-captured; verification-pending",
+      "extractionStatus": "source-metadata-inputs-results-and-implementation-derived-editorial-captured; automated-verification-pending",
       "runtimeDefinition": "{id:\"break-even\",n:\"Break-even Calculator\",c:\"Freelance & business\",desc:\"Estimate unit sales and revenue needed to cover fixed and variable costs.\",f:[[\"fixed\",\"Total fixed costs\",12000],[\"price\",\"Selling price per unit\",50],[\"variable\",\"Variable cost per unit\",20]],run:v=>{const x=Core.breakEvenCalculator(v.fixed,v.price,v.variable);return{main:num(x.units,0)+\" units\",label:\"BREAK-EVEN SALES VOLUME\",metrics:[[\"Contribution per unit\",fmt(x.contribution)],[\"Contribution margin\",num(x.contributionMargin)+\"%\"],[\"Exact break-even units\",num(x.unitsExact,2)],[\"Whole units required\",num(x.units,0)],[\"Break-even revenue\",fmt(x.revenue)],[\"Total costs\",fmt(x.totalCosts)]],series:x.series,chartLabels:[\"Fixed costs\",\"Variable costs\",\"Revenue at break-even\"],chartType:\"bar\",breakdown:[{item:\"Fixed costs\",value:fmt(v.fixed)},{item:\"Contribution per unit\",value:fmt(x.contribution)},{item:\"Exact break-even quantity\",value:num(x.unitsExact,3)},{item:\"Whole units required\",value:num(x.units,0)},{item:\"Revenue at break-even\",value:fmt(x.revenue)},{item:\"Total costs at break-even\",value:fmt(x.totalCosts)}],note:x.note,seo:{intro:\"Calculate contribution per unit, break-even volume and revenue using your fixed costs, selling price and variable cost.\",faqs:[[\"What is contribution per unit?\",\"Selling price per unit minus variable cost per unit.\"],[\"Why round units up?\",\"A business generally cannot sell a fraction of a unit, so the practical target rounds up.\"],[\"Are taxes included?\",\"No. Financing, tax, product mix and capacity constraints are excluded.\"]]}}}}",
       "runtimeDefinitionEvidence": {
         "file": "app.js",
@@ -4293,11 +4223,6 @@
             "key": "negative",
             "message": "{field} must not be negative.",
             "recoveryHint": "Enter zero or a positive value."
-          },
-          {
-            "key": "positive",
-            "message": "{field} must be greater than zero.",
-            "recoveryHint": "Enter a value greater than zero."
           },
           {
             "key": "contribution",
