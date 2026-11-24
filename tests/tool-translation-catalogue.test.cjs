@@ -248,7 +248,7 @@ test("batch-three source extraction captures 20 tools and 88 stable input labels
 test("batch-three source records contain implementation-derived content and keep all target locales inactive",()=>{
  const ids=["ira","inflation","cd","apy","tax","income-tax","sales-tax","vat-gst","tax-refund","salary","paycheck","payroll","overtime","discount","exchange-fees","transfer-compare","freelance-project","freelancer-net-income","markup","break-even"];
  const manifest=require("../docs/i18n/batch-03-source-extraction.json");
- assert.equal(manifest.status,"in-progress");
+ assert.equal(manifest.status,"source-complete; translation-draft-pending");
  assert.deepEqual(manifest.tools.map(t=>t.id),ids);
  for(const id of ids){
   const tool=content.tools.find(t=>t.id===id);
