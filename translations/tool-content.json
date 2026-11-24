@@ -32252,10 +32252,11 @@
                 },
                 {
                   "key": "metric-3",
-                  "label": "भविष्य की क्रय शक्ति"
+                  "label": "संचयी वृद्धि"
                 },
                 {
-                  "key": "metric-4"
+                  "key": "metric-4",
+                  "label": "भविष्य की क्रय शक्ति"
                 }
               ],
               "breakdown": [],
@@ -32469,10 +32470,11 @@
                 },
                 {
                   "key": "metric-3",
-                  "label": "القوة الشرائية المستقبلية"
+                  "label": "الزيادة التراكمية"
                 },
                 {
-                  "key": "metric-4"
+                  "key": "metric-4",
+                  "label": "القوة الشرائية المستقبلية"
                 }
               ],
               "breakdown": [],
@@ -32686,10 +32688,11 @@
                 },
                 {
                   "key": "metric-3",
-                  "label": "مستقبل کی قوتِ خرید"
+                  "label": "مجموعی اضافہ"
                 },
                 {
-                  "key": "metric-4"
+                  "key": "metric-4",
+                  "label": "مستقبل کی قوتِ خرید"
                 }
               ],
               "breakdown": [],
@@ -32903,10 +32906,11 @@
                 },
                 {
                   "key": "metric-3",
-                  "label": "未来购买力"
+                  "label": "累计增幅"
                 },
                 {
-                  "key": "metric-4"
+                  "key": "metric-4",
+                  "label": "未来购买力"
                 }
               ],
               "breakdown": [],
@@ -33120,10 +33124,11 @@
                 },
                 {
                   "key": "metric-3",
-                  "label": "将来の購買力"
+                  "label": "累積増加額"
                 },
                 {
-                  "key": "metric-4"
+                  "key": "metric-4",
+                  "label": "将来の購買力"
                 }
               ],
               "breakdown": [],
@@ -33337,10 +33342,11 @@
                 },
                 {
                   "key": "metric-3",
-                  "label": "Будущая покупательная способность"
+                  "label": "Накопленный рост"
                 },
                 {
-                  "key": "metric-4"
+                  "key": "metric-4",
+                  "label": "Будущая покупательная способность"
                 }
               ],
               "breakdown": [],
@@ -33775,10 +33781,12 @@
                   "label": "अर्जित ब्याज"
                 },
                 {
-                  "key": "metric-3"
+                  "key": "metric-3",
+                  "label": "वार्षिक प्रतिशत प्रतिफल (APY)"
                 },
                 {
-                  "key": "metric-4"
+                  "key": "metric-4",
+                  "label": "अवधि"
                 }
               ],
               "breakdown": [],
@@ -33996,10 +34004,12 @@
                   "label": "الفائدة المكتسبة"
                 },
                 {
-                  "key": "metric-3"
+                  "key": "metric-3",
+                  "label": "العائد السنوي بالنسبة المئوية (APY)"
                 },
                 {
-                  "key": "metric-4"
+                  "key": "metric-4",
+                  "label": "المدة"
                 }
               ],
               "breakdown": [],
@@ -34217,10 +34227,12 @@
                   "label": "حاصل شدہ منافع"
                 },
                 {
-                  "key": "metric-3"
+                  "key": "metric-3",
+                  "label": "سالانہ فیصدی منافع (APY)"
                 },
                 {
-                  "key": "metric-4"
+                  "key": "metric-4",
+                  "label": "مدت"
                 }
               ],
               "breakdown": [],
@@ -34438,10 +34450,12 @@
                   "label": "赚取的利息"
                 },
                 {
-                  "key": "metric-3"
+                  "key": "metric-3",
+                  "label": "年化百分比收益率（APY）"
                 },
                 {
-                  "key": "metric-4"
+                  "key": "metric-4",
+                  "label": "期限"
                 }
               ],
               "breakdown": [],
@@ -34659,10 +34673,12 @@
                   "label": "獲得利息"
                 },
                 {
-                  "key": "metric-3"
+                  "key": "metric-3",
+                  "label": "年間利回り（APY）"
                 },
                 {
-                  "key": "metric-4"
+                  "key": "metric-4",
+                  "label": "預入期間"
                 }
               ],
               "breakdown": [],
@@ -34880,10 +34896,12 @@
                   "label": "Начисленные проценты"
                 },
                 {
-                  "key": "metric-3"
+                  "key": "metric-3",
+                  "label": "Годовая процентная доходность (APY)"
                 },
                 {
-                  "key": "metric-4"
+                  "key": "metric-4",
+                  "label": "Срок"
                 }
               ],
               "breakdown": [],
@@ -35335,7 +35353,8 @@
                   "label": "एक वर्ष का शेष"
                 },
                 {
-                  "key": "metric-4"
+                  "key": "metric-4",
+                  "label": "प्रति अवधि ब्याज दर"
                 }
               ],
               "breakdown": [],
@@ -35557,7 +35576,8 @@
                   "label": "رصيد سنة واحدة"
                 },
                 {
-                  "key": "metric-4"
+                  "key": "metric-4",
+                  "label": "معدل الفائدة لكل فترة"
                 }
               ],
               "breakdown": [],
@@ -35779,7 +35799,8 @@
                   "label": "ایک سال کا بیلنس"
                 },
                 {
-                  "key": "metric-4"
+                  "key": "metric-4",
+                  "label": "فی مدت شرحِ منافع"
                 }
               ],
               "breakdown": [],
@@ -36001,7 +36022,8 @@
                   "label": "一年后余额"
                 },
                 {
-                  "key": "metric-4"
+                  "key": "metric-4",
+                  "label": "每期利率"
                 }
               ],
               "breakdown": [],
@@ -36223,7 +36245,8 @@
                   "label": "1年後の残高"
                 },
                 {
-                  "key": "metric-4"
+                  "key": "metric-4",
+                  "label": "各期間の利率"
                 }
               ],
               "breakdown": [],
@@ -36445,7 +36468,8 @@
                   "label": "Остаток через год"
                 },
                 {
-                  "key": "metric-4"
+                  "key": "metric-4",
+                  "label": "Ставка за период"
                 }
               ],
               "breakdown": [],
