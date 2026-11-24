@@ -35,6 +35,7 @@ test("every canonical tool has six locale records with correct draft or pending 
  assert.deepEqual(content.tools.map(t=>t.id).sort(),mapping.tools.map(t=>t.id).sort());
  const pilotIds=["currency","mortgage","loan","emi","compound","percentage","tip","car","amortization","savings"];
  const batchTwoIds=["freelance","margin","affordability","payoff","refinance","personal-loan","student-loan","simple-interest","retirement","401k"];
+ const batchThreeDraftIds=["ira","inflation","cd","apy"];
  for(const tool of content.tools){
   assert.deepEqual(Object.keys(tool.locales).sort(),locales.slice().sort());
   for(const locale of locales){
@@ -77,6 +78,11 @@ test("every canonical tool has six locale records with correct draft or pending 
      assert.deepEqual(basis.options.map(item=>item.value),["365","360","366"],"simple-interest day-count values remain canonical");
      assert.ok(basis.options.every(item=>typeof item.label==="string"&&item.label.trim()),"simple-interest option labels translated");
     }
+   }else if(batchThreeDraftIds.includes(tool.id)){
+    assert.equal(tool.locales[locale].status,"draft",tool.id+":"+locale+" batch-three draft status");
+    assert.equal(tool.sourceTranslationStatus,"draft",tool.id+" batch-three source draft status");
+    assert.ok(tool.locales[locale].fields.metadata.title&&tool.locales[locale].fields.metadata.description,tool.id+":"+locale+" batch-three draft metadata");
+    assert.ok(tool.locales[locale].fields.results.metrics.every(item=>item.label&&item.label.trim()),tool.id+":"+locale+" batch-three draft result labels");
    }else{
     assert.equal(tool.locales[locale].status,"not-started",tool.id+":"+locale);
     assert.deepEqual(tool.locales[locale].fields,{});
@@ -235,11 +241,17 @@ test("batch-three source extraction captures 20 tools and 88 stable input labels
   assert.deepEqual(tool.source.inputs,extracted.inputs,id+" source input labels match extraction manifest");
   assert.equal(tool.sourceExtractionStatus,"source-record-complete",id+" complete source extraction status");
   assert.equal(tool.sourceCompletenessStatus,"complete",id+" requested source fields complete");
-  assert.equal(tool.sourceTranslationStatus,"not-started",id+" translation not started before source completion");
+  const draftStarted=["ira","inflation","cd","apy"].includes(id);
+  assert.equal(tool.sourceTranslationStatus,draftStarted?"draft":"not-started",id+" source translation state");
   assert.equal(new Set(tool.source.inputs.map(input=>input.key)).size,tool.source.inputs.length,id+" unique stable input keys");
   for(const locale of locales){
-   assert.equal(tool.locales[locale].status,"not-started",id+":"+locale+" locale not activated");
-   assert.deepEqual(tool.locales[locale].fields,{},id+":"+locale+" no premature translation draft");
+   if(draftStarted){
+    assert.equal(tool.locales[locale].status,"draft",id+":"+locale+" draft state");
+    assert.ok(tool.locales[locale].fields.metadata.title&&tool.locales[locale].fields.results.metrics.every(item=>item.label&&item.label.trim()),id+":"+locale+" draft content present");
+   }else{
+    assert.equal(tool.locales[locale].status,"not-started",id+":"+locale+" locale not activated");
+    assert.deepEqual(tool.locales[locale].fields,{},id+":"+locale+" no premature translation draft");
+   }
   }
  }
 });
@@ -267,10 +279,16 @@ test("batch-three source records contain implementation-derived content and keep
   assert.ok(source.accessibility.pageLabel&&source.accessibility.formLabel&&source.accessibility.resultAnnouncement&&source.accessibility.chartLabel,id+" accessibility labels");
   assert.deepEqual(source.accessibility.controlLabels.map(x=>x.key),source.inputs.map(x=>x.key),id+" accessibility stable control keys");
   assert.equal(tool.sourceCompletenessStatus,"complete",id+" requested source fields complete");
-  assert.equal(tool.sourceTranslationStatus,"not-started",id+" no translations before verification");
+  const draftStarted=["ira","inflation","cd","apy"].includes(id);
+  assert.equal(tool.sourceTranslationStatus,draftStarted?"draft":"not-started",id+" translation state matches draft boundary");
   for(const locale of locales){
-   assert.equal(tool.locales[locale].status,"not-started",id+":"+locale+" remains not started");
-   assert.deepEqual(tool.locales[locale].fields,{},id+":"+locale+" no premature translation content");
+   if(draftStarted){
+    assert.equal(tool.locales[locale].status,"draft",id+":"+locale+" draft remains inactive");
+    assert.ok(tool.locales[locale].fields.metadata.title&&tool.locales[locale].fields.results.metrics.every(item=>item.label&&item.label.trim()),id+":"+locale+" draft content is complete enough for review");
+   }else{
+    assert.equal(tool.locales[locale].status,"not-started",id+":"+locale+" remains not started");
+    assert.deepEqual(tool.locales[locale].fields,{},id+":"+locale+" no premature translation content");
+   }
   }
  }
  const incomeTax=manifest.tools.find(t=>t.id==="income-tax").calculationImplementation;
