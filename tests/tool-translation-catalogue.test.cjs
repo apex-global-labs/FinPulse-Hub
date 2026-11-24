@@ -347,3 +347,30 @@ test("batch-three editorial source includes derived step-by-step guides",()=>{
   assert.ok(source.guide.sections.length>=2&&source.guide.sections.every(s=>s.key&&s.heading&&s.body),id+" guide sections");
  }
 });
+
+
+test("batch-three IRA and inflation drafts are complete across all six target locales",()=>{
+ for(const id of ["ira","inflation"]){
+  const tool=content.tools.find(t=>t.id===id);
+  for(const locale of locales){
+   const record=tool.locales[locale];
+   const fields=record.fields;
+   assert.equal(record.status,"draft",id+":"+locale+" draft status");
+   assert.ok(fields.metadata.title&&fields.metadata.title!==tool.source.title,id+":"+locale+" translated title");
+   assert.ok(fields.metadata.description&&fields.metadata.description!==tool.source.description,id+":"+locale+" translated description");
+   assert.equal(fields.inputs.length,tool.source.inputs.length,id+":"+locale+" input count");
+   assert.ok(fields.inputs.every((x,i)=>x.key===tool.source.inputs[i].key&&x.label&&x.label!==tool.source.inputs[i].label),id+":"+locale+" translated input labels");
+   assert.equal(fields.results.metrics.length,tool.source.results.metrics.length,id+":"+locale+" result metric count");
+   assert.ok(fields.results.metrics.every((x,i)=>x.key===tool.source.results.metrics[i].key&&x.label&&x.label!==tool.source.results.metrics[i].label),id+":"+locale+" translated result labels");
+   assert.ok(fields.explanations.formulaDescription&&fields.explanations.formulaDescription!==tool.source.explanations.formula,id+":"+locale+" translated formula");
+   assert.equal(fields.explanations.steps.length,tool.source.explanations.steps.length,id+":"+locale+" step count");
+   assert.ok(fields.explanations.steps.every((x,i)=>x&&x!==tool.source.explanations.steps[i]),id+":"+locale+" translated steps");
+   assert.equal(fields.faqs.length,tool.source.faqs.length,id+":"+locale+" FAQ count");
+   assert.ok(fields.faqs.every((x,i)=>x.question!==tool.source.faqs[i].question&&x.answer!==tool.source.faqs[i].answer),id+":"+locale+" translated FAQs");
+   assert.equal(fields.errors.length,tool.source.errors.length,id+":"+locale+" error count");
+   assert.ok(fields.guide.title&&fields.guide.introduction&&fields.guide.steps.length>=3&&fields.guide.sections.length>=2,id+":"+locale+" guide complete");
+   assert.ok(fields.seo.title&&fields.seo.metaDescription&&fields.seo.h1&&fields.seo.introduction,id+":"+locale+" SEO complete");
+   assert.ok(fields.accessibility.pageLabel&&fields.accessibility.formLabel&&fields.accessibility.resultAnnouncement&&fields.accessibility.chartLabel,id+":"+locale+" accessibility complete");
+  }
+ }
+});
