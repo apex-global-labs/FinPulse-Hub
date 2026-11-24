@@ -3,7 +3,7 @@
   "batch": "Finance calculator localization Batch 3",
   "startedAt": "2026-11-24",
   "branch": "feat/seven-language-translation-engine-phase-1",
-  "status": "runtime-and-calculation-evidence-captured; editorial-source-copy-pending",
+  "status": "in-progress",
   "toolRange": {
     "from": 21,
     "to": 40
