@@ -41448,7 +41448,202 @@
         "title": "Business ROI Calculator",
         "category": "Finance & Money",
         "subcategory": "Investment & Return Calculators",
-        "file": "app.js"
+        "file": "app.js",
+        "description": "Measure historical or project return against an initial investment.",
+        "inputs": [
+          {
+            "key": "investment",
+            "label": "Initial investment"
+          },
+          {
+            "key": "value",
+            "label": "Ending value / proceeds"
+          }
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "SIMPLE RETURN ON INVESTMENT",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Initial investment"
+            },
+            {
+              "key": "metric-2",
+              "label": "Ending value"
+            },
+            {
+              "key": "metric-3",
+              "label": "Net gain / loss"
+            },
+            {
+              "key": "metric-4",
+              "label": "Return multiple"
+            }
+          ],
+          "breakdown": [
+            {
+              "key": "breakdown-1",
+              "label": "Initial investment"
+            },
+            {
+              "key": "breakdown-2",
+              "label": "Ending value"
+            },
+            {
+              "key": "breakdown-3",
+              "label": "Net gain / loss"
+            },
+            {
+              "key": "breakdown-4",
+              "label": "Simple ROI"
+            },
+            {
+              "key": "breakdown-5",
+              "label": "Return multiple"
+            }
+          ]
+        },
+        "explanations": {
+          "formula": "Gain = ending value − initial investment. Simple ROI (%) = gain ÷ initial investment × 100. Return multiple = ending value ÷ initial investment.",
+          "steps": [
+            "Enter the initial investment and ending value or proceeds.",
+            "Subtract the initial investment from the ending value to calculate gain or loss.",
+            "Divide the gain or loss by the initial investment and multiply by 100 for simple ROI.",
+            "Divide ending value by initial investment to calculate the return multiple.",
+            "Review the non-annualized result and the cash-flow timing limitation."
+          ],
+          "assumptions": [
+            "Initial investment must be greater than zero; ending value must be non-negative.",
+            "This is simple, non-annualized ROI and does not account for cash-flow timing, holding period or future performance."
+          ],
+          "notes": [
+            "Calculated locally in the browser from user-entered values; inspect the result note and verify assumptions before relying on the estimate."
+          ],
+          "disclaimers": [
+            "This calculator is an informational estimate, not financial, tax, legal, accounting or investment advice."
+          ],
+          "limitations": [
+            "Initial investment must be greater than zero; ending value must be non-negative.",
+            "This is simple, non-annualized ROI and does not account for cash-flow timing, holding period or future performance."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-business-roi-1",
+            "question": "What is the ROI formula?",
+            "answer": "(Ending value minus initial investment) divided by initial investment, multiplied by 100."
+          },
+          {
+            "key": "faq-business-roi-2",
+            "question": "Does ROI account for time?",
+            "answer": "No. This simple result is not annualized and ignores cash-flow timing."
+          },
+          {
+            "key": "faq-business-roi-3",
+            "question": "Is this investment advice?",
+            "answer": "No. It is arithmetic for reviewing entered historical or hypothetical values."
+          }
+        ],
+        "seo": {
+          "title": "Business ROI Calculator | FinPulse Hub",
+          "metaDescription": "Measure historical or project return against an initial investment.",
+          "h1": "Business ROI Calculator",
+          "introduction": "Compare the ending value of a completed project or investment with its initial cost to calculate simple, non-annualized ROI.",
+          "faq": [
+            {
+              "key": "faq-business-roi-1",
+              "question": "What is the ROI formula?",
+              "answer": "(Ending value minus initial investment) divided by initial investment, multiplied by 100."
+            },
+            {
+              "key": "faq-business-roi-2",
+              "question": "Does ROI account for time?",
+              "answer": "No. This simple result is not annualized and ignores cash-flow timing."
+            },
+            {
+              "key": "faq-business-roi-3",
+              "question": "Is this investment advice?",
+              "answer": "No. It is arithmetic for reviewing entered historical or hypothetical values."
+            }
+          ]
+        },
+        "errors": [
+          {
+            "key": "invalid-number",
+            "message": "{field} must be a finite number.",
+            "recoveryHint": "Enter a valid finite number and try again."
+          },
+          {
+            "key": "positive",
+            "message": "{field} must be greater than zero.",
+            "recoveryHint": "Enter a value greater than zero."
+          },
+          {
+            "key": "negative",
+            "message": "Ending value must not be negative.",
+            "recoveryHint": "Enter zero or a positive ending value."
+          }
+        ],
+        "accessibility": {
+          "pageLabel": "Business ROI Calculator",
+          "formLabel": "Business ROI Calculator calculator form",
+          "resultAnnouncement": "Calculation result for Business ROI Calculator",
+          "chartLabel": "Chart showing SIMPLE RETURN ON INVESTMENT for Business ROI Calculator",
+          "controlLabels": [
+            {
+              "key": "investment",
+              "label": "Initial investment"
+            },
+            {
+              "key": "value",
+              "label": "Ending value / proceeds"
+            }
+          ]
+        },
+        "guide": {
+          "title": "Business ROI Calculator Guide",
+          "introduction": "Compare the ending value of a completed project or investment with its initial cost to calculate simple, non-annualized ROI.",
+          "steps": [
+            {
+              "key": "business-roi-guide-step-1",
+              "title": "Step 1",
+              "body": "Enter the initial investment and ending value or proceeds."
+            },
+            {
+              "key": "business-roi-guide-step-2",
+              "title": "Step 2",
+              "body": "Subtract the initial investment from the ending value to calculate gain or loss."
+            },
+            {
+              "key": "business-roi-guide-step-3",
+              "title": "Step 3",
+              "body": "Divide the gain or loss by the initial investment and multiply by 100 for simple ROI."
+            },
+            {
+              "key": "business-roi-guide-step-4",
+              "title": "Step 4",
+              "body": "Divide ending value by initial investment to calculate the return multiple."
+            },
+            {
+              "key": "business-roi-guide-step-5",
+              "title": "Step 5",
+              "body": "Review the non-annualized result and the cash-flow timing limitation."
+            }
+          ],
+          "sections": [
+            {
+              "key": "business-roi-guide-section-1",
+              "heading": "Calculation method",
+              "body": "Gain = ending value − initial investment. Simple ROI (%) = gain ÷ initial investment × 100. Return multiple = ending value ÷ initial investment."
+            },
+            {
+              "key": "business-roi-guide-section-2",
+              "heading": "Assumptions and limitations",
+              "body": "Initial investment must be greater than zero; ending value must be non-negative. This is simple, non-annualized ROI and does not account for cash-flow timing, holding period or future performance."
+            }
+          ]
+        }
       },
       "locales": {
         "hi": {
@@ -41475,15 +41670,251 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-record-complete",
+      "sourceTranslationStatus": "not-started",
+      "sourceCompletenessStatus": "complete"
     },
     {
       "id": "cash-flow",
       "source": {
         "title": "Cash Flow Projection Calculator",
         "category": "Finance & Money",
-        "subcategory": "Business & Freelance Calculators",
-        "file": "app.js"
+        "subcategory": "Business & Cash Flow Calculators",
+        "file": "app.js",
+        "description": "Project month-end cash balances from inflows, outflows and growth assumptions.",
+        "inputs": [
+          {
+            "key": "opening",
+            "label": "Opening cash balance"
+          },
+          {
+            "key": "inflows",
+            "label": "Monthly cash inflows"
+          },
+          {
+            "key": "outflows",
+            "label": "Monthly cash outflows"
+          },
+          {
+            "key": "inflowGrowth",
+            "label": "Monthly inflow growth (%)"
+          },
+          {
+            "key": "outflowGrowth",
+            "label": "Monthly outflow growth (%)"
+          },
+          {
+            "key": "periods",
+            "label": "Projection period (months)"
+          }
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "PROJECTED ENDING CASH",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Opening cash"
+            },
+            {
+              "key": "metric-2",
+              "label": "Total inflows"
+            },
+            {
+              "key": "metric-3",
+              "label": "Total outflows"
+            },
+            {
+              "key": "metric-4",
+              "label": "Net cash change"
+            },
+            {
+              "key": "metric-5",
+              "label": "Projection length"
+            }
+          ],
+          "breakdown": [
+            {
+              "key": "breakdown-1",
+              "label": "Opening cash"
+            },
+            {
+              "key": "breakdown-2",
+              "label": "Inflows"
+            },
+            {
+              "key": "breakdown-3",
+              "label": "Outflows"
+            },
+            {
+              "key": "breakdown-4",
+              "label": "Net change"
+            },
+            {
+              "key": "breakdown-5",
+              "label": "Closing cash"
+            }
+          ]
+        },
+        "explanations": {
+          "formula": "For month t (starting at 1): inflowₜ = monthly inflows × (1 + inflow growth/100)^(t−1); outflowₜ = monthly outflows × (1 + outflow growth/100)^(t−1). Closing cashₜ = opening cashₜ + inflowₜ − outflowₜ; next month's opening cash is the prior closing cash.",
+          "steps": [
+            "Enter opening cash, monthly inflows and monthly outflows.",
+            "Enter monthly growth assumptions for inflows and outflows.",
+            "Choose a supported projection period: 3, 6, 12 or 24 months.",
+            "For each month, compound the entered inflow and outflow assumptions and update the cash balance.",
+            "Review the ending balance, monthly schedule and any negative projected balance."
+          ],
+          "assumptions": [
+            "All cash and growth inputs must be non-negative; growth cannot exceed 100%.",
+            "Projection periods are limited to 3, 6, 12 or 24 months.",
+            "Assumes recurring monthly inflows/outflows and fixed growth assumptions; timing, tax, financing and seasonality are excluded."
+          ],
+          "notes": [
+            "Calculated locally in the browser from user-entered values; inspect the result note and verify assumptions before relying on the estimate."
+          ],
+          "disclaimers": [
+            "This calculator is an informational estimate, not financial, tax, legal, accounting or investment advice."
+          ],
+          "limitations": [
+            "All cash and growth inputs must be non-negative; growth cannot exceed 100%.",
+            "Projection periods are limited to 3, 6, 12 or 24 months.",
+            "Assumes recurring monthly inflows/outflows and fixed growth assumptions; timing, tax, financing and seasonality are excluded."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-cash-flow-1",
+            "question": "What does the projection show?",
+            "answer": "Each month's net cash flow is added to the previous closing balance."
+          },
+          {
+            "key": "faq-cash-flow-2",
+            "question": "Can cash go below zero?",
+            "answer": "Yes. A negative projected balance indicates a potential funding gap under the entered assumptions."
+          },
+          {
+            "key": "faq-cash-flow-3",
+            "question": "Does it replace accounting software?",
+            "answer": "No. Receivables timing, taxes, financing and seasonality are not modeled."
+          }
+        ],
+        "seo": {
+          "title": "Cash Flow Projection Calculator | FinPulse Hub",
+          "metaDescription": "Project month-end cash balances from inflows, outflows and growth assumptions.",
+          "h1": "Cash Flow Projection Calculator",
+          "introduction": "Explore a monthly cash scenario from opening cash, expected inflows, outflows and user-entered growth assumptions.",
+          "faq": [
+            {
+              "key": "faq-cash-flow-1",
+              "question": "What does the projection show?",
+              "answer": "Each month's net cash flow is added to the previous closing balance."
+            },
+            {
+              "key": "faq-cash-flow-2",
+              "question": "Can cash go below zero?",
+              "answer": "Yes. A negative projected balance indicates a potential funding gap under the entered assumptions."
+            },
+            {
+              "key": "faq-cash-flow-3",
+              "question": "Does it replace accounting software?",
+              "answer": "No. Receivables timing, taxes, financing and seasonality are not modeled."
+            }
+          ]
+        },
+        "errors": [
+          {
+            "key": "invalid-number",
+            "message": "{field} must be a finite number.",
+            "recoveryHint": "Enter a valid finite number and try again."
+          },
+          {
+            "key": "negative",
+            "message": "{field} must not be negative.",
+            "recoveryHint": "Enter zero or a positive value."
+          },
+          {
+            "key": "growth-period",
+            "message": "Growth must be 0–100% and projection period 3, 6, 12 or 24 months.",
+            "recoveryHint": "Keep both growth rates between 0% and 100% and choose 3, 6, 12 or 24 months."
+          }
+        ],
+        "accessibility": {
+          "pageLabel": "Cash Flow Projection Calculator",
+          "formLabel": "Cash Flow Projection Calculator calculator form",
+          "resultAnnouncement": "Calculation result for Cash Flow Projection Calculator",
+          "chartLabel": "Chart showing PROJECTED ENDING CASH for Cash Flow Projection Calculator",
+          "controlLabels": [
+            {
+              "key": "opening",
+              "label": "Opening cash balance"
+            },
+            {
+              "key": "inflows",
+              "label": "Monthly cash inflows"
+            },
+            {
+              "key": "outflows",
+              "label": "Monthly cash outflows"
+            },
+            {
+              "key": "inflowGrowth",
+              "label": "Monthly inflow growth (%)"
+            },
+            {
+              "key": "outflowGrowth",
+              "label": "Monthly outflow growth (%)"
+            },
+            {
+              "key": "periods",
+              "label": "Projection period (months)"
+            }
+          ]
+        },
+        "guide": {
+          "title": "Cash Flow Projection Calculator Guide",
+          "introduction": "Explore a monthly cash scenario from opening cash, expected inflows, outflows and user-entered growth assumptions.",
+          "steps": [
+            {
+              "key": "cash-flow-guide-step-1",
+              "title": "Step 1",
+              "body": "Enter opening cash, monthly inflows and monthly outflows."
+            },
+            {
+              "key": "cash-flow-guide-step-2",
+              "title": "Step 2",
+              "body": "Enter monthly growth assumptions for inflows and outflows."
+            },
+            {
+              "key": "cash-flow-guide-step-3",
+              "title": "Step 3",
+              "body": "Choose a supported projection period: 3, 6, 12 or 24 months."
+            },
+            {
+              "key": "cash-flow-guide-step-4",
+              "title": "Step 4",
+              "body": "For each month, compound the entered inflow and outflow assumptions and update the cash balance."
+            },
+            {
+              "key": "cash-flow-guide-step-5",
+              "title": "Step 5",
+              "body": "Review the ending balance, monthly schedule and any negative projected balance."
+            }
+          ],
+          "sections": [
+            {
+              "key": "cash-flow-guide-section-1",
+              "heading": "Calculation method",
+              "body": "For month t (starting at 1): inflowₜ = monthly inflows × (1 + inflow growth/100)^(t−1); outflowₜ = monthly outflows × (1 + outflow growth/100)^(t−1). Closing cashₜ = opening cashₜ + inflowₜ − outflowₜ; next month's opening cash is the prior closing cash."
+            },
+            {
+              "key": "cash-flow-guide-section-2",
+              "heading": "Assumptions and limitations",
+              "body": "All cash and growth inputs must be non-negative; growth cannot exceed 100%. Projection periods are limited to 3, 6, 12 or 24 months. Assumes recurring monthly inflows/outflows and fixed growth assumptions; timing, tax, financing and seasonality are excluded."
+            }
+          ]
+        }
       },
       "locales": {
         "hi": {
@@ -41510,15 +41941,248 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-record-complete",
+      "sourceTranslationStatus": "not-started",
+      "sourceCompletenessStatus": "complete"
     },
     {
       "id": "rental-yield",
       "source": {
         "title": "Rental Yield Calculator",
         "category": "Finance & Money",
-        "subcategory": "Investment & Return Calculators",
-        "file": "app.js"
+        "subcategory": "Property & Planning Calculators",
+        "file": "app.js",
+        "description": "Estimate gross and net rental yield using rent, vacancy and annual operating costs.",
+        "inputs": [
+          {
+            "key": "price",
+            "label": "Property purchase price"
+          },
+          {
+            "key": "rent",
+            "label": "Monthly scheduled rent"
+          },
+          {
+            "key": "vacancy",
+            "label": "Vacancy allowance (%)"
+          },
+          {
+            "key": "costs",
+            "label": "Annual operating costs"
+          }
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "ESTIMATED NET RENTAL YIELD",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Gross annual rent"
+            },
+            {
+              "key": "metric-2",
+              "label": "Rent after vacancy"
+            },
+            {
+              "key": "metric-3",
+              "label": "Annual operating costs"
+            },
+            {
+              "key": "metric-4",
+              "label": "Net operating income"
+            },
+            {
+              "key": "metric-5",
+              "label": "Gross rental yield"
+            },
+            {
+              "key": "metric-6",
+              "label": "Monthly net operating income"
+            }
+          ],
+          "breakdown": [
+            {
+              "key": "breakdown-1",
+              "label": "Gross scheduled rent"
+            },
+            {
+              "key": "breakdown-2",
+              "label": "Effective rent after vacancy"
+            },
+            {
+              "key": "breakdown-3",
+              "label": "Operating costs"
+            },
+            {
+              "key": "breakdown-4",
+              "label": "Net operating income"
+            },
+            {
+              "key": "breakdown-5",
+              "label": "Gross yield"
+            },
+            {
+              "key": "breakdown-6",
+              "label": "Net yield"
+            }
+          ]
+        },
+        "explanations": {
+          "formula": "Potential annual rent = monthly scheduled rent × 12. Effective rent = potential annual rent × (1 − vacancy allowance/100). Net operating income = effective rent − annual operating costs. Gross yield = potential annual rent ÷ purchase price × 100. Net yield = net operating income ÷ purchase price × 100.",
+          "steps": [
+            "Enter the property purchase price and scheduled monthly rent.",
+            "Enter a vacancy allowance from 0% to 100%.",
+            "Enter annual operating costs.",
+            "Annualize scheduled rent, apply the vacancy allowance and subtract operating costs.",
+            "Divide gross rent and net operating income by purchase price to compare gross and net yields."
+          ],
+          "assumptions": [
+            "Purchase price must be positive; rent and annual costs must be non-negative.",
+            "Vacancy allowance cannot exceed 100%.",
+            "Unlevered yield estimate; financing, acquisition costs, capital expenditure, income tax and appreciation are excluded."
+          ],
+          "notes": [
+            "Calculated locally in the browser from user-entered values; inspect the result note and verify assumptions before relying on the estimate."
+          ],
+          "disclaimers": [
+            "This calculator is an informational estimate, not financial, tax, legal, accounting or investment advice."
+          ],
+          "limitations": [
+            "Purchase price must be positive; rent and annual costs must be non-negative.",
+            "Vacancy allowance cannot exceed 100%.",
+            "Unlevered yield estimate; financing, acquisition costs, capital expenditure, income tax and appreciation are excluded."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-rental-yield-1",
+            "question": "What is gross rental yield?",
+            "answer": "Annual scheduled rent divided by purchase price, expressed as a percentage."
+          },
+          {
+            "key": "faq-rental-yield-2",
+            "question": "What is net rental yield?",
+            "answer": "Rent after vacancy allowance, less entered operating costs, divided by purchase price."
+          },
+          {
+            "key": "faq-rental-yield-3",
+            "question": "Are mortgage payments included?",
+            "answer": "No. Financing, acquisition costs, capital expenditure and income tax are excluded."
+          }
+        ],
+        "seo": {
+          "title": "Rental Yield Calculator | FinPulse Hub",
+          "metaDescription": "Estimate gross and net rental yield using rent, vacancy and annual operating costs.",
+          "h1": "Rental Yield Calculator",
+          "introduction": "Estimate gross and net rental yield from property price, scheduled rent, vacancy allowance and recurring operating costs.",
+          "faq": [
+            {
+              "key": "faq-rental-yield-1",
+              "question": "What is gross rental yield?",
+              "answer": "Annual scheduled rent divided by purchase price, expressed as a percentage."
+            },
+            {
+              "key": "faq-rental-yield-2",
+              "question": "What is net rental yield?",
+              "answer": "Rent after vacancy allowance, less entered operating costs, divided by purchase price."
+            },
+            {
+              "key": "faq-rental-yield-3",
+              "question": "Are mortgage payments included?",
+              "answer": "No. Financing, acquisition costs, capital expenditure and income tax are excluded."
+            }
+          ]
+        },
+        "errors": [
+          {
+            "key": "invalid-number",
+            "message": "{field} must be a finite number.",
+            "recoveryHint": "Enter a valid finite number and try again."
+          },
+          {
+            "key": "positive",
+            "message": "{field} must be greater than zero.",
+            "recoveryHint": "Enter a value greater than zero."
+          },
+          {
+            "key": "negative",
+            "message": "{field} must not be negative.",
+            "recoveryHint": "Enter zero or a positive value."
+          },
+          {
+            "key": "vacancy",
+            "message": "Vacancy allowance cannot exceed 100%.",
+            "recoveryHint": "Enter a vacancy allowance between 0% and 100%."
+          }
+        ],
+        "accessibility": {
+          "pageLabel": "Rental Yield Calculator",
+          "formLabel": "Rental Yield Calculator calculator form",
+          "resultAnnouncement": "Calculation result for Rental Yield Calculator",
+          "chartLabel": "Chart showing ESTIMATED NET RENTAL YIELD for Rental Yield Calculator",
+          "controlLabels": [
+            {
+              "key": "price",
+              "label": "Property purchase price"
+            },
+            {
+              "key": "rent",
+              "label": "Monthly scheduled rent"
+            },
+            {
+              "key": "vacancy",
+              "label": "Vacancy allowance (%)"
+            },
+            {
+              "key": "costs",
+              "label": "Annual operating costs"
+            }
+          ]
+        },
+        "guide": {
+          "title": "Rental Yield Calculator Guide",
+          "introduction": "Estimate gross and net rental yield from property price, scheduled rent, vacancy allowance and recurring operating costs.",
+          "steps": [
+            {
+              "key": "rental-yield-guide-step-1",
+              "title": "Step 1",
+              "body": "Enter the property purchase price and scheduled monthly rent."
+            },
+            {
+              "key": "rental-yield-guide-step-2",
+              "title": "Step 2",
+              "body": "Enter a vacancy allowance from 0% to 100%."
+            },
+            {
+              "key": "rental-yield-guide-step-3",
+              "title": "Step 3",
+              "body": "Enter annual operating costs."
+            },
+            {
+              "key": "rental-yield-guide-step-4",
+              "title": "Step 4",
+              "body": "Annualize scheduled rent, apply the vacancy allowance and subtract operating costs."
+            },
+            {
+              "key": "rental-yield-guide-step-5",
+              "title": "Step 5",
+              "body": "Divide gross rent and net operating income by purchase price to compare gross and net yields."
+            }
+          ],
+          "sections": [
+            {
+              "key": "rental-yield-guide-section-1",
+              "heading": "Calculation method",
+              "body": "Potential annual rent = monthly scheduled rent × 12. Effective rent = potential annual rent × (1 − vacancy allowance/100). Net operating income = effective rent − annual operating costs. Gross yield = potential annual rent ÷ purchase price × 100. Net yield = net operating income ÷ purchase price × 100."
+            },
+            {
+              "key": "rental-yield-guide-section-2",
+              "heading": "Assumptions and limitations",
+              "body": "Purchase price must be positive; rent and annual costs must be non-negative. Vacancy allowance cannot exceed 100%. Unlevered yield estimate; financing, acquisition costs, capital expenditure, income tax and appreciation are excluded."
+            }
+          ]
+        }
       },
       "locales": {
         "hi": {
@@ -41545,15 +42209,232 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-record-complete",
+      "sourceTranslationStatus": "not-started",
+      "sourceCompletenessStatus": "complete"
     },
     {
       "id": "emergency-fund",
       "source": {
         "title": "Emergency Fund Calculator",
         "category": "Finance & Money",
-        "subcategory": "Savings & Personal Finance",
-        "file": "app.js"
+        "subcategory": "Savings & Planning Calculators",
+        "file": "app.js",
+        "description": "Set an emergency cash target from essential monthly expenses and a chosen number of months.",
+        "inputs": [
+          {
+            "key": "expenses",
+            "label": "Essential monthly expenses"
+          },
+          {
+            "key": "months",
+            "label": "Target coverage (months)"
+          },
+          {
+            "key": "current",
+            "label": "Current emergency savings"
+          }
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "TARGET EMERGENCY FUND",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Current savings"
+            },
+            {
+              "key": "metric-2",
+              "label": "Remaining target gap"
+            },
+            {
+              "key": "metric-3",
+              "label": "Current expense coverage"
+            },
+            {
+              "key": "metric-4",
+              "label": "Target progress"
+            }
+          ],
+          "breakdown": [
+            {
+              "key": "breakdown-1",
+              "label": "Essential monthly expenses"
+            },
+            {
+              "key": "breakdown-2",
+              "label": "Target months"
+            },
+            {
+              "key": "breakdown-3",
+              "label": "Target amount"
+            },
+            {
+              "key": "breakdown-4",
+              "label": "Current savings"
+            },
+            {
+              "key": "breakdown-5",
+              "label": "Remaining gap"
+            },
+            {
+              "key": "breakdown-6",
+              "label": "Expense coverage"
+            }
+          ]
+        },
+        "explanations": {
+          "formula": "Target fund = essential monthly expenses × target coverage months. Remaining gap = max(0, target fund − current savings). Expense coverage = current savings ÷ essential monthly expenses. Progress (%) = min(100, current savings ÷ target fund × 100).",
+          "steps": [
+            "Enter essential monthly expenses.",
+            "Choose a target coverage period in months (maximum 24).",
+            "Enter current emergency savings.",
+            "Multiply essential monthly expenses by the selected months to calculate the target.",
+            "Compare current savings with the target to show the remaining gap, coverage and capped progress."
+          ],
+          "assumptions": [
+            "Essential monthly expenses and target months must be greater than zero; current savings must be non-negative.",
+            "Target months cannot exceed 24.",
+            "This is a planning illustration, not a savings-product recommendation."
+          ],
+          "notes": [
+            "Calculated locally in the browser from user-entered values; inspect the result note and verify assumptions before relying on the estimate."
+          ],
+          "disclaimers": [
+            "This calculator is an informational estimate, not financial, tax, legal, accounting or investment advice."
+          ],
+          "limitations": [
+            "Essential monthly expenses and target months must be greater than zero; current savings must be non-negative.",
+            "Target months cannot exceed 24.",
+            "This is a planning illustration, not a savings-product recommendation."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-emergency-fund-1",
+            "question": "How is the target calculated?",
+            "answer": "Essential monthly expenses multiplied by the number of months selected."
+          },
+          {
+            "key": "faq-emergency-fund-2",
+            "question": "What if current savings exceed the target?",
+            "answer": "The remaining gap is zero and progress is capped at 100%."
+          },
+          {
+            "key": "faq-emergency-fund-3",
+            "question": "Does this recommend a savings product?",
+            "answer": "No. It only calculates an illustrative target amount."
+          }
+        ],
+        "seo": {
+          "title": "Emergency Fund Calculator | FinPulse Hub",
+          "metaDescription": "Set an emergency cash target from essential monthly expenses and a chosen number of months.",
+          "h1": "Emergency Fund Calculator",
+          "introduction": "Estimate an emergency reserve target by multiplying essential monthly expenses by a chosen coverage period, then compare it with current savings.",
+          "faq": [
+            {
+              "key": "faq-emergency-fund-1",
+              "question": "How is the target calculated?",
+              "answer": "Essential monthly expenses multiplied by the number of months selected."
+            },
+            {
+              "key": "faq-emergency-fund-2",
+              "question": "What if current savings exceed the target?",
+              "answer": "The remaining gap is zero and progress is capped at 100%."
+            },
+            {
+              "key": "faq-emergency-fund-3",
+              "question": "Does this recommend a savings product?",
+              "answer": "No. It only calculates an illustrative target amount."
+            }
+          ]
+        },
+        "errors": [
+          {
+            "key": "invalid-number",
+            "message": "{field} must be a finite number.",
+            "recoveryHint": "Enter a valid finite number and try again."
+          },
+          {
+            "key": "positive",
+            "message": "{field} must be greater than zero.",
+            "recoveryHint": "Enter a value greater than zero."
+          },
+          {
+            "key": "negative",
+            "message": "{field} must not be negative.",
+            "recoveryHint": "Enter zero or a positive value."
+          },
+          {
+            "key": "months-limit",
+            "message": "Target months cannot exceed 24.",
+            "recoveryHint": "Choose a target period of 24 months or less."
+          }
+        ],
+        "accessibility": {
+          "pageLabel": "Emergency Fund Calculator",
+          "formLabel": "Emergency Fund Calculator calculator form",
+          "resultAnnouncement": "Calculation result for Emergency Fund Calculator",
+          "chartLabel": "Chart showing TARGET EMERGENCY FUND for Emergency Fund Calculator",
+          "controlLabels": [
+            {
+              "key": "expenses",
+              "label": "Essential monthly expenses"
+            },
+            {
+              "key": "months",
+              "label": "Target coverage (months)"
+            },
+            {
+              "key": "current",
+              "label": "Current emergency savings"
+            }
+          ]
+        },
+        "guide": {
+          "title": "Emergency Fund Calculator Guide",
+          "introduction": "Estimate an emergency reserve target by multiplying essential monthly expenses by a chosen coverage period, then compare it with current savings.",
+          "steps": [
+            {
+              "key": "emergency-fund-guide-step-1",
+              "title": "Step 1",
+              "body": "Enter essential monthly expenses."
+            },
+            {
+              "key": "emergency-fund-guide-step-2",
+              "title": "Step 2",
+              "body": "Choose a target coverage period in months (maximum 24)."
+            },
+            {
+              "key": "emergency-fund-guide-step-3",
+              "title": "Step 3",
+              "body": "Enter current emergency savings."
+            },
+            {
+              "key": "emergency-fund-guide-step-4",
+              "title": "Step 4",
+              "body": "Multiply essential monthly expenses by the selected months to calculate the target."
+            },
+            {
+              "key": "emergency-fund-guide-step-5",
+              "title": "Step 5",
+              "body": "Compare current savings with the target to show the remaining gap, coverage and capped progress."
+            }
+          ],
+          "sections": [
+            {
+              "key": "emergency-fund-guide-section-1",
+              "heading": "Calculation method",
+              "body": "Target fund = essential monthly expenses × target coverage months. Remaining gap = max(0, target fund − current savings). Expense coverage = current savings ÷ essential monthly expenses. Progress (%) = min(100, current savings ÷ target fund × 100)."
+            },
+            {
+              "key": "emergency-fund-guide-section-2",
+              "heading": "Assumptions and limitations",
+              "body": "Essential monthly expenses and target months must be greater than zero; current savings must be non-negative. Target months cannot exceed 24. This is a planning illustration, not a savings-product recommendation."
+            }
+          ]
+        }
       },
       "locales": {
         "hi": {
@@ -41580,15 +42461,300 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-record-complete",
+      "sourceTranslationStatus": "not-started",
+      "sourceCompletenessStatus": "complete"
     },
     {
       "id": "net-worth",
       "source": {
         "title": "Net Worth Calculator",
         "category": "Finance & Money",
-        "subcategory": "Savings & Personal Finance",
-        "file": "app.js"
+        "subcategory": "Personal Finance Calculators",
+        "file": "app.js",
+        "description": "Add up assets and liabilities to estimate your current net worth.",
+        "inputs": [
+          {
+            "key": "cash",
+            "label": "Cash and bank balances"
+          },
+          {
+            "key": "investments",
+            "label": "Investments and retirement accounts"
+          },
+          {
+            "key": "property",
+            "label": "Property value"
+          },
+          {
+            "key": "vehicles",
+            "label": "Vehicle value"
+          },
+          {
+            "key": "otherAssets",
+            "label": "Other assets"
+          },
+          {
+            "key": "mortgage",
+            "label": "Mortgage balances"
+          },
+          {
+            "key": "loans",
+            "label": "Other loan balances"
+          },
+          {
+            "key": "cards",
+            "label": "Credit card balances"
+          },
+          {
+            "key": "otherDebt",
+            "label": "Other liabilities"
+          }
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "ESTIMATED NET WORTH",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Total assets"
+            },
+            {
+              "key": "metric-2",
+              "label": "Total liabilities"
+            },
+            {
+              "key": "metric-3",
+              "label": "Cash and bank balances"
+            },
+            {
+              "key": "metric-4",
+              "label": "Investment balances"
+            },
+            {
+              "key": "metric-5",
+              "label": "Property and vehicles"
+            },
+            {
+              "key": "metric-6",
+              "label": "Other assets"
+            }
+          ],
+          "breakdown": [
+            {
+              "key": "breakdown-1",
+              "label": "Cash and bank balances"
+            },
+            {
+              "key": "breakdown-2",
+              "label": "Investments"
+            },
+            {
+              "key": "breakdown-3",
+              "label": "Property"
+            },
+            {
+              "key": "breakdown-4",
+              "label": "Vehicles"
+            },
+            {
+              "key": "breakdown-5",
+              "label": "Other assets"
+            },
+            {
+              "key": "breakdown-6",
+              "label": "Total assets"
+            },
+            {
+              "key": "breakdown-7",
+              "label": "Mortgage"
+            },
+            {
+              "key": "breakdown-8",
+              "label": "Other loans"
+            },
+            {
+              "key": "breakdown-9",
+              "label": "Credit cards"
+            },
+            {
+              "key": "breakdown-10",
+              "label": "Other liabilities"
+            },
+            {
+              "key": "breakdown-11",
+              "label": "Total liabilities"
+            },
+            {
+              "key": "breakdown-12",
+              "label": "Net worth"
+            }
+          ]
+        },
+        "explanations": {
+          "formula": "Total assets = cash + investments + property + vehicles + other assets. Total liabilities = mortgage + other loans + credit card balances + other liabilities. Net worth = total assets − total liabilities.",
+          "steps": [
+            "Enter current cash and bank balances.",
+            "Enter investments, retirement accounts, property, vehicle and other asset values.",
+            "Enter mortgage, other loan, credit card and other liability balances.",
+            "Add asset values to calculate total assets and add obligations to calculate total liabilities.",
+            "Subtract total liabilities from total assets to estimate point-in-time net worth."
+          ],
+          "assumptions": [
+            "All entered balance-sheet amounts must be non-negative.",
+            "This is a point-in-time estimate; results depend on current values and obligations entered. Asset valuation, liquidity, fees and tax consequences are not modeled."
+          ],
+          "notes": [
+            "Calculated locally in the browser from user-entered values; inspect the result note and verify assumptions before relying on the estimate."
+          ],
+          "disclaimers": [
+            "This calculator is an informational estimate, not financial, tax, legal, accounting or investment advice."
+          ],
+          "limitations": [
+            "All entered balance-sheet amounts must be non-negative.",
+            "This is a point-in-time estimate; results depend on current values and obligations entered. Asset valuation, liquidity, fees and tax consequences are not modeled."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-net-worth-1",
+            "question": "What is net worth?",
+            "answer": "Net worth is total assets minus total liabilities."
+          },
+          {
+            "key": "faq-net-worth-2",
+            "question": "Can net worth be negative?",
+            "answer": "Yes. Liabilities can exceed the value of entered assets."
+          },
+          {
+            "key": "faq-net-worth-3",
+            "question": "How often should it be updated?",
+            "answer": "Update the balances when material asset values or obligations change; the calculator does not connect to financial accounts."
+          }
+        ],
+        "seo": {
+          "title": "Net Worth Calculator | FinPulse Hub",
+          "metaDescription": "Add up assets and liabilities to estimate your current net worth.",
+          "h1": "Net Worth Calculator",
+          "introduction": "Create a point-in-time balance sheet by adding cash, investments, property and other assets, then subtracting mortgage, loan, card and other liabilities.",
+          "faq": [
+            {
+              "key": "faq-net-worth-1",
+              "question": "What is net worth?",
+              "answer": "Net worth is total assets minus total liabilities."
+            },
+            {
+              "key": "faq-net-worth-2",
+              "question": "Can net worth be negative?",
+              "answer": "Yes. Liabilities can exceed the value of entered assets."
+            },
+            {
+              "key": "faq-net-worth-3",
+              "question": "How often should it be updated?",
+              "answer": "Update the balances when material asset values or obligations change; the calculator does not connect to financial accounts."
+            }
+          ]
+        },
+        "errors": [
+          {
+            "key": "invalid-number",
+            "message": "{field} must be a finite number.",
+            "recoveryHint": "Enter a valid finite number and try again."
+          },
+          {
+            "key": "negative",
+            "message": "{field} must not be negative.",
+            "recoveryHint": "Enter zero or a positive value."
+          }
+        ],
+        "accessibility": {
+          "pageLabel": "Net Worth Calculator",
+          "formLabel": "Net Worth Calculator calculator form",
+          "resultAnnouncement": "Calculation result for Net Worth Calculator",
+          "chartLabel": "Chart showing ESTIMATED NET WORTH for Net Worth Calculator",
+          "controlLabels": [
+            {
+              "key": "cash",
+              "label": "Cash and bank balances"
+            },
+            {
+              "key": "investments",
+              "label": "Investments and retirement accounts"
+            },
+            {
+              "key": "property",
+              "label": "Property value"
+            },
+            {
+              "key": "vehicles",
+              "label": "Vehicle value"
+            },
+            {
+              "key": "otherAssets",
+              "label": "Other assets"
+            },
+            {
+              "key": "mortgage",
+              "label": "Mortgage balances"
+            },
+            {
+              "key": "loans",
+              "label": "Other loan balances"
+            },
+            {
+              "key": "cards",
+              "label": "Credit card balances"
+            },
+            {
+              "key": "otherDebt",
+              "label": "Other liabilities"
+            }
+          ]
+        },
+        "guide": {
+          "title": "Net Worth Calculator Guide",
+          "introduction": "Create a point-in-time balance sheet by adding cash, investments, property and other assets, then subtracting mortgage, loan, card and other liabilities.",
+          "steps": [
+            {
+              "key": "net-worth-guide-step-1",
+              "title": "Step 1",
+              "body": "Enter current cash and bank balances."
+            },
+            {
+              "key": "net-worth-guide-step-2",
+              "title": "Step 2",
+              "body": "Enter investments, retirement accounts, property, vehicle and other asset values."
+            },
+            {
+              "key": "net-worth-guide-step-3",
+              "title": "Step 3",
+              "body": "Enter mortgage, other loan, credit card and other liability balances."
+            },
+            {
+              "key": "net-worth-guide-step-4",
+              "title": "Step 4",
+              "body": "Add asset values to calculate total assets and add obligations to calculate total liabilities."
+            },
+            {
+              "key": "net-worth-guide-step-5",
+              "title": "Step 5",
+              "body": "Subtract total liabilities from total assets to estimate point-in-time net worth."
+            }
+          ],
+          "sections": [
+            {
+              "key": "net-worth-guide-section-1",
+              "heading": "Calculation method",
+              "body": "Total assets = cash + investments + property + vehicles + other assets. Total liabilities = mortgage + other loans + credit card balances + other liabilities. Net worth = total assets − total liabilities."
+            },
+            {
+              "key": "net-worth-guide-section-2",
+              "heading": "Assumptions and limitations",
+              "body": "All entered balance-sheet amounts must be non-negative. This is a point-in-time estimate; results depend on current values and obligations entered. Asset valuation, liquidity, fees and tax consequences are not modeled."
+            }
+          ]
+        }
       },
       "locales": {
         "hi": {
@@ -41615,15 +42781,194 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-record-complete",
+      "sourceTranslationStatus": "not-started",
+      "sourceCompletenessStatus": "complete"
     },
     {
       "id": "basic-arithmetic",
       "source": {
         "title": "Basic Arithmetic Calculator",
         "category": "Math & Statistics",
-        "subcategory": "Basic Math & Number Tools",
-        "file": "math-tools.js"
+        "subcategory": "Basic Math Calculators",
+        "file": "math-tools.js",
+        "description": "Add, subtract, multiply or divide two numbers.",
+        "inputs": [
+          {
+            "key": "a",
+            "label": "First number"
+          },
+          {
+            "key": "op",
+            "label": "Operation"
+          },
+          {
+            "key": "b",
+            "label": "Second number"
+          }
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "CALCULATION RESULT",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Operation"
+            },
+            {
+              "key": "metric-2",
+              "label": "First number"
+            },
+            {
+              "key": "metric-3",
+              "label": "Second number"
+            }
+          ],
+          "breakdown": [
+            {
+              "key": "breakdown-1",
+              "label": "Operation"
+            },
+            {
+              "key": "breakdown-2",
+              "label": "First number"
+            },
+            {
+              "key": "breakdown-3",
+              "label": "Second number"
+            }
+          ]
+        },
+        "explanations": {
+          "formula": "Result = A op B, where op is addition (+), subtraction (−), multiplication (×) or division (÷).",
+          "steps": [
+            "Enter the first number.",
+            "Choose addition, subtraction, multiplication or division.",
+            "Enter the second number.",
+            "Apply the selected operation in the displayed order.",
+            "Review the finite numeric result; division by zero is rejected."
+          ],
+          "assumptions": [
+            "Both inputs must be finite numbers.",
+            "Division by zero is undefined and rejected."
+          ],
+          "notes": [
+            "Calculated locally in the browser from user-entered values; inspect the result note and verify assumptions before relying on the estimate."
+          ],
+          "disclaimers": [
+            "This calculator is an informational estimate, not financial, tax, legal, accounting or investment advice."
+          ],
+          "limitations": [
+            "Both inputs must be finite numbers.",
+            "Division by zero is undefined and rejected."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-basic-arithmetic-1",
+            "question": "Which operations are supported?",
+            "answer": "Addition, subtraction, multiplication and division."
+          },
+          {
+            "key": "faq-basic-arithmetic-2",
+            "question": "Can I divide by zero?",
+            "answer": "No. Division by zero is undefined."
+          }
+        ],
+        "seo": {
+          "title": "Basic Arithmetic Calculator | FinPulse Hub",
+          "metaDescription": "Add, subtract, multiply or divide two numbers.",
+          "h1": "Basic Arithmetic Calculator",
+          "introduction": "Perform a basic arithmetic operation on two entered numbers.",
+          "faq": [
+            {
+              "key": "faq-basic-arithmetic-1",
+              "question": "Which operations are supported?",
+              "answer": "Addition, subtraction, multiplication and division."
+            },
+            {
+              "key": "faq-basic-arithmetic-2",
+              "question": "Can I divide by zero?",
+              "answer": "No. Division by zero is undefined."
+            }
+          ]
+        },
+        "errors": [
+          {
+            "key": "invalid-number",
+            "message": "{field} must be a finite number.",
+            "recoveryHint": "Enter a valid finite number and try again."
+          },
+          {
+            "key": "zero-divisor",
+            "message": "Cannot divide by zero.",
+            "recoveryHint": "Enter a non-zero second number when division is selected."
+          }
+        ],
+        "accessibility": {
+          "pageLabel": "Basic Arithmetic Calculator",
+          "formLabel": "Basic Arithmetic Calculator calculator form",
+          "resultAnnouncement": "Calculation result for Basic Arithmetic Calculator",
+          "chartLabel": "Chart showing CALCULATION RESULT for Basic Arithmetic Calculator",
+          "controlLabels": [
+            {
+              "key": "a",
+              "label": "First number"
+            },
+            {
+              "key": "op",
+              "label": "Operation"
+            },
+            {
+              "key": "b",
+              "label": "Second number"
+            }
+          ]
+        },
+        "guide": {
+          "title": "Basic Arithmetic Calculator Guide",
+          "introduction": "Perform a basic arithmetic operation on two entered numbers.",
+          "steps": [
+            {
+              "key": "basic-arithmetic-guide-step-1",
+              "title": "Step 1",
+              "body": "Enter the first number."
+            },
+            {
+              "key": "basic-arithmetic-guide-step-2",
+              "title": "Step 2",
+              "body": "Choose addition, subtraction, multiplication or division."
+            },
+            {
+              "key": "basic-arithmetic-guide-step-3",
+              "title": "Step 3",
+              "body": "Enter the second number."
+            },
+            {
+              "key": "basic-arithmetic-guide-step-4",
+              "title": "Step 4",
+              "body": "Apply the selected operation in the displayed order."
+            },
+            {
+              "key": "basic-arithmetic-guide-step-5",
+              "title": "Step 5",
+              "body": "Review the finite numeric result; division by zero is rejected."
+            }
+          ],
+          "sections": [
+            {
+              "key": "basic-arithmetic-guide-section-1",
+              "heading": "Calculation method",
+              "body": "Result = A op B, where op is addition (+), subtraction (−), multiplication (×) or division (÷)."
+            },
+            {
+              "key": "basic-arithmetic-guide-section-2",
+              "heading": "Assumptions and limitations",
+              "body": "Both inputs must be finite numbers. Division by zero is undefined and rejected."
+            }
+          ]
+        }
       },
       "locales": {
         "hi": {
@@ -41650,15 +42995,183 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-record-complete",
+      "sourceTranslationStatus": "not-started",
+      "sourceCompletenessStatus": "complete"
     },
     {
       "id": "fraction",
       "source": {
         "title": "Fraction Calculator",
         "category": "Math & Statistics",
-        "subcategory": "Basic Math & Number Tools",
-        "file": "math-tools.js"
+        "subcategory": "Fractions & Ratios",
+        "file": "math-tools.js",
+        "description": "Simplify a fraction and show its decimal value.",
+        "inputs": [
+          {
+            "key": "numerator",
+            "label": "Numerator"
+          },
+          {
+            "key": "denominator",
+            "label": "Denominator"
+          }
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "FRACTION VALUE",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Simplified fraction"
+            },
+            {
+              "key": "metric-2",
+              "label": "Original fraction"
+            }
+          ],
+          "breakdown": [
+            {
+              "key": "breakdown-1",
+              "label": "Simplified fraction"
+            },
+            {
+              "key": "breakdown-2",
+              "label": "Original fraction"
+            }
+          ]
+        },
+        "explanations": {
+          "formula": "g = gcd(|numerator|, |denominator|); simplified numerator = numerator/g with sign normalized to the denominator; simplified denominator = |denominator|; decimal value = numerator ÷ denominator.",
+          "steps": [
+            "Enter an integer numerator and denominator.",
+            "Reject a zero denominator.",
+            "Find the greatest common divisor of the absolute numerator and denominator.",
+            "Divide both terms by the GCD and normalize the denominator to positive.",
+            "Display the simplified fraction and decimal value."
+          ],
+          "assumptions": [
+            "Numerator and denominator must be safe integers.",
+            "Denominator cannot be zero; negative denominators are normalized to a positive denominator."
+          ],
+          "notes": [
+            "Calculated locally in the browser from user-entered values; inspect the result note and verify assumptions before relying on the estimate."
+          ],
+          "disclaimers": [
+            "This calculator is an informational estimate, not financial, tax, legal, accounting or investment advice."
+          ],
+          "limitations": [
+            "Numerator and denominator must be safe integers.",
+            "Denominator cannot be zero; negative denominators are normalized to a positive denominator."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-fraction-1",
+            "question": "How is a fraction simplified?",
+            "answer": "Divide numerator and denominator by their greatest common divisor."
+          },
+          {
+            "key": "faq-fraction-2",
+            "question": "Can the denominator be zero?",
+            "answer": "No, a fraction cannot have a zero denominator."
+          }
+        ],
+        "seo": {
+          "title": "Fraction Calculator | FinPulse Hub",
+          "metaDescription": "Simplify a fraction and show its decimal value.",
+          "h1": "Fraction Calculator",
+          "introduction": "Reduce a fraction to its simplest equivalent form.",
+          "faq": [
+            {
+              "key": "faq-fraction-1",
+              "question": "How is a fraction simplified?",
+              "answer": "Divide numerator and denominator by their greatest common divisor."
+            },
+            {
+              "key": "faq-fraction-2",
+              "question": "Can the denominator be zero?",
+              "answer": "No, a fraction cannot have a zero denominator."
+            }
+          ]
+        },
+        "errors": [
+          {
+            "key": "invalid-number",
+            "message": "{field} must be a finite number.",
+            "recoveryHint": "Enter a valid finite number and try again."
+          },
+          {
+            "key": "integer",
+            "message": "Enter a safe whole number.",
+            "recoveryHint": "Use whole-number numerator and denominator values."
+          },
+          {
+            "key": "zero-denominator",
+            "message": "Denominator cannot be zero.",
+            "recoveryHint": "Enter a non-zero denominator."
+          }
+        ],
+        "accessibility": {
+          "pageLabel": "Fraction Calculator",
+          "formLabel": "Fraction Calculator calculator form",
+          "resultAnnouncement": "Calculation result for Fraction Calculator",
+          "chartLabel": "Chart showing FRACTION VALUE for Fraction Calculator",
+          "controlLabels": [
+            {
+              "key": "numerator",
+              "label": "Numerator"
+            },
+            {
+              "key": "denominator",
+              "label": "Denominator"
+            }
+          ]
+        },
+        "guide": {
+          "title": "Fraction Calculator Guide",
+          "introduction": "Reduce a fraction to its simplest equivalent form.",
+          "steps": [
+            {
+              "key": "fraction-guide-step-1",
+              "title": "Step 1",
+              "body": "Enter an integer numerator and denominator."
+            },
+            {
+              "key": "fraction-guide-step-2",
+              "title": "Step 2",
+              "body": "Reject a zero denominator."
+            },
+            {
+              "key": "fraction-guide-step-3",
+              "title": "Step 3",
+              "body": "Find the greatest common divisor of the absolute numerator and denominator."
+            },
+            {
+              "key": "fraction-guide-step-4",
+              "title": "Step 4",
+              "body": "Divide both terms by the GCD and normalize the denominator to positive."
+            },
+            {
+              "key": "fraction-guide-step-5",
+              "title": "Step 5",
+              "body": "Display the simplified fraction and decimal value."
+            }
+          ],
+          "sections": [
+            {
+              "key": "fraction-guide-section-1",
+              "heading": "Calculation method",
+              "body": "g = gcd(|numerator|, |denominator|); simplified numerator = numerator/g with sign normalized to the denominator; simplified denominator = |denominator|; decimal value = numerator ÷ denominator."
+            },
+            {
+              "key": "fraction-guide-section-2",
+              "heading": "Assumptions and limitations",
+              "body": "Numerator and denominator must be safe integers. Denominator cannot be zero; negative denominators are normalized to a positive denominator."
+            }
+          ]
+        }
       },
       "locales": {
         "hi": {
@@ -41685,15 +43198,191 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-record-complete",
+      "sourceTranslationStatus": "not-started",
+      "sourceCompletenessStatus": "complete"
     },
     {
       "id": "mixed-number",
       "source": {
         "title": "Mixed Number Calculator",
         "category": "Math & Statistics",
-        "subcategory": "Basic Math & Number Tools",
-        "file": "math-tools.js"
+        "subcategory": "Fractions & Ratios",
+        "file": "math-tools.js",
+        "description": "Convert a mixed number into an improper fraction and decimal.",
+        "inputs": [
+          {
+            "key": "whole",
+            "label": "Whole number"
+          },
+          {
+            "key": "numerator",
+            "label": "Fraction numerator"
+          },
+          {
+            "key": "denominator",
+            "label": "Denominator"
+          }
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "MIXED NUMBER VALUE",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Improper fraction"
+            },
+            {
+              "key": "metric-2",
+              "label": "Decimal"
+            }
+          ],
+          "breakdown": [
+            {
+              "key": "breakdown-1",
+              "label": "Improper fraction"
+            },
+            {
+              "key": "breakdown-2",
+              "label": "Decimal"
+            }
+          ]
+        },
+        "explanations": {
+          "formula": "Improper numerator = whole × denominator + signed fractional numerator (negative whole values apply a negative fractional part); simplify by GCD. Decimal value = whole + signed fraction.",
+          "steps": [
+            "Enter a whole-number part, fractional numerator and denominator.",
+            "Require a positive whole-number denominator.",
+            "Require the fractional numerator to be at least zero and smaller than the denominator.",
+            "Combine the whole and fractional parts into an improper fraction.",
+            "Reduce the fraction and display its decimal value."
+          ],
+          "assumptions": [
+            "All inputs must be safe integers; denominator must be positive.",
+            "Fraction numerator must be from zero up to but not including denominator."
+          ],
+          "notes": [
+            "Calculated locally in the browser from user-entered values; inspect the result note and verify assumptions before relying on the estimate."
+          ],
+          "disclaimers": [
+            "This calculator is an informational estimate, not financial, tax, legal, accounting or investment advice."
+          ],
+          "limitations": [
+            "All inputs must be safe integers; denominator must be positive.",
+            "Fraction numerator must be from zero up to but not including denominator."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-mixed-number-1",
+            "question": "What is a mixed number?",
+            "answer": "A whole number combined with a proper fraction."
+          },
+          {
+            "key": "faq-mixed-number-2",
+            "question": "What is required?",
+            "answer": "The fractional numerator must be smaller than its positive denominator."
+          }
+        ],
+        "seo": {
+          "title": "Mixed Number Calculator | FinPulse Hub",
+          "metaDescription": "Convert a mixed number into an improper fraction and decimal.",
+          "h1": "Mixed Number Calculator",
+          "introduction": "Convert a mixed number into an improper fraction.",
+          "faq": [
+            {
+              "key": "faq-mixed-number-1",
+              "question": "What is a mixed number?",
+              "answer": "A whole number combined with a proper fraction."
+            },
+            {
+              "key": "faq-mixed-number-2",
+              "question": "What is required?",
+              "answer": "The fractional numerator must be smaller than its positive denominator."
+            }
+          ]
+        },
+        "errors": [
+          {
+            "key": "invalid-number",
+            "message": "{field} must be a finite number.",
+            "recoveryHint": "Enter a valid finite number and try again."
+          },
+          {
+            "key": "denominator",
+            "message": "Denominator must be greater than zero.",
+            "recoveryHint": "Enter a positive whole-number denominator."
+          },
+          {
+            "key": "fraction-range",
+            "message": "Numerator must be from 0 to less than denominator.",
+            "recoveryHint": "Reduce the fractional numerator so it is non-negative and smaller than the denominator."
+          }
+        ],
+        "accessibility": {
+          "pageLabel": "Mixed Number Calculator",
+          "formLabel": "Mixed Number Calculator calculator form",
+          "resultAnnouncement": "Calculation result for Mixed Number Calculator",
+          "chartLabel": "Chart showing MIXED NUMBER VALUE for Mixed Number Calculator",
+          "controlLabels": [
+            {
+              "key": "whole",
+              "label": "Whole number"
+            },
+            {
+              "key": "numerator",
+              "label": "Fraction numerator"
+            },
+            {
+              "key": "denominator",
+              "label": "Denominator"
+            }
+          ]
+        },
+        "guide": {
+          "title": "Mixed Number Calculator Guide",
+          "introduction": "Convert a mixed number into an improper fraction.",
+          "steps": [
+            {
+              "key": "mixed-number-guide-step-1",
+              "title": "Step 1",
+              "body": "Enter a whole-number part, fractional numerator and denominator."
+            },
+            {
+              "key": "mixed-number-guide-step-2",
+              "title": "Step 2",
+              "body": "Require a positive whole-number denominator."
+            },
+            {
+              "key": "mixed-number-guide-step-3",
+              "title": "Step 3",
+              "body": "Require the fractional numerator to be at least zero and smaller than the denominator."
+            },
+            {
+              "key": "mixed-number-guide-step-4",
+              "title": "Step 4",
+              "body": "Combine the whole and fractional parts into an improper fraction."
+            },
+            {
+              "key": "mixed-number-guide-step-5",
+              "title": "Step 5",
+              "body": "Reduce the fraction and display its decimal value."
+            }
+          ],
+          "sections": [
+            {
+              "key": "mixed-number-guide-section-1",
+              "heading": "Calculation method",
+              "body": "Improper numerator = whole × denominator + signed fractional numerator (negative whole values apply a negative fractional part); simplify by GCD. Decimal value = whole + signed fraction."
+            },
+            {
+              "key": "mixed-number-guide-section-2",
+              "heading": "Assumptions and limitations",
+              "body": "All inputs must be safe integers; denominator must be positive. Fraction numerator must be from zero up to but not including denominator."
+            }
+          ]
+        }
       },
       "locales": {
         "hi": {
@@ -41720,15 +43409,178 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-record-complete",
+      "sourceTranslationStatus": "not-started",
+      "sourceCompletenessStatus": "complete"
     },
     {
       "id": "decimal-fraction",
       "source": {
         "title": "Decimal to Fraction Converter",
         "category": "Math & Statistics",
-        "subcategory": "Basic Math & Number Tools",
-        "file": "math-tools.js"
+        "subcategory": "Fractions & Ratios",
+        "file": "math-tools.js",
+        "description": "Find a close simplified fraction for a decimal.",
+        "inputs": [
+          {
+            "key": "value",
+            "label": "Decimal value"
+          },
+          {
+            "key": "maxDen",
+            "label": "Maximum denominator"
+          }
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "DECIMAL APPROXIMATION",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Fraction"
+            },
+            {
+              "key": "metric-2",
+              "label": "Approximation difference"
+            }
+          ],
+          "breakdown": [
+            {
+              "key": "breakdown-1",
+              "label": "Fraction"
+            },
+            {
+              "key": "breakdown-2",
+              "label": "Approximation difference"
+            }
+          ]
+        },
+        "explanations": {
+          "formula": "Search denominators d from 1 through maxDen; for each d choose n = round(value × d); retain the fraction n/d with minimum absolute error |value − n/d|, then simplify by GCD.",
+          "steps": [
+            "Enter a finite decimal value.",
+            "Enter a positive whole-number maximum denominator no greater than 1,000,000.",
+            "Search each denominator up to the selected limit and select the nearest numerator.",
+            "Keep the candidate with the smallest absolute approximation error.",
+            "Reduce the chosen fraction and display the absolute difference."
+          ],
+          "assumptions": [
+            "Maximum denominator must be a positive safe integer and cannot exceed 1,000,000.",
+            "The approximation is exact only when a matching fraction is found within the denominator limit."
+          ],
+          "notes": [
+            "Calculated locally in the browser from user-entered values; inspect the result note and verify assumptions before relying on the estimate."
+          ],
+          "disclaimers": [
+            "This calculator is an informational estimate, not financial, tax, legal, accounting or investment advice."
+          ],
+          "limitations": [
+            "Maximum denominator must be a positive safe integer and cannot exceed 1,000,000.",
+            "The approximation is exact only when a matching fraction is found within the denominator limit."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-decimal-fraction-1",
+            "question": "Is the result always exact?",
+            "answer": "It is exact when a matching fraction is found within the denominator limit; otherwise it is the closest searched approximation."
+          },
+          {
+            "key": "faq-decimal-fraction-2",
+            "question": "Can I increase precision?",
+            "answer": "Increase the maximum denominator, within the supported limit."
+          }
+        ],
+        "seo": {
+          "title": "Decimal to Fraction Converter | FinPulse Hub",
+          "metaDescription": "Find a close simplified fraction for a decimal.",
+          "h1": "Decimal to Fraction Converter",
+          "introduction": "Approximate a decimal as a simplified fraction with a configurable denominator limit.",
+          "faq": [
+            {
+              "key": "faq-decimal-fraction-1",
+              "question": "Is the result always exact?",
+              "answer": "It is exact when a matching fraction is found within the denominator limit; otherwise it is the closest searched approximation."
+            },
+            {
+              "key": "faq-decimal-fraction-2",
+              "question": "Can I increase precision?",
+              "answer": "Increase the maximum denominator, within the supported limit."
+            }
+          ]
+        },
+        "errors": [
+          {
+            "key": "invalid-number",
+            "message": "{field} must be a finite number.",
+            "recoveryHint": "Enter a valid finite number and try again."
+          },
+          {
+            "key": "max-denominator",
+            "message": "Maximum denominator is too large.",
+            "recoveryHint": "Choose a positive whole-number denominator limit no greater than 1,000,000."
+          }
+        ],
+        "accessibility": {
+          "pageLabel": "Decimal to Fraction Converter",
+          "formLabel": "Decimal to Fraction Converter calculator form",
+          "resultAnnouncement": "Calculation result for Decimal to Fraction Converter",
+          "chartLabel": "Chart showing DECIMAL APPROXIMATION for Decimal to Fraction Converter",
+          "controlLabels": [
+            {
+              "key": "value",
+              "label": "Decimal value"
+            },
+            {
+              "key": "maxDen",
+              "label": "Maximum denominator"
+            }
+          ]
+        },
+        "guide": {
+          "title": "Decimal to Fraction Converter Guide",
+          "introduction": "Approximate a decimal as a simplified fraction with a configurable denominator limit.",
+          "steps": [
+            {
+              "key": "decimal-fraction-guide-step-1",
+              "title": "Step 1",
+              "body": "Enter a finite decimal value."
+            },
+            {
+              "key": "decimal-fraction-guide-step-2",
+              "title": "Step 2",
+              "body": "Enter a positive whole-number maximum denominator no greater than 1,000,000."
+            },
+            {
+              "key": "decimal-fraction-guide-step-3",
+              "title": "Step 3",
+              "body": "Search each denominator up to the selected limit and select the nearest numerator."
+            },
+            {
+              "key": "decimal-fraction-guide-step-4",
+              "title": "Step 4",
+              "body": "Keep the candidate with the smallest absolute approximation error."
+            },
+            {
+              "key": "decimal-fraction-guide-step-5",
+              "title": "Step 5",
+              "body": "Reduce the chosen fraction and display the absolute difference."
+            }
+          ],
+          "sections": [
+            {
+              "key": "decimal-fraction-guide-section-1",
+              "heading": "Calculation method",
+              "body": "Search denominators d from 1 through maxDen; for each d choose n = round(value × d); retain the fraction n/d with minimum absolute error |value − n/d|, then simplify by GCD."
+            },
+            {
+              "key": "decimal-fraction-guide-section-2",
+              "heading": "Assumptions and limitations",
+              "body": "Maximum denominator must be a positive safe integer and cannot exceed 1,000,000. The approximation is exact only when a matching fraction is found within the denominator limit."
+            }
+          ]
+        }
       },
       "locales": {
         "hi": {
@@ -41755,15 +43607,173 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-record-complete",
+      "sourceTranslationStatus": "not-started",
+      "sourceCompletenessStatus": "complete"
     },
     {
       "id": "ratio",
       "source": {
         "title": "Ratio Calculator",
         "category": "Math & Statistics",
-        "subcategory": "Basic Math & Number Tools",
-        "file": "math-tools.js"
+        "subcategory": "Fractions & Ratios",
+        "file": "math-tools.js",
+        "description": "Simplify a two-term ratio to lowest whole-number terms.",
+        "inputs": [
+          {
+            "key": "a",
+            "label": "First term"
+          },
+          {
+            "key": "b",
+            "label": "Second term"
+          }
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "SIMPLIFIED RATIO",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Original ratio"
+            }
+          ],
+          "breakdown": [
+            {
+              "key": "breakdown-1",
+              "label": "Original ratio"
+            },
+            {
+              "key": "breakdown-2",
+              "label": "Simplified ratio"
+            }
+          ]
+        },
+        "explanations": {
+          "formula": "g = gcd(A,B); simplified ratio = (A/g):(B/g).",
+          "steps": [
+            "Enter two non-negative whole-number terms.",
+            "Reject the 0:0 case because it has no defined simplified ratio.",
+            "Find the greatest common divisor of both terms.",
+            "Divide both terms by the GCD to get the simplest whole-number ratio."
+          ],
+          "assumptions": [
+            "Both terms must be safe non-negative integers.",
+            "At least one ratio term must be non-zero."
+          ],
+          "notes": [
+            "Calculated locally in the browser from user-entered values; inspect the result note and verify assumptions before relying on the estimate."
+          ],
+          "disclaimers": [
+            "This calculator is an informational estimate, not financial, tax, legal, accounting or investment advice."
+          ],
+          "limitations": [
+            "Both terms must be safe non-negative integers.",
+            "At least one ratio term must be non-zero."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-ratio-1",
+            "question": "Can a ratio contain zero?",
+            "answer": "Yes, but both terms cannot be zero."
+          },
+          {
+            "key": "faq-ratio-2",
+            "question": "What does simplest form mean?",
+            "answer": "The two terms have no common whole-number factor greater than one."
+          }
+        ],
+        "seo": {
+          "title": "Ratio Calculator | FinPulse Hub",
+          "metaDescription": "Simplify a two-term ratio to lowest whole-number terms.",
+          "h1": "Ratio Calculator",
+          "introduction": "Reduce a two-term ratio using the greatest common divisor.",
+          "faq": [
+            {
+              "key": "faq-ratio-1",
+              "question": "Can a ratio contain zero?",
+              "answer": "Yes, but both terms cannot be zero."
+            },
+            {
+              "key": "faq-ratio-2",
+              "question": "What does simplest form mean?",
+              "answer": "The two terms have no common whole-number factor greater than one."
+            }
+          ]
+        },
+        "errors": [
+          {
+            "key": "invalid-number",
+            "message": "{field} must be a finite number.",
+            "recoveryHint": "Enter a valid finite number and try again."
+          },
+          {
+            "key": "negative",
+            "message": "Ratio terms must not be negative.",
+            "recoveryHint": "Enter zero or positive whole-number terms."
+          },
+          {
+            "key": "zero-ratio",
+            "message": "At least one ratio term must be non-zero.",
+            "recoveryHint": "Change one of the two terms to a positive value."
+          }
+        ],
+        "accessibility": {
+          "pageLabel": "Ratio Calculator",
+          "formLabel": "Ratio Calculator calculator form",
+          "resultAnnouncement": "Calculation result for Ratio Calculator",
+          "chartLabel": "Chart showing SIMPLIFIED RATIO for Ratio Calculator",
+          "controlLabels": [
+            {
+              "key": "a",
+              "label": "First term"
+            },
+            {
+              "key": "b",
+              "label": "Second term"
+            }
+          ]
+        },
+        "guide": {
+          "title": "Ratio Calculator Guide",
+          "introduction": "Reduce a two-term ratio using the greatest common divisor.",
+          "steps": [
+            {
+              "key": "ratio-guide-step-1",
+              "title": "Step 1",
+              "body": "Enter two non-negative whole-number terms."
+            },
+            {
+              "key": "ratio-guide-step-2",
+              "title": "Step 2",
+              "body": "Reject the 0:0 case because it has no defined simplified ratio."
+            },
+            {
+              "key": "ratio-guide-step-3",
+              "title": "Step 3",
+              "body": "Find the greatest common divisor of both terms."
+            },
+            {
+              "key": "ratio-guide-step-4",
+              "title": "Step 4",
+              "body": "Divide both terms by the GCD to get the simplest whole-number ratio."
+            }
+          ],
+          "sections": [
+            {
+              "key": "ratio-guide-section-1",
+              "heading": "Calculation method",
+              "body": "g = gcd(A,B); simplified ratio = (A/g):(B/g)."
+            },
+            {
+              "key": "ratio-guide-section-2",
+              "heading": "Assumptions and limitations",
+              "body": "Both terms must be safe non-negative integers. At least one ratio term must be non-zero."
+            }
+          ]
+        }
       },
       "locales": {
         "hi": {
@@ -41790,15 +43800,207 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-record-complete",
+      "sourceTranslationStatus": "not-started",
+      "sourceCompletenessStatus": "complete"
     },
     {
       "id": "proportion",
       "source": {
         "title": "Proportion Calculator",
         "category": "Math & Statistics",
-        "subcategory": "Basic Math & Number Tools",
-        "file": "math-tools.js"
+        "subcategory": "Fractions & Ratios",
+        "file": "math-tools.js",
+        "description": "Solve a proportion a:b = c:x.",
+        "inputs": [
+          {
+            "key": "a",
+            "label": "A"
+          },
+          {
+            "key": "b",
+            "label": "B"
+          },
+          {
+            "key": "c",
+            "label": "C"
+          }
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "MISSING VALUE (X)",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Proportion"
+            },
+            {
+              "key": "metric-2",
+              "label": "A"
+            },
+            {
+              "key": "metric-3",
+              "label": "B"
+            },
+            {
+              "key": "metric-4",
+              "label": "C"
+            }
+          ],
+          "breakdown": [
+            {
+              "key": "breakdown-1",
+              "label": "Proportion"
+            },
+            {
+              "key": "breakdown-2",
+              "label": "A"
+            },
+            {
+              "key": "breakdown-3",
+              "label": "B"
+            },
+            {
+              "key": "breakdown-4",
+              "label": "C"
+            }
+          ]
+        },
+        "explanations": {
+          "formula": "A/B = C/X; cross multiplication gives A × X = B × C, therefore X = (B × C)/A.",
+          "steps": [
+            "Enter positive values for A and B.",
+            "Enter a non-negative value for C.",
+            "Cross-multiply the proportion A/B = C/X.",
+            "Divide B × C by A to solve for X.",
+            "Reject a non-finite result and review the missing value."
+          ],
+          "assumptions": [
+            "A and B must be positive; C must be non-negative.",
+            "A cannot be zero because it is the divisor in the rearranged equation."
+          ],
+          "notes": [
+            "Calculated locally in the browser from user-entered values; inspect the result note and verify assumptions before relying on the estimate."
+          ],
+          "disclaimers": [
+            "This calculator is an informational estimate, not financial, tax, legal, accounting or investment advice."
+          ],
+          "limitations": [
+            "A and B must be positive; C must be non-negative.",
+            "A cannot be zero because it is the divisor in the rearranged equation."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-proportion-1",
+            "question": "What equation is used?",
+            "answer": "Cross multiplication gives x = (b × c) / a."
+          },
+          {
+            "key": "faq-proportion-2",
+            "question": "Can A be zero?",
+            "answer": "No, A is the denominator in the rearranged proportion."
+          }
+        ],
+        "seo": {
+          "title": "Proportion Calculator | FinPulse Hub",
+          "metaDescription": "Solve a proportion a:b = c:x.",
+          "h1": "Proportion Calculator",
+          "introduction": "Solve for x in the proportion a/b = c/x.",
+          "faq": [
+            {
+              "key": "faq-proportion-1",
+              "question": "What equation is used?",
+              "answer": "Cross multiplication gives x = (b × c) / a."
+            },
+            {
+              "key": "faq-proportion-2",
+              "question": "Can A be zero?",
+              "answer": "No, A is the denominator in the rearranged proportion."
+            }
+          ]
+        },
+        "errors": [
+          {
+            "key": "invalid-number",
+            "message": "{field} must be a finite number.",
+            "recoveryHint": "Enter a valid finite number and try again."
+          },
+          {
+            "key": "positive",
+            "message": "A and B must be greater than zero.",
+            "recoveryHint": "Enter positive values for A and B."
+          },
+          {
+            "key": "negative",
+            "message": "C must not be negative.",
+            "recoveryHint": "Enter zero or a positive value for C."
+          }
+        ],
+        "accessibility": {
+          "pageLabel": "Proportion Calculator",
+          "formLabel": "Proportion Calculator calculator form",
+          "resultAnnouncement": "Calculation result for Proportion Calculator",
+          "chartLabel": "Chart showing MISSING VALUE (X) for Proportion Calculator",
+          "controlLabels": [
+            {
+              "key": "a",
+              "label": "A"
+            },
+            {
+              "key": "b",
+              "label": "B"
+            },
+            {
+              "key": "c",
+              "label": "C"
+            }
+          ]
+        },
+        "guide": {
+          "title": "Proportion Calculator Guide",
+          "introduction": "Solve for x in the proportion a/b = c/x.",
+          "steps": [
+            {
+              "key": "proportion-guide-step-1",
+              "title": "Step 1",
+              "body": "Enter positive values for A and B."
+            },
+            {
+              "key": "proportion-guide-step-2",
+              "title": "Step 2",
+              "body": "Enter a non-negative value for C."
+            },
+            {
+              "key": "proportion-guide-step-3",
+              "title": "Step 3",
+              "body": "Cross-multiply the proportion A/B = C/X."
+            },
+            {
+              "key": "proportion-guide-step-4",
+              "title": "Step 4",
+              "body": "Divide B × C by A to solve for X."
+            },
+            {
+              "key": "proportion-guide-step-5",
+              "title": "Step 5",
+              "body": "Reject a non-finite result and review the missing value."
+            }
+          ],
+          "sections": [
+            {
+              "key": "proportion-guide-section-1",
+              "heading": "Calculation method",
+              "body": "A/B = C/X; cross multiplication gives A × X = B × C, therefore X = (B × C)/A."
+            },
+            {
+              "key": "proportion-guide-section-2",
+              "heading": "Assumptions and limitations",
+              "body": "A and B must be positive; C must be non-negative. A cannot be zero because it is the divisor in the rearranged equation."
+            }
+          ]
+        }
       },
       "locales": {
         "hi": {
@@ -41825,15 +44027,180 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-record-complete",
+      "sourceTranslationStatus": "not-started",
+      "sourceCompletenessStatus": "complete"
     },
     {
       "id": "average",
       "source": {
         "title": "Average Calculator",
         "category": "Math & Statistics",
-        "subcategory": "Basic Math & Number Tools",
-        "file": "math-tools.js"
+        "subcategory": "Statistics & Data",
+        "file": "math-tools.js",
+        "description": "Calculate the arithmetic mean of three entered values.",
+        "inputs": [
+          {
+            "key": "a",
+            "label": "Value 1"
+          },
+          {
+            "key": "b",
+            "label": "Value 2"
+          },
+          {
+            "key": "c",
+            "label": "Value 3"
+          }
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "ARITHMETIC MEAN",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Number of values"
+            },
+            {
+              "key": "metric-2",
+              "label": "Sum"
+            }
+          ],
+          "breakdown": [
+            {
+              "key": "breakdown-1",
+              "label": "Number of values"
+            },
+            {
+              "key": "breakdown-2",
+              "label": "Sum"
+            }
+          ]
+        },
+        "explanations": {
+          "formula": "Arithmetic mean = (x₁ + x₂ + x₃) ÷ 3.",
+          "steps": [
+            "Enter the three finite values.",
+            "Add all entered values and check that the sum remains finite.",
+            "Divide the sum by the number of entered values (three).",
+            "Display the arithmetic mean, count and sum."
+          ],
+          "assumptions": [
+            "Each value must be finite.",
+            "This tool calculates the arithmetic mean of exactly three input values; it does not remove outliers or weight observations."
+          ],
+          "notes": [
+            "Calculated locally in the browser from user-entered values; inspect the result note and verify assumptions before relying on the estimate."
+          ],
+          "disclaimers": [
+            "This calculator is an informational estimate, not financial, tax, legal, accounting or investment advice."
+          ],
+          "limitations": [
+            "Each value must be finite.",
+            "This tool calculates the arithmetic mean of exactly three input values; it does not remove outliers or weight observations."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-average-1",
+            "question": "How is the mean calculated?",
+            "answer": "Add the values and divide by the number of values."
+          },
+          {
+            "key": "faq-average-2",
+            "question": "Does the mean use every value?",
+            "answer": "Yes, every entered value contributes to the result."
+          }
+        ],
+        "seo": {
+          "title": "Average Calculator | FinPulse Hub",
+          "metaDescription": "Calculate the arithmetic mean of three entered values.",
+          "h1": "Average Calculator",
+          "introduction": "Calculate the arithmetic mean of entered values.",
+          "faq": [
+            {
+              "key": "faq-average-1",
+              "question": "How is the mean calculated?",
+              "answer": "Add the values and divide by the number of values."
+            },
+            {
+              "key": "faq-average-2",
+              "question": "Does the mean use every value?",
+              "answer": "Yes, every entered value contributes to the result."
+            }
+          ]
+        },
+        "errors": [
+          {
+            "key": "invalid-number",
+            "message": "{field} must be a finite number.",
+            "recoveryHint": "Enter a valid finite number and try again."
+          },
+          {
+            "key": "overflow",
+            "message": "Average must be finite.",
+            "recoveryHint": "Use values whose combined arithmetic result stays within the supported numeric range."
+          }
+        ],
+        "accessibility": {
+          "pageLabel": "Average Calculator",
+          "formLabel": "Average Calculator calculator form",
+          "resultAnnouncement": "Calculation result for Average Calculator",
+          "chartLabel": "Chart showing ARITHMETIC MEAN for Average Calculator",
+          "controlLabels": [
+            {
+              "key": "a",
+              "label": "Value 1"
+            },
+            {
+              "key": "b",
+              "label": "Value 2"
+            },
+            {
+              "key": "c",
+              "label": "Value 3"
+            }
+          ]
+        },
+        "guide": {
+          "title": "Average Calculator Guide",
+          "introduction": "Calculate the arithmetic mean of entered values.",
+          "steps": [
+            {
+              "key": "average-guide-step-1",
+              "title": "Step 1",
+              "body": "Enter the three finite values."
+            },
+            {
+              "key": "average-guide-step-2",
+              "title": "Step 2",
+              "body": "Add all entered values and check that the sum remains finite."
+            },
+            {
+              "key": "average-guide-step-3",
+              "title": "Step 3",
+              "body": "Divide the sum by the number of entered values (three)."
+            },
+            {
+              "key": "average-guide-step-4",
+              "title": "Step 4",
+              "body": "Display the arithmetic mean, count and sum."
+            }
+          ],
+          "sections": [
+            {
+              "key": "average-guide-section-1",
+              "heading": "Calculation method",
+              "body": "Arithmetic mean = (x₁ + x₂ + x₃) ÷ 3."
+            },
+            {
+              "key": "average-guide-section-2",
+              "heading": "Assumptions and limitations",
+              "body": "Each value must be finite. This tool calculates the arithmetic mean of exactly three input values; it does not remove outliers or weight observations."
+            }
+          ]
+        }
       },
       "locales": {
         "hi": {
@@ -41860,15 +44227,178 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-record-complete",
+      "sourceTranslationStatus": "not-started",
+      "sourceCompletenessStatus": "complete"
     },
     {
       "id": "percentage-change",
       "source": {
         "title": "Percentage Change Calculator",
         "category": "Math & Statistics",
-        "subcategory": "Basic Math & Number Tools",
-        "file": "math-tools.js"
+        "subcategory": "Percentages",
+        "file": "math-tools.js",
+        "description": "Measure the percentage increase or decrease between two values.",
+        "inputs": [
+          {
+            "key": "old",
+            "label": "Original value"
+          },
+          {
+            "key": "new",
+            "label": "New value"
+          }
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "PERCENTAGE CHANGE",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Difference"
+            },
+            {
+              "key": "metric-2",
+              "label": "Original value"
+            }
+          ],
+          "breakdown": [
+            {
+              "key": "breakdown-1",
+              "label": "Difference"
+            },
+            {
+              "key": "breakdown-2",
+              "label": "Original value"
+            }
+          ]
+        },
+        "explanations": {
+          "formula": "Percentage change (%) = (new value − original value) ÷ |original value| × 100.",
+          "steps": [
+            "Enter the original value.",
+            "Enter the new value.",
+            "Subtract the original value from the new value.",
+            "Divide the difference by the absolute original value and multiply by 100.",
+            "Interpret a positive result as an increase and a negative result as a decrease."
+          ],
+          "assumptions": [
+            "Both inputs must be finite.",
+            "Percentage change is undefined when the original value is zero; the denominator uses the absolute original value."
+          ],
+          "notes": [
+            "Calculated locally in the browser from user-entered values; inspect the result note and verify assumptions before relying on the estimate."
+          ],
+          "disclaimers": [
+            "This calculator is an informational estimate, not financial, tax, legal, accounting or investment advice."
+          ],
+          "limitations": [
+            "Both inputs must be finite.",
+            "Percentage change is undefined when the original value is zero; the denominator uses the absolute original value."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-percentage-change-1",
+            "question": "What is the formula?",
+            "answer": "(New value − original value) ÷ absolute original value × 100."
+          },
+          {
+            "key": "faq-percentage-change-2",
+            "question": "What if the original value is zero?",
+            "answer": "Percentage change is undefined."
+          }
+        ],
+        "seo": {
+          "title": "Percentage Change Calculator | FinPulse Hub",
+          "metaDescription": "Measure the percentage increase or decrease between two values.",
+          "h1": "Percentage Change Calculator",
+          "introduction": "Calculate percentage change relative to the original value.",
+          "faq": [
+            {
+              "key": "faq-percentage-change-1",
+              "question": "What is the formula?",
+              "answer": "(New value − original value) ÷ absolute original value × 100."
+            },
+            {
+              "key": "faq-percentage-change-2",
+              "question": "What if the original value is zero?",
+              "answer": "Percentage change is undefined."
+            }
+          ]
+        },
+        "errors": [
+          {
+            "key": "invalid-number",
+            "message": "{field} must be a finite number.",
+            "recoveryHint": "Enter a valid finite number and try again."
+          },
+          {
+            "key": "zero-original",
+            "message": "Percentage change is undefined when the original value is zero.",
+            "recoveryHint": "Enter a non-zero original value."
+          }
+        ],
+        "accessibility": {
+          "pageLabel": "Percentage Change Calculator",
+          "formLabel": "Percentage Change Calculator calculator form",
+          "resultAnnouncement": "Calculation result for Percentage Change Calculator",
+          "chartLabel": "Chart showing PERCENTAGE CHANGE for Percentage Change Calculator",
+          "controlLabels": [
+            {
+              "key": "old",
+              "label": "Original value"
+            },
+            {
+              "key": "new",
+              "label": "New value"
+            }
+          ]
+        },
+        "guide": {
+          "title": "Percentage Change Calculator Guide",
+          "introduction": "Calculate percentage change relative to the original value.",
+          "steps": [
+            {
+              "key": "percentage-change-guide-step-1",
+              "title": "Step 1",
+              "body": "Enter the original value."
+            },
+            {
+              "key": "percentage-change-guide-step-2",
+              "title": "Step 2",
+              "body": "Enter the new value."
+            },
+            {
+              "key": "percentage-change-guide-step-3",
+              "title": "Step 3",
+              "body": "Subtract the original value from the new value."
+            },
+            {
+              "key": "percentage-change-guide-step-4",
+              "title": "Step 4",
+              "body": "Divide the difference by the absolute original value and multiply by 100."
+            },
+            {
+              "key": "percentage-change-guide-step-5",
+              "title": "Step 5",
+              "body": "Interpret a positive result as an increase and a negative result as a decrease."
+            }
+          ],
+          "sections": [
+            {
+              "key": "percentage-change-guide-section-1",
+              "heading": "Calculation method",
+              "body": "Percentage change (%) = (new value − original value) ÷ |original value| × 100."
+            },
+            {
+              "key": "percentage-change-guide-section-2",
+              "heading": "Assumptions and limitations",
+              "body": "Both inputs must be finite. Percentage change is undefined when the original value is zero; the denominator uses the absolute original value."
+            }
+          ]
+        }
       },
       "locales": {
         "hi": {
@@ -41895,15 +44425,178 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-record-complete",
+      "sourceTranslationStatus": "not-started",
+      "sourceCompletenessStatus": "complete"
     },
     {
       "id": "percent-error",
       "source": {
         "title": "Percent Error Calculator",
         "category": "Math & Statistics",
-        "subcategory": "Basic Math & Number Tools",
-        "file": "math-tools.js"
+        "subcategory": "Percentages",
+        "file": "math-tools.js",
+        "description": "Compare an observed value with an expected reference value.",
+        "inputs": [
+          {
+            "key": "actual",
+            "label": "Observed value"
+          },
+          {
+            "key": "expected",
+            "label": "Expected value"
+          }
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "ABSOLUTE PERCENT ERROR",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Absolute difference"
+            },
+            {
+              "key": "metric-2",
+              "label": "Expected value"
+            }
+          ],
+          "breakdown": [
+            {
+              "key": "breakdown-1",
+              "label": "Absolute difference"
+            },
+            {
+              "key": "breakdown-2",
+              "label": "Expected value"
+            }
+          ]
+        },
+        "explanations": {
+          "formula": "Absolute percent error (%) = |observed − expected| ÷ |expected| × 100.",
+          "steps": [
+            "Enter the observed value.",
+            "Enter the expected reference value.",
+            "Calculate the absolute difference between observed and expected values.",
+            "Divide the absolute difference by the absolute expected value and multiply by 100.",
+            "Review the absolute error percentage; direction is not reported."
+          ],
+          "assumptions": [
+            "Both inputs must be finite.",
+            "Expected value cannot be zero; the tool reports absolute error and does not indicate direction."
+          ],
+          "notes": [
+            "Calculated locally in the browser from user-entered values; inspect the result note and verify assumptions before relying on the estimate."
+          ],
+          "disclaimers": [
+            "This calculator is an informational estimate, not financial, tax, legal, accounting or investment advice."
+          ],
+          "limitations": [
+            "Both inputs must be finite.",
+            "Expected value cannot be zero; the tool reports absolute error and does not indicate direction."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-percent-error-1",
+            "question": "Does the result show direction?",
+            "answer": "No. This tool reports absolute percent error."
+          },
+          {
+            "key": "faq-percent-error-2",
+            "question": "Can expected value be zero?",
+            "answer": "No, the percentage denominator would be zero."
+          }
+        ],
+        "seo": {
+          "title": "Percent Error Calculator | FinPulse Hub",
+          "metaDescription": "Compare an observed value with an expected reference value.",
+          "h1": "Percent Error Calculator",
+          "introduction": "Measure the absolute difference as a percentage of the expected value.",
+          "faq": [
+            {
+              "key": "faq-percent-error-1",
+              "question": "Does the result show direction?",
+              "answer": "No. This tool reports absolute percent error."
+            },
+            {
+              "key": "faq-percent-error-2",
+              "question": "Can expected value be zero?",
+              "answer": "No, the percentage denominator would be zero."
+            }
+          ]
+        },
+        "errors": [
+          {
+            "key": "invalid-number",
+            "message": "{field} must be a finite number.",
+            "recoveryHint": "Enter a valid finite number and try again."
+          },
+          {
+            "key": "zero-expected",
+            "message": "Percent error is undefined when the expected value is zero.",
+            "recoveryHint": "Enter a non-zero expected reference value."
+          }
+        ],
+        "accessibility": {
+          "pageLabel": "Percent Error Calculator",
+          "formLabel": "Percent Error Calculator calculator form",
+          "resultAnnouncement": "Calculation result for Percent Error Calculator",
+          "chartLabel": "Chart showing ABSOLUTE PERCENT ERROR for Percent Error Calculator",
+          "controlLabels": [
+            {
+              "key": "actual",
+              "label": "Observed value"
+            },
+            {
+              "key": "expected",
+              "label": "Expected value"
+            }
+          ]
+        },
+        "guide": {
+          "title": "Percent Error Calculator Guide",
+          "introduction": "Measure the absolute difference as a percentage of the expected value.",
+          "steps": [
+            {
+              "key": "percent-error-guide-step-1",
+              "title": "Step 1",
+              "body": "Enter the observed value."
+            },
+            {
+              "key": "percent-error-guide-step-2",
+              "title": "Step 2",
+              "body": "Enter the expected reference value."
+            },
+            {
+              "key": "percent-error-guide-step-3",
+              "title": "Step 3",
+              "body": "Calculate the absolute difference between observed and expected values."
+            },
+            {
+              "key": "percent-error-guide-step-4",
+              "title": "Step 4",
+              "body": "Divide the absolute difference by the absolute expected value and multiply by 100."
+            },
+            {
+              "key": "percent-error-guide-step-5",
+              "title": "Step 5",
+              "body": "Review the absolute error percentage; direction is not reported."
+            }
+          ],
+          "sections": [
+            {
+              "key": "percent-error-guide-section-1",
+              "heading": "Calculation method",
+              "body": "Absolute percent error (%) = |observed − expected| ÷ |expected| × 100."
+            },
+            {
+              "key": "percent-error-guide-section-2",
+              "heading": "Assumptions and limitations",
+              "body": "Both inputs must be finite. Expected value cannot be zero; the tool reports absolute error and does not indicate direction."
+            }
+          ]
+        }
       },
       "locales": {
         "hi": {
@@ -41930,15 +44623,199 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-record-complete",
+      "sourceTranslationStatus": "not-started",
+      "sourceCompletenessStatus": "complete"
     },
     {
       "id": "rounding",
       "source": {
         "title": "Rounding Calculator",
         "category": "Math & Statistics",
-        "subcategory": "Basic Math & Number Tools",
-        "file": "math-tools.js"
+        "subcategory": "Number Formatting",
+        "file": "math-tools.js",
+        "description": "Round a number to selected decimal places and direction.",
+        "inputs": [
+          {
+            "key": "value",
+            "label": "Number"
+          },
+          {
+            "key": "places",
+            "label": "Decimal places"
+          },
+          {
+            "key": "mode",
+            "label": "Rounding method"
+          }
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "ROUNDED VALUE",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Original value"
+            },
+            {
+              "key": "metric-2",
+              "label": "Decimal places"
+            },
+            {
+              "key": "metric-3",
+              "label": "Method"
+            }
+          ],
+          "breakdown": [
+            {
+              "key": "breakdown-1",
+              "label": "Original value"
+            },
+            {
+              "key": "breakdown-2",
+              "label": "Decimal places"
+            },
+            {
+              "key": "breakdown-3",
+              "label": "Method"
+            }
+          ]
+        },
+        "explanations": {
+          "formula": "Scale = 10^places. Up mode = ceil(value × scale)/scale; down mode = floor(value × scale)/scale; nearest mode = round((value × scale) + EPSILON × sign(value))/scale.",
+          "steps": [
+            "Enter a finite number.",
+            "Choose an integer decimal-place count from 0 to 12.",
+            "Choose nearest, up or down rounding.",
+            "Scale the value, apply the selected rounding rule and scale back.",
+            "Review the rounded result and selected method."
+          ],
+          "assumptions": [
+            "Decimal places must be an integer from 0 to 12.",
+            "The selected mode must be nearest, up or down; scaled and final values must remain finite."
+          ],
+          "notes": [
+            "Calculated locally in the browser from user-entered values; inspect the result note and verify assumptions before relying on the estimate."
+          ],
+          "disclaimers": [
+            "This calculator is an informational estimate, not financial, tax, legal, accounting or investment advice."
+          ],
+          "limitations": [
+            "Decimal places must be an integer from 0 to 12.",
+            "The selected mode must be nearest, up or down; scaled and final values must remain finite."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-rounding-1",
+            "question": "What is nearest rounding?",
+            "answer": "It selects the nearest representable value at the chosen decimal precision."
+          },
+          {
+            "key": "faq-rounding-2",
+            "question": "How many places are supported?",
+            "answer": "From 0 to 12 decimal places."
+          }
+        ],
+        "seo": {
+          "title": "Rounding Calculator | FinPulse Hub",
+          "metaDescription": "Round a number to selected decimal places and direction.",
+          "h1": "Rounding Calculator",
+          "introduction": "Round a number using nearest, upward or downward rounding.",
+          "faq": [
+            {
+              "key": "faq-rounding-1",
+              "question": "What is nearest rounding?",
+              "answer": "It selects the nearest representable value at the chosen decimal precision."
+            },
+            {
+              "key": "faq-rounding-2",
+              "question": "How many places are supported?",
+              "answer": "From 0 to 12 decimal places."
+            }
+          ]
+        },
+        "errors": [
+          {
+            "key": "invalid-number",
+            "message": "{field} must be a finite number.",
+            "recoveryHint": "Enter a valid finite number and try again."
+          },
+          {
+            "key": "places",
+            "message": "Decimal places must be from 0 to 12.",
+            "recoveryHint": "Choose a whole-number decimal-place count from 0 through 12."
+          },
+          {
+            "key": "mode",
+            "message": "Choose a rounding mode.",
+            "recoveryHint": "Select nearest, up or down."
+          }
+        ],
+        "accessibility": {
+          "pageLabel": "Rounding Calculator",
+          "formLabel": "Rounding Calculator calculator form",
+          "resultAnnouncement": "Calculation result for Rounding Calculator",
+          "chartLabel": "Chart showing ROUNDED VALUE for Rounding Calculator",
+          "controlLabels": [
+            {
+              "key": "value",
+              "label": "Number"
+            },
+            {
+              "key": "places",
+              "label": "Decimal places"
+            },
+            {
+              "key": "mode",
+              "label": "Rounding method"
+            }
+          ]
+        },
+        "guide": {
+          "title": "Rounding Calculator Guide",
+          "introduction": "Round a number using nearest, upward or downward rounding.",
+          "steps": [
+            {
+              "key": "rounding-guide-step-1",
+              "title": "Step 1",
+              "body": "Enter a finite number."
+            },
+            {
+              "key": "rounding-guide-step-2",
+              "title": "Step 2",
+              "body": "Choose an integer decimal-place count from 0 to 12."
+            },
+            {
+              "key": "rounding-guide-step-3",
+              "title": "Step 3",
+              "body": "Choose nearest, up or down rounding."
+            },
+            {
+              "key": "rounding-guide-step-4",
+              "title": "Step 4",
+              "body": "Scale the value, apply the selected rounding rule and scale back."
+            },
+            {
+              "key": "rounding-guide-step-5",
+              "title": "Step 5",
+              "body": "Review the rounded result and selected method."
+            }
+          ],
+          "sections": [
+            {
+              "key": "rounding-guide-section-1",
+              "heading": "Calculation method",
+              "body": "Scale = 10^places. Up mode = ceil(value × scale)/scale; down mode = floor(value × scale)/scale; nearest mode = round((value × scale) + EPSILON × sign(value))/scale."
+            },
+            {
+              "key": "rounding-guide-section-2",
+              "heading": "Assumptions and limitations",
+              "body": "Decimal places must be an integer from 0 to 12. The selected mode must be nearest, up or down; scaled and final values must remain finite."
+            }
+          ]
+        }
       },
       "locales": {
         "hi": {
@@ -41965,15 +44842,178 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-record-complete",
+      "sourceTranslationStatus": "not-started",
+      "sourceCompletenessStatus": "complete"
     },
     {
       "id": "significant-figures",
       "source": {
         "title": "Significant Figures Calculator",
         "category": "Math & Statistics",
-        "subcategory": "Basic Math & Number Tools",
-        "file": "math-tools.js"
+        "subcategory": "Number Formatting",
+        "file": "math-tools.js",
+        "description": "Round a value to a chosen number of significant figures.",
+        "inputs": [
+          {
+            "key": "value",
+            "label": "Number"
+          },
+          {
+            "key": "figures",
+            "label": "Significant figures"
+          }
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "ROUNDED VALUE",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Original"
+            },
+            {
+              "key": "metric-2",
+              "label": "Significant figures"
+            }
+          ],
+          "breakdown": [
+            {
+              "key": "breakdown-1",
+              "label": "Original"
+            },
+            {
+              "key": "breakdown-2",
+              "label": "Significant figures"
+            }
+          ]
+        },
+        "explanations": {
+          "formula": "For non-zero x, rounded value = Number(x.toPrecision(significant figures)); zero remains zero.",
+          "steps": [
+            "Enter a finite value.",
+            "Choose an integer precision from 1 to 15 significant figures.",
+            "For non-zero values, round using the requested significant-digit precision.",
+            "Convert the precision result back to a number; preserve zero as zero.",
+            "Review the rounded value and requested significant figures."
+          ],
+          "assumptions": [
+            "Significant figures must be an integer from 1 to 15.",
+            "The displayed result is numeric; trailing zero formatting is not preserved as textual precision."
+          ],
+          "notes": [
+            "Calculated locally in the browser from user-entered values; inspect the result note and verify assumptions before relying on the estimate."
+          ],
+          "disclaimers": [
+            "This calculator is an informational estimate, not financial, tax, legal, accounting or investment advice."
+          ],
+          "limitations": [
+            "Significant figures must be an integer from 1 to 15.",
+            "The displayed result is numeric; trailing zero formatting is not preserved as textual precision."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-significant-figures-1",
+            "question": "What are significant figures?",
+            "answer": "They are the digits that convey the precision of a measured or calculated value."
+          },
+          {
+            "key": "faq-significant-figures-2",
+            "question": "What range is supported?",
+            "answer": "1 to 15 significant figures."
+          }
+        ],
+        "seo": {
+          "title": "Significant Figures Calculator | FinPulse Hub",
+          "metaDescription": "Round a value to a chosen number of significant figures.",
+          "h1": "Significant Figures Calculator",
+          "introduction": "Round a number while retaining the requested significant digits.",
+          "faq": [
+            {
+              "key": "faq-significant-figures-1",
+              "question": "What are significant figures?",
+              "answer": "They are the digits that convey the precision of a measured or calculated value."
+            },
+            {
+              "key": "faq-significant-figures-2",
+              "question": "What range is supported?",
+              "answer": "1 to 15 significant figures."
+            }
+          ]
+        },
+        "errors": [
+          {
+            "key": "invalid-number",
+            "message": "{field} must be a finite number.",
+            "recoveryHint": "Enter a valid finite number and try again."
+          },
+          {
+            "key": "figures",
+            "message": "Significant figures must be from 1 to 15.",
+            "recoveryHint": "Choose a whole-number precision from 1 through 15."
+          }
+        ],
+        "accessibility": {
+          "pageLabel": "Significant Figures Calculator",
+          "formLabel": "Significant Figures Calculator calculator form",
+          "resultAnnouncement": "Calculation result for Significant Figures Calculator",
+          "chartLabel": "Chart showing ROUNDED VALUE for Significant Figures Calculator",
+          "controlLabels": [
+            {
+              "key": "value",
+              "label": "Number"
+            },
+            {
+              "key": "figures",
+              "label": "Significant figures"
+            }
+          ]
+        },
+        "guide": {
+          "title": "Significant Figures Calculator Guide",
+          "introduction": "Round a number while retaining the requested significant digits.",
+          "steps": [
+            {
+              "key": "significant-figures-guide-step-1",
+              "title": "Step 1",
+              "body": "Enter a finite value."
+            },
+            {
+              "key": "significant-figures-guide-step-2",
+              "title": "Step 2",
+              "body": "Choose an integer precision from 1 to 15 significant figures."
+            },
+            {
+              "key": "significant-figures-guide-step-3",
+              "title": "Step 3",
+              "body": "For non-zero values, round using the requested significant-digit precision."
+            },
+            {
+              "key": "significant-figures-guide-step-4",
+              "title": "Step 4",
+              "body": "Convert the precision result back to a number; preserve zero as zero."
+            },
+            {
+              "key": "significant-figures-guide-step-5",
+              "title": "Step 5",
+              "body": "Review the rounded value and requested significant figures."
+            }
+          ],
+          "sections": [
+            {
+              "key": "significant-figures-guide-section-1",
+              "heading": "Calculation method",
+              "body": "For non-zero x, rounded value = Number(x.toPrecision(significant figures)); zero remains zero."
+            },
+            {
+              "key": "significant-figures-guide-section-2",
+              "heading": "Assumptions and limitations",
+              "body": "Significant figures must be an integer from 1 to 15. The displayed result is numeric; trailing zero formatting is not preserved as textual precision."
+            }
+          ]
+        }
       },
       "locales": {
         "hi": {
@@ -42000,15 +45040,172 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-record-complete",
+      "sourceTranslationStatus": "not-started",
+      "sourceCompletenessStatus": "complete"
     },
     {
       "id": "scientific-notation",
       "source": {
         "title": "Scientific Notation Converter",
         "category": "Math & Statistics",
-        "subcategory": "Basic Math & Number Tools",
-        "file": "math-tools.js"
+        "subcategory": "Number Formatting",
+        "file": "math-tools.js",
+        "description": "Express a number in normalized scientific notation.",
+        "inputs": [
+          {
+            "key": "value",
+            "label": "Number"
+          },
+          {
+            "key": "figures",
+            "label": "Significant figures"
+          }
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "SCIENTIFIC NOTATION",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Decimal form"
+            },
+            {
+              "key": "metric-2",
+              "label": "Significant figures"
+            }
+          ],
+          "breakdown": [
+            {
+              "key": "breakdown-1",
+              "label": "Decimal form"
+            },
+            {
+              "key": "breakdown-2",
+              "label": "Significant figures"
+            }
+          ]
+        },
+        "explanations": {
+          "formula": "Scientific notation = value.toExponential(significant figures − 1), with the requested significant figures from 1 to 15.",
+          "steps": [
+            "Enter a finite number.",
+            "Choose an integer precision from 1 to 15 significant figures.",
+            "Convert the number to exponential notation with precision minus one digits after the coefficient's leading digit.",
+            "Review the coefficient, exponent and decimal-form reference."
+          ],
+          "assumptions": [
+            "Value must be finite; significant figures must be an integer from 1 to 15.",
+            "Negative and zero values are supported; output formatting follows JavaScript exponential notation."
+          ],
+          "notes": [
+            "Calculated locally in the browser from user-entered values; inspect the result note and verify assumptions before relying on the estimate."
+          ],
+          "disclaimers": [
+            "This calculator is an informational estimate, not financial, tax, legal, accounting or investment advice."
+          ],
+          "limitations": [
+            "Value must be finite; significant figures must be an integer from 1 to 15.",
+            "Negative and zero values are supported; output formatting follows JavaScript exponential notation."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-scientific-notation-1",
+            "question": "What is scientific notation?",
+            "answer": "A number written as a coefficient multiplied by a power of ten."
+          },
+          {
+            "key": "faq-scientific-notation-2",
+            "question": "Can negative values be converted?",
+            "answer": "Yes, the converter supports signed values."
+          }
+        ],
+        "seo": {
+          "title": "Scientific Notation Converter | FinPulse Hub",
+          "metaDescription": "Express a number in normalized scientific notation.",
+          "h1": "Scientific Notation Converter",
+          "introduction": "Convert a number to scientific notation.",
+          "faq": [
+            {
+              "key": "faq-scientific-notation-1",
+              "question": "What is scientific notation?",
+              "answer": "A number written as a coefficient multiplied by a power of ten."
+            },
+            {
+              "key": "faq-scientific-notation-2",
+              "question": "Can negative values be converted?",
+              "answer": "Yes, the converter supports signed values."
+            }
+          ]
+        },
+        "errors": [
+          {
+            "key": "invalid-number",
+            "message": "{field} must be a finite number.",
+            "recoveryHint": "Enter a valid finite number and try again."
+          },
+          {
+            "key": "figures",
+            "message": "Significant figures must be from 1 to 15.",
+            "recoveryHint": "Choose a whole-number precision from 1 through 15."
+          }
+        ],
+        "accessibility": {
+          "pageLabel": "Scientific Notation Converter",
+          "formLabel": "Scientific Notation Converter calculator form",
+          "resultAnnouncement": "Calculation result for Scientific Notation Converter",
+          "chartLabel": "Chart showing SCIENTIFIC NOTATION for Scientific Notation Converter",
+          "controlLabels": [
+            {
+              "key": "value",
+              "label": "Number"
+            },
+            {
+              "key": "figures",
+              "label": "Significant figures"
+            }
+          ]
+        },
+        "guide": {
+          "title": "Scientific Notation Converter Guide",
+          "introduction": "Convert a number to scientific notation.",
+          "steps": [
+            {
+              "key": "scientific-notation-guide-step-1",
+              "title": "Step 1",
+              "body": "Enter a finite number."
+            },
+            {
+              "key": "scientific-notation-guide-step-2",
+              "title": "Step 2",
+              "body": "Choose an integer precision from 1 to 15 significant figures."
+            },
+            {
+              "key": "scientific-notation-guide-step-3",
+              "title": "Step 3",
+              "body": "Convert the number to exponential notation with precision minus one digits after the coefficient's leading digit."
+            },
+            {
+              "key": "scientific-notation-guide-step-4",
+              "title": "Step 4",
+              "body": "Review the coefficient, exponent and decimal-form reference."
+            }
+          ],
+          "sections": [
+            {
+              "key": "scientific-notation-guide-section-1",
+              "heading": "Calculation method",
+              "body": "Scientific notation = value.toExponential(significant figures − 1), with the requested significant figures from 1 to 15."
+            },
+            {
+              "key": "scientific-notation-guide-section-2",
+              "heading": "Assumptions and limitations",
+              "body": "Value must be finite; significant figures must be an integer from 1 to 15. Negative and zero values are supported; output formatting follows JavaScript exponential notation."
+            }
+          ]
+        }
       },
       "locales": {
         "hi": {
@@ -42035,15 +45232,178 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-record-complete",
+      "sourceTranslationStatus": "not-started",
+      "sourceCompletenessStatus": "complete"
     },
     {
       "id": "exponent",
       "source": {
         "title": "Exponent Calculator",
         "category": "Math & Statistics",
-        "subcategory": "Advanced Math & Number Theory",
-        "file": "math-tools.js"
+        "subcategory": "Powers & Roots",
+        "file": "math-tools.js",
+        "description": "Raise a base number to a selected exponent.",
+        "inputs": [
+          {
+            "key": "base",
+            "label": "Base"
+          },
+          {
+            "key": "exponent",
+            "label": "Exponent"
+          }
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "POWER RESULT",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Base"
+            },
+            {
+              "key": "metric-2",
+              "label": "Exponent"
+            }
+          ],
+          "breakdown": [
+            {
+              "key": "breakdown-1",
+              "label": "Base"
+            },
+            {
+              "key": "breakdown-2",
+              "label": "Exponent"
+            }
+          ]
+        },
+        "explanations": {
+          "formula": "Result = base^exponent using JavaScript real-number exponentiation; non-finite results are rejected.",
+          "steps": [
+            "Enter a finite base.",
+            "Enter a finite exponent.",
+            "Evaluate base raised to the exponent.",
+            "Reject overflow or any result that is not finite.",
+            "Review the power result and its base and exponent."
+          ],
+          "assumptions": [
+            "Base and exponent must be finite numbers.",
+            "Some negative-base fractional exponents are not real; overflow and non-finite results are rejected."
+          ],
+          "notes": [
+            "Calculated locally in the browser from user-entered values; inspect the result note and verify assumptions before relying on the estimate."
+          ],
+          "disclaimers": [
+            "This calculator is an informational estimate, not financial, tax, legal, accounting or investment advice."
+          ],
+          "limitations": [
+            "Base and exponent must be finite numbers.",
+            "Some negative-base fractional exponents are not real; overflow and non-finite results are rejected."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-exponent-1",
+            "question": "What does an exponent mean?",
+            "answer": "It indicates how many times a base is multiplied by itself for positive whole-number exponents."
+          },
+          {
+            "key": "faq-exponent-2",
+            "question": "Are all results supported?",
+            "answer": "Results outside JavaScript's finite numeric range are rejected."
+          }
+        ],
+        "seo": {
+          "title": "Exponent Calculator | FinPulse Hub",
+          "metaDescription": "Raise a base number to a selected exponent.",
+          "h1": "Exponent Calculator",
+          "introduction": "Calculate a base raised to an exponent.",
+          "faq": [
+            {
+              "key": "faq-exponent-1",
+              "question": "What does an exponent mean?",
+              "answer": "It indicates how many times a base is multiplied by itself for positive whole-number exponents."
+            },
+            {
+              "key": "faq-exponent-2",
+              "question": "Are all results supported?",
+              "answer": "Results outside JavaScript's finite numeric range are rejected."
+            }
+          ]
+        },
+        "errors": [
+          {
+            "key": "invalid-number",
+            "message": "{field} must be a finite number.",
+            "recoveryHint": "Enter a valid finite number and try again."
+          },
+          {
+            "key": "range",
+            "message": "Result is outside the supported numeric range.",
+            "recoveryHint": "Use a base and exponent whose real-number result remains finite."
+          }
+        ],
+        "accessibility": {
+          "pageLabel": "Exponent Calculator",
+          "formLabel": "Exponent Calculator calculator form",
+          "resultAnnouncement": "Calculation result for Exponent Calculator",
+          "chartLabel": "Chart showing POWER RESULT for Exponent Calculator",
+          "controlLabels": [
+            {
+              "key": "base",
+              "label": "Base"
+            },
+            {
+              "key": "exponent",
+              "label": "Exponent"
+            }
+          ]
+        },
+        "guide": {
+          "title": "Exponent Calculator Guide",
+          "introduction": "Calculate a base raised to an exponent.",
+          "steps": [
+            {
+              "key": "exponent-guide-step-1",
+              "title": "Step 1",
+              "body": "Enter a finite base."
+            },
+            {
+              "key": "exponent-guide-step-2",
+              "title": "Step 2",
+              "body": "Enter a finite exponent."
+            },
+            {
+              "key": "exponent-guide-step-3",
+              "title": "Step 3",
+              "body": "Evaluate base raised to the exponent."
+            },
+            {
+              "key": "exponent-guide-step-4",
+              "title": "Step 4",
+              "body": "Reject overflow or any result that is not finite."
+            },
+            {
+              "key": "exponent-guide-step-5",
+              "title": "Step 5",
+              "body": "Review the power result and its base and exponent."
+            }
+          ],
+          "sections": [
+            {
+              "key": "exponent-guide-section-1",
+              "heading": "Calculation method",
+              "body": "Result = base^exponent using JavaScript real-number exponentiation; non-finite results are rejected."
+            },
+            {
+              "key": "exponent-guide-section-2",
+              "heading": "Assumptions and limitations",
+              "body": "Base and exponent must be finite numbers. Some negative-base fractional exponents are not real; overflow and non-finite results are rejected."
+            }
+          ]
+        }
       },
       "locales": {
         "hi": {
@@ -42070,15 +45430,164 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-record-complete",
+      "sourceTranslationStatus": "not-started",
+      "sourceCompletenessStatus": "complete"
     },
     {
       "id": "square-root",
       "source": {
         "title": "Square Root Calculator",
         "category": "Math & Statistics",
-        "subcategory": "Advanced Math & Number Theory",
-        "file": "math-tools.js"
+        "subcategory": "Powers & Roots",
+        "file": "math-tools.js",
+        "description": "Calculate the principal square root of a non-negative value.",
+        "inputs": [
+          {
+            "key": "value",
+            "label": "Number"
+          }
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "SQUARE ROOT",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Original number"
+            },
+            {
+              "key": "metric-2",
+              "label": "Check (root squared)"
+            }
+          ],
+          "breakdown": [
+            {
+              "key": "breakdown-1",
+              "label": "Original number"
+            },
+            {
+              "key": "breakdown-2",
+              "label": "Square root"
+            }
+          ]
+        },
+        "explanations": {
+          "formula": "Principal square root = √x for x ≥ 0, evaluated by the nth-root function with n = 2.",
+          "steps": [
+            "Enter a finite non-negative radicand.",
+            "Reject negative values because their square roots are not real numbers.",
+            "Calculate the principal square root.",
+            "Review the root and original number."
+          ],
+          "assumptions": [
+            "Input must be finite and non-negative.",
+            "Only real principal square roots are returned; negative inputs are rejected."
+          ],
+          "notes": [
+            "Calculated locally in the browser from user-entered values; inspect the result note and verify assumptions before relying on the estimate."
+          ],
+          "disclaimers": [
+            "This calculator is an informational estimate, not financial, tax, legal, accounting or investment advice."
+          ],
+          "limitations": [
+            "Input must be finite and non-negative.",
+            "Only real principal square roots are returned; negative inputs are rejected."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-square-root-1",
+            "question": "What is a square root?",
+            "answer": "A value which, when multiplied by itself, gives the original number."
+          },
+          {
+            "key": "faq-square-root-2",
+            "question": "Are negative inputs accepted?",
+            "answer": "No, this calculator returns real square roots only."
+          }
+        ],
+        "seo": {
+          "title": "Square Root Calculator | FinPulse Hub",
+          "metaDescription": "Calculate the principal square root of a non-negative value.",
+          "h1": "Square Root Calculator",
+          "introduction": "Calculate the principal square root of a number.",
+          "faq": [
+            {
+              "key": "faq-square-root-1",
+              "question": "What is a square root?",
+              "answer": "A value which, when multiplied by itself, gives the original number."
+            },
+            {
+              "key": "faq-square-root-2",
+              "question": "Are negative inputs accepted?",
+              "answer": "No, this calculator returns real square roots only."
+            }
+          ]
+        },
+        "errors": [
+          {
+            "key": "invalid-number",
+            "message": "{field} must be a finite number.",
+            "recoveryHint": "Enter a valid finite number and try again."
+          },
+          {
+            "key": "negative",
+            "message": "Even root of a negative number is not real.",
+            "recoveryHint": "Enter zero or a positive number for a real square root."
+          }
+        ],
+        "accessibility": {
+          "pageLabel": "Square Root Calculator",
+          "formLabel": "Square Root Calculator calculator form",
+          "resultAnnouncement": "Calculation result for Square Root Calculator",
+          "chartLabel": "Chart showing SQUARE ROOT for Square Root Calculator",
+          "controlLabels": [
+            {
+              "key": "value",
+              "label": "Number"
+            }
+          ]
+        },
+        "guide": {
+          "title": "Square Root Calculator Guide",
+          "introduction": "Calculate the principal square root of a number.",
+          "steps": [
+            {
+              "key": "square-root-guide-step-1",
+              "title": "Step 1",
+              "body": "Enter a finite non-negative radicand."
+            },
+            {
+              "key": "square-root-guide-step-2",
+              "title": "Step 2",
+              "body": "Reject negative values because their square roots are not real numbers."
+            },
+            {
+              "key": "square-root-guide-step-3",
+              "title": "Step 3",
+              "body": "Calculate the principal square root."
+            },
+            {
+              "key": "square-root-guide-step-4",
+              "title": "Step 4",
+              "body": "Review the root and original number."
+            }
+          ],
+          "sections": [
+            {
+              "key": "square-root-guide-section-1",
+              "heading": "Calculation method",
+              "body": "Principal square root = √x for x ≥ 0, evaluated by the nth-root function with n = 2."
+            },
+            {
+              "key": "square-root-guide-section-2",
+              "heading": "Assumptions and limitations",
+              "body": "Input must be finite and non-negative. Only real principal square roots are returned; negative inputs are rejected."
+            }
+          ]
+        }
       },
       "locales": {
         "hi": {
@@ -42105,15 +45614,154 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-record-complete",
+      "sourceTranslationStatus": "not-started",
+      "sourceCompletenessStatus": "complete"
     },
     {
       "id": "cube-root",
       "source": {
         "title": "Cube Root Calculator",
         "category": "Math & Statistics",
-        "subcategory": "Advanced Math & Number Theory",
-        "file": "math-tools.js"
+        "subcategory": "Powers & Roots",
+        "file": "math-tools.js",
+        "description": "Calculate the real cube root of a value.",
+        "inputs": [
+          {
+            "key": "value",
+            "label": "Number"
+          }
+        ],
+        "results": {
+          "heading": "RESULT",
+          "summary": "CUBE ROOT",
+          "metrics": [
+            {
+              "key": "metric-1",
+              "label": "Original number"
+            }
+          ],
+          "breakdown": [
+            {
+              "key": "breakdown-1",
+              "label": "Original number"
+            },
+            {
+              "key": "breakdown-2",
+              "label": "Cube root"
+            }
+          ]
+        },
+        "explanations": {
+          "formula": "Real cube root = sign(x) × |x|^(1/3); negative inputs are supported because the root index is odd.",
+          "steps": [
+            "Enter a finite number; positive, zero and negative values are accepted.",
+            "Calculate the real cube root while preserving the sign of a negative input.",
+            "Review the cube root and original number."
+          ],
+          "assumptions": [
+            "Input must be finite.",
+            "Negative inputs are valid for odd roots; non-finite results are rejected."
+          ],
+          "notes": [
+            "Calculated locally in the browser from user-entered values; inspect the result note and verify assumptions before relying on the estimate."
+          ],
+          "disclaimers": [
+            "This calculator is an informational estimate, not financial, tax, legal, accounting or investment advice."
+          ],
+          "limitations": [
+            "Input must be finite.",
+            "Negative inputs are valid for odd roots; non-finite results are rejected."
+          ]
+        },
+        "faqs": [
+          {
+            "key": "faq-cube-root-1",
+            "question": "Can the input be negative?",
+            "answer": "Yes, odd roots of negative values are real."
+          },
+          {
+            "key": "faq-cube-root-2",
+            "question": "What is the cube root of 125?",
+            "answer": "It is 5 because 5 × 5 × 5 = 125."
+          }
+        ],
+        "seo": {
+          "title": "Cube Root Calculator | FinPulse Hub",
+          "metaDescription": "Calculate the real cube root of a value.",
+          "h1": "Cube Root Calculator",
+          "introduction": "Calculate the real cube root of a number.",
+          "faq": [
+            {
+              "key": "faq-cube-root-1",
+              "question": "Can the input be negative?",
+              "answer": "Yes, odd roots of negative values are real."
+            },
+            {
+              "key": "faq-cube-root-2",
+              "question": "What is the cube root of 125?",
+              "answer": "It is 5 because 5 × 5 × 5 = 125."
+            }
+          ]
+        },
+        "errors": [
+          {
+            "key": "invalid-number",
+            "message": "{field} must be a finite number.",
+            "recoveryHint": "Enter a valid finite number and try again."
+          },
+          {
+            "key": "range",
+            "message": "Root result must be finite.",
+            "recoveryHint": "Use an input whose cube root remains within the finite numeric range."
+          }
+        ],
+        "accessibility": {
+          "pageLabel": "Cube Root Calculator",
+          "formLabel": "Cube Root Calculator calculator form",
+          "resultAnnouncement": "Calculation result for Cube Root Calculator",
+          "chartLabel": "Chart showing CUBE ROOT for Cube Root Calculator",
+          "controlLabels": [
+            {
+              "key": "value",
+              "label": "Number"
+            }
+          ]
+        },
+        "guide": {
+          "title": "Cube Root Calculator Guide",
+          "introduction": "Calculate the real cube root of a number.",
+          "steps": [
+            {
+              "key": "cube-root-guide-step-1",
+              "title": "Step 1",
+              "body": "Enter a finite number; positive, zero and negative values are accepted."
+            },
+            {
+              "key": "cube-root-guide-step-2",
+              "title": "Step 2",
+              "body": "Calculate the real cube root while preserving the sign of a negative input."
+            },
+            {
+              "key": "cube-root-guide-step-3",
+              "title": "Step 3",
+              "body": "Review the cube root and original number."
+            }
+          ],
+          "sections": [
+            {
+              "key": "cube-root-guide-section-1",
+              "heading": "Calculation method",
+              "body": "Real cube root = sign(x) × |x|^(1/3); negative inputs are supported because the root index is odd."
+            },
+            {
+              "key": "cube-root-guide-section-2",
+              "heading": "Assumptions and limitations",
+              "body": "Input must be finite. Negative inputs are valid for odd roots; non-finite results are rejected."
+            }
+          ]
+        }
       },
       "locales": {
         "hi": {
@@ -42140,7 +45788,10 @@
           "status": "not-started",
           "fields": {}
         }
-      }
+      },
+      "sourceExtractionStatus": "source-record-complete",
+      "sourceTranslationStatus": "not-started",
+      "sourceCompletenessStatus": "complete"
     },
     {
       "id": "nth-root",
