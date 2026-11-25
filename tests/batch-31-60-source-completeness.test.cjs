@@ -51,7 +51,43 @@ test("Batch 31-60 source records include every required editorial content group"
   }
 });
 
-test("Batch 31-60 keeps all six locale records as unactivated empty drafts", () => {
+test("Batch 31-60 locale inventory preserves draft-only translation activation boundary", () => {
+  for (const tool of content.tools.slice(30, 60)) {
+    assert.deepEqual(Object.keys(tool.locales).sort(), locales.slice().sort(), tool.id + " locale inventory");
+    if (tool.id === "paycheck") {
+      assert.equal(tool.sourceTranslationStatus, "draft", tool.id + " translation status");
+      for (const locale of locales) {
+        assert.equal(tool.locales[locale].status, "draft", tool.id + "/" + locale);
+        assert.ok(Object.keys(tool.locales[locale].fields).length >= 9, tool.id + "/" + locale + " translated content groups");
+      }
+    } else {
+      assert.equal(tool.sourceTranslationStatus, "not-started", tool.id + " translation status");
+      for (const locale of locales) {
+        assert.equal(tool.locales[locale].status, "not-started", tool.id + "/" + locale);
+        assert.deepEqual(tool.locales[locale].fields, {}, tool.id + "/" + locale + " fields remain empty");
+      }
+    }
+  }
+});
+
+test("Paycheck translation drafts preserve all stable keys, placeholders and formula source", () => {
+  const tool = content.tools.find(item => item.id === "paycheck");
+  const locales = ["hi", "ar", "ur", "zh-CN", "ja", "ru"];
+  const source = tool.source;
+  const keys = group => group.map(item => item.key);
+  for (const locale of locales) {
+    const fields = tool.locales[locale].fields;
+    assert.deepEqual(keys(fields.inputs), keys(source.inputs), locale + " input keys");
+    assert.deepEqual(keys(fields.results.metrics), keys(source.results.metrics), locale + " metric keys");
+    assert.deepEqual(keys(fields.results.breakdown), keys(source.results.breakdown), locale + " breakdown keys");
+    assert.deepEqual(keys(fields.faqs), keys(source.faqs), locale + " FAQ keys");
+    assert.deepEqual(keys(fields.seo.faq), keys(source.seo.faq), locale + " SEO FAQ keys");
+    assert.deepEqual(keys(fields.errors), keys(source.errors), locale + " error keys");
+    assert.deepEqual(keys(fields.guide.steps), keys(source.guide.steps), locale + " guide step keys");
+    assert.deepEqual(keys(fields.guide.sections), keys(source.guide.sections), locale + " guide section keys");
+    assert.deepEqual(keys(fields.accessibility.controlLabels), keys(source.inputs), locale + " accessibility input keys");
+    const serialized = JSON.stringify(fields);
+    for (const token of ["{field}"]) assert.equal((serialized.match(new RegExp(token.replace(/[.*+?^${}()|[\\]\\\\]/g, "\\\\test("Batch 31-60 keeps all six locale records as unactivated empty drafts", () => {
   for (const tool of content.tools.slice(30, 60)) {
     assert.deepEqual(Object.keys(tool.locales).sort(), locales.slice().sort(), tool.id + " locale inventory");
     assert.equal(tool.sourceTranslationStatus, "not-started", tool.id + " translation status");
@@ -60,6 +96,10 @@ test("Batch 31-60 keeps all six locale records as unactivated empty drafts", () 
       assert.deepEqual(tool.locales[locale].fields, {}, tool.id + "/" + locale + " fields remain empty");
     }
   }
+});"), "g")) || []).length, 4, locale + " placeholder " + token);
+    assert.equal(tool.locales[locale].status, "draft");
+  }
+  assert.equal(tool.source.explanations.formula, source.explanations.formula, "English formula source remains unchanged");
 });
 
 test("Batch 31-60 source records do not redefine stable tool IDs or numeric runtime data", () => {
