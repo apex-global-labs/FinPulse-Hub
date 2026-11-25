@@ -270,3 +270,13 @@ The dedicated branch adds five Developer wrap-up tools, twelve Education & Study
 - Added Overtime to six-locale browser/RTL-LTR tests and Batch 31–60 draft-boundary regression tests.
 - Candidate head `45d1c7c2d7602c0f4372ff68c1464dd04de81742`: Finance CI #875 passed (346/346 Node tests, API 1/1, browser 31/31); Candidate Lighthouse/CLS #520 passed (four routes, all CLS ≤ 0.10). Artifacts: browser `15009504709`; Lighthouse `15010098049`.
 - Batch 31–60 translation progress: **3/30** (paycheck, payroll, overtime); 27 remain. PR #73 remains Draft/unmerged. No activation, merge or production deployment.
+
+
+## Discount translation draft — 2026-11-25
+
+- Discount source and calculation reviewed against `app.js` and `finance-core.js` `discountCalculator`: first discount, then coupon on remaining price, tax on the discounted subtotal, then shipping.
+- Six locale drafts (`hi`, `ar`, `ur`, `zh-CN`, `ja`, `ru`) completed for metadata, inputs, results, explanations, errors, FAQs, guide, SEO and accessibility. Stable keys and `{field}` placeholders preserved; exact English formula remains in the guide calculation-method section.
+- All locale records remain `draft`; no formula/runtime/numeric/currency/tax data changed. English fallback remains active.
+- Discount added to source-completeness, draft-boundary, stable-key/token/formula and seven-locale browser/RTL-LTR tests.
+- Candidate commit `1f9747e54a4f43542ffda96715063d2a24eb2ad0`; fresh CI and Lighthouse/CLS verification pending.
+- Batch 31–60 translation progress: **4/30**; 26 remain. PR #73 remains Draft/unmerged; no activation, merge or deployment.
