@@ -168,7 +168,13 @@ test("Batch 2 plus Overtime pilot tools × 6 locales render persisted translatio
      await page.locator("#form").evaluate(form=>form.requestSubmit());
      await page.waitForFunction(expected=>document.querySelector(".result .sub")?.textContent===expected,percentageError.message+" "+percentageError.recoveryHint);
      assert.equal(await page.locator(".result .sub").innerText(),percentageError.message+" "+percentageError.recoveryHint,id+" / "+locale+" localized percentage-limit error and recovery");
+     const rateError=fields.errors.find(item=>item.key==="rate");
      await page.locator("#f-aMarkup").fill("2");
+     await page.locator("#f-rate").fill("0");
+     await page.locator("#form").evaluate(form=>form.requestSubmit());
+     await page.waitForFunction(expected=>document.querySelector(".result .sub")?.textContent===expected,rateError.message+" "+rateError.recoveryHint);
+     assert.equal(await page.locator(".result .sub").innerText(),rateError.message+" "+rateError.recoveryHint,id+" / "+locale+" localized rate error and recovery");
+     await page.locator("#f-rate").fill("1.08");
      await page.locator("#form").evaluate(form=>form.requestSubmit());
      await page.waitForFunction(()=>{const value=document.querySelector(".result .value")?.textContent?.trim();return value&&value!=="—"});
     }
