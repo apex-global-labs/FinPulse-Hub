@@ -178,6 +178,20 @@ test("Batch 2 plus Overtime pilot tools × 6 locales render persisted translatio
      await page.waitForFunction(expected=>document.querySelector(".result .sub")?.textContent===expected,rateError.message+" "+rateError.recoveryHint);
      assert.equal(await page.locator(".result .sub").innerText(),rateError.message+" "+rateError.recoveryHint,id+" / "+locale+" localized rate error and recovery");
      await page.locator("#f-rate").fill("1.08");
+     const amountLabel=fields.inputs.find(item=>item.key==="amount").label;
+     const negativeError=fields.errors.find(item=>item.key==="negative");
+     await page.locator("#f-amount").fill("-1");
+     await page.locator("#form").evaluate(form=>form.requestSubmit());
+     const expectedNegative=negativeError.message.replaceAll("{field}",amountLabel)+" "+negativeError.recoveryHint;
+     await page.waitForFunction(expected=>document.querySelector(".result .sub")?.textContent===expected,expectedNegative);
+     assert.equal(await page.locator(".result .sub").innerText(),expectedNegative,id+" / "+locale+" localized negative input and field name");
+     const invalidError=fields.errors.find(item=>item.key==="invalid-number");
+     await page.locator("#f-amount").fill("");
+     await page.locator("#form").evaluate(form=>form.requestSubmit());
+     const expectedInvalid=invalidError.message.replaceAll("{field}",amountLabel)+" "+invalidError.recoveryHint;
+     await page.waitForFunction(expected=>document.querySelector(".result .sub")?.textContent===expected,expectedInvalid);
+     assert.equal(await page.locator(".result .sub").innerText(),expectedInvalid,id+" / "+locale+" localized invalid-number input and field name");
+     await page.locator("#f-amount").fill("1000");
      await page.locator("#form").evaluate(form=>form.requestSubmit());
      await page.waitForFunction(()=>{const value=document.querySelector(".result .value")?.textContent?.trim();return value&&value!=="—"});
      }
