@@ -63,16 +63,16 @@
     {
       "code": "CA",
       "name": "California",
-      "source_url": null,
+      "source_url": "https://www.ftb.ca.gov/forms/2026/2026-540-tax-rate-schedules.pdf",
       "source_authority": "State Department of Revenue or official state tax authority",
-      "source_type": null,
+      "source_type": "official 2026 tax schedule/report",
       "tax_year": 2026,
       "effective_date": null,
       "filing_statuses_verified": [],
       "verified_fields": [],
       "last_verified": null,
-      "review_status": "not_verified",
-      "notes": "Do not approve or publish tax data based on this placeholder registry."
+      "review_status": "source_link_identified_data_not_verified",
+      "notes": "Official-source link identified; complete data transcription, filing-status reconciliation and boundary tests remain pending. Not approved."
     },
     {
       "code": "CO",
@@ -133,16 +133,16 @@
     {
       "code": "GA",
       "name": "Georgia",
-      "source_url": null,
+      "source_url": "https://dor.georgia.gov/taxes/important-tax-updates",
       "source_authority": "State Department of Revenue or official state tax authority",
-      "source_type": null,
+      "source_type": "official tax authority update",
       "tax_year": 2026,
       "effective_date": null,
       "filing_statuses_verified": [],
       "verified_fields": [],
       "last_verified": null,
-      "review_status": "not_verified",
-      "notes": "Do not approve or publish tax data based on this placeholder registry."
+      "review_status": "source_link_identified_data_not_verified",
+      "notes": "Official-source link identified; complete data transcription, filing-status reconciliation and boundary tests remain pending. Not approved."
     },
     {
       "code": "HI",
@@ -203,16 +203,16 @@
     {
       "code": "IA",
       "name": "Iowa",
-      "source_url": null,
+      "source_url": "https://revenue.iowa.gov/press-release/2025-10-21/idr-announces-2026-individual-income-tax-and-interest-rates",
       "source_authority": "State Department of Revenue or official state tax authority",
-      "source_type": null,
+      "source_type": "official tax authority update",
       "tax_year": 2026,
       "effective_date": null,
       "filing_statuses_verified": [],
       "verified_fields": [],
       "last_verified": null,
-      "review_status": "not_verified",
-      "notes": "Do not approve or publish tax data based on this placeholder registry."
+      "review_status": "source_link_identified_data_not_verified",
+      "notes": "Official-source link identified; complete data transcription, filing-status reconciliation and boundary tests remain pending. Not approved."
     },
     {
       "code": "KS",
@@ -483,30 +483,30 @@
     {
       "code": "OH",
       "name": "Ohio",
-      "source_url": null,
+      "source_url": "https://tax.ohio.gov/individual/who-must-file/whats-new",
       "source_authority": "State Department of Revenue or official state tax authority",
-      "source_type": null,
+      "source_type": "official tax authority update",
       "tax_year": 2026,
       "effective_date": null,
       "filing_statuses_verified": [],
       "verified_fields": [],
       "last_verified": null,
-      "review_status": "not_verified",
-      "notes": "Do not approve or publish tax data based on this placeholder registry."
+      "review_status": "source_link_identified_data_not_verified",
+      "notes": "Official-source link identified; complete data transcription, filing-status reconciliation and boundary tests remain pending. Not approved."
     },
     {
       "code": "OK",
       "name": "Oklahoma",
-      "source_url": null,
+      "source_url": "https://oklahoma.gov/content/dam/ok/en/tax/documents/resources/reports/annual-reports/otc/AR-2026.pdf",
       "source_authority": "State Department of Revenue or official state tax authority",
-      "source_type": null,
+      "source_type": "official 2026 tax schedule/report",
       "tax_year": 2026,
       "effective_date": null,
       "filing_statuses_verified": [],
       "verified_fields": [],
       "last_verified": null,
-      "review_status": "not_verified",
-      "notes": "Do not approve or publish tax data based on this placeholder registry."
+      "review_status": "source_link_identified_data_not_verified",
+      "notes": "Official-source link identified; complete data transcription, filing-status reconciliation and boundary tests remain pending. Not approved."
     },
     {
       "code": "OR",
@@ -679,16 +679,16 @@
     {
       "code": "WI",
       "name": "Wisconsin",
-      "source_url": null,
+      "source_url": "https://www.revenue.wi.gov/Pages/FAQS/pcs-taxrates.aspx",
       "source_authority": "State Department of Revenue or official state tax authority",
-      "source_type": null,
+      "source_type": "official tax authority update",
       "tax_year": 2026,
       "effective_date": null,
       "filing_statuses_verified": [],
       "verified_fields": [],
       "last_verified": null,
-      "review_status": "not_verified",
-      "notes": "Do not approve or publish tax data based on this placeholder registry."
+      "review_status": "source_link_identified_data_not_verified",
+      "notes": "Official-source link identified; complete data transcription, filing-status reconciliation and boundary tests remain pending. Not approved."
     },
     {
       "code": "WY",
