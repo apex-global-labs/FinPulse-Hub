@@ -289,3 +289,27 @@ The dedicated branch adds five Developer wrap-up tools, twelve Education & Study
 - All locale records remain \`draft\`; English fallback remains active. No formula/runtime, numeric defaults, currency data or source English text was modified.
 - Added Exchange Fees to source-completeness/draft-boundary, catalogue, formula/token and seven-locale browser/RTL-LTR regression coverage. Validation results are pending; do not treat this draft as release-approved.
 - Batch 31–60 translation progress: **5/30**; 25 remain. PR #73 remains Draft/unmerged; no activation, merge or deployment.
+
+
+## Transfer Compare (#36) six-locale QA — 2026-11-25
+
+- Candidate head validated before this documentation-only note: `41861ec718e4ce996cf14b81e8d9609f9c03dae4`. PR #73 remains Draft/unmerged; no translation was approved or published, and production `main` / GitHub Pages were not changed.
+- Transfer Compare source extraction remains complete. Hindi, Arabic, Urdu, Simplified Chinese, Japanese and Russian records remain `draft`.
+- Formula review compared the translations with `finance-core.js`:
+  - Provider fee = fixed fee + send amount × transfer-fee percentage / 100.
+  - Customer rate = mid-market rate × (1 − exchange-rate markup / 100).
+  - Recipient amount = (send amount − provider fee) × customer rate.
+  - Recipient difference = absolute difference between provider recipient amounts.
+  - Effective rate = recipient amount / send amount when send amount is positive.
+- Replaced the incomplete prose-only Transfer Compare formula description with these calculation relationships in all six locales. The formula panel now renders that translated formula for Transfer Compare only; other tools retain their existing formula rendering.
+- Added the missing `percentage-limit` source error and all six locale translations. Added runtime mappings for combined transfer-fee, percentage-limit and mid-market-rate errors; negative and invalid-number errors now interpolate the translated input label.
+- Preserved the winning provider in translated result summaries with the `{provider}` token and registered that token in the content schema. Renamed “total fees” metrics to “transfer fees” to avoid implying that exchange-rate markup spread is included in the transfer-fee total.
+- Browser coverage now asserts translated formula content, winning Provider A and B labels, computed RTL/LTR direction, numeric/currency invariance across locale changes, and localized recovery for combined fees, markup above 100%, transfer-fee percentage above 100%, zero mid-market rate, negative amount and missing numeric amount.
+- Latest verified Finance CI run [#898 / run 45606746915](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/45606746915) passed on the candidate head: `npm run check`, Node tests 346/346, live API 1/1, Browser tests 34/34, and the 220-tool functional audit 440/440 (220 desktop + 220 mobile), with zero runtime errors.
+- Latest Candidate Lighthouse/CLS run [#545 / run 45606747056](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/45606747056) passed on the same candidate head:
+  - Mobile homepage: Performance 96, Accessibility 96, Best Practices 96, SEO 100; CLS 0.0001133.
+  - Mobile tool route: Performance 84, Accessibility 100, Best Practices 96, SEO 100; CLS 0.0303892.
+  - Desktop homepage: Performance 100, Accessibility 100, Best Practices 96, SEO 100; CLS 0.
+  - Desktop tool route: Performance 99, Accessibility 100, Best Practices 96, SEO 100; CLS 0.0086751.
+  - All four CLS values satisfy the 0.10 budget. Lighthouse audits the configured candidate tool route; the Transfer Compare-specific locale and error cases are covered by the Playwright browser test.
+- Remaining gate: linguistic/native-speaker and finance-domain review before any locale can move beyond Draft. Do not merge or deploy based solely on automated QA.
