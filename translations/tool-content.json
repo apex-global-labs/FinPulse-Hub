@@ -47816,11 +47816,11 @@
             },
             {
               "key": "metric-4",
-              "label": "Provider A total fees"
+              "label": "Provider A transfer fees"
             },
             {
               "key": "metric-5",
-              "label": "Provider B total fees"
+              "label": "Provider B transfer fees"
             },
             {
               "key": "metric-6",
@@ -48102,7 +48102,7 @@
             ],
             "results": {
               "heading": "परिणाम",
-              "summary": "अधिक अनुमानित प्राप्तकर्ता राशि —",
+              "summary": "अधिक अनुमानित प्राप्तकर्ता राशि — प्रदाता {provider}",
               "metrics": [
                 {
                   "key": "metric-1",
@@ -48118,11 +48118,11 @@
                 },
                 {
                   "key": "metric-4",
-                  "label": "प्रदाता A का कुल शुल्क"
+                  "label": "प्रदाता A की हस्तांतरण फीस"
                 },
                 {
                   "key": "metric-5",
-                  "label": "प्रदाता B का कुल शुल्क"
+                  "label": "प्रदाता B की हस्तांतरण फीस"
                 },
                 {
                   "key": "metric-6",
@@ -48409,7 +48409,7 @@
             ],
             "results": {
               "heading": "النتيجة",
-              "summary": "أعلى مبلغ تقديري يصل إلى المستلم —",
+              "summary": "أعلى مبلغ تقديري يصل إلى المستلم — المزود {provider}",
               "metrics": [
                 {
                   "key": "metric-1",
@@ -48425,11 +48425,11 @@
                 },
                 {
                   "key": "metric-4",
-                  "label": "إجمالي رسوم المزود أ"
+                  "label": "رسوم التحويل للمزود أ"
                 },
                 {
                   "key": "metric-5",
-                  "label": "إجمالي رسوم المزود ب"
+                  "label": "رسوم التحويل للمزود ب"
                 },
                 {
                   "key": "metric-6",
@@ -48716,7 +48716,7 @@
             ],
             "results": {
               "heading": "نتیجہ",
-              "summary": "وصول کنندہ کو ملنے والی زیادہ تخمینی رقم —",
+              "summary": "وصول کنندہ کو ملنے والی زیادہ تخمینی رقم — فراہم کنندہ {provider}",
               "metrics": [
                 {
                   "key": "metric-1",
@@ -48732,11 +48732,11 @@
                 },
                 {
                   "key": "metric-4",
-                  "label": "فراہم کنندہ A کی کل فیس"
+                  "label": "فراہم کنندہ A کی منتقلی کی فیس"
                 },
                 {
                   "key": "metric-5",
-                  "label": "فراہم کنندہ B کی کل فیس"
+                  "label": "فراہم کنندہ B کی منتقلی کی فیس"
                 },
                 {
                   "key": "metric-6",
@@ -49023,7 +49023,7 @@
             ],
             "results": {
               "heading": "结果",
-              "summary": "预计收款金额较高的一方 —",
+              "summary": "预计到账金额较高 — 服务商 {provider}",
               "metrics": [
                 {
                   "key": "metric-1",
@@ -49039,11 +49039,11 @@
                 },
                 {
                   "key": "metric-4",
-                  "label": "服务商 A 的总费用"
+                  "label": "服务商 A 的汇款手续费"
                 },
                 {
                   "key": "metric-5",
-                  "label": "服务商 B 的总费用"
+                  "label": "服务商 B 的汇款手续费"
                 },
                 {
                   "key": "metric-6",
@@ -49330,7 +49330,7 @@
             ],
             "results": {
               "heading": "結果",
-              "summary": "受取予定額が多いサービス —",
+              "summary": "受取予定額が多いサービス — サービス {provider}",
               "metrics": [
                 {
                   "key": "metric-1",
@@ -49346,11 +49346,11 @@
                 },
                 {
                   "key": "metric-4",
-                  "label": "サービスAの手数料合計"
+                  "label": "サービスAの送金手数料"
                 },
                 {
                   "key": "metric-5",
-                  "label": "サービスBの手数料合計"
+                  "label": "サービスBの送金手数料"
                 },
                 {
                   "key": "metric-6",
@@ -49637,7 +49637,7 @@
             ],
             "results": {
               "heading": "Результат",
-              "summary": "Более высокая расчётная сумма к получению —",
+              "summary": "Более высокая расчётная сумма к получению — сервис {provider}",
               "metrics": [
                 {
                   "key": "metric-1",
@@ -49653,11 +49653,11 @@
                 },
                 {
                   "key": "metric-4",
-                  "label": "Общие комиссии сервиса A"
+                  "label": "Комиссия за перевод сервиса A"
                 },
                 {
                   "key": "metric-5",
-                  "label": "Общие комиссии сервиса B"
+                  "label": "Комиссия за перевод сервиса B"
                 },
                 {
                   "key": "metric-6",
