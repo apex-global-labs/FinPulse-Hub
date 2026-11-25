@@ -241,7 +241,7 @@ test("batch-three source extraction captures 20 tools and 88 stable input labels
   assert.deepEqual(tool.source.inputs,extracted.inputs,id+" source input labels match extraction manifest");
   assert.equal(tool.sourceExtractionStatus,"source-record-complete",id+" complete source extraction status");
   assert.equal(tool.sourceCompletenessStatus,"complete",id+" requested source fields complete");
-  const draftStarted=["ira","inflation","cd","apy","paycheck","payroll","overtime","discount"].includes(id);
+  const draftStarted=["ira","inflation","cd","apy","paycheck","payroll","overtime","discount","exchange-fees"].includes(id);
   assert.equal(tool.sourceTranslationStatus,draftStarted?"draft":"not-started",id+" source translation state");
   assert.equal(new Set(tool.source.inputs.map(input=>input.key)).size,tool.source.inputs.length,id+" unique stable input keys");
   for(const locale of locales){
@@ -279,7 +279,7 @@ test("batch-three source records contain implementation-derived content and keep
   assert.ok(source.accessibility.pageLabel&&source.accessibility.formLabel&&source.accessibility.resultAnnouncement&&source.accessibility.chartLabel,id+" accessibility labels");
   assert.deepEqual(source.accessibility.controlLabels.map(x=>x.key),[...source.inputs.map(x=>x.key),...(source.selectors||[]).map(x=>x.key)],id+" accessibility stable input and selector keys");
   assert.equal(tool.sourceCompletenessStatus,"complete",id+" requested source fields complete");
-  const draftStarted=["ira","inflation","cd","apy","paycheck","payroll","overtime","discount"].includes(id);
+  const draftStarted=["ira","inflation","cd","apy","paycheck","payroll","overtime","discount","exchange-fees"].includes(id);
   assert.equal(tool.sourceTranslationStatus,draftStarted?"draft":"not-started",id+" translation state matches draft boundary");
   for(const locale of locales){
    if(draftStarted){
