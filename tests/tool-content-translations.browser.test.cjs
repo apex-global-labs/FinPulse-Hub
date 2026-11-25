@@ -125,6 +125,7 @@ test("Batch 2 plus Overtime pilot tools × 6 locales render persisted translatio
     }
     await page.waitForFunction(()=>{const value=document.querySelector(".result .value")?.textContent?.trim();return value&&value!=="—"});
     const english=await snapshot(page,"en");
+    const englishLabel=await page.locator(".result .label").innerText();
     assert.ok(english.numeric.length>0,id+" baseline calculation output");
     for(const locale of LOCALES){
      const fields=tool.locales[locale].fields;
@@ -135,7 +136,8 @@ test("Batch 2 plus Overtime pilot tools × 6 locales render persisted translatio
      assert.equal(await page.locator("#app").getAttribute("aria-label"),fields.accessibility.pageLabel,id+" / "+locale+" page accessibility label");
      assert.equal(await page.locator("#form").getAttribute("aria-label"),fields.accessibility.formLabel,id+" / "+locale+" form accessibility label");
      assert.equal(await page.locator(".result").getAttribute("aria-label"),fields.accessibility.resultAnnouncement,id+" / "+locale+" result accessibility label");
-     assert.equal(await page.locator(".result .label").innerText(),fields.results.summary,id+" / "+locale+" result summary");
+     const winner=englishLabel.includes("PROVIDER A")?"A":"B";
+     assert.equal(await page.locator(".result .label").innerText(),fields.results.summary.replaceAll("{provider}",winner),id+" / "+locale+" result summary and winner");
      assert.equal(await page.locator("#formula-panel h3").innerText(),fields.explanations.formulaTitle,id+" / "+locale+" formula title");
      const renderedFormula=await page.locator("#formula-panel p").first().innerText();
      assert.ok(renderedFormula.includes(fields.explanations.formulaDescription),id+" / "+locale+" localized formula description");
