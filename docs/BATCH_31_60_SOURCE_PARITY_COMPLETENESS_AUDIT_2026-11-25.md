@@ -110,3 +110,13 @@ The source-data commit must receive its own Finance CI and Lighthouse/CLS runs. 
 - Deterministic regression test commit: `f437aa2bc8a1a00a4c193500a00a94d1d5230481`. The Probability Calculator browser test now blocks the Chart.js CDN and asserts that the local SVG fallback renders at least three bars.
 - Candidate Lighthouse/CLS #498 (run ID `45577940109`) passed on the earlier commit `6118b05...`; it does **not** validate the subsequent runtime correction. Fresh Finance CI and Lighthouse/CLS runs must complete on the new head before gate acceptance.
 - Batch 31–60 six-locale translation drafts have not started. All 180 target-locale slots remain `not-started`; no translation activation, merge or production deployment.
+
+
+## Batch 31–60 translation draft progress — 2026-11-25 09:08 UTC
+
+- First translation draft completed for tool `paycheck` in all six target locales: `hi`, `ar`, `ur`, `zh-CN`, `ja`, `ru`. Commit: `a40e4a8a0d6999c1089f39e12747ff025bf972f5`; follow-up preserves the exact English calculation formula in each localized guide's calculation-method section: `e861258132d6d94e4ec362e490e3ff458f175b22`.
+- Draft includes localized metadata, input labels, results, explanation steps/assumptions/notes/disclaimers/limitations, FAQs, error/recovery copy, guide, SEO and accessibility labels. Locale statuses remain `draft`; no activation.
+- Regression coverage updated for the first translated tool: stable input/metric/breakdown/FAQ/error/guide/accessibility keys, `{field}` placeholder count, exact formula source preservation, and six-locale draft-only status. Test file repair commit: `bd84aff3a0d0a81928942a768c459a6be31a681f`; source formula preservation commit: `e861258132d6d94e4ec362e490e3ff458f175b22`.
+- Finance CI #864 on `bd84aff...`: syntax/check, npm test, Frankfurter API passed; desktop/mobile browser tests were still running at inspection. Finance CI #865 on current head `e861258...`: npm check and npm test passed; browser tests still running. Candidate Lighthouse/CLS #510 on `e861258...` still running. Earlier CI #858 and Lighthouse #503 both passed on `f720c715...` before the translation data was added.
+- Translation progress for this 30-tool batch: **1/30 tools** has a six-locale draft; 29/30 remain not-started. This is not a completed translation batch. Formula/runtime code, numeric defaults, currency codes, tax jurisdiction IDs and tool IDs have not been modified.
+- Next: finish the remaining 29 tools' six-locale content drafts, then run complete stable-key/token/numeric/completeness validation, seven-locale browser + RTL/LTR + accessibility checks, and same-head mobile/desktop Lighthouse before final audit sign-off.
