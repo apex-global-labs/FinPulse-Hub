@@ -260,3 +260,13 @@ The dedicated branch adds five Developer wrap-up tools, twelve Education & Study
 - First tool `paycheck` has six target-locale draft records (hi, ar, ur, zh-CN, ja, ru), with metadata, inputs, results, explanations, FAQs, errors, guide, SEO and accessibility copy. Stable IDs/keys and `{field}` placeholders are regression-checked; the English formula source remains unchanged. Drafts are not approved or activated.
 - Regression tests now permit the paycheck draft while keeping the remaining 29 tools at `not-started`. Finance CI #865 on head `e861258132d6d94e4ec362e490e3ff458f175b22` has passed npm check and npm test; browser tests and Lighthouse/CLS #510 were still in progress at the time of this note.
 - Batch translation progress: 1/30 tools; 29 remain. No formula/calculation runtime, numeric defaults, currency codes, tax jurisdiction data, production main, merge or deployment changed.
+
+
+## Overtime translation draft — 2026-11-25
+
+- Overtime source/formula rechecked against `app.js` and `finance-core.js` (`Core.overtimePay`). The estimate uses the user's entered multiplier and does not determine legal eligibility or statutory multiplier.
+- Completed six-locale drafts (`hi`, `ar`, `ur`, `zh-CN`, `ja`, `ru`) across all nine content groups: metadata, inputs, results, explanations, errors, FAQs, guide, SEO and accessibility. Every locale remains `draft`; English fallback remains active.
+- Stable keys, formula source text and `{field}` tokens are preserved. No formula implementation, numeric defaults, currency codes or runtime behavior changed.
+- Added Overtime to six-locale browser/RTL-LTR tests and Batch 31–60 draft-boundary regression tests.
+- Candidate head `45d1c7c2d7602c0f4372ff68c1464dd04de81742`: Finance CI #875 passed (346/346 Node tests, API 1/1, browser 31/31); Candidate Lighthouse/CLS #520 passed (four routes, all CLS ≤ 0.10). Artifacts: browser `15009504709`; Lighthouse `15010098049`.
+- Batch 31–60 translation progress: **3/30** (paycheck, payroll, overtime); 27 remain. PR #73 remains Draft/unmerged. No activation, merge or production deployment.
