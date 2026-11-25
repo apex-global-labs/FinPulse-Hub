@@ -54,7 +54,7 @@ test("Batch 31-60 source records include every required editorial content group"
 test("Batch 31-60 locale inventory preserves the draft-only activation boundary", () => {
   for (const tool of content.tools.slice(30, 60)) {
     assert.deepEqual(Object.keys(tool.locales).sort(), locales.slice().sort(), tool.id + " locale inventory");
-    if (["paycheck", "payroll", "overtime"].includes(tool.id)) {
+    if (["paycheck", "payroll", "overtime", "discount"].includes(tool.id)) {
       assert.equal(tool.sourceTranslationStatus, "draft", tool.id + " translation status");
       for (const locale of locales) {
         assert.equal(tool.locales[locale].status, "draft", tool.id + "/" + locale);
@@ -72,7 +72,7 @@ test("Batch 31-60 locale inventory preserves the draft-only activation boundary"
 
 test("Paycheck and Payroll translation drafts preserve stable keys, placeholder tokens and formula source", () => {
   const keys = group => group.map(item => item.key);
-  for (const toolId of ["paycheck", "payroll", "overtime"]) {
+  for (const toolId of ["paycheck", "payroll", "overtime", "discount"]) {
    const tool = content.tools.find(item => item.id === toolId);
    const source = tool.source;
    for (const locale of locales) {
