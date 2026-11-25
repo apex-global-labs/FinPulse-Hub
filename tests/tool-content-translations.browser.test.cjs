@@ -171,6 +171,12 @@ test("Batch 2 plus Overtime pilot tools × 6 locales render persisted translatio
      await page.locator("#form").evaluate(form=>form.requestSubmit());
      await page.waitForFunction(expected=>document.querySelector(".result .sub")?.textContent===expected,percentageError.message+" "+percentageError.recoveryHint);
      assert.equal(await page.locator(".result .sub").innerText(),percentageError.message+" "+percentageError.recoveryHint,id+" / "+locale+" localized percentage-limit error and recovery");
+     await page.locator("#f-aMarkup").fill("2");
+     await page.locator("#f-aFee").fill("101");
+     await page.locator("#form").evaluate(form=>form.requestSubmit());
+     await page.waitForFunction(expected=>document.querySelector(".result .sub")?.textContent===expected,percentageError.message+" "+percentageError.recoveryHint);
+     assert.equal(await page.locator(".result .sub").innerText(),percentageError.message+" "+percentageError.recoveryHint,id+" / "+locale+" percentage-fee upper bound recovery");
+     await page.locator("#f-aFee").fill("1");
      const rateError=fields.errors.find(item=>item.key==="rate");
      await page.locator("#f-aMarkup").fill("2");
      await page.locator("#f-rate").fill("0");
@@ -195,6 +201,18 @@ test("Batch 2 plus Overtime pilot tools × 6 locales render persisted translatio
      await page.locator("#f-amount").fill("1000");
      await page.locator("#form").evaluate(form=>form.requestSubmit());
      await page.waitForFunction(()=>{const value=document.querySelector(".result .value")?.textContent?.trim();return value&&value!=="—"});
+     if(locale==="hi"){
+      await page.locator("#f-aFixed").fill("0");
+      await page.locator("#f-aFee").fill("0");
+      await page.locator("#f-aMarkup").fill("0");
+      await page.locator("#form").evaluate(form=>form.requestSubmit());
+      await page.waitForFunction(()=>document.querySelector(".result .label")?.textContent?.includes("A"));
+      assert.equal(await page.locator(".result .label").innerText(),fields.results.summary.replaceAll("{provider}","A"),id+" / "+locale+" translated Provider A winner");
+      await page.locator("#f-aFixed").fill("5");
+      await page.locator("#f-aFee").fill("1");
+      await page.locator("#f-aMarkup").fill("2");
+      await page.locator("#form").evaluate(form=>form.requestSubmit());
+     }
      }
 
     }
