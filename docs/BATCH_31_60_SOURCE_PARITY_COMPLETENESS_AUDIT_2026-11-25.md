@@ -100,3 +100,13 @@ The source-data commit must receive its own Finance CI and Lighthouse/CLS runs. 
 - Candidate Lighthouse/CLS **#494** (run ID `45576742063`) succeeded on the same commit; report artifact ID `15005225532`.
 - Added `tests/batch-31-60-source-completeness.test.cjs` and included it in `npm test` via package.json. It asserts exact Batch 31–60 catalogue order, all editorial source sections and stable keys, six locale slots remaining empty/not-started, and separation from executable formula/numeric/tax identifiers.
 - The new test is intentionally not counted as passed until Finance CI #853 finishes on commit `6118b05dbbe3864856b027ef1662ad78bfb9702c`. Candidate Lighthouse/CLS #498 is also running on that commit.
+
+
+## Browser regression diagnosis and corrective candidate — 2026-11-25 08:48 UTC
+
+- Finance CI #853 (run ID `45577940578`) completed with a failed browser job on tested commit `6118b05dbbe3864856b027ef1662ad78bfb9702c`. `npm run check` passed; Node tests **345/345** passed (including the new Batch 31–60 source completeness test); Frankfurter API **1/1** passed. Playwright browser output reports 30 top-level/subtests with **28 passed and 2 failed**; the failure is in the Batch 3 math guide visualization test at the Probability Calculator assertion requiring an SVG or Canvas under `#graph`.
+- Diagnosis from the exact test and runtime code: the Probability Calculator supplies a bar-series chart. If the external Chart.js CDN cannot load, `app.js` previously had a scatter SVG fallback but no bar-chart fallback; the graph area therefore remained empty. This is a real progressive-enhancement gap exposed by the browser test, not a translation/source-data failure.
+- Corrective runtime commit: `c04c748e5c78126f00d0133122310223841c7e06`. Adds an accessible native SVG bar-chart fallback, rendered immediately while Chart.js loads and retained if the CDN request fails.
+- Deterministic regression test commit: `f437aa2bc8a1a00a4c193500a00a94d1d5230481`. The Probability Calculator browser test now blocks the Chart.js CDN and asserts that the local SVG fallback renders at least three bars.
+- Candidate Lighthouse/CLS #498 (run ID `45577940109`) passed on the earlier commit `6118b05...`; it does **not** validate the subsequent runtime correction. Fresh Finance CI and Lighthouse/CLS runs must complete on the new head before gate acceptance.
+- Batch 31–60 six-locale translation drafts have not started. All 180 target-locale slots remain `not-started`; no translation activation, merge or production deployment.
