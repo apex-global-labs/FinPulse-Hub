@@ -39197,7 +39197,7 @@
                 {
                   "key": "paycheck-guide-section-1",
                   "heading": "गणना की विधि",
-                  "body": "प्रति घंटे की दर, नियमित घंटे और ओवरटाइम घंटे दर्ज करें। ओवरटाइम गुणक और बोनस / कमीशन दर्ज करें। कर कटौती और सेवानिवृत्ति प्रतिशत तथा निश्चित कटौतियाँ दर्ज करें। नियमित और ओवरटाइम कमाई की गणना करें और सकल वेतन पाने के लिए बोनस जोड़ें। शुद्ध वेतन का अनुमान लगाने के लिए प्रतिशत-आधारित और निश्चित कटौतियाँ घटाएँ।"
+                  "body": "Regular pay = hourly rate × regular hours. Overtime pay = hourly rate × overtime hours × multiplier. Gross = regular pay + overtime pay + bonus. Net = gross − withholding − retirement deduction − benefits − other deductions."
                 },
                 {
                   "key": "paycheck-guide-section-2",
@@ -39492,7 +39492,7 @@
                 {
                   "key": "paycheck-guide-section-1",
                   "heading": "طريقة الحساب",
-                  "body": "أدخل معدل الأجر بالساعة وساعات العمل العادية وساعات العمل الإضافي. أدخل مضاعف العمل الإضافي والمكافأة / العمولة. أدخل نسب الاستقطاع الضريبي والتقاعد والاستقطاعات الثابتة. احسب الأجر العادي وأجر العمل الإضافي، ثم أضف المكافأة للحصول على إجمالي الراتب. اطرح الاستقطاعات النسبية والثابتة لتقدير صافي الراتب."
+                  "body": "Regular pay = hourly rate × regular hours. Overtime pay = hourly rate × overtime hours × multiplier. Gross = regular pay + overtime pay + bonus. Net = gross − withholding − retirement deduction − benefits − other deductions."
                 },
                 {
                   "key": "paycheck-guide-section-2",
@@ -39787,7 +39787,7 @@
                 {
                   "key": "paycheck-guide-section-1",
                   "heading": "حساب کا طریقہ",
-                  "body": "فی گھنٹہ اجرت، معمول کے گھنٹے اور اوور ٹائم گھنٹے درج کریں۔ اوور ٹائم ملٹی پلائر اور بونس / کمیشن درج کریں۔ ٹیکس اور ریٹائرمنٹ کی شرحیں اور مقررہ کٹوتیاں درج کریں۔ معمول اور اوور ٹائم آمدنی کا حساب لگائیں اور مجموعی تنخواہ کے لیے بونس شامل کریں۔ خالص تنخواہ کا اندازہ لگانے کے لیے شرح کے مطابق اور مقررہ کٹوتیاں منہا کریں۔"
+                  "body": "Regular pay = hourly rate × regular hours. Overtime pay = hourly rate × overtime hours × multiplier. Gross = regular pay + overtime pay + bonus. Net = gross − withholding − retirement deduction − benefits − other deductions."
                 },
                 {
                   "key": "paycheck-guide-section-2",
@@ -40082,7 +40082,7 @@
                 {
                   "key": "paycheck-guide-section-1",
                   "heading": "计算方法",
-                  "body": "输入小时工资率、正常工时和加班工时。 输入加班倍数以及奖金 / 佣金。 输入预估预扣税和退休金百分比，以及固定扣款。 计算正常工时收入和加班收入，再加上奖金得到税前总工资。 减去按比例计算的扣款和固定扣款，估算税后净工资。"
+                  "body": "Regular pay = hourly rate × regular hours. Overtime pay = hourly rate × overtime hours × multiplier. Gross = regular pay + overtime pay + bonus. Net = gross − withholding − retirement deduction − benefits − other deductions."
                 },
                 {
                   "key": "paycheck-guide-section-2",
@@ -40377,7 +40377,7 @@
                 {
                   "key": "paycheck-guide-section-1",
                   "heading": "計算方法",
-                  "body": "時間給、通常勤務時間、時間外勤務時間を入力します。 時間外勤務の倍率と賞与 / コミッションを入力します。 源泉徴収率と退職金控除率、および固定控除額を入力します。 通常勤務分と時間外勤務分の賃金を計算し、賞与を加えて総支給額を求めます。 割合で計算する控除額と固定控除額を差し引き、手取り給与を見積もります。"
+                  "body": "Regular pay = hourly rate × regular hours. Overtime pay = hourly rate × overtime hours × multiplier. Gross = regular pay + overtime pay + bonus. Net = gross − withholding − retirement deduction − benefits − other deductions."
                 },
                 {
                   "key": "paycheck-guide-section-2",
@@ -40672,7 +40672,7 @@
                 {
                   "key": "paycheck-guide-section-1",
                   "heading": "Метод расчёта",
-                  "body": "Введите почасовую ставку, обычные и сверхурочные часы. Введите множитель оплаты сверхурочных и премию / комиссию. Укажите проценты налогового и пенсионного удержания, а также фиксированные удержания. Рассчитайте оплату обычных и сверхурочных часов, затем добавьте премию, чтобы получить начисленную сумму. Вычтите процентные и фиксированные удержания, чтобы оценить сумму на руки."
+                  "body": "Regular pay = hourly rate × regular hours. Overtime pay = hourly rate × overtime hours × multiplier. Gross = regular pay + overtime pay + bonus. Net = gross − withholding − retirement deduction − benefits − other deductions."
                 },
                 {
                   "key": "paycheck-guide-section-2",
