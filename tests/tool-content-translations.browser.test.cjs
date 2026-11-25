@@ -5,7 +5,7 @@ const {createServer}=require("node:http");
 const {readFile}=require("node:fs/promises");
 const {join}=require("node:path");
 
-const TOOL_IDS=["freelance","margin","affordability","payoff","refinance","personal-loan","student-loan","simple-interest","retirement","401k"];
+const TOOL_IDS=["freelance","margin","affordability","payoff","refinance","personal-loan","student-loan","simple-interest","retirement","401k","overtime"];
 const LOCALES=["hi","ar","ur","zh-CN","ja","ru"];
 const DIRECTIONS={hi:"ltr",ar:"rtl",ur:"rtl","zh-CN":"ltr",ja:"ltr",ru:"ltr"};
 const SCRIPT={hi:/[\u0900-\u097F]/,ar:/[\u0600-\u06FF]/,ur:/[\u0600-\u06FF]/,"zh-CN":/[\u4E00-\u9FFF]/,ja:/[\u3040-\u30FF\u4E00-\u9FFF]/,ru:/[\u0400-\u04FF]/};
@@ -80,7 +80,7 @@ async function snapshot(page,locale){
  });
  return {...captured,numeric:captured.numericRaw.map(value=>numberSnapshot(value,locale))};
 }
-test("Batch 2 ten persisted tool records are complete and locale-consistent",async()=>{
+test("Batch 2 plus Overtime pilot persisted tool records are complete and locale-consistent",async()=>{
  content=JSON.parse(await readFile(join(process.cwd(),"translations/tool-content.json"),"utf8"));
  assert.equal(content.tools.length,220);
  sourceById=new Map(content.tools.map(x=>[x.id,x]));
@@ -93,7 +93,7 @@ test("Batch 2 ten persisted tool records are complete and locale-consistent",asy
  }
 });
 
-test("Batch 2 ten tools × 6 locales render persisted translations without changing calculations",async t=>{
+test("Batch 2 plus Overtime pilot tools × 6 locales render persisted translations without changing calculations",async t=>{
  const testContent=JSON.parse(JSON.stringify(content));
  for(const id of TOOL_IDS)for(const locale of LOCALES)testContent.tools.find(x=>x.id===id).locales[locale].status="approved";
  server=createServer(async(req,res)=>{
