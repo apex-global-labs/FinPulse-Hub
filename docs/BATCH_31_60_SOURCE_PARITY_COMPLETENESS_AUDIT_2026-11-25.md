@@ -142,3 +142,12 @@ The source-data commit must receive its own Finance CI and Lighthouse/CLS runs. 
 - Added Discount to the Batch 31–60 draft-boundary, stable-key/token/formula regression assertions, catalogue draft assertions and seven-locale browser/RTL-LTR test list. All six persisted locale statuses are `draft`; runtime English fallback remains active.
 - Candidate content/test commit: `1f9747e54a4f43542ffda96715063d2a24eb2ad0`. Fresh Finance CI and Candidate Lighthouse/CLS checks are required before reporting the Discount validation gate as passed.
 - Batch 31–60 translation progress: **4/30** (paycheck, payroll, overtime, discount); 26 remain. PR #73 remains Draft/unmerged. No merge, activation or production deployment.
+
+
+## Exchange Fees (#35) six-locale translation draft — 2026-11-25
+
+- Rechecked the Exchange Fee & Markup Calculator source record against the captured \`app.js\` runtime definition and \`finance-core.js\` implementation \`exchangeFeeMarkup\`. The calculation subtracts the combined fixed and percentage transfer fee from the send amount, applies the customer exchange rate after markup, and compares the recipient amount with the entered mid-market value. Validation rejects negative values, non-positive mid-market rates, percentage rates above 100%, and fees greater than or equal to the amount sent.
+- Added six target-locale drafts (\`hi\`, \`ar\`, \`ur\`, \`zh-CN\`, \`ja\`, \`ru\`) covering metadata, seven inputs, six result metrics, six breakdown labels, formula explanations, five ordered steps, assumptions, notes, disclaimers, limitations, three FAQs, five validation/recovery errors, SEO, guide and accessibility labels.
+- Stable input, metric, breakdown, FAQ, error and guide keys are preserved. The three \`{field}\` placeholders are retained in each locale, and the exact English formula text is retained in the guide calculation-method section. All six records remain \`draft\`; English fallback remains active. No executable formula, numeric defaults, currency codes, or runtime behavior was changed.
+- Added Exchange Fees to Batch 31–60 draft-boundary/stable-key/token/formula regression checks, the catalogue draft inventory and seven-locale browser/RTL-LTR test list. Full CI/browser/Lighthouse validation is pending on the resulting candidate head.
+- Batch 31–60 translation progress: **5/30** (paycheck, payroll, overtime, discount, exchange-fees); 25 remain. PR #73 remains Draft/unmerged. No activation, merge or production deployment.

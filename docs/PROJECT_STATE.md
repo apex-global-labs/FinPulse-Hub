@@ -280,3 +280,12 @@ The dedicated branch adds five Developer wrap-up tools, twelve Education & Study
 - Discount added to source-completeness, draft-boundary, stable-key/token/formula and seven-locale browser/RTL-LTR tests.
 - Candidate commit `1f9747e54a4f43542ffda96715063d2a24eb2ad0`; fresh CI and Lighthouse/CLS verification pending.
 - Batch 31–60 translation progress: **4/30**; 26 remain. PR #73 remains Draft/unmerged; no activation, merge or deployment.
+
+
+## Exchange Fees translation draft — 2026-11-25
+
+- Exchange Fee & Markup source and \`exchangeFeeMarkup\` implementation reviewed. The model subtracts fixed plus percentage transfer fees, applies the customer rate after markup, and estimates FX spread/total cost relative to the entered mid-market rate. It is an illustrative calculation, not a live provider quote.
+- Six-locale drafts (\`hi\`, \`ar\`, \`ur\`, \`zh-CN\`, \`ja\`, \`ru\`) now cover all nine content groups. Stable keys, three \`{field}\` placeholders per locale and exact English formula text in the guide method section are preserved.
+- All locale records remain \`draft\`; English fallback remains active. No formula/runtime, numeric defaults, currency data or source English text was modified.
+- Added Exchange Fees to source-completeness/draft-boundary, catalogue, formula/token and seven-locale browser/RTL-LTR regression coverage. Validation results are pending; do not treat this draft as release-approved.
+- Batch 31–60 translation progress: **5/30**; 25 remain. PR #73 remains Draft/unmerged; no activation, merge or deployment.

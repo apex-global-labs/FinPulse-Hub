@@ -5,7 +5,7 @@ const {createServer}=require("node:http");
 const {readFile}=require("node:fs/promises");
 const {join}=require("node:path");
 
-const TOOL_IDS=["freelance","margin","affordability","payoff","refinance","personal-loan","student-loan","simple-interest","retirement","401k","overtime","discount"];
+const TOOL_IDS=["freelance","margin","affordability","payoff","refinance","personal-loan","student-loan","simple-interest","retirement","401k","overtime","discount","exchange-fees"];
 const LOCALES=["hi","ar","ur","zh-CN","ja","ru"];
 const DIRECTIONS={hi:"ltr",ar:"rtl",ur:"rtl","zh-CN":"ltr",ja:"ltr",ru:"ltr"};
 const SCRIPT={hi:/[\u0900-\u097F]/,ar:/[\u0600-\u06FF]/,ur:/[\u0600-\u06FF]/,"zh-CN":/[\u4E00-\u9FFF]/,ja:/[\u3040-\u30FF\u4E00-\u9FFF]/,ru:/[\u0400-\u04FF]/};
