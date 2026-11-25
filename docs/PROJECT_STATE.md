@@ -253,3 +253,10 @@ The dedicated branch adds five Developer wrap-up tools, twelve Education & Study
 - Runtime fix `c04c748e5c78126f00d0133122310223841c7e06` adds an accessible native SVG bar chart as progressive enhancement. Test commit `f437aa2bc8a1a00a4c193500a00a94d1d5230481` blocks the CDN and asserts the fallback renders.
 - Lighthouse/CLS #498 passed on the pre-fix head only; new candidate-head CI and Lighthouse results are pending. No current release gate pass is claimed.
 - Batch 31–60 translation records remain untouched; all 180 target locale slots remain not-started. PR #73 remains Draft/unmerged; production main and GitHub Pages are unchanged.
+
+
+## Translation draft progress — Batch 31–60 — 2026-11-25
+
+- First tool `paycheck` has six target-locale draft records (hi, ar, ur, zh-CN, ja, ru), with metadata, inputs, results, explanations, FAQs, errors, guide, SEO and accessibility copy. Stable IDs/keys and `{field}` placeholders are regression-checked; the English formula source remains unchanged. Drafts are not approved or activated.
+- Regression tests now permit the paycheck draft while keeping the remaining 29 tools at `not-started`. Finance CI #865 on head `e861258132d6d94e4ec362e490e3ff458f175b22` has passed npm check and npm test; browser tests and Lighthouse/CLS #510 were still in progress at the time of this note.
+- Batch translation progress: 1/30 tools; 29 remain. No formula/calculation runtime, numeric defaults, currency codes, tax jurisdiction data, production main, merge or deployment changed.
