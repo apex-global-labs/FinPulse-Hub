@@ -236,3 +236,12 @@ The dedicated branch adds five Developer wrap-up tools, twelve Education & Study
 - Finance CI run #848 (ID `45576550639`) and Candidate Lighthouse/CLS run #493 (ID `45576550328`) were triggered for the source-data commit and were in progress at the time of this update. Do not claim pass until both finish and are checked against the tested commit.
 - Six-locale translation drafts, schema-validator execution, protected-data regression on the updated catalogue, seven-locale browser/RTL/LTR/accessibility validation and current-head Lighthouse/CLS remain pending.
 - PR #73 remains Draft/unmerged. No merge or production deployment was performed; production `main` and GitHub Pages remain unchanged.
+
+
+## Batch 31–60 CI and regression-gate update — 2026-11-25
+
+- Finance CI #849 on source extraction/audit commit `b8fdb9341850a54678caed52d4e032905b4d46c3`: Node tests 341/341 passed; Frankfurter API check 1/1 passed; Playwright functional audit 30/30 passed. The functional audit exercised 220 tools on desktop and mobile; Batch 2 seven-locale accessibility checks included 70 axe audits. Artifact ID `15004293603`.
+- Candidate Lighthouse/CLS #494 passed on the same commit; report artifact ID `15005225532`.
+- Added dedicated Batch 31–60 source completeness/protected-boundary regression tests and added the test file to the npm test script. Commit `2328f1416eb50a918c18274a215d4b5f91aa26fa` adds the tests; commit `6118b05dbbe3864856b027ef1662ad78bfb9702c` wires them into CI.
+- Current Finance CI #853 and Lighthouse/CLS #498 are in progress on `6118b05dbbe3864856b027ef1662ad78bfb9702c`; the newly added tests are not yet claimed as passing.
+- Batch 31–60 translation records remain untouched/not-started. No merge, activation or deployment.
