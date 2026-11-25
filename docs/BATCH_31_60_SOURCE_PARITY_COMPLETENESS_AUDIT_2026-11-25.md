@@ -77,3 +77,15 @@ The source-data commit must receive its own Finance CI and Lighthouse/CLS runs. 
 5. Append exact current-head run IDs, test counts, failures and artifacts here.
 
 **Status: Source content complete; translation and release validation pending.**
+
+
+## Updated validation evidence — 2026-11-25 08:30 UTC
+
+- Candidate Lighthouse/CLS run **#493** (run ID `45576550328`) completed successfully on the source-data commit `1ecf5d633b64a3c62a14beb8f0e7fd4097a72ca8`. All four audited routes passed the configured CLS ≤ 0.10 budget. Results:
+  - Mobile homepage: Performance 96, Accessibility 96, Best Practices 96, SEO 100; CLS 0.000; LCP 2,722.9 ms; TBT 94 ms.
+  - Mobile tool route: Performance 86, Accessibility 100, Best Practices 96, SEO 100; CLS 0.0307; LCP 4,229.8 ms; TBT 18 ms.
+  - Desktop homepage: Performance 100, Accessibility 100, Best Practices 96, SEO 100; CLS 0.000; LCP 667.9 ms; TBT 0 ms.
+  - Desktop tool route: Performance 99, Accessibility 100, Best Practices 96, SEO 100; CLS 0.0087; LCP 950.5 ms; TBT 0 ms.
+  - Lighthouse report artifact ID: `15003932987`.
+- Finance CI run **#848** (run ID `45576550639`) is still in progress. `npm run check`, `npm test`, Frankfurter API check and Playwright installation steps completed successfully; desktop/mobile browser tests remain in progress. No final CI pass or browser test total is claimed yet.
+- The source extraction commit itself is the tested code/data head. Documentation-only follow-up commits do not change the calculator or translation JSON. The PR remains Draft/unmerged.
