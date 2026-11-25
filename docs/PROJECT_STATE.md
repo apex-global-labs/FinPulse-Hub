@@ -225,3 +225,14 @@ The dedicated branch adds five Developer wrap-up tools, twelve Education & Study
 - Ordered steps, formula explanations, assumptions, FAQs for the remaining tools, SEO copy, error recovery hints and accessibility labels are still pending source authoring/verification. Batch 3 remains `in-progress`; all 120 target-locale slots remain `not-started`. No Batch 3 translations have started and no translation has been activated.
 - Validation: Finance CI run #45350333245 failed at the existing Batch 3 manifest-status assertion (335/336 Node tests passed; one test expected manifest.status=`in-progress`). The manifest status was restored to `in-progress` in corrective commit `4eb7cfaa58d077548054462be5c46519a2a97a14`. Fresh CI for that corrective head has not yet been confirmed. Candidate Lighthouse run #45350333144 is still in progress on the preceding source-evidence commit `49a1b4074808ef6621e78b2c31b3ec18c240cda9`.
 - PR #73 remains Draft/unmerged. Production `main` and GitHub Pages remain unchanged.
+
+
+## Batch 31–60 source extraction and parity update — 2026-11-25
+
+- Source extraction commit: `1ecf5d633b64a3c62a14beb8f0e7fd4097a72ca8`. Added complete English source fields for tools 41–60 in `translations/tool-content.json`; tools 31–40 retained their previously extracted source records.
+- Structural completeness check: 30/30 expected tool records contain metadata, description, inputs, results, explanations, FAQs, SEO, errors, accessibility and guide content. All 180 target-locale slots across these 30 tools remain `not-started`; no translation was activated.
+- Runtime parity review for tools 31–40 is recorded in `docs/BATCH_31_60_SOURCE_PARITY_COMPLETENESS_AUDIT_2026-11-25.md`. It traces each tool to its app runtime definition and Finance Core function, including relevant validation boundaries.
+- The parity/completeness audit document was added in commit `b8fdb9341850a54678caed52d4e032905b4d46c3`.
+- Finance CI run #848 (ID `45576550639`) and Candidate Lighthouse/CLS run #493 (ID `45576550328`) were triggered for the source-data commit and were in progress at the time of this update. Do not claim pass until both finish and are checked against the tested commit.
+- Six-locale translation drafts, schema-validator execution, protected-data regression on the updated catalogue, seven-locale browser/RTL/LTR/accessibility validation and current-head Lighthouse/CLS remain pending.
+- PR #73 remains Draft/unmerged. No merge or production deployment was performed; production `main` and GitHub Pages remain unchanged.
