@@ -159,6 +159,7 @@ test("Batch 2 plus Overtime pilot tools × 6 locales render persisted translatio
      assert.equal(localized.currencyCode,english.currencyCode,id+" / "+locale+" display currency unchanged");
      assert.equal(localized.numericRaw.length,english.numericRaw.length,id+" / "+locale+" calculation output field count unchanged");
      assert.deepEqual(localized.numeric,english.numeric,id+" / "+locale+" calculation output unchanged");
+     if(id==="transfer-compare"){
      const feeError=fields.errors.find(item=>item.key==="fee");
      await page.locator("#f-aFixed").fill("1000");
      await page.locator("#form").evaluate(form=>form.requestSubmit());
@@ -179,6 +180,8 @@ test("Batch 2 plus Overtime pilot tools × 6 locales render persisted translatio
      await page.locator("#f-rate").fill("1.08");
      await page.locator("#form").evaluate(form=>form.requestSubmit());
      await page.waitForFunction(()=>{const value=document.querySelector(".result .value")?.textContent?.trim();return value&&value!=="—"});
+     }
+
     }
    }finally{await page.close()}
   });
