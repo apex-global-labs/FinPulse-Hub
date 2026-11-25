@@ -89,3 +89,14 @@ The source-data commit must receive its own Finance CI and Lighthouse/CLS runs. 
   - Lighthouse report artifact ID: `15003932987`.
 - Finance CI run **#848** (run ID `45576550639`) is still in progress. `npm run check`, `npm test`, Frankfurter API check and Playwright installation steps completed successfully; desktop/mobile browser tests remain in progress. No final CI pass or browser test total is claimed yet.
 - The source extraction commit itself is the tested code/data head. Documentation-only follow-up commits do not change the calculator or translation JSON. The PR remains Draft/unmerged.
+
+
+## Finance CI confirmation and new source-regression gate — 2026-11-25 08:35 UTC
+
+- Finance CI **#849** (run ID `45576742616`) completed successfully on commit `b8fdb9341850a54678caed52d4e032905b4d46c3`.
+- Node test suite: **341 passed, 0 failed**. Frankfurter reference API check: **1 passed, 0 failed**.
+- Playwright functional audit: **30 tests passed, 0 failed**. This includes 220 registered tools exercised with representative inputs in desktop and mobile Chromium, homepage desktop/mobile controls, locale direction/persistence, and 70 Batch 2 axe audits.
+- Functional audit artifact: [220-tool-functional-audit](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/45576742616/artifacts/15004293603).
+- Candidate Lighthouse/CLS **#494** (run ID `45576742063`) succeeded on the same commit; report artifact ID `15005225532`.
+- Added `tests/batch-31-60-source-completeness.test.cjs` and included it in `npm test` via package.json. It asserts exact Batch 31–60 catalogue order, all editorial source sections and stable keys, six locale slots remaining empty/not-started, and separation from executable formula/numeric/tax identifiers.
+- The new test is intentionally not counted as passed until Finance CI #853 finishes on commit `6118b05dbbe3864856b027ef1662ad78bfb9702c`. Candidate Lighthouse/CLS #498 is also running on that commit.
