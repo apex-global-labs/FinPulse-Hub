@@ -90,7 +90,8 @@
       "{unitSymbol}",
       "{rateDate}",
       "{jurisdictionName}",
-      "{count}"
+      "{count}",
+      "{provider}"
     ],
     "preserveTechnicalValues": [
       "tool IDs",
