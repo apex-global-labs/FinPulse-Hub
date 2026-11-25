@@ -149,7 +149,7 @@ function values(d){let v={};d.f.forEach(f=>{let e=$("#f-"+f[0]),optionalBlank=f[
 function makeToolError(code,field,message){const error=new Error(message);error.code=code;error.field=field;return error}
 function localizedToolError(d,error){
  const message=String(error?.message||"Check your inputs."),normalized=message.toLowerCase();
- const inferred=error?.code||(normalized.includes("transfer fees must be less than")?"fee":normalized.includes("must not exceed 100 percent")?"percentage-limit":normalized.includes("original")&&normalized.includes("zero")?"zero-original":normalized.includes("zero percent")?"zero-percent":normalized.includes("negative")?"negative":normalized.includes("positive")?"positive":normalized.includes("finite")||normalized.includes("invalid number")?"invalid-number":null);
+ const inferred=error?.code||(normalized.includes("transfer fees must be less than")?"fee":normalized.includes("must not exceed 100 percent")?"percentage-limit":normalized.includes("mid-market rate")?"rate":normalized.includes("original")&&normalized.includes("zero")?"zero-original":normalized.includes("zero percent")?"zero-percent":normalized.includes("negative")?"negative":normalized.includes("positive")?"positive":normalized.includes("finite")||normalized.includes("invalid number")?"invalid-number":null);
  const item=d._translation?.errors?.find(entry=>entry.key===inferred);
  if(!item)return message;
  const field=error?.field||"";
