@@ -35,7 +35,7 @@ test("every canonical tool has six locale records with correct draft or pending 
  assert.deepEqual(content.tools.map(t=>t.id).sort(),mapping.tools.map(t=>t.id).sort());
  const pilotIds=["currency","mortgage","loan","emi","compound","percentage","tip","car","amortization","savings"];
  const batchTwoIds=["freelance","margin","affordability","payoff","refinance","personal-loan","student-loan","simple-interest","retirement","401k"];
- const batchThreeDraftIds=["ira","inflation","cd","apy","paycheck","payroll"];
+ const batchThreeDraftIds=["ira","inflation","cd","apy","paycheck","payroll","overtime"];
  for(const tool of content.tools){
   assert.deepEqual(Object.keys(tool.locales).sort(),locales.slice().sort());
   for(const locale of locales){
