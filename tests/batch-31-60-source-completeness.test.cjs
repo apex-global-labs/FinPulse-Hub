@@ -51,7 +51,7 @@ test("Batch 31-60 source records include every required editorial content group"
   }
 });
 
-test("Batch 31-60 locale inventory preserves draft-only translation activation boundary", () => {
+test("Batch 31-60 locale inventory preserves the draft-only activation boundary", () => {
   for (const tool of content.tools.slice(30, 60)) {
     assert.deepEqual(Object.keys(tool.locales).sort(), locales.slice().sort(), tool.id + " locale inventory");
     if (tool.id === "paycheck") {
@@ -70,9 +70,8 @@ test("Batch 31-60 locale inventory preserves draft-only translation activation b
   }
 });
 
-test("Paycheck translation drafts preserve all stable keys, placeholders and formula source", () => {
+test("Paycheck translation drafts preserve stable keys, placeholder tokens and formula source", () => {
   const tool = content.tools.find(item => item.id === "paycheck");
-  const locales = ["hi", "ar", "ur", "zh-CN", "ja", "ru"];
   const source = tool.source;
   const keys = group => group.map(item => item.key);
   for (const locale of locales) {
@@ -86,23 +85,13 @@ test("Paycheck translation drafts preserve all stable keys, placeholders and for
     assert.deepEqual(keys(fields.guide.steps), keys(source.guide.steps), locale + " guide step keys");
     assert.deepEqual(keys(fields.guide.sections), keys(source.guide.sections), locale + " guide section keys");
     assert.deepEqual(keys(fields.accessibility.controlLabels), keys(source.inputs), locale + " accessibility input keys");
-    const serialized = JSON.stringify(fields);
-    assert.equal(serialized.split("{field}").length - 1, 3, locale + " placeholder {field}");
-  for (const tool of content.tools.slice(30, 60)) {
-    assert.deepEqual(Object.keys(tool.locales).sort(), locales.slice().sort(), tool.id + " locale inventory");
-    assert.equal(tool.sourceTranslationStatus, "not-started", tool.id + " translation status");
-    for (const locale of locales) {
-      assert.equal(tool.locales[locale].status, "not-started", tool.id + "/" + locale);
-      assert.deepEqual(tool.locales[locale].fields, {}, tool.id + "/" + locale + " fields remain empty");
-    }
-  }
-});"), "g")) || []).length, 4, locale + " placeholder " + token);
+    assert.equal(JSON.stringify(fields).split("{field}").length - 1, 3, locale + " placeholder token count");
     assert.equal(tool.locales[locale].status, "draft");
   }
   assert.equal(tool.source.explanations.formula, source.explanations.formula, "English formula source remains unchanged");
 });
 
-test("Batch 31-60 source records do not redefine stable tool IDs or numeric runtime data", () => {
+test("Batch 31-60 editorial source cannot redefine executable or numeric runtime data", () => {
   for (const tool of content.tools.slice(30, 60)) {
     assert.equal(typeof tool.id, "string");
     assert.ok(!("formulaCode" in tool.source), tool.id + " editorial source cannot carry executable formula code");
