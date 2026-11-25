@@ -87,7 +87,7 @@ test("Paycheck translation drafts preserve all stable keys, placeholders and for
     assert.deepEqual(keys(fields.guide.sections), keys(source.guide.sections), locale + " guide section keys");
     assert.deepEqual(keys(fields.accessibility.controlLabels), keys(source.inputs), locale + " accessibility input keys");
     const serialized = JSON.stringify(fields);
-    for (const token of ["{field}"]) assert.equal((serialized.match(new RegExp(token.replace(/[.*+?^${}()|[\\]\\\\]/g, "\\\\test("Batch 31-60 keeps all six locale records as unactivated empty drafts", () => {
+    assert.equal(serialized.split("{field}").length - 1, 3, locale + " placeholder {field}");
   for (const tool of content.tools.slice(30, 60)) {
     assert.deepEqual(Object.keys(tool.locales).sort(), locales.slice().sort(), tool.id + " locale inventory");
     assert.equal(tool.sourceTranslationStatus, "not-started", tool.id + " translation status");
