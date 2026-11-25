@@ -179,6 +179,7 @@ test("Batch 2 plus Overtime pilot tools × 6 locales render persisted translatio
      assert.equal(await page.locator(".result .sub").innerText(),rateError.message+" "+rateError.recoveryHint,id+" / "+locale+" localized rate error and recovery");
      await page.locator("#f-rate").fill("1.08");
      const amountLabel=fields.inputs.find(item=>item.key==="amount").label;
+     await page.locator("#f-amount").evaluate(el=>{el.removeAttribute("min");el.removeAttribute("required")});
      const negativeError=fields.errors.find(item=>item.key==="negative");
      await page.locator("#f-amount").fill("-1");
      await page.locator("#form").evaluate(form=>form.requestSubmit());
