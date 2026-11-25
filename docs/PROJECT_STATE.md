@@ -245,3 +245,11 @@ The dedicated branch adds five Developer wrap-up tools, twelve Education & Study
 - Added dedicated Batch 31–60 source completeness/protected-boundary regression tests and added the test file to the npm test script. Commit `2328f1416eb50a918c18274a215d4b5f91aa26fa` adds the tests; commit `6118b05dbbe3864856b027ef1662ad78bfb9702c` wires them into CI.
 - Current Finance CI #853 and Lighthouse/CLS #498 are in progress on `6118b05dbbe3864856b027ef1662ad78bfb9702c`; the newly added tests are not yet claimed as passing.
 - Batch 31–60 translation records remain untouched/not-started. No merge, activation or deployment.
+
+
+## Multilingual candidate — Batch 31–60 browser gate correction — 2026-11-25
+
+- On candidate commit `6118b05dbbe3864856b027ef1662ad78bfb9702c`, Finance CI #853: syntax/check passed; Node tests 345/345 passed; Frankfurter API 1/1 passed; browser suite failed 28/30 because Probability Calculator had no local bar-chart fallback when Chart.js CDN was unavailable.
+- Runtime fix `c04c748e5c78126f00d0133122310223841c7e06` adds an accessible native SVG bar chart as progressive enhancement. Test commit `f437aa2bc8a1a00a4c193500a00a94d1d5230481` blocks the CDN and asserts the fallback renders.
+- Lighthouse/CLS #498 passed on the pre-fix head only; new candidate-head CI and Lighthouse results are pending. No current release gate pass is claimed.
+- Batch 31–60 translation records remain untouched; all 180 target locale slots remain not-started. PR #73 remains Draft/unmerged; production main and GitHub Pages are unchanged.
