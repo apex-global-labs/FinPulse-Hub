@@ -206,7 +206,7 @@ test("Batch 2 plus Overtime pilot tools × 6 locales render persisted translatio
       await page.locator("#f-aFee").fill("0");
       await page.locator("#f-aMarkup").fill("0");
       await page.locator("#form").evaluate(form=>form.requestSubmit());
-      await page.waitForFunction(()=>document.querySelector(".result .label")?.textContent?.includes("A"));
+      await page.waitForFunction(expected=>document.querySelector(".result .label")?.textContent===expected,fields.results.summary.replaceAll("{provider}","A"));
       assert.equal(await page.locator(".result .label").innerText(),fields.results.summary.replaceAll("{provider}","A"),id+" / "+locale+" translated Provider A winner");
       await page.locator("#f-aFixed").fill("5");
       await page.locator("#f-aFee").fill("1");
