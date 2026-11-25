@@ -86,7 +86,7 @@ test("Paycheck and Payroll translation drafts preserve stable keys, placeholder 
     assert.deepEqual(keys(fields.guide.steps), keys(source.guide.steps), locale + " guide step keys");
     assert.deepEqual(keys(fields.guide.sections), keys(source.guide.sections), locale + " guide section keys");
     assert.deepEqual(keys(fields.accessibility.controlLabels), keys(source.inputs), locale + " accessibility input keys");
-    assert.equal(JSON.stringify(fields).split("{field}").length - 1, source.errors.reduce((n, e) => n + ((e.message.match(/\\{field\\}/g) || []).length), 0), toolId + "/" + locale + " placeholder token count");
+    assert.equal(JSON.stringify(fields).split("{field}").length - 1, source.errors.reduce((n, e) => n + e.message.split("{field}").length - 1, 0), toolId + "/" + locale + " placeholder token count");
     assert.equal(tool.locales[locale].status, "draft");
     assert.deepEqual(keys(fields.inputs), keys(source.inputs), toolId + "/" + locale + " input keys");
     assert.deepEqual(keys(fields.results.metrics), keys(source.results.metrics), toolId + "/" + locale + " metric keys");
