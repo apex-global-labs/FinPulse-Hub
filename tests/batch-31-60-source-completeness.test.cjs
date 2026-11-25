@@ -54,7 +54,7 @@ test("Batch 31-60 source records include every required editorial content group"
 test("Batch 31-60 locale inventory preserves the draft-only activation boundary", () => {
   for (const tool of content.tools.slice(30, 60)) {
     assert.deepEqual(Object.keys(tool.locales).sort(), locales.slice().sort(), tool.id + " locale inventory");
-    if (tool.id === "paycheck") {
+    if (["paycheck", "payroll"].includes(tool.id)) {
       assert.equal(tool.sourceTranslationStatus, "draft", tool.id + " translation status");
       for (const locale of locales) {
         assert.equal(tool.locales[locale].status, "draft", tool.id + "/" + locale);
@@ -70,11 +70,12 @@ test("Batch 31-60 locale inventory preserves the draft-only activation boundary"
   }
 });
 
-test("Paycheck translation drafts preserve stable keys, placeholder tokens and formula source", () => {
-  const tool = content.tools.find(item => item.id === "paycheck");
-  const source = tool.source;
+test("Paycheck and Payroll translation drafts preserve stable keys, placeholder tokens and formula source", () => {
   const keys = group => group.map(item => item.key);
-  for (const locale of locales) {
+  for (const toolId of ["paycheck", "payroll"]) {
+   const tool = content.tools.find(item => item.id === toolId);
+   const source = tool.source;
+   for (const locale of locales) {
     const fields = tool.locales[locale].fields;
     assert.deepEqual(keys(fields.inputs), keys(source.inputs), locale + " input keys");
     assert.deepEqual(keys(fields.results.metrics), keys(source.results.metrics), locale + " metric keys");
@@ -85,10 +86,21 @@ test("Paycheck translation drafts preserve stable keys, placeholder tokens and f
     assert.deepEqual(keys(fields.guide.steps), keys(source.guide.steps), locale + " guide step keys");
     assert.deepEqual(keys(fields.guide.sections), keys(source.guide.sections), locale + " guide section keys");
     assert.deepEqual(keys(fields.accessibility.controlLabels), keys(source.inputs), locale + " accessibility input keys");
-    assert.equal(JSON.stringify(fields).split("{field}").length - 1, 3, locale + " placeholder token count");
+    assert.equal(JSON.stringify(fields).split("{field}").length - 1, source.errors.reduce((n, e) => n + ((e.message.match(/\\{field\\}/g) || []).length), 0), toolId + "/" + locale + " placeholder token count");
     assert.equal(tool.locales[locale].status, "draft");
+    assert.deepEqual(keys(fields.inputs), keys(source.inputs), toolId + "/" + locale + " input keys");
+    assert.deepEqual(keys(fields.results.metrics), keys(source.results.metrics), toolId + "/" + locale + " metric keys");
+    assert.deepEqual(keys(fields.results.breakdown), keys(source.results.breakdown), toolId + "/" + locale + " breakdown keys");
+    assert.deepEqual(keys(fields.faqs), keys(source.faqs), toolId + "/" + locale + " FAQ keys");
+    assert.deepEqual(keys(fields.seo.faq), keys(source.seo.faq), toolId + "/" + locale + " SEO FAQ keys");
+    assert.deepEqual(keys(fields.errors), keys(source.errors), toolId + "/" + locale + " error keys");
+    assert.deepEqual(keys(fields.guide.steps), keys(source.guide.steps), toolId + "/" + locale + " guide step keys");
+    assert.deepEqual(keys(fields.guide.sections), keys(source.guide.sections), toolId + "/" + locale + " guide section keys");
+    assert.deepEqual(keys(fields.accessibility.controlLabels), keys(source.inputs), toolId + "/" + locale + " accessibility input keys");
+    assert.equal(fields.guide.sections[0].body, source.explanations.formula, toolId + "/" + locale + " exact English formula preserved");
+   }
+   assert.equal(tool.source.explanations.formula, source.explanations.formula, toolId + " English formula source unchanged");
   }
-  assert.equal(tool.source.explanations.formula, source.explanations.formula, "English formula source remains unchanged");
 });
 
 test("Batch 31-60 editorial source cannot redefine executable or numeric runtime data", () => {
