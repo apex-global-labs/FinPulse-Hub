@@ -137,6 +137,10 @@ test("Batch 2 plus Overtime pilot tools × 6 locales render persisted translatio
      assert.equal(await page.locator(".result").getAttribute("aria-label"),fields.accessibility.resultAnnouncement,id+" / "+locale+" result accessibility label");
      assert.equal(await page.locator(".result .label").innerText(),fields.results.summary,id+" / "+locale+" result summary");
      assert.equal(await page.locator("#formula-panel h3").innerText(),fields.explanations.formulaTitle,id+" / "+locale+" formula title");
+     const renderedFormula=await page.locator("#formula-panel p").first().innerText();
+     assert.ok(renderedFormula.includes(fields.explanations.formulaDescription),id+" / "+locale+" localized formula description");
+     assert.ok(!renderedFormula.includes("Provider recipient amount"),id+" / "+locale+" no English-only formula text");
+     assert.equal(await page.locator("#form").evaluate(el=>getComputedStyle(el).direction),DIRECTIONS[locale],id+" / "+locale+" rendered form direction");
      const actualInputs=await page.locator("#form label[for^='f-']").evaluateAll(labels=>labels.map(x=>[x.htmlFor,x.textContent.trim()]));
      for(const input of fields.inputs){const label=actualInputs.find(x=>x[0]==="f-"+input.key);assert.equal(label?.[1],input.label,id+" / "+locale+" input label "+input.key)}
      const metricLabels=await page.locator("#metrics .metric span").allInnerTexts();
@@ -153,6 +157,20 @@ test("Batch 2 plus Overtime pilot tools × 6 locales render persisted translatio
      assert.equal(localized.currencyCode,english.currencyCode,id+" / "+locale+" display currency unchanged");
      assert.equal(localized.numericRaw.length,english.numericRaw.length,id+" / "+locale+" calculation output field count unchanged");
      assert.deepEqual(localized.numeric,english.numeric,id+" / "+locale+" calculation output unchanged");
+     const feeError=fields.errors.find(item=>item.key==="fee");
+     await page.locator("#f-aFixed").fill("1000");
+     await page.locator("#form").evaluate(form=>form.requestSubmit());
+     await page.waitForFunction(expected=>document.querySelector(".result .sub")?.textContent===expected,feeError.message+" "+feeError.recoveryHint);
+     assert.equal(await page.locator(".result .sub").innerText(),feeError.message+" "+feeError.recoveryHint,id+" / "+locale+" localized combined-fee error and recovery");
+     const percentageError=fields.errors.find(item=>item.key==="percentage-limit");
+     await page.locator("#f-aFixed").fill("5");
+     await page.locator("#f-aMarkup").fill("101");
+     await page.locator("#form").evaluate(form=>form.requestSubmit());
+     await page.waitForFunction(expected=>document.querySelector(".result .sub")?.textContent===expected,percentageError.message+" "+percentageError.recoveryHint);
+     assert.equal(await page.locator(".result .sub").innerText(),percentageError.message+" "+percentageError.recoveryHint,id+" / "+locale+" localized percentage-limit error and recovery");
+     await page.locator("#f-aMarkup").fill("2");
+     await page.locator("#form").evaluate(form=>form.requestSubmit());
+     await page.waitForFunction(()=>{const value=document.querySelector(".result .value")?.textContent?.trim();return value&&value!=="—"});
     }
    }finally{await page.close()}
   });
