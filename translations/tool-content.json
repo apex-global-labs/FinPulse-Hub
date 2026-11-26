@@ -50150,28 +50150,1732 @@
       },
       "locales": {
         "hi": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "फ्रीलांस परियोजना मूल्य निर्धारण कैलकुलेटर",
+              "description": "काम के घंटों, खर्चों, आकस्मिकता और लक्षित सकल मार्जिन के आधार पर परियोजना का मूल्य प्रस्ताव तैयार करें।",
+              "category": "वित्त और धन",
+              "subcategory": "व्यवसाय और फ्रीलांस कैलकुलेटर"
+            },
+            "inputs": [
+              {
+                "key": "hours",
+                "label": "अनुमानित परियोजना घंटे",
+                "helpText": null,
+                "placeholder": null,
+                "options": [],
+                "validationMessage": null
+              },
+              {
+                "key": "rate",
+                "label": "प्रति घंटे बिलिंग दर",
+                "helpText": null,
+                "placeholder": null,
+                "options": [],
+                "validationMessage": null
+              },
+              {
+                "key": "expenses",
+                "label": "परियोजना के खर्च",
+                "helpText": null,
+                "placeholder": null,
+                "options": [],
+                "validationMessage": null
+              },
+              {
+                "key": "contingency",
+                "label": "आकस्मिकता भत्ता (%)",
+                "helpText": null,
+                "placeholder": null,
+                "options": [],
+                "validationMessage": null
+              },
+              {
+                "key": "margin",
+                "label": "लक्षित सकल मार्जिन (%)",
+                "helpText": null,
+                "placeholder": null,
+                "options": [],
+                "validationMessage": null
+              }
+            ],
+            "actions": {
+              "calculate": null,
+              "recalculate": null,
+              "clear": null,
+              "reset": null,
+              "copy": null,
+              "download": null,
+              "print": null
+            },
+            "results": {
+              "heading": "परिणाम",
+              "summary": "उदाहरणात्मक परियोजना मूल्य प्रस्ताव",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "श्रम लागत"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "आधार लागत"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "आकस्मिकता राशि"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "कुल लागत"
+                },
+                {
+                  "key": "metric-5",
+                  "label": "अनुमानित लाभ"
+                },
+                {
+                  "key": "metric-6",
+                  "label": "लक्षित सकल मार्जिन"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "श्रम"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "खर्च"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "आकस्मिकता राशि"
+                },
+                {
+                  "key": "breakdown-4",
+                  "label": "कुल लागत"
+                },
+                {
+                  "key": "breakdown-5",
+                  "label": "उद्धृत मूल्य"
+                },
+                {
+                  "key": "breakdown-6",
+                  "label": "अनुमानित लाभ"
+                }
+              ],
+              "chart": {
+                "title": null,
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": null,
+              "formulaDescription": "Labor = hours × hourly rate. Base cost = labor + expenses. Contingency = base cost × contingency rate ÷ 100. Total cost = base cost + contingency. Quote = total cost ÷ (1 − target gross margin ÷ 100). Profit = quote − total cost.",
+              "assumptions": [
+                "आकस्मिकता श्रम और खर्चों के योग पर लागू होती है।",
+                "सकल मार्जिन, उद्धृत मूल्य से विभाजित लाभ है; यह लागत पर मार्कअप नहीं है।",
+                "कर, भुगतान शुल्क, कार्य-क्षेत्र में बदलाव और बाज़ार दर का सत्यापन शामिल नहीं है।"
+              ],
+              "notes": [
+                "केवल योजना बनाने के लिए अनुमान; प्रदर्शित गणना नोट की समीक्षा करें और इनपुट तथा लागू नियमों की पुष्टि करें।"
+              ],
+              "disclaimers": [
+                "यह कैलकुलेटर दर्ज किए गए मानों और मान्यताओं के आधार पर अनुमान देता है। यह वित्तीय, कानूनी या कर सलाह नहीं है।"
+              ],
+              "limitations": [
+                "आकस्मिकता श्रम और खर्चों के योग पर लागू होती है।",
+                "सकल मार्जिन, उद्धृत मूल्य से विभाजित लाभ है; यह लागत पर मार्कअप नहीं है।",
+                "कर, भुगतान शुल्क, कार्य-क्षेत्र में बदलाव और बाज़ार दर का सत्यापन शामिल नहीं है।"
+              ],
+              "steps": [
+                "परियोजना के घंटे और प्रति घंटे की दर दर्ज करें।",
+                "खर्च और आकस्मिकता प्रतिशत जोड़ें।",
+                "90% से कम लक्षित सकल मार्जिन दर्ज करें।",
+                "श्रम, आधार लागत, आकस्मिकता और कुल लागत की गणना करें।",
+                "मूल्य प्रस्ताव पाने के लिए कुल लागत को एक में से लक्षित मार्जिन घटाने के परिणाम से विभाजित करें।",
+                "लाभ का अनुमान लगाने के लिए मूल्य प्रस्ताव में से कुल लागत घटाएँ।"
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "{field} एक सीमित (finite) संख्या होनी चाहिए।",
+                "recoveryHint": "एक मान्य संख्या दर्ज करें और फिर प्रयास करें।"
+              },
+              {
+                "key": "negative",
+                "message": "{field} ऋणात्मक नहीं होना चाहिए।",
+                "recoveryHint": "शून्य या उससे बड़ा मान दर्ज करें।"
+              },
+              {
+                "key": "positive",
+                "message": "{field} शून्य से अधिक होना चाहिए।",
+                "recoveryHint": "शून्य से बड़ा मान दर्ज करें।"
+              },
+              {
+                "key": "margin",
+                "message": "आकस्मिकता अधिकतम 100% और लक्षित मार्जिन 90% से कम होना चाहिए",
+                "recoveryHint": "आकस्मिकता 100% या उससे कम और लक्षित सकल मार्जिन 90% से कम रखें।"
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-freelance-project-1",
+                "question": "परियोजना का मूल्य प्रस्ताव कैसे निकाला जाता है?",
+                "answer": "श्रम घंटों को प्रति घंटे की दर से गुणा किया जाता है, खर्च और आकस्मिकता जोड़ी जाती है, फिर लक्षित मार्जिन पाने के लिए लागत को समायोजित किया जाता है।"
+              },
+              {
+                "key": "faq-freelance-project-2",
+                "question": "क्या सकल मार्जिन और मार्कअप एक ही हैं?",
+                "answer": "नहीं। सकल मार्जिन बिक्री मूल्य से विभाजित लाभ है; मार्कअप लागत से विभाजित लाभ है।"
+              },
+              {
+                "key": "faq-freelance-project-3",
+                "question": "क्या इसमें कर शामिल है?",
+                "answer": "नहीं। कर, भुगतान शुल्क, कार्य-क्षेत्र में बदलाव और स्थानीय आवश्यकताएँ शामिल नहीं हैं।"
+              }
+            ],
+            "guide": {
+              "title": "फ्रीलांस परियोजना मूल्य निर्धारण कैलकुलेटर गाइड",
+              "introduction": "काम के घंटों, खर्चों, आकस्मिकता और लक्षित सकल मार्जिन के आधार पर परियोजना का मूल्य प्रस्ताव तैयार करें।",
+              "steps": [
+                {
+                  "key": "freelance-project-guide-step-1",
+                  "title": "चरण 1",
+                  "body": "परियोजना के घंटे और प्रति घंटे की दर दर्ज करें।"
+                },
+                {
+                  "key": "freelance-project-guide-step-2",
+                  "title": "चरण 2",
+                  "body": "खर्च और आकस्मिकता प्रतिशत जोड़ें।"
+                },
+                {
+                  "key": "freelance-project-guide-step-3",
+                  "title": "चरण 3",
+                  "body": "90% से कम लक्षित सकल मार्जिन दर्ज करें।"
+                },
+                {
+                  "key": "freelance-project-guide-step-4",
+                  "title": "चरण 4",
+                  "body": "श्रम, आधार लागत, आकस्मिकता और कुल लागत की गणना करें।"
+                },
+                {
+                  "key": "freelance-project-guide-step-5",
+                  "title": "चरण 5",
+                  "body": "मूल्य प्रस्ताव पाने के लिए कुल लागत को एक में से लक्षित मार्जिन घटाने के परिणाम से विभाजित करें।"
+                },
+                {
+                  "key": "freelance-project-guide-step-6",
+                  "title": "चरण 6",
+                  "body": "लाभ का अनुमान लगाने के लिए मूल्य प्रस्ताव में से कुल लागत घटाएँ।"
+                }
+              ],
+              "sections": [
+                {
+                  "key": "freelance-project-guide-section-1",
+                  "heading": "गणना विधि",
+                  "body": "Labor = hours × hourly rate. Base cost = labor + expenses. Contingency = base cost × contingency rate ÷ 100. Total cost = base cost + contingency. Quote = total cost ÷ (1 − target gross margin ÷ 100). Profit = quote − total cost."
+                },
+                {
+                  "key": "freelance-project-guide-section-2",
+                  "heading": "मान्यताएँ और सीमाएँ",
+                  "body": "आकस्मिकता श्रम और खर्चों के योग पर लागू होती है। सकल मार्जिन, उद्धृत मूल्य से विभाजित लाभ है; यह लागत पर मार्कअप नहीं है। कर, भुगतान शुल्क, कार्य-क्षेत्र में बदलाव और बाज़ार दर का सत्यापन शामिल नहीं है।"
+                }
+              ]
+            },
+            "seo": {
+              "title": "फ्रीलांस परियोजना मूल्य निर्धारण कैलकुलेटर | FinPulse Hub",
+              "metaDescription": "घंटों, प्रति घंटे की दर, खर्चों, आकस्मिकता और लक्षित सकल मार्जिन के आधार पर फ्रीलांस परियोजना के मूल्य का अनुमान लगाएँ। यह योजना बनाने की गणना है, बाज़ार दर की सिफारिश नहीं।",
+              "h1": "फ्रीलांस परियोजना मूल्य निर्धारण कैलकुलेटर",
+              "introduction": "घंटों, प्रति घंटे की दर, खर्चों, आकस्मिकता और लक्षित सकल मार्जिन के आधार पर फ्रीलांस परियोजना के मूल्य का अनुमान लगाएँ। यह योजना बनाने की गणना है, बाज़ार दर की सिफारिश नहीं।",
+              "faq": [
+                {
+                  "key": "faq-freelance-project-1",
+                  "question": "परियोजना का मूल्य प्रस्ताव कैसे निकाला जाता है?",
+                  "answer": "श्रम घंटों को प्रति घंटे की दर से गुणा किया जाता है, खर्च और आकस्मिकता जोड़ी जाती है, फिर लक्षित मार्जिन पाने के लिए लागत को समायोजित किया जाता है।"
+                },
+                {
+                  "key": "faq-freelance-project-2",
+                  "question": "क्या सकल मार्जिन और मार्कअप एक ही हैं?",
+                  "answer": "नहीं। सकल मार्जिन बिक्री मूल्य से विभाजित लाभ है; मार्कअप लागत से विभाजित लाभ है।"
+                },
+                {
+                  "key": "faq-freelance-project-3",
+                  "question": "क्या इसमें कर शामिल है?",
+                  "answer": "नहीं। कर, भुगतान शुल्क, कार्य-क्षेत्र में बदलाव और स्थानीय आवश्यकताएँ शामिल नहीं हैं।"
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "फ्रीलांस परियोजना मूल्य निर्धारण कैलकुलेटर",
+              "formLabel": "फ्रीलांस परियोजना मूल्य निर्धारण कैलकुलेटर फ़ॉर्म",
+              "resultAnnouncement": "फ्रीलांस परियोजना मूल्य निर्धारण कैलकुलेटर के लिए गणना परिणाम",
+              "chartLabel": "फ्रीलांस परियोजना मूल्य प्रस्ताव दिखाने वाला चार्ट",
+              "controlLabels": [
+                {
+                  "key": "hours",
+                  "label": "अनुमानित परियोजना घंटे"
+                },
+                {
+                  "key": "rate",
+                  "label": "प्रति घंटे बिलिंग दर"
+                },
+                {
+                  "key": "expenses",
+                  "label": "परियोजना के खर्च"
+                },
+                {
+                  "key": "contingency",
+                  "label": "आकस्मिकता भत्ता (%)"
+                },
+                {
+                  "key": "margin",
+                  "label": "लक्षित सकल मार्जिन (%)"
+                }
+              ]
+            }
+          }
         },
         "ar": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "حاسبة تسعير المشاريع للعمل الحر",
+              "description": "أنشئ عرض سعر للمشروع استنادًا إلى ساعات العمل والنفقات ومخصص الطوارئ وهامش الربح الإجمالي المستهدف.",
+              "category": "التمويل والمال",
+              "subcategory": "حاسبات الأعمال والعمل الحر"
+            },
+            "inputs": [
+              {
+                "key": "hours",
+                "label": "ساعات المشروع المقدّرة",
+                "helpText": null,
+                "placeholder": null,
+                "options": [],
+                "validationMessage": null
+              },
+              {
+                "key": "rate",
+                "label": "سعر الفوترة بالساعة",
+                "helpText": null,
+                "placeholder": null,
+                "options": [],
+                "validationMessage": null
+              },
+              {
+                "key": "expenses",
+                "label": "نفقات المشروع",
+                "helpText": null,
+                "placeholder": null,
+                "options": [],
+                "validationMessage": null
+              },
+              {
+                "key": "contingency",
+                "label": "مخصص الطوارئ (%)",
+                "helpText": null,
+                "placeholder": null,
+                "options": [],
+                "validationMessage": null
+              },
+              {
+                "key": "margin",
+                "label": "هامش الربح الإجمالي المستهدف (%)",
+                "helpText": null,
+                "placeholder": null,
+                "options": [],
+                "validationMessage": null
+              }
+            ],
+            "actions": {
+              "calculate": null,
+              "recalculate": null,
+              "clear": null,
+              "reset": null,
+              "copy": null,
+              "download": null,
+              "print": null
+            },
+            "results": {
+              "heading": "النتيجة",
+              "summary": "عرض سعر توضيحي للمشروع",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "تكلفة العمالة"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "التكلفة الأساسية"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "مخصص الطوارئ"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "إجمالي التكلفة"
+                },
+                {
+                  "key": "metric-5",
+                  "label": "الربح المقدّر"
+                },
+                {
+                  "key": "metric-6",
+                  "label": "هامش الربح الإجمالي المستهدف"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "العمالة"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "النفقات"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "مخصص الطوارئ"
+                },
+                {
+                  "key": "breakdown-4",
+                  "label": "إجمالي التكلفة"
+                },
+                {
+                  "key": "breakdown-5",
+                  "label": "السعر المعروض"
+                },
+                {
+                  "key": "breakdown-6",
+                  "label": "الربح المقدّر"
+                }
+              ],
+              "chart": {
+                "title": null,
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": null,
+              "formulaDescription": "Labor = hours × hourly rate. Base cost = labor + expenses. Contingency = base cost × contingency rate ÷ 100. Total cost = base cost + contingency. Quote = total cost ÷ (1 − target gross margin ÷ 100). Profit = quote − total cost.",
+              "assumptions": [
+                "يُطبّق مخصص الطوارئ على مجموع تكلفة العمالة والنفقات.",
+                "هامش الربح الإجمالي هو الربح مقسومًا على السعر المعروض، وليس الزيادة على التكلفة.",
+                "لا تشمل الحسابات الضرائب أو رسوم الدفع أو تغييرات نطاق العمل أو التحقق من أسعار السوق."
+              ],
+              "notes": [
+                "تقدير لأغراض التخطيط فقط؛ راجع ملاحظة الحساب المعروضة وتحقق من المدخلات والقواعد المعمول بها."
+              ],
+              "disclaimers": [
+                "تقدم هذه الحاسبة تقديرًا بناءً على القيم المدخلة والافتراضات. وهي ليست نصيحة مالية أو قانونية أو ضريبية."
+              ],
+              "limitations": [
+                "يُطبّق مخصص الطوارئ على مجموع تكلفة العمالة والنفقات.",
+                "هامش الربح الإجمالي هو الربح مقسومًا على السعر المعروض، وليس الزيادة على التكلفة.",
+                "لا تشمل الحسابات الضرائب أو رسوم الدفع أو تغييرات نطاق العمل أو التحقق من أسعار السوق."
+              ],
+              "steps": [
+                "أدخل ساعات المشروع وسعر الساعة.",
+                "أضف النفقات ونسبة مخصص الطوارئ.",
+                "أدخل هامش ربح إجمالي مستهدفًا أقل من 90%.",
+                "احسب تكلفة العمالة والتكلفة الأساسية ومخصص الطوارئ وإجمالي التكلفة.",
+                "اقسم إجمالي التكلفة على واحد ناقص الهامش المستهدف للحصول على السعر المعروض.",
+                "اطرح إجمالي التكلفة من السعر المعروض لتقدير الربح."
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "يجب أن يكون {field} رقمًا منتهيًا صالحًا.",
+                "recoveryHint": "أدخل رقمًا صالحًا ثم حاول مرة أخرى."
+              },
+              {
+                "key": "negative",
+                "message": "يجب ألا تكون قيمة {field} سالبة.",
+                "recoveryHint": "أدخل صفرًا أو قيمة موجبة."
+              },
+              {
+                "key": "positive",
+                "message": "يجب أن تكون قيمة {field} أكبر من صفر.",
+                "recoveryHint": "أدخل قيمة أكبر من صفر."
+              },
+              {
+                "key": "margin",
+                "message": "يجب ألا يتجاوز مخصص الطوارئ 100% وأن يكون الهامش المستهدف أقل من 90%.",
+                "recoveryHint": "اجعل مخصص الطوارئ 100% أو أقل، وهامش الربح الإجمالي المستهدف أقل من 90%."
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-freelance-project-1",
+                "question": "كيف يُحسب عرض سعر المشروع؟",
+                "answer": "تُضرب ساعات العمل في سعر الساعة، ثم تُضاف النفقات ومخصص الطوارئ، وبعد ذلك تُرفع التكلفة للوصول إلى الهامش المستهدف."
+              },
+              {
+                "key": "faq-freelance-project-2",
+                "question": "هل هامش الربح الإجمالي هو نفسه الزيادة على التكلفة؟",
+                "answer": "لا. هامش الربح الإجمالي هو الربح مقسومًا على سعر البيع؛ أما الزيادة على التكلفة فهي الربح مقسومًا على التكلفة."
+              },
+              {
+                "key": "faq-freelance-project-3",
+                "question": "هل يشمل ذلك الضرائب؟",
+                "answer": "لا. الضرائب ورسوم الدفع وتغييرات نطاق العمل والمتطلبات المحلية غير مشمولة."
+              }
+            ],
+            "guide": {
+              "title": "دليل حاسبة تسعير المشاريع للعمل الحر",
+              "introduction": "أنشئ عرض سعر للمشروع استنادًا إلى ساعات العمل والنفقات ومخصص الطوارئ وهامش الربح الإجمالي المستهدف.",
+              "steps": [
+                {
+                  "key": "freelance-project-guide-step-1",
+                  "title": "الخطوة 1",
+                  "body": "أدخل ساعات المشروع وسعر الساعة."
+                },
+                {
+                  "key": "freelance-project-guide-step-2",
+                  "title": "الخطوة 2",
+                  "body": "أضف النفقات ونسبة مخصص الطوارئ."
+                },
+                {
+                  "key": "freelance-project-guide-step-3",
+                  "title": "الخطوة 3",
+                  "body": "أدخل هامش ربح إجمالي مستهدفًا أقل من 90%."
+                },
+                {
+                  "key": "freelance-project-guide-step-4",
+                  "title": "الخطوة 4",
+                  "body": "احسب تكلفة العمالة والتكلفة الأساسية ومخصص الطوارئ وإجمالي التكلفة."
+                },
+                {
+                  "key": "freelance-project-guide-step-5",
+                  "title": "الخطوة 5",
+                  "body": "اقسم إجمالي التكلفة على واحد ناقص الهامش المستهدف للحصول على السعر المعروض."
+                },
+                {
+                  "key": "freelance-project-guide-step-6",
+                  "title": "الخطوة 6",
+                  "body": "اطرح إجمالي التكلفة من السعر المعروض لتقدير الربح."
+                }
+              ],
+              "sections": [
+                {
+                  "key": "freelance-project-guide-section-1",
+                  "heading": "طريقة الحساب",
+                  "body": "Labor = hours × hourly rate. Base cost = labor + expenses. Contingency = base cost × contingency rate ÷ 100. Total cost = base cost + contingency. Quote = total cost ÷ (1 − target gross margin ÷ 100). Profit = quote − total cost."
+                },
+                {
+                  "key": "freelance-project-guide-section-2",
+                  "heading": "الافتراضات والقيود",
+                  "body": "يُطبّق مخصص الطوارئ على مجموع تكلفة العمالة والنفقات. هامش الربح الإجمالي هو الربح مقسومًا على السعر المعروض، وليس الزيادة على التكلفة. لا تشمل الحسابات الضرائب أو رسوم الدفع أو تغييرات نطاق العمل أو التحقق من أسعار السوق."
+                }
+              ]
+            },
+            "seo": {
+              "title": "حاسبة تسعير المشاريع للعمل الحر | FinPulse Hub",
+              "metaDescription": "قدّر سعر مشروع العمل الحر باستخدام الساعات وسعر الساعة والنفقات ومخصص الطوارئ وهامش الربح الإجمالي المستهدف. هذا حساب للتخطيط وليس توصية بسعر السوق.",
+              "h1": "حاسبة تسعير المشاريع للعمل الحر",
+              "introduction": "قدّر سعر مشروع العمل الحر باستخدام الساعات وسعر الساعة والنفقات ومخصص الطوارئ وهامش الربح الإجمالي المستهدف. هذا حساب للتخطيط وليس توصية بسعر السوق.",
+              "faq": [
+                {
+                  "key": "faq-freelance-project-1",
+                  "question": "كيف يُحسب عرض سعر المشروع؟",
+                  "answer": "تُضرب ساعات العمل في سعر الساعة، ثم تُضاف النفقات ومخصص الطوارئ، وبعد ذلك تُرفع التكلفة للوصول إلى الهامش المستهدف."
+                },
+                {
+                  "key": "faq-freelance-project-2",
+                  "question": "هل هامش الربح الإجمالي هو نفسه الزيادة على التكلفة؟",
+                  "answer": "لا. هامش الربح الإجمالي هو الربح مقسومًا على سعر البيع؛ أما الزيادة على التكلفة فهي الربح مقسومًا على التكلفة."
+                },
+                {
+                  "key": "faq-freelance-project-3",
+                  "question": "هل يشمل ذلك الضرائب؟",
+                  "answer": "لا. الضرائب ورسوم الدفع وتغييرات نطاق العمل والمتطلبات المحلية غير مشمولة."
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "حاسبة تسعير المشاريع للعمل الحر",
+              "formLabel": "نموذج حاسبة تسعير المشاريع للعمل الحر",
+              "resultAnnouncement": "نتيجة الحساب لحاسبة تسعير المشاريع للعمل الحر",
+              "chartLabel": "رسم بياني يوضح عرض سعر المشروع التوضيحي",
+              "controlLabels": [
+                {
+                  "key": "hours",
+                  "label": "ساعات المشروع المقدّرة"
+                },
+                {
+                  "key": "rate",
+                  "label": "سعر الفوترة بالساعة"
+                },
+                {
+                  "key": "expenses",
+                  "label": "نفقات المشروع"
+                },
+                {
+                  "key": "contingency",
+                  "label": "مخصص الطوارئ (%)"
+                },
+                {
+                  "key": "margin",
+                  "label": "هامش الربح الإجمالي المستهدف (%)"
+                }
+              ]
+            }
+          }
         },
         "ur": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "فری لانس پروجیکٹ قیمت کیلکولیٹر",
+              "description": "کام کے گھنٹوں، اخراجات، ہنگامی گنجائش اور مطلوبہ مجموعی منافع کے مارجن کی بنیاد پر پروجیکٹ کی قیمت تیار کریں۔",
+              "category": "مالیات اور رقم",
+              "subcategory": "کاروبار اور فری لانس کیلکولیٹرز"
+            },
+            "inputs": [
+              {
+                "key": "hours",
+                "label": "پروجیکٹ کے تخمینی گھنٹے",
+                "helpText": null,
+                "placeholder": null,
+                "options": [],
+                "validationMessage": null
+              },
+              {
+                "key": "rate",
+                "label": "فی گھنٹہ بلنگ ریٹ",
+                "helpText": null,
+                "placeholder": null,
+                "options": [],
+                "validationMessage": null
+              },
+              {
+                "key": "expenses",
+                "label": "پروجیکٹ کے اخراجات",
+                "helpText": null,
+                "placeholder": null,
+                "options": [],
+                "validationMessage": null
+              },
+              {
+                "key": "contingency",
+                "label": "ہنگامی گنجائش (%)",
+                "helpText": null,
+                "placeholder": null,
+                "options": [],
+                "validationMessage": null
+              },
+              {
+                "key": "margin",
+                "label": "مطلوبہ مجموعی منافع کا مارجن (%)",
+                "helpText": null,
+                "placeholder": null,
+                "options": [],
+                "validationMessage": null
+              }
+            ],
+            "actions": {
+              "calculate": null,
+              "recalculate": null,
+              "clear": null,
+              "reset": null,
+              "copy": null,
+              "download": null,
+              "print": null
+            },
+            "results": {
+              "heading": "نتیجہ",
+              "summary": "مثالی پروجیکٹ قیمت",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "مزدوری کی لاگت"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "بنیادی لاگت"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "ہنگامی گنجائش"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "کل لاگت"
+                },
+                {
+                  "key": "metric-5",
+                  "label": "تخمینی منافع"
+                },
+                {
+                  "key": "metric-6",
+                  "label": "مطلوبہ مجموعی منافع کا مارجن"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "مزدوری"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "اخراجات"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "ہنگامی گنجائش"
+                },
+                {
+                  "key": "breakdown-4",
+                  "label": "کل لاگت"
+                },
+                {
+                  "key": "breakdown-5",
+                  "label": "پیش کردہ قیمت"
+                },
+                {
+                  "key": "breakdown-6",
+                  "label": "تخمینی منافع"
+                }
+              ],
+              "chart": {
+                "title": null,
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": null,
+              "formulaDescription": "Labor = hours × hourly rate. Base cost = labor + expenses. Contingency = base cost × contingency rate ÷ 100. Total cost = base cost + contingency. Quote = total cost ÷ (1 − target gross margin ÷ 100). Profit = quote − total cost.",
+              "assumptions": [
+                "ہنگامی گنجائش مزدوری اور اخراجات کے مجموعے پر لاگو ہوتی ہے۔",
+                "مجموعی منافع کا مارجن، پیش کردہ قیمت سے تقسیم شدہ منافع ہے، لاگت پر مارک اپ نہیں۔",
+                "ٹیکس، ادائیگی کی فیس، کام کے دائرے میں تبدیلیاں اور مارکیٹ ریٹ کی تصدیق شامل نہیں۔"
+              ],
+              "notes": [
+                "صرف منصوبہ بندی کے لیے تخمینہ؛ دکھائے گئے حسابی نوٹ کا جائزہ لیں اور ان پٹس اور قابلِ اطلاق قواعد کی تصدیق کریں۔"
+              ],
+              "disclaimers": [
+                "یہ کیلکولیٹر درج کردہ اقدار اور مفروضوں کی بنیاد پر تخمینہ دیتا ہے۔ یہ مالی، قانونی یا ٹیکس مشورہ نہیں ہے۔"
+              ],
+              "limitations": [
+                "ہنگامی گنجائش مزدوری اور اخراجات کے مجموعے پر لاگو ہوتی ہے۔",
+                "مجموعی منافع کا مارجن، پیش کردہ قیمت سے تقسیم شدہ منافع ہے، لاگت پر مارک اپ نہیں۔",
+                "ٹیکس، ادائیگی کی فیس، کام کے دائرے میں تبدیلیاں اور مارکیٹ ریٹ کی تصدیق شامل نہیں۔"
+              ],
+              "steps": [
+                "پروجیکٹ کے گھنٹے اور فی گھنٹہ ریٹ درج کریں۔",
+                "اخراجات اور ہنگامی گنجائش کا فیصد شامل کریں۔",
+                "90% سے کم مطلوبہ مجموعی منافع کا مارجن درج کریں۔",
+                "مزدوری، بنیادی لاگت، ہنگامی گنجائش اور کل لاگت کا حساب لگائیں۔",
+                "قیمت حاصل کرنے کے لیے کل لاگت کو ایک میں سے مطلوبہ مارجن منفی کرنے کے نتیجے پر تقسیم کریں۔",
+                "منافع کا تخمینہ لگانے کے لیے پیش کردہ قیمت میں سے کل لاگت منہا کریں۔"
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "{field} ایک محدود عدد ہونا چاہیے۔",
+                "recoveryHint": "درست عدد درج کریں اور دوبارہ کوشش کریں۔"
+              },
+              {
+                "key": "negative",
+                "message": "{field} منفی نہیں ہونا چاہیے۔",
+                "recoveryHint": "صفر یا اس سے بڑی قدر درج کریں۔"
+              },
+              {
+                "key": "positive",
+                "message": "{field} صفر سے زیادہ ہونا چاہیے۔",
+                "recoveryHint": "صفر سے بڑی قدر درج کریں۔"
+              },
+              {
+                "key": "margin",
+                "message": "ہنگامی گنجائش زیادہ سے زیادہ 100% اور مطلوبہ مارجن 90% سے کم ہونا چاہیے۔",
+                "recoveryHint": "ہنگامی گنجائش 100% یا اس سے کم اور مطلوبہ مجموعی منافع کا مارجن 90% سے کم رکھیں۔"
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-freelance-project-1",
+                "question": "پروجیکٹ کی قیمت کیسے نکالی جاتی ہے؟",
+                "answer": "مزدوری کے گھنٹوں کو فی گھنٹہ ریٹ سے ضرب دی جاتی ہے، اخراجات اور ہنگامی گنجائش شامل کی جاتی ہے، پھر مطلوبہ مارجن حاصل کرنے کے لیے لاگت کو بڑھایا جاتا ہے۔"
+              },
+              {
+                "key": "faq-freelance-project-2",
+                "question": "کیا مجموعی منافع کا مارجن اور مارک اپ ایک ہی ہیں؟",
+                "answer": "نہیں۔ مجموعی منافع کا مارجن فروخت کی قیمت سے تقسیم شدہ منافع ہے؛ مارک اپ لاگت سے تقسیم شدہ منافع ہے۔"
+              },
+              {
+                "key": "faq-freelance-project-3",
+                "question": "کیا اس میں ٹیکس شامل ہے؟",
+                "answer": "نہیں۔ ٹیکس، ادائیگی کی فیس، کام کے دائرے میں تبدیلیاں اور مقامی تقاضے شامل نہیں۔"
+              }
+            ],
+            "guide": {
+              "title": "فری لانس پروجیکٹ قیمت کیلکولیٹر رہنما",
+              "introduction": "کام کے گھنٹوں، اخراجات، ہنگامی گنجائش اور مطلوبہ مجموعی منافع کے مارجن کی بنیاد پر پروجیکٹ کی قیمت تیار کریں۔",
+              "steps": [
+                {
+                  "key": "freelance-project-guide-step-1",
+                  "title": "مرحلہ 1",
+                  "body": "پروجیکٹ کے گھنٹے اور فی گھنٹہ ریٹ درج کریں۔"
+                },
+                {
+                  "key": "freelance-project-guide-step-2",
+                  "title": "مرحلہ 2",
+                  "body": "اخراجات اور ہنگامی گنجائش کا فیصد شامل کریں۔"
+                },
+                {
+                  "key": "freelance-project-guide-step-3",
+                  "title": "مرحلہ 3",
+                  "body": "90% سے کم مطلوبہ مجموعی منافع کا مارجن درج کریں۔"
+                },
+                {
+                  "key": "freelance-project-guide-step-4",
+                  "title": "مرحلہ 4",
+                  "body": "مزدوری، بنیادی لاگت، ہنگامی گنجائش اور کل لاگت کا حساب لگائیں۔"
+                },
+                {
+                  "key": "freelance-project-guide-step-5",
+                  "title": "مرحلہ 5",
+                  "body": "قیمت حاصل کرنے کے لیے کل لاگت کو ایک میں سے مطلوبہ مارجن منفی کرنے کے نتیجے پر تقسیم کریں۔"
+                },
+                {
+                  "key": "freelance-project-guide-step-6",
+                  "title": "مرحلہ 6",
+                  "body": "منافع کا تخمینہ لگانے کے لیے پیش کردہ قیمت میں سے کل لاگت منہا کریں۔"
+                }
+              ],
+              "sections": [
+                {
+                  "key": "freelance-project-guide-section-1",
+                  "heading": "حساب کا طریقہ",
+                  "body": "Labor = hours × hourly rate. Base cost = labor + expenses. Contingency = base cost × contingency rate ÷ 100. Total cost = base cost + contingency. Quote = total cost ÷ (1 − target gross margin ÷ 100). Profit = quote − total cost."
+                },
+                {
+                  "key": "freelance-project-guide-section-2",
+                  "heading": "مفروضے اور حدود",
+                  "body": "ہنگامی گنجائش مزدوری اور اخراجات کے مجموعے پر لاگو ہوتی ہے۔ مجموعی منافع کا مارجن پیش کردہ قیمت سے تقسیم شدہ منافع ہے، لاگت پر مارک اپ نہیں۔ ٹیکس، ادائیگی کی فیس، کام کے دائرے میں تبدیلیاں اور مارکیٹ ریٹ کی تصدیق شامل نہیں۔"
+                }
+              ]
+            },
+            "seo": {
+              "title": "فری لانس پروجیکٹ قیمت کیلکولیٹر | FinPulse Hub",
+              "metaDescription": "گھنٹوں، فی گھنٹہ ریٹ، اخراجات، ہنگامی گنجائش اور مطلوبہ مجموعی منافع کے مارجن کی مدد سے فری لانس پروجیکٹ کی قیمت کا تخمینہ لگائیں۔ یہ منصوبہ بندی کا حساب ہے، مارکیٹ ریٹ کی سفارش نہیں۔",
+              "h1": "فری لانس پروجیکٹ قیمت کیلکولیٹر",
+              "introduction": "گھنٹوں، فی گھنٹہ ریٹ، اخراجات، ہنگامی گنجائش اور مطلوبہ مجموعی منافع کے مارجن کی مدد سے فری لانس پروجیکٹ کی قیمت کا تخمینہ لگائیں۔ یہ منصوبہ بندی کا حساب ہے، مارکیٹ ریٹ کی سفارش نہیں۔",
+              "faq": [
+                {
+                  "key": "faq-freelance-project-1",
+                  "question": "پروجیکٹ کی قیمت کیسے نکالی جاتی ہے؟",
+                  "answer": "مزدوری کے گھنٹوں کو فی گھنٹہ ریٹ سے ضرب دی جاتی ہے، اخراجات اور ہنگامی گنجائش شامل کی جاتی ہے، پھر مطلوبہ مارجن حاصل کرنے کے لیے لاگت کو بڑھایا جاتا ہے۔"
+                },
+                {
+                  "key": "faq-freelance-project-2",
+                  "question": "کیا مجموعی منافع کا مارجن اور مارک اپ ایک ہی ہیں؟",
+                  "answer": "نہیں۔ مجموعی منافع کا مارجن فروخت کی قیمت سے تقسیم شدہ منافع ہے؛ مارک اپ لاگت سے تقسیم شدہ منافع ہے۔"
+                },
+                {
+                  "key": "faq-freelance-project-3",
+                  "question": "کیا اس میں ٹیکس شامل ہے؟",
+                  "answer": "نہیں۔ ٹیکس، ادائیگی کی فیس، کام کے دائرے میں تبدیلیاں اور مقامی تقاضے شامل نہیں۔"
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "فری لانس پروجیکٹ قیمت کیلکولیٹر",
+              "formLabel": "فری لانس پروجیکٹ قیمت کیلکولیٹر فارم",
+              "resultAnnouncement": "فری لانس پروجیکٹ قیمت کیلکولیٹر کا حسابی نتیجہ",
+              "chartLabel": "مثالی پروجیکٹ قیمت دکھانے والا چارٹ",
+              "controlLabels": [
+                {
+                  "key": "hours",
+                  "label": "پروجیکٹ کے تخمینی گھنٹے"
+                },
+                {
+                  "key": "rate",
+                  "label": "فی گھنٹہ بلنگ ریٹ"
+                },
+                {
+                  "key": "expenses",
+                  "label": "پروجیکٹ کے اخراجات"
+                },
+                {
+                  "key": "contingency",
+                  "label": "ہنگامی گنجائش (%)"
+                },
+                {
+                  "key": "margin",
+                  "label": "مطلوبہ مجموعی منافع کا مارجن (%)"
+                }
+              ]
+            }
+          }
         },
         "zh-CN": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "自由职业项目报价计算器",
+              "description": "根据工时、费用、预留应急金和目标毛利率制定项目报价。",
+              "category": "财务与金钱",
+              "subcategory": "商业与自由职业计算器"
+            },
+            "inputs": [
+              {
+                "key": "hours",
+                "label": "预计项目工时",
+                "helpText": null,
+                "placeholder": null,
+                "options": [],
+                "validationMessage": null
+              },
+              {
+                "key": "rate",
+                "label": "每小时计费费率",
+                "helpText": null,
+                "placeholder": null,
+                "options": [],
+                "validationMessage": null
+              },
+              {
+                "key": "expenses",
+                "label": "项目费用",
+                "helpText": null,
+                "placeholder": null,
+                "options": [],
+                "validationMessage": null
+              },
+              {
+                "key": "contingency",
+                "label": "应急预留比例（%）",
+                "helpText": null,
+                "placeholder": null,
+                "options": [],
+                "validationMessage": null
+              },
+              {
+                "key": "margin",
+                "label": "目标毛利率（%）",
+                "helpText": null,
+                "placeholder": null,
+                "options": [],
+                "validationMessage": null
+              }
+            ],
+            "actions": {
+              "calculate": null,
+              "recalculate": null,
+              "clear": null,
+              "reset": null,
+              "copy": null,
+              "download": null,
+              "print": null
+            },
+            "results": {
+              "heading": "结果",
+              "summary": "示例项目报价",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "人工成本"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "基础成本"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "应急预留金额"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "总成本"
+                },
+                {
+                  "key": "metric-5",
+                  "label": "预计利润"
+                },
+                {
+                  "key": "metric-6",
+                  "label": "目标毛利率"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "人工"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "费用"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "应急预留金额"
+                },
+                {
+                  "key": "breakdown-4",
+                  "label": "总成本"
+                },
+                {
+                  "key": "breakdown-5",
+                  "label": "报价"
+                },
+                {
+                  "key": "breakdown-6",
+                  "label": "预计利润"
+                }
+              ],
+              "chart": {
+                "title": null,
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": null,
+              "formulaDescription": "Labor = hours × hourly rate. Base cost = labor + expenses. Contingency = base cost × contingency rate ÷ 100. Total cost = base cost + contingency. Quote = total cost ÷ (1 − target gross margin ÷ 100). Profit = quote − total cost.",
+              "assumptions": [
+                "应急预留按人工成本与费用之和计算。",
+                "毛利率是利润除以报价，而不是利润除以成本的加价率。",
+                "不包括税费、支付手续费、范围变更和市场价格验证。"
+              ],
+              "notes": [
+                "仅供规划参考；请查看显示的计算说明，并核实输入值及适用规则。"
+              ],
+              "disclaimers": [
+                "本计算器根据输入值和假设提供估算结果，不构成财务、法律或税务建议。"
+              ],
+              "limitations": [
+                "应急预留按人工成本与费用之和计算。",
+                "毛利率是利润除以报价，而不是利润除以成本的加价率。",
+                "不包括税费、支付手续费、范围变更和市场价格验证。"
+              ],
+              "steps": [
+                "输入项目工时和每小时费率。",
+                "添加费用和应急预留比例。",
+                "输入低于 90% 的目标毛利率。",
+                "计算人工成本、基础成本、应急预留金额和总成本。",
+                "用总成本除以一减去目标毛利率，得到报价。",
+                "用报价减去总成本，估算利润。"
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "{field} 必须是有限数值。",
+                "recoveryHint": "请输入有效数字后重试。"
+              },
+              {
+                "key": "negative",
+                "message": "{field} 不能为负数。",
+                "recoveryHint": "请输入零或正数。"
+              },
+              {
+                "key": "positive",
+                "message": "{field} 必须大于零。",
+                "recoveryHint": "请输入大于零的数值。"
+              },
+              {
+                "key": "margin",
+                "message": "应急预留比例不得超过 100%，且目标毛利率必须低于 90%。",
+                "recoveryHint": "应急预留比例请保持在 100% 或以下，目标毛利率请保持在 90% 以下。"
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-freelance-project-1",
+                "question": "项目报价如何计算？",
+                "answer": "将工时乘以小时费率，再加上费用和应急预留，最后根据目标毛利率反推报价。"
+              },
+              {
+                "key": "faq-freelance-project-2",
+                "question": "毛利率和加价率相同吗？",
+                "answer": "不同。毛利率是利润除以销售价格；加价率是利润除以成本。"
+              },
+              {
+                "key": "faq-freelance-project-3",
+                "question": "此计算是否包含税费？",
+                "answer": "不包含。税费、支付手续费、范围变更和当地要求均未纳入。"
+              }
+            ],
+            "guide": {
+              "title": "自由职业项目报价计算器指南",
+              "introduction": "根据工时、费用、预留应急金和目标毛利率制定项目报价。",
+              "steps": [
+                {
+                  "key": "freelance-project-guide-step-1",
+                  "title": "步骤 1",
+                  "body": "输入项目工时和每小时费率。"
+                },
+                {
+                  "key": "freelance-project-guide-step-2",
+                  "title": "步骤 2",
+                  "body": "添加费用和应急预留比例。"
+                },
+                {
+                  "key": "freelance-project-guide-step-3",
+                  "title": "步骤 3",
+                  "body": "输入低于 90% 的目标毛利率。"
+                },
+                {
+                  "key": "freelance-project-guide-step-4",
+                  "title": "步骤 4",
+                  "body": "计算人工成本、基础成本、应急预留金额和总成本。"
+                },
+                {
+                  "key": "freelance-project-guide-step-5",
+                  "title": "步骤 5",
+                  "body": "用总成本除以一减去目标毛利率，得到报价。"
+                },
+                {
+                  "key": "freelance-project-guide-step-6",
+                  "title": "步骤 6",
+                  "body": "用报价减去总成本，估算利润。"
+                }
+              ],
+              "sections": [
+                {
+                  "key": "freelance-project-guide-section-1",
+                  "heading": "计算方法",
+                  "body": "Labor = hours × hourly rate. Base cost = labor + expenses. Contingency = base cost × contingency rate ÷ 100. Total cost = base cost + contingency. Quote = total cost ÷ (1 − target gross margin ÷ 100). Profit = quote − total cost."
+                },
+                {
+                  "key": "freelance-project-guide-section-2",
+                  "heading": "假设与限制",
+                  "body": "应急预留按人工成本与费用之和计算。毛利率是利润除以报价，而不是利润除以成本的加价率。不包括税费、支付手续费、范围变更和市场价格验证。"
+                }
+              ]
+            },
+            "seo": {
+              "title": "自由职业项目报价计算器 | FinPulse Hub",
+              "metaDescription": "根据工时、小时费率、费用、应急预留和目标毛利率估算自由职业项目报价。本计算仅用于规划，不构成市场定价建议。",
+              "h1": "自由职业项目报价计算器",
+              "introduction": "根据工时、小时费率、费用、应急预留和目标毛利率估算自由职业项目报价。本计算仅用于规划，不构成市场定价建议。",
+              "faq": [
+                {
+                  "key": "faq-freelance-project-1",
+                  "question": "项目报价如何计算？",
+                  "answer": "将工时乘以小时费率，再加上费用和应急预留，最后根据目标毛利率反推报价。"
+                },
+                {
+                  "key": "faq-freelance-project-2",
+                  "question": "毛利率和加价率相同吗？",
+                  "answer": "不同。毛利率是利润除以销售价格；加价率是利润除以成本。"
+                },
+                {
+                  "key": "faq-freelance-project-3",
+                  "question": "此计算是否包含税费？",
+                  "answer": "不包含。税费、支付手续费、范围变更和当地要求均未纳入。"
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "自由职业项目报价计算器",
+              "formLabel": "自由职业项目报价计算器表单",
+              "resultAnnouncement": "自由职业项目报价计算结果",
+              "chartLabel": "显示示例项目报价的图表",
+              "controlLabels": [
+                {
+                  "key": "hours",
+                  "label": "预计项目工时"
+                },
+                {
+                  "key": "rate",
+                  "label": "每小时计费费率"
+                },
+                {
+                  "key": "expenses",
+                  "label": "项目费用"
+                },
+                {
+                  "key": "contingency",
+                  "label": "应急预留比例（%）"
+                },
+                {
+                  "key": "margin",
+                  "label": "目标毛利率（%）"
+                }
+              ]
+            }
+          }
         },
         "ja": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "フリーランス案件価格計算ツール",
+              "description": "作業時間、経費、予備費、目標粗利益率に基づいて案件の見積もりを作成します。",
+              "category": "金融・お金",
+              "subcategory": "ビジネス・フリーランス計算ツール"
+            },
+            "inputs": [
+              {
+                "key": "hours",
+                "label": "案件の推定作業時間",
+                "helpText": null,
+                "placeholder": null,
+                "options": [],
+                "validationMessage": null
+              },
+              {
+                "key": "rate",
+                "label": "時間単価",
+                "helpText": null,
+                "placeholder": null,
+                "options": [],
+                "validationMessage": null
+              },
+              {
+                "key": "expenses",
+                "label": "案件経費",
+                "helpText": null,
+                "placeholder": null,
+                "options": [],
+                "validationMessage": null
+              },
+              {
+                "key": "contingency",
+                "label": "予備費（%）",
+                "helpText": null,
+                "placeholder": null,
+                "options": [],
+                "validationMessage": null
+              },
+              {
+                "key": "margin",
+                "label": "目標粗利益率（%）",
+                "helpText": null,
+                "placeholder": null,
+                "options": [],
+                "validationMessage": null
+              }
+            ],
+            "actions": {
+              "calculate": null,
+              "recalculate": null,
+              "clear": null,
+              "reset": null,
+              "copy": null,
+              "download": null,
+              "print": null
+            },
+            "results": {
+              "heading": "結果",
+              "summary": "案件見積もりの例",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "人件費"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "基本コスト"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "予備費"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "総コスト"
+                },
+                {
+                  "key": "metric-5",
+                  "label": "推定利益"
+                },
+                {
+                  "key": "metric-6",
+                  "label": "目標粗利益率"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "人件費"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "経費"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "予備費"
+                },
+                {
+                  "key": "breakdown-4",
+                  "label": "総コスト"
+                },
+                {
+                  "key": "breakdown-5",
+                  "label": "見積価格"
+                },
+                {
+                  "key": "breakdown-6",
+                  "label": "推定利益"
+                }
+              ],
+              "chart": {
+                "title": null,
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": null,
+              "formulaDescription": "Labor = hours × hourly rate. Base cost = labor + expenses. Contingency = base cost × contingency rate ÷ 100. Total cost = base cost + contingency. Quote = total cost ÷ (1 − target gross margin ÷ 100). Profit = quote − total cost.",
+              "assumptions": [
+                "予備費は人件費と経費の合計に適用されます。",
+                "粗利益率は見積価格に対する利益の割合であり、原価に対する上乗せ率ではありません。",
+                "税金、決済手数料、作業範囲の変更、市場価格の検証は含まれません。"
+              ],
+              "notes": [
+                "計画用の概算です。表示された計算メモを確認し、入力値と適用ルールを検証してください。"
+              ],
+              "disclaimers": [
+                "この計算ツールは入力値と前提条件に基づく概算を提示します。財務、法律、税務上の助言ではありません。"
+              ],
+              "limitations": [
+                "予備費は人件費と経費の合計に適用されます。",
+                "粗利益率は見積価格に対する利益の割合であり、原価に対する上乗せ率ではありません。",
+                "税金、決済手数料、作業範囲の変更、市場価格の検証は含まれません。"
+              ],
+              "steps": [
+                "案件の作業時間と時間単価を入力します。",
+                "経費と予備費の割合を追加します。",
+                "90%未満の目標粗利益率を入力します。",
+                "人件費、基本コスト、予備費、総コストを計算します。",
+                "総コストを 1 から目標利益率を引いた値で割り、見積価格を求めます。",
+                "見積価格から総コストを差し引いて利益を推定します。"
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "{field} は有限の数値である必要があります。",
+                "recoveryHint": "有効な数値を入力して、もう一度お試しください。"
+              },
+              {
+                "key": "negative",
+                "message": "{field} に負の値は指定できません。",
+                "recoveryHint": "0 または正の値を入力してください。"
+              },
+              {
+                "key": "positive",
+                "message": "{field} は 0 より大きい値である必要があります。",
+                "recoveryHint": "0 より大きい値を入力してください。"
+              },
+              {
+                "key": "margin",
+                "message": "予備費は最大 100% とし、目標利益率は 90% 未満にしてください。",
+                "recoveryHint": "予備費は 100% 以下、目標粗利益率は 90% 未満にしてください。"
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-freelance-project-1",
+                "question": "案件の見積価格はどのように計算しますか？",
+                "answer": "作業時間に時間単価を掛け、経費と予備費を加算し、目標利益率になるようにコストから見積価格を算出します。"
+              },
+              {
+                "key": "faq-freelance-project-2",
+                "question": "粗利益率と上乗せ率は同じですか？",
+                "answer": "いいえ。粗利益率は販売価格に対する利益の割合で、上乗せ率は原価に対する利益の割合です。"
+              },
+              {
+                "key": "faq-freelance-project-3",
+                "question": "税金は含まれますか？",
+                "answer": "いいえ。税金、決済手数料、作業範囲の変更、地域ごとの要件は含まれません。"
+              }
+            ],
+            "guide": {
+              "title": "フリーランス案件価格計算ツールガイド",
+              "introduction": "作業時間、経費、予備費、目標粗利益率に基づいて案件の見積もりを作成します。",
+              "steps": [
+                {
+                  "key": "freelance-project-guide-step-1",
+                  "title": "ステップ 1",
+                  "body": "案件の作業時間と時間単価を入力します。"
+                },
+                {
+                  "key": "freelance-project-guide-step-2",
+                  "title": "ステップ 2",
+                  "body": "経費と予備費の割合を追加します。"
+                },
+                {
+                  "key": "freelance-project-guide-step-3",
+                  "title": "ステップ 3",
+                  "body": "90%未満の目標粗利益率を入力します。"
+                },
+                {
+                  "key": "freelance-project-guide-step-4",
+                  "title": "ステップ 4",
+                  "body": "人件費、基本コスト、予備費、総コストを計算します。"
+                },
+                {
+                  "key": "freelance-project-guide-step-5",
+                  "title": "ステップ 5",
+                  "body": "総コストを 1 から目標利益率を引いた値で割り、見積価格を求めます。"
+                },
+                {
+                  "key": "freelance-project-guide-step-6",
+                  "title": "ステップ 6",
+                  "body": "見積価格から総コストを差し引いて利益を推定します。"
+                }
+              ],
+              "sections": [
+                {
+                  "key": "freelance-project-guide-section-1",
+                  "heading": "計算方法",
+                  "body": "Labor = hours × hourly rate. Base cost = labor + expenses. Contingency = base cost × contingency rate ÷ 100. Total cost = base cost + contingency. Quote = total cost ÷ (1 − target gross margin ÷ 100). Profit = quote − total cost."
+                },
+                {
+                  "key": "freelance-project-guide-section-2",
+                  "heading": "前提条件と制限",
+                  "body": "予備費は人件費と経費の合計に適用されます。粗利益率は見積価格に対する利益の割合であり、原価に対する上乗せ率ではありません。税金、決済手数料、作業範囲の変更、市場価格の検証は含まれません。"
+                }
+              ]
+            },
+            "seo": {
+              "title": "フリーランス案件価格計算ツール | FinPulse Hub",
+              "metaDescription": "作業時間、時間単価、経費、予備費、目標粗利益率を使ってフリーランス案件の見積価格を推定します。計画用の計算であり、市場価格の推奨ではありません。",
+              "h1": "フリーランス案件価格計算ツール",
+              "introduction": "作業時間、時間単価、経費、予備費、目標粗利益率を使ってフリーランス案件の見積価格を推定します。計画用の計算であり、市場価格の推奨ではありません。",
+              "faq": [
+                {
+                  "key": "faq-freelance-project-1",
+                  "question": "案件の見積価格はどのように計算しますか？",
+                  "answer": "作業時間に時間単価を掛け、経費と予備費を加算し、目標利益率になるようにコストから見積価格を算出します。"
+                },
+                {
+                  "key": "faq-freelance-project-2",
+                  "question": "粗利益率と上乗せ率は同じですか？",
+                  "answer": "いいえ。粗利益率は販売価格に対する利益の割合で、上乗せ率は原価に対する利益の割合です。"
+                },
+                {
+                  "key": "faq-freelance-project-3",
+                  "question": "税金は含まれますか？",
+                  "answer": "いいえ。税金、決済手数料、作業範囲の変更、地域ごとの要件は含まれません。"
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "フリーランス案件価格計算ツール",
+              "formLabel": "フリーランス案件価格計算ツールのフォーム",
+              "resultAnnouncement": "フリーランス案件価格計算ツールの計算結果",
+              "chartLabel": "案件見積もりの例を示すグラフ",
+              "controlLabels": [
+                {
+                  "key": "hours",
+                  "label": "案件の推定作業時間"
+                },
+                {
+                  "key": "rate",
+                  "label": "時間単価"
+                },
+                {
+                  "key": "expenses",
+                  "label": "案件経費"
+                },
+                {
+                  "key": "contingency",
+                  "label": "予備費（%）"
+                },
+                {
+                  "key": "margin",
+                  "label": "目標粗利益率（%）"
+                }
+              ]
+            }
+          }
         },
         "ru": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "Калькулятор стоимости фриланс-проекта",
+              "description": "Составьте смету проекта на основе рабочих часов, расходов, резерва на непредвиденные затраты и целевой валовой маржи.",
+              "category": "Финансы и деньги",
+              "subcategory": "Калькуляторы для бизнеса и фриланса"
+            },
+            "inputs": [
+              {
+                "key": "hours",
+                "label": "Расчётное количество часов проекта",
+                "helpText": null,
+                "placeholder": null,
+                "options": [],
+                "validationMessage": null
+              },
+              {
+                "key": "rate",
+                "label": "Почасовая ставка",
+                "helpText": null,
+                "placeholder": null,
+                "options": [],
+                "validationMessage": null
+              },
+              {
+                "key": "expenses",
+                "label": "Расходы проекта",
+                "helpText": null,
+                "placeholder": null,
+                "options": [],
+                "validationMessage": null
+              },
+              {
+                "key": "contingency",
+                "label": "Резерв на непредвиденные расходы (%)",
+                "helpText": null,
+                "placeholder": null,
+                "options": [],
+                "validationMessage": null
+              },
+              {
+                "key": "margin",
+                "label": "Целевая валовая маржа (%)",
+                "helpText": null,
+                "placeholder": null,
+                "options": [],
+                "validationMessage": null
+              }
+            ],
+            "actions": {
+              "calculate": null,
+              "recalculate": null,
+              "clear": null,
+              "reset": null,
+              "copy": null,
+              "download": null,
+              "print": null
+            },
+            "results": {
+              "heading": "Результат",
+              "summary": "Пример сметы проекта",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "Стоимость труда"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "Базовая стоимость"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "Резерв на непредвиденные расходы"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "Общая стоимость"
+                },
+                {
+                  "key": "metric-5",
+                  "label": "Расчётная прибыль"
+                },
+                {
+                  "key": "metric-6",
+                  "label": "Целевая валовая маржа"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "Труд"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "Расходы"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "Резерв на непредвиденные расходы"
+                },
+                {
+                  "key": "breakdown-4",
+                  "label": "Общая стоимость"
+                },
+                {
+                  "key": "breakdown-5",
+                  "label": "Цена предложения"
+                },
+                {
+                  "key": "breakdown-6",
+                  "label": "Расчётная прибыль"
+                }
+              ],
+              "chart": {
+                "title": null,
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": null,
+              "formulaDescription": "Labor = hours × hourly rate. Base cost = labor + expenses. Contingency = base cost × contingency rate ÷ 100. Total cost = base cost + contingency. Quote = total cost ÷ (1 − target gross margin ÷ 100). Profit = quote − total cost.",
+              "assumptions": [
+                "Резерв применяется к сумме затрат на труд и расходов.",
+                "Валовая маржа — это прибыль, делённая на цену предложения, а не наценка на себестоимость.",
+                "Налоги, комиссии за платежи, изменения объёма работ и проверка рыночных ставок не включены."
+              ],
+              "notes": [
+                "Оценка только для планирования; проверьте примечание к расчёту, введённые данные и применимые правила."
+              ],
+              "disclaimers": [
+                "Калькулятор предоставляет оценку на основе введённых значений и допущений. Это не финансовая, юридическая или налоговая консультация."
+              ],
+              "limitations": [
+                "Резерв применяется к сумме затрат на труд и расходов.",
+                "Валовая маржа — это прибыль, делённая на цену предложения, а не наценка на себестоимость.",
+                "Налоги, комиссии за платежи, изменения объёма работ и проверка рыночных ставок не включены."
+              ],
+              "steps": [
+                "Введите количество часов проекта и почасовую ставку.",
+                "Добавьте расходы и процент резерва.",
+                "Укажите целевую валовую маржу ниже 90%.",
+                "Рассчитайте стоимость труда, базовую стоимость, резерв и общую стоимость.",
+                "Разделите общую стоимость на единицу минус целевая маржа, чтобы получить цену предложения.",
+                "Вычтите общую стоимость из цены предложения, чтобы оценить прибыль."
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "Значение {field} должно быть конечным числом.",
+                "recoveryHint": "Введите корректное число и повторите попытку."
+              },
+              {
+                "key": "negative",
+                "message": "Значение {field} не должно быть отрицательным.",
+                "recoveryHint": "Введите ноль или положительное значение."
+              },
+              {
+                "key": "positive",
+                "message": "Значение {field} должно быть больше нуля.",
+                "recoveryHint": "Введите значение больше нуля."
+              },
+              {
+                "key": "margin",
+                "message": "Резерв не должен превышать 100%, а целевая маржа должна быть ниже 90%.",
+                "recoveryHint": "Установите резерв не выше 100%, а целевую валовую маржу — ниже 90%."
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-freelance-project-1",
+                "question": "Как рассчитывается цена проекта?",
+                "answer": "Рабочие часы умножаются на почасовую ставку, затем добавляются расходы и резерв, после чего стоимость пересчитывается с учётом целевой маржи."
+              },
+              {
+                "key": "faq-freelance-project-2",
+                "question": "Валовая маржа и наценка — это одно и то же?",
+                "answer": "Нет. Валовая маржа — прибыль, делённая на цену продажи; наценка — прибыль, делённая на себестоимость."
+              },
+              {
+                "key": "faq-freelance-project-3",
+                "question": "Включены ли налоги?",
+                "answer": "Нет. Налоги, комиссии за платежи, изменения объёма работ и местные требования не учитываются."
+              }
+            ],
+            "guide": {
+              "title": "Руководство по калькулятору стоимости фриланс-проекта",
+              "introduction": "Составьте смету проекта на основе рабочих часов, расходов, резерва на непредвиденные затраты и целевой валовой маржи.",
+              "steps": [
+                {
+                  "key": "freelance-project-guide-step-1",
+                  "title": "Шаг 1",
+                  "body": "Введите количество часов проекта и почасовую ставку."
+                },
+                {
+                  "key": "freelance-project-guide-step-2",
+                  "title": "Шаг 2",
+                  "body": "Добавьте расходы и процент резерва."
+                },
+                {
+                  "key": "freelance-project-guide-step-3",
+                  "title": "Шаг 3",
+                  "body": "Укажите целевую валовую маржу ниже 90%."
+                },
+                {
+                  "key": "freelance-project-guide-step-4",
+                  "title": "Шаг 4",
+                  "body": "Рассчитайте стоимость труда, базовую стоимость, резерв и общую стоимость."
+                },
+                {
+                  "key": "freelance-project-guide-step-5",
+                  "title": "Шаг 5",
+                  "body": "Разделите общую стоимость на единицу минус целевая маржа, чтобы получить цену предложения."
+                },
+                {
+                  "key": "freelance-project-guide-step-6",
+                  "title": "Шаг 6",
+                  "body": "Вычтите общую стоимость из цены предложения, чтобы оценить прибыль."
+                }
+              ],
+              "sections": [
+                {
+                  "key": "freelance-project-guide-section-1",
+                  "heading": "Метод расчёта",
+                  "body": "Labor = hours × hourly rate. Base cost = labor + expenses. Contingency = base cost × contingency rate ÷ 100. Total cost = base cost + contingency. Quote = total cost ÷ (1 − target gross margin ÷ 100). Profit = quote − total cost."
+                },
+                {
+                  "key": "freelance-project-guide-section-2",
+                  "heading": "Допущения и ограничения",
+                  "body": "Резерв применяется к сумме затрат на труд и расходов. Валовая маржа — это прибыль, делённая на цену предложения, а не наценка на себестоимость. Налоги, комиссии за платежи, изменения объёма работ и проверка рыночных ставок не включены."
+                }
+              ]
+            },
+            "seo": {
+              "title": "Калькулятор стоимости фриланс-проекта | FinPulse Hub",
+              "metaDescription": "Оцените стоимость фриланс-проекта по часам, почасовой ставке, расходам, резерву и целевой валовой марже. Это расчёт для планирования, а не рекомендация рыночной цены.",
+              "h1": "Калькулятор стоимости фриланс-проекта",
+              "introduction": "Оцените стоимость фриланс-проекта по часам, почасовой ставке, расходам, резерву и целевой валовой марже. Это расчёт для планирования, а не рекомендация рыночной цены.",
+              "faq": [
+                {
+                  "key": "faq-freelance-project-1",
+                  "question": "Как рассчитывается цена проекта?",
+                  "answer": "Рабочие часы умножаются на почасовую ставку, затем добавляются расходы и резерв, после чего стоимость пересчитывается с учётом целевой маржи."
+                },
+                {
+                  "key": "faq-freelance-project-2",
+                  "question": "Валовая маржа и наценка — это одно и то же?",
+                  "answer": "Нет. Валовая маржа — прибыль, делённая на цену продажи; наценка — прибыль, делённая на себестоимость."
+                },
+                {
+                  "key": "faq-freelance-project-3",
+                  "question": "Включены ли налоги?",
+                  "answer": "Нет. Налоги, комиссии за платежи, изменения объёма работ и местные требования не учитываются."
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "Калькулятор стоимости фриланс-проекта",
+              "formLabel": "Форма калькулятора стоимости фриланс-проекта",
+              "resultAnnouncement": "Результат расчёта стоимости фриланс-проекта",
+              "chartLabel": "Диаграмма с примером сметы проекта",
+              "controlLabels": [
+                {
+                  "key": "hours",
+                  "label": "Расчётное количество часов проекта"
+                },
+                {
+                  "key": "rate",
+                  "label": "Почасовая ставка"
+                },
+                {
+                  "key": "expenses",
+                  "label": "Расходы проекта"
+                },
+                {
+                  "key": "contingency",
+                  "label": "Резерв на непредвиденные расходы (%)"
+                },
+                {
+                  "key": "margin",
+                  "label": "Целевая валовая маржа (%)"
+                }
+              ]
+            }
+          }
         }
       },
       "sourceExtractionStatus": "source-record-complete",
