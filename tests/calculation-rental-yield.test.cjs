@@ -1,0 +1,9 @@
+"use strict";
+const test=require("node:test");
+const assert=require("node:assert/strict");
+const Core=require("../finance-core.js");
+test("Rental yield: annualizes rent and calculates gross and net yield",()=>{const x=Core.rentalYieldCalculator(250000,1800,5,4500);assert.equal(x.potentialRent,21600);assert.equal(x.effectiveRent,20520);assert.equal(x.annualCosts,4500);assert.equal(x.netOperatingIncome,16020);assert.equal(x.grossYield,8.64);assert.equal(x.netYield,6.408);assert.equal(x.monthlyNetIncome,1335);assert.deepEqual(x.series,[21600,20520,4500,16020]);});
+test("Rental yield: 100% vacancy leaves zero effective rent",()=>{const x=Core.rentalYieldCalculator(100000,2000,100,1200);assert.equal(x.effectiveRent,0);assert.equal(x.netOperatingIncome,-1200);assert.equal(x.netYield,-1.2);});
+test("Rental yield: preserves negative net operating income",()=>{const x=Core.rentalYieldCalculator(100000,500,0,7000);assert.equal(x.netOperatingIncome,-1000);assert.equal(x.netYield,-1);assert.equal(x.monthlyNetIncome,-1000/12);});
+test("Rental yield: zero rent and zero costs are valid",()=>{const x=Core.rentalYieldCalculator(100000,0,0,0);assert.equal(x.potentialRent,0);assert.equal(x.netOperatingIncome,0);assert.equal(x.grossYield,0);assert.equal(x.netYield,0);});
+test("Rental yield: rejects invalid price, negative inputs, excessive vacancy and non-finite values",()=>{assert.throws(()=>Core.rentalYieldCalculator(0,1000,0,100));assert.throws(()=>Core.rentalYieldCalculator(-1,1000,0,100));assert.throws(()=>Core.rentalYieldCalculator(100000,-1,0,100));assert.throws(()=>Core.rentalYieldCalculator(100000,1000,-1,100));assert.throws(()=>Core.rentalYieldCalculator(100000,1000,101,100));assert.throws(()=>Core.rentalYieldCalculator(100000,1000,0,-1));assert.throws(()=>Core.rentalYieldCalculator(Number.NaN,1000,0,100));assert.throws(()=>Core.rentalYieldCalculator(100000,Number.POSITIVE_INFINITY,0,100));});

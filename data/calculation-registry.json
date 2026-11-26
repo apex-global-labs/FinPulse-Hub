@@ -1027,18 +1027,68 @@
       "toolId": "rental-yield",
       "sourceModule": "app.js",
       "runtimeFunction": "Core.rentalYieldCalculator",
-      "status": "function-mapped",
+      "status": "extracted",
       "calculation": {
-        "inputs": null,
-        "constraints": null,
-        "formula": null,
-        "dependencies": null,
-        "outputs": null,
-        "units": null,
-        "precision": null,
-        "rounding": null,
-        "assumptions": null,
-        "sourceReferences": []
+        "inputs": [
+          {
+            "key": "price",
+            "type": "number",
+            "minimumExclusive": 0
+          },
+          {
+            "key": "rent",
+            "type": "number",
+            "minimum": 0
+          },
+          {
+            "key": "vacancy",
+            "type": "percentage",
+            "minimum": 0,
+            "maximum": 100
+          },
+          {
+            "key": "costs",
+            "type": "number",
+            "minimum": 0
+          }
+        ],
+        "constraints": [
+          "All four inputs must be finite numbers",
+          "Property purchase price must be greater than zero",
+          "Monthly scheduled rent, vacancy allowance and annual operating costs must be non-negative",
+          "Vacancy allowance must not exceed 100%"
+        ],
+        "formula": "potentialAnnualRent=monthlyScheduledRent*12; effectiveRent=potentialAnnualRent*(1-vacancyAllowance/100); netOperatingIncome=effectiveRent-annualOperatingCosts; grossYield=potentialAnnualRent/purchasePrice*100; netYield=netOperatingIncome/purchasePrice*100; monthlyNetIncome=netOperatingIncome/12",
+        "dependencies": [],
+        "outputs": [
+          "potentialRent",
+          "effectiveRent",
+          "annualCosts",
+          "netOperatingIncome",
+          "grossYield",
+          "netYield",
+          "monthlyNetIncome",
+          "series",
+          "note"
+        ],
+        "units": [
+          "currency",
+          "percent"
+        ],
+        "precision": "JavaScript Number floating-point; no explicit rounding in calculation core",
+        "rounding": "No rounding in core; display formatting is handled by the UI",
+        "assumptions": [
+          "Monthly scheduled rent is annualized by multiplying by 12",
+          "Vacancy allowance is applied to potential annual rent",
+          "Entered annual operating costs are subtracted from rent after vacancy",
+          "Yield is unlevered and uses purchase price as denominator",
+          "Financing, acquisition costs, capital expenditure, income tax and appreciation are excluded"
+        ],
+        "sourceReferences": [
+          "app.js tool registration: rental-yield",
+          "finance-core.js function rentalYieldCalculator",
+          "translations/tool-content.json source record: rental-yield"
+        ]
       }
     },
     {
