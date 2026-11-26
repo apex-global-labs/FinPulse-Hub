@@ -1095,18 +1095,62 @@
       "toolId": "emergency-fund",
       "sourceModule": "app.js",
       "runtimeFunction": "Core.emergencyFundCalculator",
-      "status": "function-mapped",
+      "status": "extracted",
       "calculation": {
-        "inputs": null,
-        "constraints": null,
-        "formula": null,
-        "dependencies": null,
-        "outputs": null,
-        "units": null,
-        "precision": null,
-        "rounding": null,
-        "assumptions": null,
-        "sourceReferences": []
+        "inputs": [
+          {
+            "key": "expenses",
+            "type": "number",
+            "minimumExclusive": 0
+          },
+          {
+            "key": "months",
+            "type": "number",
+            "minimumExclusive": 0,
+            "maximum": 24
+          },
+          {
+            "key": "current",
+            "type": "number",
+            "minimum": 0
+          }
+        ],
+        "constraints": [
+          "All inputs must be finite numbers",
+          "Essential monthly expenses must be greater than zero",
+          "Target coverage months must be greater than zero and must not exceed 24",
+          "Current emergency savings must be non-negative"
+        ],
+        "formula": "target=essentialMonthlyExpenses*targetCoverageMonths; gap=max(0,target-currentSavings); coverageMonths=currentSavings/essentialMonthlyExpenses; progressPct=min(100,currentSavings/target*100)",
+        "dependencies": [],
+        "outputs": [
+          "target",
+          "currentSavings",
+          "gap",
+          "coverageMonths",
+          "progressPct",
+          "series",
+          "note"
+        ],
+        "units": [
+          "currency",
+          "months",
+          "percent"
+        ],
+        "precision": "JavaScript Number floating-point; no explicit rounding in calculation core",
+        "rounding": "No rounding in core; display formatting is handled by the UI",
+        "assumptions": [
+          "Target fund equals essential monthly expenses multiplied by selected target coverage months",
+          "Current savings are compared directly with the target",
+          "Remaining gap is floored at zero when current savings meet or exceed the target",
+          "Progress is capped at 100 percent",
+          "This is an illustrative planning calculation and does not recommend a savings product"
+        ],
+        "sourceReferences": [
+          "app.js tool registration: emergency-fund",
+          "finance-core.js function emergencyFundCalculator",
+          "translations/tool-content.json source record: emergency-fund"
+        ]
       }
     },
     {
