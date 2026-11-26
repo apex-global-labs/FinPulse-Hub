@@ -25,7 +25,7 @@ for (const item of registry.tools) {
   if (item.status === "module-mapped" && item.runtimeFunction !== null) errors.push(`${id}: module-mapped record must not claim a runtime function`);
   if (["function-mapped", "extracted", "parity-verified", "regression-verified"].includes(item.status) && !item.runtimeFunction) errors.push(`${id}: status requires a runtime function`);
   if (!item.calculation || typeof item.calculation !== "object") errors.push(`${id}: calculation metadata object missing`);
-  if (item.calculation && !Array.isArray(item.calculation.dependencies)) errors.push(`${id}: dependencies must be an array (empty is valid)`);
+  if (item.calculation?.dependencies !== null && item.calculation?.dependencies !== undefined && !Array.isArray(item.calculation.dependencies)) errors.push(`${id}: dependencies must be an array when provided (empty is valid)`);
   if (["extracted", "parity-verified", "regression-verified"].includes(item.status)) {
     for (const field of ["inputs", "constraints", "formula", "outputs", "sourceReferences"]) {
       const value = item.calculation?.[field];
