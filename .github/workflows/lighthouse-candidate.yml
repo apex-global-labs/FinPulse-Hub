@@ -31,6 +31,23 @@ jobs:
           mkdir -p lighthouse-reports
           CHROME_PATH="$(node -p "require('playwright').chromium.executablePath()")"
           npx lighthouse "http://127.0.0.1:4173/" --chrome-path="$CHROME_PATH" --chrome-flags="--headless --no-sandbox" --only-categories=performance,accessibility,best-practices,seo --output=json --output-path=./lighthouse-reports/mobile-home.report.json
+          # Repeat mobile homepage Lighthouse 3 times so TBT is reported as a distribution, not a single noisy sample.
+          for run in 1 2 3; do
+            npx lighthouse "http://127.0.0.1:4173/" --chrome-path="$CHROME_PATH" --chrome-flags="--headless --no-sandbox" --only-categories=performance,accessibility,best-practices,seo --output=json --output-path="./lighthouse-reports/mobile-home-repeat-${run}.report.json"
+          done
+          node <<'NODE'
+          const fs = require('node:fs');
+          const values = [1, 2, 3].map(run => {
+            const file = `lighthouse-reports/mobile-home-repeat-${run}.report.json`;
+            const report = JSON.parse(fs.readFileSync(file, 'utf8'));
+            return {run, TBT_ms: report.audits['total-blocking-time']?.numericValue, Performance: Math.round((report.categories.performance?.score ?? 0) * 100)};
+          });
+          if (values.some(x => !Number.isFinite(x.TBT_ms))) throw new Error('A repeated mobile homepage report has no numeric TBT');
+          const sorted = values.map(x => x.TBT_ms).sort((a, b) => a - b);
+          const summary = {runs: values, median_TBT_ms: sorted[1], min_TBT_ms: sorted[0], max_TBT_ms: sorted[2], range_TBT_ms: sorted[2] - sorted[0]};
+          fs.writeFileSync('lighthouse-reports/mobile-home-repeat-summary.json', JSON.stringify(summary, null, 2));
+          console.log('MOBILE_HOME_REPEAT_SUMMARY', JSON.stringify(summary));
+          NODE
           npx lighthouse "http://127.0.0.1:4173/?tool=hydration-log-tracker" --chrome-path="$CHROME_PATH" --chrome-flags="--headless --no-sandbox" --only-categories=performance,accessibility,best-practices,seo --output=json --output-path=./lighthouse-reports/mobile-tool.report.json
       - name: Audit desktop homepage and final tool route
         run: |
@@ -55,6 +72,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: finpulse-batch-11-lighthouse-reports
-          path: lighthouse-reports/*.report.json
+          path: lighthouse-reports/*
           if-no-files-found: error
           retention-days: 30
