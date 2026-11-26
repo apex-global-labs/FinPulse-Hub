@@ -62,7 +62,7 @@ The validator confirms 220 tool records and 1,320 locale records. These are draf
 | Published/activated | 0 | No target locale activated by this batch |
 
 ## Remaining tools
-The full validator now covers every tool ID. Tools 1–30 account for the remaining draft records beyond the Batch 31–60 subset; tools 61–220 remain not-started in the current content JSON. The generated 1,320-cell matrix is emitted in CI logs; the compact per-locale totals are recorded above.
+The full validator covers every tool ID. The exact per-tool allocation outside Batch 31–60 should be taken from the emitted CSV matrix in CI logs; this document records the validated aggregate counts without guessing which additional tool IDs own those draft slots.
 
 ## Required automated matrix validator
 The repository-side validator must:
