@@ -9,7 +9,7 @@ test("Emergency fund: calculates target, gap, coverage and progress",()=>{
  assert.equal(x.currentSavings,5000);
  assert.equal(x.gap,10000);
  assert.equal(x.coverageMonths,2);
- assert.equal(x.progressPct,100/3);
+ assert.ok(Math.abs(x.progressPct-(100/3))<1e-12);
  assert.deepEqual(x.series,[5000,15000]);
 });
 
