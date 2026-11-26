@@ -9,7 +9,7 @@ const content = JSON.parse(fs.readFileSync(path.join(root, "translations/tool-co
 const catalogue = JSON.parse(fs.readFileSync(path.join(root, "translations/tool-catalogue.json"), "utf8"));
 const schema = JSON.parse(fs.readFileSync(path.join(root, "translations/content-schema.json"), "utf8"));
 
-const locales = schema.supportedLocales.filter(locale => locale !== schema.sourceLocale);
+const sourceLocale = "en";\nconst locales = schema.supportedLocales.filter(locale => locale !== sourceLocale);
 const allowedStatuses = new Set(schema.statuses);
 const errors = [];
 const rows = [];
