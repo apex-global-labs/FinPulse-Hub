@@ -895,18 +895,50 @@
       "toolId": "business-roi",
       "sourceModule": "app.js",
       "runtimeFunction": "Core.businessROI",
-      "status": "function-mapped",
+      "status": "extracted",
       "calculation": {
-        "inputs": null,
-        "constraints": null,
-        "formula": null,
-        "dependencies": null,
-        "outputs": null,
-        "units": null,
-        "precision": null,
-        "rounding": null,
-        "assumptions": null,
-        "sourceReferences": []
+        "inputs": [
+          {
+            "key": "investment",
+            "type": "number",
+            "minimumExclusive": 0
+          },
+          {
+            "key": "value",
+            "type": "number",
+            "minimum": 0
+          }
+        ],
+        "constraints": [
+          "All inputs must be finite numbers",
+          "Initial investment must be greater than zero",
+          "Ending value must be non-negative"
+        ],
+        "formula": "gain=value-investment; roi=gain/investment*100; returnMultiple=value/investment",
+        "dependencies": [],
+        "outputs": [
+          "initialInvestment",
+          "endingValue",
+          "gain",
+          "roi",
+          "returnMultiple"
+        ],
+        "units": [
+          "currency",
+          "percent",
+          "multiple"
+        ],
+        "precision": "JavaScript Number floating-point; no explicit rounding in calculation core",
+        "rounding": "No rounding in core; display formatting is handled by the UI",
+        "assumptions": [
+          "Initial investment must be greater than zero; ending value must be non-negative",
+          "Simple, non-annualized ROI does not account for cash-flow timing, holding period or future performance"
+        ],
+        "sourceReferences": [
+          "app.js tool registration: business-roi",
+          "finance-core.js function businessROI",
+          "tool-content.json source record: business-roi"
+        ]
       }
     },
     {
