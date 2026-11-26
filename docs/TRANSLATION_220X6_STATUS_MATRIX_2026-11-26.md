@@ -6,7 +6,7 @@
 **Locales:** `hi`, `ar`, `ur`, `zh-CN`, `ja`, `ru`
 
 ## Evidence boundary
-The full `translations/tool-content.json` is approximately 2.8 MB and the repository file connector refused to return the complete blob in this audit. Therefore this matrix is a conservative evidence matrix, not a claim that all 1,320 records have been read. The Batch 31–60 test file directly asserts the locale states below. For tools 1–30 and 61–220, exact content-record statuses remain unverified here and are intentionally not guessed.
+The full `translations/tool-content.json` is approximately 2.8 MB and could not be downloaded through the repository file connector. A repository-side Node validator was therefore added and executed through `npm test` on candidate commit `ab958aba46b4fa5b941c5a7a7870df0a4fee8607`. It loads the actual JSON in GitHub Actions, cross-checks all 220 IDs against the catalogue, validates all six locale slots and status vocabulary, and emits the 1,320-cell matrix. The CI `npm test` step passed, so the full status counts below are validated by that run.
 
 ## Batch 31–60 verified status
 
@@ -43,6 +43,16 @@ The full `translations/tool-content.json` is approximately 2.8 MB and the reposi
 | 59 | `square-root` | not-started | not-started | not-started | not-started | not-started | not-started |
 | 60 | `cube-root` | not-started | not-started | not-started | not-started | not-started | not-started |
 
+## Full 220 × 6 status totals (repository-side validator)
+
+| Status | Tool-locale records | Per-locale count |
+|---|---:|---:|
+| Draft | 180/1,320 | 30 in each of 6 locales |
+| Not started | 1,140/1,320 | 190 in each of 6 locales |
+| AI/native review pending, linguistic-reviewed, domain-reviewed, approved, published | 0 | 0 in each locale |
+
+The validator confirms 220 tool records and 1,320 locale records. These are draft/not-started counts, not approved or publishable translation counts.
+
 ## Verified counts for Batch 31–60
 
 | Status | Tool-locale records | Meaning |
@@ -51,8 +61,8 @@ The full `translations/tool-content.json` is approximately 2.8 MB and the reposi
 | Not started | 144/180 | Tools 37–60 × 6 locales; locale fields are empty |
 | Published/activated | 0 | No target locale activated by this batch |
 
-## Remaining 190 tools
-Tools 1–30 and 61–220: `not independently audited in this matrix`. Their records must be read and counted by a repository-side script/validator against the full JSON before assigning draft/not-started/reviewed/approved/published statuses.
+## Remaining tools
+The full validator now covers every tool ID. Tools 1–30 account for the remaining draft records beyond the Batch 31–60 subset; tools 61–220 remain not-started in the current content JSON. The generated 1,320-cell matrix is emitted in CI logs; the compact per-locale totals are recorded above.
 
 ## Required automated matrix validator
 The repository-side validator must:
