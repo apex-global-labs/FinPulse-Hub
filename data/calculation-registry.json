@@ -1157,18 +1157,42 @@
       "toolId": "net-worth",
       "sourceModule": "app.js",
       "runtimeFunction": "Core.netWorthCalculator",
-      "status": "function-mapped",
+      "status": "extracted",
       "calculation": {
-        "inputs": null,
-        "constraints": null,
-        "formula": null,
-        "dependencies": null,
-        "outputs": null,
-        "units": null,
-        "precision": null,
-        "rounding": null,
-        "assumptions": null,
-        "sourceReferences": []
+        "inputs": [
+          "cash",
+          "investments",
+          "property",
+          "vehicles",
+          "otherAssets",
+          "mortgage",
+          "loans",
+          "cards",
+          "otherDebt"
+        ],
+        "constraints": [
+          "All nine inputs must be finite, nonnegative numeric balance-sheet amounts; zero is valid."
+        ],
+        "formula": "totalAssets = cash + investments + property + vehicles + otherAssets; totalLiabilities = mortgage + loans + cards + otherDebt; netWorth = totalAssets - totalLiabilities.",
+        "dependencies": [],
+        "outputs": [
+          "totalAssets",
+          "totalLiabilities",
+          "netWorth",
+          "series"
+        ],
+        "units": [
+          "All monetary inputs and outputs use the same user-selected display currency; series order is assets, liabilities, net worth."
+        ],
+        "precision": "JavaScript Number arithmetic; no explicit rounding in calculation core.",
+        "rounding": "No rounding is applied by the calculation function; display formatting is handled by the UI.",
+        "assumptions": [
+          "Point-in-time estimate based solely on user-entered current balances; property and vehicle values are entered estimates; no automatic valuation or currency conversion occurs within this function."
+        ],
+        "sourceReferences": [
+          "app.js#net-worth tool definition and Core.netWorthCalculator argument mapping",
+          "finance-core.js#netWorthCalculator"
+        ]
       }
     },
     {
