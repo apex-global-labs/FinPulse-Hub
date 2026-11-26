@@ -945,18 +945,82 @@
       "toolId": "cash-flow",
       "sourceModule": "app.js",
       "runtimeFunction": "Core.cashFlowProjection",
-      "status": "function-mapped",
+      "status": "extracted",
       "calculation": {
-        "inputs": null,
-        "constraints": null,
-        "formula": null,
-        "dependencies": null,
-        "outputs": null,
-        "units": null,
-        "precision": null,
-        "rounding": null,
-        "assumptions": null,
-        "sourceReferences": []
+        "inputs": [
+          {
+            "key": "opening",
+            "type": "number",
+            "minimum": 0
+          },
+          {
+            "key": "inflows",
+            "type": "number",
+            "minimum": 0
+          },
+          {
+            "key": "outflows",
+            "type": "number",
+            "minimum": 0
+          },
+          {
+            "key": "inflowGrowth",
+            "type": "percentage",
+            "minimum": 0,
+            "maximum": 100
+          },
+          {
+            "key": "outflowGrowth",
+            "type": "percentage",
+            "minimum": 0,
+            "maximum": 100
+          },
+          {
+            "key": "periods",
+            "type": "integer",
+            "allowedValues": [
+              3,
+              6,
+              12,
+              24
+            ]
+          }
+        ],
+        "constraints": [
+          "Opening cash, monthly inflows, monthly outflows and both growth rates must be finite non-negative numbers",
+          "Monthly inflow and outflow growth rates must not exceed 100%",
+          "Projection period must be exactly 3, 6, 12 or 24 months"
+        ],
+        "formula": "For month t=1..periods: inflow_t=inflows*(1+inflowGrowth/100)^(t-1); outflow_t=outflows*(1+outflowGrowth/100)^(t-1); closingCash_t=openingCash_t+inflow_t-outflow_t; openingCash_(t+1)=closingCash_t; endingCash=closingCash_periods; totalInflows=sum(inflow_t); totalOutflows=sum(outflow_t); netCashChange=endingCash-opening",
+        "dependencies": [],
+        "outputs": [
+          "endingCash",
+          "totalInflows",
+          "totalOutflows",
+          "netCashChange",
+          "rows",
+          "balances",
+          "monthlySchedule",
+          "yearlySchedule"
+        ],
+        "units": [
+          "currency",
+          "percent",
+          "months"
+        ],
+        "precision": "JavaScript Number floating-point; no explicit rounding in calculation core",
+        "rounding": "No rounding in core; display formatting is handled by the UI",
+        "assumptions": [
+          "Monthly inflows and outflows recur and compound using fixed user-entered growth rates",
+          "Growth is compounded from month 1 with exponent t−1",
+          "Timing within each month, tax, financing and seasonality are excluded",
+          "Negative projected cash balances are retained as scenario outputs"
+        ],
+        "sourceReferences": [
+          "app.js tool registration: cash-flow",
+          "finance-core.js function cashFlowProjection",
+          "tool-content.json source record: cash-flow"
+        ]
       }
     },
     {
