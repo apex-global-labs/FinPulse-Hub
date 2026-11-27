@@ -529,6 +529,7 @@ test("Batch 41-50 six-locale records are field-complete and preserve source cont
  ];
  const get=(value,path)=>path.split(".").reduce((v,key)=>v?.[key],value);
  const nonempty=(value)=>typeof value==="string"&&value.trim().length>0;
+ const assertTrimmed=(value,label)=>{if(typeof value==="string")assert.equal(value,value.trim(),label+" has surrounding whitespace");else if(Array.isArray(value))value.forEach((item,index)=>assertTrimmed(item,label+"["+index+"]"));else if(value&&typeof value==="object")for(const [key,item] of Object.entries(value))assertTrimmed(item,label+"."+key)};
  const keyedGroups=[
   ["inputs","inputs","label"],["results.metrics","results.metrics","label"],
   ["results.breakdown","results.breakdown","label"],["errors","errors","message"],
@@ -541,6 +542,7 @@ test("Batch 41-50 six-locale records are field-complete and preserve source cont
   assert.ok(tool,id+" source record exists");
   for(const locale of locales){
    const record=tool.locales[locale],fields=record.fields,label=id+"/"+locale;
+   assertTrimmed(fields,label+" fields");
    assert.equal(record.status,"draft",label+" remains inactive draft");
    for(const path of requiredStrings)assert.ok(nonempty(get(fields,path)),label+" "+path);
    for(const [targetPath,sourcePath,property] of keyedGroups){
