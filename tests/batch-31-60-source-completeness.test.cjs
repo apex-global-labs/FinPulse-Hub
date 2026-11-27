@@ -79,6 +79,12 @@ test("Batch 31-60 locale inventory preserves the draft-only activation boundary"
         assert.equal(tool.locales[locale].status, "draft", tool.id + "/" + locale);
         assert.deepEqual(Object.keys(tool.locales[locale].fields).sort(), ["accessibility","actions","errors","explanations","faqs","guide","inputs","metadata","results","seo"].sort(), tool.id + "/" + locale + " complete translation field groups");
       }
+    } else if (tool.id === "rental-yield") {
+      assert.equal(tool.sourceTranslationStatus, "draft", tool.id + " translation status");
+      for (const locale of locales) {
+        assert.equal(tool.locales[locale].status, "draft", tool.id + "/" + locale);
+        assert.equal(Object.keys(tool.locales[locale].fields).length, 10, tool.id + "/" + locale + " complete field groups");
+      }
     } else if (tool.id === "cash-flow") {
       assert.equal(tool.sourceTranslationStatus, "draft", tool.id + " translation status");
       for (const locale of locales) {
@@ -247,4 +253,35 @@ test("Cash Flow Projection six-locale drafts preserve stable keys, formula and n
   assert.ok(f.accessibility.pageLabel&&f.accessibility.formLabel&&f.accessibility.resultAnnouncement&&f.accessibility.chartLabel,locale+" accessibility fields");
  }
  assert.equal(source.explanations.formula,"For month t (starting at 1): inflowₜ = monthly inflows × (1 + inflow growth/100)^(t−1); outflowₜ = monthly outflows × (1 + outflow growth/100)^(t−1). Closing cashₜ = opening cashₜ + inflowₜ − outflowₜ; next month's opening cash is the prior closing cash.");
+});
+
+
+test("Rental Yield six-locale drafts preserve source keys, formula and percentage constraint",()=>{
+ const tool=content.tools.find(x=>x.id==="rental-yield"),source=tool.source;
+ const keys=items=>items.map(x=>x.key);
+ for(const locale of locales){
+  const record=tool.locales[locale],f=record.fields;
+  assert.equal(record.status,"draft",locale+" remains inactive draft");
+  assert.deepEqual(keys(f.inputs),keys(source.inputs),locale+" input keys");
+  assert.deepEqual(keys(f.results.metrics),keys(source.results.metrics),locale+" metric keys");
+  assert.deepEqual(keys(f.results.breakdown),keys(source.results.breakdown),locale+" breakdown keys");
+  assert.deepEqual(keys(f.errors),keys(source.errors),locale+" error keys");
+  assert.deepEqual(keys(f.faqs),keys(source.faqs),locale+" FAQ keys");
+  assert.deepEqual(keys(f.seo.faq),keys(source.seo.faq),locale+" SEO FAQ keys");
+  assert.deepEqual(keys(f.guide.steps),keys(source.guide.steps),locale+" guide step keys");
+  assert.deepEqual(keys(f.guide.sections),keys(source.guide.sections),locale+" guide section keys");
+  assert.deepEqual(keys(f.accessibility.controlLabels),keys(source.inputs),locale+" accessibility control keys");
+  assert.equal(f.explanations.formulaDescription,source.explanations.formula,locale+" canonical formula unchanged");
+  assert.equal(f.guide.sections[0].body,source.explanations.formula,locale+" guide formula unchanged");
+  assert.ok(f.explanations.formulaTitle&&f.explanations.steps.length===5,locale+" formula explanation complete");
+  assert.ok(Object.values(f.actions).every(x=>x.trim()),locale+" action labels");
+  assert.ok(f.errors.every(x=>x.message&&x.recoveryHint),locale+" error recovery");
+  assert.ok(f.faqs.every(x=>x.question&&x.answer),locale+" FAQ text");
+  assert.ok(f.guide.steps.every(x=>x.title&&x.body)&&f.guide.sections.every(x=>x.heading&&x.body),locale+" guide text");
+ }
+ assert.equal(source.inputs.length,4);
+ assert.equal(source.results.metrics.length,6);
+ assert.equal(source.results.breakdown.length,6);
+ assert.ok(source.errors.some(x=>x.key==="vacancy"));
+ assert.match(source.errors.find(x=>x.key==="vacancy").message,/100%/);
 });
