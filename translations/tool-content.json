@@ -52101,32 +52101,1352 @@
       },
       "locales": {
         "hi": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "खर्चों के बाद फ्रीलांसर की शुद्ध आय कैलकुलेटर",
+              "description": "व्यावसायिक खर्चों और चुने गए कर आरक्षित प्रतिशत के बाद फ्रीलांस आय का अनुमान लगाएँ।",
+              "category": "वित्त और धन",
+              "subcategory": "व्यवसाय और फ्रीलांस कैलकुलेटर"
+            },
+            "inputs": [
+              {
+                "key": "revenue",
+                "label": "सकल फ्रीलांस आय"
+              },
+              {
+                "key": "expenses",
+                "label": "वार्षिक व्यावसायिक खर्च"
+              },
+              {
+                "key": "tax",
+                "label": "अनुमानित कर आरक्षित राशि (%)"
+              }
+            ],
+            "results": {
+              "heading": "परिणाम",
+              "summary": "अनुमानित शुद्ध आय",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "सकल आय"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "व्यावसायिक खर्च"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "आरक्षित राशि से पहले लाभ"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "कर आरक्षित राशि"
+                },
+                {
+                  "key": "metric-5",
+                  "label": "शुद्ध आय दर"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "सकल आय"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "व्यावसायिक खर्च"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "आरक्षित राशि से पहले लाभ"
+                },
+                {
+                  "key": "breakdown-4",
+                  "label": "कर आरक्षित राशि"
+                },
+                {
+                  "key": "breakdown-5",
+                  "label": "शुद्ध आय दर"
+                }
+              ],
+              "chart": {
+                "title": "अनुमानित शुद्ध आय",
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": "सूत्र और गणना के चरण",
+              "formulaDescription": "Profit = gross revenue − expenses. Tax reserve = profit × reserve rate ÷ 100. Net income = profit − reserve. Effective net rate = net income ÷ revenue × 100 when revenue is non-zero.",
+              "steps": [
+                "सकल फ्रीलांस आय और व्यावसायिक खर्च दर्ज करें।",
+                "कर आरक्षित प्रतिशत दर्ज करें।",
+                "लाभ का अनुमान लगाने के लिए आय में से खर्च घटाएँ।",
+                "लाभ पर आरक्षित प्रतिशत लागू करें।",
+                "शुद्ध आय का अनुमान लगाने और उसकी तुलना आय से करने के लिए आरक्षित राशि घटाएँ।"
+              ],
+              "assumptions": [
+                "इस सरल मॉडल में खर्च आय से अधिक नहीं हो सकते।",
+                "आरक्षित राशि सकल आय पर नहीं, खर्च घटाने के बाद के लाभ पर लागू होती है।",
+                "आरक्षित राशि योजना संबंधी धारणा है, किसी विशेष क्षेत्राधिकार की कर गणना नहीं।"
+              ],
+              "notes": [
+                "यह केवल योजना बनाने का अनुमान है; गणना टिप्पणी की समीक्षा करें और इनपुट तथा लागू नियम सत्यापित करें।"
+              ],
+              "disclaimers": [
+                "यह कैलकुलेटर दर्ज मानों और मान्यताओं पर आधारित अनुमान देता है। यह वित्तीय, कानूनी या कर सलाह नहीं है।"
+              ],
+              "limitations": [
+                "इस सरल मॉडल में खर्च आय से अधिक नहीं हो सकते।",
+                "आरक्षित राशि सकल आय पर नहीं, खर्च घटाने के बाद के लाभ पर लागू होती है।",
+                "आरक्षित राशि योजना संबंधी धारणा है, किसी विशेष क्षेत्राधिकार की कर गणना नहीं।"
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "{field} एक सीमित संख्या होनी चाहिए।",
+                "recoveryHint": "सही संख्या दर्ज करें और फिर प्रयास करें।"
+              },
+              {
+                "key": "negative",
+                "message": "{field} ऋणात्मक नहीं हो सकता।",
+                "recoveryHint": "शून्य या धनात्मक मान दर्ज करें।"
+              },
+              {
+                "key": "expenses",
+                "message": "इस सरल मॉडल में खर्च आय से अधिक नहीं हो सकते; कर आरक्षित राशि 0–100% होनी चाहिए।",
+                "recoveryHint": "ऐसे खर्च दर्ज करें जो आय से अधिक न हों और कर आरक्षित राशि 0% से 100% रखें।"
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-freelancer-net-income-1",
+                "question": "व्यावसायिक खर्चों में क्या शामिल है?",
+                "answer": "उदाहरणों में सॉफ़्टवेयर, उपकरण, भुगतान शुल्क, बीमा और अन्य वास्तविक व्यावसायिक लागतें शामिल हैं।"
+              },
+              {
+                "key": "faq-freelancer-net-income-2",
+                "question": "कर आरक्षित राशि कैसे निकाली जाती है?",
+                "answer": "दर्ज प्रतिशत व्यावसायिक खर्च घटाने के बाद के लाभ पर लागू होता है।"
+              },
+              {
+                "key": "faq-freelancer-net-income-3",
+                "question": "क्या यह वास्तविक आयकर की गणना करता है?",
+                "answer": "नहीं। आरक्षित राशि योजना की धारणा है, किसी विशेष क्षेत्राधिकार की कर गणना नहीं।"
+              }
+            ],
+            "seo": {
+              "title": "फ्रीलांसर शुद्ध आय कैलकुलेटर | FinPulse Hub",
+              "metaDescription": "देखें कि व्यावसायिक खर्च और चुनी गई कर आरक्षित राशि फ्रीलांस शुद्ध आय को कैसे प्रभावित करती है। आरक्षित राशि को योजना की धारणा मानें।",
+              "h1": "खर्चों के बाद फ्रीलांसर की शुद्ध आय कैलकुलेटर",
+              "introduction": "देखें कि व्यावसायिक खर्च और चुनी गई कर आरक्षित राशि फ्रीलांस शुद्ध आय को कैसे प्रभावित करती है। आरक्षित राशि को योजना की धारणा मानें।",
+              "faq": [
+                {
+                  "key": "faq-freelancer-net-income-1",
+                  "question": "व्यावसायिक खर्चों में क्या शामिल है?",
+                  "answer": "उदाहरणों में सॉफ़्टवेयर, उपकरण, भुगतान शुल्क, बीमा और अन्य वास्तविक व्यावसायिक लागतें शामिल हैं।"
+                },
+                {
+                  "key": "faq-freelancer-net-income-2",
+                  "question": "कर आरक्षित राशि कैसे निकाली जाती है?",
+                  "answer": "दर्ज प्रतिशत व्यावसायिक खर्च घटाने के बाद के लाभ पर लागू होता है।"
+                },
+                {
+                  "key": "faq-freelancer-net-income-3",
+                  "question": "क्या यह वास्तविक आयकर की गणना करता है?",
+                  "answer": "नहीं। आरक्षित राशि योजना की धारणा है, किसी विशेष क्षेत्राधिकार की कर गणना नहीं।"
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "खर्चों के बाद फ्रीलांसर की शुद्ध आय कैलकुलेटर",
+              "formLabel": "फ्रीलांसर शुद्ध आय कैलकुलेटर फ़ॉर्म",
+              "resultAnnouncement": "फ्रीलांसर शुद्ध आय का गणना परिणाम",
+              "chartLabel": "अनुमानित फ्रीलांसर शुद्ध आय का चार्ट",
+              "controlLabels": [
+                {
+                  "key": "revenue",
+                  "label": "सकल फ्रीलांस आय"
+                },
+                {
+                  "key": "expenses",
+                  "label": "वार्षिक व्यावसायिक खर्च"
+                },
+                {
+                  "key": "tax",
+                  "label": "अनुमानित कर आरक्षित राशि (%)"
+                }
+              ]
+            },
+            "guide": {
+              "title": "फ्रीलांसर शुद्ध आय कैलकुलेटर मार्गदर्शिका",
+              "introduction": "व्यावसायिक खर्चों और चुने गए कर आरक्षित प्रतिशत के बाद फ्रीलांस आय का अनुमान लगाएँ।",
+              "steps": [
+                {
+                  "key": "freelancer-net-income-guide-step-1",
+                  "title": "चरण 1",
+                  "body": "सकल फ्रीलांस आय और व्यावसायिक खर्च दर्ज करें।"
+                },
+                {
+                  "key": "freelancer-net-income-guide-step-2",
+                  "title": "चरण 2",
+                  "body": "कर आरक्षित प्रतिशत दर्ज करें।"
+                },
+                {
+                  "key": "freelancer-net-income-guide-step-3",
+                  "title": "चरण 3",
+                  "body": "लाभ का अनुमान लगाने के लिए आय में से खर्च घटाएँ।"
+                },
+                {
+                  "key": "freelancer-net-income-guide-step-4",
+                  "title": "चरण 4",
+                  "body": "लाभ पर आरक्षित प्रतिशत लागू करें।"
+                },
+                {
+                  "key": "freelancer-net-income-guide-step-5",
+                  "title": "चरण 5",
+                  "body": "शुद्ध आय का अनुमान लगाने और उसकी तुलना आय से करने के लिए आरक्षित राशि घटाएँ।"
+                }
+              ],
+              "sections": [
+                {
+                  "key": "freelancer-net-income-guide-section-1",
+                  "heading": "गणना की विधि",
+                  "body": "Profit = gross revenue − expenses. Tax reserve = profit × reserve rate ÷ 100. Net income = profit − reserve. Effective net rate = net income ÷ revenue × 100 when revenue is non-zero."
+                },
+                {
+                  "key": "freelancer-net-income-guide-section-2",
+                  "heading": "मान्यताएँ और सीमाएँ",
+                  "body": "इस सरल मॉडल में खर्च आय से अधिक नहीं हो सकते। आरक्षित राशि सकल आय पर नहीं, खर्च घटाने के बाद के लाभ पर लागू होती है। आरक्षित राशि योजना संबंधी धारणा है, किसी विशेष क्षेत्राधिकार की कर गणना नहीं।"
+                }
+              ]
+            }
+          }
         },
         "ar": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "حاسبة صافي دخل المستقل بعد التكاليف",
+              "description": "قدّر دخل العمل الحر بعد نفقات النشاط واحتياطي الضريبة الذي تختاره.",
+              "category": "التمويل والمال",
+              "subcategory": "حاسبات الأعمال والعمل الحر"
+            },
+            "inputs": [
+              {
+                "key": "revenue",
+                "label": "إجمالي إيرادات العمل الحر"
+              },
+              {
+                "key": "expenses",
+                "label": "نفقات النشاط التجاري السنوية"
+              },
+              {
+                "key": "tax",
+                "label": "احتياطي الضريبة التقديري (%)"
+              }
+            ],
+            "results": {
+              "heading": "النتيجة",
+              "summary": "صافي الدخل التقديري",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "إجمالي الإيرادات"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "نفقات النشاط"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "الربح قبل الاحتياطي"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "احتياطي الضريبة"
+                },
+                {
+                  "key": "metric-5",
+                  "label": "معدل صافي الدخل"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "إجمالي الإيرادات"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "نفقات النشاط"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "الربح قبل الاحتياطي"
+                },
+                {
+                  "key": "breakdown-4",
+                  "label": "احتياطي الضريبة"
+                },
+                {
+                  "key": "breakdown-5",
+                  "label": "معدل صافي الدخل"
+                }
+              ],
+              "chart": {
+                "title": "صافي الدخل التقديري",
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": "الصيغة وخطوات الحساب",
+              "formulaDescription": "Profit = gross revenue − expenses. Tax reserve = profit × reserve rate ÷ 100. Net income = profit − reserve. Effective net rate = net income ÷ revenue × 100 when revenue is non-zero.",
+              "steps": [
+                "أدخل إجمالي إيرادات العمل الحر ونفقات النشاط التجاري.",
+                "أدخل نسبة احتياطي الضريبة.",
+                "اطرح النفقات من الإيرادات لتقدير الربح.",
+                "طبّق نسبة الاحتياطي على الربح.",
+                "اطرح الاحتياطي لتقدير صافي الدخل وقارنه بالإيرادات."
+              ],
+              "assumptions": [
+                "في هذا النموذج المبسط، لا يمكن أن تتجاوز النفقات الإيرادات.",
+                "يُطبّق الاحتياطي على الربح بعد النفقات، وليس على إجمالي الإيرادات.",
+                "الاحتياطي افتراض تخطيطي يحدده المستخدم، وليس حسابًا ضريبيًا خاصًا بولاية قضائية."
+              ],
+              "notes": [
+                "هذا تقدير للتخطيط فقط؛ راجع ملاحظة الحساب وتحقق من المدخلات والقواعد المعمول بها."
+              ],
+              "disclaimers": [
+                "تقدم هذه الحاسبة تقديرًا بناءً على القيم والافتراضات المدخلة. وليست نصيحة مالية أو قانونية أو ضريبية."
+              ],
+              "limitations": [
+                "في هذا النموذج المبسط، لا يمكن أن تتجاوز النفقات الإيرادات.",
+                "يُطبّق الاحتياطي على الربح بعد النفقات، وليس على إجمالي الإيرادات.",
+                "الاحتياطي افتراض تخطيطي يحدده المستخدم، وليس حسابًا ضريبيًا خاصًا بولاية قضائية."
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "يجب أن يكون {field} رقمًا محدودًا.",
+                "recoveryHint": "أدخل رقمًا صالحًا ثم حاول مرة أخرى."
+              },
+              {
+                "key": "negative",
+                "message": "يجب ألا تكون قيمة {field} سالبة.",
+                "recoveryHint": "أدخل صفرًا أو قيمة موجبة."
+              },
+              {
+                "key": "expenses",
+                "message": "لا يمكن أن تتجاوز النفقات الإيرادات في هذا النموذج؛ يجب أن يكون احتياطي الضريبة بين 0 و100%.",
+                "recoveryHint": "أدخل نفقات لا تتجاوز الإيرادات وحدد احتياطيًا بين 0% و100%."
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-freelancer-net-income-1",
+                "question": "ما الذي يُعد من نفقات النشاط التجاري؟",
+                "answer": "تشمل الأمثلة البرامج والمعدات ورسوم الدفع والتأمين والتكاليف التجارية الفعلية الأخرى."
+              },
+              {
+                "key": "faq-freelancer-net-income-2",
+                "question": "كيف يُحسب احتياطي الضريبة؟",
+                "answer": "تُطبّق النسبة المدخلة على الربح بعد خصم نفقات النشاط."
+              },
+              {
+                "key": "faq-freelancer-net-income-3",
+                "question": "هل تحسب هذه الأداة ضريبة الدخل الفعلية؟",
+                "answer": "لا. الاحتياطي افتراض للتخطيط وليس حسابًا ضريبيًا خاصًا بولاية قضائية."
+              }
+            ],
+            "seo": {
+              "title": "حاسبة صافي دخل المستقل بعد التكاليف | FinPulse Hub",
+              "metaDescription": "اكتشف كيف تؤثر نفقات النشاط واحتياطي الضريبة المختار في صافي دخل العمل الحر. تعامل مع الاحتياطي بوصفه افتراضًا تخطيطيًا.",
+              "h1": "حاسبة صافي دخل المستقل بعد التكاليف",
+              "introduction": "اكتشف كيف تؤثر نفقات النشاط واحتياطي الضريبة المختار في صافي دخل العمل الحر. تعامل مع الاحتياطي بوصفه افتراضًا تخطيطيًا.",
+              "faq": [
+                {
+                  "key": "faq-freelancer-net-income-1",
+                  "question": "ما الذي يُعد من نفقات النشاط التجاري؟",
+                  "answer": "تشمل الأمثلة البرامج والمعدات ورسوم الدفع والتأمين والتكاليف التجارية الفعلية الأخرى."
+                },
+                {
+                  "key": "faq-freelancer-net-income-2",
+                  "question": "كيف يُحسب احتياطي الضريبة؟",
+                  "answer": "تُطبّق النسبة المدخلة على الربح بعد خصم نفقات النشاط."
+                },
+                {
+                  "key": "faq-freelancer-net-income-3",
+                  "question": "هل تحسب هذه الأداة ضريبة الدخل الفعلية؟",
+                  "answer": "لا. الاحتياطي افتراض للتخطيط وليس حسابًا ضريبيًا خاصًا بولاية قضائية."
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "حاسبة صافي دخل المستقل بعد التكاليف",
+              "formLabel": "نموذج حاسبة صافي دخل المستقل",
+              "resultAnnouncement": "نتيجة حساب صافي دخل المستقل",
+              "chartLabel": "مخطط صافي دخل المستقل التقديري",
+              "controlLabels": [
+                {
+                  "key": "revenue",
+                  "label": "إجمالي إيرادات العمل الحر"
+                },
+                {
+                  "key": "expenses",
+                  "label": "نفقات النشاط التجاري السنوية"
+                },
+                {
+                  "key": "tax",
+                  "label": "احتياطي الضريبة التقديري (%)"
+                }
+              ]
+            },
+            "guide": {
+              "title": "دليل حاسبة صافي دخل المستقل",
+              "introduction": "قدّر دخل العمل الحر بعد نفقات النشاط واحتياطي الضريبة الذي تختاره.",
+              "steps": [
+                {
+                  "key": "freelancer-net-income-guide-step-1",
+                  "title": "الخطوة 1",
+                  "body": "أدخل إجمالي إيرادات العمل الحر ونفقات النشاط التجاري."
+                },
+                {
+                  "key": "freelancer-net-income-guide-step-2",
+                  "title": "الخطوة 2",
+                  "body": "أدخل نسبة احتياطي الضريبة."
+                },
+                {
+                  "key": "freelancer-net-income-guide-step-3",
+                  "title": "الخطوة 3",
+                  "body": "اطرح النفقات من الإيرادات لتقدير الربح."
+                },
+                {
+                  "key": "freelancer-net-income-guide-step-4",
+                  "title": "الخطوة 4",
+                  "body": "طبّق نسبة الاحتياطي على الربح."
+                },
+                {
+                  "key": "freelancer-net-income-guide-step-5",
+                  "title": "الخطوة 5",
+                  "body": "اطرح الاحتياطي لتقدير صافي الدخل وقارنه بالإيرادات."
+                }
+              ],
+              "sections": [
+                {
+                  "key": "freelancer-net-income-guide-section-1",
+                  "heading": "طريقة الحساب",
+                  "body": "Profit = gross revenue − expenses. Tax reserve = profit × reserve rate ÷ 100. Net income = profit − reserve. Effective net rate = net income ÷ revenue × 100 when revenue is non-zero."
+                },
+                {
+                  "key": "freelancer-net-income-guide-section-2",
+                  "heading": "الافتراضات والقيود",
+                  "body": "في هذا النموذج المبسط، لا يمكن أن تتجاوز النفقات الإيرادات. يُطبّق الاحتياطي على الربح بعد النفقات، وليس على إجمالي الإيرادات. الاحتياطي افتراض تخطيطي يحدده المستخدم، وليس حسابًا ضريبيًا خاصًا بولاية قضائية."
+                }
+              ]
+            }
+          }
         },
         "ur": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "اخراجات کے بعد فری لانسر کی خالص آمدنی کیلکولیٹر",
+              "description": "کاروباری اخراجات اور منتخب کردہ ٹیکس ریزرو کے بعد فری لانس آمدنی کا اندازہ لگائیں۔",
+              "category": "مالیات اور رقم",
+              "subcategory": "کاروبار اور فری لانس کیلکولیٹرز"
+            },
+            "inputs": [
+              {
+                "key": "revenue",
+                "label": "مجموعی فری لانس آمدنی"
+              },
+              {
+                "key": "expenses",
+                "label": "سالانہ کاروباری اخراجات"
+              },
+              {
+                "key": "tax",
+                "label": "متوقع ٹیکس ریزرو (%)"
+              }
+            ],
+            "results": {
+              "heading": "نتیجہ",
+              "summary": "متوقع خالص آمدنی",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "مجموعی آمدنی"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "کاروباری اخراجات"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "ریزرو سے پہلے منافع"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "ٹیکس ریزرو"
+                },
+                {
+                  "key": "metric-5",
+                  "label": "خالص آمدنی کی شرح"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "مجموعی آمدنی"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "کاروباری اخراجات"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "ریزرو سے پہلے منافع"
+                },
+                {
+                  "key": "breakdown-4",
+                  "label": "ٹیکس ریزرو"
+                },
+                {
+                  "key": "breakdown-5",
+                  "label": "خالص آمدنی کی شرح"
+                }
+              ],
+              "chart": {
+                "title": "متوقع خالص آمدنی",
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": "فارمولا اور حساب کے مراحل",
+              "formulaDescription": "Profit = gross revenue − expenses. Tax reserve = profit × reserve rate ÷ 100. Net income = profit − reserve. Effective net rate = net income ÷ revenue × 100 when revenue is non-zero.",
+              "steps": [
+                "مجموعی فری لانس آمدنی اور کاروباری اخراجات درج کریں۔",
+                "ٹیکس ریزرو کا فیصد درج کریں۔",
+                "منافع کا اندازہ لگانے کے لیے آمدنی سے اخراجات منہا کریں۔",
+                "منافع پر ریزرو کا فیصد لاگو کریں۔",
+                "خالص آمدنی کا اندازہ لگانے اور اس کا آمدنی سے موازنہ کرنے کے لیے ریزرو منہا کریں۔"
+              ],
+              "assumptions": [
+                "اس سادہ ماڈل میں اخراجات آمدنی سے زیادہ نہیں ہو سکتے۔",
+                "ریزرو مجموعی آمدنی کے بجائے اخراجات منہا کرنے کے بعد کے منافع پر لاگو ہوتا ہے۔",
+                "ریزرو صارف کا منصوبہ بندی کا مفروضہ ہے، کسی مخصوص دائرۂ اختیار کا ٹیکس حساب نہیں۔"
+              ],
+              "notes": [
+                "یہ صرف منصوبہ بندی کا تخمینہ ہے؛ حسابی نوٹ کا جائزہ لیں اور ان پٹس اور متعلقہ قواعد کی تصدیق کریں۔"
+              ],
+              "disclaimers": [
+                "یہ کیلکولیٹر درج کردہ اقدار اور مفروضوں کی بنیاد پر تخمینہ دیتا ہے۔ یہ مالی، قانونی یا ٹیکس مشورہ نہیں ہے۔"
+              ],
+              "limitations": [
+                "اس سادہ ماڈل میں اخراجات آمدنی سے زیادہ نہیں ہو سکتے۔",
+                "ریزرو مجموعی آمدنی کے بجائے اخراجات منہا کرنے کے بعد کے منافع پر لاگو ہوتا ہے۔",
+                "ریزرو صارف کا منصوبہ بندی کا مفروضہ ہے، کسی مخصوص دائرۂ اختیار کا ٹیکس حساب نہیں۔"
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "{field} ایک محدود عدد ہونا چاہیے۔",
+                "recoveryHint": "درست عدد درج کریں اور دوبارہ کوشش کریں۔"
+              },
+              {
+                "key": "negative",
+                "message": "{field} منفی نہیں ہو سکتا۔",
+                "recoveryHint": "صفر یا مثبت قدر درج کریں۔"
+              },
+              {
+                "key": "expenses",
+                "message": "اس سادہ ماڈل میں اخراجات آمدنی سے زیادہ نہیں ہو سکتے؛ ٹیکس ریزرو 0–100% ہونا چاہیے۔",
+                "recoveryHint": "ایسے اخراجات درج کریں جو آمدنی سے زیادہ نہ ہوں اور ٹیکس ریزرو 0% سے 100% رکھیں۔"
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-freelancer-net-income-1",
+                "question": "کاروباری اخراجات میں کیا شامل ہے؟",
+                "answer": "مثالوں میں سافٹ ویئر، آلات، ادائیگی کی فیس، انشورنس اور دیگر حقیقی کاروباری اخراجات شامل ہیں۔"
+              },
+              {
+                "key": "faq-freelancer-net-income-2",
+                "question": "ٹیکس ریزرو کیسے شمار ہوتا ہے؟",
+                "answer": "درج کردہ فیصد کاروباری اخراجات منہا کرنے کے بعد کے منافع پر لاگو ہوتا ہے۔"
+              },
+              {
+                "key": "faq-freelancer-net-income-3",
+                "question": "کیا یہ اصل انکم ٹیکس کا حساب کرتا ہے؟",
+                "answer": "نہیں۔ ریزرو منصوبہ بندی کا مفروضہ ہے، کسی مخصوص دائرۂ اختیار کا ٹیکس حساب نہیں۔"
+              }
+            ],
+            "seo": {
+              "title": "اخراجات کے بعد فری لانسر کی خالص آمدنی کیلکولیٹر | FinPulse Hub",
+              "metaDescription": "دیکھیں کہ کاروباری اخراجات اور منتخب کردہ ٹیکس ریزرو فری لانس خالص آمدنی پر کیسے اثر ڈالتے ہیں۔ ریزرو کو منصوبہ بندی کا مفروضہ سمجھیں۔",
+              "h1": "اخراجات کے بعد فری لانسر کی خالص آمدنی کیلکولیٹر",
+              "introduction": "دیکھیں کہ کاروباری اخراجات اور منتخب کردہ ٹیکس ریزرو فری لانس خالص آمدنی پر کیسے اثر ڈالتے ہیں۔ ریزرو کو منصوبہ بندی کا مفروضہ سمجھیں۔",
+              "faq": [
+                {
+                  "key": "faq-freelancer-net-income-1",
+                  "question": "کاروباری اخراجات میں کیا شامل ہے؟",
+                  "answer": "مثالوں میں سافٹ ویئر، آلات، ادائیگی کی فیس، انشورنس اور دیگر حقیقی کاروباری اخراجات شامل ہیں۔"
+                },
+                {
+                  "key": "faq-freelancer-net-income-2",
+                  "question": "ٹیکس ریزرو کیسے شمار ہوتا ہے؟",
+                  "answer": "درج کردہ فیصد کاروباری اخراجات منہا کرنے کے بعد کے منافع پر لاگو ہوتا ہے۔"
+                },
+                {
+                  "key": "faq-freelancer-net-income-3",
+                  "question": "کیا یہ اصل انکم ٹیکس کا حساب کرتا ہے؟",
+                  "answer": "نہیں۔ ریزرو منصوبہ بندی کا مفروضہ ہے، کسی مخصوص دائرۂ اختیار کا ٹیکس حساب نہیں۔"
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "اخراجات کے بعد فری لانسر کی خالص آمدنی کیلکولیٹر",
+              "formLabel": "فری لانسر خالص آمدنی کیلکولیٹر فارم",
+              "resultAnnouncement": "فری لانسر خالص آمدنی کا حسابی نتیجہ",
+              "chartLabel": "متوقع فری لانسر خالص آمدنی کا چارٹ",
+              "controlLabels": [
+                {
+                  "key": "revenue",
+                  "label": "مجموعی فری لانس آمدنی"
+                },
+                {
+                  "key": "expenses",
+                  "label": "سالانہ کاروباری اخراجات"
+                },
+                {
+                  "key": "tax",
+                  "label": "متوقع ٹیکس ریزرو (%)"
+                }
+              ]
+            },
+            "guide": {
+              "title": "فری لانسر خالص آمدنی کیلکولیٹر کی رہنما کتاب",
+              "introduction": "کاروباری اخراجات اور منتخب کردہ ٹیکس ریزرو کے بعد فری لانس آمدنی کا اندازہ لگائیں۔",
+              "steps": [
+                {
+                  "key": "freelancer-net-income-guide-step-1",
+                  "title": "مرحلہ 1",
+                  "body": "مجموعی فری لانس آمدنی اور کاروباری اخراجات درج کریں۔"
+                },
+                {
+                  "key": "freelancer-net-income-guide-step-2",
+                  "title": "مرحلہ 2",
+                  "body": "ٹیکس ریزرو کا فیصد درج کریں۔"
+                },
+                {
+                  "key": "freelancer-net-income-guide-step-3",
+                  "title": "مرحلہ 3",
+                  "body": "منافع کا اندازہ لگانے کے لیے آمدنی سے اخراجات منہا کریں۔"
+                },
+                {
+                  "key": "freelancer-net-income-guide-step-4",
+                  "title": "مرحلہ 4",
+                  "body": "منافع پر ریزرو کا فیصد لاگو کریں۔"
+                },
+                {
+                  "key": "freelancer-net-income-guide-step-5",
+                  "title": "مرحلہ 5",
+                  "body": "خالص آمدنی کا اندازہ لگانے اور اس کا آمدنی سے موازنہ کرنے کے لیے ریزرو منہا کریں۔"
+                }
+              ],
+              "sections": [
+                {
+                  "key": "freelancer-net-income-guide-section-1",
+                  "heading": "حساب کا طریقہ",
+                  "body": "Profit = gross revenue − expenses. Tax reserve = profit × reserve rate ÷ 100. Net income = profit − reserve. Effective net rate = net income ÷ revenue × 100 when revenue is non-zero."
+                },
+                {
+                  "key": "freelancer-net-income-guide-section-2",
+                  "heading": "مفروضے اور حدود",
+                  "body": "اس سادہ ماڈل میں اخراجات آمدنی سے زیادہ نہیں ہو سکتے۔ ریزرو مجموعی آمدنی کے بجائے اخراجات منہا کرنے کے بعد کے منافع پر لاگو ہوتا ہے۔ ریزرو صارف کا منصوبہ بندی کا مفروضہ ہے، کسی مخصوص دائرۂ اختیار کا ٹیکس حساب نہیں۔"
+                }
+              ]
+            }
+          }
         },
         "zh-CN": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "自由职业者成本后净收入计算器",
+              "description": "估算扣除业务支出和自选税款预留比例后的自由职业收入。",
+              "category": "财务与金钱",
+              "subcategory": "商业与自由职业计算器"
+            },
+            "inputs": [
+              {
+                "key": "revenue",
+                "label": "自由职业总收入"
+              },
+              {
+                "key": "expenses",
+                "label": "年度业务支出"
+              },
+              {
+                "key": "tax",
+                "label": "预计税款预留比例（%）"
+              }
+            ],
+            "results": {
+              "heading": "结果",
+              "summary": "预计净收入",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "总收入"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "业务支出"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "预留前利润"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "税款预留"
+                },
+                {
+                  "key": "metric-5",
+                  "label": "净收入率"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "总收入"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "业务支出"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "预留前利润"
+                },
+                {
+                  "key": "breakdown-4",
+                  "label": "税款预留"
+                },
+                {
+                  "key": "breakdown-5",
+                  "label": "净收入率"
+                }
+              ],
+              "chart": {
+                "title": "预计净收入",
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": "公式与计算步骤",
+              "formulaDescription": "Profit = gross revenue − expenses. Tax reserve = profit × reserve rate ÷ 100. Net income = profit − reserve. Effective net rate = net income ÷ revenue × 100 when revenue is non-zero.",
+              "steps": [
+                "输入自由职业总收入和业务支出。",
+                "输入税款预留百分比。",
+                "从收入中扣除支出以估算利润。",
+                "将预留比例应用于利润。",
+                "扣除预留金额以估算净收入，并与收入比较。"
+              ],
+              "assumptions": [
+                "在此简化模型中，支出不能超过收入。",
+                "预留金额按扣除支出后的利润计算，而不是按总收入计算。",
+                "预留比例是用户自行选择的规划假设，并非特定司法辖区的税务计算。"
+              ],
+              "notes": [
+                "此结果仅用于规划；请查看计算说明，并核实输入值及适用规则。"
+              ],
+              "disclaimers": [
+                "本计算器根据输入值和假设提供估算，不构成财务、法律或税务建议。"
+              ],
+              "limitations": [
+                "在此简化模型中，支出不能超过收入。",
+                "预留金额按扣除支出后的利润计算，而不是按总收入计算。",
+                "预留比例是用户自行选择的规划假设，并非特定司法辖区的税务计算。"
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "{field} 必须是有限数值。",
+                "recoveryHint": "请输入有效数字后重试。"
+              },
+              {
+                "key": "negative",
+                "message": "{field} 不能为负数。",
+                "recoveryHint": "请输入零或正数。"
+              },
+              {
+                "key": "expenses",
+                "message": "在此简化模型中，支出不能超过收入；税款预留比例必须为 0–100%。",
+                "recoveryHint": "请输入不超过收入的支出，并将税款预留比例设为 0% 至 100%。"
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-freelancer-net-income-1",
+                "question": "哪些项目算作业务支出？",
+                "answer": "例如软件、设备、支付手续费、保险以及其他真实业务成本。"
+              },
+              {
+                "key": "faq-freelancer-net-income-2",
+                "question": "税款预留如何计算？",
+                "answer": "输入的百分比应用于扣除业务支出后的利润。"
+              },
+              {
+                "key": "faq-freelancer-net-income-3",
+                "question": "这会计算实际所得税吗？",
+                "answer": "不会。预留金额仅是规划假设，并非特定司法辖区的税务计算。"
+              }
+            ],
+            "seo": {
+              "title": "自由职业者成本后净收入计算器 | FinPulse Hub",
+              "metaDescription": "了解业务支出和自选税款预留如何影响自由职业到手收入。请将预留比例视为规划假设。",
+              "h1": "自由职业者成本后净收入计算器",
+              "introduction": "了解业务支出和自选税款预留如何影响自由职业到手收入。请将预留比例视为规划假设。",
+              "faq": [
+                {
+                  "key": "faq-freelancer-net-income-1",
+                  "question": "哪些项目算作业务支出？",
+                  "answer": "例如软件、设备、支付手续费、保险以及其他真实业务成本。"
+                },
+                {
+                  "key": "faq-freelancer-net-income-2",
+                  "question": "税款预留如何计算？",
+                  "answer": "输入的百分比应用于扣除业务支出后的利润。"
+                },
+                {
+                  "key": "faq-freelancer-net-income-3",
+                  "question": "这会计算实际所得税吗？",
+                  "answer": "不会。预留金额仅是规划假设，并非特定司法辖区的税务计算。"
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "自由职业者成本后净收入计算器",
+              "formLabel": "自由职业者净收入计算器表单",
+              "resultAnnouncement": "自由职业者净收入计算结果",
+              "chartLabel": "预计自由职业者净收入图表",
+              "controlLabels": [
+                {
+                  "key": "revenue",
+                  "label": "自由职业总收入"
+                },
+                {
+                  "key": "expenses",
+                  "label": "年度业务支出"
+                },
+                {
+                  "key": "tax",
+                  "label": "预计税款预留比例（%）"
+                }
+              ]
+            },
+            "guide": {
+              "title": "自由职业者净收入计算器指南",
+              "introduction": "估算扣除业务支出和自选税款预留比例后的自由职业收入。",
+              "steps": [
+                {
+                  "key": "freelancer-net-income-guide-step-1",
+                  "title": "步骤 1",
+                  "body": "输入自由职业总收入和业务支出。"
+                },
+                {
+                  "key": "freelancer-net-income-guide-step-2",
+                  "title": "步骤 2",
+                  "body": "输入税款预留百分比。"
+                },
+                {
+                  "key": "freelancer-net-income-guide-step-3",
+                  "title": "步骤 3",
+                  "body": "从收入中扣除支出以估算利润。"
+                },
+                {
+                  "key": "freelancer-net-income-guide-step-4",
+                  "title": "步骤 4",
+                  "body": "将预留比例应用于利润。"
+                },
+                {
+                  "key": "freelancer-net-income-guide-step-5",
+                  "title": "步骤 5",
+                  "body": "扣除预留金额以估算净收入，并与收入比较。"
+                }
+              ],
+              "sections": [
+                {
+                  "key": "freelancer-net-income-guide-section-1",
+                  "heading": "计算方法",
+                  "body": "Profit = gross revenue − expenses. Tax reserve = profit × reserve rate ÷ 100. Net income = profit − reserve. Effective net rate = net income ÷ revenue × 100 when revenue is non-zero."
+                },
+                {
+                  "key": "freelancer-net-income-guide-section-2",
+                  "heading": "假设与限制",
+                  "body": "在此简化模型中，支出不能超过收入。 预留金额按扣除支出后的利润计算，而不是按总收入计算。 预留比例是用户自行选择的规划假设，并非特定司法辖区的税务计算。"
+                }
+              ]
+            }
+          }
         },
         "ja": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "経費控除後フリーランス純収入計算機",
+              "description": "事業経費と任意に設定した税金準備率を差し引いた後のフリーランス収入を見積もります。",
+              "category": "金融・お金",
+              "subcategory": "ビジネス・フリーランス計算機"
+            },
+            "inputs": [
+              {
+                "key": "revenue",
+                "label": "フリーランス総収入"
+              },
+              {
+                "key": "expenses",
+                "label": "年間事業経費"
+              },
+              {
+                "key": "tax",
+                "label": "推定税金準備率（%）"
+              }
+            ],
+            "results": {
+              "heading": "結果",
+              "summary": "推定純収入",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "総収入"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "事業経費"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "準備金控除前の利益"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "税金準備金"
+                },
+                {
+                  "key": "metric-5",
+                  "label": "純収入率"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "総収入"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "事業経費"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "準備金控除前の利益"
+                },
+                {
+                  "key": "breakdown-4",
+                  "label": "税金準備金"
+                },
+                {
+                  "key": "breakdown-5",
+                  "label": "純収入率"
+                }
+              ],
+              "chart": {
+                "title": "推定純収入",
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": "数式と計算手順",
+              "formulaDescription": "Profit = gross revenue − expenses. Tax reserve = profit × reserve rate ÷ 100. Net income = profit − reserve. Effective net rate = net income ÷ revenue × 100 when revenue is non-zero.",
+              "steps": [
+                "フリーランスの総収入と事業経費を入力します。",
+                "税金準備率を入力します。",
+                "収入から経費を差し引き、利益を見積もります。",
+                "利益に準備率を適用します。",
+                "準備金を差し引いて純収入を見積もり、収入と比較します。"
+              ],
+              "assumptions": [
+                "この簡易モデルでは、経費は収入を超えられません。",
+                "準備金は総収入ではなく、経費控除後の利益に適用されます。",
+                "準備率はユーザーが選ぶ計画上の仮定であり、特定の法域の税額計算ではありません。"
+              ],
+              "notes": [
+                "これは計画用の推定値です。計算メモを確認し、入力値と適用される規則を検証してください。"
+              ],
+              "disclaimers": [
+                "この計算機は入力値と仮定に基づく推定を提供します。財務、法律、税務に関する助言ではありません。"
+              ],
+              "limitations": [
+                "この簡易モデルでは、経費は収入を超えられません。",
+                "準備金は総収入ではなく、経費控除後の利益に適用されます。",
+                "準備率はユーザーが選ぶ計画上の仮定であり、特定の法域の税額計算ではありません。"
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "{field} は有限の数値である必要があります。",
+                "recoveryHint": "有効な数値を入力して、もう一度お試しください。"
+              },
+              {
+                "key": "negative",
+                "message": "{field} に負の値は指定できません。",
+                "recoveryHint": "0以上の値を入力してください。"
+              },
+              {
+                "key": "expenses",
+                "message": "この簡易モデルでは経費は収入を超えられません。税金準備率は0～100%にしてください。",
+                "recoveryHint": "収入以下の経費を入力し、税金準備率を0%～100%に設定してください。"
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-freelancer-net-income-1",
+                "question": "事業経費には何が含まれますか？",
+                "answer": "ソフトウェア、機器、決済手数料、保険、その他の実際の事業費用などが含まれます。"
+              },
+              {
+                "key": "faq-freelancer-net-income-2",
+                "question": "税金準備金はどのように計算されますか？",
+                "answer": "入力した割合を事業経費控除後の利益に適用します。"
+              },
+              {
+                "key": "faq-freelancer-net-income-3",
+                "question": "実際の所得税を計算しますか？",
+                "answer": "いいえ。準備金は計画上の仮定であり、特定の法域の税額計算ではありません。"
+              }
+            ],
+            "seo": {
+              "title": "経費控除後フリーランス純収入計算機 | FinPulse Hub",
+              "metaDescription": "事業経費と任意の税金準備率がフリーランスの手取り収入に与える影響を確認できます。準備率は計画上の仮定として扱ってください。",
+              "h1": "経費控除後フリーランス純収入計算機",
+              "introduction": "事業経費と任意の税金準備率がフリーランスの手取り収入に与える影響を確認できます。準備率は計画上の仮定として扱ってください。",
+              "faq": [
+                {
+                  "key": "faq-freelancer-net-income-1",
+                  "question": "事業経費には何が含まれますか？",
+                  "answer": "ソフトウェア、機器、決済手数料、保険、その他の実際の事業費用などが含まれます。"
+                },
+                {
+                  "key": "faq-freelancer-net-income-2",
+                  "question": "税金準備金はどのように計算されますか？",
+                  "answer": "入力した割合を事業経費控除後の利益に適用します。"
+                },
+                {
+                  "key": "faq-freelancer-net-income-3",
+                  "question": "実際の所得税を計算しますか？",
+                  "answer": "いいえ。準備金は計画上の仮定であり、特定の法域の税額計算ではありません。"
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "経費控除後フリーランス純収入計算機",
+              "formLabel": "フリーランス純収入計算フォーム",
+              "resultAnnouncement": "フリーランス純収入の計算結果",
+              "chartLabel": "推定フリーランス純収入のグラフ",
+              "controlLabels": [
+                {
+                  "key": "revenue",
+                  "label": "フリーランス総収入"
+                },
+                {
+                  "key": "expenses",
+                  "label": "年間事業経費"
+                },
+                {
+                  "key": "tax",
+                  "label": "推定税金準備率（%）"
+                }
+              ]
+            },
+            "guide": {
+              "title": "フリーランス純収入計算機ガイド",
+              "introduction": "事業経費と任意に設定した税金準備率を差し引いた後のフリーランス収入を見積もります。",
+              "steps": [
+                {
+                  "key": "freelancer-net-income-guide-step-1",
+                  "title": "ステップ1",
+                  "body": "フリーランスの総収入と事業経費を入力します。"
+                },
+                {
+                  "key": "freelancer-net-income-guide-step-2",
+                  "title": "ステップ2",
+                  "body": "税金準備率を入力します。"
+                },
+                {
+                  "key": "freelancer-net-income-guide-step-3",
+                  "title": "ステップ3",
+                  "body": "収入から経費を差し引き、利益を見積もります。"
+                },
+                {
+                  "key": "freelancer-net-income-guide-step-4",
+                  "title": "ステップ4",
+                  "body": "利益に準備率を適用します。"
+                },
+                {
+                  "key": "freelancer-net-income-guide-step-5",
+                  "title": "ステップ5",
+                  "body": "準備金を差し引いて純収入を見積もり、収入と比較します。"
+                }
+              ],
+              "sections": [
+                {
+                  "key": "freelancer-net-income-guide-section-1",
+                  "heading": "計算方法",
+                  "body": "Profit = gross revenue − expenses. Tax reserve = profit × reserve rate ÷ 100. Net income = profit − reserve. Effective net rate = net income ÷ revenue × 100 when revenue is non-zero."
+                },
+                {
+                  "key": "freelancer-net-income-guide-section-2",
+                  "heading": "前提条件と制限",
+                  "body": "この簡易モデルでは、経費は収入を超えられません。 準備金は総収入ではなく、経費控除後の利益に適用されます。 準備率はユーザーが選ぶ計画上の仮定であり、特定の法域の税額計算ではありません。"
+                }
+              ]
+            }
+          }
         },
         "ru": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "Калькулятор чистого дохода фрилансера после расходов",
+              "description": "Оцените доход от фриланса после деловых расходов и выбранного резерва на налоги.",
+              "category": "Финансы и деньги",
+              "subcategory": "Калькуляторы бизнеса и фриланса"
+            },
+            "inputs": [
+              {
+                "key": "revenue",
+                "label": "Валовой доход от фриланса"
+              },
+              {
+                "key": "expenses",
+                "label": "Годовые деловые расходы"
+              },
+              {
+                "key": "tax",
+                "label": "Расчётный резерв на налоги (%)"
+              }
+            ],
+            "results": {
+              "heading": "Результат",
+              "summary": "Оценочный чистый доход",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "Валовой доход"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "Деловые расходы"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "Прибыль до резерва"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "Резерв на налоги"
+                },
+                {
+                  "key": "metric-5",
+                  "label": "Доля чистого дохода"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "Валовой доход"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "Деловые расходы"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "Прибыль до резерва"
+                },
+                {
+                  "key": "breakdown-4",
+                  "label": "Резерв на налоги"
+                },
+                {
+                  "key": "breakdown-5",
+                  "label": "Доля чистого дохода"
+                }
+              ],
+              "chart": {
+                "title": "Оценочный чистый доход",
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": "Формула и этапы расчёта",
+              "formulaDescription": "Profit = gross revenue − expenses. Tax reserve = profit × reserve rate ÷ 100. Net income = profit − reserve. Effective net rate = net income ÷ revenue × 100 when revenue is non-zero.",
+              "steps": [
+                "Введите валовой доход от фриланса и деловые расходы.",
+                "Введите процент резерва на налоги.",
+                "Вычтите расходы из дохода, чтобы оценить прибыль.",
+                "Примените процент резерва к прибыли.",
+                "Вычтите резерв, чтобы оценить чистый доход, и сравните его с доходом."
+              ],
+              "assumptions": [
+                "В этой упрощённой модели расходы не могут превышать доход.",
+                "Резерв применяется к прибыли после расходов, а не к валовому доходу.",
+                "Резерв — выбранное пользователем плановое допущение, а не налоговый расчёт для конкретной юрисдикции."
+              ],
+              "notes": [
+                "Это оценка только для планирования; проверьте примечание к расчёту, введённые значения и применимые правила."
+              ],
+              "disclaimers": [
+                "Калькулятор предоставляет оценку на основе введённых значений и допущений. Это не финансовая, юридическая или налоговая консультация."
+              ],
+              "limitations": [
+                "В этой упрощённой модели расходы не могут превышать доход.",
+                "Резерв применяется к прибыли после расходов, а не к валовому доходу.",
+                "Резерв — выбранное пользователем плановое допущение, а не налоговый расчёт для конкретной юрисдикции."
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "Поле {field} должно содержать конечное число.",
+                "recoveryHint": "Введите корректное число и повторите попытку."
+              },
+              {
+                "key": "negative",
+                "message": "Поле {field} не может быть отрицательным.",
+                "recoveryHint": "Введите ноль или положительное значение."
+              },
+              {
+                "key": "expenses",
+                "message": "В этой упрощённой модели расходы не могут превышать доход; резерв на налоги должен быть от 0 до 100%.",
+                "recoveryHint": "Введите расходы не выше дохода и установите резерв на налоги от 0% до 100%."
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-freelancer-net-income-1",
+                "question": "Что относится к деловым расходам?",
+                "answer": "Например, программное обеспечение, оборудование, комиссии за платежи, страхование и другие реальные деловые затраты."
+              },
+              {
+                "key": "faq-freelancer-net-income-2",
+                "question": "Как рассчитывается резерв на налоги?",
+                "answer": "Введённый процент применяется к прибыли после вычета деловых расходов."
+              },
+              {
+                "key": "faq-freelancer-net-income-3",
+                "question": "Рассчитывает ли инструмент фактический подоходный налог?",
+                "answer": "Нет. Резерв является плановым допущением, а не налоговым расчётом для конкретной юрисдикции."
+              }
+            ],
+            "seo": {
+              "title": "Калькулятор чистого дохода фрилансера после расходов | FinPulse Hub",
+              "metaDescription": "Узнайте, как деловые расходы и выбранный резерв на налоги влияют на доход фрилансера после расходов. Рассматривайте резерв как плановое допущение.",
+              "h1": "Калькулятор чистого дохода фрилансера после расходов",
+              "introduction": "Узнайте, как деловые расходы и выбранный резерв на налоги влияют на доход фрилансера после расходов. Рассматривайте резерв как плановое допущение.",
+              "faq": [
+                {
+                  "key": "faq-freelancer-net-income-1",
+                  "question": "Что относится к деловым расходам?",
+                  "answer": "Например, программное обеспечение, оборудование, комиссии за платежи, страхование и другие реальные деловые затраты."
+                },
+                {
+                  "key": "faq-freelancer-net-income-2",
+                  "question": "Как рассчитывается резерв на налоги?",
+                  "answer": "Введённый процент применяется к прибыли после вычета деловых расходов."
+                },
+                {
+                  "key": "faq-freelancer-net-income-3",
+                  "question": "Рассчитывает ли инструмент фактический подоходный налог?",
+                  "answer": "Нет. Резерв является плановым допущением, а не налоговым расчётом для конкретной юрисдикции."
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "Калькулятор чистого дохода фрилансера после расходов",
+              "formLabel": "Форма калькулятора чистого дохода фрилансера",
+              "resultAnnouncement": "Результат расчёта чистого дохода фрилансера",
+              "chartLabel": "График оценочного чистого дохода фрилансера",
+              "controlLabels": [
+                {
+                  "key": "revenue",
+                  "label": "Валовой доход от фриланса"
+                },
+                {
+                  "key": "expenses",
+                  "label": "Годовые деловые расходы"
+                },
+                {
+                  "key": "tax",
+                  "label": "Расчётный резерв на налоги (%)"
+                }
+              ]
+            },
+            "guide": {
+              "title": "Руководство по калькулятору чистого дохода фрилансера",
+              "introduction": "Оцените доход от фриланса после деловых расходов и выбранного резерва на налоги.",
+              "steps": [
+                {
+                  "key": "freelancer-net-income-guide-step-1",
+                  "title": "Шаг 1",
+                  "body": "Введите валовой доход от фриланса и деловые расходы."
+                },
+                {
+                  "key": "freelancer-net-income-guide-step-2",
+                  "title": "Шаг 2",
+                  "body": "Введите процент резерва на налоги."
+                },
+                {
+                  "key": "freelancer-net-income-guide-step-3",
+                  "title": "Шаг 3",
+                  "body": "Вычтите расходы из дохода, чтобы оценить прибыль."
+                },
+                {
+                  "key": "freelancer-net-income-guide-step-4",
+                  "title": "Шаг 4",
+                  "body": "Примените процент резерва к прибыли."
+                },
+                {
+                  "key": "freelancer-net-income-guide-step-5",
+                  "title": "Шаг 5",
+                  "body": "Вычтите резерв, чтобы оценить чистый доход, и сравните его с доходом."
+                }
+              ],
+              "sections": [
+                {
+                  "key": "freelancer-net-income-guide-section-1",
+                  "heading": "Метод расчёта",
+                  "body": "Profit = gross revenue − expenses. Tax reserve = profit × reserve rate ÷ 100. Net income = profit − reserve. Effective net rate = net income ÷ revenue × 100 when revenue is non-zero."
+                },
+                {
+                  "key": "freelancer-net-income-guide-section-2",
+                  "heading": "Допущения и ограничения",
+                  "body": "В этой упрощённой модели расходы не могут превышать доход. Резерв применяется к прибыли после расходов, а не к валовому доходу. Резерв — выбранное пользователем плановое допущение, а не налоговый расчёт для конкретной юрисдикции."
+                }
+              ]
+            }
+          }
         }
       },
       "sourceExtractionStatus": "source-record-complete",
-      "sourceTranslationStatus": "not-started",
+      "sourceTranslationStatus": "draft",
       "sourceCompletenessStatus": "complete"
     },
     {
