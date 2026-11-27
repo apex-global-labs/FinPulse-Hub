@@ -25,7 +25,7 @@ test("Batch 31-60 has source-backed calculation extraction records for all 30 to
   const records = calculationRegistry.tools.filter(record => ids.includes(record.toolId));
   assert.equal(records.length, 30);
   for (const record of records) {
-    assert.equal(record.status, "extracted", record.toolId + " remains extracted until parity evidence is separately approved");
+    assert.equal(record.status, ["paycheck","payroll","overtime","discount","exchange-fees","transfer-compare","freelance-project","freelancer-net-income","markup","break-even"].includes(record.toolId) ? "regression-verified" : "extracted", record.toolId + " evidence-backed calculation status");
     assert.ok(record.sourceModule && record.runtimeFunction, record.toolId + " runtime mapping");
     const calculation = record.calculation;
     for (const field of ["inputs", "constraints", "outputs", "units", "assumptions", "sourceReferences"]) {

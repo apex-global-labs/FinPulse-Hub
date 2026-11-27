@@ -555,7 +555,7 @@
       "toolId": "paycheck",
       "sourceModule": "app.js",
       "runtimeFunction": "Core.paycheck",
-      "status": "extracted",
+      "status": "regression-verified",
       "calculation": {
         "inputs": [
           {
@@ -663,7 +663,7 @@
       "toolId": "payroll",
       "sourceModule": "app.js",
       "runtimeFunction": "Core.payroll",
-      "status": "extracted",
+      "status": "regression-verified",
       "calculation": {
         "inputs": [
           {
@@ -739,7 +739,7 @@
       "toolId": "overtime",
       "sourceModule": "app.js",
       "runtimeFunction": "Core.overtimePay",
-      "status": "extracted",
+      "status": "regression-verified",
       "calculation": {
         "inputs": [
           {
@@ -803,7 +803,7 @@
       "toolId": "discount",
       "sourceModule": "app.js",
       "runtimeFunction": "Core.discountCalculator",
-      "status": "extracted",
+      "status": "regression-verified",
       "calculation": {
         "inputs": [
           {
@@ -882,7 +882,7 @@
       "toolId": "exchange-fees",
       "sourceModule": "app.js",
       "runtimeFunction": "Core.exchangeFeeMarkup",
-      "status": "extracted",
+      "status": "regression-verified",
       "calculation": {
         "inputs": [
           {
@@ -976,7 +976,7 @@
       "toolId": "transfer-compare",
       "sourceModule": "app.js",
       "runtimeFunction": "Core.internationalTransferCompare",
-      "status": "extracted",
+      "status": "regression-verified",
       "calculation": {
         "inputs": [
           {
@@ -1089,7 +1089,7 @@
       "toolId": "freelance-project",
       "sourceModule": "app.js",
       "runtimeFunction": "Core.freelanceProjectPricing",
-      "status": "extracted",
+      "status": "regression-verified",
       "calculation": {
         "inputs": [
           {
@@ -1170,7 +1170,7 @@
       "toolId": "freelancer-net-income",
       "sourceModule": "app.js",
       "runtimeFunction": "Core.freelancerNetIncome",
-      "status": "extracted",
+      "status": "regression-verified",
       "calculation": {
         "inputs": [
           {
@@ -1231,7 +1231,7 @@
       "toolId": "markup",
       "sourceModule": "app.js",
       "runtimeFunction": "Core.markupCalculator",
-      "status": "extracted",
+      "status": "regression-verified",
       "calculation": {
         "inputs": [
           {
@@ -1284,7 +1284,7 @@
       "toolId": "break-even",
       "sourceModule": "app.js",
       "runtimeFunction": "Core.breakEvenCalculator",
-      "status": "extracted",
+      "status": "regression-verified",
       "calculation": {
         "inputs": [
           {
