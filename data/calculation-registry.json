@@ -553,110 +553,276 @@
     },
     {
       "toolId": "paycheck",
-      "sourceModule": "app.js",
+      "sourceModule": "finance-core.js",
       "runtimeFunction": "Core.paycheck",
-      "status": "function-mapped",
+      "status": "extracted",
       "calculation": {
-        "inputs": null,
-        "constraints": null,
-        "formula": null,
-        "dependencies": null,
-        "outputs": null,
-        "units": null,
-        "precision": null,
-        "rounding": null,
-        "assumptions": null,
-        "sourceReferences": []
+        "inputs": [
+          "hourly",
+          "regular",
+          "overtime",
+          "multiplier",
+          "bonus",
+          "tax",
+          "retirement",
+          "benefits",
+          "other"
+        ],
+        "constraints": [
+          "All monetary, hour, bonus, rate and deduction inputs must be finite and nonnegative.",
+          "Overtime multiplier must be positive.",
+          "Tax and retirement percentages must not exceed 100; fixed benefits plus other deductions cannot exceed gross pay."
+        ],
+        "formula": "regularPay=hourlyRate*regularHours; overtimePay=hourlyRate*overtimeHours*overtimeMultiplier; gross=regularPay+overtimePay+bonus; tax=gross*taxRate/100; retirement=gross*retirementRate/100; net=gross-tax-retirement-benefits-other",
+        "dependencies": [],
+        "outputs": [
+          "regularPay",
+          "overtimePay",
+          "bonus",
+          "gross",
+          "tax",
+          "retirement",
+          "benefits",
+          "other",
+          "net",
+          "effectiveDeductions"
+        ],
+        "units": [
+          "Monetary values use the UI-selected currency where applicable; percentages are percentage points; hours and employee counts retain their entered units."
+        ],
+        "precision": "JavaScript Number arithmetic; UI formatting is separate from calculation precision.",
+        "rounding": "No calculation rounding unless explicitly described by the function; UI formatting is separate.",
+        "assumptions": [
+          "One-pay-period estimate; withholding and employment rules vary by location.",
+          "The entered deductions are treated as flat amounts or percentages exactly as supplied."
+        ],
+        "sourceReferences": [
+          "finance-core.js#Core.paycheck",
+          "app.js#paycheck",
+          "tests/formula.test.cjs#Paycheck calculator separates regular, overtime and deductions"
+        ]
       }
     },
     {
       "toolId": "payroll",
-      "sourceModule": "app.js",
+      "sourceModule": "finance-core.js",
       "runtimeFunction": "Core.payroll",
-      "status": "function-mapped",
+      "status": "extracted",
       "calculation": {
-        "inputs": null,
-        "constraints": null,
-        "formula": null,
-        "dependencies": null,
-        "outputs": null,
-        "units": null,
-        "precision": null,
-        "rounding": null,
-        "assumptions": null,
-        "sourceReferences": []
+        "inputs": [
+          "employees",
+          "salary",
+          "tax",
+          "benefits",
+          "other"
+        ],
+        "constraints": [
+          "Average monthly gross pay, employer tax rate, benefits and other monthly costs must be finite and nonnegative.",
+          "Employee count must be a positive whole number.",
+          "Employer tax rate cannot exceed 100 percent."
+        ],
+        "formula": "grossMonthly=employees*averageMonthlyGross; employerTaxesMonthly=grossMonthly*employerTaxRate/100; benefitsMonthly=employees*benefitsPerEmployee; totalMonthly=grossMonthly+employerTaxesMonthly+benefitsMonthly+otherMonthlyCosts; totalAnnual=totalMonthly*12",
+        "dependencies": [],
+        "outputs": [
+          "employees",
+          "grossMonthly",
+          "employerTaxesMonthly",
+          "benefitsMonthly",
+          "otherMonthlyCosts",
+          "totalMonthly",
+          "totalAnnual"
+        ],
+        "units": [
+          "Monetary values use the UI-selected currency where applicable; percentages are percentage points; hours and employee counts retain their entered units."
+        ],
+        "precision": "JavaScript Number arithmetic; UI formatting is separate from calculation precision.",
+        "rounding": "No calculation rounding unless explicitly described by the function; UI formatting is separate.",
+        "assumptions": [
+          "Uses average monthly pay and user-entered employer cost assumptions.",
+          "Statutory payroll rules and local contributions are not inferred."
+        ],
+        "sourceReferences": [
+          "finance-core.js#Core.payroll",
+          "app.js#payroll",
+          "tests/formula.test.cjs#Payroll calculator estimates monthly and annual employer costs"
+        ]
       }
     },
     {
       "toolId": "overtime",
-      "sourceModule": "app.js",
+      "sourceModule": "finance-core.js",
       "runtimeFunction": "Core.overtimePay",
-      "status": "function-mapped",
+      "status": "extracted",
       "calculation": {
-        "inputs": null,
-        "constraints": null,
-        "formula": null,
-        "dependencies": null,
-        "outputs": null,
-        "units": null,
-        "precision": null,
-        "rounding": null,
-        "assumptions": null,
-        "sourceReferences": []
+        "inputs": [
+          "rate",
+          "regular",
+          "overtime",
+          "multiplier"
+        ],
+        "constraints": [
+          "Hourly rate and hour values must be finite and nonnegative.",
+          "Overtime multiplier must be positive."
+        ],
+        "formula": "regular=hourlyRate*regularHours; overtime=hourlyRate*overtimeHours*multiplier; gross=regular+overtime; totalHours=regularHours+overtimeHours; blendedRate=totalHours?gross/totalHours:0",
+        "dependencies": [],
+        "outputs": [
+          "regular",
+          "overtime",
+          "gross",
+          "totalHours",
+          "blendedRate"
+        ],
+        "units": [
+          "Monetary values use the UI-selected currency where applicable; percentages are percentage points; hours and employee counts retain their entered units."
+        ],
+        "precision": "JavaScript Number arithmetic; UI formatting is separate from calculation precision.",
+        "rounding": "No calculation rounding unless explicitly described by the function; UI formatting is separate.",
+        "assumptions": [
+          "Uses the entered overtime multiplier; legal overtime eligibility is not determined."
+        ],
+        "sourceReferences": [
+          "finance-core.js#Core.overtimePay",
+          "app.js#overtime",
+          "tests/formula.test.cjs#Overtime Pay Calculator"
+        ]
       }
     },
     {
       "toolId": "discount",
-      "sourceModule": "app.js",
+      "sourceModule": "finance-core.js",
       "runtimeFunction": "Core.discountCalculator",
-      "status": "function-mapped",
+      "status": "extracted",
       "calculation": {
-        "inputs": null,
-        "constraints": null,
-        "formula": null,
-        "dependencies": null,
-        "outputs": null,
-        "units": null,
-        "precision": null,
-        "rounding": null,
-        "assumptions": null,
-        "sourceReferences": []
+        "inputs": [
+          "price",
+          "discount",
+          "coupon",
+          "tax",
+          "shipping"
+        ],
+        "constraints": [
+          "Price, rates and shipping must be finite and nonnegative.",
+          "Discount, coupon and tax rates cannot exceed 100 percent."
+        ],
+        "formula": "firstDiscount=price*discountPct/100; afterFirst=price-firstDiscount; couponDiscount=afterFirst*couponPct/100; discountedSubtotal=afterFirst-couponDiscount; tax=discountedSubtotal*taxRate/100; total=discountedSubtotal+tax+shipping",
+        "dependencies": [],
+        "outputs": [
+          "originalPrice",
+          "firstDiscount",
+          "couponDiscount",
+          "totalDiscount",
+          "discountedSubtotal",
+          "tax",
+          "shipping",
+          "total",
+          "savings"
+        ],
+        "units": [
+          "Monetary values use the UI-selected currency where applicable; percentages are percentage points; hours and employee counts retain their entered units."
+        ],
+        "precision": "JavaScript Number arithmetic; UI formatting is separate from calculation precision.",
+        "rounding": "No calculation rounding unless explicitly described by the function; UI formatting is separate.",
+        "assumptions": [
+          "Coupon is applied after the first discount; tax is calculated on discounted subtotal; shipping is added after tax.",
+          "Store rules may differ."
+        ],
+        "sourceReferences": [
+          "finance-core.js#Core.discountCalculator",
+          "app.js#discount",
+          "tests/formula.test.cjs#Discount Calculator"
+        ]
       }
     },
     {
       "toolId": "exchange-fees",
-      "sourceModule": "app.js",
+      "sourceModule": "finance-core.js",
       "runtimeFunction": "Core.exchangeFeeMarkup",
-      "status": "function-mapped",
+      "status": "extracted",
       "calculation": {
-        "inputs": null,
-        "constraints": null,
-        "formula": null,
-        "dependencies": null,
-        "outputs": null,
-        "units": null,
-        "precision": null,
-        "rounding": null,
-        "assumptions": null,
-        "sourceReferences": []
+        "inputs": [
+          "amount",
+          "rate",
+          "markup",
+          "fee",
+          "fixed"
+        ],
+        "constraints": [
+          "Send amount must be finite and nonnegative; mid-market rate must be finite and positive.",
+          "Markup, transfer-fee percentage and fixed fee must be finite and nonnegative.",
+          "Markup and transfer-fee percentages cannot exceed 100; total transfer fee must be less than amount sent unless both are zero."
+        ],
+        "formula": "fee=fixedFee+amount*transferFeePct/100; customerRate=midRate*(1-markupPct/100); convertedAmount=(amount-fee)*customerRate; marketValue=amount*midRate; fxSpreadCost=amount*(midRate-customerRate); totalCost=marketValue-convertedAmount; effectiveRate=amount?convertedAmount/amount:0",
+        "dependencies": [],
+        "outputs": [
+          "amount",
+          "midRate",
+          "customerRate",
+          "fee",
+          "convertedAmount",
+          "marketValue",
+          "fxSpreadCost",
+          "totalCost",
+          "effectiveRate"
+        ],
+        "units": [
+          "Monetary values use the UI-selected currency where applicable; percentages are percentage points; hours and employee counts retain their entered units."
+        ],
+        "precision": "JavaScript Number arithmetic; UI formatting is separate from calculation precision.",
+        "rounding": "No calculation rounding unless explicitly described by the function; UI formatting is separate.",
+        "assumptions": [
+          "Illustrative comparison from entered mid-market rate, markup and transfer fees; provider quotes and recipient-side charges may differ."
+        ],
+        "sourceReferences": [
+          "finance-core.js#Core.exchangeFeeMarkup",
+          "app.js#exchange-fees",
+          "tests/formula.test.cjs#Exchange Fee"
+        ]
       }
     },
     {
       "toolId": "transfer-compare",
-      "sourceModule": "app.js",
+      "sourceModule": "finance-core.js",
       "runtimeFunction": "Core.internationalTransferCompare",
-      "status": "function-mapped",
+      "status": "extracted",
       "calculation": {
-        "inputs": null,
-        "constraints": null,
-        "formula": null,
-        "dependencies": null,
-        "outputs": null,
-        "units": null,
-        "precision": null,
-        "rounding": null,
-        "assumptions": null,
-        "sourceReferences": []
+        "inputs": [
+          "amount",
+          "rate",
+          "aFixed",
+          "aFee",
+          "aMarkup",
+          "bFixed",
+          "bFee",
+          "bMarkup"
+        ],
+        "constraints": [
+          "Both provider fee structures use the same entered amount and mid-market rate.",
+          "Each provider fee structure is validated by exchangeFeeMarkup; amount, rate and fee constraints apply."
+        ],
+        "formula": "providerA=exchangeFeeMarkup(amount,midRate,aMarkup,aPct,aFixed); providerB=exchangeFeeMarkup(amount,midRate,bMarkup,bPct,bFixed); bestProvider=providerA.convertedAmount>=providerB.convertedAmount?'A':'B'; recipientDifference=abs(providerA.convertedAmount-providerB.convertedAmount)",
+        "dependencies": [
+          "exchangeFeeMarkup"
+        ],
+        "outputs": [
+          "providerA",
+          "providerB",
+          "bestProvider",
+          "recipientDifference"
+        ],
+        "units": [
+          "Monetary values use the UI-selected currency where applicable; percentages are percentage points; hours and employee counts retain their entered units."
+        ],
+        "precision": "JavaScript Number arithmetic; UI formatting is separate from calculation precision.",
+        "rounding": "No calculation rounding unless explicitly described by the function; UI formatting is separate.",
+        "assumptions": [
+          "Compares two hypothetical fee structures using one entered mid-market rate; confirm actual provider quotes, delivery time, recipient fees and exchange-rate guarantees."
+        ],
+        "sourceReferences": [
+          "finance-core.js#Core.internationalTransferCompare",
+          "app.js#transfer-compare",
+          "tests/formula.test.cjs#International Money Transfer"
+        ]
       }
     },
     {
@@ -1197,272 +1363,511 @@
     },
     {
       "toolId": "basic-arithmetic",
-      "sourceModule": "math-tools.js",
+      "sourceModule": "math-core.js",
       "runtimeFunction": "FinPulseMath.arithmetic",
-      "status": "function-mapped",
+      "status": "extracted",
       "calculation": {
-        "inputs": null,
-        "constraints": null,
-        "formula": null,
-        "dependencies": null,
-        "outputs": null,
-        "units": null,
-        "precision": null,
-        "rounding": null,
-        "assumptions": null,
-        "sourceReferences": []
+        "inputs": [
+          "a",
+          "op",
+          "b"
+        ],
+        "constraints": [
+          "a and b must be finite numbers; op must be one of +, -, ×, ÷."
+        ],
+        "formula": "result = a+b, a-b, a*b, or a/b according to op; division by zero and unknown operations are rejected.",
+        "dependencies": [],
+        "outputs": [
+          "number"
+        ],
+        "units": [
+          "Dimensionless mathematical values; no currency or physical units are applied."
+        ],
+        "precision": "JavaScript Number arithmetic; no explicit decimal rounding.",
+        "rounding": "No explicit rounding.",
+        "assumptions": [
+          "Runtime implementation is the authoritative source for basic-arithmetic; display formatting is separate from the core result."
+        ],
+        "sourceReferences": [
+          "math-core.js#FinPulseMath.arithmetic",
+          "math-tools.js#basic-arithmetic",
+          "tests/math-batch-1.test.cjs"
+        ]
       }
     },
     {
       "toolId": "fraction",
-      "sourceModule": "math-tools.js",
+      "sourceModule": "math-core.js",
       "runtimeFunction": "FinPulseMath.fraction",
-      "status": "function-mapped",
+      "status": "extracted",
       "calculation": {
-        "inputs": null,
-        "constraints": null,
-        "formula": null,
-        "dependencies": null,
-        "outputs": null,
-        "units": null,
-        "precision": null,
-        "rounding": null,
-        "assumptions": null,
-        "sourceReferences": []
+        "inputs": [
+          "numerator",
+          "denominator"
+        ],
+        "constraints": [
+          "Numerator and denominator must be safe integers; denominator cannot be zero."
+        ],
+        "formula": "g=gcd(abs(numerator),abs(denominator)); simplified numerator and denominator are returned with value=numerator/denominator.",
+        "dependencies": [
+          "gcd"
+        ],
+        "outputs": [
+          "numerator",
+          "denominator",
+          "value"
+        ],
+        "units": [
+          "Dimensionless mathematical values; no currency or physical units are applied."
+        ],
+        "precision": "Integer reduction plus JavaScript Number quotient.",
+        "rounding": "No explicit rounding.",
+        "assumptions": [
+          "Runtime implementation is the authoritative source for fraction; display formatting is separate from the core result."
+        ],
+        "sourceReferences": [
+          "math-core.js#FinPulseMath.fraction",
+          "math-tools.js#fraction",
+          "tests/math-batch-1.test.cjs"
+        ]
       }
     },
     {
       "toolId": "mixed-number",
-      "sourceModule": "math-tools.js",
+      "sourceModule": "math-core.js",
       "runtimeFunction": "FinPulseMath.mixed",
-      "status": "function-mapped",
+      "status": "extracted",
       "calculation": {
-        "inputs": null,
-        "constraints": null,
-        "formula": null,
-        "dependencies": null,
-        "outputs": null,
-        "units": null,
-        "precision": null,
-        "rounding": null,
-        "assumptions": null,
-        "sourceReferences": []
+        "inputs": [
+          "whole",
+          "numerator",
+          "denominator"
+        ],
+        "constraints": [
+          "Whole number and numerator must be safe integers; denominator must be a positive safe integer; 0<=numerator<denominator."
+        ],
+        "formula": "improperNumerator=whole*denominator+(whole<0?-numerator:numerator); result=fraction(improperNumerator,denominator).",
+        "dependencies": [
+          "gcd"
+        ],
+        "outputs": [
+          "numerator",
+          "denominator",
+          "value"
+        ],
+        "units": [
+          "Dimensionless mathematical values; no currency or physical units are applied."
+        ],
+        "precision": "Integer arithmetic plus JavaScript Number quotient.",
+        "rounding": "No explicit rounding.",
+        "assumptions": [
+          "Runtime implementation is the authoritative source for mixed-number; display formatting is separate from the core result."
+        ],
+        "sourceReferences": [
+          "math-core.js#FinPulseMath.mixed",
+          "math-tools.js#mixed-number",
+          "tests/math-batch-1.test.cjs"
+        ]
       }
     },
     {
       "toolId": "decimal-fraction",
-      "sourceModule": "math-tools.js",
+      "sourceModule": "math-core.js",
       "runtimeFunction": "FinPulseMath.decimalFraction",
-      "status": "function-mapped",
+      "status": "extracted",
       "calculation": {
-        "inputs": null,
-        "constraints": null,
-        "formula": null,
-        "dependencies": null,
-        "outputs": null,
-        "units": null,
-        "precision": null,
-        "rounding": null,
-        "assumptions": null,
-        "sourceReferences": []
+        "inputs": [
+          "value",
+          "maxDen"
+        ],
+        "constraints": [
+          "Value must be finite; maxDen must be a positive safe integer no greater than 1,000,000; default maxDen=10,000."
+        ],
+        "formula": "Search denominators d=1..maxDen; choose numerator round(value*d) minimizing absolute approximation error; return the simplified best fraction.",
+        "dependencies": [],
+        "outputs": [
+          "numerator",
+          "denominator",
+          "value"
+        ],
+        "units": [
+          "Dimensionless mathematical values; no currency or physical units are applied."
+        ],
+        "precision": "Bounded denominator search; floating-point error threshold 1e-12 can stop early.",
+        "rounding": "Returns the best searched approximation; no decimal-place rounding.",
+        "assumptions": [
+          "Runtime implementation is the authoritative source for decimal-fraction; display formatting is separate from the core result."
+        ],
+        "sourceReferences": [
+          "math-core.js#FinPulseMath.decimalFraction",
+          "math-tools.js#decimal-fraction",
+          "tests/math-batch-1.test.cjs"
+        ]
       }
     },
     {
       "toolId": "ratio",
-      "sourceModule": "math-tools.js",
+      "sourceModule": "math-core.js",
       "runtimeFunction": "FinPulseMath.ratio",
-      "status": "function-mapped",
+      "status": "extracted",
       "calculation": {
-        "inputs": null,
-        "constraints": null,
-        "formula": null,
-        "dependencies": null,
-        "outputs": null,
-        "units": null,
-        "precision": null,
-        "rounding": null,
-        "assumptions": null,
-        "sourceReferences": []
+        "inputs": [
+          "a",
+          "b"
+        ],
+        "constraints": [
+          "Both terms must be nonnegative safe integers; both cannot be zero."
+        ],
+        "formula": "g=gcd(a,b); simplified ratio=(a/g):(b/g).",
+        "dependencies": [],
+        "outputs": [
+          "first",
+          "second"
+        ],
+        "units": [
+          "Dimensionless mathematical values; no currency or physical units are applied."
+        ],
+        "precision": "Safe integer arithmetic.",
+        "rounding": "No explicit rounding.",
+        "assumptions": [
+          "Runtime implementation is the authoritative source for ratio; display formatting is separate from the core result."
+        ],
+        "sourceReferences": [
+          "math-core.js#FinPulseMath.ratio",
+          "math-tools.js#ratio",
+          "tests/math-batch-1.test.cjs"
+        ]
       }
     },
     {
       "toolId": "proportion",
-      "sourceModule": "math-tools.js",
+      "sourceModule": "math-core.js",
       "runtimeFunction": "FinPulseMath.proportion",
-      "status": "function-mapped",
+      "status": "extracted",
       "calculation": {
-        "inputs": null,
-        "constraints": null,
-        "formula": null,
-        "dependencies": null,
-        "outputs": null,
-        "units": null,
-        "precision": null,
-        "rounding": null,
-        "assumptions": null,
-        "sourceReferences": []
+        "inputs": [
+          "a",
+          "b",
+          "c"
+        ],
+        "constraints": [
+          "A and B must be positive finite numbers; C must be finite and nonnegative; result must be finite."
+        ],
+        "formula": "x=c*b/a.",
+        "dependencies": [],
+        "outputs": [
+          "value"
+        ],
+        "units": [
+          "Dimensionless mathematical values; no currency or physical units are applied."
+        ],
+        "precision": "JavaScript Number arithmetic; result checked for finiteness.",
+        "rounding": "No explicit rounding.",
+        "assumptions": [
+          "Runtime implementation is the authoritative source for proportion; display formatting is separate from the core result."
+        ],
+        "sourceReferences": [
+          "math-core.js#FinPulseMath.proportion",
+          "math-tools.js#proportion",
+          "tests/math-batch-1.test.cjs"
+        ]
       }
     },
     {
       "toolId": "average",
-      "sourceModule": "math-tools.js",
+      "sourceModule": "math-core.js",
       "runtimeFunction": "FinPulseMath.average",
-      "status": "function-mapped",
+      "status": "extracted",
       "calculation": {
-        "inputs": null,
-        "constraints": null,
-        "formula": null,
-        "dependencies": null,
-        "outputs": null,
-        "units": null,
-        "precision": null,
-        "rounding": null,
-        "assumptions": null,
-        "sourceReferences": []
+        "inputs": [
+          "a",
+          "b",
+          "c"
+        ],
+        "constraints": [
+          "Input must be a non-empty array; every value must be finite."
+        ],
+        "formula": "mean=sum(values[i]/values.length) for all supplied values.",
+        "dependencies": [],
+        "outputs": [
+          "mean"
+        ],
+        "units": [
+          "Dimensionless mathematical values; no currency or physical units are applied."
+        ],
+        "precision": "JavaScript Number arithmetic; division is performed per term before summation.",
+        "rounding": "No explicit rounding.",
+        "assumptions": [
+          "Runtime implementation is the authoritative source for average; display formatting is separate from the core result."
+        ],
+        "sourceReferences": [
+          "math-core.js#FinPulseMath.average",
+          "math-tools.js#average",
+          "tests/math-batch-1.test.cjs"
+        ]
       }
     },
     {
       "toolId": "percentage-change",
-      "sourceModule": "math-tools.js",
+      "sourceModule": "math-core.js",
       "runtimeFunction": "FinPulseMath.percentageChange",
-      "status": "function-mapped",
+      "status": "extracted",
       "calculation": {
-        "inputs": null,
-        "constraints": null,
-        "formula": null,
-        "dependencies": null,
-        "outputs": null,
-        "units": null,
-        "precision": null,
-        "rounding": null,
-        "assumptions": null,
-        "sourceReferences": []
+        "inputs": [
+          "old",
+          "new"
+        ],
+        "constraints": [
+          "Both values must be finite; original value cannot be zero."
+        ],
+        "formula": "percentageChange=(newValue-oldValue)/abs(oldValue)*100.",
+        "dependencies": [],
+        "outputs": [
+          "percentageChange"
+        ],
+        "units": [
+          "Dimensionless mathematical values; no currency or physical units are applied."
+        ],
+        "precision": "JavaScript Number arithmetic.",
+        "rounding": "No explicit rounding.",
+        "assumptions": [
+          "Runtime implementation is the authoritative source for percentage-change; display formatting is separate from the core result."
+        ],
+        "sourceReferences": [
+          "math-core.js#FinPulseMath.percentageChange",
+          "math-tools.js#percentage-change",
+          "tests/math-batch-1.test.cjs"
+        ]
       }
     },
     {
       "toolId": "percent-error",
-      "sourceModule": "math-tools.js",
+      "sourceModule": "math-core.js",
       "runtimeFunction": "FinPulseMath.percentError",
-      "status": "function-mapped",
+      "status": "extracted",
       "calculation": {
-        "inputs": null,
-        "constraints": null,
-        "formula": null,
-        "dependencies": null,
-        "outputs": null,
-        "units": null,
-        "precision": null,
-        "rounding": null,
-        "assumptions": null,
-        "sourceReferences": []
+        "inputs": [
+          "actual",
+          "expected"
+        ],
+        "constraints": [
+          "Both values must be finite; expected value cannot be zero."
+        ],
+        "formula": "percentError=abs(actual-expected)/abs(expected)*100.",
+        "dependencies": [],
+        "outputs": [
+          "percentError"
+        ],
+        "units": [
+          "Dimensionless mathematical values; no currency or physical units are applied."
+        ],
+        "precision": "JavaScript Number arithmetic.",
+        "rounding": "Absolute error; no explicit rounding.",
+        "assumptions": [
+          "Runtime implementation is the authoritative source for percent-error; display formatting is separate from the core result."
+        ],
+        "sourceReferences": [
+          "math-core.js#FinPulseMath.percentError",
+          "math-tools.js#percent-error",
+          "tests/math-batch-1.test.cjs"
+        ]
       }
     },
     {
       "toolId": "rounding",
-      "sourceModule": "math-tools.js",
+      "sourceModule": "math-core.js",
       "runtimeFunction": "FinPulseMath.roundTo",
-      "status": "function-mapped",
+      "status": "extracted",
       "calculation": {
-        "inputs": null,
-        "constraints": null,
-        "formula": null,
-        "dependencies": null,
-        "outputs": null,
-        "units": null,
-        "precision": null,
-        "rounding": null,
-        "assumptions": null,
-        "sourceReferences": []
+        "inputs": [
+          "value",
+          "places",
+          "mode"
+        ],
+        "constraints": [
+          "Value must be finite; places must be an integer from 0 to 12; scaled value must remain finite; mode must be nearest, up or down."
+        ],
+        "formula": "scale=10^places; up uses ceil(value*scale)/scale; down uses floor(value*scale)/scale; nearest uses Math.round((value*scale+EPSILON*sign(value)))/scale.",
+        "dependencies": [],
+        "outputs": [
+          "roundedValue"
+        ],
+        "units": [
+          "Dimensionless mathematical values; no currency or physical units are applied."
+        ],
+        "precision": "JavaScript Number arithmetic; Number.EPSILON adjustment for nearest mode.",
+        "rounding": "Explicit mode-dependent rounding to 0–12 decimal places.",
+        "assumptions": [
+          "Runtime implementation is the authoritative source for rounding; display formatting is separate from the core result."
+        ],
+        "sourceReferences": [
+          "math-core.js#FinPulseMath.roundTo",
+          "math-tools.js#rounding",
+          "tests/math-batch-1.test.cjs"
+        ]
       }
     },
     {
       "toolId": "significant-figures",
-      "sourceModule": "math-tools.js",
+      "sourceModule": "math-core.js",
       "runtimeFunction": "FinPulseMath.significant",
-      "status": "function-mapped",
+      "status": "extracted",
       "calculation": {
-        "inputs": null,
-        "constraints": null,
-        "formula": null,
-        "dependencies": null,
-        "outputs": null,
-        "units": null,
-        "precision": null,
-        "rounding": null,
-        "assumptions": null,
-        "sourceReferences": []
+        "inputs": [
+          "value",
+          "figures"
+        ],
+        "constraints": [
+          "Value must be finite; figures must be an integer from 1 to 15."
+        ],
+        "formula": "For nonzero values, result=Number(value.toPrecision(figures)); zero returns zero.",
+        "dependencies": [],
+        "outputs": [
+          "roundedValue"
+        ],
+        "units": [
+          "Dimensionless mathematical values; no currency or physical units are applied."
+        ],
+        "precision": "JavaScript Number toPrecision conversion.",
+        "rounding": "Rounds to requested significant figures.",
+        "assumptions": [
+          "Runtime implementation is the authoritative source for significant-figures; display formatting is separate from the core result."
+        ],
+        "sourceReferences": [
+          "math-core.js#FinPulseMath.significant",
+          "math-tools.js#significant-figures",
+          "tests/math-batch-1.test.cjs"
+        ]
       }
     },
     {
       "toolId": "scientific-notation",
-      "sourceModule": "math-tools.js",
+      "sourceModule": "math-core.js",
       "runtimeFunction": "FinPulseMath.scientific",
-      "status": "function-mapped",
+      "status": "extracted",
       "calculation": {
-        "inputs": null,
-        "constraints": null,
-        "formula": null,
-        "dependencies": null,
-        "outputs": null,
-        "units": null,
-        "precision": null,
-        "rounding": null,
-        "assumptions": null,
-        "sourceReferences": []
+        "inputs": [
+          "value",
+          "figures"
+        ],
+        "constraints": [
+          "Value must be finite; figures must be an integer from 1 to 15."
+        ],
+        "formula": "result=value.toExponential(figures-1).",
+        "dependencies": [],
+        "outputs": [
+          "scientificNotation"
+        ],
+        "units": [
+          "Dimensionless mathematical values; no currency or physical units are applied."
+        ],
+        "precision": "JavaScript Number exponential string formatting.",
+        "rounding": "Formats to requested significant figures.",
+        "assumptions": [
+          "Runtime implementation is the authoritative source for scientific-notation; display formatting is separate from the core result."
+        ],
+        "sourceReferences": [
+          "math-core.js#FinPulseMath.scientific",
+          "math-tools.js#scientific-notation",
+          "tests/math-batch-1.test.cjs"
+        ]
       }
     },
     {
       "toolId": "exponent",
-      "sourceModule": "math-tools.js",
+      "sourceModule": "math-core.js",
       "runtimeFunction": "FinPulseMath.power",
-      "status": "function-mapped",
+      "status": "extracted",
       "calculation": {
-        "inputs": null,
-        "constraints": null,
-        "formula": null,
-        "dependencies": null,
-        "outputs": null,
-        "units": null,
-        "precision": null,
-        "rounding": null,
-        "assumptions": null,
-        "sourceReferences": []
+        "inputs": [
+          "base",
+          "exponent"
+        ],
+        "constraints": [
+          "Base and exponent must be finite; result must be finite."
+        ],
+        "formula": "result=base**exponent.",
+        "dependencies": [],
+        "outputs": [
+          "value"
+        ],
+        "units": [
+          "Dimensionless mathematical values; no currency or physical units are applied."
+        ],
+        "precision": "JavaScript Number exponentiation.",
+        "rounding": "No explicit rounding.",
+        "assumptions": [
+          "Runtime implementation is the authoritative source for exponent; display formatting is separate from the core result."
+        ],
+        "sourceReferences": [
+          "math-core.js#FinPulseMath.power",
+          "math-tools.js#exponent",
+          "tests/math-batch-1.test.cjs"
+        ]
       }
     },
     {
       "toolId": "square-root",
-      "sourceModule": "math-tools.js",
+      "sourceModule": "math-core.js",
       "runtimeFunction": "FinPulseMath.nthRoot(value, 2)",
-      "status": "function-mapped",
+      "status": "extracted",
       "calculation": {
-        "inputs": null,
-        "constraints": null,
-        "formula": null,
-        "dependencies": null,
-        "outputs": null,
-        "units": null,
-        "precision": null,
-        "rounding": null,
-        "assumptions": null,
-        "sourceReferences": []
+        "inputs": [
+          "value"
+        ],
+        "constraints": [
+          "Value must be finite and nonnegative; root index is fixed at 2."
+        ],
+        "formula": "squareRoot=sqrt(value) using the nthRoot implementation with n=2.",
+        "dependencies": [],
+        "outputs": [
+          "root"
+        ],
+        "units": [
+          "Dimensionless mathematical values; no currency or physical units are applied."
+        ],
+        "precision": "JavaScript Math.pow; result checked for finiteness.",
+        "rounding": "No explicit rounding.",
+        "assumptions": [
+          "Runtime implementation is the authoritative source for square-root; display formatting is separate from the core result."
+        ],
+        "sourceReferences": [
+          "math-core.js#FinPulseMath.nthRoot(value, 2)",
+          "math-tools.js#square-root",
+          "tests/math-batch-1.test.cjs"
+        ]
       }
     },
     {
       "toolId": "cube-root",
-      "sourceModule": "math-tools.js",
+      "sourceModule": "math-core.js",
       "runtimeFunction": "FinPulseMath.nthRoot(value, 3)",
-      "status": "function-mapped",
+      "status": "extracted",
       "calculation": {
-        "inputs": null,
-        "constraints": null,
-        "formula": null,
-        "dependencies": null,
-        "outputs": null,
-        "units": null,
-        "precision": null,
-        "rounding": null,
-        "assumptions": null,
-        "sourceReferences": []
+        "inputs": [
+          "value"
+        ],
+        "constraints": [
+          "Value must be finite; root index is fixed at 3; negative values are supported."
+        ],
+        "formula": "cubeRoot=cbrt(value) using signed Math.pow(abs(value),1/3) with n=3.",
+        "dependencies": [],
+        "outputs": [
+          "root"
+        ],
+        "units": [
+          "Dimensionless mathematical values; no currency or physical units are applied."
+        ],
+        "precision": "JavaScript Math.pow with sign restoration; result checked for finiteness.",
+        "rounding": "No explicit rounding.",
+        "assumptions": [
+          "Runtime implementation is the authoritative source for cube-root; display formatting is separate from the core result."
+        ],
+        "sourceReferences": [
+          "math-core.js#FinPulseMath.nthRoot(value, 3)",
+          "math-tools.js#cube-root",
+          "tests/math-batch-1.test.cjs"
+        ]
       }
     },
     {
