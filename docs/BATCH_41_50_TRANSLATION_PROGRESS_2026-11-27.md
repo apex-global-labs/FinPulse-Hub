@@ -14,8 +14,8 @@ The translation work below changes the candidate head. Fresh Finance CI and Ligh
 ## Translation progress
 
 - Batch scope: tools #41–50, six target locales (`hi`, `ar`, `ur`, `zh-CN`, `ja`, `ru`), 60 locale records.
-- Completed draft records: **3/60** — #41 Business ROI / Hindi (`hi`), Arabic (`ar`) and Urdu (`ur`).
-- Remaining: **57/60** — not started.
+- Completed draft records: **6/60** — #41 Business ROI / all six target locales (`hi`, `ar`, `ur`, `zh-CN`, `ja`, `ru`).
+- Remaining: **54/60** — tools #42–50, all six locales each, not started.
 - No locale is marked linguistically reviewed, domain reviewed, approved, or published.
 
 ## #41 Business ROI / Hindi field coverage
@@ -72,3 +72,16 @@ The locale remains inactive as a draft; no publication or activation occurred.
 ## #41 Business ROI / Urdu field coverage (added 2026-11-27)
 
 The Urdu locale is saved as `draft` with all 10 field groups, including all seven shared action labels. Automated parity checks confirm the input, metric, breakdown, error, FAQ, guide-step, guide-section and accessibility-control keys match the English source in order; `{field}` placeholder count matches (2/2); and canonical formula text is unchanged. The locale remains draft-only.
+
+
+## #41 Business ROI / Chinese, Japanese and Russian drafts completed (2026-11-27)
+
+- Added complete draft records for Simplified Chinese (`zh-CN`), Japanese (`ja`) and Russian (`ru`).
+- All six target locale records now have the ten schema groups: metadata, inputs, actions, results, explanations, errors, FAQs, guide, SEO and accessibility.
+- Preserved the source input keys (`investment`, `value`), result metric keys, breakdown keys, FAQ/error keys, guide keys and accessibility control keys.
+- Preserved the canonical English formula verbatim in formula description and guide calculation section; no executable calculation, defaults, numeric data or currency/jurisdiction values were changed.
+- Preserved both `{field}` placeholders in each locale's validation text and kept every locale status at `draft`.
+- Added automated completeness assertions for all six locale records, stable-key parity, formula parity and placeholder-token parity in `tests/batch-31-60-source-completeness.test.cjs`.
+- Translation records complete: **6/60**. Remaining: **54/60**.
+- No locale has been linguistically approved or activated; English runtime fallback remains in force.
+- Fresh Finance CI and Candidate Lighthouse/CLS are required on the final updated candidate head before release-gate claims.
