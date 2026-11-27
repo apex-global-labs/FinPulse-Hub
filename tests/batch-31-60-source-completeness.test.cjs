@@ -79,6 +79,12 @@ test("Batch 31-60 locale inventory preserves the draft-only activation boundary"
         assert.equal(tool.locales[locale].status, "draft", tool.id + "/" + locale);
         assert.deepEqual(Object.keys(tool.locales[locale].fields).sort(), ["accessibility","actions","errors","explanations","faqs","guide","inputs","metadata","results","seo"].sort(), tool.id + "/" + locale + " complete translation field groups");
       }
+    } else if (tool.id === "net-worth") {
+      assert.equal(tool.sourceTranslationStatus, "draft", tool.id + " translation status");
+      for (const locale of locales) {
+        assert.equal(tool.locales[locale].status, "draft", tool.id + "/" + locale);
+        assert.equal(Object.keys(tool.locales[locale].fields).length, 10, tool.id + "/" + locale + " complete field groups");
+      }
     } else if (tool.id === "emergency-fund") {
       assert.equal(tool.sourceTranslationStatus, "draft", tool.id + " translation status");
       for (const locale of locales) {
@@ -318,4 +324,34 @@ test("Emergency Fund six-locale drafts preserve stable keys, formula and 24-mont
  assert.equal(source.results.metrics.length,4);
  assert.equal(source.results.breakdown.length,6);
  assert.match(source.errors.find(x=>x.key==="months-limit").message,/24/);
+});
+
+
+test("Net Worth six-locale drafts preserve all stable keys and canonical asset-liability formula",()=>{
+ const tool=content.tools.find(x=>x.id==="net-worth"),source=tool.source;
+ const keys=items=>items.map(x=>x.key);
+ for(const locale of locales){
+  const record=tool.locales[locale],f=record.fields;
+  assert.equal(record.status,"draft",locale+" remains inactive draft");
+  assert.deepEqual(keys(f.inputs),keys(source.inputs),locale+" input keys");
+  assert.deepEqual(keys(f.results.metrics),keys(source.results.metrics),locale+" metric keys");
+  assert.deepEqual(keys(f.results.breakdown),keys(source.results.breakdown),locale+" breakdown keys");
+  assert.deepEqual(keys(f.errors),keys(source.errors),locale+" error keys");
+  assert.deepEqual(keys(f.faqs),keys(source.faqs),locale+" FAQ keys");
+  assert.deepEqual(keys(f.seo.faq),keys(source.seo.faq),locale+" SEO FAQ keys");
+  assert.deepEqual(keys(f.guide.steps),keys(source.guide.steps),locale+" guide step keys");
+  assert.deepEqual(keys(f.guide.sections),keys(source.guide.sections),locale+" guide section keys");
+  assert.deepEqual(keys(f.accessibility.controlLabels),keys(source.inputs),locale+" accessibility control keys");
+  assert.equal(f.explanations.formulaDescription,source.explanations.formula,locale+" canonical formula unchanged");
+  assert.equal(f.guide.sections[0].body,source.explanations.formula,locale+" guide formula unchanged");
+  assert.equal(f.inputs.length,9,locale+" input count");
+  assert.equal(f.results.metrics.length,6,locale+" metric count");
+  assert.equal(f.results.breakdown.length,12,locale+" breakdown count");
+  assert.ok(f.explanations.steps.length===5&&f.explanations.formulaTitle,locale+" explanation fields");
+  assert.ok(Object.values(f.actions).every(x=>x.trim()),locale+" action labels");
+  assert.ok(f.errors.every(x=>x.message&&x.recoveryHint),locale+" error recovery");
+ }
+ assert.equal(source.errors.length,2);
+ assert.match(source.explanations.formula,/Total assets/);
+ assert.match(source.explanations.formula,/Net worth = total assets − total liabilities/);
 });
