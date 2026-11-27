@@ -164,3 +164,82 @@ test("Batch 2 approved translations render in all seven locales and pass 70 axe 
   await page.close();
  }finally{await browser.close();await new Promise(resolve=>server.close(resolve))}
 });
+
+test("Batch 31-40 draft translations render in all seven locales and pass 70 axe WCAG audits",async()=>{
+ const server=createServer(async(req,res)=>{
+  const rawPath=decodeURIComponent(req.url.split("?")[0]);
+  const path=(rawPath.startsWith("/")?rawPath.slice(1):rawPath)||"index.html";
+  try{const data=await readFile(path==="__axe.js"?axePath:join(process.cwd(),path));const type=path.endsWith(".css")?"text/css":path.endsWith(".js")?"text/javascript":path.endsWith(".json")?"application/json":"text/html";res.writeHead(200,{"content-type":type});res.end(data)}
+  catch{res.writeHead(404);res.end("not found")}
+ });
+ await new Promise(resolve=>server.listen(0,"127.0.0.1",resolve));
+ const browser=await chromium.launch({headless:true});
+ try{
+  const page=await browser.newPage({viewport:{width:1280,height:800}});
+  const base="http://127.0.0.1:"+server.address().port;
+  await page.goto(base+"/?tool=paycheck");
+  await page.waitForSelector("#form");
+  await page.waitForFunction(()=>window.FinPulseToolRuntime?.loaded&&window.FinPulseI18nReady);
+  const registry=await page.evaluate(async()=>{
+   const content=await (await fetch("/translations/tool-content.json")).json();
+   const ids=["paycheck","payroll","overtime","discount","exchange-fees","transfer-compare","freelance-project","freelancer-net-income","markup","break-even"];
+   return ids.map(id=>{const tool=content.tools.find(item=>item.id===id);return{id,source:tool.source,locales:tool.locales}});
+  });
+  const locales=["en","hi","ar","ur","zh-CN","ja","ru"];
+  let auditCount=0;
+  for(const locale of locales){
+   const expectedDir=["ar","ur"].includes(locale)?"rtl":"ltr";
+   for(const tool of registry){
+    await page.goto(base+"/?tool="+tool.id);
+    await page.waitForSelector("#form");
+    await page.waitForFunction(()=>window.FinPulseToolRuntime?.loaded&&window.FinPulseI18n?.supportedLocales.length===7);
+    await page.evaluate(async({id,locale})=>{
+     const data=await (await fetch("/translations/tool-content.json")).json();
+     const tool=data.tools.find(item=>item.id===id);
+     for(const targetLocale of ["hi","ar","ur","zh-CN","ja","ru"])tool.locales[targetLocale].status="approved";
+     window.FinPulseToolRuntime.setContent(data);
+     window.FinPulseGlobalContext.setLocale(locale==="en"?"hi":"en");
+     window.FinPulseGlobalContext.setLocale(locale);
+    },{id:tool.id,locale});
+    const fields=locale==="en"?tool.source:tool.locales[locale].fields;
+    const expectedTitle=locale==="en"?tool.source.title:fields.metadata.title;
+    await page.waitForFunction(({locale,title,dir})=>document.documentElement.lang===locale&&document.documentElement.dir===dir&&document.querySelector("#app .heading h2")?.textContent.trim()===title,{locale,title:expectedTitle,dir:expectedDir},{timeout:10000});
+    await page.addScriptTag({url:base+"/__axe.js"});
+    const accessibility=await page.evaluate(async()=>await axe.run(document.querySelector("#app"),{runOnly:{type:"tag",values:["wcag2a","wcag2aa","wcag21a","wcag21aa"]}}));
+    assert.deepEqual(accessibility.violations.map(item=>item.id),[],locale+":"+tool.id+" Batch 1 WCAG accessibility");
+    const firstInput=tool.source.inputs[0];
+    const state=await page.evaluate(inputKey=>{
+     const input=document.querySelector("#f-"+inputKey);
+     return{
+      title:document.querySelector("#app .heading h2")?.textContent.trim(),
+      description:document.querySelector("#app .heading p")?.textContent.trim(),
+      label:input?document.querySelector('label[for="f-'+inputKey+'"]')?.textContent.trim():"",
+      formula:document.querySelector("#formula-panel ol li")?.textContent.trim()||"",
+      appLabel:document.querySelector("#app")?.getAttribute("aria-label"),
+      formLabel:document.querySelector("#form")?.getAttribute("aria-label"),
+      resultAnnouncement:document.querySelector(".result")?.getAttribute("aria-label"),
+      dir:document.documentElement.dir,
+      locale:document.documentElement.lang,
+      seoTitle:document.title
+     };
+    },firstInput.key);
+    assert.equal(state.title,expectedTitle,locale+":"+tool.id+" title");
+    assert.equal(state.description,locale==="en"?tool.source.description:fields.metadata.description,locale+":"+tool.id+" description");
+    assert.equal(state.label,locale==="en"?firstInput.label:fields.inputs.find(item=>item.key===firstInput.key).label,locale+":"+tool.id+" first input label");
+    if(locale==="en")assert.ok(state.formula.length>0,locale+":"+tool.id+" English calculation step");
+    else assert.equal(state.formula,fields.explanations.steps[0],locale+":"+tool.id+" translated calculation step");
+    if(locale!=="en"){
+     assert.equal(state.appLabel,fields.accessibility.pageLabel,locale+":"+tool.id+" page accessibility label");
+     assert.equal(state.formLabel,fields.accessibility.formLabel,locale+":"+tool.id+" form accessibility label");
+     assert.equal(state.resultAnnouncement,fields.accessibility.resultAnnouncement,locale+":"+tool.id+" result announcement");
+     assert.equal(state.seoTitle,fields.seo.title,locale+":"+tool.id+" SEO title");
+    }
+    assert.equal(state.dir,expectedDir,locale+":"+tool.id+" direction");
+    assert.equal(state.locale,locale,locale+":"+tool.id+" document language");
+    auditCount++;
+   }
+  }
+  assert.equal(auditCount,70,"exactly 70 Batch 1 tool-locale axe WCAG audits");
+  await page.close();
+ }finally{await browser.close();await new Promise(resolve=>server.close(resolve))}
+});
