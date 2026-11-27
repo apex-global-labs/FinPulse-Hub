@@ -3,7 +3,7 @@
 **Repository:** `apex-global-labs/FinPulse-Hub`  
 **Branch:** `feat/seven-language-translation-engine-phase-1`  
 **PR:** #73 — Open / Draft / Unmerged  
-**Progress commit:** `28e4dbb158706348c595b27ef00ef15e13ba8ce8`
+**Latest translation commit:** `71202771f26e19ec5d3ec44a1538c1910383246f`
 
 ## Release Gate
 
@@ -14,8 +14,8 @@ The translation work below changes the candidate head. Fresh Finance CI and Ligh
 ## Translation progress
 
 - Batch scope: tools #41–50, six target locales (`hi`, `ar`, `ur`, `zh-CN`, `ja`, `ru`), 60 locale records.
-- Completed draft records: **1/60** — #41 Business ROI / Hindi (`hi`).
-- Remaining: **59/60** — not started.
+- Completed draft records: **2/60** — #41 Business ROI / Hindi (`hi`) and Arabic (`ar`).
+- Remaining: **58/60** — not started.
 - No locale is marked linguistically reviewed, domain reviewed, approved, or published.
 
 ## #41 Business ROI / Hindi field coverage
@@ -52,3 +52,18 @@ The current source record does not define per-tool action strings, but the local
 2. Validate each locale's stable keys, tokens, formula/numeric preservation, field completeness and script/direction.
 3. Continue #42–50 in sequence, without marking a locale complete until every required field is populated.
 4. Run seven-locale browser, RTL/LTR, accessibility, numerical-parity and Lighthouse/CLS checks on the exact final candidate head.
+
+
+## #41 Business ROI / Arabic field coverage (added 2026-11-27)
+
+The Arabic locale is now saved as `draft` with all 10 field groups, including the seven shared action labels. Automated parity checks confirm:
+- Input keys and order: 2/2
+- Result metric keys: 4/4
+- Breakdown keys: 5/5
+- Error keys: 3/3, with `{field}` token count 2/2
+- FAQ keys and SEO FAQ keys: 3/3 each
+- Guide step keys: 5/5; guide section keys: 2/2
+- Accessibility control keys: 2/2
+- Canonical formula text unchanged
+
+The locale remains inactive as a draft; no publication or activation occurred.
