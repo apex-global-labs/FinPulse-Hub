@@ -1973,7 +1973,7 @@
         "constraints": [
           "Value must be finite; places must be an integer from 0 to 12; scaled value must remain finite; mode must be nearest, up or down."
         ],
-        "formula": "scale=10^places; up uses ceil(value*scale)/scale; down uses floor(value*scale)/scale; nearest uses Math.round((value*scale+EPSILON*sign(value)))/scale.",
+        "formula": "scale=10^places; up uses ceil(value*scale)/scale; down uses floor(value*scale)/scale; nearest uses Math.round(value*scale+EPSILON)/scale (the positive epsilon preserves JavaScript tie-toward-positive-infinity behavior for negative halves).",
         "dependencies": [],
         "outputs": [
           "roundedValue"
