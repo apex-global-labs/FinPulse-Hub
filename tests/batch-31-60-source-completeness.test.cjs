@@ -514,3 +514,58 @@ test("Ratio six-locale drafts preserve stable keys, GCD formula and zero-zero re
  assert.match(source.explanations.formula,/gcd\(A,B\)/);
  assert.match(source.errors.find(x=>x.key==="zero-ratio").message,/non-zero/);
 });
+
+
+test("Batch 41-50 six-locale records are field-complete and preserve source contracts",()=>{
+ const ids=["business-roi","cash-flow","rental-yield","emergency-fund","net-worth","basic-arithmetic","fraction","mixed-number","decimal-fraction","ratio"];
+ const requiredStrings=[
+  "metadata.title","metadata.description","metadata.category","metadata.subcategory",
+  "actions.calculate","actions.recalculate","actions.clear","actions.reset","actions.copy","actions.download","actions.print",
+  "results.heading","results.summary","results.chart.title",
+  "explanations.formulaTitle","explanations.formulaDescription",
+  "guide.title","guide.introduction",
+  "seo.title","seo.metaDescription","seo.h1","seo.introduction",
+  "accessibility.pageLabel","accessibility.formLabel","accessibility.resultAnnouncement","accessibility.chartLabel"
+ ];
+ const get=(value,path)=>path.split(".").reduce((v,key)=>v?.[key],value);
+ const nonempty=(value)=>typeof value==="string"&&value.trim().length>0;
+ const keyedGroups=[
+  ["inputs","inputs","label"],["results.metrics","results.metrics","label"],
+  ["results.breakdown","results.breakdown","label"],["errors","errors","message"],
+  ["faqs","faqs","question"],["seo.faq","seo.faq","question"],
+  ["guide.steps","guide.steps","title"],["guide.sections","guide.sections","heading"],
+  ["accessibility.controlLabels","inputs","label"]
+ ];
+ for(const id of ids){
+  const tool=content.tools.find(x=>x.id===id),source=tool.source;
+  assert.ok(tool,id+" source record exists");
+  for(const locale of locales){
+   const record=tool.locales[locale],fields=record.fields,label=id+"/"+locale;
+   assert.equal(record.status,"draft",label+" remains inactive draft");
+   for(const path of requiredStrings)assert.ok(nonempty(get(fields,path)),label+" "+path);
+   for(const [targetPath,sourcePath,property] of keyedGroups){
+    const target=get(fields,targetPath),sourceItems=get(source,sourcePath);
+    assert.ok(Array.isArray(target)&&Array.isArray(sourceItems),label+" "+targetPath+" arrays");
+    assert.equal(target.length,sourceItems.length,label+" "+targetPath+" count");
+    target.forEach((item,index)=>{
+     assert.ok(nonempty(item[property]),label+" "+targetPath+"["+index+"]."+property);
+     if(sourceItems[index].key)assert.equal(item.key,sourceItems[index].key,label+" "+targetPath+" stable key "+index);
+     if(targetPath==="errors")assert.ok(nonempty(item.recoveryHint),label+" error recovery "+index);
+     if(targetPath==="faqs"||targetPath==="seo.faq")assert.ok(nonempty(item.answer),label+" FAQ answer "+index);
+     if(targetPath==="guide.steps")assert.ok(nonempty(item.body),label+" guide step body "+index);
+     if(targetPath==="guide.sections")assert.ok(nonempty(item.body),label+" guide section body "+index);
+    });
+   }
+   for(const key of ["steps","assumptions","notes","disclaimers","limitations"]){
+    const target=fields.explanations[key],sourceItems=source.explanations[key];
+    assert.ok(Array.isArray(target)&&Array.isArray(sourceItems),label+" explanations."+key+" arrays");
+    assert.equal(target.length,sourceItems.length,label+" explanations."+key+" count");
+    target.forEach((item,index)=>assert.ok(nonempty(item),label+" explanations."+key+"["+index+"]"));
+   }
+   assert.equal(fields.explanations.formulaDescription,source.explanations.formula,label+" protected formula");
+   assert.equal(fields.guide.sections[0].body,source.explanations.formula,label+" guide formula");
+   const tokenCount=value=>(JSON.stringify(value).match(/\\{field\\}/g)||[]).length;
+   assert.equal(tokenCount(fields),tokenCount(source.errors),label+" protected {field} token count");
+  }
+ }
+});
