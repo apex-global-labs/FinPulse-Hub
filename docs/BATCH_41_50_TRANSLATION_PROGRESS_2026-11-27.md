@@ -3,7 +3,7 @@
 **Repository:** `apex-global-labs/FinPulse-Hub`  
 **Branch:** `feat/seven-language-translation-engine-phase-1`  
 **PR:** #73 — Open / Draft / Unmerged  
-**Latest translation commit:** `f7d722c0d42a48c02dd6dfdf037a2801b2503bdd`
+**Latest translation commit:** `85c4aff312bd8d73dce8e444720d0385ef177a7c`
 
 ## Release Gate
 
@@ -14,8 +14,8 @@ The translation work below changes the candidate head. Fresh Finance CI and Ligh
 ## Translation progress
 
 - Batch scope: tools #41–50, six target locales (`hi`, `ar`, `ur`, `zh-CN`, `ja`, `ru`), 60 locale records.
-- Completed draft records: **18/60** — #41 Business ROI, #42 Cash Flow Projection and #43 Rental Yield / all six target locales each.
-- Remaining: **42/60** — tools #44–50, all six locales each, not started.
+- Completed draft records: **24/60** — #41 Business ROI, #42 Cash Flow Projection, #43 Rental Yield and #44 Emergency Fund / all six target locales each.
+- Remaining: **36/60** — tools #45–50, all six locales each, not started.
 - No locale is marked linguistically reviewed, domain reviewed, approved, or published.
 
 ## #41 Business ROI / Hindi field coverage
@@ -109,3 +109,15 @@ The Urdu locale is saved as `draft` with all 10 field groups, including all seve
 - All six locale records remain `draft`; English fallback remains active.
 - Added automated tests for locale completeness, stable-key parity, formula integrity and the 100% vacancy constraint.
 - Completed draft records: **18/60**. Remaining: **42/60**.
+
+
+## #44 Emergency Fund / six locale drafts completed (2026-11-27)
+
+- Completed Hindi, Arabic, Urdu, Simplified Chinese, Japanese and Russian drafts.
+- Populated all ten translation groups for each locale, including three input labels, four metrics, six breakdown labels, seven shared actions, four validation errors, three FAQs, guide, SEO and accessibility.
+- Preserved all source stable keys and ordering across inputs, results, errors, FAQs, guide and accessibility.
+- Preserved the canonical target-fund, remaining-gap, expense-coverage and capped-progress formula verbatim in the formula description and guide.
+- Kept source constraints unchanged: essential monthly expenses and target months must be greater than zero, current savings non-negative, and target months capped at 24. No executable calculation or numeric defaults changed.
+- All six locale records remain `draft`; no locale activation or publication.
+- Added automated tests for six-locale completeness, stable keys, formula integrity and the 24-month constraint.
+- Completed draft records: **24/60**. Remaining: **36/60**.
