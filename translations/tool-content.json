@@ -69617,32 +69617,1112 @@
       },
       "locales": {
         "hi": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "दशमलव से भिन्न कन्वर्टर",
+              "description": "किसी दशमलव संख्या के लिए निकटतम सरल भिन्न खोजें।",
+              "category": "गणित और सांख्यिकी",
+              "subcategory": "भिन्न और अनुपात"
+            },
+            "inputs": [
+              {
+                "key": "value",
+                "label": "दशमलव मान"
+              },
+              {
+                "key": "maxDen",
+                "label": "अधिकतम हर"
+              }
+            ],
+            "actions": {
+              "calculate": "गणना करें",
+              "recalculate": "पुनर्गणना करें",
+              "clear": "साफ़ करें",
+              "reset": "रीसेट करें",
+              "copy": "कॉपी करें",
+              "download": "डाउनलोड करें",
+              "print": "प्रिंट करें"
+            },
+            "results": {
+              "heading": "परिणाम",
+              "summary": "दशमलव का अनुमान",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "भिन्न"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "अनुमान का अंतर"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "भिन्न"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "अनुमान का अंतर"
+                }
+              ],
+              "chart": {
+                "title": "दशमलव का अनुमान",
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": "सूत्र और गणना के चरण",
+              "formulaDescription": "Search denominators d from 1 through maxDen; for each d choose n = round(value × d); retain the fraction n/d with minimum absolute error |value − n/d|, then simplify by GCD.",
+              "steps": [
+                "एक सीमित दशमलव मान दर्ज करें।",
+                "1,000,000 से अधिक न होने वाला धनात्मक पूर्णांक अधिकतम हर दर्ज करें।",
+                "चुनी गई सीमा तक प्रत्येक हर खोजें और निकटतम अंश चुनें।",
+                "सबसे कम निरपेक्ष अनुमान त्रुटि वाले विकल्प को रखें।",
+                "चुने गए भिन्न को सरल करें और निरपेक्ष अंतर दिखाएँ।"
+              ],
+              "assumptions": [
+                "अधिकतम हर धनात्मक सुरक्षित पूर्णांक होना चाहिए और 1,000,000 से अधिक नहीं हो सकता।",
+                "अनुमान तभी सटीक होता है जब हर की सीमा के भीतर मेल खाने वाला भिन्न मिल जाए।"
+              ],
+              "notes": [
+                "गणना आपके दर्ज किए गए मानों से ब्राउज़र में स्थानीय रूप से होती है; परिणाम नोट और मान्यताओं की जाँच करें।"
+              ],
+              "disclaimers": [
+                "यह कैलकुलेटर केवल जानकारी के लिए है और किसी पेशेवर सलाह का विकल्प नहीं है।"
+              ],
+              "limitations": [
+                "अधिकतम हर धनात्मक सुरक्षित पूर्णांक होना चाहिए और 1,000,000 से अधिक नहीं हो सकता।",
+                "अनुमान तभी सटीक होता है जब हर की सीमा के भीतर मेल खाने वाला भिन्न मिल जाए।"
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "{field} एक सीमित संख्या होनी चाहिए।",
+                "recoveryHint": "एक मान्य सीमित संख्या दर्ज करें और फिर प्रयास करें।"
+              },
+              {
+                "key": "max-denominator",
+                "message": "अधिकतम हर बहुत बड़ा है।",
+                "recoveryHint": "1,000,000 से अधिक नहीं होने वाली धनात्मक पूर्णांक सीमा चुनें।"
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-decimal-fraction-1",
+                "question": "क्या परिणाम हमेशा सटीक होता है?",
+                "answer": "यदि हर की सीमा के भीतर मेल खाने वाला भिन्न मिल जाए तो परिणाम सटीक होता है; अन्यथा यह खोजा गया सबसे निकटतम अनुमान होता है।"
+              },
+              {
+                "key": "faq-decimal-fraction-2",
+                "question": "क्या मैं सटीकता बढ़ा सकता हूँ?",
+                "answer": "समर्थित सीमा के भीतर अधिकतम हर बढ़ाएँ।"
+              }
+            ],
+            "guide": {
+              "title": "दशमलव से भिन्न कन्वर्टर गाइड",
+              "introduction": "निर्धारित हर सीमा के साथ दशमलव को सरल भिन्न के रूप में अनुमानित करें।",
+              "steps": [
+                {
+                  "key": "decimal-fraction-guide-step-1",
+                  "title": "चरण 1",
+                  "body": "एक सीमित दशमलव मान दर्ज करें।"
+                },
+                {
+                  "key": "decimal-fraction-guide-step-2",
+                  "title": "चरण 2",
+                  "body": "1,000,000 से अधिक न होने वाला धनात्मक पूर्णांक अधिकतम हर दर्ज करें।"
+                },
+                {
+                  "key": "decimal-fraction-guide-step-3",
+                  "title": "चरण 3",
+                  "body": "चुनी गई सीमा तक प्रत्येक हर खोजें और निकटतम अंश चुनें।"
+                },
+                {
+                  "key": "decimal-fraction-guide-step-4",
+                  "title": "चरण 4",
+                  "body": "सबसे कम निरपेक्ष अनुमान त्रुटि वाले विकल्प को रखें।"
+                },
+                {
+                  "key": "decimal-fraction-guide-step-5",
+                  "title": "चरण 5",
+                  "body": "चुने गए भिन्न को सरल करें और निरपेक्ष अंतर दिखाएँ।"
+                }
+              ],
+              "sections": [
+                {
+                  "key": "decimal-fraction-guide-section-1",
+                  "heading": "गणना की विधि",
+                  "body": "Search denominators d from 1 through maxDen; for each d choose n = round(value × d); retain the fraction n/d with minimum absolute error |value − n/d|, then simplify by GCD."
+                },
+                {
+                  "key": "decimal-fraction-guide-section-2",
+                  "heading": "मान्यताएँ और सीमाएँ",
+                  "body": "अधिकतम हर धनात्मक सुरक्षित पूर्णांक होना चाहिए और 1,000,000 से अधिक नहीं हो सकता। अनुमान तभी सटीक होता है जब हर की सीमा के भीतर मेल खाने वाला भिन्न मिल जाए।"
+                }
+              ]
+            },
+            "seo": {
+              "title": "दशमलव से भिन्न कन्वर्टर | FinPulse Hub",
+              "metaDescription": "किसी दशमलव संख्या के लिए निकटतम सरल भिन्न खोजें।",
+              "h1": "दशमलव से भिन्न कन्वर्टर",
+              "introduction": "निर्धारित हर सीमा के साथ दशमलव को सरल भिन्न के रूप में अनुमानित करें।",
+              "faq": [
+                {
+                  "key": "faq-decimal-fraction-1",
+                  "question": "क्या परिणाम हमेशा सटीक होता है?",
+                  "answer": "यदि हर की सीमा के भीतर मेल खाने वाला भिन्न मिल जाए तो परिणाम सटीक होता है; अन्यथा यह खोजा गया सबसे निकटतम अनुमान होता है।"
+                },
+                {
+                  "key": "faq-decimal-fraction-2",
+                  "question": "क्या मैं सटीकता बढ़ा सकता हूँ?",
+                  "answer": "समर्थित सीमा के भीतर अधिकतम हर बढ़ाएँ।"
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "दशमलव से भिन्न कन्वर्टर",
+              "formLabel": "दशमलव से भिन्न कन्वर्टर फ़ॉर्म",
+              "resultAnnouncement": "दशमलव से भिन्न कन्वर्टर का परिणाम",
+              "chartLabel": "दशमलव अनुमान का चार्ट",
+              "controlLabels": [
+                {
+                  "key": "value",
+                  "label": "दशमलव मान"
+                },
+                {
+                  "key": "maxDen",
+                  "label": "अधिकतम हर"
+                }
+              ]
+            }
+          }
         },
         "ar": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "محوّل الأعداد العشرية إلى كسور",
+              "description": "اعثر على كسر مبسّط قريب من قيمة عشرية.",
+              "category": "الرياضيات والإحصاء",
+              "subcategory": "الكسور والنسب"
+            },
+            "inputs": [
+              {
+                "key": "value",
+                "label": "القيمة العشرية"
+              },
+              {
+                "key": "maxDen",
+                "label": "الحد الأقصى للمقام"
+              }
+            ],
+            "actions": {
+              "calculate": "احسب",
+              "recalculate": "أعد الحساب",
+              "clear": "مسح",
+              "reset": "إعادة ضبط",
+              "copy": "نسخ",
+              "download": "تنزيل",
+              "print": "طباعة"
+            },
+            "results": {
+              "heading": "النتيجة",
+              "summary": "التقريب العشري",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "الكسر"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "فرق التقريب"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "الكسر"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "فرق التقريب"
+                }
+              ],
+              "chart": {
+                "title": "التقريب العشري",
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": "الصيغة وخطوات الحساب",
+              "formulaDescription": "Search denominators d from 1 through maxDen; for each d choose n = round(value × d); retain the fraction n/d with minimum absolute error |value − n/d|, then simplify by GCD.",
+              "steps": [
+                "أدخل قيمة عشرية محدودة.",
+                "أدخل حداً أقصى موجباً وصحيحاً للمقام لا يتجاوز 1,000,000.",
+                "ابحث في المقامات حتى الحد المحدد واختر أقرب بسط.",
+                "احتفظ بالمرشح ذي أصغر خطأ مطلق في التقريب.",
+                "اختزل الكسر المختار واعرض الفرق المطلق."
+              ],
+              "assumptions": [
+                "يجب أن يكون الحد الأقصى للمقام عدداً صحيحاً آمناً وموجباً، وألا يتجاوز 1,000,000.",
+                "يكون التقريب دقيقاً فقط عند العثور على كسر مطابق ضمن حد المقام المحدد."
+              ],
+              "notes": [
+                "يُجرى الحساب محلياً في المتصفح باستخدام القيم التي تدخلها؛ راجع ملاحظة النتيجة والافتراضات."
+              ],
+              "disclaimers": [
+                "هذه الحاسبة لأغراض المعلومات فقط ولا تحل محل المشورة المهنية."
+              ],
+              "limitations": [
+                "يجب أن يكون الحد الأقصى للمقام عدداً صحيحاً آمناً وموجباً، وألا يتجاوز 1,000,000.",
+                "يكون التقريب دقيقاً فقط عند العثور على كسر مطابق ضمن حد المقام المحدد."
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "يجب أن يكون {field} رقماً محدوداً وصالحاً.",
+                "recoveryHint": "أدخل رقماً محدوداً وصالحاً ثم حاول مرة أخرى."
+              },
+              {
+                "key": "max-denominator",
+                "message": "الحد الأقصى للمقام كبير جداً.",
+                "recoveryHint": "اختر حداً صحيحاً موجباً للمقام لا يتجاوز 1,000,000."
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-decimal-fraction-1",
+                "question": "هل تكون النتيجة دقيقة دائماً؟",
+                "answer": "تكون دقيقة عند العثور على كسر مطابق ضمن حد المقام؛ وإلا فهي أقرب قيمة تقريبية ضمن البحث."
+              },
+              {
+                "key": "faq-decimal-fraction-2",
+                "question": "هل يمكنني زيادة الدقة؟",
+                "answer": "زِد الحد الأقصى للمقام ضمن الحد المدعوم."
+              }
+            ],
+            "guide": {
+              "title": "دليل محوّل الأعداد العشرية إلى كسور",
+              "introduction": "قرّب القيمة العشرية إلى كسر مبسّط باستخدام حد مقام قابل للتحديد.",
+              "steps": [
+                {
+                  "key": "decimal-fraction-guide-step-1",
+                  "title": "الخطوة 1",
+                  "body": "أدخل قيمة عشرية محدودة."
+                },
+                {
+                  "key": "decimal-fraction-guide-step-2",
+                  "title": "الخطوة 2",
+                  "body": "أدخل حداً أقصى موجباً وصحيحاً للمقام لا يتجاوز 1,000,000."
+                },
+                {
+                  "key": "decimal-fraction-guide-step-3",
+                  "title": "الخطوة 3",
+                  "body": "ابحث في المقامات حتى الحد المحدد واختر أقرب بسط."
+                },
+                {
+                  "key": "decimal-fraction-guide-step-4",
+                  "title": "الخطوة 4",
+                  "body": "احتفظ بالمرشح ذي أصغر خطأ مطلق في التقريب."
+                },
+                {
+                  "key": "decimal-fraction-guide-step-5",
+                  "title": "الخطوة 5",
+                  "body": "اختزل الكسر المختار واعرض الفرق المطلق."
+                }
+              ],
+              "sections": [
+                {
+                  "key": "decimal-fraction-guide-section-1",
+                  "heading": "طريقة الحساب",
+                  "body": "Search denominators d from 1 through maxDen; for each d choose n = round(value × d); retain the fraction n/d with minimum absolute error |value − n/d|, then simplify by GCD."
+                },
+                {
+                  "key": "decimal-fraction-guide-section-2",
+                  "heading": "الافتراضات والقيود",
+                  "body": "يجب أن يكون الحد الأقصى للمقام عدداً صحيحاً آمناً وموجباً، وألا يتجاوز 1,000,000. يكون التقريب دقيقاً فقط عند العثور على كسر مطابق ضمن حد المقام المحدد."
+                }
+              ]
+            },
+            "seo": {
+              "title": "محوّل الأعداد العشرية إلى كسور | FinPulse Hub",
+              "metaDescription": "اعثر على كسر مبسّط قريب من قيمة عشرية.",
+              "h1": "محوّل الأعداد العشرية إلى كسور",
+              "introduction": "قرّب القيمة العشرية إلى كسر مبسّط باستخدام حد مقام قابل للتحديد.",
+              "faq": [
+                {
+                  "key": "faq-decimal-fraction-1",
+                  "question": "هل تكون النتيجة دقيقة دائماً؟",
+                  "answer": "تكون دقيقة عند العثور على كسر مطابق ضمن حد المقام؛ وإلا فهي أقرب قيمة تقريبية ضمن البحث."
+                },
+                {
+                  "key": "faq-decimal-fraction-2",
+                  "question": "هل يمكنني زيادة الدقة؟",
+                  "answer": "زِد الحد الأقصى للمقام ضمن الحد المدعوم."
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "محوّل الأعداد العشرية إلى كسور",
+              "formLabel": "نموذج محوّل الأعداد العشرية إلى كسور",
+              "resultAnnouncement": "نتيجة تحويل العدد العشري إلى كسر",
+              "chartLabel": "رسم بياني للتقريب العشري",
+              "controlLabels": [
+                {
+                  "key": "value",
+                  "label": "القيمة العشرية"
+                },
+                {
+                  "key": "maxDen",
+                  "label": "الحد الأقصى للمقام"
+                }
+              ]
+            }
+          }
         },
         "ur": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "اعشاری سے کسر کنورٹر",
+              "description": "اعشاری عدد کے لیے قریب ترین سادہ کسر تلاش کریں۔",
+              "category": "ریاضی اور شماریات",
+              "subcategory": "کسور اور تناسب"
+            },
+            "inputs": [
+              {
+                "key": "value",
+                "label": "اعشاری قدر"
+              },
+              {
+                "key": "maxDen",
+                "label": "زیادہ سے زیادہ مخرج"
+              }
+            ],
+            "actions": {
+              "calculate": "حساب کریں",
+              "recalculate": "دوبارہ حساب کریں",
+              "clear": "صاف کریں",
+              "reset": "ری سیٹ کریں",
+              "copy": "کاپی کریں",
+              "download": "ڈاؤن لوڈ کریں",
+              "print": "پرنٹ کریں"
+            },
+            "results": {
+              "heading": "نتیجہ",
+              "summary": "اعشاری تخمینہ",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "کسر"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "تخمینے کا فرق"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "کسر"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "تخمینے کا فرق"
+                }
+              ],
+              "chart": {
+                "title": "اعشاری تخمینہ",
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": "فارمولا اور حساب کے مراحل",
+              "formulaDescription": "Search denominators d from 1 through maxDen; for each d choose n = round(value × d); retain the fraction n/d with minimum absolute error |value − n/d|, then simplify by GCD.",
+              "steps": [
+                "ایک محدود اعشاری قدر درج کریں۔",
+                "1,000,000 سے زیادہ نہ ہونے والا مثبت صحیح عدد زیادہ سے زیادہ مخرج درج کریں۔",
+                "منتخب حد تک ہر مخرج تلاش کریں اور قریب ترین شمار کنندہ منتخب کریں۔",
+                "سب سے کم مطلق تخمینی غلطی والے امکان کو برقرار رکھیں۔",
+                "منتخب کسر کو سادہ کریں اور مطلق فرق دکھائیں۔"
+              ],
+              "assumptions": [
+                "زیادہ سے زیادہ مخرج مثبت محفوظ صحیح عدد ہونا چاہیے اور 1,000,000 سے زیادہ نہیں ہو سکتا۔",
+                "تخمینہ صرف اسی صورت میں بالکل درست ہے جب مخرج کی حد کے اندر مماثل کسر مل جائے۔"
+              ],
+              "notes": [
+                "حساب آپ کی درج کردہ قدروں سے براؤزر میں مقامی طور پر ہوتا ہے؛ نتیجے کے نوٹ اور مفروضوں کا جائزہ لیں۔"
+              ],
+              "disclaimers": [
+                "یہ کیلکولیٹر صرف معلومات کے لیے ہے اور پیشہ ورانہ مشورے کا متبادل نہیں۔"
+              ],
+              "limitations": [
+                "زیادہ سے زیادہ مخرج مثبت محفوظ صحیح عدد ہونا چاہیے اور 1,000,000 سے زیادہ نہیں ہو سکتا۔",
+                "تخمینہ صرف اسی صورت میں بالکل درست ہے جب مخرج کی حد کے اندر مماثل کسر مل جائے۔"
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "{field} ایک محدود اور درست عدد ہونا چاہیے۔",
+                "recoveryHint": "درست محدود عدد درج کریں اور دوبارہ کوشش کریں۔"
+              },
+              {
+                "key": "max-denominator",
+                "message": "زیادہ سے زیادہ مخرج بہت بڑا ہے۔",
+                "recoveryHint": "1,000,000 سے زیادہ نہ ہونے والی مثبت صحیح عددی حد منتخب کریں۔"
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-decimal-fraction-1",
+                "question": "کیا نتیجہ ہمیشہ بالکل درست ہوتا ہے؟",
+                "answer": "اگر مخرج کی حد کے اندر مماثل کسر مل جائے تو نتیجہ درست ہوتا ہے؛ ورنہ یہ تلاش کردہ قریب ترین تخمینہ ہوتا ہے۔"
+              },
+              {
+                "key": "faq-decimal-fraction-2",
+                "question": "کیا میں درستگی بڑھا سکتا ہوں؟",
+                "answer": "مقررہ حد کے اندر زیادہ سے زیادہ مخرج بڑھائیں۔"
+              }
+            ],
+            "guide": {
+              "title": "اعشاری سے کسر کنورٹر کی رہنمائی",
+              "introduction": "قابلِ ترتیب مخرج کی حد کے ساتھ اعشاری عدد کو سادہ کسر کے طور پر قریب ترین بنائیں۔",
+              "steps": [
+                {
+                  "key": "decimal-fraction-guide-step-1",
+                  "title": "مرحلہ 1",
+                  "body": "ایک محدود اعشاری قدر درج کریں۔"
+                },
+                {
+                  "key": "decimal-fraction-guide-step-2",
+                  "title": "مرحلہ 2",
+                  "body": "1,000,000 سے زیادہ نہ ہونے والا مثبت صحیح عدد زیادہ سے زیادہ مخرج درج کریں۔"
+                },
+                {
+                  "key": "decimal-fraction-guide-step-3",
+                  "title": "مرحلہ 3",
+                  "body": "منتخب حد تک ہر مخرج تلاش کریں اور قریب ترین شمار کنندہ منتخب کریں۔"
+                },
+                {
+                  "key": "decimal-fraction-guide-step-4",
+                  "title": "مرحلہ 4",
+                  "body": "سب سے کم مطلق تخمینی غلطی والے امکان کو برقرار رکھیں۔"
+                },
+                {
+                  "key": "decimal-fraction-guide-step-5",
+                  "title": "مرحلہ 5",
+                  "body": "منتخب کسر کو سادہ کریں اور مطلق فرق دکھائیں۔"
+                }
+              ],
+              "sections": [
+                {
+                  "key": "decimal-fraction-guide-section-1",
+                  "heading": "حساب کا طریقہ",
+                  "body": "Search denominators d from 1 through maxDen; for each d choose n = round(value × d); retain the fraction n/d with minimum absolute error |value − n/d|, then simplify by GCD."
+                },
+                {
+                  "key": "decimal-fraction-guide-section-2",
+                  "heading": "مفروضے اور حدود",
+                  "body": "زیادہ سے زیادہ مخرج مثبت محفوظ صحیح عدد ہونا چاہیے اور 1,000,000 سے زیادہ نہیں ہو سکتا۔ تخمینہ صرف اسی صورت میں بالکل درست ہے جب مخرج کی حد کے اندر مماثل کسر مل جائے۔"
+                }
+              ]
+            },
+            "seo": {
+              "title": "اعشاری سے کسر کنورٹر | FinPulse Hub",
+              "metaDescription": "اعشاری عدد کے لیے قریب ترین سادہ کسر تلاش کریں۔",
+              "h1": "اعشاری سے کسر کنورٹر",
+              "introduction": "قابلِ ترتیب مخرج کی حد کے ساتھ اعشاری عدد کو سادہ کسر کے طور پر قریب ترین بنائیں۔",
+              "faq": [
+                {
+                  "key": "faq-decimal-fraction-1",
+                  "question": "کیا نتیجہ ہمیشہ بالکل درست ہوتا ہے؟",
+                  "answer": "اگر مخرج کی حد کے اندر مماثل کسر مل جائے تو نتیجہ درست ہوتا ہے؛ ورنہ یہ تلاش کردہ قریب ترین تخمینہ ہوتا ہے۔"
+                },
+                {
+                  "key": "faq-decimal-fraction-2",
+                  "question": "کیا میں درستگی بڑھا سکتا ہوں؟",
+                  "answer": "مقررہ حد کے اندر زیادہ سے زیادہ مخرج بڑھائیں۔"
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "اعشاری سے کسر کنورٹر",
+              "formLabel": "اعشاری سے کسر کنورٹر کا فارم",
+              "resultAnnouncement": "اعشاری سے کسر کنورٹر کا نتیجہ",
+              "chartLabel": "اعشاری تخمینے کا چارٹ",
+              "controlLabels": [
+                {
+                  "key": "value",
+                  "label": "اعشاری قدر"
+                },
+                {
+                  "key": "maxDen",
+                  "label": "زیادہ سے زیادہ مخرج"
+                }
+              ]
+            }
+          }
         },
         "zh-CN": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "小数转分数转换器",
+              "description": "为小数查找接近的最简分数。",
+              "category": "数学与统计",
+              "subcategory": "分数与比例"
+            },
+            "inputs": [
+              {
+                "key": "value",
+                "label": "小数值"
+              },
+              {
+                "key": "maxDen",
+                "label": "最大分母"
+              }
+            ],
+            "actions": {
+              "calculate": "计算",
+              "recalculate": "重新计算",
+              "clear": "清除",
+              "reset": "重置",
+              "copy": "复制",
+              "download": "下载",
+              "print": "打印"
+            },
+            "results": {
+              "heading": "结果",
+              "summary": "小数近似值",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "分数"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "近似误差"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "分数"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "近似误差"
+                }
+              ],
+              "chart": {
+                "title": "小数近似值",
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": "公式与计算步骤",
+              "formulaDescription": "Search denominators d from 1 through maxDen; for each d choose n = round(value × d); retain the fraction n/d with minimum absolute error |value − n/d|, then simplify by GCD.",
+              "steps": [
+                "输入一个有限小数值。",
+                "输入一个不超过 1,000,000 的正整数最大分母。",
+                "搜索不超过所选上限的各个分母，并选择最接近的分子。",
+                "保留绝对近似误差最小的候选分数。",
+                "约简所选分数并显示绝对差值。"
+              ],
+              "assumptions": [
+                "最大分母必须是正的安全整数，且不得超过 1,000,000。",
+                "只有在分母上限范围内找到完全匹配的分数时，结果才是精确值。"
+              ],
+              "notes": [
+                "计算在浏览器本地完成，使用您输入的数值；请查看结果说明并核对相关假设。"
+              ],
+              "disclaimers": [
+                "此计算器仅用于信息参考，不能替代专业建议。"
+              ],
+              "limitations": [
+                "最大分母必须是正的安全整数，且不得超过 1,000,000。",
+                "只有在分母上限范围内找到匹配分数时，结果才是精确值。"
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "{field} 必须是有限的有效数字。",
+                "recoveryHint": "请输入有效的有限数值，然后重试。"
+              },
+              {
+                "key": "max-denominator",
+                "message": "最大分母过大。",
+                "recoveryHint": "请选择不超过 1,000,000 的正整数分母上限。"
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-decimal-fraction-1",
+                "question": "结果总是精确的吗？",
+                "answer": "如果在分母上限内找到匹配分数，结果就是精确的；否则它是搜索范围内最接近的近似值。"
+              },
+              {
+                "key": "faq-decimal-fraction-2",
+                "question": "可以提高精度吗？",
+                "answer": "在支持的范围内提高最大分母。"
+              }
+            ],
+            "guide": {
+              "title": "小数转分数转换器指南",
+              "introduction": "使用可配置的分母上限，将小数近似为最简分数。",
+              "steps": [
+                {
+                  "key": "decimal-fraction-guide-step-1",
+                  "title": "步骤 1",
+                  "body": "输入一个有限小数值。"
+                },
+                {
+                  "key": "decimal-fraction-guide-step-2",
+                  "title": "步骤 2",
+                  "body": "输入一个不超过 1,000,000 的正整数最大分母。"
+                },
+                {
+                  "key": "decimal-fraction-guide-step-3",
+                  "title": "步骤 3",
+                  "body": "搜索不超过所选上限的各个分母，并选择最接近的分子。"
+                },
+                {
+                  "key": "decimal-fraction-guide-step-4",
+                  "title": "步骤 4",
+                  "body": "保留绝对近似误差最小的候选分数。"
+                },
+                {
+                  "key": "decimal-fraction-guide-step-5",
+                  "title": "步骤 5",
+                  "body": "约简所选分数并显示绝对差值。"
+                }
+              ],
+              "sections": [
+                {
+                  "key": "decimal-fraction-guide-section-1",
+                  "heading": "计算方法",
+                  "body": "Search denominators d from 1 through maxDen; for each d choose n = round(value × d); retain the fraction n/d with minimum absolute error |value − n/d|, then simplify by GCD."
+                },
+                {
+                  "key": "decimal-fraction-guide-section-2",
+                  "heading": "假设与限制",
+                  "body": "最大分母必须是正的安全整数，且不得超过 1,000,000。 只有在分母上限范围内找到匹配分数时，结果才是精确值。"
+                }
+              ]
+            },
+            "seo": {
+              "title": "小数转分数转换器 | FinPulse Hub",
+              "metaDescription": "为小数查找接近的最简分数。",
+              "h1": "小数转分数转换器",
+              "introduction": "使用可配置的分母上限，将小数近似为最简分数。",
+              "faq": [
+                {
+                  "key": "faq-decimal-fraction-1",
+                  "question": "结果总是精确的吗？",
+                  "answer": "如果在分母上限内找到匹配分数，结果就是精确的；否则它是搜索范围内最接近的近似值。"
+                },
+                {
+                  "key": "faq-decimal-fraction-2",
+                  "question": "可以提高精度吗？",
+                  "answer": "在支持的范围内提高最大分母。"
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "小数转分数转换器",
+              "formLabel": "小数转分数转换器输入表单",
+              "resultAnnouncement": "小数转分数转换结果",
+              "chartLabel": "小数近似值图表",
+              "controlLabels": [
+                {
+                  "key": "value",
+                  "label": "小数值"
+                },
+                {
+                  "key": "maxDen",
+                  "label": "最大分母"
+                }
+              ]
+            }
+          }
         },
         "ja": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "小数から分数への変換ツール",
+              "description": "小数に近い簡単な分数を探します。",
+              "category": "数学・統計",
+              "subcategory": "分数・比"
+            },
+            "inputs": [
+              {
+                "key": "value",
+                "label": "小数値"
+              },
+              {
+                "key": "maxDen",
+                "label": "分母の最大値"
+              }
+            ],
+            "actions": {
+              "calculate": "計算",
+              "recalculate": "再計算",
+              "clear": "クリア",
+              "reset": "リセット",
+              "copy": "コピー",
+              "download": "ダウンロード",
+              "print": "印刷"
+            },
+            "results": {
+              "heading": "結果",
+              "summary": "小数の近似値",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "分数"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "近似誤差"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "分数"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "近似誤差"
+                }
+              ],
+              "chart": {
+                "title": "小数の近似値",
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": "計算式と計算手順",
+              "formulaDescription": "Search denominators d from 1 through maxDen; for each d choose n = round(value × d); retain the fraction n/d with minimum absolute error |value − n/d|, then simplify by GCD.",
+              "steps": [
+                "有限の小数値を入力します。",
+                "1,000,000以下の正の整数で最大分母を入力します。",
+                "選択した上限まで各分母を検索し、最も近い分子を選びます。",
+                "絶対近似誤差が最小の候補を保持します。",
+                "選択した分数を約分し、絶対差を表示します。"
+              ],
+              "assumptions": [
+                "最大分母は正の安全な整数であり、1,000,000を超えてはなりません。",
+                "分母の上限内で一致する分数が見つかった場合に限り、近似値は正確になります。"
+              ],
+              "notes": [
+                "計算は入力値を使ってブラウザー内でローカルに実行されます。結果の注記と前提条件を確認してください。"
+              ],
+              "disclaimers": [
+                "この計算機は情報提供のみを目的としており、専門的な助言に代わるものではありません。"
+              ],
+              "limitations": [
+                "最大分母は正の安全な整数であり、1,000,000を超えてはなりません。",
+                "分母の上限内で一致する分数が見つかった場合に限り、結果は正確になります。"
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "{field} は有限の有効な数値である必要があります。",
+                "recoveryHint": "有限の有効な数値を入力して、もう一度お試しください。"
+              },
+              {
+                "key": "max-denominator",
+                "message": "最大分母が大きすぎます。",
+                "recoveryHint": "1,000,000以下の正の整数の分母上限を選択してください。"
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-decimal-fraction-1",
+                "question": "結果は常に正確ですか？",
+                "answer": "分母の上限内で一致する分数が見つかれば正確です。それ以外の場合は検索範囲内で最も近い近似値です。"
+              },
+              {
+                "key": "faq-decimal-fraction-2",
+                "question": "精度を高めることはできますか？",
+                "answer": "対応範囲内で最大分母を大きくしてください。"
+              }
+            ],
+            "guide": {
+              "title": "小数から分数への変換ツールガイド",
+              "introduction": "分母の上限を指定して、小数を簡単な分数に近似します。",
+              "steps": [
+                {
+                  "key": "decimal-fraction-guide-step-1",
+                  "title": "ステップ 1",
+                  "body": "有限の小数値を入力します。"
+                },
+                {
+                  "key": "decimal-fraction-guide-step-2",
+                  "title": "ステップ 2",
+                  "body": "1,000,000以下の正の整数で最大分母を入力します。"
+                },
+                {
+                  "key": "decimal-fraction-guide-step-3",
+                  "title": "ステップ 3",
+                  "body": "選択した上限まで各分母を検索し、最も近い分子を選びます。"
+                },
+                {
+                  "key": "decimal-fraction-guide-step-4",
+                  "title": "ステップ 4",
+                  "body": "絶対近似誤差が最小の候補を保持します。"
+                },
+                {
+                  "key": "decimal-fraction-guide-step-5",
+                  "title": "ステップ 5",
+                  "body": "選択した分数を約分し、絶対差を表示します。"
+                }
+              ],
+              "sections": [
+                {
+                  "key": "decimal-fraction-guide-section-1",
+                  "heading": "計算方法",
+                  "body": "Search denominators d from 1 through maxDen; for each d choose n = round(value × d); retain the fraction n/d with minimum absolute error |value − n/d|, then simplify by GCD."
+                },
+                {
+                  "key": "decimal-fraction-guide-section-2",
+                  "heading": "前提条件と制限",
+                  "body": "最大分母は正の安全な整数であり、1,000,000を超えてはなりません。 分母の上限内で一致する分数が見つかった場合に限り、結果は正確になります。"
+                }
+              ]
+            },
+            "seo": {
+              "title": "小数から分数への変換ツール | FinPulse Hub",
+              "metaDescription": "小数に近い簡単な分数を探します。",
+              "h1": "小数から分数への変換ツール",
+              "introduction": "分母の上限を指定して、小数を簡単な分数に近似します。",
+              "faq": [
+                {
+                  "key": "faq-decimal-fraction-1",
+                  "question": "結果は常に正確ですか？",
+                  "answer": "分母の上限内で一致する分数が見つかれば正確です。それ以外の場合は検索範囲内で最も近い近似値です。"
+                },
+                {
+                  "key": "faq-decimal-fraction-2",
+                  "question": "精度を高めることはできますか？",
+                  "answer": "対応範囲内で最大分母を大きくしてください。"
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "小数から分数への変換ツール",
+              "formLabel": "小数から分数への変換ツールの入力フォーム",
+              "resultAnnouncement": "小数から分数への変換結果",
+              "chartLabel": "小数近似値のチャート",
+              "controlLabels": [
+                {
+                  "key": "value",
+                  "label": "小数値"
+                },
+                {
+                  "key": "maxDen",
+                  "label": "分母の最大値"
+                }
+              ]
+            }
+          }
         },
         "ru": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "Конвертер десятичных чисел в дроби",
+              "description": "Найдите близкую сокращённую дробь для десятичного числа.",
+              "category": "Математика и статистика",
+              "subcategory": "Дроби и отношения"
+            },
+            "inputs": [
+              {
+                "key": "value",
+                "label": "Десятичное значение"
+              },
+              {
+                "key": "maxDen",
+                "label": "Максимальный знаменатель"
+              }
+            ],
+            "actions": {
+              "calculate": "Рассчитать",
+              "recalculate": "Пересчитать",
+              "clear": "Очистить",
+              "reset": "Сбросить",
+              "copy": "Копировать",
+              "download": "Скачать",
+              "print": "Печать"
+            },
+            "results": {
+              "heading": "Результат",
+              "summary": "Десятичное приближение",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "Дробь"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "Разница приближения"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "Дробь"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "Разница приближения"
+                }
+              ],
+              "chart": {
+                "title": "Десятичное приближение",
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": "Формула и этапы расчёта",
+              "formulaDescription": "Search denominators d from 1 through maxDen; for each d choose n = round(value × d); retain the fraction n/d with minimum absolute error |value − n/d|, then simplify by GCD.",
+              "steps": [
+                "Введите конечное десятичное значение.",
+                "Введите положительный целый максимальный знаменатель не более 1 000 000.",
+                "Переберите знаменатели до выбранного предела и выберите ближайший числитель.",
+                "Сохраните вариант с наименьшей абсолютной погрешностью приближения.",
+                "Сократите выбранную дробь и покажите абсолютную разницу."
+              ],
+              "assumptions": [
+                "Максимальный знаменатель должен быть положительным безопасным целым числом и не может превышать 1 000 000.",
+                "Приближение является точным только тогда, когда в пределах максимального знаменателя найдена совпадающая дробь."
+              ],
+              "notes": [
+                "Расчёт выполняется локально в браузере на основе введённых значений; проверьте примечание к результату и допущения."
+              ],
+              "disclaimers": [
+                "Этот калькулятор предназначен только для информации и не заменяет профессиональную консультацию."
+              ],
+              "limitations": [
+                "Максимальный знаменатель должен быть положительным безопасным целым числом и не может превышать 1 000 000.",
+                "Приближение является точным только тогда, когда в пределах знаменателя найдена совпадающая дробь."
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "{field} должно быть конечным числом.",
+                "recoveryHint": "Введите корректное конечное число и повторите попытку."
+              },
+              {
+                "key": "max-denominator",
+                "message": "Максимальный знаменатель слишком велик.",
+                "recoveryHint": "Выберите положительный целый предел знаменателя не более 1 000 000."
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-decimal-fraction-1",
+                "question": "Всегда ли результат точный?",
+                "answer": "Он точен, если в пределах знаменателя найдена совпадающая дробь; в противном случае это ближайшее найденное приближение."
+              },
+              {
+                "key": "faq-decimal-fraction-2",
+                "question": "Можно ли повысить точность?",
+                "answer": "Увеличьте максимальный знаменатель в пределах поддерживаемого ограничения."
+              }
+            ],
+            "guide": {
+              "title": "Руководство по конвертеру десятичных чисел в дроби",
+              "introduction": "Представьте десятичное число в виде сокращённой дроби с настраиваемым пределом знаменателя.",
+              "steps": [
+                {
+                  "key": "decimal-fraction-guide-step-1",
+                  "title": "Шаг 1",
+                  "body": "Введите конечное десятичное значение."
+                },
+                {
+                  "key": "decimal-fraction-guide-step-2",
+                  "title": "Шаг 2",
+                  "body": "Введите положительный целый максимальный знаменатель не более 1 000 000."
+                },
+                {
+                  "key": "decimal-fraction-guide-step-3",
+                  "title": "Шаг 3",
+                  "body": "Переберите знаменатели до выбранного предела и выберите ближайший числитель."
+                },
+                {
+                  "key": "decimal-fraction-guide-step-4",
+                  "title": "Шаг 4",
+                  "body": "Сохраните вариант с наименьшей абсолютной погрешностью приближения."
+                },
+                {
+                  "key": "decimal-fraction-guide-step-5",
+                  "title": "Шаг 5",
+                  "body": "Сократите выбранную дробь и покажите абсолютную разницу."
+                }
+              ],
+              "sections": [
+                {
+                  "key": "decimal-fraction-guide-section-1",
+                  "heading": "Метод расчёта",
+                  "body": "Search denominators d from 1 through maxDen; for each d choose n = round(value × d); retain the fraction n/d with minimum absolute error |value − n/d|, then simplify by GCD."
+                },
+                {
+                  "key": "decimal-fraction-guide-section-2",
+                  "heading": "Допущения и ограничения",
+                  "body": "Максимальный знаменатель должен быть положительным безопасным целым числом и не может превышать 1 000 000. Приближение является точным только тогда, когда в пределах знаменателя найдена совпадающая дробь."
+                }
+              ]
+            },
+            "seo": {
+              "title": "Конвертер десятичных чисел в дроби | FinPulse Hub",
+              "metaDescription": "Найдите близкую сокращённую дробь для десятичного числа.",
+              "h1": "Конвертер десятичных чисел в дроби",
+              "introduction": "Представьте десятичное число в виде сокращённой дроби с настраиваемым пределом знаменателя.",
+              "faq": [
+                {
+                  "key": "faq-decimal-fraction-1",
+                  "question": "Всегда ли результат точный?",
+                  "answer": "Он точен, если в пределах знаменателя найдена совпадающая дробь; в противном случае это ближайшее найденное приближение."
+                },
+                {
+                  "key": "faq-decimal-fraction-2",
+                  "question": "Можно ли повысить точность?",
+                  "answer": "Увеличьте максимальный знаменатель в пределах поддерживаемого ограничения."
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "Конвертер десятичных чисел в дроби",
+              "formLabel": "Форма конвертера десятичных чисел в дроби",
+              "resultAnnouncement": "Результат преобразования десятичного числа в дробь",
+              "chartLabel": "Диаграмма десятичного приближения",
+              "controlLabels": [
+                {
+                  "key": "value",
+                  "label": "Десятичное значение"
+                },
+                {
+                  "key": "maxDen",
+                  "label": "Максимальный знаменатель"
+                }
+              ]
+            }
+          }
         }
       },
       "sourceExtractionStatus": "source-record-complete",
-      "sourceTranslationStatus": "not-started",
+      "sourceTranslationStatus": "draft",
       "sourceCompletenessStatus": "complete"
     },
     {
