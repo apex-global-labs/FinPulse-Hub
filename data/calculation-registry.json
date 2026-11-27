@@ -553,7 +553,7 @@
     },
     {
       "toolId": "paycheck",
-      "sourceModule": "finance-core.js",
+      "sourceModule": "app.js",
       "runtimeFunction": "Core.paycheck",
       "status": "extracted",
       "calculation": {
@@ -605,7 +605,7 @@
     },
     {
       "toolId": "payroll",
-      "sourceModule": "finance-core.js",
+      "sourceModule": "app.js",
       "runtimeFunction": "Core.payroll",
       "status": "extracted",
       "calculation": {
@@ -650,7 +650,7 @@
     },
     {
       "toolId": "overtime",
-      "sourceModule": "finance-core.js",
+      "sourceModule": "app.js",
       "runtimeFunction": "Core.overtimePay",
       "status": "extracted",
       "calculation": {
@@ -690,7 +690,7 @@
     },
     {
       "toolId": "discount",
-      "sourceModule": "finance-core.js",
+      "sourceModule": "app.js",
       "runtimeFunction": "Core.discountCalculator",
       "status": "extracted",
       "calculation": {
@@ -736,7 +736,7 @@
     },
     {
       "toolId": "exchange-fees",
-      "sourceModule": "finance-core.js",
+      "sourceModule": "app.js",
       "runtimeFunction": "Core.exchangeFeeMarkup",
       "status": "extracted",
       "calculation": {
@@ -782,7 +782,7 @@
     },
     {
       "toolId": "transfer-compare",
-      "sourceModule": "finance-core.js",
+      "sourceModule": "app.js",
       "runtimeFunction": "Core.internationalTransferCompare",
       "status": "extracted",
       "calculation": {
@@ -1363,7 +1363,7 @@
     },
     {
       "toolId": "basic-arithmetic",
-      "sourceModule": "math-core.js",
+      "sourceModule": "math-tools.js",
       "runtimeFunction": "FinPulseMath.arithmetic",
       "status": "extracted",
       "calculation": {
@@ -1397,7 +1397,7 @@
     },
     {
       "toolId": "fraction",
-      "sourceModule": "math-core.js",
+      "sourceModule": "math-tools.js",
       "runtimeFunction": "FinPulseMath.fraction",
       "status": "extracted",
       "calculation": {
@@ -1434,7 +1434,7 @@
     },
     {
       "toolId": "mixed-number",
-      "sourceModule": "math-core.js",
+      "sourceModule": "math-tools.js",
       "runtimeFunction": "FinPulseMath.mixed",
       "status": "extracted",
       "calculation": {
@@ -1472,7 +1472,7 @@
     },
     {
       "toolId": "decimal-fraction",
-      "sourceModule": "math-core.js",
+      "sourceModule": "math-tools.js",
       "runtimeFunction": "FinPulseMath.decimalFraction",
       "status": "extracted",
       "calculation": {
@@ -1507,7 +1507,7 @@
     },
     {
       "toolId": "ratio",
-      "sourceModule": "math-core.js",
+      "sourceModule": "math-tools.js",
       "runtimeFunction": "FinPulseMath.ratio",
       "status": "extracted",
       "calculation": {
@@ -1541,7 +1541,7 @@
     },
     {
       "toolId": "proportion",
-      "sourceModule": "math-core.js",
+      "sourceModule": "math-tools.js",
       "runtimeFunction": "FinPulseMath.proportion",
       "status": "extracted",
       "calculation": {
@@ -1575,7 +1575,7 @@
     },
     {
       "toolId": "average",
-      "sourceModule": "math-core.js",
+      "sourceModule": "math-tools.js",
       "runtimeFunction": "FinPulseMath.average",
       "status": "extracted",
       "calculation": {
@@ -1609,7 +1609,7 @@
     },
     {
       "toolId": "percentage-change",
-      "sourceModule": "math-core.js",
+      "sourceModule": "math-tools.js",
       "runtimeFunction": "FinPulseMath.percentageChange",
       "status": "extracted",
       "calculation": {
@@ -1642,7 +1642,7 @@
     },
     {
       "toolId": "percent-error",
-      "sourceModule": "math-core.js",
+      "sourceModule": "math-tools.js",
       "runtimeFunction": "FinPulseMath.percentError",
       "status": "extracted",
       "calculation": {
@@ -1675,7 +1675,7 @@
     },
     {
       "toolId": "rounding",
-      "sourceModule": "math-core.js",
+      "sourceModule": "math-tools.js",
       "runtimeFunction": "FinPulseMath.roundTo",
       "status": "extracted",
       "calculation": {
@@ -1709,7 +1709,7 @@
     },
     {
       "toolId": "significant-figures",
-      "sourceModule": "math-core.js",
+      "sourceModule": "math-tools.js",
       "runtimeFunction": "FinPulseMath.significant",
       "status": "extracted",
       "calculation": {
@@ -1742,7 +1742,7 @@
     },
     {
       "toolId": "scientific-notation",
-      "sourceModule": "math-core.js",
+      "sourceModule": "math-tools.js",
       "runtimeFunction": "FinPulseMath.scientific",
       "status": "extracted",
       "calculation": {
@@ -1775,7 +1775,7 @@
     },
     {
       "toolId": "exponent",
-      "sourceModule": "math-core.js",
+      "sourceModule": "math-tools.js",
       "runtimeFunction": "FinPulseMath.power",
       "status": "extracted",
       "calculation": {
@@ -1808,7 +1808,7 @@
     },
     {
       "toolId": "square-root",
-      "sourceModule": "math-core.js",
+      "sourceModule": "math-tools.js",
       "runtimeFunction": "FinPulseMath.nthRoot(value, 2)",
       "status": "extracted",
       "calculation": {
@@ -1840,7 +1840,7 @@
     },
     {
       "toolId": "cube-root",
-      "sourceModule": "math-core.js",
+      "sourceModule": "math-tools.js",
       "runtimeFunction": "FinPulseMath.nthRoot(value, 3)",
       "status": "extracted",
       "calculation": {
