@@ -61817,32 +61817,1430 @@
       },
       "locales": {
         "hi": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "इमरजेंसी फंड कैलकुलेटर",
+              "description": "ज़रूरी मासिक खर्चों और चुने गए महीनों की संख्या के आधार पर आपातकालीन नकदी लक्ष्य तय करें।",
+              "category": "वित्त और धन",
+              "subcategory": "बचत और योजना कैलकुलेटर"
+            },
+            "inputs": [
+              {
+                "key": "expenses",
+                "label": "ज़रूरी मासिक खर्च"
+              },
+              {
+                "key": "months",
+                "label": "लक्ष्य कवरेज (महीने)"
+              },
+              {
+                "key": "current",
+                "label": "वर्तमान आपातकालीन बचत"
+              }
+            ],
+            "actions": {
+              "calculate": "गणना करें",
+              "recalculate": "पुनर्गणना करें",
+              "clear": "साफ़ करें",
+              "reset": "रीसेट करें",
+              "copy": "कॉपी करें",
+              "download": "डाउनलोड करें",
+              "print": "प्रिंट करें"
+            },
+            "results": {
+              "heading": "परिणाम",
+              "summary": "लक्ष्य आपातकालीन निधि",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "वर्तमान बचत"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "लक्ष्य में शेष अंतर"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "वर्तमान खर्च कवरेज"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "लक्ष्य की प्रगति"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "ज़रूरी मासिक खर्च"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "लक्ष्य अवधि (महीने)"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "लक्ष्य राशि"
+                },
+                {
+                  "key": "breakdown-4",
+                  "label": "वर्तमान बचत"
+                },
+                {
+                  "key": "breakdown-5",
+                  "label": "शेष अंतर"
+                },
+                {
+                  "key": "breakdown-6",
+                  "label": "खर्च कवरेज"
+                }
+              ],
+              "chart": {
+                "title": "लक्ष्य आपातकालीन निधि",
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": "सूत्र और गणना के चरण",
+              "formulaDescription": "Target fund = essential monthly expenses × target coverage months. Remaining gap = max(0, target fund − current savings). Expense coverage = current savings ÷ essential monthly expenses. Progress (%) = min(100, current savings ÷ target fund × 100).",
+              "steps": [
+                "ज़रूरी मासिक खर्च दर्ज करें।",
+                "महीनों में लक्ष्य कवरेज अवधि चुनें (अधिकतम 24)।",
+                "वर्तमान आपातकालीन बचत दर्ज करें।",
+                "लक्ष्य राशि निकालने के लिए ज़रूरी मासिक खर्च को चुने गए महीनों से गुणा करें।",
+                "शेष अंतर, कवरेज और अधिकतम 100% प्रगति दिखाने के लिए वर्तमान बचत की लक्ष्य से तुलना करें।"
+              ],
+              "assumptions": [
+                "ज़रूरी मासिक खर्च और लक्ष्य अवधि शून्य से अधिक होनी चाहिए; वर्तमान बचत ऋणात्मक नहीं हो सकती।",
+                "लक्ष्य अवधि 24 महीने से अधिक नहीं हो सकती।"
+              ],
+              "notes": [
+                "गणना आपके दर्ज किए गए मानों से ब्राउज़र में स्थानीय रूप से होती है; अनुमान पर भरोसा करने से पहले परिणाम नोट और मान्यताओं की जाँच करें।"
+              ],
+              "disclaimers": [
+                "यह कैलकुलेटर केवल जानकारी के लिए अनुमान देता है; यह वित्तीय, कर, कानूनी, लेखांकन या निवेश सलाह नहीं है।"
+              ],
+              "limitations": [
+                "ज़रूरी मासिक खर्च और लक्ष्य अवधि शून्य से अधिक होनी चाहिए; वर्तमान बचत ऋणात्मक नहीं हो सकती।",
+                "लक्ष्य अवधि 24 महीने से अधिक नहीं हो सकती।",
+                "यह योजना बनाने का एक उदाहरण है, बचत उत्पाद की सिफ़ारिश नहीं।"
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "{field} एक सीमित संख्या होनी चाहिए।",
+                "recoveryHint": "एक मान्य सीमित संख्या दर्ज करें और फिर प्रयास करें।"
+              },
+              {
+                "key": "positive",
+                "message": "{field} शून्य से अधिक होना चाहिए।",
+                "recoveryHint": "शून्य से अधिक मान दर्ज करें।"
+              },
+              {
+                "key": "negative",
+                "message": "{field} ऋणात्मक नहीं होना चाहिए।",
+                "recoveryHint": "शून्य या धनात्मक मान दर्ज करें।"
+              },
+              {
+                "key": "months-limit",
+                "message": "लक्ष्य अवधि 24 महीने से अधिक नहीं हो सकती।",
+                "recoveryHint": "24 महीने या उससे कम की लक्ष्य अवधि चुनें।"
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-emergency-fund-1",
+                "question": "लक्ष्य कैसे निकाला जाता है?",
+                "answer": "ज़रूरी मासिक खर्च को चुने गए महीनों की संख्या से गुणा किया जाता है।"
+              },
+              {
+                "key": "faq-emergency-fund-2",
+                "question": "यदि वर्तमान बचत लक्ष्य से अधिक हो तो क्या होगा?",
+                "answer": "शेष अंतर शून्य होगा और प्रगति 100% पर सीमित रहेगी।"
+              },
+              {
+                "key": "faq-emergency-fund-3",
+                "question": "क्या यह किसी बचत उत्पाद की सिफ़ारिश करता है?",
+                "answer": "नहीं। यह केवल एक उदाहरणात्मक लक्ष्य राशि की गणना करता है।"
+              }
+            ],
+            "guide": {
+              "title": "इमरजेंसी फंड कैलकुलेटर गाइड",
+              "introduction": "चुनी गई कवरेज अवधि के महीनों से ज़रूरी मासिक खर्च को गुणा करके आपातकालीन बचत लक्ष्य का अनुमान लगाएँ और वर्तमान बचत से तुलना करें।",
+              "steps": [
+                {
+                  "key": "emergency-fund-guide-step-1",
+                  "title": "चरण 1",
+                  "body": "ज़रूरी मासिक खर्च दर्ज करें।"
+                },
+                {
+                  "key": "emergency-fund-guide-step-2",
+                  "title": "चरण 2",
+                  "body": "महीनों में लक्ष्य कवरेज अवधि चुनें (अधिकतम 24)।"
+                },
+                {
+                  "key": "emergency-fund-guide-step-3",
+                  "title": "चरण 3",
+                  "body": "वर्तमान आपातकालीन बचत दर्ज करें।"
+                },
+                {
+                  "key": "emergency-fund-guide-step-4",
+                  "title": "चरण 4",
+                  "body": "लक्ष्य राशि निकालने के लिए ज़रूरी मासिक खर्च को चुने गए महीनों से गुणा करें।"
+                },
+                {
+                  "key": "emergency-fund-guide-step-5",
+                  "title": "चरण 5",
+                  "body": "शेष अंतर, कवरेज और अधिकतम 100% प्रगति दिखाने के लिए वर्तमान बचत की लक्ष्य से तुलना करें।"
+                }
+              ],
+              "sections": [
+                {
+                  "key": "emergency-fund-guide-section-1",
+                  "heading": "गणना की विधि",
+                  "body": "Target fund = essential monthly expenses × target coverage months. Remaining gap = max(0, target fund − current savings). Expense coverage = current savings ÷ essential monthly expenses. Progress (%) = min(100, current savings ÷ target fund × 100)."
+                },
+                {
+                  "key": "emergency-fund-guide-section-2",
+                  "heading": "मान्यताएँ और सीमाएँ",
+                  "body": "ज़रूरी मासिक खर्च और लक्ष्य अवधि शून्य से अधिक होनी चाहिए; वर्तमान बचत ऋणात्मक नहीं हो सकती। लक्ष्य अवधि 24 महीने से अधिक नहीं हो सकती। यह योजना बनाने का एक उदाहरण है, बचत उत्पाद की सिफ़ारिश नहीं।"
+                }
+              ]
+            },
+            "seo": {
+              "title": "इमरजेंसी फंड कैलकुलेटर | FinPulse Hub",
+              "metaDescription": "ज़रूरी मासिक खर्चों और चुने गए महीनों की संख्या के आधार पर आपातकालीन नकदी लक्ष्य तय करें।",
+              "h1": "इमरजेंसी फंड कैलकुलेटर",
+              "introduction": "चुनी गई कवरेज अवधि के महीनों से ज़रूरी मासिक खर्च को गुणा करके आपातकालीन बचत लक्ष्य का अनुमान लगाएँ और वर्तमान बचत से तुलना करें।",
+              "faq": [
+                {
+                  "key": "faq-emergency-fund-1",
+                  "question": "लक्ष्य कैसे निकाला जाता है?",
+                  "answer": "ज़रूरी मासिक खर्च को चुने गए महीनों की संख्या से गुणा किया जाता है।"
+                },
+                {
+                  "key": "faq-emergency-fund-2",
+                  "question": "यदि वर्तमान बचत लक्ष्य से अधिक हो तो क्या होगा?",
+                  "answer": "शेष अंतर शून्य होगा और प्रगति 100% पर सीमित रहेगी।"
+                },
+                {
+                  "key": "faq-emergency-fund-3",
+                  "question": "क्या यह किसी बचत उत्पाद की सिफ़ारिश करता है?",
+                  "answer": "नहीं। यह केवल एक उदाहरणात्मक लक्ष्य राशि की गणना करता है।"
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "इमरजेंसी फंड कैलकुलेटर",
+              "formLabel": "इमरजेंसी फंड कैलकुलेटर फ़ॉर्म",
+              "resultAnnouncement": "इमरजेंसी फंड कैलकुलेटर का गणना परिणाम",
+              "chartLabel": "लक्ष्य आपातकालीन निधि का चार्ट",
+              "controlLabels": [
+                {
+                  "key": "expenses",
+                  "label": "ज़रूरी मासिक खर्च"
+                },
+                {
+                  "key": "months",
+                  "label": "लक्ष्य कवरेज (महीने)"
+                },
+                {
+                  "key": "current",
+                  "label": "वर्तमान आपातकालीन बचत"
+                }
+              ]
+            }
+          }
         },
         "ar": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "حاسبة صندوق الطوارئ",
+              "description": "حدّد هدفاً للنقد المخصص للطوارئ بناءً على النفقات الشهرية الأساسية وعدد الأشهر الذي تختاره.",
+              "category": "التمويل والمال",
+              "subcategory": "حاسبات الادخار والتخطيط"
+            },
+            "inputs": [
+              {
+                "key": "expenses",
+                "label": "النفقات الشهرية الأساسية"
+              },
+              {
+                "key": "months",
+                "label": "مدة التغطية المستهدفة (بالأشهر)"
+              },
+              {
+                "key": "current",
+                "label": "مدخرات الطوارئ الحالية"
+              }
+            ],
+            "actions": {
+              "calculate": "احسب",
+              "recalculate": "أعد الحساب",
+              "clear": "مسح",
+              "reset": "إعادة ضبط",
+              "copy": "نسخ",
+              "download": "تنزيل",
+              "print": "طباعة"
+            },
+            "results": {
+              "heading": "النتيجة",
+              "summary": "صندوق الطوارئ المستهدف",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "المدخرات الحالية"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "الفجوة المتبقية إلى الهدف"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "تغطية النفقات الحالية"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "التقدم نحو الهدف"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "النفقات الشهرية الأساسية"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "الأشهر المستهدفة"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "المبلغ المستهدف"
+                },
+                {
+                  "key": "breakdown-4",
+                  "label": "المدخرات الحالية"
+                },
+                {
+                  "key": "breakdown-5",
+                  "label": "الفجوة المتبقية"
+                },
+                {
+                  "key": "breakdown-6",
+                  "label": "تغطية النفقات"
+                }
+              ],
+              "chart": {
+                "title": "صندوق الطوارئ المستهدف",
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": "الصيغة وخطوات الحساب",
+              "formulaDescription": "Target fund = essential monthly expenses × target coverage months. Remaining gap = max(0, target fund − current savings). Expense coverage = current savings ÷ essential monthly expenses. Progress (%) = min(100, current savings ÷ target fund × 100).",
+              "steps": [
+                "أدخل النفقات الشهرية الأساسية.",
+                "اختر مدة التغطية المستهدفة بالأشهر (بحد أقصى 24).",
+                "أدخل مدخرات الطوارئ الحالية.",
+                "اضرب النفقات الشهرية الأساسية في عدد الأشهر المختار لحساب المبلغ المستهدف.",
+                "قارن المدخرات الحالية بالهدف لعرض الفجوة المتبقية والتغطية والتقدم المحدود بنسبة 100%. "
+              ],
+              "assumptions": [
+                "يجب أن تكون النفقات الشهرية الأساسية وعدد الأشهر المستهدف أكبر من صفر؛ ويجب ألا تكون المدخرات الحالية سالبة.",
+                "لا يمكن أن تتجاوز مدة الهدف 24 شهراً."
+              ],
+              "notes": [
+                "يُجرى الحساب محلياً في المتصفح باستخدام القيم التي تدخلها؛ راجع ملاحظة النتيجة والافتراضات قبل الاعتماد على التقدير."
+              ],
+              "disclaimers": [
+                "تقدم هذه الحاسبة تقديراً لأغراض المعلومات فقط، ولا تُعد نصيحة مالية أو ضريبية أو قانونية أو محاسبية أو استثمارية."
+              ],
+              "limitations": [
+                "يجب أن تكون النفقات الشهرية الأساسية وعدد الأشهر المستهدف أكبر من صفر؛ ويجب ألا تكون المدخرات الحالية سالبة.",
+                "لا يمكن أن تتجاوز مدة الهدف 24 شهراً.",
+                "هذا مثال للتخطيط، وليس توصية بمنتج ادخاري."
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "يجب أن يكون {field} رقماً محدوداً وصالحاً.",
+                "recoveryHint": "أدخل رقماً محدوداً وصالحاً ثم حاول مرة أخرى."
+              },
+              {
+                "key": "positive",
+                "message": "يجب أن تكون قيمة {field} أكبر من صفر.",
+                "recoveryHint": "أدخل قيمة أكبر من صفر."
+              },
+              {
+                "key": "negative",
+                "message": "يجب ألا تكون قيمة {field} سالبة.",
+                "recoveryHint": "أدخل صفراً أو قيمة موجبة."
+              },
+              {
+                "key": "months-limit",
+                "message": "لا يمكن أن تتجاوز مدة الهدف 24 شهراً.",
+                "recoveryHint": "اختر مدة مستهدفة لا تزيد على 24 شهراً."
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-emergency-fund-1",
+                "question": "كيف يتم حساب الهدف؟",
+                "answer": "يتم ضرب النفقات الشهرية الأساسية في عدد الأشهر المحدد."
+              },
+              {
+                "key": "faq-emergency-fund-2",
+                "question": "ماذا لو تجاوزت المدخرات الحالية الهدف؟",
+                "answer": "تصبح الفجوة المتبقية صفراً ويُحدّ التقدم عند 100%."
+              },
+              {
+                "key": "faq-emergency-fund-3",
+                "question": "هل توصي الحاسبة بمنتج ادخاري؟",
+                "answer": "لا. فهي تحسب فقط مبلغاً مستهدفاً لأغراض توضيحية."
+              }
+            ],
+            "guide": {
+              "title": "دليل حاسبة صندوق الطوارئ",
+              "introduction": "قدّر هدف الاحتياطي للطوارئ بضرب النفقات الشهرية الأساسية في مدة التغطية المختارة، ثم قارنه بالمدخرات الحالية.",
+              "steps": [
+                {
+                  "key": "emergency-fund-guide-step-1",
+                  "title": "الخطوة 1",
+                  "body": "أدخل النفقات الشهرية الأساسية."
+                },
+                {
+                  "key": "emergency-fund-guide-step-2",
+                  "title": "الخطوة 2",
+                  "body": "اختر مدة التغطية المستهدفة بالأشهر (بحد أقصى 24)."
+                },
+                {
+                  "key": "emergency-fund-guide-step-3",
+                  "title": "الخطوة 3",
+                  "body": "أدخل مدخرات الطوارئ الحالية."
+                },
+                {
+                  "key": "emergency-fund-guide-step-4",
+                  "title": "الخطوة 4",
+                  "body": "اضرب النفقات الشهرية الأساسية في عدد الأشهر المختار لحساب المبلغ المستهدف."
+                },
+                {
+                  "key": "emergency-fund-guide-step-5",
+                  "title": "الخطوة 5",
+                  "body": "قارن المدخرات الحالية بالهدف لعرض الفجوة المتبقية والتغطية والتقدم المحدود بنسبة 100%. "
+                }
+              ],
+              "sections": [
+                {
+                  "key": "emergency-fund-guide-section-1",
+                  "heading": "طريقة الحساب",
+                  "body": "Target fund = essential monthly expenses × target coverage months. Remaining gap = max(0, target fund − current savings). Expense coverage = current savings ÷ essential monthly expenses. Progress (%) = min(100, current savings ÷ target fund × 100)."
+                },
+                {
+                  "key": "emergency-fund-guide-section-2",
+                  "heading": "الافتراضات والقيود",
+                  "body": "يجب أن تكون النفقات الشهرية الأساسية وعدد الأشهر المستهدف أكبر من صفر؛ ويجب ألا تكون المدخرات الحالية سالبة. لا يمكن أن تتجاوز مدة الهدف 24 شهراً. هذا مثال للتخطيط، وليس توصية بمنتج ادخاري."
+                }
+              ]
+            },
+            "seo": {
+              "title": "حاسبة صندوق الطوارئ | FinPulse Hub",
+              "metaDescription": "حدّد هدفاً للنقد المخصص للطوارئ بناءً على النفقات الشهرية الأساسية وعدد الأشهر الذي تختاره.",
+              "h1": "حاسبة صندوق الطوارئ",
+              "introduction": "قدّر هدف الاحتياطي للطوارئ بضرب النفقات الشهرية الأساسية في مدة التغطية المختارة، ثم قارنه بالمدخرات الحالية.",
+              "faq": [
+                {
+                  "key": "faq-emergency-fund-1",
+                  "question": "كيف يتم حساب الهدف؟",
+                  "answer": "يتم ضرب النفقات الشهرية الأساسية في عدد الأشهر المحدد."
+                },
+                {
+                  "key": "faq-emergency-fund-2",
+                  "question": "ماذا لو تجاوزت المدخرات الحالية الهدف؟",
+                  "answer": "تصبح الفجوة المتبقية صفراً ويُحدّ التقدم عند 100%."
+                },
+                {
+                  "key": "faq-emergency-fund-3",
+                  "question": "هل توصي الحاسبة بمنتج ادخاري؟",
+                  "answer": "لا. فهي تحسب فقط مبلغاً مستهدفاً لأغراض توضيحية."
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "حاسبة صندوق الطوارئ",
+              "formLabel": "نموذج حاسبة صندوق الطوارئ",
+              "resultAnnouncement": "نتيجة حساب صندوق الطوارئ",
+              "chartLabel": "رسم بياني لصندوق الطوارئ المستهدف",
+              "controlLabels": [
+                {
+                  "key": "expenses",
+                  "label": "النفقات الشهرية الأساسية"
+                },
+                {
+                  "key": "months",
+                  "label": "مدة التغطية المستهدفة (بالأشهر)"
+                },
+                {
+                  "key": "current",
+                  "label": "مدخرات الطوارئ الحالية"
+                }
+              ]
+            }
+          }
         },
         "ur": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "ایمرجنسی فنڈ کیلکولیٹر",
+              "description": "ضروری ماہانہ اخراجات اور منتخب مہینوں کی تعداد کی بنیاد پر ہنگامی نقد رقم کا ہدف مقرر کریں۔",
+              "category": "مالیات اور رقم",
+              "subcategory": "بچت اور منصوبہ بندی کے کیلکولیٹرز"
+            },
+            "inputs": [
+              {
+                "key": "expenses",
+                "label": "ضروری ماہانہ اخراجات"
+              },
+              {
+                "key": "months",
+                "label": "ہدف کوریج (ماہ)"
+              },
+              {
+                "key": "current",
+                "label": "موجودہ ہنگامی بچت"
+              }
+            ],
+            "actions": {
+              "calculate": "حساب کریں",
+              "recalculate": "دوبارہ حساب کریں",
+              "clear": "صاف کریں",
+              "reset": "ری سیٹ کریں",
+              "copy": "کاپی کریں",
+              "download": "ڈاؤن لوڈ کریں",
+              "print": "پرنٹ کریں"
+            },
+            "results": {
+              "heading": "نتیجہ",
+              "summary": "ہدف ہنگامی فنڈ",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "موجودہ بچت"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "ہدف تک باقی فرق"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "موجودہ اخراجات کی کوریج"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "ہدف کی پیش رفت"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "ضروری ماہانہ اخراجات"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "ہدف کے مہینے"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "ہدف کی رقم"
+                },
+                {
+                  "key": "breakdown-4",
+                  "label": "موجودہ بچت"
+                },
+                {
+                  "key": "breakdown-5",
+                  "label": "باقی فرق"
+                },
+                {
+                  "key": "breakdown-6",
+                  "label": "اخراجات کی کوریج"
+                }
+              ],
+              "chart": {
+                "title": "ہدف ہنگامی فنڈ",
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": "فارمولا اور حساب کے مراحل",
+              "formulaDescription": "Target fund = essential monthly expenses × target coverage months. Remaining gap = max(0, target fund − current savings). Expense coverage = current savings ÷ essential monthly expenses. Progress (%) = min(100, current savings ÷ target fund × 100).",
+              "steps": [
+                "ضروری ماہانہ اخراجات درج کریں۔",
+                "مہینوں میں ہدف کوریج کی مدت منتخب کریں (زیادہ سے زیادہ 24)۔",
+                "موجودہ ہنگامی بچت درج کریں۔",
+                "ہدف کی رقم معلوم کرنے کے لیے ضروری ماہانہ اخراجات کو منتخب مہینوں سے ضرب دیں۔",
+                "باقی فرق، کوریج اور 100% تک محدود پیش رفت دکھانے کے لیے موجودہ بچت کا ہدف سے موازنہ کریں۔"
+              ],
+              "assumptions": [
+                "ضروری ماہانہ اخراجات اور ہدف کے مہینے صفر سے زیادہ ہونے چاہئیں؛ موجودہ بچت منفی نہیں ہو سکتی۔",
+                "ہدف کے مہینے 24 سے زیادہ نہیں ہو سکتے۔"
+              ],
+              "notes": [
+                "حساب آپ کی درج کردہ قدروں سے براؤزر میں مقامی طور پر ہوتا ہے؛ تخمینے پر انحصار کرنے سے پہلے نتیجے کے نوٹ اور مفروضوں کا جائزہ لیں۔"
+              ],
+              "disclaimers": [
+                "یہ کیلکولیٹر صرف معلوماتی تخمینہ فراہم کرتا ہے؛ یہ مالی، ٹیکس، قانونی، اکاؤنٹنگ یا سرمایہ کاری کا مشورہ نہیں ہے۔"
+              ],
+              "limitations": [
+                "ضروری ماہانہ اخراجات اور ہدف کے مہینے صفر سے زیادہ ہونے چاہئیں؛ موجودہ بچت منفی نہیں ہو سکتی۔",
+                "ہدف کے مہینے 24 سے زیادہ نہیں ہو سکتے۔",
+                "یہ منصوبہ بندی کی وضاحت ہے، کسی بچت پروڈکٹ کی سفارش نہیں۔"
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "{field} ایک محدود اور درست عدد ہونا چاہیے۔",
+                "recoveryHint": "درست محدود عدد درج کریں اور دوبارہ کوشش کریں۔"
+              },
+              {
+                "key": "positive",
+                "message": "{field} کی قدر صفر سے زیادہ ہونی چاہیے۔",
+                "recoveryHint": "صفر سے زیادہ قدر درج کریں۔"
+              },
+              {
+                "key": "negative",
+                "message": "{field} منفی نہیں ہونا چاہیے۔",
+                "recoveryHint": "صفر یا مثبت قدر درج کریں۔"
+              },
+              {
+                "key": "months-limit",
+                "message": "ہدف کے مہینے 24 سے زیادہ نہیں ہو سکتے۔",
+                "recoveryHint": "24 ماہ یا اس سے کم کی ہدف مدت منتخب کریں۔"
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-emergency-fund-1",
+                "question": "ہدف کیسے شمار کیا جاتا ہے؟",
+                "answer": "ضروری ماہانہ اخراجات کو منتخب مہینوں کی تعداد سے ضرب دی جاتی ہے۔"
+              },
+              {
+                "key": "faq-emergency-fund-2",
+                "question": "اگر موجودہ بچت ہدف سے زیادہ ہو تو کیا ہوگا؟",
+                "answer": "باقی فرق صفر ہوگا اور پیش رفت 100% پر محدود رہے گی۔"
+              },
+              {
+                "key": "faq-emergency-fund-3",
+                "question": "کیا یہ کسی بچت پروڈکٹ کی سفارش کرتا ہے؟",
+                "answer": "نہیں۔ یہ صرف وضاحتی ہدف کی رقم شمار کرتا ہے۔"
+              }
+            ],
+            "guide": {
+              "title": "ایمرجنسی فنڈ کیلکولیٹر کی رہنمائی",
+              "introduction": "ضروری ماہانہ اخراجات کو منتخب کوریج مدت سے ضرب دے کر ہنگامی بچت کا ہدف معلوم کریں، پھر موجودہ بچت سے موازنہ کریں۔",
+              "steps": [
+                {
+                  "key": "emergency-fund-guide-step-1",
+                  "title": "مرحلہ 1",
+                  "body": "ضروری ماہانہ اخراجات درج کریں۔"
+                },
+                {
+                  "key": "emergency-fund-guide-step-2",
+                  "title": "مرحلہ 2",
+                  "body": "مہینوں میں ہدف کوریج کی مدت منتخب کریں (زیادہ سے زیادہ 24)۔"
+                },
+                {
+                  "key": "emergency-fund-guide-step-3",
+                  "title": "مرحلہ 3",
+                  "body": "موجودہ ہنگامی بچت درج کریں۔"
+                },
+                {
+                  "key": "emergency-fund-guide-step-4",
+                  "title": "مرحلہ 4",
+                  "body": "ہدف کی رقم معلوم کرنے کے لیے ضروری ماہانہ اخراجات کو منتخب مہینوں سے ضرب دیں۔"
+                },
+                {
+                  "key": "emergency-fund-guide-step-5",
+                  "title": "مرحلہ 5",
+                  "body": "باقی فرق، کوریج اور 100% تک محدود پیش رفت دکھانے کے لیے موجودہ بچت کا ہدف سے موازنہ کریں۔"
+                }
+              ],
+              "sections": [
+                {
+                  "key": "emergency-fund-guide-section-1",
+                  "heading": "حساب کا طریقہ",
+                  "body": "Target fund = essential monthly expenses × target coverage months. Remaining gap = max(0, target fund − current savings). Expense coverage = current savings ÷ essential monthly expenses. Progress (%) = min(100, current savings ÷ target fund × 100)."
+                },
+                {
+                  "key": "emergency-fund-guide-section-2",
+                  "heading": "مفروضے اور حدود",
+                  "body": "ضروری ماہانہ اخراجات اور ہدف کے مہینے صفر سے زیادہ ہونے چاہئیں؛ موجودہ بچت منفی نہیں ہو سکتی۔ ہدف کے مہینے 24 سے زیادہ نہیں ہو سکتے۔ یہ منصوبہ بندی کی وضاحت ہے، کسی بچت پروڈکٹ کی سفارش نہیں۔"
+                }
+              ]
+            },
+            "seo": {
+              "title": "ایمرجنسی فنڈ کیلکولیٹر | FinPulse Hub",
+              "metaDescription": "ضروری ماہانہ اخراجات اور منتخب مہینوں کی تعداد کی بنیاد پر ہنگامی نقد رقم کا ہدف مقرر کریں۔",
+              "h1": "ایمرجنسی فنڈ کیلکولیٹر",
+              "introduction": "ضروری ماہانہ اخراجات کو منتخب کوریج مدت سے ضرب دے کر ہنگامی بچت کا ہدف معلوم کریں، پھر موجودہ بچت سے موازنہ کریں۔",
+              "faq": [
+                {
+                  "key": "faq-emergency-fund-1",
+                  "question": "ہدف کیسے شمار کیا جاتا ہے؟",
+                  "answer": "ضروری ماہانہ اخراجات کو منتخب مہینوں کی تعداد سے ضرب دی جاتی ہے۔"
+                },
+                {
+                  "key": "faq-emergency-fund-2",
+                  "question": "اگر موجودہ بچت ہدف سے زیادہ ہو تو کیا ہوگا؟",
+                  "answer": "باقی فرق صفر ہوگا اور پیش رفت 100% پر محدود رہے گی۔"
+                },
+                {
+                  "key": "faq-emergency-fund-3",
+                  "question": "کیا یہ کسی بچت پروڈکٹ کی سفارش کرتا ہے؟",
+                  "answer": "نہیں۔ یہ صرف وضاحتی ہدف کی رقم شمار کرتا ہے۔"
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "ایمرجنسی فنڈ کیلکولیٹر",
+              "formLabel": "ایمرجنسی فنڈ کیلکولیٹر کا فارم",
+              "resultAnnouncement": "ایمرجنسی فنڈ کیلکولیٹر کا حسابی نتیجہ",
+              "chartLabel": "ہدف ہنگامی فنڈ کا چارٹ",
+              "controlLabels": [
+                {
+                  "key": "expenses",
+                  "label": "ضروری ماہانہ اخراجات"
+                },
+                {
+                  "key": "months",
+                  "label": "ہدف کوریج (ماہ)"
+                },
+                {
+                  "key": "current",
+                  "label": "موجودہ ہنگامی بچت"
+                }
+              ]
+            }
+          }
         },
         "zh-CN": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "应急资金计算器",
+              "description": "根据必要的月度支出和所选月数，设定应急现金储备目标。",
+              "category": "财务与金钱",
+              "subcategory": "储蓄与规划计算器"
+            },
+            "inputs": [
+              {
+                "key": "expenses",
+                "label": "必要月度支出"
+              },
+              {
+                "key": "months",
+                "label": "目标覆盖期限（月）"
+              },
+              {
+                "key": "current",
+                "label": "当前应急储蓄"
+              }
+            ],
+            "actions": {
+              "calculate": "计算",
+              "recalculate": "重新计算",
+              "clear": "清除",
+              "reset": "重置",
+              "copy": "复制",
+              "download": "下载",
+              "print": "打印"
+            },
+            "results": {
+              "heading": "结果",
+              "summary": "应急资金目标",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "当前储蓄"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "距离目标的剩余差额"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "当前支出覆盖月数"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "目标完成进度"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "必要月度支出"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "目标月数"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "目标金额"
+                },
+                {
+                  "key": "breakdown-4",
+                  "label": "当前储蓄"
+                },
+                {
+                  "key": "breakdown-5",
+                  "label": "剩余差额"
+                },
+                {
+                  "key": "breakdown-6",
+                  "label": "支出覆盖月数"
+                }
+              ],
+              "chart": {
+                "title": "应急资金目标",
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": "公式与计算步骤",
+              "formulaDescription": "Target fund = essential monthly expenses × target coverage months. Remaining gap = max(0, target fund − current savings). Expense coverage = current savings ÷ essential monthly expenses. Progress (%) = min(100, current savings ÷ target fund × 100).",
+              "steps": [
+                "输入必要的月度支出。",
+                "选择目标覆盖期限（月数，最多 24 个月）。",
+                "输入当前应急储蓄金额。",
+                "将必要月度支出乘以所选月数，计算目标金额。",
+                "将当前储蓄与目标进行比较，查看剩余差额、覆盖月数和最高为 100% 的进度。"
+              ],
+              "assumptions": [
+                "必要月度支出和目标月数必须大于零；当前储蓄不得为负数。",
+                "目标月数不得超过 24 个月。"
+              ],
+              "notes": [
+                "计算在浏览器本地完成，使用您输入的数值；依赖此估算前，请查看结果说明并核对相关假设。"
+              ],
+              "disclaimers": [
+                "本计算器仅提供信息性估算，不构成财务、税务、法律、会计或投资建议。"
+              ],
+              "limitations": [
+                "必要月度支出和目标月数必须大于零；当前储蓄不得为负数。",
+                "目标月数不得超过 24 个月。",
+                "这是用于规划的示例计算，并非储蓄产品推荐。"
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "{field} 必须是有限的有效数字。",
+                "recoveryHint": "请输入有效的有限数值，然后重试。"
+              },
+              {
+                "key": "positive",
+                "message": "{field} 必须大于零。",
+                "recoveryHint": "请输入大于零的数值。"
+              },
+              {
+                "key": "negative",
+                "message": "{field} 不得为负数。",
+                "recoveryHint": "请输入零或正数。"
+              },
+              {
+                "key": "months-limit",
+                "message": "目标月数不得超过 24 个月。",
+                "recoveryHint": "请选择不超过 24 个月的目标期限。"
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-emergency-fund-1",
+                "question": "目标金额如何计算？",
+                "answer": "将必要月度支出乘以所选月数即可。"
+              },
+              {
+                "key": "faq-emergency-fund-2",
+                "question": "如果当前储蓄超过目标怎么办？",
+                "answer": "剩余差额为零，进度最高显示为 100%。"
+              },
+              {
+                "key": "faq-emergency-fund-3",
+                "question": "该工具会推荐储蓄产品吗？",
+                "answer": "不会。它只计算一个用于说明的目标金额。"
+              }
+            ],
+            "guide": {
+              "title": "应急资金计算器指南",
+              "introduction": "将必要月度支出乘以所选覆盖期限，估算应急储备目标，然后与当前储蓄进行比较。",
+              "steps": [
+                {
+                  "key": "emergency-fund-guide-step-1",
+                  "title": "步骤 1",
+                  "body": "输入必要的月度支出。"
+                },
+                {
+                  "key": "emergency-fund-guide-step-2",
+                  "title": "步骤 2",
+                  "body": "选择目标覆盖期限（月数，最多 24 个月）。"
+                },
+                {
+                  "key": "emergency-fund-guide-step-3",
+                  "title": "步骤 3",
+                  "body": "输入当前应急储蓄金额。"
+                },
+                {
+                  "key": "emergency-fund-guide-step-4",
+                  "title": "步骤 4",
+                  "body": "将必要月度支出乘以所选月数，计算目标金额。"
+                },
+                {
+                  "key": "emergency-fund-guide-step-5",
+                  "title": "步骤 5",
+                  "body": "将当前储蓄与目标进行比较，查看剩余差额、覆盖月数和最高为 100% 的进度。"
+                }
+              ],
+              "sections": [
+                {
+                  "key": "emergency-fund-guide-section-1",
+                  "heading": "计算方法",
+                  "body": "Target fund = essential monthly expenses × target coverage months. Remaining gap = max(0, target fund − current savings). Expense coverage = current savings ÷ essential monthly expenses. Progress (%) = min(100, current savings ÷ target fund × 100)."
+                },
+                {
+                  "key": "emergency-fund-guide-section-2",
+                  "heading": "假设与限制",
+                  "body": "必要月度支出和目标月数必须大于零；当前储蓄不得为负数。 目标月数不得超过 24 个月。 这是用于规划的示例计算，并非储蓄产品推荐。"
+                }
+              ]
+            },
+            "seo": {
+              "title": "应急资金计算器 | FinPulse Hub",
+              "metaDescription": "根据必要的月度支出和所选月数，设定应急现金储备目标。",
+              "h1": "应急资金计算器",
+              "introduction": "将必要月度支出乘以所选覆盖期限，估算应急储备目标，然后与当前储蓄进行比较。",
+              "faq": [
+                {
+                  "key": "faq-emergency-fund-1",
+                  "question": "目标金额如何计算？",
+                  "answer": "将必要月度支出乘以所选月数即可。"
+                },
+                {
+                  "key": "faq-emergency-fund-2",
+                  "question": "如果当前储蓄超过目标怎么办？",
+                  "answer": "剩余差额为零，进度最高显示为 100%。"
+                },
+                {
+                  "key": "faq-emergency-fund-3",
+                  "question": "该工具会推荐储蓄产品吗？",
+                  "answer": "不会。它只计算一个用于说明的目标金额。"
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "应急资金计算器",
+              "formLabel": "应急资金计算器输入表单",
+              "resultAnnouncement": "应急资金计算结果",
+              "chartLabel": "应急资金目标图表",
+              "controlLabels": [
+                {
+                  "key": "expenses",
+                  "label": "必要月度支出"
+                },
+                {
+                  "key": "months",
+                  "label": "目标覆盖期限（月）"
+                },
+                {
+                  "key": "current",
+                  "label": "当前应急储蓄"
+                }
+              ]
+            }
+          }
         },
         "ja": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "緊急資金計算機",
+              "description": "必要な月間支出と選択した月数から、緊急時に備える現金目標を設定します。",
+              "category": "金融・お金",
+              "subcategory": "貯蓄・計画計算機"
+            },
+            "inputs": [
+              {
+                "key": "expenses",
+                "label": "必要な月間支出"
+              },
+              {
+                "key": "months",
+                "label": "目標カバー期間（月）"
+              },
+              {
+                "key": "current",
+                "label": "現在の緊急用貯蓄"
+              }
+            ],
+            "actions": {
+              "calculate": "計算",
+              "recalculate": "再計算",
+              "clear": "クリア",
+              "reset": "リセット",
+              "copy": "コピー",
+              "download": "ダウンロード",
+              "print": "印刷"
+            },
+            "results": {
+              "heading": "結果",
+              "summary": "緊急資金の目標額",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "現在の貯蓄"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "目標までの残額"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "現在の支出カバー期間"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "目標達成率"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "必要な月間支出"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "目標月数"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "目標金額"
+                },
+                {
+                  "key": "breakdown-4",
+                  "label": "現在の貯蓄"
+                },
+                {
+                  "key": "breakdown-5",
+                  "label": "残額"
+                },
+                {
+                  "key": "breakdown-6",
+                  "label": "支出カバー期間"
+                }
+              ],
+              "chart": {
+                "title": "緊急資金の目標額",
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": "計算式と計算手順",
+              "formulaDescription": "Target fund = essential monthly expenses × target coverage months. Remaining gap = max(0, target fund − current savings). Expense coverage = current savings ÷ essential monthly expenses. Progress (%) = min(100, current savings ÷ target fund × 100).",
+              "steps": [
+                "必要な月間支出を入力します。",
+                "目標とするカバー期間（月数、最大24か月）を選択します。",
+                "現在の緊急用貯蓄額を入力します。",
+                "必要な月間支出に選択した月数を掛けて目標金額を計算します。",
+                "現在の貯蓄を目標と比較し、残額、カバー期間、上限100%の達成率を確認します。"
+              ],
+              "assumptions": [
+                "必要な月間支出と目標月数はゼロより大きく、現在の貯蓄は負の値にできません。",
+                "目標月数は24か月を超えられません。"
+              ],
+              "notes": [
+                "計算は入力値を使ってブラウザー内でローカルに実行されます。推定値を利用する前に、結果の注記と前提条件を確認してください。"
+              ],
+              "disclaimers": [
+                "この計算機は情報提供を目的とした推定値を示すものであり、金融、税務、法律、会計または投資に関する助言ではありません。"
+              ],
+              "limitations": [
+                "必要な月間支出と目標月数はゼロより大きく、現在の貯蓄は負の値にできません。",
+                "目標月数は24か月を超えられません。",
+                "これは計画のための例示であり、貯蓄商品を推奨するものではありません。"
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "{field} は有限の有効な数値である必要があります。",
+                "recoveryHint": "有限の有効な数値を入力して、もう一度お試しください。"
+              },
+              {
+                "key": "positive",
+                "message": "{field} はゼロより大きい必要があります。",
+                "recoveryHint": "ゼロより大きい値を入力してください。"
+              },
+              {
+                "key": "negative",
+                "message": "{field} は負の値にできません。",
+                "recoveryHint": "ゼロまたは正の値を入力してください。"
+              },
+              {
+                "key": "months-limit",
+                "message": "目標月数は24か月を超えられません。",
+                "recoveryHint": "24か月以下の目標期間を選択してください。"
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-emergency-fund-1",
+                "question": "目標金額はどのように計算されますか？",
+                "answer": "必要な月間支出に選択した月数を掛けて計算します。"
+              },
+              {
+                "key": "faq-emergency-fund-2",
+                "question": "現在の貯蓄が目標を上回る場合はどうなりますか？",
+                "answer": "残額はゼロになり、達成率は100%を上限として表示されます。"
+              },
+              {
+                "key": "faq-emergency-fund-3",
+                "question": "貯蓄商品を推奨しますか？",
+                "answer": "いいえ。説明用の目標金額を計算するだけです。"
+              }
+            ],
+            "guide": {
+              "title": "緊急資金計算機ガイド",
+              "introduction": "必要な月間支出に選択したカバー期間を掛けて緊急予備資金の目標を推定し、現在の貯蓄と比較します。",
+              "steps": [
+                {
+                  "key": "emergency-fund-guide-step-1",
+                  "title": "ステップ 1",
+                  "body": "必要な月間支出を入力します。"
+                },
+                {
+                  "key": "emergency-fund-guide-step-2",
+                  "title": "ステップ 2",
+                  "body": "目標とするカバー期間（月数、最大24か月）を選択します。"
+                },
+                {
+                  "key": "emergency-fund-guide-step-3",
+                  "title": "ステップ 3",
+                  "body": "現在の緊急用貯蓄額を入力します。"
+                },
+                {
+                  "key": "emergency-fund-guide-step-4",
+                  "title": "ステップ 4",
+                  "body": "必要な月間支出に選択した月数を掛けて目標金額を計算します。"
+                },
+                {
+                  "key": "emergency-fund-guide-step-5",
+                  "title": "ステップ 5",
+                  "body": "現在の貯蓄を目標と比較し、残額、カバー期間、上限100%の達成率を確認します。"
+                }
+              ],
+              "sections": [
+                {
+                  "key": "emergency-fund-guide-section-1",
+                  "heading": "計算方法",
+                  "body": "Target fund = essential monthly expenses × target coverage months. Remaining gap = max(0, target fund − current savings). Expense coverage = current savings ÷ essential monthly expenses. Progress (%) = min(100, current savings ÷ target fund × 100)."
+                },
+                {
+                  "key": "emergency-fund-guide-section-2",
+                  "heading": "前提条件と制限",
+                  "body": "必要な月間支出と目標月数はゼロより大きく、現在の貯蓄は負の値にできません。 目標月数は24か月を超えられません。 これは計画のための例示であり、貯蓄商品を推奨するものではありません。"
+                }
+              ]
+            },
+            "seo": {
+              "title": "緊急資金計算機 | FinPulse Hub",
+              "metaDescription": "必要な月間支出と選択した月数から、緊急時に備える現金目標を設定します。",
+              "h1": "緊急資金計算機",
+              "introduction": "必要な月間支出に選択したカバー期間を掛けて緊急予備資金の目標を推定し、現在の貯蓄と比較します。",
+              "faq": [
+                {
+                  "key": "faq-emergency-fund-1",
+                  "question": "目標金額はどのように計算されますか？",
+                  "answer": "必要な月間支出に選択した月数を掛けて計算します。"
+                },
+                {
+                  "key": "faq-emergency-fund-2",
+                  "question": "現在の貯蓄が目標を上回る場合はどうなりますか？",
+                  "answer": "残額はゼロになり、達成率は100%を上限として表示されます。"
+                },
+                {
+                  "key": "faq-emergency-fund-3",
+                  "question": "貯蓄商品を推奨しますか？",
+                  "answer": "いいえ。説明用の目標金額を計算するだけです。"
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "緊急資金計算機",
+              "formLabel": "緊急資金計算機の入力フォーム",
+              "resultAnnouncement": "緊急資金計算機の計算結果",
+              "chartLabel": "緊急資金目標のチャート",
+              "controlLabels": [
+                {
+                  "key": "expenses",
+                  "label": "必要な月間支出"
+                },
+                {
+                  "key": "months",
+                  "label": "目標カバー期間（月）"
+                },
+                {
+                  "key": "current",
+                  "label": "現在の緊急用貯蓄"
+                }
+              ]
+            }
+          }
         },
         "ru": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "Калькулятор резервного фонда",
+              "description": "Определите целевой размер денежного резерва на основе обязательных ежемесячных расходов и выбранного количества месяцев.",
+              "category": "Финансы и деньги",
+              "subcategory": "Калькуляторы сбережений и планирования"
+            },
+            "inputs": [
+              {
+                "key": "expenses",
+                "label": "Обязательные ежемесячные расходы"
+              },
+              {
+                "key": "months",
+                "label": "Целевой период покрытия (месяцы)"
+              },
+              {
+                "key": "current",
+                "label": "Текущие резервные сбережения"
+              }
+            ],
+            "actions": {
+              "calculate": "Рассчитать",
+              "recalculate": "Пересчитать",
+              "clear": "Очистить",
+              "reset": "Сбросить",
+              "copy": "Копировать",
+              "download": "Скачать",
+              "print": "Печать"
+            },
+            "results": {
+              "heading": "Результат",
+              "summary": "Целевой резервный фонд",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "Текущие сбережения"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "Остаток до цели"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "Покрытие текущих расходов"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "Выполнение цели"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "Обязательные ежемесячные расходы"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "Целевой период (месяцы)"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "Целевая сумма"
+                },
+                {
+                  "key": "breakdown-4",
+                  "label": "Текущие сбережения"
+                },
+                {
+                  "key": "breakdown-5",
+                  "label": "Остаток"
+                },
+                {
+                  "key": "breakdown-6",
+                  "label": "Покрытие расходов"
+                }
+              ],
+              "chart": {
+                "title": "Целевой резервный фонд",
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": "Формула и этапы расчёта",
+              "formulaDescription": "Target fund = essential monthly expenses × target coverage months. Remaining gap = max(0, target fund − current savings). Expense coverage = current savings ÷ essential monthly expenses. Progress (%) = min(100, current savings ÷ target fund × 100).",
+              "steps": [
+                "Введите обязательные ежемесячные расходы.",
+                "Выберите целевой период покрытия в месяцах (не более 24).",
+                "Введите текущую сумму резервных сбережений.",
+                "Умножьте обязательные ежемесячные расходы на выбранное количество месяцев, чтобы рассчитать целевую сумму.",
+                "Сравните текущие сбережения с целью, чтобы увидеть остаток, покрытие расходов и прогресс с ограничением 100%."
+              ],
+              "assumptions": [
+                "Обязательные ежемесячные расходы и целевой период должны быть больше нуля; текущие сбережения не могут быть отрицательными.",
+                "Целевой период не может превышать 24 месяца."
+              ],
+              "notes": [
+                "Расчёт выполняется локально в браузере на основе введённых вами значений. Перед использованием оценки проверьте примечание к результату и допущения."
+              ],
+              "disclaimers": [
+                "Калькулятор предоставляет информационную оценку и не является финансовой, налоговой, юридической, бухгалтерской или инвестиционной рекомендацией."
+              ],
+              "limitations": [
+                "Обязательные ежемесячные расходы и целевой период должны быть больше нуля; текущие сбережения не могут быть отрицательными.",
+                "Целевой период не может превышать 24 месяца.",
+                "Это иллюстрация для планирования, а не рекомендация сберегательного продукта."
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "{field} должно быть конечным числом.",
+                "recoveryHint": "Введите корректное конечное число и повторите попытку."
+              },
+              {
+                "key": "positive",
+                "message": "{field} должно быть больше нуля.",
+                "recoveryHint": "Введите значение больше нуля."
+              },
+              {
+                "key": "negative",
+                "message": "{field} не должно быть отрицательным.",
+                "recoveryHint": "Введите нулевое или положительное значение."
+              },
+              {
+                "key": "months-limit",
+                "message": "Целевой период не может превышать 24 месяца.",
+                "recoveryHint": "Выберите период не более 24 месяцев."
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-emergency-fund-1",
+                "question": "Как рассчитывается целевая сумма?",
+                "answer": "Обязательные ежемесячные расходы умножаются на выбранное количество месяцев."
+              },
+              {
+                "key": "faq-emergency-fund-2",
+                "question": "Что произойдёт, если текущие сбережения превысят цель?",
+                "answer": "Остаток станет равен нулю, а прогресс будет ограничен 100%."
+              },
+              {
+                "key": "faq-emergency-fund-3",
+                "question": "Рекомендует ли калькулятор сберегательный продукт?",
+                "answer": "Нет. Он только рассчитывает иллюстративную целевую сумму."
+              }
+            ],
+            "guide": {
+              "title": "Руководство по калькулятору резервного фонда",
+              "introduction": "Оцените целевой резерв, умножив обязательные ежемесячные расходы на выбранный период покрытия, а затем сравните его с текущими сбережениями.",
+              "steps": [
+                {
+                  "key": "emergency-fund-guide-step-1",
+                  "title": "Шаг 1",
+                  "body": "Введите обязательные ежемесячные расходы."
+                },
+                {
+                  "key": "emergency-fund-guide-step-2",
+                  "title": "Шаг 2",
+                  "body": "Выберите целевой период покрытия в месяцах (не более 24)."
+                },
+                {
+                  "key": "emergency-fund-guide-step-3",
+                  "title": "Шаг 3",
+                  "body": "Введите текущую сумму резервных сбережений."
+                },
+                {
+                  "key": "emergency-fund-guide-step-4",
+                  "title": "Шаг 4",
+                  "body": "Умножьте обязательные ежемесячные расходы на выбранное количество месяцев, чтобы рассчитать целевую сумму."
+                },
+                {
+                  "key": "emergency-fund-guide-step-5",
+                  "title": "Шаг 5",
+                  "body": "Сравните текущие сбережения с целью, чтобы увидеть остаток, покрытие расходов и прогресс с ограничением 100%."
+                }
+              ],
+              "sections": [
+                {
+                  "key": "emergency-fund-guide-section-1",
+                  "heading": "Метод расчёта",
+                  "body": "Target fund = essential monthly expenses × target coverage months. Remaining gap = max(0, target fund − current savings). Expense coverage = current savings ÷ essential monthly expenses. Progress (%) = min(100, current savings ÷ target fund × 100)."
+                },
+                {
+                  "key": "emergency-fund-guide-section-2",
+                  "heading": "Допущения и ограничения",
+                  "body": "Обязательные ежемесячные расходы и целевой период должны быть больше нуля; текущие сбережения не могут быть отрицательными. Целевой период не может превышать 24 месяца. Это иллюстрация для планирования, а не рекомендация сберегательного продукта."
+                }
+              ]
+            },
+            "seo": {
+              "title": "Калькулятор резервного фонда | FinPulse Hub",
+              "metaDescription": "Определите целевой размер денежного резерва на основе обязательных ежемесячных расходов и выбранного количества месяцев.",
+              "h1": "Калькулятор резервного фонда",
+              "introduction": "Оцените целевой резерв, умножив обязательные ежемесячные расходы на выбранный период покрытия, а затем сравните его с текущими сбережениями.",
+              "faq": [
+                {
+                  "key": "faq-emergency-fund-1",
+                  "question": "Как рассчитывается целевая сумма?",
+                  "answer": "Обязательные ежемесячные расходы умножаются на выбранное количество месяцев."
+                },
+                {
+                  "key": "faq-emergency-fund-2",
+                  "question": "Что произойдёт, если текущие сбережения превысят цель?",
+                  "answer": "Остаток станет равен нулю, а прогресс будет ограничен 100%."
+                },
+                {
+                  "key": "faq-emergency-fund-3",
+                  "question": "Рекомендует ли калькулятор сберегательный продукт?",
+                  "answer": "Нет. Он только рассчитывает иллюстративную целевую сумму."
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "Калькулятор резервного фонда",
+              "formLabel": "Форма калькулятора резервного фонда",
+              "resultAnnouncement": "Результат расчёта резервного фонда",
+              "chartLabel": "Диаграмма целевого резервного фонда",
+              "controlLabels": [
+                {
+                  "key": "expenses",
+                  "label": "Обязательные ежемесячные расходы"
+                },
+                {
+                  "key": "months",
+                  "label": "Целевой период покрытия (месяцы)"
+                },
+                {
+                  "key": "current",
+                  "label": "Текущие резервные сбережения"
+                }
+              ]
+            }
+          }
         }
       },
       "sourceExtractionStatus": "source-record-complete",
-      "sourceTranslationStatus": "not-started",
+      "sourceTranslationStatus": "draft",
       "sourceCompletenessStatus": "complete"
     },
     {
