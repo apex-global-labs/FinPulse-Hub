@@ -53650,32 +53650,1238 @@
       },
       "locales": {
         "hi": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "मार्कअप कैलकुलेटर",
+              "description": "लागत से मार्कअप राशि, बिक्री मूल्य और समकक्ष सकल मार्जिन की गणना करें।",
+              "category": "वित्त और धन",
+              "subcategory": "व्यवसाय और फ्रीलांस कैलकुलेटर"
+            },
+            "inputs": [
+              {
+                "key": "cost",
+                "label": "इकाई लागत"
+              },
+              {
+                "key": "markup",
+                "label": "मार्कअप (%)"
+              }
+            ],
+            "results": {
+              "heading": "परिणाम",
+              "summary": "बिक्री मूल्य",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "इकाई लागत"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "मार्कअप राशि"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "मार्कअप दर"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "समकक्ष सकल मार्जिन"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "इकाई लागत"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "मार्कअप राशि"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "मार्कअप दर"
+                },
+                {
+                  "key": "breakdown-4",
+                  "label": "समकक्ष सकल मार्जिन"
+                },
+                {
+                  "key": "breakdown-5"
+                }
+              ],
+              "chart": {
+                "title": "बिक्री मूल्य",
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": "सूत्र और गणना के चरण",
+              "formulaDescription": "Markup amount = cost × markup percentage ÷ 100. Selling price = cost + markup amount. Gross margin = markup amount ÷ selling price × 100 when selling price is positive.",
+              "steps": [
+                "इकाई लागत और मार्कअप प्रतिशत दर्ज करें।",
+                "मार्कअप राशि निकालने के लिए लागत को मार्कअप प्रतिशत से गुणा करें।",
+                "बिक्री मूल्य निकालने के लिए मार्कअप को लागत में जोड़ें।",
+                "सकल मार्जिन निकालने के लिए मार्कअप राशि को बिक्री मूल्य से विभाजित करें।"
+              ],
+              "assumptions": [
+                "मार्कअप लागत का प्रतिशत होता है।",
+                "सकल मार्जिन लाभ को बिक्री मूल्य से विभाजित करता है; यह मार्कअप से अलग है।",
+                "कर, शुल्क, ओवरहेड और बाजार मूल्य की सीमाएँ शामिल नहीं हैं।"
+              ],
+              "notes": [
+                "यह केवल योजना बनाने का अनुमान है; इनपुट और लागू नियम सत्यापित करें।"
+              ],
+              "disclaimers": [
+                "यह कैलकुलेटर दर्ज मानों और मान्यताओं पर आधारित अनुमान देता है। यह वित्तीय, कानूनी या कर सलाह नहीं है।"
+              ],
+              "limitations": [
+                "मार्कअप लागत का प्रतिशत होता है।",
+                "सकल मार्जिन लाभ को बिक्री मूल्य से विभाजित करता है; यह मार्कअप से अलग है।",
+                "कर, शुल्क, ओवरहेड और बाजार मूल्य की सीमाएँ शामिल नहीं हैं।"
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "{field} एक सीमित संख्या होनी चाहिए।",
+                "recoveryHint": "सही संख्या दर्ज करें और फिर प्रयास करें।"
+              },
+              {
+                "key": "negative",
+                "message": "{field} ऋणात्मक नहीं हो सकता।",
+                "recoveryHint": "शून्य या धनात्मक मान दर्ज करें।"
+              },
+              {
+                "key": "markup",
+                "message": "मार्कअप 10,000% से अधिक नहीं हो सकता।",
+                "recoveryHint": "0% से 10,000% तक मार्कअप प्रतिशत दर्ज करें।"
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-markup-1",
+                "question": "मार्कअप क्या है?",
+                "answer": "मार्कअप लागत में जोड़ी गई राशि है, जिसे लागत के प्रतिशत के रूप में व्यक्त किया जाता है।"
+              },
+              {
+                "key": "faq-markup-2",
+                "question": "बिक्री मूल्य कैसे निकाला जाता है?",
+                "answer": "बिक्री मूल्य लागत को एक और मार्कअप प्रतिशत के गुणक से गुणा करके मिलता है।"
+              },
+              {
+                "key": "faq-markup-3",
+                "question": "सकल मार्जिन इससे कैसे अलग है?",
+                "answer": "सकल मार्जिन लाभ को बिक्री मूल्य से विभाजित करता है; मार्कअप लाभ को लागत से विभाजित करता है।"
+              }
+            ],
+            "seo": {
+              "title": "मार्कअप कैलकुलेटर | FinPulse Hub",
+              "metaDescription": "इकाई लागत और मार्कअप प्रतिशत से बिक्री मूल्य निकालें, फिर मार्कअप की तुलना सकल मार्जिन से करें।",
+              "h1": "मार्कअप कैलकुलेटर",
+              "introduction": "इकाई लागत और मार्कअप प्रतिशत से बिक्री मूल्य निकालें, फिर मार्कअप की तुलना सकल मार्जिन से करें।",
+              "faq": [
+                {
+                  "key": "faq-markup-1",
+                  "question": "मार्कअप क्या है?",
+                  "answer": "मार्कअप लागत में जोड़ी गई राशि है, जिसे लागत के प्रतिशत के रूप में व्यक्त किया जाता है।"
+                },
+                {
+                  "key": "faq-markup-2",
+                  "question": "बिक्री मूल्य कैसे निकाला जाता है?",
+                  "answer": "बिक्री मूल्य लागत को एक और मार्कअप प्रतिशत के गुणक से गुणा करके मिलता है।"
+                },
+                {
+                  "key": "faq-markup-3",
+                  "question": "सकल मार्जिन इससे कैसे अलग है?",
+                  "answer": "सकल मार्जिन लाभ को बिक्री मूल्य से विभाजित करता है; मार्कअप लाभ को लागत से विभाजित करता है।"
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "मार्कअप कैलकुलेटर",
+              "formLabel": "मार्कअप कैलकुलेटर फ़ॉर्म",
+              "resultAnnouncement": "मार्कअप गणना परिणाम",
+              "chartLabel": "मार्कअप बिक्री मूल्य का चार्ट",
+              "controlLabels": [
+                {
+                  "key": "cost",
+                  "label": "इकाई लागत"
+                },
+                {
+                  "key": "markup",
+                  "label": "मार्कअप (%)"
+                }
+              ]
+            },
+            "guide": {
+              "title": "मार्कअप कैलकुलेटर मार्गदर्शिका",
+              "introduction": "लागत से मार्कअप राशि, बिक्री मूल्य और समकक्ष सकल मार्जिन की गणना करें।",
+              "steps": [
+                {
+                  "key": "markup-guide-step-1",
+                  "title": "चरण 1",
+                  "body": "इकाई लागत और मार्कअप प्रतिशत दर्ज करें।"
+                },
+                {
+                  "key": "markup-guide-step-2",
+                  "title": "चरण 2",
+                  "body": "मार्कअप राशि निकालने के लिए लागत को मार्कअप प्रतिशत से गुणा करें।"
+                },
+                {
+                  "key": "markup-guide-step-3",
+                  "title": "चरण 3",
+                  "body": "बिक्री मूल्य निकालने के लिए मार्कअप को लागत में जोड़ें।"
+                },
+                {
+                  "key": "markup-guide-step-4",
+                  "title": "चरण 4",
+                  "body": "सकल मार्जिन निकालने के लिए मार्कअप राशि को बिक्री मूल्य से विभाजित करें।"
+                }
+              ],
+              "sections": [
+                {
+                  "key": "markup-guide-section-1",
+                  "heading": "गणना की विधि",
+                  "body": "Markup amount = cost × markup percentage ÷ 100. Selling price = cost + markup amount. Gross margin = markup amount ÷ selling price × 100 when selling price is positive."
+                },
+                {
+                  "key": "markup-guide-section-2",
+                  "heading": "मान्यताएँ और सीमाएँ",
+                  "body": "मार्कअप लागत का प्रतिशत होता है। सकल मार्जिन लाभ को बिक्री मूल्य से विभाजित करता है; यह मार्कअप से अलग है। कर, शुल्क, ओवरहेड और बाजार मूल्य की सीमाएँ शामिल नहीं हैं।"
+                }
+              ]
+            }
+          }
         },
         "ar": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "حاسبة هامش الإضافة",
+              "description": "احسب مبلغ الإضافة وسعر البيع والهامش الإجمالي المكافئ من التكلفة.",
+              "category": "التمويل والمال",
+              "subcategory": "حاسبات الأعمال والعمل الحر"
+            },
+            "inputs": [
+              {
+                "key": "cost",
+                "label": "تكلفة الوحدة"
+              },
+              {
+                "key": "markup",
+                "label": "نسبة الإضافة (%)"
+              }
+            ],
+            "results": {
+              "heading": "النتيجة",
+              "summary": "سعر البيع",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "تكلفة الوحدة"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "مبلغ الإضافة"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "نسبة الإضافة"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "الهامش الإجمالي المكافئ"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "تكلفة الوحدة"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "مبلغ الإضافة"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "نسبة الإضافة"
+                },
+                {
+                  "key": "breakdown-4",
+                  "label": "الهامش الإجمالي المكافئ"
+                },
+                {
+                  "key": "breakdown-5"
+                }
+              ],
+              "chart": {
+                "title": "سعر البيع",
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": "الصيغة وخطوات الحساب",
+              "formulaDescription": "Markup amount = cost × markup percentage ÷ 100. Selling price = cost + markup amount. Gross margin = markup amount ÷ selling price × 100 when selling price is positive.",
+              "steps": [
+                "أدخل تكلفة الوحدة ونسبة الإضافة.",
+                "اضرب التكلفة في نسبة الإضافة لحساب مبلغ الإضافة.",
+                "أضف مبلغ الإضافة إلى التكلفة لحساب سعر البيع.",
+                "اقسم مبلغ الإضافة على سعر البيع لحساب الهامش الإجمالي."
+              ],
+              "assumptions": [
+                "الإضافة نسبة من التكلفة.",
+                "الهامش الإجمالي هو الربح مقسومًا على سعر البيع؛ وهو يختلف عن الإضافة.",
+                "لا تشمل الحسابات الضرائب والرسوم والتكاليف العامة وقيود أسعار السوق."
+              ],
+              "notes": [
+                "هذا تقدير للتخطيط فقط؛ تحقق من المدخلات والقواعد المعمول بها."
+              ],
+              "disclaimers": [
+                "تقدم هذه الحاسبة تقديرًا بناءً على القيم والافتراضات المدخلة. وليست نصيحة مالية أو قانونية أو ضريبية."
+              ],
+              "limitations": [
+                "الإضافة نسبة من التكلفة.",
+                "الهامش الإجمالي هو الربح مقسومًا على سعر البيع؛ وهو يختلف عن الإضافة.",
+                "لا تشمل الحسابات الضرائب والرسوم والتكاليف العامة وقيود أسعار السوق."
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "يجب أن يكون {field} رقمًا محدودًا.",
+                "recoveryHint": "أدخل رقمًا صالحًا ثم حاول مرة أخرى."
+              },
+              {
+                "key": "negative",
+                "message": "يجب ألا تكون قيمة {field} سالبة.",
+                "recoveryHint": "أدخل صفرًا أو قيمة موجبة."
+              },
+              {
+                "key": "markup",
+                "message": "يجب ألا تتجاوز الإضافة 10,000%.",
+                "recoveryHint": "أدخل نسبة إضافة من 0% إلى 10,000%."
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-markup-1",
+                "question": "ما الإضافة السعرية؟",
+                "answer": "هي المبلغ المضاف إلى التكلفة، ويُعبّر عنه كنسبة من التكلفة."
+              },
+              {
+                "key": "faq-markup-2",
+                "question": "كيف يُحسب سعر البيع؟",
+                "answer": "يساوي سعر البيع التكلفة مضروبة في واحد زائد نسبة الإضافة."
+              },
+              {
+                "key": "faq-markup-3",
+                "question": "كيف يختلف الهامش الإجمالي؟",
+                "answer": "يقسم الهامش الإجمالي الربح على سعر البيع، بينما تقسم الإضافة الربح على التكلفة."
+              }
+            ],
+            "seo": {
+              "title": "حاسبة هامش الإضافة | FinPulse Hub",
+              "metaDescription": "حوّل تكلفة الوحدة ونسبة الإضافة إلى سعر بيع، ثم قارن الإضافة بالهامش الإجمالي.",
+              "h1": "حاسبة هامش الإضافة",
+              "introduction": "حوّل تكلفة الوحدة ونسبة الإضافة إلى سعر بيع، ثم قارن الإضافة بالهامش الإجمالي.",
+              "faq": [
+                {
+                  "key": "faq-markup-1",
+                  "question": "ما الإضافة السعرية؟",
+                  "answer": "هي المبلغ المضاف إلى التكلفة، ويُعبّر عنه كنسبة من التكلفة."
+                },
+                {
+                  "key": "faq-markup-2",
+                  "question": "كيف يُحسب سعر البيع؟",
+                  "answer": "يساوي سعر البيع التكلفة مضروبة في واحد زائد نسبة الإضافة."
+                },
+                {
+                  "key": "faq-markup-3",
+                  "question": "كيف يختلف الهامش الإجمالي؟",
+                  "answer": "يقسم الهامش الإجمالي الربح على سعر البيع، بينما تقسم الإضافة الربح على التكلفة."
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "حاسبة هامش الإضافة",
+              "formLabel": "نموذج حاسبة هامش الإضافة",
+              "resultAnnouncement": "نتيجة حساب الإضافة",
+              "chartLabel": "مخطط سعر البيع بعد الإضافة",
+              "controlLabels": [
+                {
+                  "key": "cost",
+                  "label": "تكلفة الوحدة"
+                },
+                {
+                  "key": "markup",
+                  "label": "نسبة الإضافة (%)"
+                }
+              ]
+            },
+            "guide": {
+              "title": "دليل حاسبة هامش الإضافة",
+              "introduction": "احسب مبلغ الإضافة وسعر البيع والهامش الإجمالي المكافئ من التكلفة.",
+              "steps": [
+                {
+                  "key": "markup-guide-step-1",
+                  "title": "الخطوة 1",
+                  "body": "أدخل تكلفة الوحدة ونسبة الإضافة."
+                },
+                {
+                  "key": "markup-guide-step-2",
+                  "title": "الخطوة 2",
+                  "body": "اضرب التكلفة في نسبة الإضافة لحساب مبلغ الإضافة."
+                },
+                {
+                  "key": "markup-guide-step-3",
+                  "title": "الخطوة 3",
+                  "body": "أضف مبلغ الإضافة إلى التكلفة لحساب سعر البيع."
+                },
+                {
+                  "key": "markup-guide-step-4",
+                  "title": "الخطوة 4",
+                  "body": "اقسم مبلغ الإضافة على سعر البيع لحساب الهامش الإجمالي."
+                }
+              ],
+              "sections": [
+                {
+                  "key": "markup-guide-section-1",
+                  "heading": "طريقة الحساب",
+                  "body": "Markup amount = cost × markup percentage ÷ 100. Selling price = cost + markup amount. Gross margin = markup amount ÷ selling price × 100 when selling price is positive."
+                },
+                {
+                  "key": "markup-guide-section-2",
+                  "heading": "الافتراضات والقيود",
+                  "body": "الإضافة نسبة من التكلفة. الهامش الإجمالي هو الربح مقسومًا على سعر البيع؛ وهو يختلف عن الإضافة. لا تشمل الحسابات الضرائب والرسوم والتكاليف العامة وقيود أسعار السوق."
+                }
+              ]
+            }
+          }
         },
         "ur": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "مارک اپ کیلکولیٹر",
+              "description": "لاگت سے مارک اپ رقم، فروخت کی قیمت اور مساوی مجموعی مارجن معلوم کریں۔",
+              "category": "مالیات اور رقم",
+              "subcategory": "کاروبار اور فری لانس کیلکولیٹرز"
+            },
+            "inputs": [
+              {
+                "key": "cost",
+                "label": "فی یونٹ لاگت"
+              },
+              {
+                "key": "markup",
+                "label": "مارک اپ (%)"
+              }
+            ],
+            "results": {
+              "heading": "نتیجہ",
+              "summary": "فروخت کی قیمت",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "فی یونٹ لاگت"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "مارک اپ رقم"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "مارک اپ شرح"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "مساوی مجموعی مارجن"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "فی یونٹ لاگت"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "مارک اپ رقم"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "مارک اپ شرح"
+                },
+                {
+                  "key": "breakdown-4",
+                  "label": "مساوی مجموعی مارجن"
+                },
+                {
+                  "key": "breakdown-5"
+                }
+              ],
+              "chart": {
+                "title": "فروخت کی قیمت",
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": "فارمولا اور حساب کے مراحل",
+              "formulaDescription": "Markup amount = cost × markup percentage ÷ 100. Selling price = cost + markup amount. Gross margin = markup amount ÷ selling price × 100 when selling price is positive.",
+              "steps": [
+                "فی یونٹ لاگت اور مارک اپ فیصد درج کریں۔",
+                "مارک اپ رقم معلوم کرنے کے لیے لاگت کو مارک اپ فیصد سے ضرب دیں۔",
+                "فروخت کی قیمت معلوم کرنے کے لیے مارک اپ کو لاگت میں شامل کریں۔",
+                "مجموعی مارجن معلوم کرنے کے لیے مارک اپ رقم کو فروخت کی قیمت پر تقسیم کریں۔"
+              ],
+              "assumptions": [
+                "مارک اپ لاگت کا فیصد ہوتا ہے۔",
+                "مجموعی مارجن منافع کو فروخت کی قیمت پر تقسیم کرتا ہے؛ یہ مارک اپ سے مختلف ہے۔",
+                "ٹیکس، فیس، عمومی اخراجات اور مارکیٹ قیمت کی پابندیاں شامل نہیں ہیں۔"
+              ],
+              "notes": [
+                "یہ صرف منصوبہ بندی کا تخمینہ ہے؛ ان پٹس اور متعلقہ قواعد کی تصدیق کریں۔"
+              ],
+              "disclaimers": [
+                "یہ کیلکولیٹر درج کردہ اقدار اور مفروضوں کی بنیاد پر تخمینہ دیتا ہے۔ یہ مالی، قانونی یا ٹیکس مشورہ نہیں ہے۔"
+              ],
+              "limitations": [
+                "مارک اپ لاگت کا فیصد ہوتا ہے۔",
+                "مجموعی مارجن منافع کو فروخت کی قیمت پر تقسیم کرتا ہے؛ یہ مارک اپ سے مختلف ہے۔",
+                "ٹیکس، فیس، عمومی اخراجات اور مارکیٹ قیمت کی پابندیاں شامل نہیں ہیں۔"
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "{field} ایک محدود عدد ہونا چاہیے۔",
+                "recoveryHint": "درست عدد درج کریں اور دوبارہ کوشش کریں۔"
+              },
+              {
+                "key": "negative",
+                "message": "{field} منفی نہیں ہو سکتا۔",
+                "recoveryHint": "صفر یا مثبت قدر درج کریں۔"
+              },
+              {
+                "key": "markup",
+                "message": "مارک اپ 10,000% سے زیادہ نہیں ہو سکتا۔",
+                "recoveryHint": "0% سے 10,000% تک مارک اپ فیصد درج کریں۔"
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-markup-1",
+                "question": "مارک اپ کیا ہے؟",
+                "answer": "یہ لاگت میں شامل کی جانے والی رقم ہے جسے لاگت کے فیصد کے طور پر ظاہر کیا جاتا ہے۔"
+              },
+              {
+                "key": "faq-markup-2",
+                "question": "فروخت کی قیمت کیسے نکلتی ہے؟",
+                "answer": "فروخت کی قیمت لاگت کو ایک جمع مارک اپ فیصد سے ضرب دے کر حاصل ہوتی ہے۔"
+              },
+              {
+                "key": "faq-markup-3",
+                "question": "مجموعی مارجن کیسے مختلف ہے؟",
+                "answer": "مجموعی مارجن منافع کو فروخت کی قیمت پر تقسیم کرتا ہے؛ مارک اپ منافع کو لاگت پر تقسیم کرتا ہے۔"
+              }
+            ],
+            "seo": {
+              "title": "مارک اپ کیلکولیٹر | FinPulse Hub",
+              "metaDescription": "فی یونٹ لاگت اور مارک اپ فیصد سے فروخت کی قیمت نکالیں اور مارک اپ کا مجموعی مارجن سے موازنہ کریں۔",
+              "h1": "مارک اپ کیلکولیٹر",
+              "introduction": "فی یونٹ لاگت اور مارک اپ فیصد سے فروخت کی قیمت نکالیں اور مارک اپ کا مجموعی مارجن سے موازنہ کریں۔",
+              "faq": [
+                {
+                  "key": "faq-markup-1",
+                  "question": "مارک اپ کیا ہے؟",
+                  "answer": "یہ لاگت میں شامل کی جانے والی رقم ہے جسے لاگت کے فیصد کے طور پر ظاہر کیا جاتا ہے۔"
+                },
+                {
+                  "key": "faq-markup-2",
+                  "question": "فروخت کی قیمت کیسے نکلتی ہے؟",
+                  "answer": "فروخت کی قیمت لاگت کو ایک جمع مارک اپ فیصد سے ضرب دے کر حاصل ہوتی ہے۔"
+                },
+                {
+                  "key": "faq-markup-3",
+                  "question": "مجموعی مارجن کیسے مختلف ہے؟",
+                  "answer": "مجموعی مارجن منافع کو فروخت کی قیمت پر تقسیم کرتا ہے؛ مارک اپ منافع کو لاگت پر تقسیم کرتا ہے۔"
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "مارک اپ کیلکولیٹر",
+              "formLabel": "مارک اپ کیلکولیٹر فارم",
+              "resultAnnouncement": "مارک اپ کا حسابی نتیجہ",
+              "chartLabel": "مارک اپ فروخت قیمت کا چارٹ",
+              "controlLabels": [
+                {
+                  "key": "cost",
+                  "label": "فی یونٹ لاگت"
+                },
+                {
+                  "key": "markup",
+                  "label": "مارک اپ (%)"
+                }
+              ]
+            },
+            "guide": {
+              "title": "مارک اپ کیلکولیٹر کی رہنما کتاب",
+              "introduction": "لاگت سے مارک اپ رقم، فروخت کی قیمت اور مساوی مجموعی مارجن معلوم کریں۔",
+              "steps": [
+                {
+                  "key": "markup-guide-step-1",
+                  "title": "مرحلہ 1",
+                  "body": "فی یونٹ لاگت اور مارک اپ فیصد درج کریں۔"
+                },
+                {
+                  "key": "markup-guide-step-2",
+                  "title": "مرحلہ 2",
+                  "body": "مارک اپ رقم معلوم کرنے کے لیے لاگت کو مارک اپ فیصد سے ضرب دیں۔"
+                },
+                {
+                  "key": "markup-guide-step-3",
+                  "title": "مرحلہ 3",
+                  "body": "فروخت کی قیمت معلوم کرنے کے لیے مارک اپ کو لاگت میں شامل کریں۔"
+                },
+                {
+                  "key": "markup-guide-step-4",
+                  "title": "مرحلہ 4",
+                  "body": "مجموعی مارجن معلوم کرنے کے لیے مارک اپ رقم کو فروخت کی قیمت پر تقسیم کریں۔"
+                }
+              ],
+              "sections": [
+                {
+                  "key": "markup-guide-section-1",
+                  "heading": "حساب کا طریقہ",
+                  "body": "Markup amount = cost × markup percentage ÷ 100. Selling price = cost + markup amount. Gross margin = markup amount ÷ selling price × 100 when selling price is positive."
+                },
+                {
+                  "key": "markup-guide-section-2",
+                  "heading": "مفروضے اور حدود",
+                  "body": "مارک اپ لاگت کا فیصد ہوتا ہے۔ مجموعی مارجن منافع کو فروخت کی قیمت پر تقسیم کرتا ہے؛ یہ مارک اپ سے مختلف ہے۔ ٹیکس، فیس، عمومی اخراجات اور مارکیٹ قیمت کی پابندیاں شامل نہیں ہیں۔"
+                }
+              ]
+            }
+          }
         },
         "zh-CN": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "加价计算器",
+              "description": "根据成本计算加价金额、销售价格及对应的毛利率。",
+              "category": "财务与金钱",
+              "subcategory": "商业与自由职业计算器"
+            },
+            "inputs": [
+              {
+                "key": "cost",
+                "label": "单位成本"
+              },
+              {
+                "key": "markup",
+                "label": "加价率（%）"
+              }
+            ],
+            "results": {
+              "heading": "结果",
+              "summary": "销售价格",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "单位成本"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "加价金额"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "加价率"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "对应毛利率"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "单位成本"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "加价金额"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "加价率"
+                },
+                {
+                  "key": "breakdown-4",
+                  "label": "对应毛利率"
+                },
+                {
+                  "key": "breakdown-5"
+                }
+              ],
+              "chart": {
+                "title": "销售价格",
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": "公式与计算步骤",
+              "formulaDescription": "Markup amount = cost × markup percentage ÷ 100. Selling price = cost + markup amount. Gross margin = markup amount ÷ selling price × 100 when selling price is positive.",
+              "steps": [
+                "输入单位成本和加价百分比。",
+                "将成本乘以加价百分比，计算加价金额。",
+                "将加价金额加到成本上，计算销售价格。",
+                "用加价金额除以销售价格，计算毛利率。"
+              ],
+              "assumptions": [
+                "加价率是相对于成本的百分比。",
+                "毛利率是利润除以销售价格，与加价率不同。",
+                "不包含税费、手续费、管理费用及市场价格限制。"
+              ],
+              "notes": [
+                "此结果仅用于规划；请核实输入值及适用规则。"
+              ],
+              "disclaimers": [
+                "本计算器根据输入值和假设提供估算，不构成财务、法律或税务建议。"
+              ],
+              "limitations": [
+                "加价率是相对于成本的百分比。",
+                "毛利率是利润除以销售价格，与加价率不同。",
+                "不包含税费、手续费、管理费用及市场价格限制。"
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "{field} 必须是有限数值。",
+                "recoveryHint": "请输入有效数字后重试。"
+              },
+              {
+                "key": "negative",
+                "message": "{field} 不能为负数。",
+                "recoveryHint": "请输入零或正数。"
+              },
+              {
+                "key": "markup",
+                "message": "加价率不能超过 10,000%。",
+                "recoveryHint": "请输入 0% 至 10,000% 的加价率。"
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-markup-1",
+                "question": "什么是加价？",
+                "answer": "加价是添加到成本上的金额，以成本的百分比表示。"
+              },
+              {
+                "key": "faq-markup-2",
+                "question": "如何计算销售价格？",
+                "answer": "销售价格等于成本乘以一加加价率。"
+              },
+              {
+                "key": "faq-markup-3",
+                "question": "毛利率有何不同？",
+                "answer": "毛利率用利润除以销售价格；加价率用利润除以成本。"
+              }
+            ],
+            "seo": {
+              "title": "加价计算器 | FinPulse Hub",
+              "metaDescription": "根据单位成本和加价率计算销售价格，并比较加价率与毛利率。",
+              "h1": "加价计算器",
+              "introduction": "根据单位成本和加价率计算销售价格，并比较加价率与毛利率。",
+              "faq": [
+                {
+                  "key": "faq-markup-1",
+                  "question": "什么是加价？",
+                  "answer": "加价是添加到成本上的金额，以成本的百分比表示。"
+                },
+                {
+                  "key": "faq-markup-2",
+                  "question": "如何计算销售价格？",
+                  "answer": "销售价格等于成本乘以一加加价率。"
+                },
+                {
+                  "key": "faq-markup-3",
+                  "question": "毛利率有何不同？",
+                  "answer": "毛利率用利润除以销售价格；加价率用利润除以成本。"
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "加价计算器",
+              "formLabel": "加价计算器表单",
+              "resultAnnouncement": "加价计算结果",
+              "chartLabel": "加价后销售价格图表",
+              "controlLabels": [
+                {
+                  "key": "cost",
+                  "label": "单位成本"
+                },
+                {
+                  "key": "markup",
+                  "label": "加价率（%）"
+                }
+              ]
+            },
+            "guide": {
+              "title": "加价计算器指南",
+              "introduction": "根据成本计算加价金额、销售价格及对应的毛利率。",
+              "steps": [
+                {
+                  "key": "markup-guide-step-1",
+                  "title": "步骤 1",
+                  "body": "输入单位成本和加价百分比。"
+                },
+                {
+                  "key": "markup-guide-step-2",
+                  "title": "步骤 2",
+                  "body": "将成本乘以加价百分比，计算加价金额。"
+                },
+                {
+                  "key": "markup-guide-step-3",
+                  "title": "步骤 3",
+                  "body": "将加价金额加到成本上，计算销售价格。"
+                },
+                {
+                  "key": "markup-guide-step-4",
+                  "title": "步骤 4",
+                  "body": "用加价金额除以销售价格，计算毛利率。"
+                }
+              ],
+              "sections": [
+                {
+                  "key": "markup-guide-section-1",
+                  "heading": "计算方法",
+                  "body": "Markup amount = cost × markup percentage ÷ 100. Selling price = cost + markup amount. Gross margin = markup amount ÷ selling price × 100 when selling price is positive."
+                },
+                {
+                  "key": "markup-guide-section-2",
+                  "heading": "假设与限制",
+                  "body": "加价率是相对于成本的百分比。 毛利率是利润除以销售价格，与加价率不同。 不包含税费、手续费、管理费用及市场价格限制。"
+                }
+              ]
+            }
+          }
         },
         "ja": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "マークアップ計算機",
+              "description": "原価からマークアップ額、販売価格、対応する粗利益率を計算します。",
+              "category": "金融・お金",
+              "subcategory": "ビジネス・フリーランス計算機"
+            },
+            "inputs": [
+              {
+                "key": "cost",
+                "label": "単位原価"
+              },
+              {
+                "key": "markup",
+                "label": "マークアップ率（%）"
+              }
+            ],
+            "results": {
+              "heading": "結果",
+              "summary": "販売価格",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "単位原価"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "マークアップ額"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "マークアップ率"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "対応する粗利益率"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "単位原価"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "マークアップ額"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "マークアップ率"
+                },
+                {
+                  "key": "breakdown-4",
+                  "label": "対応する粗利益率"
+                },
+                {
+                  "key": "breakdown-5"
+                }
+              ],
+              "chart": {
+                "title": "販売価格",
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": "数式と計算手順",
+              "formulaDescription": "Markup amount = cost × markup percentage ÷ 100. Selling price = cost + markup amount. Gross margin = markup amount ÷ selling price × 100 when selling price is positive.",
+              "steps": [
+                "単位原価とマークアップ率を入力します。",
+                "原価にマークアップ率を掛けて、マークアップ額を計算します。",
+                "マークアップ額を原価に加えて、販売価格を計算します。",
+                "マークアップ額を販売価格で割り、粗利益率を計算します。"
+              ],
+              "assumptions": [
+                "マークアップは原価に対する割合です。",
+                "粗利益率は利益を販売価格で割った値で、マークアップとは異なります。",
+                "税金、手数料、間接費、市場価格の制約は含まれません。"
+              ],
+              "notes": [
+                "これは計画用の推定値です。入力値と適用される規則を検証してください。"
+              ],
+              "disclaimers": [
+                "この計算機は入力値と仮定に基づく推定を提供します。財務、法律、税務に関する助言ではありません。"
+              ],
+              "limitations": [
+                "マークアップは原価に対する割合です。",
+                "粗利益率は利益を販売価格で割った値で、マークアップとは異なります。",
+                "税金、手数料、間接費、市場価格の制約は含まれません。"
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "{field} は有限の数値である必要があります。",
+                "recoveryHint": "有効な数値を入力して、もう一度お試しください。"
+              },
+              {
+                "key": "negative",
+                "message": "{field} に負の値は指定できません。",
+                "recoveryHint": "0以上の値を入力してください。"
+              },
+              {
+                "key": "markup",
+                "message": "マークアップ率は10,000%を超えられません。",
+                "recoveryHint": "マークアップ率は0%～10,000%で入力してください。"
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-markup-1",
+                "question": "マークアップとは何ですか？",
+                "answer": "原価に上乗せする金額で、原価に対する割合として表します。"
+              },
+              {
+                "key": "faq-markup-2",
+                "question": "販売価格はどのように計算しますか？",
+                "answer": "原価に1とマークアップ率を加えた係数を掛けて求めます。"
+              },
+              {
+                "key": "faq-markup-3",
+                "question": "粗利益率との違いは何ですか？",
+                "answer": "粗利益率は利益を販売価格で割り、マークアップは利益を原価で割ります。"
+              }
+            ],
+            "seo": {
+              "title": "マークアップ計算機 | FinPulse Hub",
+              "metaDescription": "単位原価とマークアップ率から販売価格を計算し、マークアップと粗利益率を比較します。",
+              "h1": "マークアップ計算機",
+              "introduction": "単位原価とマークアップ率から販売価格を計算し、マークアップと粗利益率を比較します。",
+              "faq": [
+                {
+                  "key": "faq-markup-1",
+                  "question": "マークアップとは何ですか？",
+                  "answer": "原価に上乗せする金額で、原価に対する割合として表します。"
+                },
+                {
+                  "key": "faq-markup-2",
+                  "question": "販売価格はどのように計算しますか？",
+                  "answer": "原価に1とマークアップ率を加えた係数を掛けて求めます。"
+                },
+                {
+                  "key": "faq-markup-3",
+                  "question": "粗利益率との違いは何ですか？",
+                  "answer": "粗利益率は利益を販売価格で割り、マークアップは利益を原価で割ります。"
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "マークアップ計算機",
+              "formLabel": "マークアップ計算フォーム",
+              "resultAnnouncement": "マークアップの計算結果",
+              "chartLabel": "マークアップ後の販売価格グラフ",
+              "controlLabels": [
+                {
+                  "key": "cost",
+                  "label": "単位原価"
+                },
+                {
+                  "key": "markup",
+                  "label": "マークアップ率（%）"
+                }
+              ]
+            },
+            "guide": {
+              "title": "マークアップ計算機ガイド",
+              "introduction": "原価からマークアップ額、販売価格、対応する粗利益率を計算します。",
+              "steps": [
+                {
+                  "key": "markup-guide-step-1",
+                  "title": "ステップ1",
+                  "body": "単位原価とマークアップ率を入力します。"
+                },
+                {
+                  "key": "markup-guide-step-2",
+                  "title": "ステップ2",
+                  "body": "原価にマークアップ率を掛けて、マークアップ額を計算します。"
+                },
+                {
+                  "key": "markup-guide-step-3",
+                  "title": "ステップ3",
+                  "body": "マークアップ額を原価に加えて、販売価格を計算します。"
+                },
+                {
+                  "key": "markup-guide-step-4",
+                  "title": "ステップ4",
+                  "body": "マークアップ額を販売価格で割り、粗利益率を計算します。"
+                }
+              ],
+              "sections": [
+                {
+                  "key": "markup-guide-section-1",
+                  "heading": "計算方法",
+                  "body": "Markup amount = cost × markup percentage ÷ 100. Selling price = cost + markup amount. Gross margin = markup amount ÷ selling price × 100 when selling price is positive."
+                },
+                {
+                  "key": "markup-guide-section-2",
+                  "heading": "前提条件と制限",
+                  "body": "マークアップは原価に対する割合です。 粗利益率は利益を販売価格で割った値で、マークアップとは異なります。 税金、手数料、間接費、市場価格の制約は含まれません。"
+                }
+              ]
+            }
+          }
         },
         "ru": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "Калькулятор наценки",
+              "description": "Рассчитайте сумму наценки, цену продажи и соответствующую валовую маржу на основе себестоимости.",
+              "category": "Финансы и деньги",
+              "subcategory": "Калькуляторы бизнеса и фриланса"
+            },
+            "inputs": [
+              {
+                "key": "cost",
+                "label": "Себестоимость единицы"
+              },
+              {
+                "key": "markup",
+                "label": "Наценка (%)"
+              }
+            ],
+            "results": {
+              "heading": "Результат",
+              "summary": "Цена продажи",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "Себестоимость единицы"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "Сумма наценки"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "Процент наценки"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "Соответствующая валовая маржа"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "Себестоимость единицы"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "Сумма наценки"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "Процент наценки"
+                },
+                {
+                  "key": "breakdown-4",
+                  "label": "Соответствующая валовая маржа"
+                },
+                {
+                  "key": "breakdown-5"
+                }
+              ],
+              "chart": {
+                "title": "Цена продажи",
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": "Формула и этапы расчёта",
+              "formulaDescription": "Markup amount = cost × markup percentage ÷ 100. Selling price = cost + markup amount. Gross margin = markup amount ÷ selling price × 100 when selling price is positive.",
+              "steps": [
+                "Введите себестоимость единицы и процент наценки.",
+                "Умножьте себестоимость на процент наценки, чтобы получить сумму наценки.",
+                "Прибавьте наценку к себестоимости, чтобы получить цену продажи.",
+                "Разделите сумму наценки на цену продажи, чтобы рассчитать валовую маржу."
+              ],
+              "assumptions": [
+                "Наценка рассчитывается как процент от себестоимости.",
+                "Валовая маржа — это прибыль, делённая на цену продажи; она отличается от наценки.",
+                "Налоги, комиссии, накладные расходы и ограничения рыночной цены не учитываются."
+              ],
+              "notes": [
+                "Это оценка только для планирования; проверьте введённые значения и применимые правила."
+              ],
+              "disclaimers": [
+                "Калькулятор предоставляет оценку на основе введённых значений и допущений. Это не финансовая, юридическая или налоговая консультация."
+              ],
+              "limitations": [
+                "Наценка рассчитывается как процент от себестоимости.",
+                "Валовая маржа — это прибыль, делённая на цену продажи; она отличается от наценки.",
+                "Налоги, комиссии, накладные расходы и ограничения рыночной цены не учитываются."
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "Поле {field} должно содержать конечное число.",
+                "recoveryHint": "Введите корректное число и повторите попытку."
+              },
+              {
+                "key": "negative",
+                "message": "Поле {field} не может быть отрицательным.",
+                "recoveryHint": "Введите ноль или положительное значение."
+              },
+              {
+                "key": "markup",
+                "message": "Наценка не может превышать 10 000%.",
+                "recoveryHint": "Введите наценку от 0% до 10 000%."
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-markup-1",
+                "question": "Что такое наценка?",
+                "answer": "Это сумма, добавленная к себестоимости и выраженная в процентах от неё."
+              },
+              {
+                "key": "faq-markup-2",
+                "question": "Как рассчитывается цена продажи?",
+                "answer": "Цена продажи равна себестоимости, умноженной на единицу плюс процент наценки."
+              },
+              {
+                "key": "faq-markup-3",
+                "question": "Чем отличается валовая маржа?",
+                "answer": "Валовая маржа делит прибыль на цену продажи; наценка делит прибыль на себестоимость."
+              }
+            ],
+            "seo": {
+              "title": "Калькулятор наценки | FinPulse Hub",
+              "metaDescription": "Рассчитайте цену продажи по себестоимости и проценту наценки, затем сравните наценку с валовой маржой.",
+              "h1": "Калькулятор наценки",
+              "introduction": "Рассчитайте цену продажи по себестоимости и проценту наценки, затем сравните наценку с валовой маржой.",
+              "faq": [
+                {
+                  "key": "faq-markup-1",
+                  "question": "Что такое наценка?",
+                  "answer": "Это сумма, добавленная к себестоимости и выраженная в процентах от неё."
+                },
+                {
+                  "key": "faq-markup-2",
+                  "question": "Как рассчитывается цена продажи?",
+                  "answer": "Цена продажи равна себестоимости, умноженной на единицу плюс процент наценки."
+                },
+                {
+                  "key": "faq-markup-3",
+                  "question": "Чем отличается валовая маржа?",
+                  "answer": "Валовая маржа делит прибыль на цену продажи; наценка делит прибыль на себестоимость."
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "Калькулятор наценки",
+              "formLabel": "Форма калькулятора наценки",
+              "resultAnnouncement": "Результат расчёта наценки",
+              "chartLabel": "График цены продажи с наценкой",
+              "controlLabels": [
+                {
+                  "key": "cost",
+                  "label": "Себестоимость единицы"
+                },
+                {
+                  "key": "markup",
+                  "label": "Наценка (%)"
+                }
+              ]
+            },
+            "guide": {
+              "title": "Руководство по калькулятору наценки",
+              "introduction": "Рассчитайте сумму наценки, цену продажи и соответствующую валовую маржу на основе себестоимости.",
+              "steps": [
+                {
+                  "key": "markup-guide-step-1",
+                  "title": "Шаг 1",
+                  "body": "Введите себестоимость единицы и процент наценки."
+                },
+                {
+                  "key": "markup-guide-step-2",
+                  "title": "Шаг 2",
+                  "body": "Умножьте себестоимость на процент наценки, чтобы получить сумму наценки."
+                },
+                {
+                  "key": "markup-guide-step-3",
+                  "title": "Шаг 3",
+                  "body": "Прибавьте наценку к себестоимости, чтобы получить цену продажи."
+                },
+                {
+                  "key": "markup-guide-step-4",
+                  "title": "Шаг 4",
+                  "body": "Разделите сумму наценки на цену продажи, чтобы рассчитать валовую маржу."
+                }
+              ],
+              "sections": [
+                {
+                  "key": "markup-guide-section-1",
+                  "heading": "Метод расчёта",
+                  "body": "Markup amount = cost × markup percentage ÷ 100. Selling price = cost + markup amount. Gross margin = markup amount ÷ selling price × 100 when selling price is positive."
+                },
+                {
+                  "key": "markup-guide-section-2",
+                  "heading": "Допущения и ограничения",
+                  "body": "Наценка рассчитывается как процент от себестоимости. Валовая маржа — это прибыль, делённая на цену продажи; она отличается от наценки. Налоги, комиссии, накладные расходы и ограничения рыночной цены не учитываются."
+                }
+              ]
+            }
+          }
         }
       },
       "sourceExtractionStatus": "source-record-complete",
-      "sourceTranslationStatus": "not-started",
+      "sourceTranslationStatus": "draft",
       "sourceCompletenessStatus": "complete"
     },
     {
