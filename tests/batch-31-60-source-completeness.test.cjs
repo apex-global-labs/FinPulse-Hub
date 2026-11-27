@@ -34,7 +34,7 @@ test("Batch 31-60 has source-backed calculation extraction records for all 30 to
     for (const field of ["formula", "precision", "rounding"]) {
       assert.ok(typeof calculation[field] === "string" && calculation[field].trim(), record.toolId + " " + field);
     }
-    assert.ok(record.sourceReferences.some(reference => reference.includes(record.sourceModule)), record.toolId + " source module evidence");
+    assert.ok(calculation.sourceReferences.some(reference => reference.includes(record.sourceModule)), record.toolId + " source module evidence");
   }
 });
 
