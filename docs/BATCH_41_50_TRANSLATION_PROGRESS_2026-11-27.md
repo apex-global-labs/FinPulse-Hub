@@ -3,7 +3,7 @@
 **Repository:** `apex-global-labs/FinPulse-Hub`  
 **Branch:** `feat/seven-language-translation-engine-phase-1`  
 **PR:** #73 — Open / Draft / Unmerged  
-**Latest translation commit:** `256fde36927915668e456a6b6fec2d9f524fb5d8`
+**Latest translation commit:** `8e9e9713805b6f878788e86e39c1f42cf6f1cf8f`
 
 ## Release Gate
 
@@ -14,8 +14,8 @@ The translation work below changes the candidate head. Fresh Finance CI and Ligh
 ## Translation progress
 
 - Batch scope: tools #41–50, six target locales (`hi`, `ar`, `ur`, `zh-CN`, `ja`, `ru`), 60 locale records.
-- Completed draft records: **36/60** — #41–46 / all six target locales each.
-- Remaining: **24/60** — tools #47–50, all six locales each, not started.
+- Completed draft records: **42/60** — #41–47 / all six target locales each.
+- Remaining: **18/60** — tools #48–50, all six locales each, not started.
 - No locale is marked linguistically reviewed, domain reviewed, approved, or published.
 
 ## #41 Business ROI / Hindi field coverage
@@ -145,3 +145,15 @@ The Urdu locale is saved as `draft` with all 10 field groups, including all seve
 - All six locale records remain `draft`; no locale activation or publication.
 - Added automated tests for six-locale completeness, stable keys, formula integrity and zero-division behavior.
 - Completed draft records: **36/60**. Remaining: **24/60**.
+
+
+## #47 Fraction / six locale drafts completed (2026-11-27)
+
+- Completed Hindi, Arabic, Urdu, Simplified Chinese, Japanese and Russian drafts.
+- Populated all ten translation groups for each locale, including two input labels, two metrics, two breakdown labels, seven shared actions, three validation errors, two FAQs, guide, SEO and accessibility.
+- Preserved all stable keys for inputs, metrics, breakdowns, errors, FAQs, guide and accessibility.
+- Preserved the canonical GCD/simplification/decimal formula verbatim.
+- Preserved the safe-integer requirement, zero-denominator rejection and negative-denominator normalization; no calculation logic or numeric defaults changed.
+- All six locale records remain `draft`; no activation or publication.
+- Added automated tests for six-locale completeness, stable-key parity, formula integrity and denominator constraints.
+- Completed draft records: **42/60**. Remaining: **18/60**.
