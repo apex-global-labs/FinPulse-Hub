@@ -3,7 +3,7 @@
 **Repository:** `apex-global-labs/FinPulse-Hub`  
 **Branch:** `feat/seven-language-translation-engine-phase-1`  
 **PR:** #73 — Open / Draft / Unmerged  
-**Latest translation commit:** `b1ba09f2e9af058d7a22be9dca867d437fb265d4`
+**Latest translation commit:** `f7d722c0d42a48c02dd6dfdf037a2801b2503bdd`
 
 ## Release Gate
 
@@ -14,8 +14,8 @@ The translation work below changes the candidate head. Fresh Finance CI and Ligh
 ## Translation progress
 
 - Batch scope: tools #41–50, six target locales (`hi`, `ar`, `ur`, `zh-CN`, `ja`, `ru`), 60 locale records.
-- Completed draft records: **12/60** — #41 Business ROI and #42 Cash Flow Projection / all six target locales each.
-- Remaining: **48/60** — tools #43–50, all six locales each, not started.
+- Completed draft records: **18/60** — #41 Business ROI, #42 Cash Flow Projection and #43 Rental Yield / all six target locales each.
+- Remaining: **42/60** — tools #44–50, all six locales each, not started.
 - No locale is marked linguistically reviewed, domain reviewed, approved, or published.
 
 ## #41 Business ROI / Hindi field coverage
@@ -97,3 +97,15 @@ The Urdu locale is saved as `draft` with all 10 field groups, including all seve
 - All six locale records remain `draft`; no activation or publication.
 - Added automated tests for six-locale completeness, stable keys, formula integrity, field counts and source numeric constraints.
 - Completed draft records: **12/60**. Remaining: **48/60**.
+
+
+## #43 Rental Yield / six locale drafts completed (2026-11-27)
+
+- Completed Hindi, Arabic, Urdu, Simplified Chinese, Japanese and Russian drafts.
+- Populated all ten translation groups for each locale, including the seven shared actions and all four input labels, six result metrics, six breakdown labels, four validation errors, three FAQs, five guide steps, SEO and accessibility labels.
+- Preserved input, metric, breakdown, error, FAQ, guide and accessibility stable keys and their source order.
+- Preserved the canonical gross/net yield formula verbatim in the formula description and guide calculation section.
+- Kept the source constraints unchanged: purchase price positive; rent and annual costs non-negative; vacancy allowance no greater than 100%. No runtime formula or numeric defaults changed.
+- All six locale records remain `draft`; English fallback remains active.
+- Added automated tests for locale completeness, stable-key parity, formula integrity and the 100% vacancy constraint.
+- Completed draft records: **18/60**. Remaining: **42/60**.
