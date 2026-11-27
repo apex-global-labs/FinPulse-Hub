@@ -248,6 +248,27 @@ test("Freelancer net income translations preserve stable keys, protected tokens 
  }
 });
 
+test("Markup translations preserve source formula, stable keys and six-locale draft completeness",()=>{
+ const tool=content.tools.find(item=>item.id==="markup"),source=tool.source;
+ assert.equal(tool.sourceTranslationStatus,"draft");
+ for(const locale of locales){
+  const fields=tool.locales[locale].fields;
+  assert.equal(tool.locales[locale].status,"draft");
+  assert.equal(Object.keys(fields).length,9);
+  assert.deepEqual(fields.inputs.map(x=>x.key),source.inputs.map(x=>x.key));
+  assert.deepEqual(fields.results.metrics.map(x=>x.key),source.results.metrics.map(x=>x.key));
+  assert.deepEqual(fields.results.breakdown.map(x=>x.key),source.results.breakdown.map(x=>x.key));
+  assert.deepEqual(fields.faqs.map(x=>x.key),source.faqs.map(x=>x.key));
+  assert.deepEqual(fields.seo.faq.map(x=>x.key),source.seo.faq.map(x=>x.key));
+  assert.deepEqual(fields.errors.map(x=>x.key),source.errors.map(x=>x.key));
+  assert.deepEqual(fields.accessibility.controlLabels.map(x=>x.key),source.inputs.map(x=>x.key));
+  assert.deepEqual(fields.guide.steps.map(x=>x.key),source.guide.steps.map(x=>x.key));
+  assert.deepEqual(fields.guide.sections.map(x=>x.key),source.guide.sections.map(x=>x.key));
+  assert.equal(fields.explanations.formulaDescription,source.explanations.formula,locale+" formula source unchanged");
+  assert.equal((JSON.stringify(fields).match(/\\{field\\}/g)||[]).length,2,locale+" protected field tokens");
+ }
+});
+
 test("batch-three source extraction captures 20 tools and 88 stable input labels without activating translations",()=>{
  const batchThreeIds=["ira","inflation","cd","apy","tax","income-tax","sales-tax","vat-gst","tax-refund","salary","paycheck","payroll","overtime","discount","exchange-fees","transfer-compare","freelance-project","freelancer-net-income","markup","break-even"];
  const manifest=require("../docs/i18n/batch-03-source-extraction.json");
