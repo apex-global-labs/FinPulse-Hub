@@ -35,7 +35,7 @@ test("Batch 2 #41–50 catalogue order, runtime mapping and calculation registry
     assert.equal(item.sourceFile, sourceFile, id + " source module mismatch");
     assert.equal(row.sourceModule, sourceFile, id + " registry module mismatch");
     assert.equal(row.runtimeFunction, fn, id + " runtime function mismatch");
-    assert.equal(row.status, "extracted", id + " must not be promoted before this batch's parity gate");
+    assert.equal(row.status, "regression-verified", id + " numerical regression status");
     assert.ok(row.calculation.formula && row.calculation.constraints && row.calculation.outputs.length, id + " calculation extraction incomplete");
     const actualInputs = Array.isArray(row.calculation.inputs)
       ? row.calculation.inputs.map(x => typeof x === "string" ? x : x.key)
