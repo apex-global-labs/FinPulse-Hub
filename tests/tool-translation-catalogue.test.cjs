@@ -243,7 +243,7 @@ test("Freelancer net income translations preserve stable keys, protected tokens 
   assert.deepEqual(fields.accessibility.controlLabels.map(item=>item.key),source.inputs.map(item=>item.key),locale+" accessibility keys");
   assert.deepEqual(fields.guide.steps.map(item=>item.key),source.guide.steps.map(item=>item.key),locale+" guide step keys");
   assert.deepEqual(fields.guide.sections.map(item=>item.key),source.guide.sections.map(item=>item.key),locale+" guide section keys");
-  assert.equal((JSON.stringify(fields).match(/\\{field\\}/g)||[]).length,(source.errors.reduce((n,e)=>n+(e.message.match(/\\{field\\}/g)||[]).length,0)),locale+" protected field tokens");
+  assert.equal((JSON.stringify(fields).match(/\{field\}/g)||[]).length,(source.errors.reduce((n,e)=>n+(e.message.match(/\{field\}/g)||[]).length,0)),locale+" protected field tokens");
   assert.ok(fields.metadata.title&&fields.metadata.description&&fields.seo.metaDescription&&fields.accessibility.chartLabel,locale+" translated labels");
  }
 });
@@ -265,7 +265,7 @@ test("Markup translations preserve source formula, stable keys and six-locale dr
   assert.deepEqual(fields.guide.steps.map(x=>x.key),source.guide.steps.map(x=>x.key));
   assert.deepEqual(fields.guide.sections.map(x=>x.key),source.guide.sections.map(x=>x.key));
   assert.equal(fields.explanations.formulaDescription,source.explanations.formula,locale+" formula source unchanged");
-  assert.equal((JSON.stringify(fields).match(/\\{field\\}/g)||[]).length,2,locale+" protected field tokens");
+  assert.equal((JSON.stringify(fields).match(/\{field\}/g)||[]).length,2,locale+" protected field tokens");
  }
 });
 
