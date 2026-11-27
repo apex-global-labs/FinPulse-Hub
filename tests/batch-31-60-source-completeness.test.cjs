@@ -76,7 +76,7 @@ test("Batch 31-60 locale inventory preserves the draft-only activation boundary"
     if (tool.id === "business-roi") {
       assert.equal(tool.sourceTranslationStatus, "draft", tool.id + " translation status");
       for (const locale of locales) {
-        if (locale === "hi") {
+        if (locale === "hi" || locale === "ar") {
           assert.equal(tool.locales[locale].status, "draft", tool.id + "/" + locale);
           assert.ok(Object.keys(tool.locales[locale].fields).length >= 9, tool.id + "/" + locale + " translated content groups");
         } else {
