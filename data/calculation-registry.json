@@ -925,6 +925,22 @@
             "type": "number",
             "defaultValue": 5,
             "minimum": 0
+          },
+          {
+            "key": "from",
+            "label": "Source currency",
+            "type": "currency",
+            "defaultValue": "USD",
+            "role": "display-only",
+            "runtimeArgument": false
+          },
+          {
+            "key": "to",
+            "label": "Recipient currency",
+            "type": "currency",
+            "defaultValue": "EUR",
+            "role": "display-only",
+            "runtimeArgument": false
           }
         ],
         "constraints": [
@@ -1027,6 +1043,22 @@
             "defaultValue": 1,
             "minimum": 0,
             "maximum": 100
+          },
+          {
+            "key": "from",
+            "label": "Source currency",
+            "type": "currency",
+            "defaultValue": "USD",
+            "role": "display-only",
+            "runtimeArgument": false
+          },
+          {
+            "key": "to",
+            "label": "Recipient currency",
+            "type": "currency",
+            "defaultValue": "EUR",
+            "role": "display-only",
+            "runtimeArgument": false
           }
         ],
         "constraints": [

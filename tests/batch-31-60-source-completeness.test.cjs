@@ -155,6 +155,7 @@ test("Batch 31-40 registry contracts match source input keys, runtime functions 
   assert.ok(contract.every(x=>x&&typeof x==="object"&&x.key&&x.type&&Object.hasOwn(x,"defaultValue")),id+" typed input contract and defaults");
   assert.deepEqual(contract.map(x=>x.key),tool.source.inputs.map(x=>x.key),id+" registry/source input key parity");
   assert.deepEqual(contract.map(x=>x.label),tool.source.inputs.map(x=>x.label),id+" registry/source input label parity");
+  assert.equal(contract.filter(x=>x.runtimeArgument!==false).length,args[id].length,id+" runtime argument count");
   const fn=entry.runtimeFunction.replace("Core.","");
   assert.equal(typeof Core[fn],"function",id+" runtime function exists");
   const result=Core[fn](...args[id]);
