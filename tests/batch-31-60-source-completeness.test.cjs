@@ -564,7 +564,7 @@ test("Batch 41-50 six-locale records are field-complete and preserve source cont
    }
    assert.equal(fields.explanations.formulaDescription,source.explanations.formula,label+" protected formula");
    assert.equal(fields.guide.sections[0].body,source.explanations.formula,label+" guide formula");
-   const tokenCount=value=>(JSON.stringify(value).match(/\\{field\\}/g)||[]).length;
+   const tokenCount=value=>(JSON.stringify(value).match(/\{field\}/g)||[]).length;
    assert.equal(tokenCount(fields),tokenCount(source.errors),label+" protected {field} token count");
   }
  }
