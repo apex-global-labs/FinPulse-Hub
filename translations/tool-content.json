@@ -57375,16 +57375,661 @@
           }
         },
         "zh-CN": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "商业投资回报率计算器",
+              "description": "将历史收益或项目收益与初始投资进行比较，计算简单投资回报率。",
+              "category": "财务与金钱",
+              "subcategory": "投资与回报计算器"
+            },
+            "inputs": [
+              {
+                "key": "investment",
+                "label": "初始投资金额"
+              },
+              {
+                "key": "value",
+                "label": "期末价值 / 收益金额"
+              }
+            ],
+            "actions": {
+              "calculate": "计算",
+              "recalculate": "重新计算",
+              "clear": "清除",
+              "reset": "重置",
+              "copy": "复制",
+              "download": "下载",
+              "print": "打印"
+            },
+            "results": {
+              "heading": "结果",
+              "summary": "简单投资回报率",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "初始投资"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "期末价值"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "净收益 / 亏损"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "回报倍数"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "初始投资"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "期末价值"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "净收益 / 亏损"
+                },
+                {
+                  "key": "breakdown-4",
+                  "label": "简单投资回报率 (ROI)"
+                },
+                {
+                  "key": "breakdown-5",
+                  "label": "回报倍数"
+                }
+              ],
+              "chart": {
+                "title": "简单投资回报率",
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": "公式与计算步骤",
+              "formulaDescription": "Gain = ending value − initial investment. Simple ROI (%) = gain ÷ initial investment × 100. Return multiple = ending value ÷ initial investment.",
+              "steps": [
+                "输入初始投资金额以及期末价值或所得款项。",
+                "用期末价值减去初始投资，计算收益或亏损。",
+                "将收益或亏损除以初始投资，再乘以 100，得到简单投资回报率。",
+                "用期末价值除以初始投资，计算回报倍数。",
+                "查看未年化的计算结果，并留意现金流时间方面的限制。"
+              ],
+              "assumptions": [
+                "初始投资必须大于零；期末价值不得为负数。",
+                "这是简单的非年化投资回报率，不考虑现金流时间、持有期限或未来表现。"
+              ],
+              "notes": [
+                "计算在浏览器本地完成，使用您输入的数值；依赖此估算结果前，请查看结果说明并核对相关假设。"
+              ],
+              "disclaimers": [
+                "本计算器仅提供信息性估算，不构成财务、税务、法律、会计或投资建议。"
+              ],
+              "limitations": [
+                "初始投资必须大于零；期末价值不得为负数。",
+                "这是简单的非年化投资回报率，不考虑现金流时间、持有期限或未来表现。"
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "{field} 必须是有限的有效数字。",
+                "recoveryHint": "请输入有效的有限数值，然后重试。"
+              },
+              {
+                "key": "positive",
+                "message": "{field} 必须大于零。",
+                "recoveryHint": "请输入大于零的数值。"
+              },
+              {
+                "key": "negative",
+                "message": "期末价值不得为负数。",
+                "recoveryHint": "请输入零或正数作为期末价值。"
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-business-roi-1",
+                "question": "ROI 的计算公式是什么？",
+                "answer": "用期末价值减去初始投资，再除以初始投资，最后乘以 100。"
+              },
+              {
+                "key": "faq-business-roi-2",
+                "question": "ROI 会考虑时间因素吗？",
+                "answer": "不会。此处计算的是简单回报率，不进行年化，也不考虑现金流发生的时间。"
+              },
+              {
+                "key": "faq-business-roi-3",
+                "question": "这是投资建议吗？",
+                "answer": "不是。这只是用于核对您输入的历史数值或假设数值的算术计算。"
+              }
+            ],
+            "guide": {
+              "title": "商业投资回报率计算器指南",
+              "introduction": "将已完成项目或投资的期末价值与其初始成本进行比较，以计算简单的非年化投资回报率。",
+              "steps": [
+                {
+                  "key": "business-roi-guide-step-1",
+                  "title": "步骤 1",
+                  "body": "输入初始投资金额以及期末价值或所得款项。"
+                },
+                {
+                  "key": "business-roi-guide-step-2",
+                  "title": "步骤 2",
+                  "body": "用期末价值减去初始投资，计算收益或亏损。"
+                },
+                {
+                  "key": "business-roi-guide-step-3",
+                  "title": "步骤 3",
+                  "body": "将收益或亏损除以初始投资，再乘以 100，得到简单投资回报率。"
+                },
+                {
+                  "key": "business-roi-guide-step-4",
+                  "title": "步骤 4",
+                  "body": "用期末价值除以初始投资，计算回报倍数。"
+                },
+                {
+                  "key": "business-roi-guide-step-5",
+                  "title": "步骤 5",
+                  "body": "查看未年化的计算结果，并留意现金流时间方面的限制。"
+                }
+              ],
+              "sections": [
+                {
+                  "key": "business-roi-guide-section-1",
+                  "heading": "计算方法",
+                  "body": "Gain = ending value − initial investment. Simple ROI (%) = gain ÷ initial investment × 100. Return multiple = ending value ÷ initial investment."
+                },
+                {
+                  "key": "business-roi-guide-section-2",
+                  "heading": "假设与限制",
+                  "body": "初始投资必须大于零；期末价值不得为负数。 这是简单的非年化投资回报率，不考虑现金流时间、持有期限或未来表现。"
+                }
+              ]
+            },
+            "seo": {
+              "title": "商业投资回报率计算器 | FinPulse Hub",
+              "metaDescription": "将历史收益或项目收益与初始投资进行比较，计算简单投资回报率。",
+              "h1": "商业投资回报率计算器",
+              "introduction": "将已完成项目或投资的期末价值与其初始成本进行比较，以计算简单的非年化投资回报率。",
+              "faq": [
+                {
+                  "key": "faq-business-roi-1",
+                  "question": "ROI 的计算公式是什么？",
+                  "answer": "用期末价值减去初始投资，再除以初始投资，最后乘以 100。"
+                },
+                {
+                  "key": "faq-business-roi-2",
+                  "question": "ROI 会考虑时间因素吗？",
+                  "answer": "不会。此处计算的是简单回报率，不进行年化，也不考虑现金流发生的时间。"
+                },
+                {
+                  "key": "faq-business-roi-3",
+                  "question": "这是投资建议吗？",
+                  "answer": "不是。这只是用于核对您输入的历史数值或假设数值的算术计算。"
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "商业投资回报率计算器",
+              "formLabel": "商业投资回报率计算器输入表单",
+              "resultAnnouncement": "商业投资回报率计算结果",
+              "chartLabel": "商业投资回报率计算器的简单投资回报率图表",
+              "controlLabels": [
+                {
+                  "key": "investment",
+                  "label": "初始投资金额"
+                },
+                {
+                  "key": "value",
+                  "label": "期末价值 / 收益金额"
+                }
+              ]
+            }
+          }
         },
         "ja": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "事業ROI計算機",
+              "description": "初期投資額と比較して、過去の実績またはプロジェクトの投資収益率を測定します。",
+              "category": "金融・お金",
+              "subcategory": "投資・リターン計算機"
+            },
+            "inputs": [
+              {
+                "key": "investment",
+                "label": "初期投資額"
+              },
+              {
+                "key": "value",
+                "label": "最終価値 / 受取額"
+              }
+            ],
+            "actions": {
+              "calculate": "計算",
+              "recalculate": "再計算",
+              "clear": "クリア",
+              "reset": "リセット",
+              "copy": "コピー",
+              "download": "ダウンロード",
+              "print": "印刷"
+            },
+            "results": {
+              "heading": "結果",
+              "summary": "単純投資収益率",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "初期投資額"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "最終価値"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "純利益 / 損失"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "リターン倍率"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "初期投資額"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "最終価値"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "純利益 / 損失"
+                },
+                {
+                  "key": "breakdown-4",
+                  "label": "単純ROI"
+                },
+                {
+                  "key": "breakdown-5",
+                  "label": "リターン倍率"
+                }
+              ],
+              "chart": {
+                "title": "単純投資収益率",
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": "計算式と計算手順",
+              "formulaDescription": "Gain = ending value − initial investment. Simple ROI (%) = gain ÷ initial investment × 100. Return multiple = ending value ÷ initial investment.",
+              "steps": [
+                "初期投資額と最終価値または受取額を入力します。",
+                "最終価値から初期投資額を差し引き、利益または損失を求めます。",
+                "利益または損失を初期投資額で割り、100を掛けて単純ROIを求めます。",
+                "最終価値を初期投資額で割り、リターン倍率を求めます。",
+                "年率換算されていない結果と、キャッシュフローのタイミングに関する制約を確認します。"
+              ],
+              "assumptions": [
+                "初期投資額はゼロより大きく、最終価値は負の値であってはなりません。",
+                "これは単純な非年率換算ROIであり、キャッシュフローのタイミング、保有期間、将来の実績は考慮しません。"
+              ],
+              "notes": [
+                "計算は入力値を使ってブラウザー内でローカルに実行されます。推定値を利用する前に、結果の注記と前提条件を確認してください。"
+              ],
+              "disclaimers": [
+                "この計算機は情報提供を目的とした推定値を示すものであり、金融、税務、法律、会計または投資に関する助言ではありません。"
+              ],
+              "limitations": [
+                "初期投資額はゼロより大きく、最終価値は負の値であってはなりません。",
+                "これは単純な非年率換算ROIであり、キャッシュフローのタイミング、保有期間、将来の実績は考慮しません。"
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "{field} は有限の有効な数値である必要があります。",
+                "recoveryHint": "有限の有効な数値を入力して、もう一度お試しください。"
+              },
+              {
+                "key": "positive",
+                "message": "{field} はゼロより大きい必要があります。",
+                "recoveryHint": "ゼロより大きい値を入力してください。"
+              },
+              {
+                "key": "negative",
+                "message": "最終価値を負の値にすることはできません。",
+                "recoveryHint": "最終価値にはゼロまたは正の値を入力してください。"
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-business-roi-1",
+                "question": "ROIの計算式は何ですか？",
+                "answer": "（最終価値 − 初期投資額）を初期投資額で割り、100を掛けます。"
+              },
+              {
+                "key": "faq-business-roi-2",
+                "question": "ROIは時間を考慮しますか？",
+                "answer": "いいえ。この単純な結果は年率換算されず、キャッシュフローのタイミングも考慮しません。"
+              },
+              {
+                "key": "faq-business-roi-3",
+                "question": "これは投資助言ですか？",
+                "answer": "いいえ。入力した過去の値または仮定の値を確認するための算術計算です。"
+              }
+            ],
+            "guide": {
+              "title": "事業ROI計算機ガイド",
+              "introduction": "完了したプロジェクトまたは投資の最終価値を初期費用と比較し、単純な非年率換算ROIを計算します。",
+              "steps": [
+                {
+                  "key": "business-roi-guide-step-1",
+                  "title": "ステップ 1",
+                  "body": "初期投資額と最終価値または受取額を入力します。"
+                },
+                {
+                  "key": "business-roi-guide-step-2",
+                  "title": "ステップ 2",
+                  "body": "最終価値から初期投資額を差し引き、利益または損失を求めます。"
+                },
+                {
+                  "key": "business-roi-guide-step-3",
+                  "title": "ステップ 3",
+                  "body": "利益または損失を初期投資額で割り、100を掛けて単純ROIを求めます。"
+                },
+                {
+                  "key": "business-roi-guide-step-4",
+                  "title": "ステップ 4",
+                  "body": "最終価値を初期投資額で割り、リターン倍率を求めます。"
+                },
+                {
+                  "key": "business-roi-guide-step-5",
+                  "title": "ステップ 5",
+                  "body": "年率換算されていない結果と、キャッシュフローのタイミングに関する制約を確認します。"
+                }
+              ],
+              "sections": [
+                {
+                  "key": "business-roi-guide-section-1",
+                  "heading": "計算方法",
+                  "body": "Gain = ending value − initial investment. Simple ROI (%) = gain ÷ initial investment × 100. Return multiple = ending value ÷ initial investment."
+                },
+                {
+                  "key": "business-roi-guide-section-2",
+                  "heading": "前提条件と制限",
+                  "body": "初期投資額はゼロより大きく、最終価値は負の値であってはなりません。 これは単純な非年率換算ROIであり、キャッシュフローのタイミング、保有期間、将来の実績は考慮しません。"
+                }
+              ]
+            },
+            "seo": {
+              "title": "事業ROI計算機 | FinPulse Hub",
+              "metaDescription": "初期投資額と比較して、過去の実績またはプロジェクトの投資収益率を測定します。",
+              "h1": "事業ROI計算機",
+              "introduction": "完了したプロジェクトまたは投資の最終価値を初期費用と比較し、単純な非年率換算ROIを計算します。",
+              "faq": [
+                {
+                  "key": "faq-business-roi-1",
+                  "question": "ROIの計算式は何ですか？",
+                  "answer": "（最終価値 − 初期投資額）を初期投資額で割り、100を掛けます。"
+                },
+                {
+                  "key": "faq-business-roi-2",
+                  "question": "ROIは時間を考慮しますか？",
+                  "answer": "いいえ。この単純な結果は年率換算されず、キャッシュフローのタイミングも考慮しません。"
+                },
+                {
+                  "key": "faq-business-roi-3",
+                  "question": "これは投資助言ですか？",
+                  "answer": "いいえ。入力した過去の値または仮定の値を確認するための算術計算です。"
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "事業ROI計算機",
+              "formLabel": "事業ROI計算機の入力フォーム",
+              "resultAnnouncement": "事業ROI計算機の計算結果",
+              "chartLabel": "事業ROI計算機の単純投資収益率チャート",
+              "controlLabels": [
+                {
+                  "key": "investment",
+                  "label": "初期投資額"
+                },
+                {
+                  "key": "value",
+                  "label": "最終価値 / 受取額"
+                }
+              ]
+            }
+          }
         },
         "ru": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "Калькулятор ROI бизнеса",
+              "description": "Оцените историческую доходность или доходность проекта по отношению к первоначальным вложениям.",
+              "category": "Финансы и деньги",
+              "subcategory": "Калькуляторы инвестиций и доходности"
+            },
+            "inputs": [
+              {
+                "key": "investment",
+                "label": "Первоначальные инвестиции"
+              },
+              {
+                "key": "value",
+                "label": "Конечная стоимость / вырученные средства"
+              }
+            ],
+            "actions": {
+              "calculate": "Рассчитать",
+              "recalculate": "Пересчитать",
+              "clear": "Очистить",
+              "reset": "Сбросить",
+              "copy": "Копировать",
+              "download": "Скачать",
+              "print": "Печать"
+            },
+            "results": {
+              "heading": "Результат",
+              "summary": "Простая рентабельность инвестиций",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "Первоначальные инвестиции"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "Конечная стоимость"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "Чистая прибыль / убыток"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "Коэффициент возврата"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "Первоначальные инвестиции"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "Конечная стоимость"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "Чистая прибыль / убыток"
+                },
+                {
+                  "key": "breakdown-4",
+                  "label": "Простой ROI"
+                },
+                {
+                  "key": "breakdown-5",
+                  "label": "Коэффициент возврата"
+                }
+              ],
+              "chart": {
+                "title": "Простая рентабельность инвестиций",
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": "Формула и этапы расчёта",
+              "formulaDescription": "Gain = ending value − initial investment. Simple ROI (%) = gain ÷ initial investment × 100. Return multiple = ending value ÷ initial investment.",
+              "steps": [
+                "Введите сумму первоначальных инвестиций и конечную стоимость или полученные средства.",
+                "Вычтите первоначальные инвестиции из конечной стоимости, чтобы определить прибыль или убыток.",
+                "Разделите прибыль или убыток на первоначальные инвестиции и умножьте на 100, чтобы получить простой ROI.",
+                "Разделите конечную стоимость на первоначальные инвестиции, чтобы рассчитать коэффициент возврата.",
+                "Оцените неаннуализированный результат и ограничение, связанное со временем денежных потоков."
+              ],
+              "assumptions": [
+                "Первоначальные инвестиции должны быть больше нуля; конечная стоимость не может быть отрицательной.",
+                "Это простой, неаннуализированный ROI: он не учитывает время денежных потоков, срок владения или будущие результаты."
+              ],
+              "notes": [
+                "Расчёт выполняется локально в браузере на основе введённых вами значений. Перед использованием оценки проверьте примечание к результату и допущения."
+              ],
+              "disclaimers": [
+                "Калькулятор предоставляет информационную оценку и не является финансовой, налоговой, юридической, бухгалтерской или инвестиционной рекомендацией."
+              ],
+              "limitations": [
+                "Первоначальные инвестиции должны быть больше нуля; конечная стоимость не может быть отрицательной.",
+                "Это простой, неаннуализированный ROI: он не учитывает время денежных потоков, срок владения или будущие результаты."
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "{field} должно быть конечным числом.",
+                "recoveryHint": "Введите корректное конечное число и повторите попытку."
+              },
+              {
+                "key": "positive",
+                "message": "{field} должно быть больше нуля.",
+                "recoveryHint": "Введите значение больше нуля."
+              },
+              {
+                "key": "negative",
+                "message": "Конечная стоимость не может быть отрицательной.",
+                "recoveryHint": "Введите нулевую или положительную конечную стоимость."
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-business-roi-1",
+                "question": "Какова формула ROI?",
+                "answer": "Вычтите первоначальные инвестиции из конечной стоимости, разделите результат на первоначальные инвестиции и умножьте на 100."
+              },
+              {
+                "key": "faq-business-roi-2",
+                "question": "Учитывает ли ROI время?",
+                "answer": "Нет. Этот простой показатель не приводится к годовому выражению и не учитывает время денежных потоков."
+              },
+              {
+                "key": "faq-business-roi-3",
+                "question": "Является ли это инвестиционной рекомендацией?",
+                "answer": "Нет. Это арифметический расчёт для проверки введённых исторических или гипотетических значений."
+              }
+            ],
+            "guide": {
+              "title": "Руководство по калькулятору ROI бизнеса",
+              "introduction": "Сравните конечную стоимость завершённого проекта или инвестиции с первоначальными затратами, чтобы рассчитать простой неаннуализированный ROI.",
+              "steps": [
+                {
+                  "key": "business-roi-guide-step-1",
+                  "title": "Шаг 1",
+                  "body": "Введите сумму первоначальных инвестиций и конечную стоимость или полученные средства."
+                },
+                {
+                  "key": "business-roi-guide-step-2",
+                  "title": "Шаг 2",
+                  "body": "Вычтите первоначальные инвестиции из конечной стоимости, чтобы определить прибыль или убыток."
+                },
+                {
+                  "key": "business-roi-guide-step-3",
+                  "title": "Шаг 3",
+                  "body": "Разделите прибыль или убыток на первоначальные инвестиции и умножьте на 100, чтобы получить простой ROI."
+                },
+                {
+                  "key": "business-roi-guide-step-4",
+                  "title": "Шаг 4",
+                  "body": "Разделите конечную стоимость на первоначальные инвестиции, чтобы рассчитать коэффициент возврата."
+                },
+                {
+                  "key": "business-roi-guide-step-5",
+                  "title": "Шаг 5",
+                  "body": "Оцените неаннуализированный результат и ограничение, связанное со временем денежных потоков."
+                }
+              ],
+              "sections": [
+                {
+                  "key": "business-roi-guide-section-1",
+                  "heading": "Метод расчёта",
+                  "body": "Gain = ending value − initial investment. Simple ROI (%) = gain ÷ initial investment × 100. Return multiple = ending value ÷ initial investment."
+                },
+                {
+                  "key": "business-roi-guide-section-2",
+                  "heading": "Допущения и ограничения",
+                  "body": "Первоначальные инвестиции должны быть больше нуля; конечная стоимость не может быть отрицательной. Это простой, неаннуализированный ROI: он не учитывает время денежных потоков, срок владения или будущие результаты."
+                }
+              ]
+            },
+            "seo": {
+              "title": "Калькулятор ROI бизнеса | FinPulse Hub",
+              "metaDescription": "Оцените историческую доходность или доходность проекта по отношению к первоначальным вложениям.",
+              "h1": "Калькулятор ROI бизнеса",
+              "introduction": "Сравните конечную стоимость завершённого проекта или инвестиции с первоначальными затратами, чтобы рассчитать простой неаннуализированный ROI.",
+              "faq": [
+                {
+                  "key": "faq-business-roi-1",
+                  "question": "Какова формула ROI?",
+                  "answer": "Вычтите первоначальные инвестиции из конечной стоимости, разделите результат на первоначальные инвестиции и умножьте на 100."
+                },
+                {
+                  "key": "faq-business-roi-2",
+                  "question": "Учитывает ли ROI время?",
+                  "answer": "Нет. Этот простой показатель не приводится к годовому выражению и не учитывает время денежных потоков."
+                },
+                {
+                  "key": "faq-business-roi-3",
+                  "question": "Является ли это инвестиционной рекомендацией?",
+                  "answer": "Нет. Это арифметический расчёт для проверки введённых исторических или гипотетических значений."
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "Калькулятор ROI бизнеса",
+              "formLabel": "Форма калькулятора ROI бизнеса",
+              "resultAnnouncement": "Результат расчёта ROI бизнеса",
+              "chartLabel": "Диаграмма простой рентабельности инвестиций для калькулятора ROI бизнеса",
+              "controlLabels": [
+                {
+                  "key": "investment",
+                  "label": "Первоначальные инвестиции"
+                },
+                {
+                  "key": "value",
+                  "label": "Конечная стоимость / вырученные средства"
+                }
+              ]
+            }
+          }
         }
       },
       "sourceExtractionStatus": "source-record-complete",
