@@ -461,3 +461,53 @@ test("Break-even six-locale drafts preserve source keys, formula, tokens and all
   assert.equal(JSON.stringify(fields).split("{field}").length-1,2,locale+" protected field tokens");
  }
 });
+
+
+test("Batch 31-40 translations satisfy source-backed field-group completeness in all six locales",()=>{
+ const ids=["paycheck","payroll","overtime","discount","exchange-fees","transfer-compare","freelance-project","freelancer-net-income","markup","break-even"];
+ const required=(value,label)=>assert.ok(typeof value==="string"&&value.trim(),label);
+ const sameKeys=(source,draft,label)=>assert.deepEqual(draft.map(x=>x.key),source.map(x=>x.key),label);
+ const arrays=[
+  ["inputs",["label"]],
+  ["results.metrics",["label"]],
+  ["results.breakdown",["label"]],
+  ["explanations.steps",[]],
+  ["explanations.assumptions",[]],
+  ["explanations.notes",[]],
+  ["explanations.disclaimers",[]],
+  ["explanations.limitations",[]],
+  ["errors",["message","recoveryHint"]],
+  ["faqs",["question","answer"]],
+  ["seo.faq",["question","answer"]],
+  ["accessibility.controlLabels",["label"]],
+  ["guide.steps",["title","body"]],
+  ["guide.sections",["heading","body"]]
+ ];
+ const get=(obj,path)=>path.split(".").reduce((value,key)=>value?.[key],obj);
+ for(const id of ids){
+  const tool=content.tools.find(x=>x.id===id),source=tool.source;
+  for(const locale of locales){
+   const record=tool.locales[locale],fields=record.fields,label=id+"/"+locale;
+   assert.equal(record.status,"draft",label+" remains draft");
+   for(const key of ["title","description","category","subcategory"])required(fields.metadata?.[key],label+" metadata."+key);
+   for(const path of ["heading","summary"])required(fields.results?.[path],label+" results."+path);
+   required(fields.explanations?.formulaTitle,label+" formula title");
+   assert.equal(fields.explanations?.formulaDescription,source.explanations.formula,label+" protected formula");
+   for(const [path,props] of arrays){
+    const src=get(source,path),dst=get(fields,path);
+    if(!Array.isArray(src))continue;
+    assert.ok(Array.isArray(dst),label+" "+path+" array");
+    assert.equal(dst.length,src.length,label+" "+path+" count");
+    if(src.length&&src[0]?.key)sameKeys(src,dst,label+" "+path+" stable keys");
+    src.forEach((item,index)=>props.forEach(prop=>required(dst[index]?.[prop],label+" "+path+"["+index+"]."+prop)));
+    if(!props.length)dst.forEach((value,index)=>required(value,label+" "+path+"["+index+"]"));
+   }
+   for(const key of ["title","metaDescription","h1","introduction"])required(fields.seo?.[key],label+" seo."+key);
+   for(const key of ["pageLabel","formLabel","resultAnnouncement","chartLabel"])required(fields.accessibility?.[key],label+" accessibility."+key);
+   for(const key of ["title","introduction"])required(fields.guide?.[key],label+" guide."+key);
+   const sourceTokens=source.errors.reduce((n,e)=>n+e.message.split("{field}").length-1,0);
+   const draftTokens=JSON.stringify(fields).split("{field}").length-1;
+   assert.equal(draftTokens,sourceTokens,label+" protected field token count");
+  }
+ }
+});

@@ -50270,7 +50270,7 @@
               }
             },
             "explanations": {
-              "formulaTitle": null,
+              "formulaTitle": "सूत्र और गणना के चरण",
               "formulaDescription": "Labor = hours × hourly rate. Base cost = labor + expenses. Contingency = base cost × contingency rate ÷ 100. Total cost = base cost + contingency. Quote = total cost ÷ (1 − target gross margin ÷ 100). Profit = quote − total cost.",
               "assumptions": [
                 "आकस्मिकता श्रम और खर्चों के योग पर लागू होती है।",
@@ -50558,7 +50558,7 @@
               }
             },
             "explanations": {
-              "formulaTitle": null,
+              "formulaTitle": "الصيغة وخطوات الحساب",
               "formulaDescription": "Labor = hours × hourly rate. Base cost = labor + expenses. Contingency = base cost × contingency rate ÷ 100. Total cost = base cost + contingency. Quote = total cost ÷ (1 − target gross margin ÷ 100). Profit = quote − total cost.",
               "assumptions": [
                 "يُطبّق مخصص الطوارئ على مجموع تكلفة العمالة والنفقات.",
@@ -50846,7 +50846,7 @@
               }
             },
             "explanations": {
-              "formulaTitle": null,
+              "formulaTitle": "فارمولا اور حساب کے مراحل",
               "formulaDescription": "Labor = hours × hourly rate. Base cost = labor + expenses. Contingency = base cost × contingency rate ÷ 100. Total cost = base cost + contingency. Quote = total cost ÷ (1 − target gross margin ÷ 100). Profit = quote − total cost.",
               "assumptions": [
                 "ہنگامی گنجائش مزدوری اور اخراجات کے مجموعے پر لاگو ہوتی ہے۔",
@@ -51134,7 +51134,7 @@
               }
             },
             "explanations": {
-              "formulaTitle": null,
+              "formulaTitle": "公式与计算步骤",
               "formulaDescription": "Labor = hours × hourly rate. Base cost = labor + expenses. Contingency = base cost × contingency rate ÷ 100. Total cost = base cost + contingency. Quote = total cost ÷ (1 − target gross margin ÷ 100). Profit = quote − total cost.",
               "assumptions": [
                 "应急预留按人工成本与费用之和计算。",
@@ -51422,7 +51422,7 @@
               }
             },
             "explanations": {
-              "formulaTitle": null,
+              "formulaTitle": "計算式と計算手順",
               "formulaDescription": "Labor = hours × hourly rate. Base cost = labor + expenses. Contingency = base cost × contingency rate ÷ 100. Total cost = base cost + contingency. Quote = total cost ÷ (1 − target gross margin ÷ 100). Profit = quote − total cost.",
               "assumptions": [
                 "予備費は人件費と経費の合計に適用されます。",
@@ -51710,7 +51710,7 @@
               }
             },
             "explanations": {
-              "formulaTitle": null,
+              "formulaTitle": "Формула и этапы расчёта",
               "formulaDescription": "Labor = hours × hourly rate. Base cost = labor + expenses. Contingency = base cost × contingency rate ÷ 100. Total cost = base cost + contingency. Quote = total cost ÷ (1 − target gross margin ÷ 100). Profit = quote − total cost.",
               "assumptions": [
                 "Резерв применяется к сумме затрат на труд и расходов.",
