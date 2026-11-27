@@ -3,7 +3,7 @@
 **Repository:** `apex-global-labs/FinPulse-Hub`  
 **Branch:** `feat/seven-language-translation-engine-phase-1`  
 **PR:** #73 — Open / Draft / Unmerged  
-**Latest translation commit:** `8e3ffd9937bcdb2e9aa1696284551eece2a00da6`
+**Latest translation commit:** `2fb2b1a8d81dbc8b79d907fe60792ae624bf3e62`
 
 ## Release Gate
 
@@ -14,8 +14,8 @@ The translation work below changes the candidate head. Fresh Finance CI and Ligh
 ## Translation progress
 
 - Batch scope: tools #41–50, six target locales (`hi`, `ar`, `ur`, `zh-CN`, `ja`, `ru`), 60 locale records.
-- Completed draft records: **48/60** — #41–48 / all six target locales each.
-- Remaining: **12/60** — tools #49–50, all six locales each, not started.
+- Completed draft records: **54/60** — #41–49 / all six target locales each.
+- Remaining: **6/60** — tool #50, all six locales, not started.
 - No locale is marked linguistically reviewed, domain reviewed, approved, or published.
 
 ## #41 Business ROI / Hindi field coverage
@@ -169,3 +169,15 @@ The Urdu locale is saved as `draft` with all 10 field groups, including all seve
 - All six locale records remain `draft`; no activation or publication.
 - Added automated tests for six-locale completeness, stable keys, formula integrity and input-range constraints.
 - Completed draft records: **48/60**. Remaining: **12/60**.
+
+
+## #49 Decimal to Fraction / six locale drafts completed (2026-11-27)
+
+- Completed Hindi, Arabic, Urdu, Simplified Chinese, Japanese and Russian drafts.
+- Populated all ten translation groups for each locale, including two inputs, two metrics, two breakdown labels, seven shared actions, two validation errors, FAQs, guide, SEO and accessibility.
+- Preserved all stable keys and their source order across the locale records.
+- Preserved the canonical denominator search, rounded numerator selection, minimum absolute-error comparison and GCD reduction formula verbatim.
+- Preserved the maximum denominator rule: positive safe integer, no greater than 1,000,000. No executable search behavior or numeric limit changed.
+- All six locale records remain `draft`; no activation or publication.
+- Added automated tests for six-locale completeness, stable keys, formula integrity and denominator cap.
+- Completed draft records: **54/60**. Remaining: **6/60**.
