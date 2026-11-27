@@ -35,7 +35,7 @@ test("every canonical tool has six locale records with correct draft or pending 
  assert.deepEqual(content.tools.map(t=>t.id).sort(),mapping.tools.map(t=>t.id).sort());
  const pilotIds=["currency","mortgage","loan","emi","compound","percentage","tip","car","amortization","savings"];
  const batchTwoIds=["freelance","margin","affordability","payoff","refinance","personal-loan","student-loan","simple-interest","retirement","401k"];
- const batchThreeDraftIds=["ira","inflation","cd","apy","paycheck","payroll","overtime","discount","exchange-fees","transfer-compare","freelance-project"];
+ const batchThreeDraftIds=["ira","inflation","cd","apy","paycheck","payroll","overtime","discount","exchange-fees","transfer-compare","freelance-project","freelancer-net-income"];
  for(const tool of content.tools){
   assert.deepEqual(Object.keys(tool.locales).sort(),locales.slice().sort());
   for(const locale of locales){
@@ -227,6 +227,27 @@ test("batch-two tools have complete extracted result, formula, FAQ, error, SEO a
 });
 
 
+test("Freelancer net income translations preserve stable keys, protected tokens and all content groups",()=>{
+ const tool=content.tools.find(item=>item.id==="freelancer-net-income"),source=tool.source;
+ assert.equal(tool.sourceTranslationStatus,"draft");
+ for(const locale of locales){
+  const record=tool.locales[locale],fields=record.fields;
+  assert.equal(record.status,"draft");
+  for(const group of ["metadata","inputs","results","explanations","errors","faqs","seo","accessibility","guide"])assert.ok(fields[group],locale+" "+group);
+  assert.deepEqual(fields.inputs.map(item=>item.key),source.inputs.map(item=>item.key),locale+" input stable keys");
+  assert.deepEqual(fields.results.metrics.map(item=>item.key),source.results.metrics.map(item=>item.key),locale+" metric stable keys");
+  assert.deepEqual(fields.results.breakdown.map(item=>item.key),source.results.breakdown.map(item=>item.key),locale+" breakdown stable keys");
+  assert.deepEqual(fields.faqs.map(item=>item.key),source.faqs.map(item=>item.key),locale+" FAQ stable keys");
+  assert.deepEqual(fields.seo.faq.map(item=>item.key),source.seo.faq.map(item=>item.key),locale+" SEO FAQ stable keys");
+  assert.deepEqual(fields.errors.map(item=>item.key),source.errors.map(item=>item.key),locale+" error stable keys");
+  assert.deepEqual(fields.accessibility.controlLabels.map(item=>item.key),source.inputs.map(item=>item.key),locale+" accessibility keys");
+  assert.deepEqual(fields.guide.steps.map(item=>item.key),source.guide.steps.map(item=>item.key),locale+" guide step keys");
+  assert.deepEqual(fields.guide.sections.map(item=>item.key),source.guide.sections.map(item=>item.key),locale+" guide section keys");
+  assert.equal((JSON.stringify(fields).match(/\\{field\\}/g)||[]).length,(source.errors.reduce((n,e)=>n+(e.message.match(/\\{field\\}/g)||[]).length,0)),locale+" protected field tokens");
+  assert.ok(fields.metadata.title&&fields.metadata.description&&fields.seo.metaDescription&&fields.accessibility.chartLabel,locale+" translated labels");
+ }
+});
+
 test("batch-three source extraction captures 20 tools and 88 stable input labels without activating translations",()=>{
  const batchThreeIds=["ira","inflation","cd","apy","tax","income-tax","sales-tax","vat-gst","tax-refund","salary","paycheck","payroll","overtime","discount","exchange-fees","transfer-compare","freelance-project","freelancer-net-income","markup","break-even"];
  const manifest=require("../docs/i18n/batch-03-source-extraction.json");
@@ -241,7 +262,7 @@ test("batch-three source extraction captures 20 tools and 88 stable input labels
   assert.deepEqual(tool.source.inputs,extracted.inputs,id+" source input labels match extraction manifest");
   assert.equal(tool.sourceExtractionStatus,"source-record-complete",id+" complete source extraction status");
   assert.equal(tool.sourceCompletenessStatus,"complete",id+" requested source fields complete");
-  const draftStarted=["ira","inflation","cd","apy","paycheck","payroll","overtime","discount","exchange-fees","transfer-compare","freelance-project"].includes(id);
+  const draftStarted=["ira","inflation","cd","apy","paycheck","payroll","overtime","discount","exchange-fees","transfer-compare","freelance-project","freelancer-net-income"].includes(id);
   assert.equal(tool.sourceTranslationStatus,draftStarted?"draft":"not-started",id+" source translation state");
   assert.equal(new Set(tool.source.inputs.map(input=>input.key)).size,tool.source.inputs.length,id+" unique stable input keys");
   for(const locale of locales){
@@ -279,7 +300,7 @@ test("batch-three source records contain implementation-derived content and keep
   assert.ok(source.accessibility.pageLabel&&source.accessibility.formLabel&&source.accessibility.resultAnnouncement&&source.accessibility.chartLabel,id+" accessibility labels");
   assert.deepEqual(source.accessibility.controlLabels.map(x=>x.key),[...source.inputs.map(x=>x.key),...(source.selectors||[]).map(x=>x.key)],id+" accessibility stable input and selector keys");
   assert.equal(tool.sourceCompletenessStatus,"complete",id+" requested source fields complete");
-  const draftStarted=["ira","inflation","cd","apy","paycheck","payroll","overtime","discount","exchange-fees","transfer-compare","freelance-project"].includes(id);
+  const draftStarted=["ira","inflation","cd","apy","paycheck","payroll","overtime","discount","exchange-fees","transfer-compare","freelance-project","freelancer-net-income"].includes(id);
   assert.equal(tool.sourceTranslationStatus,draftStarted?"draft":"not-started",id+" translation state matches draft boundary");
   for(const locale of locales){
    if(draftStarted){
