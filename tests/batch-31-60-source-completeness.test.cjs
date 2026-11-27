@@ -421,8 +421,8 @@ test("Fraction six-locale drafts preserve stable keys, GCD formula and denominat
  assert.equal(source.inputs.length,2);
  assert.equal(source.errors.length,3);
  assert.match(source.explanations.formula,/gcd/);
- assert.match(source.assumptions[0],/safe integers/);
- assert.match(source.assumptions[1],/zero/);
+ assert.match(source.explanations.assumptions[0],/safe integers/);
+ assert.match(source.explanations.assumptions[1],/zero/);
 });
 
 
