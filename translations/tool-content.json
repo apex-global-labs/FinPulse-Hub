@@ -56949,7 +56949,7 @@
         }
       },
       "sourceExtractionStatus": "source-record-complete",
-      "sourceTranslationStatus": "not-started",
+      "sourceTranslationStatus": "draft",
       "sourceCompletenessStatus": "complete"
     },
     {

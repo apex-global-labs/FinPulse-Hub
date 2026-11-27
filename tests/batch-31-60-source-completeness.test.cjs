@@ -73,7 +73,18 @@ test("Batch 31-60 source records include every required editorial content group"
 test("Batch 31-60 locale inventory preserves the draft-only activation boundary", () => {
   for (const tool of content.tools.slice(30, 60)) {
     assert.deepEqual(Object.keys(tool.locales).sort(), locales.slice().sort(), tool.id + " locale inventory");
-    if (["paycheck", "payroll", "overtime", "discount", "exchange-fees", "transfer-compare", "freelance-project", "freelancer-net-income", "markup", "break-even"].includes(tool.id)) {
+    if (tool.id === "business-roi") {
+      assert.equal(tool.sourceTranslationStatus, "draft", tool.id + " translation status");
+      for (const locale of locales) {
+        if (locale === "hi") {
+          assert.equal(tool.locales[locale].status, "draft", tool.id + "/" + locale);
+          assert.ok(Object.keys(tool.locales[locale].fields).length >= 9, tool.id + "/" + locale + " translated content groups");
+        } else {
+          assert.equal(tool.locales[locale].status, "not-started", tool.id + "/" + locale);
+          assert.deepEqual(tool.locales[locale].fields, {}, tool.id + "/" + locale + " fields remain empty");
+        }
+      }
+    } else if (["paycheck", "payroll", "overtime", "discount", "exchange-fees", "transfer-compare", "freelance-project", "freelancer-net-income", "markup", "break-even"].includes(tool.id)) {
       assert.equal(tool.sourceTranslationStatus, "draft", tool.id + " translation status");
       for (const locale of locales) {
         assert.equal(tool.locales[locale].status, "draft", tool.id + "/" + locale);

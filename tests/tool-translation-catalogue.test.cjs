@@ -36,6 +36,7 @@ test("every canonical tool has six locale records with correct draft or pending 
  const pilotIds=["currency","mortgage","loan","emi","compound","percentage","tip","car","amortization","savings"];
  const batchTwoIds=["freelance","margin","affordability","payoff","refinance","personal-loan","student-loan","simple-interest","retirement","401k"];
  const batchThreeDraftIds=["ira","inflation","cd","apy","paycheck","payroll","overtime","discount","exchange-fees","transfer-compare","freelance-project","freelancer-net-income","markup","break-even"];
+ const batchFourPartialIds=["business-roi"];
  for(const tool of content.tools){
   assert.deepEqual(Object.keys(tool.locales).sort(),locales.slice().sort());
   for(const locale of locales){
@@ -83,6 +84,23 @@ test("every canonical tool has six locale records with correct draft or pending 
     assert.equal(tool.sourceTranslationStatus,"draft",tool.id+" batch-three source draft status");
     assert.ok(tool.locales[locale].fields.metadata.title&&tool.locales[locale].fields.metadata.description,tool.id+":"+locale+" batch-three draft metadata");
     assert.ok(tool.locales[locale].fields.results.metrics.every(item=>item.label&&item.label.trim()),tool.id+":"+locale+" batch-three draft result labels");
+   }else if(batchFourPartialIds.includes(tool.id)){
+    if(locale==="hi"){
+     assert.equal(tool.locales[locale].status,"draft",tool.id+":"+locale+" partial draft status");
+     assert.equal(tool.sourceTranslationStatus,"draft",tool.id+" partial source draft status");
+     const fields=tool.locales[locale].fields,source=tool.source;
+     assert.ok(fields.metadata.title&&fields.metadata.description,tool.id+":"+locale+" metadata");
+     assert.deepEqual(fields.inputs.map(x=>x.key),source.inputs.map(x=>x.key),tool.id+":"+locale+" input keys");
+     assert.deepEqual(fields.results.metrics.map(x=>x.key),source.results.metrics.map(x=>x.key),tool.id+":"+locale+" metric keys");
+     assert.deepEqual(fields.results.breakdown.map(x=>x.key),source.results.breakdown.map(x=>x.key),tool.id+":"+locale+" breakdown keys");
+     assert.deepEqual(fields.faqs.map(x=>x.key),source.faqs.map(x=>x.key),tool.id+":"+locale+" FAQ keys");
+     assert.deepEqual(fields.errors.map(x=>x.key),source.errors.map(x=>x.key),tool.id+":"+locale+" error keys");
+     assert.deepEqual(fields.accessibility.controlLabels.map(x=>x.key),source.inputs.map(x=>x.key),tool.id+":"+locale+" accessibility keys");
+     assert.ok(fields.guide.steps.length===source.guide.steps.length,tool.id+":"+locale+" guide steps");
+    }else{
+     assert.equal(tool.locales[locale].status,"not-started",tool.id+":"+locale);
+     assert.deepEqual(tool.locales[locale].fields,{});
+    }
    }else{
     assert.equal(tool.locales[locale].status,"not-started",tool.id+":"+locale);
     assert.deepEqual(tool.locales[locale].fields,{});
