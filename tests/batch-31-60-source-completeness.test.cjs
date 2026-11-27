@@ -571,3 +571,44 @@ test("Batch 41-50 six-locale records are field-complete and preserve source cont
   }
  }
 });
+
+
+test("Proportion #51 six-locale drafts cover every source field and preserve stable keys, tokens and formula",()=>{
+ const tool=content.tools.find(x=>x.id==="proportion"),source=tool.source;
+ const required=(value,label)=>assert.ok(typeof value==="string"&&value.trim(),label);
+ const keys=items=>items.map(x=>x.key);
+ const tokenCount=value=>(JSON.stringify(value).match(/\\{field\\}/g)||[]).length;
+ for(const locale of locales){
+  const record=tool.locales[locale],fields=record.fields,label="proportion/"+locale;
+  assert.equal(record.status,"draft",label+" remains inactive draft");
+  for(const key of ["title","description","category","subcategory"])required(fields.metadata?.[key],label+" metadata."+key);
+  assert.deepEqual(keys(fields.inputs),keys(source.inputs),label+" input stable keys");
+  assert.deepEqual(keys(fields.results.metrics),keys(source.results.metrics),label+" metric stable keys");
+  assert.deepEqual(keys(fields.results.breakdown),keys(source.results.breakdown),label+" breakdown stable keys");
+  assert.deepEqual(keys(fields.errors),keys(source.errors),label+" error stable keys");
+  assert.deepEqual(keys(fields.faqs),keys(source.faqs),label+" FAQ stable keys");
+  assert.deepEqual(keys(fields.seo.faq),keys(source.seo.faq),label+" SEO FAQ stable keys");
+  assert.deepEqual(keys(fields.guide.steps),keys(source.guide.steps),label+" guide step stable keys");
+  assert.deepEqual(keys(fields.guide.sections),keys(source.guide.sections),label+" guide section stable keys");
+  assert.deepEqual(keys(fields.accessibility.controlLabels),keys(source.inputs),label+" accessibility control keys");
+  for(const action of ["calculate","recalculate","clear","reset","copy","download","print"])required(fields.actions?.[action],label+" action."+action);
+  for(const key of ["heading","summary"])required(fields.results?.[key],label+" results."+key);
+  for(const key of ["formulaTitle","formulaDescription"])required(fields.explanations?.[key],label+" explanations."+key);
+  for(const key of ["steps","assumptions","notes","disclaimers","limitations"]){
+   assert.equal(fields.explanations[key].length,source.explanations[key].length,label+" explanation "+key+" count");
+   fields.explanations[key].forEach((v,i)=>required(v,label+" explanation "+key+"["+i+"]"));
+  }
+  for(const row of fields.inputs)required(row.label,label+" input label");
+  for(const row of [...fields.results.metrics,...fields.results.breakdown])required(row.label,label+" result label");
+  for(const row of fields.errors){required(row.message,label+" error message");required(row.recoveryHint,label+" recovery hint");}
+  for(const row of [...fields.faqs,...fields.seo.faq]){required(row.question,label+" FAQ question");required(row.answer,label+" FAQ answer");}
+  for(const row of fields.guide.steps){required(row.title,label+" guide title");required(row.body,label+" guide body");}
+  for(const row of fields.guide.sections){required(row.heading,label+" guide heading");required(row.body,label+" guide section");}
+  for(const key of ["title","metaDescription","h1","introduction"])required(fields.seo[key],label+" SEO "+key);
+  for(const key of ["pageLabel","formLabel","resultAnnouncement","chartLabel"])required(fields.accessibility[key],label+" accessibility "+key);
+  assert.equal(fields.explanations.formulaDescription,source.explanations.formula,label+" protected formula");
+  assert.equal(fields.guide.sections[0].body,source.explanations.formula,label+" guide formula");
+  assert.equal(tokenCount(fields),tokenCount(source.errors),label+" protected {field} token count");
+  assertTrimmed(fields,label+" whitespace");
+ }
+});
