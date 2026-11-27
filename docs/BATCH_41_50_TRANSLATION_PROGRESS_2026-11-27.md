@@ -3,7 +3,7 @@
 **Repository:** `apex-global-labs/FinPulse-Hub`  
 **Branch:** `feat/seven-language-translation-engine-phase-1`  
 **PR:** #73 — Open / Draft / Unmerged  
-**Latest translation commit:** `cd53511b612167a738b5a29657824071e143d2d2`
+**Latest translation commit:** `b1ba09f2e9af058d7a22be9dca867d437fb265d4`
 
 ## Release Gate
 
@@ -14,8 +14,8 @@ The translation work below changes the candidate head. Fresh Finance CI and Ligh
 ## Translation progress
 
 - Batch scope: tools #41–50, six target locales (`hi`, `ar`, `ur`, `zh-CN`, `ja`, `ru`), 60 locale records.
-- Completed draft records: **6/60** — #41 Business ROI / all six target locales (`hi`, `ar`, `ur`, `zh-CN`, `ja`, `ru`).
-- Remaining: **54/60** — tools #42–50, all six locales each, not started.
+- Completed draft records: **12/60** — #41 Business ROI and #42 Cash Flow Projection / all six target locales each.
+- Remaining: **48/60** — tools #43–50, all six locales each, not started.
 - No locale is marked linguistically reviewed, domain reviewed, approved, or published.
 
 ## #41 Business ROI / Hindi field coverage
@@ -85,3 +85,15 @@ The Urdu locale is saved as `draft` with all 10 field groups, including all seve
 - Translation records complete: **6/60**. Remaining: **54/60**.
 - No locale has been linguistically approved or activated; English runtime fallback remains in force.
 - Fresh Finance CI and Candidate Lighthouse/CLS are required on the final updated candidate head before release-gate claims.
+
+
+## #42 Cash Flow Projection / six locale drafts completed (2026-11-27)
+
+- Completed Hindi, Arabic, Urdu, Simplified Chinese, Japanese and Russian drafts.
+- Populated all ten translation groups for each locale: metadata, inputs, actions, results, explanations, errors, FAQs, guide, SEO and accessibility.
+- Preserved all six input keys, five metric keys, five breakdown keys, three error keys, three FAQ keys, guide keys and accessibility control keys in source order.
+- Preserved the canonical monthly compounding and closing-cash formula verbatim in the formula description and guide calculation section.
+- Kept the source's numeric constraints unchanged: growth 0–100%; supported projection periods 3, 6, 12 or 24 months; no numeric defaults or executable calculation changes.
+- All six locale records remain `draft`; no activation or publication.
+- Added automated tests for six-locale completeness, stable keys, formula integrity, field counts and source numeric constraints.
+- Completed draft records: **12/60**. Remaining: **48/60**.
