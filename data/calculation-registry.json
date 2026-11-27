@@ -584,7 +584,6 @@
             "label": "Overtime pay multiplier",
             "type": "number",
             "defaultValue": 1.5,
-            "minimum": 0,
             "minimumExclusive": 0
           },
           {
@@ -672,7 +671,6 @@
             "label": "Number of employees",
             "type": "integer",
             "defaultValue": 8,
-            "minimum": 1,
             "minimumExclusive": 0
           },
           {
@@ -770,7 +768,6 @@
             "label": "Overtime pay multiplier",
             "type": "number",
             "defaultValue": 1.5,
-            "minimum": 0,
             "minimumExclusive": 0
           }
         ],
@@ -900,7 +897,6 @@
             "label": "Mid-market exchange rate",
             "type": "number",
             "defaultValue": 1.08,
-            "minimum": 0,
             "minimumExclusive": 0
           },
           {
@@ -995,7 +991,6 @@
             "label": "Mid-market exchange rate",
             "type": "number",
             "defaultValue": 1.08,
-            "minimum": 0,
             "minimumExclusive": 0
           },
           {
@@ -1099,17 +1094,16 @@
         "inputs": [
           {
             "key": "hours",
-            "label": "Billable hours",
+            "label": "Estimated project hours",
             "type": "number",
             "defaultValue": 40,
             "minimum": 0
           },
           {
             "key": "rate",
-            "label": "Hourly rate",
+            "label": "Hourly billing rate",
             "type": "number",
             "defaultValue": 60,
-            "minimum": 0,
             "minimumExclusive": 0
           },
           {
@@ -1121,7 +1115,7 @@
           },
           {
             "key": "contingency",
-            "label": "Contingency (%)",
+            "label": "Contingency allowance (%)",
             "type": "percentage",
             "defaultValue": 10,
             "minimum": 0,
@@ -1131,9 +1125,8 @@
             "key": "margin",
             "label": "Target gross margin (%)",
             "type": "percentage",
-            "defaultValue": 20,
+            "defaultValue": 25,
             "minimum": 0,
-            "maximum": 90,
             "maximumExclusive": 90
           }
         ],
