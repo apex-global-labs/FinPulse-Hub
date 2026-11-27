@@ -76,13 +76,8 @@ test("Batch 31-60 locale inventory preserves the draft-only activation boundary"
     if (tool.id === "business-roi") {
       assert.equal(tool.sourceTranslationStatus, "draft", tool.id + " translation status");
       for (const locale of locales) {
-        if (locale === "hi" || locale === "ar" || locale === "ur") {
-          assert.equal(tool.locales[locale].status, "draft", tool.id + "/" + locale);
-          assert.ok(Object.keys(tool.locales[locale].fields).length >= 9, tool.id + "/" + locale + " translated content groups");
-        } else {
-          assert.equal(tool.locales[locale].status, "not-started", tool.id + "/" + locale);
-          assert.deepEqual(tool.locales[locale].fields, {}, tool.id + "/" + locale + " fields remain empty");
-        }
+        assert.equal(tool.locales[locale].status, "draft", tool.id + "/" + locale);
+        assert.deepEqual(Object.keys(tool.locales[locale].fields).sort(), ["accessibility","actions","errors","explanations","faqs","guide","inputs","metadata","results","seo"].sort(), tool.id + "/" + locale + " complete translation field groups");
       }
     } else if (["paycheck", "payroll", "overtime", "discount", "exchange-fees", "transfer-compare", "freelance-project", "freelancer-net-income", "markup", "break-even"].includes(tool.id)) {
       assert.equal(tool.sourceTranslationStatus, "draft", tool.id + " translation status");
@@ -174,4 +169,44 @@ test("Batch 31-40 registry contracts match source input keys, runtime functions 
   assert.ok(entry.calculation.constraints.length>0,id+" constraints");
   assert.ok(entry.calculation.formula&&entry.calculation.formula.trim(),id+" formula");
  }
+});
+
+
+test("Business ROI six-locale drafts are field-complete and preserve source contracts",()=>{
+ const tool=content.tools.find(x=>x.id==="business-roi"),source=tool.source;
+ const keys=(items)=>items.map(x=>x.key);
+ const count=(value,token)=>value.split(token).length-1;
+ const sourceTokenCount=source.errors.reduce((n,e)=>n+count(e.message,"{field}"),0);
+ for(const locale of locales){
+  const record=tool.locales[locale],f=record.fields;
+  assert.equal(record.status,"draft",locale+" remains inactive draft");
+  assert.deepEqual(keys(f.inputs),keys(source.inputs),locale+" input stable keys");
+  assert.deepEqual(keys(f.results.metrics),keys(source.results.metrics),locale+" metric stable keys");
+  assert.deepEqual(keys(f.results.breakdown),keys(source.results.breakdown),locale+" breakdown stable keys");
+  assert.deepEqual(keys(f.errors),keys(source.errors),locale+" error stable keys");
+  assert.deepEqual(keys(f.faqs),keys(source.faqs),locale+" FAQ stable keys");
+  assert.deepEqual(keys(f.seo.faq),keys(source.seo.faq),locale+" SEO FAQ stable keys");
+  assert.deepEqual(keys(f.guide.steps),keys(source.guide.steps),locale+" guide step stable keys");
+  assert.deepEqual(keys(f.guide.sections),keys(source.guide.sections),locale+" guide section stable keys");
+  assert.deepEqual(keys(f.accessibility.controlLabels),keys(source.inputs),locale+" accessibility control keys");
+  assert.equal(count(JSON.stringify(f),"{field}"),sourceTokenCount,locale+" placeholder token parity");
+  assert.equal(f.explanations.formulaDescription,source.explanations.formula,locale+" canonical formula unchanged");
+  assert.equal(f.guide.sections[0].body,source.explanations.formula,locale+" guide formula unchanged");
+  assert.equal(f.results.metrics.length,source.results.metrics.length,locale+" metric count");
+  assert.equal(f.results.breakdown.length,source.results.breakdown.length,locale+" breakdown count");
+  for(const group of ["metadata","inputs","actions","results","explanations","errors","faqs","guide","seo","accessibility"]){
+   const serialized=JSON.stringify(f[group]);
+   assert.ok(serialized && serialized!=="{}",locale+" "+group+" populated");
+  }
+  assert.ok(f.metadata.title&&f.metadata.description&&f.metadata.category&&f.metadata.subcategory,locale+" metadata complete");
+  assert.ok(Object.values(f.actions).every(x=>typeof x==="string"&&x.trim()),locale+" action labels complete");
+  assert.ok(f.results.heading&&f.results.summary&&f.results.chart.title,locale+" result labels complete");
+  for(const group of ["steps","assumptions","notes","disclaimers","limitations"])assert.ok(f.explanations[group].length&&f.explanations[group].every(x=>x.trim()),locale+" explanations "+group);
+  assert.ok(f.errors.every(x=>x.message&&x.recoveryHint),locale+" error messages and recovery hints");
+  assert.ok(f.faqs.every(x=>x.question&&x.answer),locale+" FAQ text");
+  assert.ok(f.seo.title&&f.seo.metaDescription&&f.seo.h1&&f.seo.introduction,locale+" SEO fields");
+  assert.ok(f.guide.title&&f.guide.introduction&&f.guide.steps.every(x=>x.title&&x.body)&&f.guide.sections.every(x=>x.heading&&x.body),locale+" guide content");
+  assert.ok(f.accessibility.pageLabel&&f.accessibility.formLabel&&f.accessibility.resultAnnouncement&&f.accessibility.chartLabel,locale+" accessibility labels");
+ }
+ assert.equal(source.explanations.formula,"Gain = ending value − initial investment. Simple ROI (%) = gain ÷ initial investment × 100. Return multiple = ending value ÷ initial investment.");
 });
