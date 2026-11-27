@@ -10,7 +10,7 @@
 
 ## Severity summary
 
-- **Release blocker — human review:** Batch #41–50 target-language records are complete drafts, but none is linguistically or finance/domain approved. English fallback remains active; no translation activation, merge or production deployment is authorized.
+- **Activation boundary:** Batch #41–50 target-language records are complete drafts. Per the existing PR #73 decision, mandatory written native-speaker/finance-domain sign-off is not a release prerequisite; optional expert feedback may improve quality. Draft records still remain inactive until the separate translation-activation decision.
 - **Documentation drift — medium:** Several older trackers still say #41–50 are `not-started` (including the 2026-11-26 handoff, 2026-11-26 translation tracker/matrix, and the 2026-11-25 source/parity audit). Those statements are superseded for translation status by the 2026-11-27 Batch #41–50 progress and field-completeness audit below. Do not use the stale aggregate 220×6 counts until the repository-side status matrix is regenerated on the latest head.
 - **Calculation automation remains partial:** Registry positions #41–50 are `regression-verified`; #51–60 are `extracted`, not yet `regression-verified`. Do not promote #51–60 without independent parity and numerical regression evidence.
 - **Production status boundary:** Main HEAD is observed at `240256f...`; candidate checks do not establish that this main commit is deployed. No main-branch workflow run or Pages deployment was returned by the commit-workflow lookup in this audit. Production remains unchanged by PR #73.
@@ -71,7 +71,7 @@ Mobile tool-route Performance (81) and mobile homepage Accessibility (96) are fo
 ## Next actions
 
 1. Regenerate the full 220 × 6 translation status matrix from the actual latest `translations/tool-content.json`; reconcile stale tracker totals rather than guessing.
-2. Complete independent language/native-speaker and finance-domain review for #41–50 before any activation.
+2. Keep optional native-speaker and finance-domain feedback available for #41–50; do not treat it as a mandatory release gate under the recorded PR #73 decision.
 3. Start #51–60 calculation parity and numerical regression; promote registry status only after tests pass.
 4. Continue translations in catalogue order only after source completeness and runtime formula evidence are verified.
 5. Run a fresh exact-head Finance CI and Lighthouse/CLS after any subsequent code/data change.
