@@ -578,6 +578,7 @@ test("Proportion #51 six-locale drafts cover every source field and preserve sta
  const required=(value,label)=>assert.ok(typeof value==="string"&&value.trim(),label);
  const keys=items=>items.map(x=>x.key);
  const tokenCount=value=>(JSON.stringify(value).match(/\\{field\\}/g)||[]).length;
+ const assertNoWhitespace=(value,path)=>{if(typeof value==="string")assert.equal(value,value.trim(),path+" has surrounding whitespace");else if(Array.isArray(value))value.forEach((v,i)=>assertNoWhitespace(v,path+"["+i+"]"));else if(value&&typeof value==="object")for(const [key,v] of Object.entries(value))assertNoWhitespace(v,path+"."+key)};
  for(const locale of locales){
   const record=tool.locales[locale],fields=record.fields,label="proportion/"+locale;
   assert.equal(record.status,"draft",label+" remains inactive draft");
@@ -609,6 +610,6 @@ test("Proportion #51 six-locale drafts cover every source field and preserve sta
   assert.equal(fields.explanations.formulaDescription,source.explanations.formula,label+" protected formula");
   assert.equal(fields.guide.sections[0].body,source.explanations.formula,label+" guide formula");
   assert.equal(tokenCount(fields),tokenCount(source.errors),label+" protected {field} token count");
-  assertTrimmed(fields,label+" whitespace");
+  assertNoWhitespace(fields,label+" whitespace");
  }
 });
