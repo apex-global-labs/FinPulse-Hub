@@ -460,7 +460,7 @@ test("Mixed Number six-locale drafts preserve stable keys, signed formula and in
  assert.equal(source.errors.length,3);
  assert.match(source.explanations.formula,/negative whole values apply a negative fractional part/);
  assert.match(source.explanations.assumptions[0],/safe integers/);
- assert.match(source.explanations.assumptions[1],/smaller than the denominator/);
+ assert.match(source.explanations.assumptions[1],/up to but not including denominator/);
 });
 
 
