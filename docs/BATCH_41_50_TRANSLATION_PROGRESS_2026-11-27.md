@@ -201,3 +201,23 @@ The Urdu locale is saved as `draft` with all 10 field groups, including all seve
 - Finance and math runtime code, calculation formulas, numeric defaults, currency codes and jurisdiction data were not changed by the translation work.
 - English fallback remains active because every target-locale record is still `draft`.
 - Required next gates: full schema/token/stable-key audit, calculation parity/regression, seven-locale browser and RTL/LTR/accessibility checks, then fresh Finance CI and Lighthouse/CLS on the final candidate head.
+
+
+## #50 Ratio / six locale drafts verified (2026-11-27)
+
+- Hindi, Arabic, Urdu, Simplified Chinese, Japanese and Russian draft records are populated.
+- Verified two input labels, one result metric, two breakdown labels, three error messages and recovery hints, two FAQs, four guide steps, two guide sections, SEO FAQs and accessibility labels in all six locales.
+- Preserved stable keys and the source GCD formula verbatim in formula descriptions and guide calculation sections.
+- Preserved safe non-negative integer requirements and rejection of the 0:0 case; no runtime function, numeric defaults or calculation behavior changed.
+- All six locale records remain `draft`; no locale activation or publication.
+- Full Batch #41–50 field audit: **60/60 locale records complete** after correcting one missing Emergency Fund planning disclaimer in all six locales.
+- `{field}` token counts and protected formula strings match their English sources for all 60 records.
+- Remaining translation drafts for Batch #41–50: **0/60**.
+
+## Field-completeness correction (2026-11-27)
+
+- Audit identified that #44 Emergency Fund was missing its third source-backed assumption/disclaimer in all six target locales.
+- Added the localized planning-only disclaimer to Hindi, Arabic, Urdu, Simplified Chinese, Japanese and Russian.
+- Corrected stale test references for `source.explanations.assumptions` and aligned the Mixed Number constraint assertion with the authoritative source wording.
+- Added a batch-wide automated completeness test covering metadata, actions, inputs, results, explanations, errors/recovery, FAQs, guide, SEO, accessibility, stable keys, `{field}` tokens and protected formulas.
+- Finance CI is being rerun against the updated branch head; release acceptance remains blocked until the latest-head Finance CI, browser/RTL/accessibility and Lighthouse/CLS gates pass.
