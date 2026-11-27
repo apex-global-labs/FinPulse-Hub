@@ -558,15 +558,72 @@
       "status": "extracted",
       "calculation": {
         "inputs": [
-          "hourly",
-          "regular",
-          "overtime",
-          "multiplier",
-          "bonus",
-          "tax",
-          "retirement",
-          "benefits",
-          "other"
+          {
+            "key": "hourly",
+            "label": "Hourly pay rate",
+            "type": "number",
+            "defaultValue": 30,
+            "minimum": 0
+          },
+          {
+            "key": "regular",
+            "label": "Regular hours this pay period",
+            "type": "number",
+            "defaultValue": 80,
+            "minimum": 0
+          },
+          {
+            "key": "overtime",
+            "label": "Overtime hours this pay period",
+            "type": "number",
+            "defaultValue": 0,
+            "minimum": 0
+          },
+          {
+            "key": "multiplier",
+            "label": "Overtime pay multiplier",
+            "type": "number",
+            "defaultValue": 1.5,
+            "minimum": 0,
+            "minimumExclusive": 0
+          },
+          {
+            "key": "bonus",
+            "label": "Bonus / commission this period",
+            "type": "number",
+            "defaultValue": 0,
+            "minimum": 0
+          },
+          {
+            "key": "tax",
+            "label": "Estimated withholding (%)",
+            "type": "percentage",
+            "defaultValue": 18,
+            "minimum": 0,
+            "maximum": 100
+          },
+          {
+            "key": "retirement",
+            "label": "Retirement deduction (%)",
+            "type": "percentage",
+            "defaultValue": 5,
+            "minimum": 0,
+            "maximum": 100
+          },
+          {
+            "key": "benefits",
+            "label": "Benefits / insurance deduction",
+            "type": "number",
+            "defaultValue": 100,
+            "minimum": 0
+          },
+          {
+            "key": "other",
+            "label": "Other deductions",
+            "type": "number",
+            "defaultValue": 25,
+            "minimum": 0
+          }
         ],
         "constraints": [
           "All monetary, hour, bonus, rate and deduction inputs must be finite and nonnegative.",
@@ -610,11 +667,43 @@
       "status": "extracted",
       "calculation": {
         "inputs": [
-          "employees",
-          "salary",
-          "tax",
-          "benefits",
-          "other"
+          {
+            "key": "employees",
+            "label": "Number of employees",
+            "type": "integer",
+            "defaultValue": 8,
+            "minimum": 1,
+            "minimumExclusive": 0
+          },
+          {
+            "key": "salary",
+            "label": "Average gross monthly pay per employee",
+            "type": "number",
+            "defaultValue": 4000,
+            "minimum": 0
+          },
+          {
+            "key": "tax",
+            "label": "Employer payroll tax / contribution (%)",
+            "type": "percentage",
+            "defaultValue": 7,
+            "minimum": 0,
+            "maximum": 100
+          },
+          {
+            "key": "benefits",
+            "label": "Monthly benefits per employee",
+            "type": "number",
+            "defaultValue": 250,
+            "minimum": 0
+          },
+          {
+            "key": "other",
+            "label": "Other monthly payroll costs",
+            "type": "number",
+            "defaultValue": 500,
+            "minimum": 0
+          }
         ],
         "constraints": [
           "Average monthly gross pay, employer tax rate, benefits and other monthly costs must be finite and nonnegative.",
@@ -655,10 +744,35 @@
       "status": "extracted",
       "calculation": {
         "inputs": [
-          "rate",
-          "regular",
-          "overtime",
-          "multiplier"
+          {
+            "key": "rate",
+            "label": "Hourly pay rate",
+            "type": "number",
+            "defaultValue": 25,
+            "minimum": 0
+          },
+          {
+            "key": "regular",
+            "label": "Regular hours",
+            "type": "number",
+            "defaultValue": 40,
+            "minimum": 0
+          },
+          {
+            "key": "overtime",
+            "label": "Overtime hours",
+            "type": "number",
+            "defaultValue": 8,
+            "minimum": 0
+          },
+          {
+            "key": "multiplier",
+            "label": "Overtime pay multiplier",
+            "type": "number",
+            "defaultValue": 1.5,
+            "minimum": 0,
+            "minimumExclusive": 0
+          }
         ],
         "constraints": [
           "Hourly rate and hour values must be finite and nonnegative.",
@@ -695,11 +809,44 @@
       "status": "extracted",
       "calculation": {
         "inputs": [
-          "price",
-          "discount",
-          "coupon",
-          "tax",
-          "shipping"
+          {
+            "key": "price",
+            "label": "Original price",
+            "type": "number",
+            "defaultValue": 120,
+            "minimum": 0
+          },
+          {
+            "key": "discount",
+            "label": "First discount (%)",
+            "type": "percentage",
+            "defaultValue": 20,
+            "minimum": 0,
+            "maximum": 100
+          },
+          {
+            "key": "coupon",
+            "label": "Additional coupon (%)",
+            "type": "percentage",
+            "defaultValue": 5,
+            "minimum": 0,
+            "maximum": 100
+          },
+          {
+            "key": "tax",
+            "label": "Estimated sales tax (%)",
+            "type": "percentage",
+            "defaultValue": 8,
+            "minimum": 0,
+            "maximum": 100
+          },
+          {
+            "key": "shipping",
+            "label": "Shipping cost",
+            "type": "number",
+            "defaultValue": 5,
+            "minimum": 0
+          }
         ],
         "constraints": [
           "Price, rates and shipping must be finite and nonnegative.",
@@ -741,11 +888,44 @@
       "status": "extracted",
       "calculation": {
         "inputs": [
-          "amount",
-          "rate",
-          "markup",
-          "fee",
-          "fixed"
+          {
+            "key": "amount",
+            "label": "Amount to send",
+            "type": "number",
+            "defaultValue": 1000,
+            "minimum": 0
+          },
+          {
+            "key": "rate",
+            "label": "Mid-market exchange rate",
+            "type": "number",
+            "defaultValue": 1.08,
+            "minimum": 0,
+            "minimumExclusive": 0
+          },
+          {
+            "key": "markup",
+            "label": "Exchange-rate markup (%)",
+            "type": "percentage",
+            "defaultValue": 2,
+            "minimum": 0,
+            "maximum": 100
+          },
+          {
+            "key": "fee",
+            "label": "Transfer fee (%)",
+            "type": "percentage",
+            "defaultValue": 1,
+            "minimum": 0,
+            "maximum": 100
+          },
+          {
+            "key": "fixed",
+            "label": "Fixed transfer fee",
+            "type": "number",
+            "defaultValue": 5,
+            "minimum": 0
+          }
         ],
         "constraints": [
           "Send amount must be finite and nonnegative; mid-market rate must be finite and positive.",
@@ -787,14 +967,67 @@
       "status": "extracted",
       "calculation": {
         "inputs": [
-          "amount",
-          "rate",
-          "aFixed",
-          "aFee",
-          "aMarkup",
-          "bFixed",
-          "bFee",
-          "bMarkup"
+          {
+            "key": "amount",
+            "label": "Amount to send",
+            "type": "number",
+            "defaultValue": 1000,
+            "minimum": 0
+          },
+          {
+            "key": "rate",
+            "label": "Mid-market exchange rate",
+            "type": "number",
+            "defaultValue": 1.08,
+            "minimum": 0,
+            "minimumExclusive": 0
+          },
+          {
+            "key": "aFixed",
+            "label": "Provider A fixed fee",
+            "type": "number",
+            "defaultValue": 5,
+            "minimum": 0
+          },
+          {
+            "key": "aFee",
+            "label": "Provider A transfer fee (%)",
+            "type": "percentage",
+            "defaultValue": 1,
+            "minimum": 0,
+            "maximum": 100
+          },
+          {
+            "key": "aMarkup",
+            "label": "Provider A rate markup (%)",
+            "type": "percentage",
+            "defaultValue": 2,
+            "minimum": 0,
+            "maximum": 100
+          },
+          {
+            "key": "bFixed",
+            "label": "Provider B fixed fee",
+            "type": "number",
+            "defaultValue": 2,
+            "minimum": 0
+          },
+          {
+            "key": "bFee",
+            "label": "Provider B transfer fee (%)",
+            "type": "percentage",
+            "defaultValue": 1.5,
+            "minimum": 0,
+            "maximum": 100
+          },
+          {
+            "key": "bMarkup",
+            "label": "Provider B rate markup (%)",
+            "type": "percentage",
+            "defaultValue": 1,
+            "minimum": 0,
+            "maximum": 100
+          }
         ],
         "constraints": [
           "Both provider fee structures use the same entered amount and mid-market rate.",
@@ -834,29 +1067,41 @@
         "inputs": [
           {
             "key": "hours",
+            "label": "Billable hours",
             "type": "number",
+            "defaultValue": 40,
             "minimum": 0
           },
           {
             "key": "rate",
+            "label": "Hourly rate",
             "type": "number",
+            "defaultValue": 60,
+            "minimum": 0,
             "minimumExclusive": 0
           },
           {
             "key": "expenses",
+            "label": "Project expenses",
             "type": "number",
+            "defaultValue": 500,
             "minimum": 0
           },
           {
             "key": "contingency",
+            "label": "Contingency (%)",
             "type": "percentage",
+            "defaultValue": 10,
             "minimum": 0,
             "maximum": 100
           },
           {
             "key": "margin",
+            "label": "Target gross margin (%)",
             "type": "percentage",
+            "defaultValue": 20,
             "minimum": 0,
+            "maximum": 90,
             "maximumExclusive": 90
           }
         ],
@@ -905,17 +1150,23 @@
         "inputs": [
           {
             "key": "revenue",
+            "label": "Gross freelance revenue",
             "type": "number",
+            "defaultValue": 60000,
             "minimum": 0
           },
           {
             "key": "expenses",
+            "label": "Annual business expenses",
             "type": "number",
+            "defaultValue": 12000,
             "minimum": 0
           },
           {
             "key": "tax",
+            "label": "Estimated tax reserve (%)",
             "type": "percentage",
+            "defaultValue": 20,
             "minimum": 0,
             "maximum": 100
           }
@@ -960,12 +1211,16 @@
         "inputs": [
           {
             "key": "cost",
+            "label": "Unit cost",
             "type": "number",
+            "defaultValue": 80,
             "minimum": 0
           },
           {
             "key": "markup",
+            "label": "Markup (%)",
             "type": "percentage",
+            "defaultValue": 40,
             "minimum": 0,
             "maximum": 10000
           }
@@ -1009,17 +1264,23 @@
         "inputs": [
           {
             "key": "fixed",
+            "label": "Total fixed costs",
             "type": "number",
+            "defaultValue": 12000,
             "minimum": 0
           },
           {
             "key": "price",
+            "label": "Selling price per unit",
             "type": "number",
+            "defaultValue": 50,
             "minimum": 0
           },
           {
             "key": "variable",
+            "label": "Variable cost per unit",
             "type": "number",
+            "defaultValue": 20,
             "minimum": 0
           }
         ],

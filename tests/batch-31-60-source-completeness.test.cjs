@@ -131,3 +131,35 @@ test("Batch 31-60 editorial source cannot redefine executable or numeric runtime
     assert.ok(!("jurisdictionCode" in tool.source), tool.id + " editorial source cannot redefine jurisdiction IDs");
   }
 });
+
+
+test("Batch 31-40 registry contracts match source input keys, runtime functions and outputs",()=>{
+ const Core=require("../finance-core.js");
+ const ids=["paycheck","payroll","overtime","discount","exchange-fees","transfer-compare","freelance-project","freelancer-net-income","markup","break-even"];
+ const args={
+  paycheck:[20,40,5,1.5,100,10,5,20,10],
+  payroll:[2,3000,10,100,50],
+  overtime:[20,40,5,1.5],
+  discount:[100,10,10,10,5],
+  "exchange-fees":[1000,1.2,2,1,5],
+  "transfer-compare":[1000,1.2,5,1,2,2,1.5,1],
+  "freelance-project":[10,50,100,10,20],
+  "freelancer-net-income":[1000,200,20],
+  markup:[100,25],
+  "break-even":[1000,50,20]
+ };
+ for(const id of ids){
+  const tool=content.tools.find(x=>x.id===id);
+  const entry=calculationRegistry.tools.find(x=>x.toolId===id);
+  const contract=entry.calculation.inputs;
+  assert.ok(contract.every(x=>x&&typeof x==="object"&&x.key&&x.type&&Object.hasOwn(x,"defaultValue")),id+" typed input contract and defaults");
+  assert.deepEqual(contract.map(x=>x.key),tool.source.inputs.map(x=>x.key),id+" registry/source input key parity");
+  assert.deepEqual(contract.map(x=>x.label),tool.source.inputs.map(x=>x.label),id+" registry/source input label parity");
+  const fn=entry.runtimeFunction.replace("Core.","");
+  assert.equal(typeof Core[fn],"function",id+" runtime function exists");
+  const result=Core[fn](...args[id]);
+  for(const key of entry.calculation.outputs)assert.ok(Object.hasOwn(result,key),id+" runtime output "+key);
+  assert.ok(entry.calculation.constraints.length>0,id+" constraints");
+  assert.ok(entry.calculation.formula&&entry.calculation.formula.trim(),id+" formula");
+ }
+});
