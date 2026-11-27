@@ -79,6 +79,12 @@ test("Batch 31-60 locale inventory preserves the draft-only activation boundary"
         assert.equal(tool.locales[locale].status, "draft", tool.id + "/" + locale);
         assert.deepEqual(Object.keys(tool.locales[locale].fields).sort(), ["accessibility","actions","errors","explanations","faqs","guide","inputs","metadata","results","seo"].sort(), tool.id + "/" + locale + " complete translation field groups");
       }
+    } else if (tool.id === "mixed-number") {
+      assert.equal(tool.sourceTranslationStatus, "draft", tool.id + " translation status");
+      for (const locale of locales) {
+        assert.equal(tool.locales[locale].status, "draft", tool.id + "/" + locale);
+        assert.equal(Object.keys(tool.locales[locale].fields).length, 10, tool.id + "/" + locale + " complete field groups");
+      }
     } else if (tool.id === "fraction") {
       assert.equal(tool.sourceTranslationStatus, "draft", tool.id + " translation status");
       for (const locale of locales) {
@@ -417,4 +423,30 @@ test("Fraction six-locale drafts preserve stable keys, GCD formula and denominat
  assert.match(source.explanations.formula,/gcd/);
  assert.match(source.assumptions[0],/safe integers/);
  assert.match(source.assumptions[1],/zero/);
+});
+
+
+test("Mixed Number six-locale drafts preserve stable keys, signed formula and input ranges",()=>{
+ const tool=content.tools.find(x=>x.id==="mixed-number"),source=tool.source;
+ const keys=items=>items.map(x=>x.key);
+ for(const locale of locales){
+  const f=tool.locales[locale].fields;
+  assert.equal(tool.locales[locale].status,"draft",locale+" remains inactive draft");
+  assert.deepEqual(keys(f.inputs),keys(source.inputs),locale+" input keys");
+  assert.deepEqual(keys(f.results.metrics),keys(source.results.metrics),locale+" metric keys");
+  assert.deepEqual(keys(f.results.breakdown),keys(source.results.breakdown),locale+" breakdown keys");
+  assert.deepEqual(keys(f.errors),keys(source.errors),locale+" error keys");
+  assert.deepEqual(keys(f.faqs),keys(source.faqs),locale+" FAQ keys");
+  assert.deepEqual(keys(f.guide.steps),keys(source.guide.steps),locale+" guide keys");
+  assert.deepEqual(keys(f.accessibility.controlLabels),keys(source.inputs),locale+" accessibility keys");
+  assert.equal(f.explanations.formulaDescription,source.explanations.formula,locale+" formula unchanged");
+  assert.equal(f.guide.sections[0].body,source.explanations.formula,locale+" guide formula unchanged");
+  assert.ok(f.explanations.steps.length===5&&f.explanations.formulaTitle,locale+" explanation fields");
+  assert.ok(f.errors.every(x=>x.message&&x.recoveryHint),locale+" error recovery");
+ }
+ assert.equal(source.inputs.length,3);
+ assert.equal(source.errors.length,3);
+ assert.match(source.explanations.formula,/negative whole values apply a negative fractional part/);
+ assert.match(source.assumptions[0],/safe integers/);
+ assert.match(source.assumptions[1],/smaller than the denominator/);
 });
