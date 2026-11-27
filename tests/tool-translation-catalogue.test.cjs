@@ -458,6 +458,6 @@ test("Break-even six-locale drafts preserve source keys, formula, tokens and all
   assert.deepEqual(fields.accessibility.controlLabels.map(x=>x.key),source.inputs.map(x=>x.key),locale+" accessibility control keys");
   assert.ok(fields.seo.title&&fields.seo.metaDescription&&fields.seo.h1&&fields.seo.introduction,locale+" SEO");
   assert.ok(fields.accessibility.pageLabel&&fields.accessibility.formLabel&&fields.accessibility.resultAnnouncement&&fields.accessibility.chartLabel,locale+" accessibility labels");
-  assert.equal((JSON.stringify(fields).match(/\\{field\\}/g)||[]).length,2,locale+" protected field tokens");
+  assert.equal(JSON.stringify(fields).split("{field}").length-1,2,locale+" protected field tokens");
  }
 });
