@@ -283,7 +283,7 @@ test("batch-three source extraction captures 20 tools and 88 stable input labels
   assert.deepEqual(tool.source.inputs,extracted.inputs,id+" source input labels match extraction manifest");
   assert.equal(tool.sourceExtractionStatus,"source-record-complete",id+" complete source extraction status");
   assert.equal(tool.sourceCompletenessStatus,"complete",id+" requested source fields complete");
-  const draftStarted=["ira","inflation","cd","apy","paycheck","payroll","overtime","discount","exchange-fees","transfer-compare","freelance-project","freelancer-net-income","markup"].includes(id);
+  const draftStarted=["ira","inflation","cd","apy","paycheck","payroll","overtime","discount","exchange-fees","transfer-compare","freelance-project","freelancer-net-income","markup","break-even"].includes(id);
   assert.equal(tool.sourceTranslationStatus,draftStarted?"draft":"not-started",id+" source translation state");
   assert.equal(new Set(tool.source.inputs.map(input=>input.key)).size,tool.source.inputs.length,id+" unique stable input keys");
   for(const locale of locales){
@@ -321,7 +321,7 @@ test("batch-three source records contain implementation-derived content and keep
   assert.ok(source.accessibility.pageLabel&&source.accessibility.formLabel&&source.accessibility.resultAnnouncement&&source.accessibility.chartLabel,id+" accessibility labels");
   assert.deepEqual(source.accessibility.controlLabels.map(x=>x.key),[...source.inputs.map(x=>x.key),...(source.selectors||[]).map(x=>x.key)],id+" accessibility stable input and selector keys");
   assert.equal(tool.sourceCompletenessStatus,"complete",id+" requested source fields complete");
-  const draftStarted=["ira","inflation","cd","apy","paycheck","payroll","overtime","discount","exchange-fees","transfer-compare","freelance-project","freelancer-net-income","markup"].includes(id);
+  const draftStarted=["ira","inflation","cd","apy","paycheck","payroll","overtime","discount","exchange-fees","transfer-compare","freelance-project","freelancer-net-income","markup","break-even"].includes(id);
   assert.equal(tool.sourceTranslationStatus,draftStarted?"draft":"not-started",id+" translation state matches draft boundary");
   for(const locale of locales){
    if(draftStarted){
@@ -432,5 +432,32 @@ test("batch-three IRA and inflation drafts are complete across all six target lo
    assert.ok(fields.seo.title&&fields.seo.metaDescription&&fields.seo.h1&&fields.seo.introduction,id+":"+locale+" SEO complete");
    assert.ok(fields.accessibility.pageLabel&&fields.accessibility.formLabel&&fields.accessibility.resultAnnouncement&&fields.accessibility.chartLabel,id+":"+locale+" accessibility complete");
   }
+ }
+});
+
+
+test("Break-even six-locale drafts preserve source keys, formula, tokens and all source-backed content",()=>{
+ const tool=content.tools.find(item=>item.id==="break-even");
+ const source=tool.source;
+ for(const locale of locales){
+  const record=tool.locales[locale],fields=record.fields;
+  assert.equal(record.status,"draft",locale+" draft state");
+  assert.ok(fields.metadata.title&&fields.metadata.description,locale+" metadata");
+  assert.deepEqual(fields.inputs.map(x=>x.key),source.inputs.map(x=>x.key),locale+" input keys");
+  assert.ok(fields.inputs.every(x=>x.label&&x.label.trim()),locale+" input labels");
+  assert.deepEqual(fields.results.metrics.map(x=>x.key),source.results.metrics.map(x=>x.key),locale+" metric keys");
+  assert.deepEqual(fields.results.breakdown.map(x=>x.key),source.results.breakdown.map(x=>x.key),locale+" breakdown keys");
+  assert.ok(fields.results.metrics.every(x=>x.label&&x.label.trim()),locale+" metric labels");
+  assert.ok(fields.results.breakdown.every(x=>x.label&&x.label.trim()),locale+" breakdown labels");
+  assert.equal(fields.explanations.formulaDescription,source.explanations.formula,locale+" protected formula");
+  for(const key of ["steps","assumptions","notes","disclaimers","limitations"]) assert.equal(fields.explanations[key].length,source.explanations[key].length,locale+" "+key+" count");
+  assert.deepEqual(fields.errors.map(x=>x.key),source.errors.map(x=>x.key),locale+" error keys");
+  assert.deepEqual(fields.faqs.map(x=>x.key),source.faqs.map(x=>x.key),locale+" FAQ keys");
+  assert.deepEqual(fields.guide.steps.map(x=>x.key),source.guide.steps.map(x=>x.key),locale+" guide step keys");
+  assert.deepEqual(fields.guide.sections.map(x=>x.key),source.guide.sections.map(x=>x.key),locale+" guide section keys");
+  assert.deepEqual(fields.accessibility.controlLabels.map(x=>x.key),source.inputs.map(x=>x.key),locale+" accessibility control keys");
+  assert.ok(fields.seo.title&&fields.seo.metaDescription&&fields.seo.h1&&fields.seo.introduction,locale+" SEO");
+  assert.ok(fields.accessibility.pageLabel&&fields.accessibility.formLabel&&fields.accessibility.resultAnnouncement&&fields.accessibility.chartLabel,locale+" accessibility labels");
+  assert.equal((JSON.stringify(fields).match(/\\{field\\}/g)||[]).length,2,locale+" protected field tokens");
  }
 });

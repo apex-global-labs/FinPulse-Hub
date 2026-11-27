@@ -39101,7 +39101,7 @@
             },
             "explanations": {
               "formulaTitle": "सूत्र और गणना के चरण",
-              "formulaDescription": "यह अनुमान दर्ज किए गए मानों और मान्यताओं पर आधारित है।",
+              "formulaDescription": "Regular pay = hourly rate × regular hours. Overtime pay = hourly rate × overtime hours × multiplier. Gross = regular pay + overtime pay + bonus. Net = gross − withholding − retirement deduction − benefits − other deductions.",
               "assumptions": [
                 "यह एक वेतन अवधि के लिए उपयोगकर्ता द्वारा दर्ज घंटों, गुणक, बोनस और कटौतियों का उपयोग करता है।",
                 "यह कानूनी ओवरटाइम पात्रता या क्षेत्राधिकार-विशिष्ट कर कटौती निर्धारित नहीं करता।"
@@ -39396,7 +39396,7 @@
             },
             "explanations": {
               "formulaTitle": "الصيغة وخطوات الحساب",
-              "formulaDescription": "يستند هذا التقدير إلى القيم والافتراضات التي أدخلتها.",
+              "formulaDescription": "Regular pay = hourly rate × regular hours. Overtime pay = hourly rate × overtime hours × multiplier. Gross = regular pay + overtime pay + bonus. Net = gross − withholding − retirement deduction − benefits − other deductions.",
               "assumptions": [
                 "يستخدم الساعات والمضاعف والمكافأة والاستقطاعات التي أدخلها المستخدم لفترة دفع واحدة.",
                 "لا يحدد الأهلية القانونية للعمل الإضافي أو الاستقطاع الضريبي الخاص بالولاية القضائية."
@@ -39691,7 +39691,7 @@
             },
             "explanations": {
               "formulaTitle": "فارمولا اور حساب کے مراحل",
-              "formulaDescription": "یہ تخمینہ درج کردہ قدروں اور مفروضوں پر مبنی ہے۔",
+              "formulaDescription": "Regular pay = hourly rate × regular hours. Overtime pay = hourly rate × overtime hours × multiplier. Gross = regular pay + overtime pay + bonus. Net = gross − withholding − retirement deduction − benefits − other deductions.",
               "assumptions": [
                 "یہ ایک ادائیگی مدت کے لیے صارف کے درج کردہ گھنٹوں، ملٹی پلائر، بونس اور کٹوتیوں کو استعمال کرتا ہے۔",
                 "یہ قانونی اوور ٹائم اہلیت یا دائرۂ اختیار کے مطابق ٹیکس کٹوتی کا تعین نہیں کرتا۔"
@@ -39986,7 +39986,7 @@
             },
             "explanations": {
               "formulaTitle": "公式与计算步骤",
-              "formulaDescription": "此估算基于你输入的数值和假设。",
+              "formulaDescription": "Regular pay = hourly rate × regular hours. Overtime pay = hourly rate × overtime hours × multiplier. Gross = regular pay + overtime pay + bonus. Net = gross − withholding − retirement deduction − benefits − other deductions.",
               "assumptions": [
                 "本计算器使用用户输入的工时、倍数、奖金和扣款，估算一个发薪周期的工资。",
                 "本计算器不会判定法定加班资格或特定司法辖区的预扣税规则。"
@@ -40281,7 +40281,7 @@
             },
             "explanations": {
               "formulaTitle": "計算式と計算手順",
-              "formulaDescription": "この見積もりは入力された値と前提条件に基づいています。",
+              "formulaDescription": "Regular pay = hourly rate × regular hours. Overtime pay = hourly rate × overtime hours × multiplier. Gross = regular pay + overtime pay + bonus. Net = gross − withholding − retirement deduction − benefits − other deductions.",
               "assumptions": [
                 "1回の給与期間について、ユーザーが入力した勤務時間、倍率、賞与、控除額を使用します。",
                 "法的な時間外勤務の適用資格や、管轄地域ごとの源泉徴収額は判定しません。"
@@ -40576,7 +40576,7 @@
             },
             "explanations": {
               "formulaTitle": "Формула и этапы расчёта",
-              "formulaDescription": "Оценка основана на введённых значениях и допущениях.",
+              "formulaDescription": "Regular pay = hourly rate × regular hours. Overtime pay = hourly rate × overtime hours × multiplier. Gross = regular pay + overtime pay + bonus. Net = gross − withholding − retirement deduction − benefits − other deductions.",
               "assumptions": [
                 "Используются введённые пользователем часы, множитель, премия и удержания за один расчётный период.",
                 "Калькулятор не определяет законное право на оплату сверхурочных или удержания с учётом конкретной юрисдикции."
@@ -41093,7 +41093,7 @@
             },
             "explanations": {
               "formulaTitle": "सूत्र और गणना के चरण",
-              "formulaDescription": "यह अनुमान उपयोगकर्ता द्वारा दर्ज औसत वेतन, नियोक्ता योगदान दर और अन्य लागतों पर आधारित है।",
+              "formulaDescription": "Gross monthly wages = employees × average gross monthly pay. Employer taxes = gross wages × employer tax rate ÷ 100. Benefits = employees × benefits per employee. Monthly cost = gross wages + employer taxes + benefits + other monthly costs. Annual cost = monthly cost × 12.",
               "assumptions": [
                 "उपयोगकर्ता द्वारा दर्ज औसत मासिक वेतन और नियोक्ता दर का उपयोग किया जाता है।",
                 "वैधानिक नियोक्ता नियम, क्षेत्राधिकार-विशिष्ट योगदान, कर्मचारी-स्तर के वेतन अंतर और एकमुश्त लागतें इसमें स्वतः शामिल नहीं हैं।"
@@ -41344,7 +41344,7 @@
             },
             "explanations": {
               "formulaTitle": "الصيغة وخطوات الحساب",
-              "formulaDescription": "يعتمد هذا التقدير على متوسط الأجر ومعدل مساهمة صاحب العمل والتكاليف الأخرى التي يُدخلها المستخدم.",
+              "formulaDescription": "Gross monthly wages = employees × average gross monthly pay. Employer taxes = gross wages × employer tax rate ÷ 100. Benefits = employees × benefits per employee. Monthly cost = gross wages + employer taxes + benefits + other monthly costs. Annual cost = monthly cost × 12.",
               "assumptions": [
                 "يستخدم متوسط الأجر الشهري ومعدل صاحب العمل اللذين أدخلهما المستخدم.",
                 "لا يفترض القواعد القانونية لصاحب العمل أو المساهمات الخاصة بالولاية القضائية أو اختلاف الأجور بين الموظفين أو التكاليف لمرة واحدة."
@@ -41595,7 +41595,7 @@
             },
             "explanations": {
               "formulaTitle": "فارمولا اور حساب کے مراحل",
-              "formulaDescription": "یہ تخمینہ صارف کی درج کردہ اوسط تنخواہ، آجر کی شراکت کی شرح اور دیگر اخراجات پر مبنی ہے۔",
+              "formulaDescription": "Gross monthly wages = employees × average gross monthly pay. Employer taxes = gross wages × employer tax rate ÷ 100. Benefits = employees × benefits per employee. Monthly cost = gross wages + employer taxes + benefits + other monthly costs. Annual cost = monthly cost × 12.",
               "assumptions": [
                 "صارف کی درج کردہ اوسط ماہانہ تنخواہ اور آجر کی شرح استعمال ہوتی ہے۔",
                 "قانونی آجر قواعد، دائرۂ اختیار کی مخصوص شراکتیں، ملازم بہ ملازم تنخواہ کے فرق اور یک وقتی اخراجات فرض نہیں کیے جاتے۔"
@@ -41846,7 +41846,7 @@
             },
             "explanations": {
               "formulaTitle": "公式与计算步骤",
-              "formulaDescription": "此估算依据用户输入的平均工资、雇主缴费比例及其他成本。",
+              "formulaDescription": "Gross monthly wages = employees × average gross monthly pay. Employer taxes = gross wages × employer tax rate ÷ 100. Benefits = employees × benefits per employee. Monthly cost = gross wages + employer taxes + benefits + other monthly costs. Annual cost = monthly cost × 12.",
               "assumptions": [
                 "使用用户输入的平均月工资和雇主缴费比例。",
                 "不自动假定法定雇主规则、特定司法辖区缴费、员工之间的薪酬差异或一次性成本。"
@@ -42097,7 +42097,7 @@
             },
             "explanations": {
               "formulaTitle": "計算式と計算手順",
-              "formulaDescription": "この見積もりは、入力された平均給与、雇用主負担率、その他のコストに基づきます。",
+              "formulaDescription": "Gross monthly wages = employees × average gross monthly pay. Employer taxes = gross wages × employer tax rate ÷ 100. Benefits = employees × benefits per employee. Monthly cost = gross wages + employer taxes + benefits + other monthly costs. Annual cost = monthly cost × 12.",
               "assumptions": [
                 "ユーザーが入力した平均月給と雇用主負担率を使用します。",
                 "法定の雇用主規則、地域固有の拠出金、従業員ごとの給与差、一時的な費用は自動的に想定しません。"
@@ -42348,7 +42348,7 @@
             },
             "explanations": {
               "formulaTitle": "Формула и этапы расчёта",
-              "formulaDescription": "Оценка основана на введённых пользователем средней зарплате, ставке взносов работодателя и дополнительных расходах.",
+              "formulaDescription": "Gross monthly wages = employees × average gross monthly pay. Employer taxes = gross wages × employer tax rate ÷ 100. Benefits = employees × benefits per employee. Monthly cost = gross wages + employer taxes + benefits + other monthly costs. Annual cost = monthly cost × 12.",
               "assumptions": [
                 "Используются введённые пользователем средняя месячная зарплата и ставка работодателя.",
                 "Законодательные требования к работодателю, взносы конкретной юрисдикции, различия в оплате сотрудников и разовые расходы автоматически не учитываются."
@@ -42808,7 +42808,7 @@
             },
             "explanations": {
               "formulaTitle": "सूत्र और गणना के चरण",
-              "formulaDescription": "यह गणना दर्ज की गई प्रति घंटे की दर, नियमित और ओवरटाइम घंटों तथा ओवरटाइम गुणक का उपयोग करके सकल कमाई का अनुमान देती है।",
+              "formulaDescription": "Regular earnings = hourly rate × regular hours. Overtime earnings = hourly rate × overtime hours × multiplier. Gross = regular + overtime. Blended rate = gross ÷ total hours when total hours are positive.",
               "assumptions": [
                 "गणना आपके द्वारा दर्ज किए गए ओवरटाइम गुणक और घंटे की श्रेणियों पर आधारित है।",
                 "कैलकुलेटर यह तय नहीं करता कि आपके स्थान पर कौन-से घंटे कानूनी रूप से ओवरटाइम के योग्य हैं या कानूनन कौन-सा गुणक लागू होना चाहिए।"
@@ -43034,7 +43034,7 @@
             },
             "explanations": {
               "formulaTitle": "الصيغة وخطوات الحساب",
-              "formulaDescription": "يقدّر هذا الحساب إجمالي الأجر اعتمادًا على معدل الأجر بالساعة وساعات العمل العادية والإضافية ومضاعف العمل الإضافي الذي تُدخله.",
+              "formulaDescription": "Regular earnings = hourly rate × regular hours. Overtime earnings = hourly rate × overtime hours × multiplier. Gross = regular + overtime. Blended rate = gross ÷ total hours when total hours are positive.",
               "assumptions": [
                 "يستخدم الحساب مضاعف العمل الإضافي وفئات الساعات التي أدخلها المستخدم.",
                 "لا تحدد الحاسبة ما إذا كانت الساعات مؤهلة قانونًا للعمل الإضافي في موقعك أو ما هو المضاعف المطلوب قانونًا."
@@ -43260,7 +43260,7 @@
             },
             "explanations": {
               "formulaTitle": "فارمولا اور حساب کے مراحل",
-              "formulaDescription": "یہ حساب درج کردہ فی گھنٹہ اجرت، عام اور اوورٹائم گھنٹوں اور اوورٹائم ملٹی پلائر کی بنیاد پر مجموعی آمدنی کا تخمینہ دیتا ہے۔",
+              "formulaDescription": "Regular earnings = hourly rate × regular hours. Overtime earnings = hourly rate × overtime hours × multiplier. Gross = regular + overtime. Blended rate = gross ÷ total hours when total hours are positive.",
               "assumptions": [
                 "حساب آپ کے درج کردہ اوورٹائم ملٹی پلائر اور گھنٹوں کی اقسام استعمال کرتا ہے۔",
                 "یہ کیلکولیٹر طے نہیں کرتا کہ آپ کے مقام پر کون سے گھنٹے قانونی طور پر اوورٹائم کے اہل ہیں یا قانوناً کون سا ملٹی پلائر لازم ہے۔"
@@ -43486,7 +43486,7 @@
             },
             "explanations": {
               "formulaTitle": "公式与计算步骤",
-              "formulaDescription": "本计算根据您输入的小时工资率、正常工时、加班时数和加班倍数估算税前收入。",
+              "formulaDescription": "Regular earnings = hourly rate × regular hours. Overtime earnings = hourly rate × overtime hours × multiplier. Gross = regular + overtime. Blended rate = gross ÷ total hours when total hours are positive.",
               "assumptions": [
                 "计算使用您自行输入的加班倍数和工时类别。",
                 "本计算器不会判断哪些工时在您所在地依法属于加班，也不会确定法律要求的加班倍数。"
@@ -43712,7 +43712,7 @@
             },
             "explanations": {
               "formulaTitle": "計算式と計算手順",
-              "formulaDescription": "入力された時間給、通常勤務時間、残業時間、残業割増率を使って、税引前の賃金を見積もります。",
+              "formulaDescription": "Regular earnings = hourly rate × regular hours. Overtime earnings = hourly rate × overtime hours × multiplier. Gross = regular + overtime. Blended rate = gross ÷ total hours when total hours are positive.",
               "assumptions": [
                 "入力された残業割増率と時間区分を使用します。",
                 "どの時間が勤務先の地域で法的に残業に該当するか、また法律上必要な割増率がいくらかは判定しません。"
@@ -43938,7 +43938,7 @@
             },
             "explanations": {
               "formulaTitle": "Формула и этапы расчёта",
-              "formulaDescription": "Расчёт оценивает заработок до вычетов на основе введённой почасовой ставки, обычных и сверхурочных часов и множителя оплаты сверхурочной работы.",
+              "formulaDescription": "Regular earnings = hourly rate × regular hours. Overtime earnings = hourly rate × overtime hours × multiplier. Gross = regular + overtime. Blended rate = gross ÷ total hours when total hours are positive.",
               "assumptions": [
                 "Используются введённые пользователем множитель оплаты сверхурочных и категории часов.",
                 "Калькулятор не определяет, какие часы юридически считаются сверхурочными в вашем регионе и какой множитель требуется по закону."
@@ -44435,7 +44435,7 @@
             },
             "explanations": {
               "formulaTitle": "सूत्र और गणना के चरण",
-              "formulaDescription": "पहले मूल कीमत पर छूट और फिर बची हुई कीमत पर कूपन लागू होता है। कर दोनों छूटों के बाद की उप-राशि पर लगता है और शिपिंग अंत में जोड़ी जाती है।",
+              "formulaDescription": "First discount = price × first rate ÷ 100. Coupon = price after first discount × coupon rate ÷ 100. Subtotal = price after both discounts. Tax = discounted subtotal × tax rate ÷ 100. Total = subtotal + tax + shipping.",
               "assumptions": [
                 "कूपन पहली छूट के बाद बची कीमत पर लागू होता है।",
                 "कर दोनों छूटों के बाद की उप-राशि पर लगता है; शिपिंग बाद में जोड़ी जाती है और कर के आधार में शामिल नहीं है।",
@@ -44687,7 +44687,7 @@
             },
             "explanations": {
               "formulaTitle": "الصيغة وخطوات الحساب",
-              "formulaDescription": "تطبّق الحاسبة الخصم الأول على السعر الأصلي، ثم تطبّق القسيمة على السعر المتبقي. تُحسب الضريبة على المجموع بعد الخصمين، ويُضاف الشحن في النهاية.",
+              "formulaDescription": "First discount = price × first rate ÷ 100. Coupon = price after first discount × coupon rate ÷ 100. Subtotal = price after both discounts. Tax = discounted subtotal × tax rate ÷ 100. Total = subtotal + tax + shipping.",
               "assumptions": [
                 "تُطبّق القسيمة على السعر المتبقي بعد الخصم الأول.",
                 "تُحسب الضريبة على المجموع بعد الخصمين؛ ويُضاف الشحن لاحقاً ولا يدخل في الوعاء الضريبي هنا.",
@@ -44939,7 +44939,7 @@
             },
             "explanations": {
               "formulaTitle": "فارمولا اور حساب کے مراحل",
-              "formulaDescription": "پہلے اصل قیمت پر رعایت لگتی ہے، پھر پہلی رعایت کے بعد باقی قیمت پر کوپن لاگو ہوتا ہے۔ ٹیکس دونوں رعایتوں کے بعد والی ذیلی رقم پر نکالا جاتا ہے اور شپنگ آخر میں شامل ہوتی ہے۔",
+              "formulaDescription": "First discount = price × first rate ÷ 100. Coupon = price after first discount × coupon rate ÷ 100. Subtotal = price after both discounts. Tax = discounted subtotal × tax rate ÷ 100. Total = subtotal + tax + shipping.",
               "assumptions": [
                 "کوپن پہلی رعایت کے بعد باقی قیمت پر لاگو ہوتا ہے۔",
                 "ٹیکس دونوں رعایتوں کے بعد والی ذیلی رقم پر لگتا ہے؛ شپنگ بعد میں شامل ہوتی ہے اور یہاں ٹیکس کی بنیاد میں شامل نہیں۔",
@@ -45191,7 +45191,7 @@
             },
             "explanations": {
               "formulaTitle": "公式与计算步骤",
-              "formulaDescription": "先从原价中扣除首轮折扣，再对剩余金额应用优惠券。随后按两次折扣后的金额计算税费，最后加上运费得到预估最终价格。",
+              "formulaDescription": "First discount = price × first rate ÷ 100. Coupon = price after first discount × coupon rate ÷ 100. Subtotal = price after both discounts. Tax = discounted subtotal × tax rate ÷ 100. Total = subtotal + tax + shipping.",
               "assumptions": [
                 "优惠券在首轮折扣后应用于剩余价格。",
                 "税费按两次折扣后的金额计算；运费随后添加，在本计算器中不计入计税基数。",
@@ -45443,7 +45443,7 @@
             },
             "explanations": {
               "formulaTitle": "計算式と計算手順",
-              "formulaDescription": "元の価格から最初の割引を差し引き、その後、残った金額にクーポンを適用します。両方の割引後の小計に税額を計算し、最後に送料を加えて最終価格を求めます。",
+              "formulaDescription": "First discount = price × first rate ÷ 100. Coupon = price after first discount × coupon rate ÷ 100. Subtotal = price after both discounts. Tax = discounted subtotal × tax rate ÷ 100. Total = subtotal + tax + shipping.",
               "assumptions": [
                 "クーポンは最初の割引後に残った価格に適用されます。",
                 "税額は両方の割引後の小計に対して計算されます。送料はその後に加算され、この計算では課税対象に含まれません。",
@@ -45695,7 +45695,7 @@
             },
             "explanations": {
               "formulaTitle": "Формула и этапы расчёта",
-              "formulaDescription": "Сначала вычтите первую скидку из исходной цены, затем примените купон к оставшейся сумме. Налог рассчитывается после обеих скидок, а доставка добавляется в конце.",
+              "formulaDescription": "First discount = price × first rate ÷ 100. Coupon = price after first discount × coupon rate ÷ 100. Subtotal = price after both discounts. Tax = discounted subtotal × tax rate ÷ 100. Total = subtotal + tax + shipping.",
               "assumptions": [
                 "Купон применяется к цене, оставшейся после первой скидки.",
                 "Налог рассчитывается с суммы после обеих скидок; доставка добавляется позже и в этой модели не входит в налоговую базу.",
@@ -46220,7 +46220,7 @@
             },
             "explanations": {
               "formulaTitle": "सूत्र और गणना के चरण",
-              "formulaDescription": "दर्ज की गई मध्य-बाजार दर पर मार्कअप लागू होता है। ट्रांसफर शुल्क घटाने के बाद बची राशि को ग्राहक दर से बदला जाता है।",
+              "formulaDescription": "Fee = fixed fee + send amount × percentage fee ÷ 100. Customer rate = mid-market rate × (1 − markup percentage ÷ 100). Recipient amount = (send amount − fee) × customer rate. FX spread cost = send amount × (mid-market rate − customer rate).",
               "assumptions": [
                 "यही दर्ज की गई मध्य-बाजार दर और शुल्क मान्यताओं का उपयोग करता है।",
                 "प्रदाता के कोट, प्राप्तकर्ता-पक्ष शुल्क, कर, डिलीवरी समय और दर की गारंटी अलग हो सकती है।",
@@ -46490,7 +46490,7 @@
             },
             "explanations": {
               "formulaTitle": "الصيغة وخطوات الحساب",
-              "formulaDescription": "يُطبّق الهامش على سعر السوق المتوسطة المُدخل. وبعد خصم رسوم التحويل، يُحوّل المبلغ المتبقي بسعر العميل.",
+              "formulaDescription": "Fee = fixed fee + send amount × percentage fee ÷ 100. Customer rate = mid-market rate × (1 − markup percentage ÷ 100). Recipient amount = (send amount − fee) × customer rate. FX spread cost = send amount × (mid-market rate − customer rate).",
               "assumptions": [
                 "تستخدم هذه الحاسبة سعر السوق المتوسطة والرسوم التي أدخلتها.",
                 "قد تختلف عروض مقدمي الخدمة ورسوم جهة الاستلام والضرائب ومواعيد التسليم وضمانات السعر.",
@@ -46760,7 +46760,7 @@
             },
             "explanations": {
               "formulaTitle": "فارمولا اور حساب کے مراحل",
-              "formulaDescription": "درج کردہ درمیانی مارکیٹ ریٹ پر مارک اپ لاگو ہوتا ہے۔ ٹرانسفر فیس منہا کرنے کے بعد باقی رقم صارف کے ریٹ پر تبدیل ہوتی ہے۔",
+              "formulaDescription": "Fee = fixed fee + send amount × percentage fee ÷ 100. Customer rate = mid-market rate × (1 − markup percentage ÷ 100). Recipient amount = (send amount − fee) × customer rate. FX spread cost = send amount × (mid-market rate − customer rate).",
               "assumptions": [
                 "یہ درج کردہ ایک درمیانی مارکیٹ ریٹ اور فیس کی مفروضہ قدروں کو استعمال کرتا ہے۔",
                 "فراہم کنندہ کے نرخ، وصول کنندہ کی فیس، ٹیکس، ترسیل کے اوقات اور ریٹ کی ضمانت مختلف ہو سکتی ہیں۔",
@@ -47030,7 +47030,7 @@
             },
             "explanations": {
               "formulaTitle": "公式与计算步骤",
-              "formulaDescription": "先对输入的市场中间汇率应用加价，再扣除转账手续费，并按客户汇率兑换剩余金额。",
+              "formulaDescription": "Fee = fixed fee + send amount × percentage fee ÷ 100. Customer rate = mid-market rate × (1 − markup percentage ÷ 100). Recipient amount = (send amount − fee) × customer rate. FX spread cost = send amount × (mid-market rate − customer rate).",
               "assumptions": [
                 "计算使用你输入的一项市场中间汇率和手续费假设。",
                 "服务商报价、收款方费用、税费、到账时间和汇率保证可能有所不同。",
@@ -47300,7 +47300,7 @@
             },
             "explanations": {
               "formulaTitle": "計算式と手順",
-              "formulaDescription": "入力した市場仲値に上乗せ率を適用します。送金手数料を差し引いた残額を適用レートで換算します。",
+              "formulaDescription": "Fee = fixed fee + send amount × percentage fee ÷ 100. Customer rate = mid-market rate × (1 − markup percentage ÷ 100). Recipient amount = (send amount − fee) × customer rate. FX spread cost = send amount × (mid-market rate − customer rate).",
               "assumptions": [
                 "入力された単一の市場仲値と手数料の前提を使用します。",
                 "事業者の提示レート、受取側手数料、税金、着金時間、レート保証は異なる場合があります。",
@@ -47570,7 +47570,7 @@
             },
             "explanations": {
               "formulaTitle": "Формула и этапы расчёта",
-              "formulaDescription": "К введённому среднерыночному курсу применяется наценка. После вычета комиссии оставшаяся сумма конвертируется по клиентскому курсу.",
+              "formulaDescription": "Fee = fixed fee + send amount × percentage fee ÷ 100. Customer rate = mid-market rate × (1 − markup percentage ÷ 100). Recipient amount = (send amount − fee) × customer rate. FX spread cost = send amount × (mid-market rate − customer rate).",
               "assumptions": [
                 "Расчёт использует введённый среднерыночный курс и заданные комиссии.",
                 "Котировки провайдеров, комиссии получателя, налоги, сроки доставки и гарантии курса могут отличаться.",
@@ -48166,7 +48166,7 @@
             },
             "explanations": {
               "formulaTitle": "सूत्र और गणना के चरण",
-              "formulaDescription": "प्रदाता का शुल्क: Fₚ = निश्चित शुल्क + (भेजी गई राशि × शुल्क %) ÷ 100। ग्राहक दर: Rₚ = मध्य-बाजार दर × (1 − दर मार्जिन % ÷ 100)। प्राप्तकर्ता राशि: Nₚ = (भेजी गई राशि − Fₚ) × Rₚ। अंतर: D = |Nₐ − Nᵦ|। प्रभावी दर: Eₚ = Nₚ ÷ भेजी गई राशि (जब भेजी गई राशि शून्य से अधिक हो)।",
+              "formulaDescription": "Calculate each provider's fee and customer exchange rate using the same send amount and mid-market rate. Compare converted recipient amounts. Recipient difference = absolute difference between the two converted amounts.",
               "assumptions": [
                 "दोनों काल्पनिक प्रदाता एक ही दर्ज की गई मध्य-बाजार दर और भेजी जाने वाली राशि का उपयोग करते हैं।",
                 "लाइव कोटेशन, डिलीवरी समय, प्राप्तकर्ता शुल्क, दर की गारंटी और अन्य शुल्क शामिल नहीं हैं।",
@@ -48473,7 +48473,7 @@
             },
             "explanations": {
               "formulaTitle": "المعادلة وخطوات الحساب",
-              "formulaDescription": "رسوم المزود: Fₚ = الرسوم الثابتة + (مبلغ الإرسال × نسبة الرسوم) ÷ 100. سعر العميل: Rₚ = سعر السوق المتوسطة × (1 − نسبة هامش السعر ÷ 100). مبلغ المستلم: Nₚ = (مبلغ الإرسال − Fₚ) × Rₚ. الفرق: D = |Nₐ − Nᵦ|. السعر الفعلي: Eₚ = Nₚ ÷ مبلغ الإرسال (عندما يكون مبلغ الإرسال أكبر من صفر).",
+              "formulaDescription": "Calculate each provider's fee and customer exchange rate using the same send amount and mid-market rate. Compare converted recipient amounts. Recipient difference = absolute difference between the two converted amounts.",
               "assumptions": [
                 "يستخدم المزودان الافتراضيان سعر السوق المتوسطة ومبلغ الإرسال نفسيهما اللذين أدخلتهما.",
                 "لا تشمل الحسابات عروض الأسعار المباشرة أو وقت التسليم أو رسوم المستلم أو ضمانات السعر أو الرسوم الأخرى.",
@@ -48780,7 +48780,7 @@
             },
             "explanations": {
               "formulaTitle": "فارمولا اور حساب کے مراحل",
-              "formulaDescription": "فراہم کنندہ کی فیس: Fₚ = مقررہ فیس + (بھیجی جانے والی رقم × فیس %) ÷ 100۔ صارف کی شرح: Rₚ = درمیانی مارکیٹ شرح × (1 − شرح کا مارجن % ÷ 100)۔ وصولی کی رقم: Nₚ = (بھیجی جانے والی رقم − Fₚ) × Rₚ۔ فرق: D = |Nₐ − Nᵦ|۔ مؤثر شرح: Eₚ = Nₚ ÷ بھیجی جانے والی رقم (جب رقم صفر سے زیادہ ہو)۔",
+              "formulaDescription": "Calculate each provider's fee and customer exchange rate using the same send amount and mid-market rate. Compare converted recipient amounts. Recipient difference = absolute difference between the two converted amounts.",
               "assumptions": [
                 "دونوں فرضی فراہم کنندگان ایک ہی درج کردہ درمیانی مارکیٹ شرح اور بھیجی جانے والی رقم استعمال کرتے ہیں۔",
                 "براہِ راست کوٹس، ترسیل کا وقت، وصول کنندہ کی فیس، شرح کی ضمانت اور دیگر اخراجات شامل نہیں ہیں۔",
@@ -49087,7 +49087,7 @@
             },
             "explanations": {
               "formulaTitle": "公式与计算步骤",
-              "formulaDescription": "服务商费用：Fₚ = 固定费用 +（汇款金额 × 手续费百分比）÷ 100。客户汇率：Rₚ = 市场中间汇率 ×（1 − 汇率加价百分比 ÷ 100）。预计到账金额：Nₚ =（汇款金额 − Fₚ）× Rₚ。差额：D = |Nₐ − Nᵦ|。实际汇率：Eₚ = Nₚ ÷ 汇款金额（汇款金额大于零时）。",
+              "formulaDescription": "Calculate each provider's fee and customer exchange rate using the same send amount and mid-market rate. Compare converted recipient amounts. Recipient difference = absolute difference between the two converted amounts.",
               "assumptions": [
                 "两个假设服务商使用相同的输入市场中间汇率和汇款金额。",
                 "计算不包括实时报价、到账时间、收款方费用、汇率保证或其他收费。",
@@ -49394,7 +49394,7 @@
             },
             "explanations": {
               "formulaTitle": "計算式と計算手順",
-              "formulaDescription": "サービス手数料：Fₚ = 固定手数料 +（送金額 × 手数料率）÷ 100。顧客適用レート：Rₚ = 市場仲値 ×（1 − 為替上乗せ率 ÷ 100）。受取額：Nₚ =（送金額 − Fₚ）× Rₚ。差額：D = |Nₐ − Nᵦ|。実効レート：Eₚ = Nₚ ÷ 送金額（送金額が0より大きい場合）。",
+              "formulaDescription": "Calculate each provider's fee and customer exchange rate using the same send amount and mid-market rate. Compare converted recipient amounts. Recipient difference = absolute difference between the two converted amounts.",
               "assumptions": [
                 "2つの仮想サービスは、入力された同じ市場仲値と送金額を使用します。",
                 "実際の見積もり、着金時間、受取側手数料、レート保証、その他の費用は含まれません。",
@@ -49701,7 +49701,7 @@
             },
             "explanations": {
               "formulaTitle": "Формула и этапы расчёта",
-              "formulaDescription": "Комиссия сервиса: Fₚ = фиксированная комиссия + (сумма перевода × процент комиссии) ÷ 100. Курс для клиента: Rₚ = среднерыночный курс × (1 − наценка на курс ÷ 100). Сумма к получению: Nₚ = (сумма перевода − Fₚ) × Rₚ. Разница: D = |Nₐ − Nᵦ|. Эффективный курс: Eₚ = Nₚ ÷ сумма перевода (если сумма перевода больше нуля).",
+              "formulaDescription": "Calculate each provider's fee and customer exchange rate using the same send amount and mid-market rate. Compare converted recipient amounts. Recipient difference = absolute difference between the two converted amounts.",
               "assumptions": [
                 "Оба условных сервиса используют одинаковые введённые среднерыночный курс и сумму перевода.",
                 "Расчёт не учитывает актуальные котировки, срок доставки, комиссии получателя, гарантии курса и другие сборы.",
