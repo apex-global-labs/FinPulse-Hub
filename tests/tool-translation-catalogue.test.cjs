@@ -37,6 +37,7 @@ test("every canonical tool has six locale records with correct draft or pending 
  const batchTwoIds=["freelance","margin","affordability","payoff","refinance","personal-loan","student-loan","simple-interest","retirement","401k"];
  const batchThreeDraftIds=["ira","inflation","cd","apy","paycheck","payroll","overtime","discount","exchange-fees","transfer-compare","freelance-project","freelancer-net-income","markup","break-even"];
  const batchFourPartialIds=["business-roi","cash-flow","rental-yield","emergency-fund","net-worth","basic-arithmetic","fraction","mixed-number","decimal-fraction","ratio"];
+ const batchFiveDraftIds=["proportion"];
  for(const tool of content.tools){
   assert.deepEqual(Object.keys(tool.locales).sort(),locales.slice().sort());
   for(const locale of locales){
@@ -84,6 +85,14 @@ test("every canonical tool has six locale records with correct draft or pending 
     assert.equal(tool.sourceTranslationStatus,"draft",tool.id+" batch-three source draft status");
     assert.ok(tool.locales[locale].fields.metadata.title&&tool.locales[locale].fields.metadata.description,tool.id+":"+locale+" batch-three draft metadata");
     assert.ok(tool.locales[locale].fields.results.metrics.every(item=>item.label&&item.label.trim()),tool.id+":"+locale+" batch-three draft result labels");
+   }else if(batchFiveDraftIds.includes(tool.id)){
+    const fields=tool.locales[locale].fields,source=tool.source;
+    assert.equal(tool.locales[locale].status,"draft",tool.id+":"+locale+" batch-five draft status");
+    assert.equal(tool.sourceTranslationStatus,"draft",tool.id+" batch-five source translation draft status");
+    assert.deepEqual(fields.inputs.map(x=>x.key),source.inputs.map(x=>x.key),tool.id+":"+locale+" stable input keys");
+    assert.deepEqual(fields.results.metrics.map(x=>x.key),source.results.metrics.map(x=>x.key),tool.id+":"+locale+" stable metric keys");
+    assert.deepEqual(fields.results.breakdown.map(x=>x.key),source.results.breakdown.map(x=>x.key),tool.id+":"+locale+" stable breakdown keys");
+    assert.ok(Object.keys(fields).length===10,tool.id+":"+locale+" all ten field groups");
    }else if(batchFourPartialIds.includes(tool.id)){
     {
      assert.equal(tool.locales[locale].status,"draft",tool.id+":"+locale+" complete draft status");
