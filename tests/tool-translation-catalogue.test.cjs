@@ -85,7 +85,7 @@ test("every canonical tool has six locale records with correct draft or pending 
     assert.ok(tool.locales[locale].fields.metadata.title&&tool.locales[locale].fields.metadata.description,tool.id+":"+locale+" batch-three draft metadata");
     assert.ok(tool.locales[locale].fields.results.metrics.every(item=>item.label&&item.label.trim()),tool.id+":"+locale+" batch-three draft result labels");
    }else if(batchFourPartialIds.includes(tool.id)){
-    if(locale==="hi"||locale==="ar"){
+    if(locale==="hi"||locale==="ar"||locale==="ur"){
      assert.equal(tool.locales[locale].status,"draft",tool.id+":"+locale+" partial draft status");
      assert.equal(tool.sourceTranslationStatus,"draft",tool.id+" partial source draft status");
      const fields=tool.locales[locale].fields,source=tool.source;
