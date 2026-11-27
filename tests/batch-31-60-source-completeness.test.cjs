@@ -79,6 +79,12 @@ test("Batch 31-60 locale inventory preserves the draft-only activation boundary"
         assert.equal(tool.locales[locale].status, "draft", tool.id + "/" + locale);
         assert.deepEqual(Object.keys(tool.locales[locale].fields).sort(), ["accessibility","actions","errors","explanations","faqs","guide","inputs","metadata","results","seo"].sort(), tool.id + "/" + locale + " complete translation field groups");
       }
+    } else if (tool.id === "cash-flow") {
+      assert.equal(tool.sourceTranslationStatus, "draft", tool.id + " translation status");
+      for (const locale of locales) {
+        assert.equal(tool.locales[locale].status, "draft", tool.id + "/" + locale);
+        assert.equal(Object.keys(tool.locales[locale].fields).length, 10, tool.id + "/" + locale + " complete field groups");
+      }
     } else if (["paycheck", "payroll", "overtime", "discount", "exchange-fees", "transfer-compare", "freelance-project", "freelancer-net-income", "markup", "break-even"].includes(tool.id)) {
       assert.equal(tool.sourceTranslationStatus, "draft", tool.id + " translation status");
       for (const locale of locales) {
@@ -209,4 +215,36 @@ test("Business ROI six-locale drafts are field-complete and preserve source cont
   assert.ok(f.accessibility.pageLabel&&f.accessibility.formLabel&&f.accessibility.resultAnnouncement&&f.accessibility.chartLabel,locale+" accessibility labels");
  }
  assert.equal(source.explanations.formula,"Gain = ending value − initial investment. Simple ROI (%) = gain ÷ initial investment × 100. Return multiple = ending value ÷ initial investment.");
+});
+
+
+test("Cash Flow Projection six-locale drafts preserve stable keys, formula and numeric constraints",()=>{
+ const tool=content.tools.find(x=>x.id==="cash-flow"),source=tool.source;
+ const keys=items=>items.map(x=>x.key);
+ for(const locale of locales){
+  const record=tool.locales[locale],f=record.fields;
+  assert.equal(record.status,"draft",locale+" remains inactive draft");
+  assert.deepEqual(keys(f.inputs),keys(source.inputs),locale+" input keys");
+  assert.deepEqual(keys(f.results.metrics),keys(source.results.metrics),locale+" metric keys");
+  assert.deepEqual(keys(f.results.breakdown),keys(source.results.breakdown),locale+" breakdown keys");
+  assert.deepEqual(keys(f.errors),keys(source.errors),locale+" error keys");
+  assert.deepEqual(keys(f.faqs),keys(source.faqs),locale+" FAQ keys");
+  assert.deepEqual(keys(f.seo.faq),keys(source.seo.faq),locale+" SEO FAQ keys");
+  assert.deepEqual(keys(f.guide.steps),keys(source.guide.steps),locale+" guide step keys");
+  assert.deepEqual(keys(f.guide.sections),keys(source.guide.sections),locale+" guide section keys");
+  assert.deepEqual(keys(f.accessibility.controlLabels),keys(source.inputs),locale+" accessibility control keys");
+  assert.equal(f.explanations.formulaDescription,source.explanations.formula,locale+" canonical formula unchanged");
+  assert.equal(f.guide.sections[0].body,source.explanations.formula,locale+" guide formula unchanged");
+  assert.equal(f.inputs.length,6,locale+" input count");
+  assert.equal(f.results.metrics.length,5,locale+" metric count");
+  assert.equal(f.results.breakdown.length,5,locale+" breakdown count");
+  assert.equal(f.errors.length,3,locale+" error count");
+  assert.ok(Object.values(f.actions).every(x=>typeof x==="string"&&x.trim()),locale+" action labels");
+  assert.ok(f.explanations.steps.length===5&&f.explanations.steps.every(x=>x.trim()),locale+" explanation steps");
+  assert.ok(f.guide.steps.every(x=>x.title&&x.body)&&f.guide.sections.every(x=>x.heading&&x.body),locale+" guide fields");
+  assert.ok(f.faqs.every(x=>x.question&&x.answer),locale+" FAQ fields");
+  assert.ok(f.seo.title&&f.seo.metaDescription&&f.seo.h1&&f.seo.introduction,locale+" SEO fields");
+  assert.ok(f.accessibility.pageLabel&&f.accessibility.formLabel&&f.accessibility.resultAnnouncement&&f.accessibility.chartLabel,locale+" accessibility fields");
+ }
+ assert.equal(source.explanations.formula,"For month t (starting at 1): inflowₜ = monthly inflows × (1 + inflow growth/100)^(t−1); outflowₜ = monthly outflows × (1 + outflow growth/100)^(t−1). Closing cashₜ = opening cashₜ + inflowₜ − outflowₜ; next month's opening cash is the prior closing cash.");
 });
