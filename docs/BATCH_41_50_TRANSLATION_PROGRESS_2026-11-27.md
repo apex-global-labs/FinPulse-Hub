@@ -3,7 +3,7 @@
 **Repository:** `apex-global-labs/FinPulse-Hub`  
 **Branch:** `feat/seven-language-translation-engine-phase-1`  
 **PR:** #73 — Open / Draft / Unmerged  
-**Latest translation commit:** `85c4aff312bd8d73dce8e444720d0385ef177a7c`
+**Latest translation commit:** `bc242d10e0e251abdd120f022e09bc9f8c8bc7c7`
 
 ## Release Gate
 
@@ -14,8 +14,8 @@ The translation work below changes the candidate head. Fresh Finance CI and Ligh
 ## Translation progress
 
 - Batch scope: tools #41–50, six target locales (`hi`, `ar`, `ur`, `zh-CN`, `ja`, `ru`), 60 locale records.
-- Completed draft records: **24/60** — #41 Business ROI, #42 Cash Flow Projection, #43 Rental Yield and #44 Emergency Fund / all six target locales each.
-- Remaining: **36/60** — tools #45–50, all six locales each, not started.
+- Completed draft records: **30/60** — #41 Business ROI through #45 Net Worth / all six target locales each.
+- Remaining: **30/60** — tools #46–50, all six locales each, not started.
 - No locale is marked linguistically reviewed, domain reviewed, approved, or published.
 
 ## #41 Business ROI / Hindi field coverage
@@ -121,3 +121,15 @@ The Urdu locale is saved as `draft` with all 10 field groups, including all seve
 - All six locale records remain `draft`; no locale activation or publication.
 - Added automated tests for six-locale completeness, stable keys, formula integrity and the 24-month constraint.
 - Completed draft records: **24/60**. Remaining: **36/60**.
+
+
+## #45 Net Worth / six locale drafts completed (2026-11-27)
+
+- Completed Hindi, Arabic, Urdu, Simplified Chinese, Japanese and Russian drafts.
+- Populated all ten translation groups for each locale, including nine inputs, six metrics, twelve breakdown labels, seven shared actions, two validation errors, three FAQs, five guide steps, SEO and accessibility.
+- Preserved all input, metric, breakdown, error, FAQ, guide and accessibility stable keys and their source order.
+- Preserved the canonical total-assets, total-liabilities and net-worth formula verbatim in the formula description and guide.
+- Kept the source constraint that every entered balance-sheet amount must be non-negative. No runtime function, formula, numeric default or currency assumption changed.
+- All six locale records remain `draft`; English fallback remains active.
+- Added automated tests for six-locale completeness, stable-key parity, formula integrity and source constraints.
+- Completed draft records: **30/60**. Remaining: **30/60**.
