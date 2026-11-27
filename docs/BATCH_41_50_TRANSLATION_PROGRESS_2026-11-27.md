@@ -3,7 +3,7 @@
 **Repository:** `apex-global-labs/FinPulse-Hub`  
 **Branch:** `feat/seven-language-translation-engine-phase-1`  
 **PR:** #73 — Open / Draft / Unmerged  
-**Latest translation commit:** `2fb2b1a8d81dbc8b79d907fe60792ae624bf3e62`
+**Latest translation commit:** `76c98d6a9d429aaf7f9ce29ea2b518a9fa6c3e66`
 
 ## Release Gate
 
@@ -14,8 +14,8 @@ The translation work below changes the candidate head. Fresh Finance CI and Ligh
 ## Translation progress
 
 - Batch scope: tools #41–50, six target locales (`hi`, `ar`, `ur`, `zh-CN`, `ja`, `ru`), 60 locale records.
-- Completed draft records: **54/60** — #41–49 / all six target locales each.
-- Remaining: **6/60** — tool #50, all six locales, not started.
+- Completed draft records: **60/60** — #41–50 / all six target locales each.
+- Remaining: **0/60** — all ten tools have six locale drafts.
 - No locale is marked linguistically reviewed, domain reviewed, approved, or published.
 
 ## #41 Business ROI / Hindi field coverage
@@ -181,3 +181,23 @@ The Urdu locale is saved as `draft` with all 10 field groups, including all seve
 - All six locale records remain `draft`; no activation or publication.
 - Added automated tests for six-locale completeness, stable keys, formula integrity and denominator cap.
 - Completed draft records: **54/60**. Remaining: **6/60**.
+
+
+## #50 Ratio / six locale drafts completed (2026-11-27)
+
+- Completed Hindi, Arabic, Urdu, Simplified Chinese, Japanese and Russian drafts.
+- Populated all ten translation groups for each locale, including two inputs, one metric, two breakdown labels, seven shared actions, three validation errors, two FAQs, four guide steps, SEO and accessibility.
+- Preserved stable input, metric, breakdown, error, FAQ, guide and accessibility keys.
+- Preserved the canonical GCD ratio formula verbatim.
+- Preserved the source constraints: both terms are safe non-negative integers and at least one term must be non-zero. The 0:0 case remains rejected.
+- All six locale records remain `draft`; no locale activation or publication.
+- Added automated tests for six-locale completeness, stable keys, formula integrity, four-step guide count and zero-zero rejection.
+- Completed draft records: **60/60**. Remaining: **0/60**.
+
+## Batch #41–50 translation draft milestone
+
+- All ten tools now have six target-locale draft records: **10/10 tools × 6 locales = 60/60 records**.
+- This is schema-complete draft coverage, not linguistic approval or publication.
+- Finance and math runtime code, calculation formulas, numeric defaults, currency codes and jurisdiction data were not changed by the translation work.
+- English fallback remains active because every target-locale record is still `draft`.
+- Required next gates: full schema/token/stable-key audit, calculation parity/regression, seven-locale browser and RTL/LTR/accessibility checks, then fresh Finance CI and Lighthouse/CLS on the final candidate head.
