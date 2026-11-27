@@ -66940,32 +66940,1142 @@
       },
       "locales": {
         "hi": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "फ्रैक्शन कैलकुलेटर",
+              "description": "भिन्न को सरल करें और उसका दशमलव मान देखें।",
+              "category": "गणित और सांख्यिकी",
+              "subcategory": "भिन्न और अनुपात"
+            },
+            "inputs": [
+              {
+                "key": "numerator",
+                "label": "अंश"
+              },
+              {
+                "key": "denominator",
+                "label": "हर"
+              }
+            ],
+            "actions": {
+              "calculate": "गणना करें",
+              "recalculate": "पुनर्गणना करें",
+              "clear": "साफ़ करें",
+              "reset": "रीसेट करें",
+              "copy": "कॉपी करें",
+              "download": "डाउनलोड करें",
+              "print": "प्रिंट करें"
+            },
+            "results": {
+              "heading": "परिणाम",
+              "summary": "भिन्न का मान",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "सरलीकृत भिन्न"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "मूल भिन्न"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "सरलीकृत भिन्न"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "मूल भिन्न"
+                }
+              ],
+              "chart": {
+                "title": "भिन्न का मान",
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": "सूत्र और गणना के चरण",
+              "formulaDescription": "g = gcd(|numerator|, |denominator|); simplified numerator = numerator/g with sign normalized to the denominator; simplified denominator = |denominator|; decimal value = numerator ÷ denominator.",
+              "steps": [
+                "पूर्णांक अंश और हर दर्ज करें।",
+                "शून्य हर को अस्वीकार करें।",
+                "अंश और हर के निरपेक्ष मानों का महत्तम समापवर्तक निकालें।",
+                "दोनों पदों को GCD से विभाजित करें और हर को धनात्मक रखें।",
+                "सरलीकृत भिन्न और दशमलव मान दिखाएँ।"
+              ],
+              "assumptions": [
+                "अंश और हर सुरक्षित पूर्णांक होने चाहिए।",
+                "हर शून्य नहीं हो सकता; ऋणात्मक हर को धनात्मक हर में सामान्यीकृत किया जाता है।"
+              ],
+              "notes": [
+                "गणना आपके दर्ज किए गए मानों से ब्राउज़र में स्थानीय रूप से होती है; परिणाम नोट और मान्यताओं की जाँच करें।"
+              ],
+              "disclaimers": [
+                "यह कैलकुलेटर केवल जानकारी के लिए है और किसी पेशेवर सलाह का विकल्प नहीं है।"
+              ],
+              "limitations": [
+                "अंश और हर सुरक्षित पूर्णांक होने चाहिए।",
+                "हर शून्य नहीं हो सकता; ऋणात्मक हर को धनात्मक हर में सामान्यीकृत किया जाता है।"
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "{field} एक सीमित संख्या होनी चाहिए।",
+                "recoveryHint": "एक मान्य सीमित संख्या दर्ज करें और फिर प्रयास करें।"
+              },
+              {
+                "key": "integer",
+                "message": "पूर्णांक दर्ज करें।",
+                "recoveryHint": "अंश और हर के लिए पूर्णांक मानों का उपयोग करें।"
+              },
+              {
+                "key": "zero-denominator",
+                "message": "हर शून्य नहीं हो सकता।",
+                "recoveryHint": "शून्य से अलग हर दर्ज करें।"
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-fraction-1",
+                "question": "भिन्न को सरल कैसे किया जाता है?",
+                "answer": "अंश और हर को उनके महत्तम समापवर्तक से विभाजित करें।"
+              },
+              {
+                "key": "faq-fraction-2",
+                "question": "क्या हर शून्य हो सकता है?",
+                "answer": "नहीं, भिन्न का हर शून्य नहीं हो सकता।"
+              }
+            ],
+            "guide": {
+              "title": "फ्रैक्शन कैलकुलेटर गाइड",
+              "introduction": "भिन्न को उसके सबसे सरल समतुल्य रूप में बदलें।",
+              "steps": [
+                {
+                  "key": "fraction-guide-step-1",
+                  "title": "चरण 1",
+                  "body": "पूर्णांक अंश और हर दर्ज करें।"
+                },
+                {
+                  "key": "fraction-guide-step-2",
+                  "title": "चरण 2",
+                  "body": "शून्य हर को अस्वीकार करें।"
+                },
+                {
+                  "key": "fraction-guide-step-3",
+                  "title": "चरण 3",
+                  "body": "अंश और हर के निरपेक्ष मानों का महत्तम समापवर्तक निकालें।"
+                },
+                {
+                  "key": "fraction-guide-step-4",
+                  "title": "चरण 4",
+                  "body": "दोनों पदों को GCD से विभाजित करें और हर को धनात्मक रखें।"
+                },
+                {
+                  "key": "fraction-guide-step-5",
+                  "title": "चरण 5",
+                  "body": "सरलीकृत भिन्न और दशमलव मान दिखाएँ।"
+                }
+              ],
+              "sections": [
+                {
+                  "key": "fraction-guide-section-1",
+                  "heading": "गणना की विधि",
+                  "body": "g = gcd(|numerator|, |denominator|); simplified numerator = numerator/g with sign normalized to the denominator; simplified denominator = |denominator|; decimal value = numerator ÷ denominator."
+                },
+                {
+                  "key": "fraction-guide-section-2",
+                  "heading": "मान्यताएँ और सीमाएँ",
+                  "body": "अंश और हर सुरक्षित पूर्णांक होने चाहिए। हर शून्य नहीं हो सकता; ऋणात्मक हर को धनात्मक हर में सामान्यीकृत किया जाता है।"
+                }
+              ]
+            },
+            "seo": {
+              "title": "फ्रैक्शन कैलकुलेटर | FinPulse Hub",
+              "metaDescription": "भिन्न को सरल करें और उसका दशमलव मान देखें।",
+              "h1": "फ्रैक्शन कैलकुलेटर",
+              "introduction": "भिन्न को उसके सबसे सरल समतुल्य रूप में बदलें।",
+              "faq": [
+                {
+                  "key": "faq-fraction-1",
+                  "question": "भिन्न को सरल कैसे किया जाता है?",
+                  "answer": "अंश और हर को उनके महत्तम समापवर्तक से विभाजित करें।"
+                },
+                {
+                  "key": "faq-fraction-2",
+                  "question": "क्या हर शून्य हो सकता है?",
+                  "answer": "नहीं, भिन्न का हर शून्य नहीं हो सकता।"
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "फ्रैक्शन कैलकुलेटर",
+              "formLabel": "फ्रैक्शन कैलकुलेटर फ़ॉर्म",
+              "resultAnnouncement": "फ्रैक्शन कैलकुलेटर का गणना परिणाम",
+              "chartLabel": "भिन्न के मान का चार्ट",
+              "controlLabels": [
+                {
+                  "key": "numerator",
+                  "label": "अंश"
+                },
+                {
+                  "key": "denominator",
+                  "label": "हर"
+                }
+              ]
+            }
+          }
         },
         "ar": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "حاسبة الكسور",
+              "description": "بسّط الكسر واعرض قيمته العشرية.",
+              "category": "الرياضيات والإحصاء",
+              "subcategory": "الكسور والنسب"
+            },
+            "inputs": [
+              {
+                "key": "numerator",
+                "label": "البسط"
+              },
+              {
+                "key": "denominator",
+                "label": "المقام"
+              }
+            ],
+            "actions": {
+              "calculate": "احسب",
+              "recalculate": "أعد الحساب",
+              "clear": "مسح",
+              "reset": "إعادة ضبط",
+              "copy": "نسخ",
+              "download": "تنزيل",
+              "print": "طباعة"
+            },
+            "results": {
+              "heading": "النتيجة",
+              "summary": "قيمة الكسر",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "الكسر المبسّط"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "الكسر الأصلي"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "الكسر المبسّط"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "الكسر الأصلي"
+                }
+              ],
+              "chart": {
+                "title": "قيمة الكسر",
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": "الصيغة وخطوات الحساب",
+              "formulaDescription": "g = gcd(|numerator|, |denominator|); simplified numerator = numerator/g with sign normalized to the denominator; simplified denominator = |denominator|; decimal value = numerator ÷ denominator.",
+              "steps": [
+                "أدخل بسطاً ومقاماً صحيحين.",
+                "ارفض المقام الصفري.",
+                "احسب القاسم المشترك الأكبر للقيمتين المطْلقتين للبسط والمقام.",
+                "اقسم كلا الحدين على القاسم المشترك الأكبر واجعل المقام موجباً.",
+                "اعرض الكسر المبسّط والقيمة العشرية."
+              ],
+              "assumptions": [
+                "يجب أن يكون البسط والمقام عددين صحيحين آمنين.",
+                "لا يمكن أن يكون المقام صفراً؛ وتُحوّل المقامات السالبة إلى مقامات موجبة."
+              ],
+              "notes": [
+                "يُجرى الحساب محلياً في المتصفح باستخدام القيم التي تدخلها؛ راجع ملاحظة النتيجة والافتراضات."
+              ],
+              "disclaimers": [
+                "هذه الحاسبة لأغراض المعلومات فقط ولا تحل محل المشورة المهنية."
+              ],
+              "limitations": [
+                "يجب أن يكون البسط والمقام عددين صحيحين آمنين.",
+                "لا يمكن أن يكون المقام صفراً؛ وتُحوّل المقامات السالبة إلى مقامات موجبة."
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "يجب أن يكون {field} رقماً محدوداً وصالحاً.",
+                "recoveryHint": "أدخل رقماً محدوداً وصالحاً ثم حاول مرة أخرى."
+              },
+              {
+                "key": "integer",
+                "message": "أدخل عدداً صحيحاً آمناً.",
+                "recoveryHint": "استخدم قيماً صحيحة للبسط والمقام."
+              },
+              {
+                "key": "zero-denominator",
+                "message": "لا يمكن أن يكون المقام صفراً.",
+                "recoveryHint": "أدخل مقاماً غير صفري."
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-fraction-1",
+                "question": "كيف يتم تبسيط الكسر؟",
+                "answer": "اقسم البسط والمقام على القاسم المشترك الأكبر لهما."
+              },
+              {
+                "key": "faq-fraction-2",
+                "question": "هل يمكن أن يكون المقام صفراً؟",
+                "answer": "لا، لا يمكن أن يكون للكسر مقام صفري."
+              }
+            ],
+            "guide": {
+              "title": "دليل حاسبة الكسور",
+              "introduction": "اختزل الكسر إلى أبسط صورة مكافئة له.",
+              "steps": [
+                {
+                  "key": "fraction-guide-step-1",
+                  "title": "الخطوة 1",
+                  "body": "أدخل بسطاً ومقاماً صحيحين."
+                },
+                {
+                  "key": "fraction-guide-step-2",
+                  "title": "الخطوة 2",
+                  "body": "ارفض المقام الصفري."
+                },
+                {
+                  "key": "fraction-guide-step-3",
+                  "title": "الخطوة 3",
+                  "body": "احسب القاسم المشترك الأكبر للقيمتين المطْلقتين للبسط والمقام."
+                },
+                {
+                  "key": "fraction-guide-step-4",
+                  "title": "الخطوة 4",
+                  "body": "اقسم كلا الحدين على القاسم المشترك الأكبر واجعل المقام موجباً."
+                },
+                {
+                  "key": "fraction-guide-step-5",
+                  "title": "الخطوة 5",
+                  "body": "اعرض الكسر المبسّط والقيمة العشرية."
+                }
+              ],
+              "sections": [
+                {
+                  "key": "fraction-guide-section-1",
+                  "heading": "طريقة الحساب",
+                  "body": "g = gcd(|numerator|, |denominator|); simplified numerator = numerator/g with sign normalized to the denominator; simplified denominator = |denominator|; decimal value = numerator ÷ denominator."
+                },
+                {
+                  "key": "fraction-guide-section-2",
+                  "heading": "الافتراضات والقيود",
+                  "body": "يجب أن يكون البسط والمقام عددين صحيحين آمنين. لا يمكن أن يكون المقام صفراً؛ وتُحوّل المقامات السالبة إلى مقامات موجبة."
+                }
+              ]
+            },
+            "seo": {
+              "title": "حاسبة الكسور | FinPulse Hub",
+              "metaDescription": "بسّط الكسر واعرض قيمته العشرية.",
+              "h1": "حاسبة الكسور",
+              "introduction": "اختزل الكسر إلى أبسط صورة مكافئة له.",
+              "faq": [
+                {
+                  "key": "faq-fraction-1",
+                  "question": "كيف يتم تبسيط الكسر؟",
+                  "answer": "اقسم البسط والمقام على القاسم المشترك الأكبر لهما."
+                },
+                {
+                  "key": "faq-fraction-2",
+                  "question": "هل يمكن أن يكون المقام صفراً؟",
+                  "answer": "لا، لا يمكن أن يكون للكسر مقام صفري."
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "حاسبة الكسور",
+              "formLabel": "نموذج حاسبة الكسور",
+              "resultAnnouncement": "نتيجة حساب الكسر",
+              "chartLabel": "رسم بياني لقيمة الكسر",
+              "controlLabels": [
+                {
+                  "key": "numerator",
+                  "label": "البسط"
+                },
+                {
+                  "key": "denominator",
+                  "label": "المقام"
+                }
+              ]
+            }
+          }
         },
         "ur": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "کسر کیلکولیٹر",
+              "description": "کسر کو سادہ کریں اور اس کی اعشاری قدر دکھائیں۔",
+              "category": "ریاضی اور شماریات",
+              "subcategory": "کسور اور تناسب"
+            },
+            "inputs": [
+              {
+                "key": "numerator",
+                "label": "شمار کنندہ"
+              },
+              {
+                "key": "denominator",
+                "label": "مخرج"
+              }
+            ],
+            "actions": {
+              "calculate": "حساب کریں",
+              "recalculate": "دوبارہ حساب کریں",
+              "clear": "صاف کریں",
+              "reset": "ری سیٹ کریں",
+              "copy": "کاپی کریں",
+              "download": "ڈاؤن لوڈ کریں",
+              "print": "پرنٹ کریں"
+            },
+            "results": {
+              "heading": "نتیجہ",
+              "summary": "کسر کی قدر",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "سادہ کیا گیا کسر"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "اصل کسر"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "سادہ کیا گیا کسر"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "اصل کسر"
+                }
+              ],
+              "chart": {
+                "title": "کسر کی قدر",
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": "فارمولا اور حساب کے مراحل",
+              "formulaDescription": "g = gcd(|numerator|, |denominator|); simplified numerator = numerator/g with sign normalized to the denominator; simplified denominator = |denominator|; decimal value = numerator ÷ denominator.",
+              "steps": [
+                "صحیح عدد شمار کنندہ اور مخرج درج کریں۔",
+                "صفر مخرج کو مسترد کریں۔",
+                "شمار کنندہ اور مخرج کی مطلق قدروں کا اعظم مشترک مقسوم معلوم کریں۔",
+                "دونوں اجزا کو GCD پر تقسیم کریں اور مخرج کو مثبت بنائیں۔",
+                "سادہ کیا گیا کسر اور اعشاری قدر دکھائیں۔"
+              ],
+              "assumptions": [
+                "شمار کنندہ اور مخرج محفوظ صحیح اعداد ہونے چاہئیں۔",
+                "مخرج صفر نہیں ہو سکتا؛ منفی مخرج کو مثبت مخرج میں تبدیل کیا جاتا ہے۔"
+              ],
+              "notes": [
+                "حساب آپ کی درج کردہ قدروں سے براؤزر میں مقامی طور پر ہوتا ہے؛ نتیجے کے نوٹ اور مفروضوں کا جائزہ لیں۔"
+              ],
+              "disclaimers": [
+                "یہ کیلکولیٹر صرف معلومات کے لیے ہے اور پیشہ ورانہ مشورے کا متبادل نہیں۔"
+              ],
+              "limitations": [
+                "شمار کنندہ اور مخرج محفوظ صحیح اعداد ہونے چاہئیں۔",
+                "مخرج صفر نہیں ہو سکتا؛ منفی مخرج کو مثبت مخرج میں تبدیل کیا جاتا ہے۔"
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "{field} ایک محدود اور درست عدد ہونا چاہیے۔",
+                "recoveryHint": "درست محدود عدد درج کریں اور دوبارہ کوشش کریں۔"
+              },
+              {
+                "key": "integer",
+                "message": "محفوظ صحیح عدد درج کریں۔",
+                "recoveryHint": "شمار کنندہ اور مخرج کے لیے مکمل عدد استعمال کریں۔"
+              },
+              {
+                "key": "zero-denominator",
+                "message": "مخرج صفر نہیں ہو سکتا۔",
+                "recoveryHint": "صفر کے علاوہ مخرج درج کریں۔"
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-fraction-1",
+                "question": "کسر کو سادہ کیسے کیا جاتا ہے؟",
+                "answer": "شمار کنندہ اور مخرج کو ان کے اعظم مشترک مقسوم پر تقسیم کریں۔"
+              },
+              {
+                "key": "faq-fraction-2",
+                "question": "کیا مخرج صفر ہو سکتا ہے؟",
+                "answer": "نہیں، کسر کا مخرج صفر نہیں ہو سکتا۔"
+              }
+            ],
+            "guide": {
+              "title": "کسر کیلکولیٹر کی رہنمائی",
+              "introduction": "کسر کو اس کی آسان ترین مساوی شکل میں تبدیل کریں۔",
+              "steps": [
+                {
+                  "key": "fraction-guide-step-1",
+                  "title": "مرحلہ 1",
+                  "body": "صحیح عدد شمار کنندہ اور مخرج درج کریں۔"
+                },
+                {
+                  "key": "fraction-guide-step-2",
+                  "title": "مرحلہ 2",
+                  "body": "صفر مخرج کو مسترد کریں۔"
+                },
+                {
+                  "key": "fraction-guide-step-3",
+                  "title": "مرحلہ 3",
+                  "body": "شمار کنندہ اور مخرج کی مطلق قدروں کا اعظم مشترک مقسوم معلوم کریں۔"
+                },
+                {
+                  "key": "fraction-guide-step-4",
+                  "title": "مرحلہ 4",
+                  "body": "دونوں اجزا کو GCD پر تقسیم کریں اور مخرج کو مثبت بنائیں۔"
+                },
+                {
+                  "key": "fraction-guide-step-5",
+                  "title": "مرحلہ 5",
+                  "body": "سادہ کیا گیا کسر اور اعشاری قدر دکھائیں۔"
+                }
+              ],
+              "sections": [
+                {
+                  "key": "fraction-guide-section-1",
+                  "heading": "حساب کا طریقہ",
+                  "body": "g = gcd(|numerator|, |denominator|); simplified numerator = numerator/g with sign normalized to the denominator; simplified denominator = |denominator|; decimal value = numerator ÷ denominator."
+                },
+                {
+                  "key": "fraction-guide-section-2",
+                  "heading": "مفروضے اور حدود",
+                  "body": "شمار کنندہ اور مخرج محفوظ صحیح اعداد ہونے چاہئیں۔ مخرج صفر نہیں ہو سکتا؛ منفی مخرج کو مثبت مخرج میں تبدیل کیا جاتا ہے۔"
+                }
+              ]
+            },
+            "seo": {
+              "title": "کسر کیلکولیٹر | FinPulse Hub",
+              "metaDescription": "کسر کو سادہ کریں اور اس کی اعشاری قدر دکھائیں۔",
+              "h1": "کسر کیلکولیٹر",
+              "introduction": "کسر کو اس کی آسان ترین مساوی شکل میں تبدیل کریں۔",
+              "faq": [
+                {
+                  "key": "faq-fraction-1",
+                  "question": "کسر کو سادہ کیسے کیا جاتا ہے؟",
+                  "answer": "شمار کنندہ اور مخرج کو ان کے اعظم مشترک مقسوم پر تقسیم کریں۔"
+                },
+                {
+                  "key": "faq-fraction-2",
+                  "question": "کیا مخرج صفر ہو سکتا ہے؟",
+                  "answer": "نہیں، کسر کا مخرج صفر نہیں ہو سکتا۔"
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "کسر کیلکولیٹر",
+              "formLabel": "کسر کیلکولیٹر کا فارم",
+              "resultAnnouncement": "کسر کیلکولیٹر کا حسابی نتیجہ",
+              "chartLabel": "کسر کی قدر کا چارٹ",
+              "controlLabels": [
+                {
+                  "key": "numerator",
+                  "label": "شمار کنندہ"
+                },
+                {
+                  "key": "denominator",
+                  "label": "مخرج"
+                }
+              ]
+            }
+          }
         },
         "zh-CN": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "分数计算器",
+              "description": "约分并显示分数对应的小数值。",
+              "category": "数学与统计",
+              "subcategory": "分数与比例"
+            },
+            "inputs": [
+              {
+                "key": "numerator",
+                "label": "分子"
+              },
+              {
+                "key": "denominator",
+                "label": "分母"
+              }
+            ],
+            "actions": {
+              "calculate": "计算",
+              "recalculate": "重新计算",
+              "clear": "清除",
+              "reset": "重置",
+              "copy": "复制",
+              "download": "下载",
+              "print": "打印"
+            },
+            "results": {
+              "heading": "结果",
+              "summary": "分数值",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "最简分数"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "原始分数"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "最简分数"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "原始分数"
+                }
+              ],
+              "chart": {
+                "title": "分数值",
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": "公式与计算步骤",
+              "formulaDescription": "g = gcd(|numerator|, |denominator|); simplified numerator = numerator/g with sign normalized to the denominator; simplified denominator = |denominator|; decimal value = numerator ÷ denominator.",
+              "steps": [
+                "输入整数分子和分母。",
+                "拒绝分母为零的情况。",
+                "求分子和分母绝对值的最大公约数。",
+                "将分子和分母同时除以最大公约数，并将分母规范为正数。",
+                "显示最简分数及其小数值。"
+              ],
+              "assumptions": [
+                "分子和分母必须是安全整数。",
+                "分母不能为零；负分母会规范为正分母。"
+              ],
+              "notes": [
+                "计算在浏览器本地完成，使用您输入的数值；请查看结果说明并核对相关假设。"
+              ],
+              "disclaimers": [
+                "此计算器仅用于信息参考，不能替代专业建议。"
+              ],
+              "limitations": [
+                "分子和分母必须是安全整数。",
+                "分母不能为零；负分母会规范为正分母。"
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "{field} 必须是有限的有效数字。",
+                "recoveryHint": "请输入有效的有限数值，然后重试。"
+              },
+              {
+                "key": "integer",
+                "message": "请输入安全整数。",
+                "recoveryHint": "分子和分母请使用整数。"
+              },
+              {
+                "key": "zero-denominator",
+                "message": "分母不能为零。",
+                "recoveryHint": "请输入非零分母。"
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-fraction-1",
+                "question": "如何约分？",
+                "answer": "将分子和分母同时除以它们的最大公约数。"
+              },
+              {
+                "key": "faq-fraction-2",
+                "question": "分母可以为零吗？",
+                "answer": "不可以，分数的分母不能为零。"
+              }
+            ],
+            "guide": {
+              "title": "分数计算器指南",
+              "introduction": "将分数化简为最简等值形式。",
+              "steps": [
+                {
+                  "key": "fraction-guide-step-1",
+                  "title": "步骤 1",
+                  "body": "输入整数分子和分母。"
+                },
+                {
+                  "key": "fraction-guide-step-2",
+                  "title": "步骤 2",
+                  "body": "拒绝分母为零的情况。"
+                },
+                {
+                  "key": "fraction-guide-step-3",
+                  "title": "步骤 3",
+                  "body": "求分子和分母绝对值的最大公约数。"
+                },
+                {
+                  "key": "fraction-guide-step-4",
+                  "title": "步骤 4",
+                  "body": "将分子和分母同时除以最大公约数，并将分母规范为正数。"
+                },
+                {
+                  "key": "fraction-guide-step-5",
+                  "title": "步骤 5",
+                  "body": "显示最简分数及其小数值。"
+                }
+              ],
+              "sections": [
+                {
+                  "key": "fraction-guide-section-1",
+                  "heading": "计算方法",
+                  "body": "g = gcd(|numerator|, |denominator|); simplified numerator = numerator/g with sign normalized to the denominator; simplified denominator = |denominator|; decimal value = numerator ÷ denominator."
+                },
+                {
+                  "key": "fraction-guide-section-2",
+                  "heading": "假设与限制",
+                  "body": "分子和分母必须是安全整数。 分母不能为零；负分母会规范为正分母。"
+                }
+              ]
+            },
+            "seo": {
+              "title": "分数计算器 | FinPulse Hub",
+              "metaDescription": "约分并显示分数对应的小数值。",
+              "h1": "分数计算器",
+              "introduction": "将分数化简为最简等值形式。",
+              "faq": [
+                {
+                  "key": "faq-fraction-1",
+                  "question": "如何约分？",
+                  "answer": "将分子和分母同时除以它们的最大公约数。"
+                },
+                {
+                  "key": "faq-fraction-2",
+                  "question": "分母可以为零吗？",
+                  "answer": "不可以，分数的分母不能为零。"
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "分数计算器",
+              "formLabel": "分数计算器输入表单",
+              "resultAnnouncement": "分数计算结果",
+              "chartLabel": "分数值图表",
+              "controlLabels": [
+                {
+                  "key": "numerator",
+                  "label": "分子"
+                },
+                {
+                  "key": "denominator",
+                  "label": "分母"
+                }
+              ]
+            }
+          }
         },
         "ja": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "分数計算機",
+              "description": "分数を約分し、小数値を表示します。",
+              "category": "数学・統計",
+              "subcategory": "分数・比"
+            },
+            "inputs": [
+              {
+                "key": "numerator",
+                "label": "分子"
+              },
+              {
+                "key": "denominator",
+                "label": "分母"
+              }
+            ],
+            "actions": {
+              "calculate": "計算",
+              "recalculate": "再計算",
+              "clear": "クリア",
+              "reset": "リセット",
+              "copy": "コピー",
+              "download": "ダウンロード",
+              "print": "印刷"
+            },
+            "results": {
+              "heading": "結果",
+              "summary": "分数の値",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "約分した分数"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "元の分数"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "約分した分数"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "元の分数"
+                }
+              ],
+              "chart": {
+                "title": "分数の値",
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": "計算式と計算手順",
+              "formulaDescription": "g = gcd(|numerator|, |denominator|); simplified numerator = numerator/g with sign normalized to the denominator; simplified denominator = |denominator|; decimal value = numerator ÷ denominator.",
+              "steps": [
+                "整数の分子と分母を入力します。",
+                "分母がゼロの場合は拒否します。",
+                "分子と分母の絶対値の最大公約数を求めます。",
+                "両方の項を最大公約数で割り、分母を正の値にそろえます。",
+                "約分した分数と小数値を表示します。"
+              ],
+              "assumptions": [
+                "分子と分母は安全な整数である必要があります。",
+                "分母をゼロにすることはできません。負の分母は正の分母に正規化されます。"
+              ],
+              "notes": [
+                "計算は入力値を使ってブラウザー内でローカルに実行されます。結果の注記と前提条件を確認してください。"
+              ],
+              "disclaimers": [
+                "この計算機は情報提供のみを目的としており、専門的な助言に代わるものではありません。"
+              ],
+              "limitations": [
+                "分子と分母は安全な整数である必要があります。",
+                "分母をゼロにすることはできません。負の分母は正の分母に正規化されます。"
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "{field} は有限の有効な数値である必要があります。",
+                "recoveryHint": "有限の有効な数値を入力して、もう一度お試しください。"
+              },
+              {
+                "key": "integer",
+                "message": "安全な整数を入力してください。",
+                "recoveryHint": "分子と分母には整数を使用してください。"
+              },
+              {
+                "key": "zero-denominator",
+                "message": "分母をゼロにすることはできません。",
+                "recoveryHint": "ゼロ以外の分母を入力してください。"
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-fraction-1",
+                "question": "分数はどのように約分しますか？",
+                "answer": "分子と分母を最大公約数で割ります。"
+              },
+              {
+                "key": "faq-fraction-2",
+                "question": "分母をゼロにできますか？",
+                "answer": "いいえ。分数の分母をゼロにすることはできません。"
+              }
+            ],
+            "guide": {
+              "title": "分数計算機ガイド",
+              "introduction": "分数を最も簡単な同値形式に約分します。",
+              "steps": [
+                {
+                  "key": "fraction-guide-step-1",
+                  "title": "ステップ 1",
+                  "body": "整数の分子と分母を入力します。"
+                },
+                {
+                  "key": "fraction-guide-step-2",
+                  "title": "ステップ 2",
+                  "body": "分母がゼロの場合は拒否します。"
+                },
+                {
+                  "key": "fraction-guide-step-3",
+                  "title": "ステップ 3",
+                  "body": "分子と分母の絶対値の最大公約数を求めます。"
+                },
+                {
+                  "key": "fraction-guide-step-4",
+                  "title": "ステップ 4",
+                  "body": "両方の項を最大公約数で割り、分母を正の値にそろえます。"
+                },
+                {
+                  "key": "fraction-guide-step-5",
+                  "title": "ステップ 5",
+                  "body": "約分した分数と小数値を表示します。"
+                }
+              ],
+              "sections": [
+                {
+                  "key": "fraction-guide-section-1",
+                  "heading": "計算方法",
+                  "body": "g = gcd(|numerator|, |denominator|); simplified numerator = numerator/g with sign normalized to the denominator; simplified denominator = |denominator|; decimal value = numerator ÷ denominator."
+                },
+                {
+                  "key": "fraction-guide-section-2",
+                  "heading": "前提条件と制限",
+                  "body": "分子と分母は安全な整数である必要があります。 分母をゼロにすることはできません。負の分母は正の分母に正規化されます。"
+                }
+              ]
+            },
+            "seo": {
+              "title": "分数計算機 | FinPulse Hub",
+              "metaDescription": "分数を約分し、小数値を表示します。",
+              "h1": "分数計算機",
+              "introduction": "分数を最も簡単な同値形式に約分します。",
+              "faq": [
+                {
+                  "key": "faq-fraction-1",
+                  "question": "分数はどのように約分しますか？",
+                  "answer": "分子と分母を最大公約数で割ります。"
+                },
+                {
+                  "key": "faq-fraction-2",
+                  "question": "分母をゼロにできますか？",
+                  "answer": "いいえ。分数の分母をゼロにすることはできません。"
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "分数計算機",
+              "formLabel": "分数計算機の入力フォーム",
+              "resultAnnouncement": "分数計算機の計算結果",
+              "chartLabel": "分数値のチャート",
+              "controlLabels": [
+                {
+                  "key": "numerator",
+                  "label": "分子"
+                },
+                {
+                  "key": "denominator",
+                  "label": "分母"
+                }
+              ]
+            }
+          }
         },
         "ru": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "Калькулятор дробей",
+              "description": "Сократите дробь и покажите её десятичное значение.",
+              "category": "Математика и статистика",
+              "subcategory": "Дроби и отношения"
+            },
+            "inputs": [
+              {
+                "key": "numerator",
+                "label": "Числитель"
+              },
+              {
+                "key": "denominator",
+                "label": "Знаменатель"
+              }
+            ],
+            "actions": {
+              "calculate": "Рассчитать",
+              "recalculate": "Пересчитать",
+              "clear": "Очистить",
+              "reset": "Сбросить",
+              "copy": "Копировать",
+              "download": "Скачать",
+              "print": "Печать"
+            },
+            "results": {
+              "heading": "Результат",
+              "summary": "Значение дроби",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "Сокращённая дробь"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "Исходная дробь"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "Сокращённая дробь"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "Исходная дробь"
+                }
+              ],
+              "chart": {
+                "title": "Значение дроби",
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": "Формула и этапы расчёта",
+              "formulaDescription": "g = gcd(|numerator|, |denominator|); simplified numerator = numerator/g with sign normalized to the denominator; simplified denominator = |denominator|; decimal value = numerator ÷ denominator.",
+              "steps": [
+                "Введите целые числитель и знаменатель.",
+                "Отклоните случай с нулевым знаменателем.",
+                "Найдите наибольший общий делитель абсолютных значений числителя и знаменателя.",
+                "Разделите оба члена на НОД и приведите знаменатель к положительному значению.",
+                "Покажите сокращённую дробь и её десятичное значение."
+              ],
+              "assumptions": [
+                "Числитель и знаменатель должны быть безопасными целыми числами.",
+                "Знаменатель не может быть равен нулю; отрицательный знаменатель нормализуется до положительного."
+              ],
+              "notes": [
+                "Расчёт выполняется локально в браузере на основе введённых значений; проверьте примечание к результату и допущения."
+              ],
+              "disclaimers": [
+                "Этот калькулятор предназначен только для информации и не заменяет профессиональную консультацию."
+              ],
+              "limitations": [
+                "Числитель и знаменатель должны быть безопасными целыми числами.",
+                "Знаменатель не может быть равен нулю; отрицательный знаменатель нормализуется до положительного."
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "{field} должно быть конечным числом.",
+                "recoveryHint": "Введите корректное конечное число и повторите попытку."
+              },
+              {
+                "key": "integer",
+                "message": "Введите безопасное целое число.",
+                "recoveryHint": "Используйте целые значения числителя и знаменателя."
+              },
+              {
+                "key": "zero-denominator",
+                "message": "Знаменатель не может быть равен нулю.",
+                "recoveryHint": "Введите ненулевой знаменатель."
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-fraction-1",
+                "question": "Как сократить дробь?",
+                "answer": "Разделите числитель и знаменатель на их наибольший общий делитель."
+              },
+              {
+                "key": "faq-fraction-2",
+                "question": "Может ли знаменатель быть равен нулю?",
+                "answer": "Нет, знаменатель дроби не может быть нулевым."
+              }
+            ],
+            "guide": {
+              "title": "Руководство по калькулятору дробей",
+              "introduction": "Приведите дробь к простейшему равносильному виду.",
+              "steps": [
+                {
+                  "key": "fraction-guide-step-1",
+                  "title": "Шаг 1",
+                  "body": "Введите целые числитель и знаменатель."
+                },
+                {
+                  "key": "fraction-guide-step-2",
+                  "title": "Шаг 2",
+                  "body": "Отклоните случай с нулевым знаменателем."
+                },
+                {
+                  "key": "fraction-guide-step-3",
+                  "title": "Шаг 3",
+                  "body": "Найдите наибольший общий делитель абсолютных значений числителя и знаменателя."
+                },
+                {
+                  "key": "fraction-guide-step-4",
+                  "title": "Шаг 4",
+                  "body": "Разделите оба члена на НОД и приведите знаменатель к положительному значению."
+                },
+                {
+                  "key": "fraction-guide-step-5",
+                  "title": "Шаг 5",
+                  "body": "Покажите сокращённую дробь и её десятичное значение."
+                }
+              ],
+              "sections": [
+                {
+                  "key": "fraction-guide-section-1",
+                  "heading": "Метод расчёта",
+                  "body": "g = gcd(|numerator|, |denominator|); simplified numerator = numerator/g with sign normalized to the denominator; simplified denominator = |denominator|; decimal value = numerator ÷ denominator."
+                },
+                {
+                  "key": "fraction-guide-section-2",
+                  "heading": "Допущения и ограничения",
+                  "body": "Числитель и знаменатель должны быть безопасными целыми числами. Знаменатель не может быть равен нулю; отрицательный знаменатель нормализуется до положительного."
+                }
+              ]
+            },
+            "seo": {
+              "title": "Калькулятор дробей | FinPulse Hub",
+              "metaDescription": "Сократите дробь и покажите её десятичное значение.",
+              "h1": "Калькулятор дробей",
+              "introduction": "Приведите дробь к простейшему равносильному виду.",
+              "faq": [
+                {
+                  "key": "faq-fraction-1",
+                  "question": "Как сократить дробь?",
+                  "answer": "Разделите числитель и знаменатель на их наибольший общий делитель."
+                },
+                {
+                  "key": "faq-fraction-2",
+                  "question": "Может ли знаменатель быть равен нулю?",
+                  "answer": "Нет, знаменатель дроби не может быть нулевым."
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "Калькулятор дробей",
+              "formLabel": "Форма калькулятора дробей",
+              "resultAnnouncement": "Результат расчёта дроби",
+              "chartLabel": "Диаграмма значения дроби",
+              "controlLabels": [
+                {
+                  "key": "numerator",
+                  "label": "Числитель"
+                },
+                {
+                  "key": "denominator",
+                  "label": "Знаменатель"
+                }
+              ]
+            }
+          }
         }
       },
       "sourceExtractionStatus": "source-record-complete",
-      "sourceTranslationStatus": "not-started",
+      "sourceTranslationStatus": "draft",
       "sourceCompletenessStatus": "complete"
     },
     {
