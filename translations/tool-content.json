@@ -65561,32 +65561,1208 @@
       },
       "locales": {
         "hi": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "बेसिक अंकगणित कैलकुलेटर",
+              "description": "दो संख्याओं को जोड़ें, घटाएँ, गुणा करें या भाग दें।",
+              "category": "गणित और सांख्यिकी",
+              "subcategory": "बुनियादी गणित कैलकुलेटर"
+            },
+            "inputs": [
+              {
+                "key": "a",
+                "label": "पहली संख्या"
+              },
+              {
+                "key": "op",
+                "label": "क्रिया"
+              },
+              {
+                "key": "b",
+                "label": "दूसरी संख्या"
+              }
+            ],
+            "actions": {
+              "calculate": "गणना करें",
+              "recalculate": "पुनर्गणना करें",
+              "clear": "साफ़ करें",
+              "reset": "रीसेट करें",
+              "copy": "कॉपी करें",
+              "download": "डाउनलोड करें",
+              "print": "प्रिंट करें"
+            },
+            "results": {
+              "heading": "परिणाम",
+              "summary": "गणना का परिणाम",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "क्रिया"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "पहली संख्या"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "दूसरी संख्या"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "क्रिया"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "पहली संख्या"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "दूसरी संख्या"
+                }
+              ],
+              "chart": {
+                "title": "गणना का परिणाम",
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": "सूत्र और गणना के चरण",
+              "formulaDescription": "Result = A op B, where op is addition (+), subtraction (−), multiplication (×) or division (÷).",
+              "steps": [
+                "पहली संख्या दर्ज करें।",
+                "जोड़, घटाव, गुणा या भाग चुनें।",
+                "दूसरी संख्या दर्ज करें।",
+                "दिखाए गए क्रम में चुनी गई क्रिया लागू करें।",
+                "सीमित संख्यात्मक परिणाम देखें; शून्य से भाग देना अस्वीकार किया जाता है।"
+              ],
+              "assumptions": [
+                "दोनों इनपुट सीमित संख्याएँ होने चाहिए।",
+                "शून्य से भाग देना अपरिभाषित है और अस्वीकार किया जाता है।"
+              ],
+              "notes": [
+                "गणना आपके दर्ज किए गए मानों से ब्राउज़र में स्थानीय रूप से होती है; परिणाम नोट और मान्यताओं की जाँच करें।"
+              ],
+              "disclaimers": [
+                "यह कैलकुलेटर केवल जानकारी के लिए अनुमान देता है; यह वित्तीय, कर, कानूनी, लेखांकन या निवेश सलाह नहीं है।"
+              ],
+              "limitations": [
+                "दोनों इनपुट सीमित संख्याएँ होने चाहिए।",
+                "शून्य से भाग देना अपरिभाषित है और अस्वीकार किया जाता है।"
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "{field} एक सीमित संख्या होनी चाहिए।",
+                "recoveryHint": "एक मान्य सीमित संख्या दर्ज करें और फिर प्रयास करें।"
+              },
+              {
+                "key": "zero-divisor",
+                "message": "शून्य से भाग नहीं दिया जा सकता।",
+                "recoveryHint": "भाग की क्रिया चुनने पर दूसरी संख्या शून्य न रखें।"
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-basic-arithmetic-1",
+                "question": "कौन-सी क्रियाएँ समर्थित हैं?",
+                "answer": "जोड़, घटाव, गुणा और भाग।"
+              },
+              {
+                "key": "faq-basic-arithmetic-2",
+                "question": "क्या मैं शून्य से भाग दे सकता हूँ?",
+                "answer": "नहीं। शून्य से भाग देना अपरिभाषित है।"
+              }
+            ],
+            "guide": {
+              "title": "बेसिक अंकगणित कैलकुलेटर गाइड",
+              "introduction": "दर्ज की गई दो संख्याओं पर बुनियादी अंकगणितीय क्रिया करें।",
+              "steps": [
+                {
+                  "key": "basic-arithmetic-guide-step-1",
+                  "title": "चरण 1",
+                  "body": "पहली संख्या दर्ज करें।"
+                },
+                {
+                  "key": "basic-arithmetic-guide-step-2",
+                  "title": "चरण 2",
+                  "body": "जोड़, घटाव, गुणा या भाग चुनें।"
+                },
+                {
+                  "key": "basic-arithmetic-guide-step-3",
+                  "title": "चरण 3",
+                  "body": "दूसरी संख्या दर्ज करें।"
+                },
+                {
+                  "key": "basic-arithmetic-guide-step-4",
+                  "title": "चरण 4",
+                  "body": "दिखाए गए क्रम में चुनी गई क्रिया लागू करें।"
+                },
+                {
+                  "key": "basic-arithmetic-guide-step-5",
+                  "title": "चरण 5",
+                  "body": "सीमित संख्यात्मक परिणाम देखें; शून्य से भाग देना अस्वीकार किया जाता है।"
+                }
+              ],
+              "sections": [
+                {
+                  "key": "basic-arithmetic-guide-section-1",
+                  "heading": "गणना की विधि",
+                  "body": "Result = A op B, where op is addition (+), subtraction (−), multiplication (×) or division (÷)."
+                },
+                {
+                  "key": "basic-arithmetic-guide-section-2",
+                  "heading": "मान्यताएँ और सीमाएँ",
+                  "body": "दोनों इनपुट सीमित संख्याएँ होने चाहिए। शून्य से भाग देना अपरिभाषित है और अस्वीकार किया जाता है।"
+                }
+              ]
+            },
+            "seo": {
+              "title": "बेसिक अंकगणित कैलकुलेटर | FinPulse Hub",
+              "metaDescription": "दो संख्याओं को जोड़ें, घटाएँ, गुणा करें या भाग दें।",
+              "h1": "बेसिक अंकगणित कैलकुलेटर",
+              "introduction": "दर्ज की गई दो संख्याओं पर बुनियादी अंकगणितीय क्रिया करें।",
+              "faq": [
+                {
+                  "key": "faq-basic-arithmetic-1",
+                  "question": "कौन-सी क्रियाएँ समर्थित हैं?",
+                  "answer": "जोड़, घटाव, गुणा और भाग।"
+                },
+                {
+                  "key": "faq-basic-arithmetic-2",
+                  "question": "क्या मैं शून्य से भाग दे सकता हूँ?",
+                  "answer": "नहीं। शून्य से भाग देना अपरिभाषित है।"
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "बेसिक अंकगणित कैलकुलेटर",
+              "formLabel": "बेसिक अंकगणित कैलकुलेटर फ़ॉर्म",
+              "resultAnnouncement": "बेसिक अंकगणित कैलकुलेटर का परिणाम",
+              "chartLabel": "गणना परिणाम का चार्ट",
+              "controlLabels": [
+                {
+                  "key": "a",
+                  "label": "पहली संख्या"
+                },
+                {
+                  "key": "op",
+                  "label": "क्रिया"
+                },
+                {
+                  "key": "b",
+                  "label": "दूसरी संख्या"
+                }
+              ]
+            }
+          }
         },
         "ar": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "حاسبة العمليات الحسابية الأساسية",
+              "description": "اجمع عددين أو اطرح أحدهما من الآخر أو اضربهما أو اقسمهما.",
+              "category": "الرياضيات والإحصاء",
+              "subcategory": "حاسبات الرياضيات الأساسية"
+            },
+            "inputs": [
+              {
+                "key": "a",
+                "label": "العدد الأول"
+              },
+              {
+                "key": "op",
+                "label": "العملية"
+              },
+              {
+                "key": "b",
+                "label": "العدد الثاني"
+              }
+            ],
+            "actions": {
+              "calculate": "احسب",
+              "recalculate": "أعد الحساب",
+              "clear": "مسح",
+              "reset": "إعادة ضبط",
+              "copy": "نسخ",
+              "download": "تنزيل",
+              "print": "طباعة"
+            },
+            "results": {
+              "heading": "النتيجة",
+              "summary": "نتيجة الحساب",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "العملية"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "العدد الأول"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "العدد الثاني"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "العملية"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "العدد الأول"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "العدد الثاني"
+                }
+              ],
+              "chart": {
+                "title": "نتيجة الحساب",
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": "الصيغة وخطوات الحساب",
+              "formulaDescription": "Result = A op B, where op is addition (+), subtraction (−), multiplication (×) or division (÷).",
+              "steps": [
+                "أدخل العدد الأول.",
+                "اختر الجمع أو الطرح أو الضرب أو القسمة.",
+                "أدخل العدد الثاني.",
+                "نفّذ العملية المحددة بالترتيب المعروض.",
+                "راجع النتيجة العددية المحدودة؛ ويُرفض القسمة على صفر."
+              ],
+              "assumptions": [
+                "يجب أن يكون كلا المدخلين عددين محدودين.",
+                "القسمة على صفر غير معرّفة ويتم رفضها."
+              ],
+              "notes": [
+                "يُجرى الحساب محلياً في المتصفح باستخدام القيم التي تدخلها؛ راجع ملاحظة النتيجة والافتراضات."
+              ],
+              "disclaimers": [
+                "تقدم هذه الحاسبة تقديراً لأغراض المعلومات فقط، ولا تُعد نصيحة مالية أو ضريبية أو قانونية أو محاسبية أو استثمارية."
+              ],
+              "limitations": [
+                "يجب أن يكون كلا المدخلين عددين محدودين.",
+                "القسمة على صفر غير معرّفة ويتم رفضها."
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "يجب أن يكون {field} رقماً محدوداً وصالحاً.",
+                "recoveryHint": "أدخل رقماً محدوداً وصالحاً ثم حاول مرة أخرى."
+              },
+              {
+                "key": "zero-divisor",
+                "message": "لا يمكن القسمة على صفر.",
+                "recoveryHint": "أدخل عدداً ثانياً غير صفري عند اختيار القسمة."
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-basic-arithmetic-1",
+                "question": "ما العمليات المدعومة؟",
+                "answer": "الجمع والطرح والضرب والقسمة."
+              },
+              {
+                "key": "faq-basic-arithmetic-2",
+                "question": "هل يمكنني القسمة على صفر؟",
+                "answer": "لا. القسمة على صفر غير معرّفة."
+              }
+            ],
+            "guide": {
+              "title": "دليل حاسبة العمليات الحسابية الأساسية",
+              "introduction": "نفّذ عملية حسابية أساسية على عددين تدخلهما.",
+              "steps": [
+                {
+                  "key": "basic-arithmetic-guide-step-1",
+                  "title": "الخطوة 1",
+                  "body": "أدخل العدد الأول."
+                },
+                {
+                  "key": "basic-arithmetic-guide-step-2",
+                  "title": "الخطوة 2",
+                  "body": "اختر الجمع أو الطرح أو الضرب أو القسمة."
+                },
+                {
+                  "key": "basic-arithmetic-guide-step-3",
+                  "title": "الخطوة 3",
+                  "body": "أدخل العدد الثاني."
+                },
+                {
+                  "key": "basic-arithmetic-guide-step-4",
+                  "title": "الخطوة 4",
+                  "body": "نفّذ العملية المحددة بالترتيب المعروض."
+                },
+                {
+                  "key": "basic-arithmetic-guide-step-5",
+                  "title": "الخطوة 5",
+                  "body": "راجع النتيجة العددية المحدودة؛ ويُرفض القسمة على صفر."
+                }
+              ],
+              "sections": [
+                {
+                  "key": "basic-arithmetic-guide-section-1",
+                  "heading": "طريقة الحساب",
+                  "body": "Result = A op B, where op is addition (+), subtraction (−), multiplication (×) or division (÷)."
+                },
+                {
+                  "key": "basic-arithmetic-guide-section-2",
+                  "heading": "الافتراضات والقيود",
+                  "body": "يجب أن يكون كلا المدخلين عددين محدودين. القسمة على صفر غير معرّفة ويتم رفضها."
+                }
+              ]
+            },
+            "seo": {
+              "title": "حاسبة العمليات الحسابية الأساسية | FinPulse Hub",
+              "metaDescription": "اجمع عددين أو اطرح أحدهما من الآخر أو اضربهما أو اقسمهما.",
+              "h1": "حاسبة العمليات الحسابية الأساسية",
+              "introduction": "نفّذ عملية حسابية أساسية على عددين تدخلهما.",
+              "faq": [
+                {
+                  "key": "faq-basic-arithmetic-1",
+                  "question": "ما العمليات المدعومة؟",
+                  "answer": "الجمع والطرح والضرب والقسمة."
+                },
+                {
+                  "key": "faq-basic-arithmetic-2",
+                  "question": "هل يمكنني القسمة على صفر؟",
+                  "answer": "لا. القسمة على صفر غير معرّفة."
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "حاسبة العمليات الحسابية الأساسية",
+              "formLabel": "نموذج حاسبة العمليات الحسابية الأساسية",
+              "resultAnnouncement": "نتيجة حاسبة العمليات الحسابية الأساسية",
+              "chartLabel": "رسم بياني لنتيجة الحساب",
+              "controlLabels": [
+                {
+                  "key": "a",
+                  "label": "العدد الأول"
+                },
+                {
+                  "key": "op",
+                  "label": "العملية"
+                },
+                {
+                  "key": "b",
+                  "label": "العدد الثاني"
+                }
+              ]
+            }
+          }
         },
         "ur": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "بنیادی حسابی کیلکولیٹر",
+              "description": "دو نمبروں کو جمع، تفریق، ضرب یا تقسیم کریں۔",
+              "category": "ریاضی اور شماریات",
+              "subcategory": "بنیادی ریاضی کے کیلکولیٹرز"
+            },
+            "inputs": [
+              {
+                "key": "a",
+                "label": "پہلا نمبر"
+              },
+              {
+                "key": "op",
+                "label": "عمل"
+              },
+              {
+                "key": "b",
+                "label": "دوسرا نمبر"
+              }
+            ],
+            "actions": {
+              "calculate": "حساب کریں",
+              "recalculate": "دوبارہ حساب کریں",
+              "clear": "صاف کریں",
+              "reset": "ری سیٹ کریں",
+              "copy": "کاپی کریں",
+              "download": "ڈاؤن لوڈ کریں",
+              "print": "پرنٹ کریں"
+            },
+            "results": {
+              "heading": "نتیجہ",
+              "summary": "حساب کا نتیجہ",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "عمل"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "پہلا نمبر"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "دوسرا نمبر"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "عمل"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "پہلا نمبر"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "دوسرا نمبر"
+                }
+              ],
+              "chart": {
+                "title": "حساب کا نتیجہ",
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": "فارمولا اور حساب کے مراحل",
+              "formulaDescription": "Result = A op B, where op is addition (+), subtraction (−), multiplication (×) or division (÷).",
+              "steps": [
+                "پہلا نمبر درج کریں۔",
+                "جمع، تفریق، ضرب یا تقسیم منتخب کریں۔",
+                "دوسرا نمبر درج کریں۔",
+                "دکھائی گئی ترتیب کے مطابق منتخب عمل انجام دیں۔",
+                "محدود عددی نتیجہ دیکھیں؛ صفر سے تقسیم مسترد کی جاتی ہے۔"
+              ],
+              "assumptions": [
+                "دونوں اِن پٹس محدود اعداد ہونے چاہئیں۔",
+                "صفر سے تقسیم غیر متعین ہے اور مسترد کی جاتی ہے۔"
+              ],
+              "notes": [
+                "حساب آپ کی درج کردہ قدروں سے براؤزر میں مقامی طور پر ہوتا ہے؛ نتیجے کے نوٹ اور مفروضوں کا جائزہ لیں۔"
+              ],
+              "disclaimers": [
+                "یہ کیلکولیٹر صرف معلوماتی تخمینہ فراہم کرتا ہے؛ یہ مالی، ٹیکس، قانونی، اکاؤنٹنگ یا سرمایہ کاری کا مشورہ نہیں ہے۔"
+              ],
+              "limitations": [
+                "دونوں اِن پٹس محدود اعداد ہونے چاہئیں۔",
+                "صفر سے تقسیم غیر متعین ہے اور مسترد کی جاتی ہے۔"
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "{field} ایک محدود اور درست عدد ہونا چاہیے۔",
+                "recoveryHint": "درست محدود عدد درج کریں اور دوبارہ کوشش کریں۔"
+              },
+              {
+                "key": "zero-divisor",
+                "message": "صفر سے تقسیم نہیں کی جا سکتی۔",
+                "recoveryHint": "تقسیم منتخب کرنے پر دوسرا نمبر صفر کے علاوہ درج کریں۔"
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-basic-arithmetic-1",
+                "question": "کون سے اعمال دستیاب ہیں؟",
+                "answer": "جمع، تفریق، ضرب اور تقسیم۔"
+              },
+              {
+                "key": "faq-basic-arithmetic-2",
+                "question": "کیا میں صفر سے تقسیم کر سکتا ہوں؟",
+                "answer": "نہیں۔ صفر سے تقسیم غیر متعین ہے۔"
+              }
+            ],
+            "guide": {
+              "title": "بنیادی حسابی کیلکولیٹر کی رہنمائی",
+              "introduction": "درج کردہ دو نمبروں پر بنیادی حسابی عمل انجام دیں۔",
+              "steps": [
+                {
+                  "key": "basic-arithmetic-guide-step-1",
+                  "title": "مرحلہ 1",
+                  "body": "پہلا نمبر درج کریں۔"
+                },
+                {
+                  "key": "basic-arithmetic-guide-step-2",
+                  "title": "مرحلہ 2",
+                  "body": "جمع، تفریق، ضرب یا تقسیم منتخب کریں۔"
+                },
+                {
+                  "key": "basic-arithmetic-guide-step-3",
+                  "title": "مرحلہ 3",
+                  "body": "دوسرا نمبر درج کریں۔"
+                },
+                {
+                  "key": "basic-arithmetic-guide-step-4",
+                  "title": "مرحلہ 4",
+                  "body": "دکھائی گئی ترتیب کے مطابق منتخب عمل انجام دیں۔"
+                },
+                {
+                  "key": "basic-arithmetic-guide-step-5",
+                  "title": "مرحلہ 5",
+                  "body": "محدود عددی نتیجہ دیکھیں؛ صفر سے تقسیم مسترد کی جاتی ہے۔"
+                }
+              ],
+              "sections": [
+                {
+                  "key": "basic-arithmetic-guide-section-1",
+                  "heading": "حساب کا طریقہ",
+                  "body": "Result = A op B, where op is addition (+), subtraction (−), multiplication (×) or division (÷)."
+                },
+                {
+                  "key": "basic-arithmetic-guide-section-2",
+                  "heading": "مفروضے اور حدود",
+                  "body": "دونوں اِن پٹس محدود اعداد ہونے چاہئیں۔ صفر سے تقسیم غیر متعین ہے اور مسترد کی جاتی ہے۔"
+                }
+              ]
+            },
+            "seo": {
+              "title": "بنیادی حسابی کیلکولیٹر | FinPulse Hub",
+              "metaDescription": "دو نمبروں کو جمع، تفریق، ضرب یا تقسیم کریں۔",
+              "h1": "بنیادی حسابی کیلکولیٹر",
+              "introduction": "درج کردہ دو نمبروں پر بنیادی حسابی عمل انجام دیں۔",
+              "faq": [
+                {
+                  "key": "faq-basic-arithmetic-1",
+                  "question": "کون سے اعمال دستیاب ہیں؟",
+                  "answer": "جمع، تفریق، ضرب اور تقسیم۔"
+                },
+                {
+                  "key": "faq-basic-arithmetic-2",
+                  "question": "کیا میں صفر سے تقسیم کر سکتا ہوں؟",
+                  "answer": "نہیں۔ صفر سے تقسیم غیر متعین ہے۔"
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "بنیادی حسابی کیلکولیٹر",
+              "formLabel": "بنیادی حسابی کیلکولیٹر کا فارم",
+              "resultAnnouncement": "بنیادی حسابی کیلکولیٹر کا نتیجہ",
+              "chartLabel": "حسابی نتیجے کا چارٹ",
+              "controlLabels": [
+                {
+                  "key": "a",
+                  "label": "پہلا نمبر"
+                },
+                {
+                  "key": "op",
+                  "label": "عمل"
+                },
+                {
+                  "key": "b",
+                  "label": "دوسرا نمبر"
+                }
+              ]
+            }
+          }
         },
         "zh-CN": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "基础算术计算器",
+              "description": "对两个数字进行加、减、乘或除运算。",
+              "category": "数学与统计",
+              "subcategory": "基础数学计算器"
+            },
+            "inputs": [
+              {
+                "key": "a",
+                "label": "第一个数字"
+              },
+              {
+                "key": "op",
+                "label": "运算"
+              },
+              {
+                "key": "b",
+                "label": "第二个数字"
+              }
+            ],
+            "actions": {
+              "calculate": "计算",
+              "recalculate": "重新计算",
+              "clear": "清除",
+              "reset": "重置",
+              "copy": "复制",
+              "download": "下载",
+              "print": "打印"
+            },
+            "results": {
+              "heading": "结果",
+              "summary": "计算结果",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "运算"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "第一个数字"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "第二个数字"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "运算"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "第一个数字"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "第二个数字"
+                }
+              ],
+              "chart": {
+                "title": "计算结果",
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": "公式与计算步骤",
+              "formulaDescription": "Result = A op B, where op is addition (+), subtraction (−), multiplication (×) or division (÷).",
+              "steps": [
+                "输入第一个数字。",
+                "选择加法、减法、乘法或除法。",
+                "输入第二个数字。",
+                "按照显示的顺序执行所选运算。",
+                "查看有限数值结果；系统会拒绝除以零。"
+              ],
+              "assumptions": [
+                "两个输入都必须是有限数值。",
+                "除以零没有定义，系统会拒绝该运算。"
+              ],
+              "notes": [
+                "计算在浏览器本地完成，使用您输入的数值；请查看结果说明并核对相关假设。"
+              ],
+              "disclaimers": [
+                "本计算器仅提供信息性估算，不构成财务、税务、法律、会计或投资建议。"
+              ],
+              "limitations": [
+                "两个输入都必须是有限数值。",
+                "除以零没有定义，系统会拒绝该运算。"
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "{field} 必须是有限的有效数字。",
+                "recoveryHint": "请输入有效的有限数值，然后重试。"
+              },
+              {
+                "key": "zero-divisor",
+                "message": "不能除以零。",
+                "recoveryHint": "选择除法时，请输入非零的第二个数字。"
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-basic-arithmetic-1",
+                "question": "支持哪些运算？",
+                "answer": "加法、减法、乘法和除法。"
+              },
+              {
+                "key": "faq-basic-arithmetic-2",
+                "question": "可以除以零吗？",
+                "answer": "不可以。除以零没有定义。"
+              }
+            ],
+            "guide": {
+              "title": "基础算术计算器指南",
+              "introduction": "对输入的两个数字执行基本算术运算。",
+              "steps": [
+                {
+                  "key": "basic-arithmetic-guide-step-1",
+                  "title": "步骤 1",
+                  "body": "输入第一个数字。"
+                },
+                {
+                  "key": "basic-arithmetic-guide-step-2",
+                  "title": "步骤 2",
+                  "body": "选择加法、减法、乘法或除法。"
+                },
+                {
+                  "key": "basic-arithmetic-guide-step-3",
+                  "title": "步骤 3",
+                  "body": "输入第二个数字。"
+                },
+                {
+                  "key": "basic-arithmetic-guide-step-4",
+                  "title": "步骤 4",
+                  "body": "按照显示的顺序执行所选运算。"
+                },
+                {
+                  "key": "basic-arithmetic-guide-step-5",
+                  "title": "步骤 5",
+                  "body": "查看有限数值结果；系统会拒绝除以零。"
+                }
+              ],
+              "sections": [
+                {
+                  "key": "basic-arithmetic-guide-section-1",
+                  "heading": "计算方法",
+                  "body": "Result = A op B, where op is addition (+), subtraction (−), multiplication (×) or division (÷)."
+                },
+                {
+                  "key": "basic-arithmetic-guide-section-2",
+                  "heading": "假设与限制",
+                  "body": "两个输入都必须是有限数值。 除以零没有定义，系统会拒绝该运算。"
+                }
+              ]
+            },
+            "seo": {
+              "title": "基础算术计算器 | FinPulse Hub",
+              "metaDescription": "对两个数字进行加、减、乘或除运算。",
+              "h1": "基础算术计算器",
+              "introduction": "对输入的两个数字执行基本算术运算。",
+              "faq": [
+                {
+                  "key": "faq-basic-arithmetic-1",
+                  "question": "支持哪些运算？",
+                  "answer": "加法、减法、乘法和除法。"
+                },
+                {
+                  "key": "faq-basic-arithmetic-2",
+                  "question": "可以除以零吗？",
+                  "answer": "不可以。除以零没有定义。"
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "基础算术计算器",
+              "formLabel": "基础算术计算器输入表单",
+              "resultAnnouncement": "基础算术计算结果",
+              "chartLabel": "计算结果图表",
+              "controlLabels": [
+                {
+                  "key": "a",
+                  "label": "第一个数字"
+                },
+                {
+                  "key": "op",
+                  "label": "运算"
+                },
+                {
+                  "key": "b",
+                  "label": "第二个数字"
+                }
+              ]
+            }
+          }
         },
         "ja": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "基本算術計算機",
+              "description": "2つの数値を加算、減算、乗算、除算します。",
+              "category": "数学・統計",
+              "subcategory": "基本数学計算機"
+            },
+            "inputs": [
+              {
+                "key": "a",
+                "label": "最初の数値"
+              },
+              {
+                "key": "op",
+                "label": "演算"
+              },
+              {
+                "key": "b",
+                "label": "2番目の数値"
+              }
+            ],
+            "actions": {
+              "calculate": "計算",
+              "recalculate": "再計算",
+              "clear": "クリア",
+              "reset": "リセット",
+              "copy": "コピー",
+              "download": "ダウンロード",
+              "print": "印刷"
+            },
+            "results": {
+              "heading": "結果",
+              "summary": "計算結果",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "演算"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "最初の数値"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "2番目の数値"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "演算"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "最初の数値"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "2番目の数値"
+                }
+              ],
+              "chart": {
+                "title": "計算結果",
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": "計算式と計算手順",
+              "formulaDescription": "Result = A op B, where op is addition (+), subtraction (−), multiplication (×) or division (÷).",
+              "steps": [
+                "最初の数値を入力します。",
+                "加算、減算、乗算、除算のいずれかを選択します。",
+                "2番目の数値を入力します。",
+                "表示された順序で選択した演算を実行します。",
+                "有限の数値結果を確認します。ゼロによる除算は拒否されます。"
+              ],
+              "assumptions": [
+                "両方の入力値は有限の数値である必要があります。",
+                "ゼロによる除算は定義されていないため拒否されます。"
+              ],
+              "notes": [
+                "計算は入力値を使ってブラウザー内でローカルに実行されます。結果の注記と前提条件を確認してください。"
+              ],
+              "disclaimers": [
+                "この計算機は情報提供を目的とした推定値を示すものであり、金融、税務、法律、会計または投資に関する助言ではありません。"
+              ],
+              "limitations": [
+                "両方の入力値は有限の数値である必要があります。",
+                "ゼロによる除算は定義されていないため拒否されます。"
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "{field} は有限の有効な数値である必要があります。",
+                "recoveryHint": "有限の有効な数値を入力して、もう一度お試しください。"
+              },
+              {
+                "key": "zero-divisor",
+                "message": "ゼロで割ることはできません。",
+                "recoveryHint": "除算を選択する場合は、2番目の数値にゼロ以外を入力してください。"
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-basic-arithmetic-1",
+                "question": "どの演算に対応していますか？",
+                "answer": "加算、減算、乗算、除算に対応しています。"
+              },
+              {
+                "key": "faq-basic-arithmetic-2",
+                "question": "ゼロで割ることはできますか？",
+                "answer": "いいえ。ゼロによる除算は定義されていません。"
+              }
+            ],
+            "guide": {
+              "title": "基本算術計算機ガイド",
+              "introduction": "入力した2つの数値に基本的な算術演算を実行します。",
+              "steps": [
+                {
+                  "key": "basic-arithmetic-guide-step-1",
+                  "title": "ステップ 1",
+                  "body": "最初の数値を入力します。"
+                },
+                {
+                  "key": "basic-arithmetic-guide-step-2",
+                  "title": "ステップ 2",
+                  "body": "加算、減算、乗算、除算のいずれかを選択します。"
+                },
+                {
+                  "key": "basic-arithmetic-guide-step-3",
+                  "title": "ステップ 3",
+                  "body": "2番目の数値を入力します。"
+                },
+                {
+                  "key": "basic-arithmetic-guide-step-4",
+                  "title": "ステップ 4",
+                  "body": "表示された順序で選択した演算を実行します。"
+                },
+                {
+                  "key": "basic-arithmetic-guide-step-5",
+                  "title": "ステップ 5",
+                  "body": "有限の数値結果を確認します。ゼロによる除算は拒否されます。"
+                }
+              ],
+              "sections": [
+                {
+                  "key": "basic-arithmetic-guide-section-1",
+                  "heading": "計算方法",
+                  "body": "Result = A op B, where op is addition (+), subtraction (−), multiplication (×) or division (÷)."
+                },
+                {
+                  "key": "basic-arithmetic-guide-section-2",
+                  "heading": "前提条件と制限",
+                  "body": "両方の入力値は有限の数値である必要があります。 ゼロによる除算は定義されていないため拒否されます。"
+                }
+              ]
+            },
+            "seo": {
+              "title": "基本算術計算機 | FinPulse Hub",
+              "metaDescription": "2つの数値を加算、減算、乗算、除算します。",
+              "h1": "基本算術計算機",
+              "introduction": "入力した2つの数値に基本的な算術演算を実行します。",
+              "faq": [
+                {
+                  "key": "faq-basic-arithmetic-1",
+                  "question": "どの演算に対応していますか？",
+                  "answer": "加算、減算、乗算、除算に対応しています。"
+                },
+                {
+                  "key": "faq-basic-arithmetic-2",
+                  "question": "ゼロで割ることはできますか？",
+                  "answer": "いいえ。ゼロによる除算は定義されていません。"
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "基本算術計算機",
+              "formLabel": "基本算術計算機の入力フォーム",
+              "resultAnnouncement": "基本算術計算機の計算結果",
+              "chartLabel": "計算結果のチャート",
+              "controlLabels": [
+                {
+                  "key": "a",
+                  "label": "最初の数値"
+                },
+                {
+                  "key": "op",
+                  "label": "演算"
+                },
+                {
+                  "key": "b",
+                  "label": "2番目の数値"
+                }
+              ]
+            }
+          }
         },
         "ru": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "Калькулятор базовой арифметики",
+              "description": "Складывайте, вычитайте, умножайте или делите два числа.",
+              "category": "Математика и статистика",
+              "subcategory": "Калькуляторы базовой математики"
+            },
+            "inputs": [
+              {
+                "key": "a",
+                "label": "Первое число"
+              },
+              {
+                "key": "op",
+                "label": "Операция"
+              },
+              {
+                "key": "b",
+                "label": "Второе число"
+              }
+            ],
+            "actions": {
+              "calculate": "Рассчитать",
+              "recalculate": "Пересчитать",
+              "clear": "Очистить",
+              "reset": "Сбросить",
+              "copy": "Копировать",
+              "download": "Скачать",
+              "print": "Печать"
+            },
+            "results": {
+              "heading": "Результат",
+              "summary": "Результат вычисления",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "Операция"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "Первое число"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "Второе число"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "Операция"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "Первое число"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "Второе число"
+                }
+              ],
+              "chart": {
+                "title": "Результат вычисления",
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": "Формула и этапы расчёта",
+              "formulaDescription": "Result = A op B, where op is addition (+), subtraction (−), multiplication (×) or division (÷).",
+              "steps": [
+                "Введите первое число.",
+                "Выберите сложение, вычитание, умножение или деление.",
+                "Введите второе число.",
+                "Выполните выбранную операцию в указанном порядке.",
+                "Проверьте конечный числовой результат; деление на ноль отклоняется."
+              ],
+              "assumptions": [
+                "Оба введённых значения должны быть конечными числами.",
+                "Деление на ноль не определено и отклоняется."
+              ],
+              "notes": [
+                "Расчёт выполняется локально в браузере на основе введённых значений; проверьте примечание к результату и допущения."
+              ],
+              "disclaimers": [
+                "Калькулятор предоставляет информационную оценку и не является финансовой, налоговой, юридической, бухгалтерской или инвестиционной рекомендацией."
+              ],
+              "limitations": [
+                "Оба введённых значения должны быть конечными числами.",
+                "Деление на ноль не определено и отклоняется."
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "{field} должно быть конечным числом.",
+                "recoveryHint": "Введите корректное конечное число и повторите попытку."
+              },
+              {
+                "key": "zero-divisor",
+                "message": "Деление на ноль невозможно.",
+                "recoveryHint": "При выборе деления введите ненулевое второе число."
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-basic-arithmetic-1",
+                "question": "Какие операции поддерживаются?",
+                "answer": "Сложение, вычитание, умножение и деление."
+              },
+              {
+                "key": "faq-basic-arithmetic-2",
+                "question": "Можно ли делить на ноль?",
+                "answer": "Нет. Деление на ноль не определено."
+              }
+            ],
+            "guide": {
+              "title": "Руководство по калькулятору базовой арифметики",
+              "introduction": "Выполните базовую арифметическую операцию над двумя введёнными числами.",
+              "steps": [
+                {
+                  "key": "basic-arithmetic-guide-step-1",
+                  "title": "Шаг 1",
+                  "body": "Введите первое число."
+                },
+                {
+                  "key": "basic-arithmetic-guide-step-2",
+                  "title": "Шаг 2",
+                  "body": "Выберите сложение, вычитание, умножение или деление."
+                },
+                {
+                  "key": "basic-arithmetic-guide-step-3",
+                  "title": "Шаг 3",
+                  "body": "Введите второе число."
+                },
+                {
+                  "key": "basic-arithmetic-guide-step-4",
+                  "title": "Шаг 4",
+                  "body": "Выполните выбранную операцию в указанном порядке."
+                },
+                {
+                  "key": "basic-arithmetic-guide-step-5",
+                  "title": "Шаг 5",
+                  "body": "Проверьте конечный числовой результат; деление на ноль отклоняется."
+                }
+              ],
+              "sections": [
+                {
+                  "key": "basic-arithmetic-guide-section-1",
+                  "heading": "Метод расчёта",
+                  "body": "Result = A op B, where op is addition (+), subtraction (−), multiplication (×) or division (÷)."
+                },
+                {
+                  "key": "basic-arithmetic-guide-section-2",
+                  "heading": "Допущения и ограничения",
+                  "body": "Оба введённых значения должны быть конечными числами. Деление на ноль не определено и отклоняется."
+                }
+              ]
+            },
+            "seo": {
+              "title": "Калькулятор базовой арифметики | FinPulse Hub",
+              "metaDescription": "Складывайте, вычитайте, умножайте или делите два числа.",
+              "h1": "Калькулятор базовой арифметики",
+              "introduction": "Выполните базовую арифметическую операцию над двумя введёнными числами.",
+              "faq": [
+                {
+                  "key": "faq-basic-arithmetic-1",
+                  "question": "Какие операции поддерживаются?",
+                  "answer": "Сложение, вычитание, умножение и деление."
+                },
+                {
+                  "key": "faq-basic-arithmetic-2",
+                  "question": "Можно ли делить на ноль?",
+                  "answer": "Нет. Деление на ноль не определено."
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "Калькулятор базовой арифметики",
+              "formLabel": "Форма калькулятора базовой арифметики",
+              "resultAnnouncement": "Результат расчёта базовой арифметики",
+              "chartLabel": "Диаграмма результата вычисления",
+              "controlLabels": [
+                {
+                  "key": "a",
+                  "label": "Первое число"
+                },
+                {
+                  "key": "op",
+                  "label": "Операция"
+                },
+                {
+                  "key": "b",
+                  "label": "Второе число"
+                }
+              ]
+            }
+          }
         }
       },
       "sourceExtractionStatus": "source-record-complete",
-      "sourceTranslationStatus": "not-started",
+      "sourceTranslationStatus": "draft",
       "sourceCompletenessStatus": "complete"
     },
     {
