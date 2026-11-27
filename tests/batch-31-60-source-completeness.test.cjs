@@ -1,6 +1,7 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
 const content = require("../translations/tool-content.json");
+const calculationRegistry = require("../data/calculation-registry.json");
 
 const expectedIds = [
   "paycheck", "payroll", "overtime", "discount", "exchange-fees",
@@ -17,6 +18,24 @@ test("Batch 31-60 contains the exact 30 canonical tools in catalogue order", () 
   assert.equal(content.tools.length, 220);
   assert.deepEqual(content.tools.slice(30, 60).map(tool => tool.id), expectedIds);
   assert.equal(new Set(expectedIds).size, 30);
+});
+
+test("Batch 31-60 has source-backed calculation extraction records for all 30 tools", () => {
+  const ids = content.tools.slice(30, 60).map(tool => tool.id);
+  const records = calculationRegistry.tools.filter(record => ids.includes(record.toolId));
+  assert.equal(records.length, 30);
+  for (const record of records) {
+    assert.equal(record.status, "extracted", record.toolId + " remains extracted until parity evidence is separately approved");
+    assert.ok(record.sourceModule && record.runtimeFunction, record.toolId + " runtime mapping");
+    const calculation = record.calculation;
+    for (const field of ["inputs", "constraints", "outputs", "units", "assumptions", "sourceReferences"]) {
+      assert.ok(Array.isArray(calculation[field]) && calculation[field].length > 0, record.toolId + " " + field);
+    }
+    for (const field of ["formula", "precision", "rounding"]) {
+      assert.ok(typeof calculation[field] === "string" && calculation[field].trim(), record.toolId + " " + field);
+    }
+    assert.ok(record.sourceReferences.some(reference => reference.includes(record.sourceModule)), record.toolId + " source module evidence");
+  }
 });
 
 test("Batch 31-60 source records include every required editorial content group", () => {
