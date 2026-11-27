@@ -72173,28 +72173,1258 @@
       },
       "locales": {
         "hi": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "अनुपात कैलकुलेटर",
+              "description": "अनुपात a:b = c:x को हल करें।",
+              "category": "गणित और सांख्यिकी",
+              "subcategory": "भिन्न और अनुपात"
+            },
+            "inputs": [
+              {
+                "key": "a",
+                "label": "A"
+              },
+              {
+                "key": "b",
+                "label": "B"
+              },
+              {
+                "key": "c",
+                "label": "C"
+              }
+            ],
+            "actions": {
+              "calculate": "गणना करें",
+              "recalculate": "पुनर्गणना करें",
+              "clear": "साफ़ करें",
+              "reset": "रीसेट करें",
+              "copy": "कॉपी करें",
+              "download": "डाउनलोड करें",
+              "print": "प्रिंट करें"
+            },
+            "results": {
+              "heading": "परिणाम",
+              "summary": "अज्ञात मान (X)",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "अनुपात"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "A"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "B"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "C"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "अनुपात"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "A"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "B"
+                },
+                {
+                  "key": "breakdown-4",
+                  "label": "C"
+                }
+              ]
+            },
+            "explanations": {
+              "formulaTitle": "सूत्र और गणना के चरण",
+              "formulaDescription": "A/B = C/X; cross multiplication gives A × X = B × C, therefore X = (B × C)/A.",
+              "steps": [
+                "A और B के लिए धनात्मक मान दर्ज करें।",
+                "C के लिए शून्य या धनात्मक मान दर्ज करें।",
+                "अनुपात A/B = C/X का क्रॉस-मल्टिप्लिकेशन करें।",
+                "X निकालने के लिए B × C को A से विभाजित करें।",
+                "गैर-सीमित परिणाम को अस्वीकार करें और अज्ञात मान की समीक्षा करें।"
+              ],
+              "assumptions": [
+                "A और B धनात्मक होने चाहिए; C शून्य या धनात्मक होना चाहिए।",
+                "पुनर्व्यवस्थित समीकरण में A भाजक है, इसलिए A शून्य नहीं हो सकता।"
+              ],
+              "notes": [
+                "गणना ब्राउज़र में आपके दर्ज किए गए मानों से स्थानीय रूप से होती है। अनुमान पर भरोसा करने से पहले परिणाम संबंधी टिप्पणी और मान्यताओं की जाँच करें।"
+              ],
+              "disclaimers": [
+                "यह कैलकुलेटर केवल जानकारी के लिए अनुमान देता है; यह वित्तीय, कर, कानूनी, लेखांकन या निवेश सलाह नहीं है।"
+              ],
+              "limitations": [
+                "A और B धनात्मक होने चाहिए; C शून्य या धनात्मक होना चाहिए।",
+                "पुनर्व्यवस्थित समीकरण में A भाजक है, इसलिए A शून्य नहीं हो सकता।"
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "{field} एक सीमित संख्या होनी चाहिए।",
+                "recoveryHint": "एक मान्य सीमित संख्या दर्ज करें और फिर प्रयास करें।"
+              },
+              {
+                "key": "positive",
+                "message": "A और B शून्य से अधिक होने चाहिए।",
+                "recoveryHint": "A और B के लिए धनात्मक मान दर्ज करें।"
+              },
+              {
+                "key": "negative",
+                "message": "C ऋणात्मक नहीं हो सकता।",
+                "recoveryHint": "C के लिए शून्य या धनात्मक मान दर्ज करें।"
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-proportion-1",
+                "question": "कौन-सा समीकरण उपयोग किया जाता है?",
+                "answer": "क्रॉस-मल्टिप्लिकेशन से x = (b × c) / a मिलता है।"
+              },
+              {
+                "key": "faq-proportion-2",
+                "question": "क्या A शून्य हो सकता है?",
+                "answer": "नहीं। पुनर्व्यवस्थित अनुपात में A भाजक है।"
+              }
+            ],
+            "guide": {
+              "title": "अनुपात कैलकुलेटर मार्गदर्शिका",
+              "introduction": "अनुपात a/b = c/x में x का मान निकालें।",
+              "steps": [
+                {
+                  "key": "proportion-guide-step-1",
+                  "title": "चरण 1",
+                  "body": "A और B के लिए धनात्मक मान दर्ज करें।"
+                },
+                {
+                  "key": "proportion-guide-step-2",
+                  "title": "चरण 2",
+                  "body": "C के लिए शून्य या धनात्मक मान दर्ज करें।"
+                },
+                {
+                  "key": "proportion-guide-step-3",
+                  "title": "चरण 3",
+                  "body": "अनुपात A/B = C/X का क्रॉस-मल्टिप्लिकेशन करें।"
+                },
+                {
+                  "key": "proportion-guide-step-4",
+                  "title": "चरण 4",
+                  "body": "X निकालने के लिए B × C को A से विभाजित करें।"
+                },
+                {
+                  "key": "proportion-guide-step-5",
+                  "title": "चरण 5",
+                  "body": "गैर-सीमित परिणाम को अस्वीकार करें और अज्ञात मान की समीक्षा करें।"
+                }
+              ],
+              "sections": [
+                {
+                  "key": "proportion-guide-section-1",
+                  "heading": "गणना की विधि",
+                  "body": "A/B = C/X; cross multiplication gives A × X = B × C, therefore X = (B × C)/A."
+                },
+                {
+                  "key": "proportion-guide-section-2",
+                  "heading": "मान्यताएँ और सीमाएँ",
+                  "body": "A और B धनात्मक होने चाहिए; C शून्य या धनात्मक होना चाहिए। पुनर्व्यवस्थित समीकरण में A भाजक है, इसलिए A शून्य नहीं हो सकता।"
+                }
+              ]
+            },
+            "seo": {
+              "title": "अनुपात कैलकुलेटर | FinPulse Hub",
+              "metaDescription": "अनुपात a:b = c:x को हल करें।",
+              "h1": "अनुपात कैलकुलेटर",
+              "introduction": "अनुपात a/b = c/x में x का मान निकालें।",
+              "faq": [
+                {
+                  "key": "faq-proportion-1",
+                  "question": "कौन-सा समीकरण उपयोग किया जाता है?",
+                  "answer": "क्रॉस-मल्टिप्लिकेशन से x = (b × c) / a मिलता है।"
+                },
+                {
+                  "key": "faq-proportion-2",
+                  "question": "क्या A शून्य हो सकता है?",
+                  "answer": "नहीं। पुनर्व्यवस्थित अनुपात में A भाजक है।"
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "अनुपात कैलकुलेटर",
+              "formLabel": "अनुपात कैलकुलेटर फ़ॉर्म",
+              "resultAnnouncement": "अनुपात कैलकुलेटर का गणना परिणाम",
+              "chartLabel": "अज्ञात मान (X) के लिए अनुपात कैलकुलेटर चार्ट",
+              "controlLabels": [
+                {
+                  "key": "a",
+                  "label": "A"
+                },
+                {
+                  "key": "b",
+                  "label": "B"
+                },
+                {
+                  "key": "c",
+                  "label": "C"
+                }
+              ]
+            }
+          }
         },
         "ar": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "حاسبة التناسب",
+              "description": "حل التناسب a:b = c:x.",
+              "category": "الرياضيات والإحصاء",
+              "subcategory": "الكسور والنسب"
+            },
+            "inputs": [
+              {
+                "key": "a",
+                "label": "A"
+              },
+              {
+                "key": "b",
+                "label": "B"
+              },
+              {
+                "key": "c",
+                "label": "C"
+              }
+            ],
+            "actions": {
+              "calculate": "احسب",
+              "recalculate": "أعد الحساب",
+              "clear": "مسح",
+              "reset": "إعادة ضبط",
+              "copy": "نسخ",
+              "download": "تنزيل",
+              "print": "طباعة"
+            },
+            "results": {
+              "heading": "النتيجة",
+              "summary": "القيمة المجهولة (X)",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "التناسب"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "A"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "B"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "C"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "التناسب"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "A"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "B"
+                },
+                {
+                  "key": "breakdown-4",
+                  "label": "C"
+                }
+              ]
+            },
+            "explanations": {
+              "formulaTitle": "الصيغة وخطوات الحساب",
+              "formulaDescription": "A/B = C/X; cross multiplication gives A × X = B × C, therefore X = (B × C)/A.",
+              "steps": [
+                "أدخل قيمتين موجبتين لـ A وB.",
+                "أدخل قيمة غير سالبة لـ C.",
+                "استخدم الضرب التبادلي للتناسب A/B = C/X.",
+                "اقسم B × C على A لإيجاد X.",
+                "ارفض النتيجة غير المحدودة وراجع القيمة المجهولة."
+              ],
+              "assumptions": [
+                "يجب أن تكون A وB موجبتين، ويجب أن تكون C غير سالبة.",
+                "لا يمكن أن تساوي A صفراً لأنها المقسوم عليه في المعادلة بعد إعادة ترتيبها."
+              ],
+              "notes": [
+                "يُجرى الحساب محلياً في المتصفح باستخدام القيم التي أدخلتها. راجع ملاحظة النتيجة والافتراضات قبل الاعتماد على التقدير."
+              ],
+              "disclaimers": [
+                "تقدم هذه الحاسبة تقديراً لأغراض المعلومات فقط، ولا تُعد نصيحة مالية أو ضريبية أو قانونية أو محاسبية أو استثمارية."
+              ],
+              "limitations": [
+                "يجب أن تكون A وB موجبتين، ويجب أن تكون C غير سالبة.",
+                "لا يمكن أن تساوي A صفراً لأنها المقسوم عليه في المعادلة بعد إعادة ترتيبها."
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "يجب أن تكون {field} عدداً منتهياً.",
+                "recoveryHint": "أدخل عدداً منتهياً صالحاً ثم حاول مرة أخرى."
+              },
+              {
+                "key": "positive",
+                "message": "يجب أن تكون A وB أكبر من صفر.",
+                "recoveryHint": "أدخل قيماً موجبة لـ A وB."
+              },
+              {
+                "key": "negative",
+                "message": "يجب ألا تكون C سالبة.",
+                "recoveryHint": "أدخل صفراً أو قيمة موجبة لـ C."
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-proportion-1",
+                "question": "ما المعادلة المستخدمة؟",
+                "answer": "يعطي الضرب التبادلي x = (b × c) / a."
+              },
+              {
+                "key": "faq-proportion-2",
+                "question": "هل يمكن أن تكون A صفراً؟",
+                "answer": "لا، لأن A هي المقسوم عليه في التناسب بعد إعادة ترتيبه."
+              }
+            ],
+            "guide": {
+              "title": "دليل حاسبة التناسب",
+              "introduction": "أوجد قيمة x في التناسب a/b = c/x.",
+              "steps": [
+                {
+                  "key": "proportion-guide-step-1",
+                  "title": "الخطوة 1",
+                  "body": "أدخل قيمتين موجبتين لـ A وB."
+                },
+                {
+                  "key": "proportion-guide-step-2",
+                  "title": "الخطوة 2",
+                  "body": "أدخل قيمة غير سالبة لـ C."
+                },
+                {
+                  "key": "proportion-guide-step-3",
+                  "title": "الخطوة 3",
+                  "body": "استخدم الضرب التبادلي للتناسب A/B = C/X."
+                },
+                {
+                  "key": "proportion-guide-step-4",
+                  "title": "الخطوة 4",
+                  "body": "اقسم B × C على A لإيجاد X."
+                },
+                {
+                  "key": "proportion-guide-step-5",
+                  "title": "الخطوة 5",
+                  "body": "ارفض النتيجة غير المحدودة وراجع القيمة المجهولة."
+                }
+              ],
+              "sections": [
+                {
+                  "key": "proportion-guide-section-1",
+                  "heading": "طريقة الحساب",
+                  "body": "A/B = C/X; cross multiplication gives A × X = B × C, therefore X = (B × C)/A."
+                },
+                {
+                  "key": "proportion-guide-section-2",
+                  "heading": "الافتراضات والقيود",
+                  "body": "يجب أن تكون A وB موجبتين، ويجب أن تكون C غير سالبة. لا يمكن أن تساوي A صفراً لأنها المقسوم عليه في المعادلة بعد إعادة ترتيبها."
+                }
+              ]
+            },
+            "seo": {
+              "title": "حاسبة التناسب | FinPulse Hub",
+              "metaDescription": "حل التناسب a:b = c:x.",
+              "h1": "حاسبة التناسب",
+              "introduction": "أوجد قيمة x في التناسب a/b = c/x.",
+              "faq": [
+                {
+                  "key": "faq-proportion-1",
+                  "question": "ما المعادلة المستخدمة؟",
+                  "answer": "يعطي الضرب التبادلي x = (b × c) / a."
+                },
+                {
+                  "key": "faq-proportion-2",
+                  "question": "هل يمكن أن تكون A صفراً؟",
+                  "answer": "لا، لأن A هي المقسوم عليه في التناسب بعد إعادة ترتيبه."
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "حاسبة التناسب",
+              "formLabel": "نموذج حاسبة التناسب",
+              "resultAnnouncement": "نتيجة حساب حاسبة التناسب",
+              "chartLabel": "مخطط حاسبة التناسب للقيمة المجهولة (X)",
+              "controlLabels": [
+                {
+                  "key": "a",
+                  "label": "A"
+                },
+                {
+                  "key": "b",
+                  "label": "B"
+                },
+                {
+                  "key": "c",
+                  "label": "C"
+                }
+              ]
+            }
+          }
         },
         "ur": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "تناسب کیلکولیٹر",
+              "description": "تناسب a:b = c:x حل کریں۔",
+              "category": "ریاضی اور شماریات",
+              "subcategory": "کسر اور تناسب"
+            },
+            "inputs": [
+              {
+                "key": "a",
+                "label": "A"
+              },
+              {
+                "key": "b",
+                "label": "B"
+              },
+              {
+                "key": "c",
+                "label": "C"
+              }
+            ],
+            "actions": {
+              "calculate": "حساب کریں",
+              "recalculate": "دوبارہ حساب کریں",
+              "clear": "صاف کریں",
+              "reset": "ری سیٹ کریں",
+              "copy": "کاپی کریں",
+              "download": "ڈاؤن لوڈ کریں",
+              "print": "پرنٹ کریں"
+            },
+            "results": {
+              "heading": "نتیجہ",
+              "summary": "نامعلوم قدر (X)",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "تناسب"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "A"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "B"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "C"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "تناسب"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "A"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "B"
+                },
+                {
+                  "key": "breakdown-4",
+                  "label": "C"
+                }
+              ]
+            },
+            "explanations": {
+              "formulaTitle": "فارمولا اور حساب کے مراحل",
+              "formulaDescription": "A/B = C/X; cross multiplication gives A × X = B × C, therefore X = (B × C)/A.",
+              "steps": [
+                "A اور B کے لیے مثبت قدریں درج کریں۔",
+                "C کے لیے صفر یا مثبت قدر درج کریں۔",
+                "تناسب A/B = C/X پر کراس ملٹی پلائی کریں۔",
+                "X معلوم کرنے کے لیے B × C کو A سے تقسیم کریں۔",
+                "غیر محدود نتیجے کو مسترد کریں اور نامعلوم قدر کا جائزہ لیں۔"
+              ],
+              "assumptions": [
+                "A اور B مثبت ہونے چاہئیں؛ C صفر یا مثبت ہونا چاہیے۔",
+                "ترتیب دی گئی مساوات میں A مقسوم علیہ ہے، اس لیے A صفر نہیں ہو سکتا۔"
+              ],
+              "notes": [
+                "حساب براؤزر میں آپ کی درج کردہ قدروں سے مقامی طور پر ہوتا ہے۔ اندازے پر انحصار کرنے سے پہلے نتیجے کے نوٹ اور مفروضوں کا جائزہ لیں۔"
+              ],
+              "disclaimers": [
+                "یہ کیلکولیٹر صرف معلوماتی اندازہ فراہم کرتا ہے؛ یہ مالی، ٹیکس، قانونی، اکاؤنٹنگ یا سرمایہ کاری کا مشورہ نہیں ہے۔"
+              ],
+              "limitations": [
+                "A اور B مثبت ہونے چاہئیں؛ C صفر یا مثبت ہونا چاہیے۔",
+                "ترتیب دی گئی مساوات میں A مقسوم علیہ ہے، اس لیے A صفر نہیں ہو سکتا۔"
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "{field} ایک محدود عدد ہونا چاہیے۔",
+                "recoveryHint": "درست محدود عدد درج کریں اور دوبارہ کوشش کریں۔"
+              },
+              {
+                "key": "positive",
+                "message": "A اور B صفر سے زیادہ ہونے چاہئیں۔",
+                "recoveryHint": "A اور B کے لیے مثبت قدریں درج کریں۔"
+              },
+              {
+                "key": "negative",
+                "message": "C منفی نہیں ہو سکتا۔",
+                "recoveryHint": "C کے لیے صفر یا مثبت قدر درج کریں۔"
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-proportion-1",
+                "question": "کون سی مساوات استعمال ہوتی ہے؟",
+                "answer": "کراس ملٹی پلائی کرنے سے x = (b × c) / a حاصل ہوتا ہے۔"
+              },
+              {
+                "key": "faq-proportion-2",
+                "question": "کیا A صفر ہو سکتا ہے؟",
+                "answer": "نہیں، ترتیب دیے گئے تناسب میں A مقسوم علیہ ہے۔"
+              }
+            ],
+            "guide": {
+              "title": "تناسب کیلکولیٹر گائیڈ",
+              "introduction": "تناسب a/b = c/x میں x معلوم کریں۔",
+              "steps": [
+                {
+                  "key": "proportion-guide-step-1",
+                  "title": "مرحلہ 1",
+                  "body": "A اور B کے لیے مثبت قدریں درج کریں۔"
+                },
+                {
+                  "key": "proportion-guide-step-2",
+                  "title": "مرحلہ 2",
+                  "body": "C کے لیے صفر یا مثبت قدر درج کریں۔"
+                },
+                {
+                  "key": "proportion-guide-step-3",
+                  "title": "مرحلہ 3",
+                  "body": "تناسب A/B = C/X پر کراس ملٹی پلائی کریں۔"
+                },
+                {
+                  "key": "proportion-guide-step-4",
+                  "title": "مرحلہ 4",
+                  "body": "X معلوم کرنے کے لیے B × C کو A سے تقسیم کریں۔"
+                },
+                {
+                  "key": "proportion-guide-step-5",
+                  "title": "مرحلہ 5",
+                  "body": "غیر محدود نتیجے کو مسترد کریں اور نامعلوم قدر کا جائزہ لیں۔"
+                }
+              ],
+              "sections": [
+                {
+                  "key": "proportion-guide-section-1",
+                  "heading": "حساب کا طریقہ",
+                  "body": "A/B = C/X; cross multiplication gives A × X = B × C, therefore X = (B × C)/A."
+                },
+                {
+                  "key": "proportion-guide-section-2",
+                  "heading": "مفروضے اور حدود",
+                  "body": "A اور B مثبت ہونے چاہئیں؛ C صفر یا مثبت ہونا چاہیے۔ ترتیب دی گئی مساوات میں A مقسوم علیہ ہے، اس لیے A صفر نہیں ہو سکتا۔"
+                }
+              ]
+            },
+            "seo": {
+              "title": "تناسب کیلکولیٹر | FinPulse Hub",
+              "metaDescription": "تناسب a:b = c:x حل کریں۔",
+              "h1": "تناسب کیلکولیٹر",
+              "introduction": "تناسب a/b = c/x میں x معلوم کریں۔",
+              "faq": [
+                {
+                  "key": "faq-proportion-1",
+                  "question": "کون سی مساوات استعمال ہوتی ہے؟",
+                  "answer": "کراس ملٹی پلائی کرنے سے x = (b × c) / a حاصل ہوتا ہے۔"
+                },
+                {
+                  "key": "faq-proportion-2",
+                  "question": "کیا A صفر ہو سکتا ہے؟",
+                  "answer": "نہیں، ترتیب دیے گئے تناسب میں A مقسوم علیہ ہے۔"
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "تناسب کیلکولیٹر",
+              "formLabel": "تناسب کیلکولیٹر فارم",
+              "resultAnnouncement": "تناسب کیلکولیٹر کا حسابی نتیجہ",
+              "chartLabel": "نامعلوم قدر (X) کے لیے تناسب کیلکولیٹر چارٹ",
+              "controlLabels": [
+                {
+                  "key": "a",
+                  "label": "A"
+                },
+                {
+                  "key": "b",
+                  "label": "B"
+                },
+                {
+                  "key": "c",
+                  "label": "C"
+                }
+              ]
+            }
+          }
         },
         "zh-CN": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "比例计算器",
+              "description": "求解比例 a:b = c:x。",
+              "category": "数学与统计",
+              "subcategory": "分数与比例"
+            },
+            "inputs": [
+              {
+                "key": "a",
+                "label": "A"
+              },
+              {
+                "key": "b",
+                "label": "B"
+              },
+              {
+                "key": "c",
+                "label": "C"
+              }
+            ],
+            "actions": {
+              "calculate": "计算",
+              "recalculate": "重新计算",
+              "clear": "清除",
+              "reset": "重置",
+              "copy": "复制",
+              "download": "下载",
+              "print": "打印"
+            },
+            "results": {
+              "heading": "结果",
+              "summary": "未知数值 (X)",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "比例"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "A"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "B"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "C"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "比例"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "A"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "B"
+                },
+                {
+                  "key": "breakdown-4",
+                  "label": "C"
+                }
+              ]
+            },
+            "explanations": {
+              "formulaTitle": "公式与计算步骤",
+              "formulaDescription": "A/B = C/X; cross multiplication gives A × X = B × C, therefore X = (B × C)/A.",
+              "steps": [
+                "输入 A 和 B 的正数值。",
+                "输入 C 的非负数值。",
+                "对比例 A/B = C/X 进行交叉相乘。",
+                "将 B × C 除以 A，求出 X。",
+                "拒绝非有限结果，并检查待求数值。"
+              ],
+              "assumptions": [
+                "A 和 B 必须为正数；C 必须为非负数。",
+                "在变形后的方程中，A 是除数，因此 A 不能为零。"
+              ],
+              "notes": [
+                "计算在浏览器中使用你输入的数值本地完成。依赖估算结果前，请检查结果说明和假设条件。"
+              ],
+              "disclaimers": [
+                "此计算器仅提供信息性估算，不构成财务、税务、法律、会计或投资建议。"
+              ],
+              "limitations": [
+                "A 和 B 必须为正数；C 必须为非负数。",
+                "在变形后的方程中，A 是除数，因此 A 不能为零。"
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "{field} 必须是有限数值。",
+                "recoveryHint": "请输入有效的有限数值，然后重试。"
+              },
+              {
+                "key": "positive",
+                "message": "A 和 B 必须大于零。",
+                "recoveryHint": "请为 A 和 B 输入正数值。"
+              },
+              {
+                "key": "negative",
+                "message": "C 不能为负数。",
+                "recoveryHint": "请为 C 输入零或正数值。"
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-proportion-1",
+                "question": "使用什么方程？",
+                "answer": "交叉相乘后可得 x = (b × c) / a。"
+              },
+              {
+                "key": "faq-proportion-2",
+                "question": "A 可以为零吗？",
+                "answer": "不可以，变形后的比例方程中 A 是除数。"
+              }
+            ],
+            "guide": {
+              "title": "比例计算器指南",
+              "introduction": "求解比例 a/b = c/x 中的 x。",
+              "steps": [
+                {
+                  "key": "proportion-guide-step-1",
+                  "title": "步骤 1",
+                  "body": "输入 A 和 B 的正数值。"
+                },
+                {
+                  "key": "proportion-guide-step-2",
+                  "title": "步骤 2",
+                  "body": "输入 C 的非负数值。"
+                },
+                {
+                  "key": "proportion-guide-step-3",
+                  "title": "步骤 3",
+                  "body": "对比例 A/B = C/X 进行交叉相乘。"
+                },
+                {
+                  "key": "proportion-guide-step-4",
+                  "title": "步骤 4",
+                  "body": "将 B × C 除以 A，求出 X。"
+                },
+                {
+                  "key": "proportion-guide-step-5",
+                  "title": "步骤 5",
+                  "body": "拒绝非有限结果，并检查待求数值。"
+                }
+              ],
+              "sections": [
+                {
+                  "key": "proportion-guide-section-1",
+                  "heading": "计算方法",
+                  "body": "A/B = C/X; cross multiplication gives A × X = B × C, therefore X = (B × C)/A."
+                },
+                {
+                  "key": "proportion-guide-section-2",
+                  "heading": "假设与限制",
+                  "body": "A 和 B 必须为正数；C 必须为非负数。在变形后的方程中，A 是除数，因此 A 不能为零。"
+                }
+              ]
+            },
+            "seo": {
+              "title": "比例计算器 | FinPulse Hub",
+              "metaDescription": "求解比例 a:b = c:x。",
+              "h1": "比例计算器",
+              "introduction": "求解比例 a/b = c/x 中的 x。",
+              "faq": [
+                {
+                  "key": "faq-proportion-1",
+                  "question": "使用什么方程？",
+                  "answer": "交叉相乘后可得 x = (b × c) / a。"
+                },
+                {
+                  "key": "faq-proportion-2",
+                  "question": "A 可以为零吗？",
+                  "answer": "不可以，变形后的比例方程中 A 是除数。"
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "比例计算器",
+              "formLabel": "比例计算器表单",
+              "resultAnnouncement": "比例计算器的计算结果",
+              "chartLabel": "显示未知数值 (X) 的比例计算器图表",
+              "controlLabels": [
+                {
+                  "key": "a",
+                  "label": "A"
+                },
+                {
+                  "key": "b",
+                  "label": "B"
+                },
+                {
+                  "key": "c",
+                  "label": "C"
+                }
+              ]
+            }
+          }
         },
         "ja": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "比例計算機",
+              "description": "比例 a:b = c:x を解きます。",
+              "category": "数学・統計",
+              "subcategory": "分数と比"
+            },
+            "inputs": [
+              {
+                "key": "a",
+                "label": "A"
+              },
+              {
+                "key": "b",
+                "label": "B"
+              },
+              {
+                "key": "c",
+                "label": "C"
+              }
+            ],
+            "actions": {
+              "calculate": "計算",
+              "recalculate": "再計算",
+              "clear": "クリア",
+              "reset": "リセット",
+              "copy": "コピー",
+              "download": "ダウンロード",
+              "print": "印刷"
+            },
+            "results": {
+              "heading": "結果",
+              "summary": "未知の値 (X)",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "比例"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "A"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "B"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "C"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "比例"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "A"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "B"
+                },
+                {
+                  "key": "breakdown-4",
+                  "label": "C"
+                }
+              ]
+            },
+            "explanations": {
+              "formulaTitle": "数式と計算手順",
+              "formulaDescription": "A/B = C/X; cross multiplication gives A × X = B × C, therefore X = (B × C)/A.",
+              "steps": [
+                "A と B に正の値を入力します。",
+                "C に 0 以上の値を入力します。",
+                "比例式 A/B = C/X を交差乗算します。",
+                "B × C を A で割り、X を求めます。",
+                "有限でない結果を拒否し、未知の値を確認します。"
+              ],
+              "assumptions": [
+                "A と B は正の値、C は 0 以上である必要があります。",
+                "変形した方程式では A が除数となるため、A は 0 にできません。"
+              ],
+              "notes": [
+                "計算は入力値を使用してブラウザー内で行われます。推定値を利用する前に、結果の注記と前提条件を確認してください。"
+              ],
+              "disclaimers": [
+                "この計算機は情報提供を目的とした推定ツールであり、金融、税務、法律、会計、投資に関する助言ではありません。"
+              ],
+              "limitations": [
+                "A と B は正の値、C は 0 以上である必要があります。",
+                "変形した方程式では A が除数となるため、A は 0 にできません。"
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "{field} は有限の数値である必要があります。",
+                "recoveryHint": "有効な有限数値を入力して、もう一度お試しください。"
+              },
+              {
+                "key": "positive",
+                "message": "A と B は 0 より大きい必要があります。",
+                "recoveryHint": "A と B に正の値を入力してください。"
+              },
+              {
+                "key": "negative",
+                "message": "C に負の値は指定できません。",
+                "recoveryHint": "C に 0 または正の値を入力してください。"
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-proportion-1",
+                "question": "どの方程式を使用しますか？",
+                "answer": "交差乗算により x = (b × c) / a となります。"
+              },
+              {
+                "key": "faq-proportion-2",
+                "question": "A を 0 にできますか？",
+                "answer": "いいえ。変形した比例式では A が除数になります。"
+              }
+            ],
+            "guide": {
+              "title": "比例計算機ガイド",
+              "introduction": "比例式 a/b = c/x の x を求めます。",
+              "steps": [
+                {
+                  "key": "proportion-guide-step-1",
+                  "title": "ステップ 1",
+                  "body": "A と B に正の値を入力します。"
+                },
+                {
+                  "key": "proportion-guide-step-2",
+                  "title": "ステップ 2",
+                  "body": "C に 0 以上の値を入力します。"
+                },
+                {
+                  "key": "proportion-guide-step-3",
+                  "title": "ステップ 3",
+                  "body": "比例式 A/B = C/X を交差乗算します。"
+                },
+                {
+                  "key": "proportion-guide-step-4",
+                  "title": "ステップ 4",
+                  "body": "B × C を A で割り、X を求めます。"
+                },
+                {
+                  "key": "proportion-guide-step-5",
+                  "title": "ステップ 5",
+                  "body": "有限でない結果を拒否し、未知の値を確認します。"
+                }
+              ],
+              "sections": [
+                {
+                  "key": "proportion-guide-section-1",
+                  "heading": "計算方法",
+                  "body": "A/B = C/X; cross multiplication gives A × X = B × C, therefore X = (B × C)/A."
+                },
+                {
+                  "key": "proportion-guide-section-2",
+                  "heading": "前提条件と制限",
+                  "body": "A と B は正の値、C は 0 以上である必要があります。変形した方程式では A が除数となるため、A は 0 にできません。"
+                }
+              ]
+            },
+            "seo": {
+              "title": "比例計算機 | FinPulse Hub",
+              "metaDescription": "比例 a:b = c:x を解きます。",
+              "h1": "比例計算機",
+              "introduction": "比例式 a/b = c/x の x を求めます。",
+              "faq": [
+                {
+                  "key": "faq-proportion-1",
+                  "question": "どの方程式を使用しますか？",
+                  "answer": "交差乗算により x = (b × c) / a となります。"
+                },
+                {
+                  "key": "faq-proportion-2",
+                  "question": "A を 0 にできますか？",
+                  "answer": "いいえ。変形した比例式では A が除数になります。"
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "比例計算機",
+              "formLabel": "比例計算機フォーム",
+              "resultAnnouncement": "比例計算機の計算結果",
+              "chartLabel": "未知の値 (X) を示す比例計算機のグラフ",
+              "controlLabels": [
+                {
+                  "key": "a",
+                  "label": "A"
+                },
+                {
+                  "key": "b",
+                  "label": "B"
+                },
+                {
+                  "key": "c",
+                  "label": "C"
+                }
+              ]
+            }
+          }
         },
         "ru": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "Калькулятор пропорций",
+              "description": "Решите пропорцию a:b = c:x.",
+              "category": "Математика и статистика",
+              "subcategory": "Дроби и пропорции"
+            },
+            "inputs": [
+              {
+                "key": "a",
+                "label": "A"
+              },
+              {
+                "key": "b",
+                "label": "B"
+              },
+              {
+                "key": "c",
+                "label": "C"
+              }
+            ],
+            "actions": {
+              "calculate": "Рассчитать",
+              "recalculate": "Пересчитать",
+              "clear": "Очистить",
+              "reset": "Сбросить",
+              "copy": "Копировать",
+              "download": "Скачать",
+              "print": "Печать"
+            },
+            "results": {
+              "heading": "Результат",
+              "summary": "НЕИЗВЕСТНОЕ ЗНАЧЕНИЕ (X)",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "Пропорция"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "A"
+                },
+                {
+                  "key": "metric-3",
+                  "label": "B"
+                },
+                {
+                  "key": "metric-4",
+                  "label": "C"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "Пропорция"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "A"
+                },
+                {
+                  "key": "breakdown-3",
+                  "label": "B"
+                },
+                {
+                  "key": "breakdown-4",
+                  "label": "C"
+                }
+              ]
+            },
+            "explanations": {
+              "formulaTitle": "Формула и этапы расчёта",
+              "formulaDescription": "A/B = C/X; cross multiplication gives A × X = B × C, therefore X = (B × C)/A.",
+              "steps": [
+                "Введите положительные значения A и B.",
+                "Введите неотрицательное значение C.",
+                "Выполните перекрёстное умножение для пропорции A/B = C/X.",
+                "Разделите B × C на A, чтобы найти X.",
+                "Отклоните неограниченный результат и проверьте неизвестное значение."
+              ],
+              "assumptions": [
+                "A и B должны быть положительными; C должно быть неотрицательным.",
+                "В преобразованном уравнении A является делителем, поэтому A не может быть равно нулю."
+              ],
+              "notes": [
+                "Расчёт выполняется локально в браузере на основе введённых вами значений. Перед использованием оценки проверьте примечание к результату и допущения."
+              ],
+              "disclaimers": [
+                "Калькулятор предоставляет информационную оценку и не является финансовой, налоговой, юридической, бухгалтерской или инвестиционной консультацией."
+              ],
+              "limitations": [
+                "A и B должны быть положительными; C должно быть неотрицательным.",
+                "В преобразованном уравнении A является делителем, поэтому A не может быть равно нулю."
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "{field} должно быть конечным числом.",
+                "recoveryHint": "Введите допустимое конечное число и повторите попытку."
+              },
+              {
+                "key": "positive",
+                "message": "A и B должны быть больше нуля.",
+                "recoveryHint": "Введите положительные значения для A и B."
+              },
+              {
+                "key": "negative",
+                "message": "C не может быть отрицательным.",
+                "recoveryHint": "Введите для C ноль или положительное значение."
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-proportion-1",
+                "question": "Какое уравнение используется?",
+                "answer": "Перекрёстное умножение даёт x = (b × c) / a."
+              },
+              {
+                "key": "faq-proportion-2",
+                "question": "Может ли A быть равно нулю?",
+                "answer": "Нет. В преобразованной пропорции A является делителем."
+              }
+            ],
+            "guide": {
+              "title": "Руководство по калькулятору пропорций",
+              "introduction": "Найдите x в пропорции a/b = c/x.",
+              "steps": [
+                {
+                  "key": "proportion-guide-step-1",
+                  "title": "Шаг 1",
+                  "body": "Введите положительные значения A и B."
+                },
+                {
+                  "key": "proportion-guide-step-2",
+                  "title": "Шаг 2",
+                  "body": "Введите неотрицательное значение C."
+                },
+                {
+                  "key": "proportion-guide-step-3",
+                  "title": "Шаг 3",
+                  "body": "Выполните перекрёстное умножение для пропорции A/B = C/X."
+                },
+                {
+                  "key": "proportion-guide-step-4",
+                  "title": "Шаг 4",
+                  "body": "Разделите B × C на A, чтобы найти X."
+                },
+                {
+                  "key": "proportion-guide-step-5",
+                  "title": "Шаг 5",
+                  "body": "Отклоните неограниченный результат и проверьте неизвестное значение."
+                }
+              ],
+              "sections": [
+                {
+                  "key": "proportion-guide-section-1",
+                  "heading": "Метод расчёта",
+                  "body": "A/B = C/X; cross multiplication gives A × X = B × C, therefore X = (B × C)/A."
+                },
+                {
+                  "key": "proportion-guide-section-2",
+                  "heading": "Допущения и ограничения",
+                  "body": "A и B должны быть положительными; C должно быть неотрицательным. В преобразованном уравнении A является делителем, поэтому A не может быть равно нулю."
+                }
+              ]
+            },
+            "seo": {
+              "title": "Калькулятор пропорций | FinPulse Hub",
+              "metaDescription": "Решите пропорцию a:b = c:x.",
+              "h1": "Калькулятор пропорций",
+              "introduction": "Найдите x в пропорции a/b = c/x.",
+              "faq": [
+                {
+                  "key": "faq-proportion-1",
+                  "question": "Какое уравнение используется?",
+                  "answer": "Перекрёстное умножение даёт x = (b × c) / a."
+                },
+                {
+                  "key": "faq-proportion-2",
+                  "question": "Может ли A быть равно нулю?",
+                  "answer": "Нет. В преобразованной пропорции A является делителем."
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "Калькулятор пропорций",
+              "formLabel": "Форма калькулятора пропорций",
+              "resultAnnouncement": "Результат расчёта калькулятора пропорций",
+              "chartLabel": "График калькулятора пропорций для неизвестного значения (X)",
+              "controlLabels": [
+                {
+                  "key": "a",
+                  "label": "A"
+                },
+                {
+                  "key": "b",
+                  "label": "B"
+                },
+                {
+                  "key": "c",
+                  "label": "C"
+                }
+              ]
+            }
+          }
         }
       },
       "sourceExtractionStatus": "source-record-complete",
