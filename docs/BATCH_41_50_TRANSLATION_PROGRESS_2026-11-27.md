@@ -3,7 +3,7 @@
 **Repository:** `apex-global-labs/FinPulse-Hub`  
 **Branch:** `feat/seven-language-translation-engine-phase-1`  
 **PR:** #73 — Open / Draft / Unmerged  
-**Latest translation commit:** `71202771f26e19ec5d3ec44a1538c1910383246f`
+**Latest translation commit:** `cd53511b612167a738b5a29657824071e143d2d2`
 
 ## Release Gate
 
@@ -14,8 +14,8 @@ The translation work below changes the candidate head. Fresh Finance CI and Ligh
 ## Translation progress
 
 - Batch scope: tools #41–50, six target locales (`hi`, `ar`, `ur`, `zh-CN`, `ja`, `ru`), 60 locale records.
-- Completed draft records: **2/60** — #41 Business ROI / Hindi (`hi`) and Arabic (`ar`).
-- Remaining: **58/60** — not started.
+- Completed draft records: **3/60** — #41 Business ROI / Hindi (`hi`), Arabic (`ar`) and Urdu (`ur`).
+- Remaining: **57/60** — not started.
 - No locale is marked linguistically reviewed, domain reviewed, approved, or published.
 
 ## #41 Business ROI / Hindi field coverage
@@ -67,3 +67,8 @@ The Arabic locale is now saved as `draft` with all 10 field groups, including th
 - Canonical formula text unchanged
 
 The locale remains inactive as a draft; no publication or activation occurred.
+
+
+## #41 Business ROI / Urdu field coverage (added 2026-11-27)
+
+The Urdu locale is saved as `draft` with all 10 field groups, including all seven shared action labels. Automated parity checks confirm the input, metric, breakdown, error, FAQ, guide-step, guide-section and accessibility-control keys match the English source in order; `{field}` placeholder count matches (2/2); and canonical formula text is unchanged. The locale remains draft-only.
