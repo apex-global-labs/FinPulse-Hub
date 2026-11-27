@@ -68261,32 +68261,1190 @@
       },
       "locales": {
         "hi": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "मिक्स्ड नंबर कैलकुलेटर",
+              "description": "मिश्रित संख्या को अनुचित भिन्न और दशमलव में बदलें।",
+              "category": "गणित और सांख्यिकी",
+              "subcategory": "भिन्न और अनुपात"
+            },
+            "inputs": [
+              {
+                "key": "whole",
+                "label": "पूर्ण संख्या"
+              },
+              {
+                "key": "numerator",
+                "label": "भिन्न का अंश"
+              },
+              {
+                "key": "denominator",
+                "label": "हर"
+              }
+            ],
+            "actions": {
+              "calculate": "गणना करें",
+              "recalculate": "पुनर्गणना करें",
+              "clear": "साफ़ करें",
+              "reset": "रीसेट करें",
+              "copy": "कॉपी करें",
+              "download": "डाउनलोड करें",
+              "print": "प्रिंट करें"
+            },
+            "results": {
+              "heading": "परिणाम",
+              "summary": "मिश्रित संख्या का मान",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "अनुचित भिन्न"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "दशमलव"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "अनुचित भिन्न"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "दशमलव"
+                }
+              ],
+              "chart": {
+                "title": "मिश्रित संख्या का मान",
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": "सूत्र और गणना के चरण",
+              "formulaDescription": "Improper numerator = whole × denominator + signed fractional numerator (negative whole values apply a negative fractional part); simplify by GCD. Decimal value = whole + signed fraction.",
+              "steps": [
+                "पूर्ण संख्या वाला भाग, भिन्न का अंश और हर दर्ज करें।",
+                "धनात्मक पूर्णांक हर आवश्यक है।",
+                "भिन्न का अंश शून्य या उससे अधिक और हर से छोटा होना चाहिए।",
+                "पूर्ण और भिन्नात्मक भागों को मिलाकर अनुचित भिन्न बनाएँ।",
+                "भिन्न को सरल करें और उसका दशमलव मान दिखाएँ।"
+              ],
+              "assumptions": [
+                "सभी इनपुट सुरक्षित पूर्णांक होने चाहिए; हर धनात्मक होना चाहिए।",
+                "भिन्न का अंश शून्य से लेकर हर से कम होना चाहिए।"
+              ],
+              "notes": [
+                "गणना आपके दर्ज किए गए मानों से ब्राउज़र में स्थानीय रूप से होती है; परिणाम नोट और मान्यताओं की जाँच करें।"
+              ],
+              "disclaimers": [
+                "यह कैलकुलेटर केवल जानकारी के लिए है और किसी पेशेवर सलाह का विकल्प नहीं है।"
+              ],
+              "limitations": [
+                "सभी इनपुट सुरक्षित पूर्णांक होने चाहिए; हर धनात्मक होना चाहिए।",
+                "भिन्न का अंश शून्य से लेकर हर से कम होना चाहिए।"
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "{field} एक सीमित संख्या होनी चाहिए।",
+                "recoveryHint": "एक मान्य सीमित संख्या दर्ज करें और फिर प्रयास करें।"
+              },
+              {
+                "key": "denominator",
+                "message": "हर शून्य से अधिक होना चाहिए।",
+                "recoveryHint": "धनात्मक पूर्णांक हर दर्ज करें।"
+              },
+              {
+                "key": "fraction-range",
+                "message": "अंश शून्य से हर से कम होना चाहिए।",
+                "recoveryHint": "भिन्न का अंश गैर-ऋणात्मक और हर से छोटा रखें।"
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-mixed-number-1",
+                "question": "मिश्रित संख्या क्या है?",
+                "answer": "एक पूर्ण संख्या और एक उचित भिन्न का संयोजन।"
+              },
+              {
+                "key": "faq-mixed-number-2",
+                "question": "क्या आवश्यक है?",
+                "answer": "भिन्न का अंश उसके धनात्मक हर से छोटा होना चाहिए।"
+              }
+            ],
+            "guide": {
+              "title": "मिक्स्ड नंबर कैलकुलेटर गाइड",
+              "introduction": "मिश्रित संख्या को अनुचित भिन्न में बदलें।",
+              "steps": [
+                {
+                  "key": "mixed-number-guide-step-1",
+                  "title": "चरण 1",
+                  "body": "पूर्ण संख्या वाला भाग, भिन्न का अंश और हर दर्ज करें।"
+                },
+                {
+                  "key": "mixed-number-guide-step-2",
+                  "title": "चरण 2",
+                  "body": "धनात्मक पूर्णांक हर आवश्यक है।"
+                },
+                {
+                  "key": "mixed-number-guide-step-3",
+                  "title": "चरण 3",
+                  "body": "भिन्न का अंश शून्य या उससे अधिक और हर से छोटा होना चाहिए।"
+                },
+                {
+                  "key": "mixed-number-guide-step-4",
+                  "title": "चरण 4",
+                  "body": "पूर्ण और भिन्नात्मक भागों को मिलाकर अनुचित भिन्न बनाएँ।"
+                },
+                {
+                  "key": "mixed-number-guide-step-5",
+                  "title": "चरण 5",
+                  "body": "भिन्न को सरल करें और उसका दशमलव मान दिखाएँ।"
+                }
+              ],
+              "sections": [
+                {
+                  "key": "mixed-number-guide-section-1",
+                  "heading": "गणना की विधि",
+                  "body": "Improper numerator = whole × denominator + signed fractional numerator (negative whole values apply a negative fractional part); simplify by GCD. Decimal value = whole + signed fraction."
+                },
+                {
+                  "key": "mixed-number-guide-section-2",
+                  "heading": "मान्यताएँ और सीमाएँ",
+                  "body": "सभी इनपुट सुरक्षित पूर्णांक होने चाहिए; हर धनात्मक होना चाहिए। भिन्न का अंश शून्य से लेकर हर से कम होना चाहिए।"
+                }
+              ]
+            },
+            "seo": {
+              "title": "मिक्स्ड नंबर कैलकुलेटर | FinPulse Hub",
+              "metaDescription": "मिश्रित संख्या को अनुचित भिन्न और दशमलव में बदलें।",
+              "h1": "मिक्स्ड नंबर कैलकुलेटर",
+              "introduction": "मिश्रित संख्या को अनुचित भिन्न में बदलें।",
+              "faq": [
+                {
+                  "key": "faq-mixed-number-1",
+                  "question": "मिश्रित संख्या क्या है?",
+                  "answer": "एक पूर्ण संख्या और एक उचित भिन्न का संयोजन।"
+                },
+                {
+                  "key": "faq-mixed-number-2",
+                  "question": "क्या आवश्यक है?",
+                  "answer": "भिन्न का अंश उसके धनात्मक हर से छोटा होना चाहिए।"
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "मिक्स्ड नंबर कैलकुलेटर",
+              "formLabel": "मिक्स्ड नंबर कैलकुलेटर फ़ॉर्म",
+              "resultAnnouncement": "मिक्स्ड नंबर कैलकुलेटर का गणना परिणाम",
+              "chartLabel": "मिश्रित संख्या के मान का चार्ट",
+              "controlLabels": [
+                {
+                  "key": "whole",
+                  "label": "पूर्ण संख्या"
+                },
+                {
+                  "key": "numerator",
+                  "label": "भिन्न का अंश"
+                },
+                {
+                  "key": "denominator",
+                  "label": "हर"
+                }
+              ]
+            }
+          }
         },
         "ar": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "حاسبة الأعداد الكسرية",
+              "description": "حوّل العدد الكسري إلى كسر غير فعلي وقيمة عشرية.",
+              "category": "الرياضيات والإحصاء",
+              "subcategory": "الكسور والنسب"
+            },
+            "inputs": [
+              {
+                "key": "whole",
+                "label": "العدد الصحيح"
+              },
+              {
+                "key": "numerator",
+                "label": "بسط الجزء الكسري"
+              },
+              {
+                "key": "denominator",
+                "label": "المقام"
+              }
+            ],
+            "actions": {
+              "calculate": "احسب",
+              "recalculate": "أعد الحساب",
+              "clear": "مسح",
+              "reset": "إعادة ضبط",
+              "copy": "نسخ",
+              "download": "تنزيل",
+              "print": "طباعة"
+            },
+            "results": {
+              "heading": "النتيجة",
+              "summary": "قيمة العدد الكسري",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "الكسر غير الفعلي"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "القيمة العشرية"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "الكسر غير الفعلي"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "القيمة العشرية"
+                }
+              ],
+              "chart": {
+                "title": "قيمة العدد الكسري",
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": "الصيغة وخطوات الحساب",
+              "formulaDescription": "Improper numerator = whole × denominator + signed fractional numerator (negative whole values apply a negative fractional part); simplify by GCD. Decimal value = whole + signed fraction.",
+              "steps": [
+                "أدخل الجزء الصحيح وبسط الكسر ومقامه.",
+                "يجب أن يكون المقام عدداً صحيحاً موجباً.",
+                "يجب أن يكون بسط الكسر أكبر من أو مساوياً للصفر وأصغر من المقام.",
+                "اجمع الجزء الصحيح والجزء الكسري لتكوين كسر غير فعلي.",
+                "اختزل الكسر واعرض قيمته العشرية."
+              ],
+              "assumptions": [
+                "يجب أن تكون جميع المدخلات أعداداً صحيحة آمنة، وأن يكون المقام موجباً.",
+                "يجب أن يكون بسط الكسر من الصفر وحتى أقل من المقام."
+              ],
+              "notes": [
+                "يُجرى الحساب محلياً في المتصفح باستخدام القيم التي تدخلها؛ راجع ملاحظة النتيجة والافتراضات."
+              ],
+              "disclaimers": [
+                "هذه الحاسبة لأغراض المعلومات فقط ولا تحل محل المشورة المهنية."
+              ],
+              "limitations": [
+                "يجب أن تكون جميع المدخلات أعداداً صحيحة آمنة، وأن يكون المقام موجباً.",
+                "يجب أن يكون بسط الكسر من الصفر وحتى أقل من المقام."
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "يجب أن يكون {field} رقماً محدوداً وصالحاً.",
+                "recoveryHint": "أدخل رقماً محدوداً وصالحاً ثم حاول مرة أخرى."
+              },
+              {
+                "key": "denominator",
+                "message": "يجب أن يكون المقام أكبر من صفر.",
+                "recoveryHint": "أدخل مقاماً صحيحاً موجباً."
+              },
+              {
+                "key": "fraction-range",
+                "message": "يجب أن يكون البسط من صفر إلى أقل من المقام.",
+                "recoveryHint": "اجعل بسط الكسر غير سالب وأصغر من المقام."
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-mixed-number-1",
+                "question": "ما العدد الكسري؟",
+                "answer": "عدد صحيح مضاف إليه كسر اعتيادي."
+              },
+              {
+                "key": "faq-mixed-number-2",
+                "question": "ما الشرط المطلوب؟",
+                "answer": "يجب أن يكون بسط الكسر أصغر من مقامه الموجب."
+              }
+            ],
+            "guide": {
+              "title": "دليل حاسبة الأعداد الكسرية",
+              "introduction": "حوّل العدد الكسري إلى كسر غير فعلي.",
+              "steps": [
+                {
+                  "key": "mixed-number-guide-step-1",
+                  "title": "الخطوة 1",
+                  "body": "أدخل الجزء الصحيح وبسط الكسر ومقامه."
+                },
+                {
+                  "key": "mixed-number-guide-step-2",
+                  "title": "الخطوة 2",
+                  "body": "يجب أن يكون المقام عدداً صحيحاً موجباً."
+                },
+                {
+                  "key": "mixed-number-guide-step-3",
+                  "title": "الخطوة 3",
+                  "body": "يجب أن يكون بسط الكسر أكبر من أو مساوياً للصفر وأصغر من المقام."
+                },
+                {
+                  "key": "mixed-number-guide-step-4",
+                  "title": "الخطوة 4",
+                  "body": "اجمع الجزء الصحيح والجزء الكسري لتكوين كسر غير فعلي."
+                },
+                {
+                  "key": "mixed-number-guide-step-5",
+                  "title": "الخطوة 5",
+                  "body": "اختزل الكسر واعرض قيمته العشرية."
+                }
+              ],
+              "sections": [
+                {
+                  "key": "mixed-number-guide-section-1",
+                  "heading": "طريقة الحساب",
+                  "body": "Improper numerator = whole × denominator + signed fractional numerator (negative whole values apply a negative fractional part); simplify by GCD. Decimal value = whole + signed fraction."
+                },
+                {
+                  "key": "mixed-number-guide-section-2",
+                  "heading": "الافتراضات والقيود",
+                  "body": "يجب أن تكون جميع المدخلات أعداداً صحيحة آمنة، وأن يكون المقام موجباً. يجب أن يكون بسط الكسر من الصفر وحتى أقل من المقام."
+                }
+              ]
+            },
+            "seo": {
+              "title": "حاسبة الأعداد الكسرية | FinPulse Hub",
+              "metaDescription": "حوّل العدد الكسري إلى كسر غير فعلي وقيمة عشرية.",
+              "h1": "حاسبة الأعداد الكسرية",
+              "introduction": "حوّل العدد الكسري إلى كسر غير فعلي.",
+              "faq": [
+                {
+                  "key": "faq-mixed-number-1",
+                  "question": "ما العدد الكسري؟",
+                  "answer": "عدد صحيح مضاف إليه كسر اعتيادي."
+                },
+                {
+                  "key": "faq-mixed-number-2",
+                  "question": "ما الشرط المطلوب؟",
+                  "answer": "يجب أن يكون بسط الكسر أصغر من مقامه الموجب."
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "حاسبة الأعداد الكسرية",
+              "formLabel": "نموذج حاسبة الأعداد الكسرية",
+              "resultAnnouncement": "نتيجة حساب العدد الكسري",
+              "chartLabel": "رسم بياني لقيمة العدد الكسري",
+              "controlLabels": [
+                {
+                  "key": "whole",
+                  "label": "العدد الصحيح"
+                },
+                {
+                  "key": "numerator",
+                  "label": "بسط الجزء الكسري"
+                },
+                {
+                  "key": "denominator",
+                  "label": "المقام"
+                }
+              ]
+            }
+          }
         },
         "ur": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "مخلوط عدد کیلکولیٹر",
+              "description": "مخلوط عدد کو غیر مناسب کسر اور اعشاری عدد میں تبدیل کریں۔",
+              "category": "ریاضی اور شماریات",
+              "subcategory": "کسور اور تناسب"
+            },
+            "inputs": [
+              {
+                "key": "whole",
+                "label": "مکمل عدد"
+              },
+              {
+                "key": "numerator",
+                "label": "کسر کا شمار کنندہ"
+              },
+              {
+                "key": "denominator",
+                "label": "مخرج"
+              }
+            ],
+            "actions": {
+              "calculate": "حساب کریں",
+              "recalculate": "دوبارہ حساب کریں",
+              "clear": "صاف کریں",
+              "reset": "ری سیٹ کریں",
+              "copy": "کاپی کریں",
+              "download": "ڈاؤن لوڈ کریں",
+              "print": "پرنٹ کریں"
+            },
+            "results": {
+              "heading": "نتیجہ",
+              "summary": "مخلوط عدد کی قدر",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "غیر مناسب کسر"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "اعشاری عدد"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "غیر مناسب کسر"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "اعشاری عدد"
+                }
+              ],
+              "chart": {
+                "title": "مخلوط عدد کی قدر",
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": "فارمولا اور حساب کے مراحل",
+              "formulaDescription": "Improper numerator = whole × denominator + signed fractional numerator (negative whole values apply a negative fractional part); simplify by GCD. Decimal value = whole + signed fraction.",
+              "steps": [
+                "مکمل عدد والا حصہ، کسر کا شمار کنندہ اور مخرج درج کریں۔",
+                "مثبت صحیح عدد مخرج ضروری ہے۔",
+                "کسر کا شمار کنندہ صفر یا اس سے زیادہ اور مخرج سے کم ہونا چاہیے۔",
+                "مکمل اور کسری حصوں کو ملا کر غیر مناسب کسر بنائیں۔",
+                "کسر کو سادہ کریں اور اس کی اعشاری قدر دکھائیں۔"
+              ],
+              "assumptions": [
+                "تمام اِن پٹس محفوظ صحیح اعداد ہونے چاہئیں؛ مخرج مثبت ہونا چاہیے۔",
+                "کسر کا شمار کنندہ صفر سے لے کر مخرج سے کم ہونا چاہیے۔"
+              ],
+              "notes": [
+                "حساب آپ کی درج کردہ قدروں سے براؤزر میں مقامی طور پر ہوتا ہے؛ نتیجے کے نوٹ اور مفروضوں کا جائزہ لیں۔"
+              ],
+              "disclaimers": [
+                "یہ کیلکولیٹر صرف معلومات کے لیے ہے اور پیشہ ورانہ مشورے کا متبادل نہیں۔"
+              ],
+              "limitations": [
+                "تمام اِن پٹس محفوظ صحیح اعداد ہونے چاہئیں؛ مخرج مثبت ہونا چاہیے۔",
+                "کسر کا شمار کنندہ صفر سے لے کر مخرج سے کم ہونا چاہیے۔"
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "{field} ایک محدود اور درست عدد ہونا چاہیے۔",
+                "recoveryHint": "درست محدود عدد درج کریں اور دوبارہ کوشش کریں۔"
+              },
+              {
+                "key": "denominator",
+                "message": "مخرج صفر سے زیادہ ہونا چاہیے۔",
+                "recoveryHint": "مثبت صحیح عدد مخرج درج کریں۔"
+              },
+              {
+                "key": "fraction-range",
+                "message": "شمار کنندہ صفر سے زیادہ یا برابر اور مخرج سے کم ہونا چاہیے۔",
+                "recoveryHint": "کسر کا شمار کنندہ غیر منفی اور مخرج سے چھوٹا رکھیں۔"
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-mixed-number-1",
+                "question": "مخلوط عدد کیا ہوتا ہے؟",
+                "answer": "ایک مکمل عدد کے ساتھ ایک مناسب کسر۔"
+              },
+              {
+                "key": "faq-mixed-number-2",
+                "question": "کیا شرط ضروری ہے؟",
+                "answer": "کسری شمار کنندہ اپنے مثبت مخرج سے چھوٹا ہونا چاہیے۔"
+              }
+            ],
+            "guide": {
+              "title": "مخلوط عدد کیلکولیٹر کی رہنمائی",
+              "introduction": "مخلوط عدد کو غیر مناسب کسر میں تبدیل کریں۔",
+              "steps": [
+                {
+                  "key": "mixed-number-guide-step-1",
+                  "title": "مرحلہ 1",
+                  "body": "مکمل عدد والا حصہ، کسر کا شمار کنندہ اور مخرج درج کریں۔"
+                },
+                {
+                  "key": "mixed-number-guide-step-2",
+                  "title": "مرحلہ 2",
+                  "body": "مثبت صحیح عدد مخرج ضروری ہے۔"
+                },
+                {
+                  "key": "mixed-number-guide-step-3",
+                  "title": "مرحلہ 3",
+                  "body": "کسر کا شمار کنندہ صفر یا اس سے زیادہ اور مخرج سے کم ہونا چاہیے۔"
+                },
+                {
+                  "key": "mixed-number-guide-step-4",
+                  "title": "مرحلہ 4",
+                  "body": "مکمل اور کسری حصوں کو ملا کر غیر مناسب کسر بنائیں۔"
+                },
+                {
+                  "key": "mixed-number-guide-step-5",
+                  "title": "مرحلہ 5",
+                  "body": "کسر کو سادہ کریں اور اس کی اعشاری قدر دکھائیں۔"
+                }
+              ],
+              "sections": [
+                {
+                  "key": "mixed-number-guide-section-1",
+                  "heading": "حساب کا طریقہ",
+                  "body": "Improper numerator = whole × denominator + signed fractional numerator (negative whole values apply a negative fractional part); simplify by GCD. Decimal value = whole + signed fraction."
+                },
+                {
+                  "key": "mixed-number-guide-section-2",
+                  "heading": "مفروضے اور حدود",
+                  "body": "تمام اِن پٹس محفوظ صحیح اعداد ہونے چاہئیں؛ مخرج مثبت ہونا چاہیے۔ کسر کا شمار کنندہ صفر سے لے کر مخرج سے کم ہونا چاہیے۔"
+                }
+              ]
+            },
+            "seo": {
+              "title": "مخلوط عدد کیلکولیٹر | FinPulse Hub",
+              "metaDescription": "مخلوط عدد کو غیر مناسب کسر اور اعشاری عدد میں تبدیل کریں۔",
+              "h1": "مخلوط عدد کیلکولیٹر",
+              "introduction": "مخلوط عدد کو غیر مناسب کسر میں تبدیل کریں۔",
+              "faq": [
+                {
+                  "key": "faq-mixed-number-1",
+                  "question": "مخلوط عدد کیا ہوتا ہے؟",
+                  "answer": "ایک مکمل عدد کے ساتھ ایک مناسب کسر۔"
+                },
+                {
+                  "key": "faq-mixed-number-2",
+                  "question": "کیا شرط ضروری ہے؟",
+                  "answer": "کسری شمار کنندہ اپنے مثبت مخرج سے چھوٹا ہونا چاہیے۔"
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "مخلوط عدد کیلکولیٹر",
+              "formLabel": "مخلوط عدد کیلکولیٹر کا فارم",
+              "resultAnnouncement": "مخلوط عدد کیلکولیٹر کا حسابی نتیجہ",
+              "chartLabel": "مخلوط عدد کی قدر کا چارٹ",
+              "controlLabels": [
+                {
+                  "key": "whole",
+                  "label": "مکمل عدد"
+                },
+                {
+                  "key": "numerator",
+                  "label": "کسر کا شمار کنندہ"
+                },
+                {
+                  "key": "denominator",
+                  "label": "مخرج"
+                }
+              ]
+            }
+          }
         },
         "zh-CN": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "带分数计算器",
+              "description": "将带分数转换为假分数和小数。",
+              "category": "数学与统计",
+              "subcategory": "分数与比例"
+            },
+            "inputs": [
+              {
+                "key": "whole",
+                "label": "整数部分"
+              },
+              {
+                "key": "numerator",
+                "label": "分数分子"
+              },
+              {
+                "key": "denominator",
+                "label": "分母"
+              }
+            ],
+            "actions": {
+              "calculate": "计算",
+              "recalculate": "重新计算",
+              "clear": "清除",
+              "reset": "重置",
+              "copy": "复制",
+              "download": "下载",
+              "print": "打印"
+            },
+            "results": {
+              "heading": "结果",
+              "summary": "带分数的值",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "假分数"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "小数"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "假分数"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "小数"
+                }
+              ],
+              "chart": {
+                "title": "带分数的值",
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": "公式与计算步骤",
+              "formulaDescription": "Improper numerator = whole × denominator + signed fractional numerator (negative whole values apply a negative fractional part); simplify by GCD. Decimal value = whole + signed fraction.",
+              "steps": [
+                "输入整数部分、分数分子和分母。",
+                "分母必须是正整数。",
+                "分数分子必须大于或等于零，并且小于分母。",
+                "将整数部分和分数部分合并为假分数。",
+                "约简分数并显示其小数值。"
+              ],
+              "assumptions": [
+                "所有输入都必须是安全整数；分母必须为正数。",
+                "分数分子必须从零开始且小于分母。"
+              ],
+              "notes": [
+                "计算在浏览器本地完成，使用您输入的数值；请查看结果说明并核对相关假设。"
+              ],
+              "disclaimers": [
+                "此计算器仅用于信息参考，不能替代专业建议。"
+              ],
+              "limitations": [
+                "所有输入都必须是安全整数；分母必须为正数。",
+                "分数分子必须从零开始且小于分母。"
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "{field} 必须是有限的有效数字。",
+                "recoveryHint": "请输入有效的有限数值，然后重试。"
+              },
+              {
+                "key": "denominator",
+                "message": "分母必须大于零。",
+                "recoveryHint": "请输入正整数分母。"
+              },
+              {
+                "key": "fraction-range",
+                "message": "分子必须大于或等于零且小于分母。",
+                "recoveryHint": "请将分数分子设为非负数且小于分母。"
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-mixed-number-1",
+                "question": "什么是带分数？",
+                "answer": "由一个整数和一个真分数组成的数。"
+              },
+              {
+                "key": "faq-mixed-number-2",
+                "question": "有什么要求？",
+                "answer": "分数分子必须小于正分母。"
+              }
+            ],
+            "guide": {
+              "title": "带分数计算器指南",
+              "introduction": "将带分数转换为假分数。",
+              "steps": [
+                {
+                  "key": "mixed-number-guide-step-1",
+                  "title": "步骤 1",
+                  "body": "输入整数部分、分数分子和分母。"
+                },
+                {
+                  "key": "mixed-number-guide-step-2",
+                  "title": "步骤 2",
+                  "body": "分母必须是正整数。"
+                },
+                {
+                  "key": "mixed-number-guide-step-3",
+                  "title": "步骤 3",
+                  "body": "分数分子必须大于或等于零，并且小于分母。"
+                },
+                {
+                  "key": "mixed-number-guide-step-4",
+                  "title": "步骤 4",
+                  "body": "将整数部分和分数部分合并为假分数。"
+                },
+                {
+                  "key": "mixed-number-guide-step-5",
+                  "title": "步骤 5",
+                  "body": "约简分数并显示其小数值。"
+                }
+              ],
+              "sections": [
+                {
+                  "key": "mixed-number-guide-section-1",
+                  "heading": "计算方法",
+                  "body": "Improper numerator = whole × denominator + signed fractional numerator (negative whole values apply a negative fractional part); simplify by GCD. Decimal value = whole + signed fraction."
+                },
+                {
+                  "key": "mixed-number-guide-section-2",
+                  "heading": "假设与限制",
+                  "body": "所有输入都必须是安全整数；分母必须为正数。 分数分子必须从零开始且小于分母。"
+                }
+              ]
+            },
+            "seo": {
+              "title": "带分数计算器 | FinPulse Hub",
+              "metaDescription": "将带分数转换为假分数和小数。",
+              "h1": "带分数计算器",
+              "introduction": "将带分数转换为假分数。",
+              "faq": [
+                {
+                  "key": "faq-mixed-number-1",
+                  "question": "什么是带分数？",
+                  "answer": "由一个整数和一个真分数组成的数。"
+                },
+                {
+                  "key": "faq-mixed-number-2",
+                  "question": "有什么要求？",
+                  "answer": "分数分子必须小于正分母。"
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "带分数计算器",
+              "formLabel": "带分数计算器输入表单",
+              "resultAnnouncement": "带分数计算结果",
+              "chartLabel": "带分数值图表",
+              "controlLabels": [
+                {
+                  "key": "whole",
+                  "label": "整数部分"
+                },
+                {
+                  "key": "numerator",
+                  "label": "分数分子"
+                },
+                {
+                  "key": "denominator",
+                  "label": "分母"
+                }
+              ]
+            }
+          }
         },
         "ja": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "帯分数計算機",
+              "description": "帯分数を仮分数と小数に変換します。",
+              "category": "数学・統計",
+              "subcategory": "分数・比"
+            },
+            "inputs": [
+              {
+                "key": "whole",
+                "label": "整数部分"
+              },
+              {
+                "key": "numerator",
+                "label": "分子"
+              },
+              {
+                "key": "denominator",
+                "label": "分母"
+              }
+            ],
+            "actions": {
+              "calculate": "計算",
+              "recalculate": "再計算",
+              "clear": "クリア",
+              "reset": "リセット",
+              "copy": "コピー",
+              "download": "ダウンロード",
+              "print": "印刷"
+            },
+            "results": {
+              "heading": "結果",
+              "summary": "帯分数の値",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "仮分数"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "小数"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "仮分数"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "小数"
+                }
+              ],
+              "chart": {
+                "title": "帯分数の値",
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": "計算式と計算手順",
+              "formulaDescription": "Improper numerator = whole × denominator + signed fractional numerator (negative whole values apply a negative fractional part); simplify by GCD. Decimal value = whole + signed fraction.",
+              "steps": [
+                "整数部分、分数の分子、分母を入力します。",
+                "分母は正の整数である必要があります。",
+                "分子はゼロ以上で、分母より小さくなければなりません。",
+                "整数部分と分数部分を組み合わせて仮分数にします。",
+                "分数を約分し、小数値を表示します。"
+              ],
+              "assumptions": [
+                "すべての入力値は安全な整数である必要があり、分母は正の値でなければなりません。",
+                "分子はゼロ以上かつ分母未満である必要があります。"
+              ],
+              "notes": [
+                "計算は入力値を使ってブラウザー内でローカルに実行されます。結果の注記と前提条件を確認してください。"
+              ],
+              "disclaimers": [
+                "この計算機は情報提供のみを目的としており、専門的な助言に代わるものではありません。"
+              ],
+              "limitations": [
+                "すべての入力値は安全な整数である必要があり、分母は正の値でなければなりません。",
+                "分子はゼロ以上かつ分母未満である必要があります。"
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "{field} は有限の有効な数値である必要があります。",
+                "recoveryHint": "有限の有効な数値を入力して、もう一度お試しください。"
+              },
+              {
+                "key": "denominator",
+                "message": "分母はゼロより大きい必要があります。",
+                "recoveryHint": "正の整数の分母を入力してください。"
+              },
+              {
+                "key": "fraction-range",
+                "message": "分子はゼロ以上かつ分母未満である必要があります。",
+                "recoveryHint": "分子をゼロ以上かつ分母より小さい値にしてください。"
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-mixed-number-1",
+                "question": "帯分数とは何ですか？",
+                "answer": "整数と真分数を組み合わせた数です。"
+              },
+              {
+                "key": "faq-mixed-number-2",
+                "question": "どのような条件が必要ですか？",
+                "answer": "分子は正の分母より小さくなければなりません。"
+              }
+            ],
+            "guide": {
+              "title": "帯分数計算機ガイド",
+              "introduction": "帯分数を仮分数に変換します。",
+              "steps": [
+                {
+                  "key": "mixed-number-guide-step-1",
+                  "title": "ステップ 1",
+                  "body": "整数部分、分数の分子、分母を入力します。"
+                },
+                {
+                  "key": "mixed-number-guide-step-2",
+                  "title": "ステップ 2",
+                  "body": "分母は正の整数である必要があります。"
+                },
+                {
+                  "key": "mixed-number-guide-step-3",
+                  "title": "ステップ 3",
+                  "body": "分子はゼロ以上で、分母より小さくなければなりません。"
+                },
+                {
+                  "key": "mixed-number-guide-step-4",
+                  "title": "ステップ 4",
+                  "body": "整数部分と分数部分を組み合わせて仮分数にします。"
+                },
+                {
+                  "key": "mixed-number-guide-step-5",
+                  "title": "ステップ 5",
+                  "body": "分数を約分し、小数値を表示します。"
+                }
+              ],
+              "sections": [
+                {
+                  "key": "mixed-number-guide-section-1",
+                  "heading": "計算方法",
+                  "body": "Improper numerator = whole × denominator + signed fractional numerator (negative whole values apply a negative fractional part); simplify by GCD. Decimal value = whole + signed fraction."
+                },
+                {
+                  "key": "mixed-number-guide-section-2",
+                  "heading": "前提条件と制限",
+                  "body": "すべての入力値は安全な整数である必要があり、分母は正の値でなければなりません。 分子はゼロ以上かつ分母未満である必要があります。"
+                }
+              ]
+            },
+            "seo": {
+              "title": "帯分数計算機 | FinPulse Hub",
+              "metaDescription": "帯分数を仮分数と小数に変換します。",
+              "h1": "帯分数計算機",
+              "introduction": "帯分数を仮分数に変換します。",
+              "faq": [
+                {
+                  "key": "faq-mixed-number-1",
+                  "question": "帯分数とは何ですか？",
+                  "answer": "整数と真分数を組み合わせた数です。"
+                },
+                {
+                  "key": "faq-mixed-number-2",
+                  "question": "どのような条件が必要ですか？",
+                  "answer": "分子は正の分母より小さくなければなりません。"
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "帯分数計算機",
+              "formLabel": "帯分数計算機の入力フォーム",
+              "resultAnnouncement": "帯分数計算機の計算結果",
+              "chartLabel": "帯分数の値のチャート",
+              "controlLabels": [
+                {
+                  "key": "whole",
+                  "label": "整数部分"
+                },
+                {
+                  "key": "numerator",
+                  "label": "分子"
+                },
+                {
+                  "key": "denominator",
+                  "label": "分母"
+                }
+              ]
+            }
+          }
         },
         "ru": {
-          "status": "not-started",
-          "fields": {}
+          "status": "draft",
+          "fields": {
+            "metadata": {
+              "title": "Калькулятор смешанных чисел",
+              "description": "Преобразуйте смешанное число в неправильную дробь и десятичное число.",
+              "category": "Математика и статистика",
+              "subcategory": "Дроби и отношения"
+            },
+            "inputs": [
+              {
+                "key": "whole",
+                "label": "Целая часть"
+              },
+              {
+                "key": "numerator",
+                "label": "Числитель дробной части"
+              },
+              {
+                "key": "denominator",
+                "label": "Знаменатель"
+              }
+            ],
+            "actions": {
+              "calculate": "Рассчитать",
+              "recalculate": "Пересчитать",
+              "clear": "Очистить",
+              "reset": "Сбросить",
+              "copy": "Копировать",
+              "download": "Скачать",
+              "print": "Печать"
+            },
+            "results": {
+              "heading": "Результат",
+              "summary": "Значение смешанного числа",
+              "metrics": [
+                {
+                  "key": "metric-1",
+                  "label": "Неправильная дробь"
+                },
+                {
+                  "key": "metric-2",
+                  "label": "Десятичное число"
+                }
+              ],
+              "breakdown": [
+                {
+                  "key": "breakdown-1",
+                  "label": "Неправильная дробь"
+                },
+                {
+                  "key": "breakdown-2",
+                  "label": "Десятичное число"
+                }
+              ],
+              "chart": {
+                "title": "Значение смешанного числа",
+                "series": []
+              }
+            },
+            "explanations": {
+              "formulaTitle": "Формула и этапы расчёта",
+              "formulaDescription": "Improper numerator = whole × denominator + signed fractional numerator (negative whole values apply a negative fractional part); simplify by GCD. Decimal value = whole + signed fraction.",
+              "steps": [
+                "Введите целую часть, числитель дробной части и знаменатель.",
+                "Знаменатель должен быть положительным целым числом.",
+                "Числитель дробной части должен быть неотрицательным и меньше знаменателя.",
+                "Объедините целую и дробную части в неправильную дробь.",
+                "Сократите дробь и покажите её десятичное значение."
+              ],
+              "assumptions": [
+                "Все входные значения должны быть безопасными целыми числами; знаменатель должен быть положительным.",
+                "Числитель дробной части должен быть не меньше нуля и меньше знаменателя."
+              ],
+              "notes": [
+                "Расчёт выполняется локально в браузере на основе введённых значений; проверьте примечание к результату и допущения."
+              ],
+              "disclaimers": [
+                "Этот калькулятор предназначен только для информации и не заменяет профессиональную консультацию."
+              ],
+              "limitations": [
+                "Все входные значения должны быть безопасными целыми числами; знаменатель должен быть положительным.",
+                "Числитель дробной части должен быть не меньше нуля и меньше знаменателя."
+              ]
+            },
+            "errors": [
+              {
+                "key": "invalid-number",
+                "message": "{field} должно быть конечным числом.",
+                "recoveryHint": "Введите корректное конечное число и повторите попытку."
+              },
+              {
+                "key": "denominator",
+                "message": "Знаменатель должен быть больше нуля.",
+                "recoveryHint": "Введите положительный целый знаменатель."
+              },
+              {
+                "key": "fraction-range",
+                "message": "Числитель должен быть неотрицательным и меньше знаменателя.",
+                "recoveryHint": "Укажите неотрицательный числитель, меньший знаменателя."
+              }
+            ],
+            "faqs": [
+              {
+                "key": "faq-mixed-number-1",
+                "question": "Что такое смешанное число?",
+                "answer": "Это целое число, объединённое с правильной дробью."
+              },
+              {
+                "key": "faq-mixed-number-2",
+                "question": "Какое условие необходимо?",
+                "answer": "Числитель дробной части должен быть меньше положительного знаменателя."
+              }
+            ],
+            "guide": {
+              "title": "Руководство по калькулятору смешанных чисел",
+              "introduction": "Преобразуйте смешанное число в неправильную дробь.",
+              "steps": [
+                {
+                  "key": "mixed-number-guide-step-1",
+                  "title": "Шаг 1",
+                  "body": "Введите целую часть, числитель дробной части и знаменатель."
+                },
+                {
+                  "key": "mixed-number-guide-step-2",
+                  "title": "Шаг 2",
+                  "body": "Знаменатель должен быть положительным целым числом."
+                },
+                {
+                  "key": "mixed-number-guide-step-3",
+                  "title": "Шаг 3",
+                  "body": "Числитель дробной части должен быть неотрицательным и меньше знаменателя."
+                },
+                {
+                  "key": "mixed-number-guide-step-4",
+                  "title": "Шаг 4",
+                  "body": "Объедините целую и дробную части в неправильную дробь."
+                },
+                {
+                  "key": "mixed-number-guide-step-5",
+                  "title": "Шаг 5",
+                  "body": "Сократите дробь и покажите её десятичное значение."
+                }
+              ],
+              "sections": [
+                {
+                  "key": "mixed-number-guide-section-1",
+                  "heading": "Метод расчёта",
+                  "body": "Improper numerator = whole × denominator + signed fractional numerator (negative whole values apply a negative fractional part); simplify by GCD. Decimal value = whole + signed fraction."
+                },
+                {
+                  "key": "mixed-number-guide-section-2",
+                  "heading": "Допущения и ограничения",
+                  "body": "Все входные значения должны быть безопасными целыми числами; знаменатель должен быть положительным. Числитель дробной части должен быть не меньше нуля и меньше знаменателя."
+                }
+              ]
+            },
+            "seo": {
+              "title": "Калькулятор смешанных чисел | FinPulse Hub",
+              "metaDescription": "Преобразуйте смешанное число в неправильную дробь и десятичное число.",
+              "h1": "Калькулятор смешанных чисел",
+              "introduction": "Преобразуйте смешанное число в неправильную дробь.",
+              "faq": [
+                {
+                  "key": "faq-mixed-number-1",
+                  "question": "Что такое смешанное число?",
+                  "answer": "Это целое число, объединённое с правильной дробью."
+                },
+                {
+                  "key": "faq-mixed-number-2",
+                  "question": "Какое условие необходимо?",
+                  "answer": "Числитель дробной части должен быть меньше положительного знаменателя."
+                }
+              ]
+            },
+            "accessibility": {
+              "pageLabel": "Калькулятор смешанных чисел",
+              "formLabel": "Форма калькулятора смешанных чисел",
+              "resultAnnouncement": "Результат расчёта смешанного числа",
+              "chartLabel": "Диаграмма значения смешанного числа",
+              "controlLabels": [
+                {
+                  "key": "whole",
+                  "label": "Целая часть"
+                },
+                {
+                  "key": "numerator",
+                  "label": "Числитель дробной части"
+                },
+                {
+                  "key": "denominator",
+                  "label": "Знаменатель"
+                }
+              ]
+            }
+          }
         }
       },
       "sourceExtractionStatus": "source-record-complete",
-      "sourceTranslationStatus": "not-started",
+      "sourceTranslationStatus": "draft",
       "sourceCompletenessStatus": "complete"
     },
     {
