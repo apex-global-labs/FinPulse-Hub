@@ -54,7 +54,7 @@ test("Batch 2 #41–50 catalogue order, runtime mapping and calculation registry
 test("Business ROI matches independent reference arithmetic and preserves losses", () => {
   const x = Core.businessROI(1000, 1275);
   assert.equal(x.gain, 275);
-  assert.equal(x.roi, 27.5);
+  assert.ok(Math.abs(x.roi - 27.5) < 1e-12);
   assert.equal(x.returnMultiple, 1.275);
   const loss = Core.businessROI(800, 0);
   assert.equal(loss.gain, -800);
