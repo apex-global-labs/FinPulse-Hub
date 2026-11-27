@@ -32,7 +32,7 @@ test("Batch 3 #51–60 catalogue, runtime handlers and extracted calculation reg
     assert.equal(item.sourceFile, "math-tools.js", id + " catalogue source module mismatch");
     assert.equal(row.sourceModule, "math-tools.js", id + " registry source module mismatch");
     assert.equal(row.runtimeFunction, fn, id + " runtime function mismatch");
-    assert.equal(row.status, "extracted", id + " remains unpromoted until independent regression passes");
+    assert.equal(row.status, "regression-verified", id + " numerical regression gate must pass before promotion");
     assert.deepEqual(row.calculation.inputs, inputKeys, id + " input order mismatch");
     assert.equal(row.calculation.formula, formula, id + " formula metadata mismatch");
     assert.ok(row.calculation.constraints?.length, id + " constraints missing");
