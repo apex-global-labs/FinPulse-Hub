@@ -134,7 +134,7 @@ test("Batch 31-36 zero and maximum-permitted boundaries match runtime contracts"
 test("Batch 31-36 reject non-finite, negative and out-of-contract boundary inputs",()=>{
  for(const fn of [
   ()=>F.paycheck(NaN,40,0,1.5,0,0,0,0,0),
-  ()=>F.paycheck(20,40,0,1.5,0,0,0,0,1),
+  ()=>F.paycheck(20,40,0,1.5,0,0,0,0,801),
   ()=>F.payroll(1.5,1000,0,0,0),
   ()=>F.payroll(1,1000,100.01,0,0),
   ()=>F.overtimePay(20,-1,0,1.5),
