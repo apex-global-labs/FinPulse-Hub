@@ -1829,7 +1829,7 @@
       "toolId": "proportion",
       "sourceModule": "math-tools.js",
       "runtimeFunction": "FinPulseMath.proportion",
-      "status": "extracted",
+      "status": "regression-verified",
       "calculation": {
         "inputs": [
           "a",
@@ -1863,7 +1863,7 @@
       "toolId": "average",
       "sourceModule": "math-tools.js",
       "runtimeFunction": "FinPulseMath.average",
-      "status": "extracted",
+      "status": "regression-verified",
       "calculation": {
         "inputs": [
           "a",
@@ -1897,7 +1897,7 @@
       "toolId": "percentage-change",
       "sourceModule": "math-tools.js",
       "runtimeFunction": "FinPulseMath.percentageChange",
-      "status": "extracted",
+      "status": "regression-verified",
       "calculation": {
         "inputs": [
           "old",
@@ -1930,7 +1930,7 @@
       "toolId": "percent-error",
       "sourceModule": "math-tools.js",
       "runtimeFunction": "FinPulseMath.percentError",
-      "status": "extracted",
+      "status": "regression-verified",
       "calculation": {
         "inputs": [
           "actual",
@@ -1963,7 +1963,7 @@
       "toolId": "rounding",
       "sourceModule": "math-tools.js",
       "runtimeFunction": "FinPulseMath.roundTo",
-      "status": "extracted",
+      "status": "regression-verified",
       "calculation": {
         "inputs": [
           "value",
@@ -1997,7 +1997,7 @@
       "toolId": "significant-figures",
       "sourceModule": "math-tools.js",
       "runtimeFunction": "FinPulseMath.significant",
-      "status": "extracted",
+      "status": "regression-verified",
       "calculation": {
         "inputs": [
           "value",
@@ -2030,7 +2030,7 @@
       "toolId": "scientific-notation",
       "sourceModule": "math-tools.js",
       "runtimeFunction": "FinPulseMath.scientific",
-      "status": "extracted",
+      "status": "regression-verified",
       "calculation": {
         "inputs": [
           "value",
@@ -2063,7 +2063,7 @@
       "toolId": "exponent",
       "sourceModule": "math-tools.js",
       "runtimeFunction": "FinPulseMath.power",
-      "status": "extracted",
+      "status": "regression-verified",
       "calculation": {
         "inputs": [
           "base",
@@ -2096,7 +2096,7 @@
       "toolId": "square-root",
       "sourceModule": "math-tools.js",
       "runtimeFunction": "FinPulseMath.nthRoot(value, 2)",
-      "status": "extracted",
+      "status": "regression-verified",
       "calculation": {
         "inputs": [
           "value"
@@ -2128,7 +2128,7 @@
       "toolId": "cube-root",
       "sourceModule": "math-tools.js",
       "runtimeFunction": "FinPulseMath.nthRoot(value, 3)",
-      "status": "extracted",
+      "status": "regression-verified",
       "calculation": {
         "inputs": [
           "value"
