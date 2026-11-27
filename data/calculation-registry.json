@@ -1347,7 +1347,7 @@
       "toolId": "business-roi",
       "sourceModule": "app.js",
       "runtimeFunction": "Core.businessROI",
-      "status": "extracted",
+      "status": "regression-verified",
       "calculation": {
         "inputs": [
           {
@@ -1397,7 +1397,7 @@
       "toolId": "cash-flow",
       "sourceModule": "app.js",
       "runtimeFunction": "Core.cashFlowProjection",
-      "status": "extracted",
+      "status": "regression-verified",
       "calculation": {
         "inputs": [
           {
@@ -1479,7 +1479,7 @@
       "toolId": "rental-yield",
       "sourceModule": "app.js",
       "runtimeFunction": "Core.rentalYieldCalculator",
-      "status": "extracted",
+      "status": "regression-verified",
       "calculation": {
         "inputs": [
           {
@@ -1547,7 +1547,7 @@
       "toolId": "emergency-fund",
       "sourceModule": "app.js",
       "runtimeFunction": "Core.emergencyFundCalculator",
-      "status": "extracted",
+      "status": "regression-verified",
       "calculation": {
         "inputs": [
           {
@@ -1609,7 +1609,7 @@
       "toolId": "net-worth",
       "sourceModule": "app.js",
       "runtimeFunction": "Core.netWorthCalculator",
-      "status": "extracted",
+      "status": "regression-verified",
       "calculation": {
         "inputs": [
           "cash",
@@ -1651,7 +1651,7 @@
       "toolId": "basic-arithmetic",
       "sourceModule": "math-tools.js",
       "runtimeFunction": "FinPulseMath.arithmetic",
-      "status": "extracted",
+      "status": "regression-verified",
       "calculation": {
         "inputs": [
           "a",
@@ -1685,7 +1685,7 @@
       "toolId": "fraction",
       "sourceModule": "math-tools.js",
       "runtimeFunction": "FinPulseMath.fraction",
-      "status": "extracted",
+      "status": "regression-verified",
       "calculation": {
         "inputs": [
           "numerator",
@@ -1722,7 +1722,7 @@
       "toolId": "mixed-number",
       "sourceModule": "math-tools.js",
       "runtimeFunction": "FinPulseMath.mixed",
-      "status": "extracted",
+      "status": "regression-verified",
       "calculation": {
         "inputs": [
           "whole",
@@ -1760,7 +1760,7 @@
       "toolId": "decimal-fraction",
       "sourceModule": "math-tools.js",
       "runtimeFunction": "FinPulseMath.decimalFraction",
-      "status": "extracted",
+      "status": "regression-verified",
       "calculation": {
         "inputs": [
           "value",
@@ -1795,7 +1795,7 @@
       "toolId": "ratio",
       "sourceModule": "math-tools.js",
       "runtimeFunction": "FinPulseMath.ratio",
-      "status": "extracted",
+      "status": "regression-verified",
       "calculation": {
         "inputs": [
           "a",
