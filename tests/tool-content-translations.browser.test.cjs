@@ -73,13 +73,14 @@ function numberSnapshot(text,locale){
  const match=value.replace(/[^\d.+-]/g,"").match(/[-+]?\d+(?:\.\d+)?/);
  return match?Number(match[0]):null;
 }
-async function snapshot(page,locale){
+const DEFAULT_NUMBER_FORMAT_TOOL_IDS=new Set(["basic-arithmetic","fraction","mixed-number","decimal-fraction","ratio","proportion","average","percentage-change","percent-error","rounding","significant-figures","scientific-notation","exponent","square-root","cube-root"]);
+async function snapshot(page,locale,toolId){
  const captured=await page.evaluate(()=>{
   const numeric=[document.querySelector(".result .value")?.textContent||"",...Array.from(document.querySelectorAll("#metrics .metric strong"),x=>x.textContent)];
   const formula=(Array.from(document.querySelectorAll("#formula-panel p")).map(x=>x.textContent.trim()).find(x=>x.includes("="))||"").replace(/^[^:：]+[:：]\s*/,"");
   return {numericRaw:numeric,numberLocale:new Intl.NumberFormat().resolvedOptions().locale,currencyCode:window.FinPulseGlobalContext?.get().currencyCode||null,values:Array.from(document.querySelectorAll("#form [name]"),x=>[x.name,x.value]),formula};
  });
- return {...captured,numeric:captured.numericRaw.map(value=>numberSnapshot(value,captured.numberLocale))};
+ const numericLocale=DEFAULT_NUMBER_FORMAT_TOOL_IDS.has(toolId)?captured.numberLocale:locale;\n return {...captured,numeric:captured.numericRaw.map(value=>numberSnapshot(value,numericLocale))};
 }
 test("Batch 1, Batch 2 and Overtime pilot persisted tool records are complete and locale-consistent",async()=>{
  content=JSON.parse(await readFile(join(process.cwd(),"translations/tool-content.json"),"utf8"));
@@ -125,7 +126,7 @@ test("Batch 1, Batch 2 and Overtime pilot tools × 6 locales render persisted tr
      await page.locator("#form").evaluate(form=>form.requestSubmit());
     }
     await page.waitForFunction(()=>{const value=document.querySelector(".result .value")?.textContent?.trim();return value&&value!=="—"});
-    const english=await snapshot(page,"en");
+    const english=await snapshot(page,"en",id);
     const englishLabel=await page.locator(".result .label").innerText();
     assert.ok(english.numeric.length>0,id+" baseline calculation output");
     for(const locale of LOCALES){
@@ -155,7 +156,7 @@ test("Batch 1, Batch 2 and Overtime pilot tools × 6 locales render persisted tr
      assert.equal(await page.title(),fields.seo.title,id+" / "+locale+" SEO title");
      assert.equal(await page.locator('meta[name="description"]').getAttribute("content"),fields.seo.metaDescription,id+" / "+locale+" SEO description");
      assert.equal(await page.locator("html").getAttribute("dir"),DIRECTIONS[locale],id+" / "+locale+" text direction");
-     const localized=await snapshot(page,locale);
+     const localized=await snapshot(page,locale,id);
      assert.deepEqual(localized.values,english.values,id+" / "+locale+" numeric/currency input preservation");
      assert.equal(localized.currencyCode,english.currencyCode,id+" / "+locale+" display currency unchanged");
      assert.equal(localized.numericRaw.length,english.numericRaw.length,id+" / "+locale+" calculation output field count unchanged");
