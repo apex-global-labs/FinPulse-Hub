@@ -133,6 +133,15 @@ test("every canonical tool has six locale records with correct draft or pending 
     assert.ok(Object.values(fields.actions).every(x=>typeof x==="string"&&x.trim()),tool.id+":"+locale+" actions");
     assert.ok(fields.guide.steps.every(x=>x.title&&x.body)&&fields.guide.sections.every(x=>x.heading&&x.body),tool.id+":"+locale+" guide text");
     assert.ok(fields.faqs.every(x=>x.question&&x.answer)&&fields.errors.every(x=>x.message&&x.recoveryHint),tool.id+":"+locale+" FAQ and errors");
+    for(const error of fields.errors){
+     const sourceError=source.errors.find(x=>x.key===error.key);
+     const tokens=value=>(value.match(/\\{[^}]+\\}/g)||[]).sort().join("|");
+     assert.equal(tokens(error.message),tokens(sourceError.message),tool.id+":"+locale+" exact error placeholder tokens "+error.key);
+     const numbers=value=>(value.match(/\\d[\\d,]*(?:\\.\\d+)?/g)||[]).map(x=>Number(x.replace(/,/g,"")));
+     assert.deepEqual(numbers(error.message+" "+error.recoveryHint),numbers(sourceError.message+" "+sourceError.recoveryHint),tool.id+":"+locale+" error numeric constraints "+error.key);
+    }
+    assert.ok(fields.explanations.steps.every(x=>!/(दर्ज किए गए मानों की वैधता|تحقق من صحة القيم المدخلة|درج کردہ اقدار کی درستگی|检查输入值是否有效|入力値が有効で|корректность введённых значений)/.test(x)),tool.id+":"+locale+" no generic non-tool-specific formula steps");
+    assert.ok(fields.faqs.every(x=>!/(قواعد العملية الحسابية المستخدمة|所使用的数学运算规则|使用する計算規則に従って|math operation rules|गणना के नियमों के अनुसार निर्धारित)/i.test(x.answer)),tool.id+":"+locale+" FAQ answers are tool-specific");
     assert.ok(fields.seo.title&&fields.seo.metaDescription&&fields.seo.h1&&fields.seo.introduction,tool.id+":"+locale+" SEO");
    }else if(batchSixDraftIds.includes(tool.id)){
     const fields=tool.locales[locale].fields,source=tool.source;
