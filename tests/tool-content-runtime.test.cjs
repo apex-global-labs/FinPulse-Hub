@@ -69,20 +69,25 @@ test("all first-ten locale records satisfy the runtime completeness contract whe
   }
  }
 });
-test("draft tool-content translations stay inactive for every locale until approval",()=>{
+test("tool-content status manifest mirrors approvals and gates the large payload per tool and locale",()=>{
  const fs=require("node:fs"),path=require("node:path"),root=path.join(__dirname,"..");
  const app=fs.readFileSync(path.join(root,"app.js"),"utf8");
  const html=fs.readFileSync(path.join(root,"index.html"),"utf8");
  const content=JSON.parse(fs.readFileSync(path.join(root,"translations","tool-content.json"),"utf8"));
- const records=content.tools.flatMap(tool=>Object.values(tool.locales||{}));
- const approved=records.filter(record=>["approved","published"].includes(record.status)).length;
- assert.equal(approved,0,"tool-content activation must be reviewed when any locale record becomes approved");
- assert.ok(app.includes("const TOOL_CONTENT_TRANSLATIONS_ACTIVE=false"),"draft-only content must remain disabled");
- assert.ok(app.includes("function ensureLocaleData(locale){if(locale===\"en\")return Promise.resolve();const uiReady=window.FinPulseI18nReady||Promise.resolve();if(!TOOL_CONTENT_TRANSLATIONS_ACTIVE)return uiReady;return Promise.all([window.FinPulseToolRuntime?.load(),uiReady])}"));
- assert.ok(app.includes("ensureLocaleData(locale).then(()=>rerenderCurrentTool(d))"),"locale changes must wait for the UI catalogue before rerendering");
- assert.ok(app.includes("ensureLocaleData(initialLocale).then(()=>list())"),"initial rendering must not wait for directory mapping or draft content");
- assert.ok(app.includes("loadDirectoryMapping().then(()=>renderDirectory"));
- assert.ok(app.includes("window.FinPulseToolRuntime?.load()"),"runtime loading remains available behind the approval gate");
+ const status=JSON.parse(fs.readFileSync(path.join(root,"translations","tool-content-status.json"),"utf8"));
+ const expected={};
+ for(const tool of content.tools){
+  const locales=Object.entries(tool.locales||{}).filter(([,record])=>["approved","published"].includes(record.status)).map(([locale])=>locale).sort();
+  if(locales.length)expected[tool.id]=locales;
+ }
+ assert.deepEqual(status.approved,expected,"tool-content-status.json must be regenerated when approvals change");
+ assert.equal(Object.keys(status.approved).length,0,"current draft-only source must not activate any large content payload");
+ assert.ok(app.includes('fetch("translations/tool-content-status.json"'),"the app must consult the lightweight approval manifest");
+ assert.ok(app.includes("function ensureLocaleData(locale,toolId)"));
+ assert.ok(app.includes("approvedLocales.includes(locale)"),"only the selected tool and approved locale may trigger the large payload");
+ assert.ok(app.includes("ensureLocaleData(locale,d?.id)"),"locale changes must check the active tool's approval status");
+ assert.ok(app.includes("ensureLocaleData(initialLocale,requestedTool)"),"initial rendering must check the requested tool's approval status");
+ assert.ok(app.includes("window.FinPulseToolRuntime?.load()"),"approved content must remain loadable");
  assert.ok(app.includes("FinPulseToolRuntime?.localizeDefinition(source,requestedLocale)"));
  assert.ok(html.includes('<script src="tool-content-runtime.js" defer></script>'));
  assert.ok(app.includes("escapeHtml(m[0])")&&app.includes("escapeHtml(m[1])"));
