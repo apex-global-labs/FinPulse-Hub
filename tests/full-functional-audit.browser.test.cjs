@@ -113,6 +113,13 @@ test("all 220 registered tools execute with valid representative inputs in deskt
             el.dispatchEvent(new Event("change", { bubbles: true }));
           }
         });
+        // Tax tools now require an explicit supported jurisdiction profile.
+        // The all-tools functional fixture chooses the first registered profile
+        // so the representative calculation tests the handler, not the empty selector.
+        if (["income-tax", "salary"].includes(tool.id)) {
+          await page.locator("#tax-profile").selectOption({ index: 1 });
+          await page.locator("#tax-profile").dispatchEvent("change");
+        }
         const row = await page.evaluate(() => {
           const heading = document.querySelector("#app .heading h2");
           const result = document.querySelector("#app .result .value");
