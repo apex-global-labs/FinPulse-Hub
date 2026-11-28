@@ -1,0 +1,127 @@
+const test = require("node:test");
+const assert = require("node:assert/strict");
+const fs = require("node:fs");
+const path = require("node:path");
+const vm = require("node:vm");
+
+const root = path.join(__dirname, "..");
+const loader = fs.readFileSync(path.join(root, "route-loader.js"), "utf8");
+const app = fs.readFileSync(path.join(root, "app.js"), "utf8");
+const html = fs.readFileSync(path.join(root, "index.html"), "utf8");
+
+const mathRoutes = [
+  "linear-equation",
+  "quadratic-equation",
+  "simultaneous-equations",
+  "polynomial-calculator",
+  "logarithm",
+  "matrix-operations",
+  "matrix-determinant"
+];
+
+const expectedMathScripts = [
+  "finance-core.js",
+  "math-core.js",
+  "math-tools.js",
+  "advanced-math-core.js",
+  "advanced-math-tools.js",
+  "smart-ui.js",
+  "global-context.js",
+  "translation-engine.js",
+  "tool-content-runtime.js",
+  "app.js"
+];
+
+const expectedFullScripts = [
+  "finance-core.js",
+  "math-core.js",
+  "math-tools.js",
+  "advanced-math-core.js",
+  "advanced-math-tools.js",
+  "date-time-core.js",
+  "date-time-tools.js",
+  "unit-converter-core.js",
+  "unit-converter-tools.js",
+  "developer-tools.js",
+  "education-lifestyle-tools.js",
+  "qrcode.js",
+  "lifestyle-tools.js",
+  "health-activity-tools.js",
+  "health-wellness-tools.js",
+  "smart-ui.js",
+  "global-context.js",
+  "translation-engine.js",
+  "tool-content-runtime.js",
+  "tax-data.js",
+  "tax-state-data.js",
+  "tax-engine.js",
+  "asset-data.js",
+  "app.js",
+  "home-calculator-core.js",
+  "home-calculator.js"
+];
+
+function loadedScripts(search) {
+  const appended = [];
+  const document = {
+    createElement() {
+      return { dataset: {} };
+    },
+    body: {
+      appendChild(script) {
+        appended.push(script.src);
+        script.onload();
+      }
+    },
+    querySelector() {
+      return null;
+    }
+  };
+  const context = {
+    URLSearchParams,
+    Promise,
+    window: { location: { search } },
+    document,
+    console
+  };
+  vm.runInNewContext(loader, context);
+  return appended;
+}
+
+test("Math routes load only the math engines and shared runtime in dependency order", () => {
+  for (const route of mathRoutes) {
+    assert.deepEqual(loadedScripts("?tool=" + route), expectedMathScripts, route);
+  }
+});
+
+test("homepage and non-Math routes retain the complete legacy script set and order", () => {
+  assert.deepEqual(loadedScripts(""), expectedFullScripts);
+  assert.deepEqual(loadedScripts("?tool=triangle-area"), expectedFullScripts);
+  assert.deepEqual(loadedScripts("?tool=mortgage"), expectedFullScripts);
+});
+
+test("dynamic scripts are ordered and the HTML uses the route loader", () => {
+  assert.ok(loader.includes("script.async = false"));
+  assert.ok(html.includes('<script src="route-loader.js" defer></script>'));
+  assert.ok(!html.includes('<script src="app.js" defer></script>'));
+  assert.ok(!html.includes('<script src="finance-core.js" defer></script>'));
+});
+
+test("Math route app registry is scoped and does not fetch the full directory mapping", () => {
+  assert.ok(app.includes("MATH_BATCH_ROUTE_IDS.has(requestedTool)"));
+  assert.ok(app.includes('D.filter(tool=>tool.c==="Math & Statistics")'));
+  assert.ok(app.includes("if(!MATH_BATCH_ROUTE_IDS.has(requestedTool))loadDirectoryMapping()"));
+  for (const registry of [
+    "FinPulseMathTools",
+    "FinPulseAdvancedMathTools",
+    "FinPulseDateTimeTools",
+    "FinPulseUnitTools",
+    "FinPulseDeveloperTools",
+    "FinPulseEducationTools",
+    "FinPulseLifestyleTools",
+    "FinPulseHealthTools",
+    "FinPulseHealthTools2"
+  ]) {
+    assert.ok(app.includes("window." + registry + "?.registry||[]"), registry + " must be optional for selective loading");
+  }
+});
