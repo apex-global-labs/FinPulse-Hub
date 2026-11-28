@@ -71,3 +71,15 @@ Upgrade the existing 220-tool application with (1) seven-locale UI and tool-cont
 - Test fix commits: `eb952c00b653fa98303b65a1617f321135cdd793` (initial) and `9bb5bf533b0a7fb95f576947b2f5e450bbaa158a` (corrected normalizer).
 - Fix verification: latest PR #73 head `9bb5bf533b0a7fb95f576947b2f5e450bbaa158a`; confirmed normalizer syntax is valid (`replace(/\\s+/g, " ").trim()`) and all browser text assertions affected by rendered whitespace now normalize both sides. New Finance CI run `46115532262` and Lighthouse/CLS run `46115532274` are running on this exact head. `npm run check`, `npm test`, and Frankfurter API step have passed in Finance CI; desktop/mobile browser tests remain in progress. Next: inspect final logs/artifacts and update exact totals.
 - Batch L1 remains **IN PROGRESS / NOT RELEASE-ACCEPTED** until latest-head CI, browser, RTL/LTR, accessibility and numerical parity gates pass.
+
+
+## Finance CI failure diagnosis and follow-up — 2026-11-28 06:19 UTC
+
+- Finance CI run `46115532262` completed **failure** on tested PR merge SHA `f88b727504f3d45a6f934ac7fe1eba77740f3d53` (PR head before follow-up: `9bb5bf533b0a7fb95f576947b2f5e450bbaa158a`).
+- CI steps: `npm run check` PASS; `npm test` PASS (420 tests, 0 failed); Frankfurter API PASS (1/1); Browser suite **50 passed, 4 failed / 54 total**; functional audit artifact uploaded (ID `15252230094`).
+- Three actual failing child cases: `significant-figures / ru`, `scientific-notation / ru`, `exponent / ru`. The parent suite is counted as the fourth failure. All failures occur in the test's numeric-output normalization, not in locale text, direction, accessibility labels or formulas.
+- Root cause identified from source: `math-tools.js` formats numeric output with `new Intl.NumberFormat(undefined)` (the browser's resolved formatting locale), while test helper `numberSnapshot` incorrectly parsed the same rendered string using the selected translation locale (Russian). Thus an English-formatted grouped value such as `12,350` was interpreted as Russian decimal `12.35`. This is a test-parser locale mismatch; no runtime calculation or numeric data was changed.
+- Test-only correction committed: `599912c77fb871766ade3df84c039d29c0a6da95`. Browser snapshot now captures `new Intl.NumberFormat().resolvedOptions().locale` and parses rendered numeric output using that actual display locale, independently of translated copy locale.
+- Latest PR #73 head: `599912c77fb871766ade3df84c039d29c0a6da95`. New Finance CI run `46115994932` (#1076) and Lighthouse/CLS run `46115994929` (#721) are running on this exact head. Do not infer pass from the previous run.
+- Lighthouse/CLS run `46115532274` (#718) passed: mobile/desktop homepage and final tool route audits, CLS enforcement, and report upload all succeeded.
+- L1 remains **IN PROGRESS / NOT RELEASE-ACCEPTED** until the latest-head Finance CI and Lighthouse/CLS complete and all seven-locale browser, RTL/LTR, accessibility and numeric parity checks pass. No merge or deployment.
