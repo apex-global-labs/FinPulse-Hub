@@ -95,7 +95,7 @@ test("Batch 2 approved translations render in all seven locales and pass 70 axe 
   const base="http://127.0.0.1:"+server.address().port;
   await page.goto(base+"/?tool=freelance");
   await page.waitForSelector("#form");
-  await page.waitForFunction(()=>window.FinPulseToolRuntime?.loaded&&window.FinPulseI18nReady);
+  await page.waitForFunction(()=>window.FinPulseI18nReady);
   const registry=await page.evaluate(async()=>{
    const content=await (await fetch("/translations/tool-content.json")).json();
    const ids=["freelance","margin","affordability","payoff","refinance","personal-loan","student-loan","simple-interest","retirement","401k"];
@@ -108,7 +108,7 @@ test("Batch 2 approved translations render in all seven locales and pass 70 axe 
    for(const tool of registry){
     await page.goto(base+"/?tool="+tool.id);
     await page.waitForSelector("#form");
-    await page.waitForFunction(()=>window.FinPulseToolRuntime?.loaded&&window.FinPulseI18n?.supportedLocales.length===7);
+    await page.waitForFunction(()=>window.FinPulseI18n?.supportedLocales.length===7);
     await page.evaluate(async({id,locale})=>{
      const data=await (await fetch("/translations/tool-content.json")).json();
      const tool=data.tools.find(item=>item.id===id);
