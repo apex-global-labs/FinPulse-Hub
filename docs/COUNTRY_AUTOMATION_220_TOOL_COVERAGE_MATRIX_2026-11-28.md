@@ -10,7 +10,7 @@
 
 - Canonical inventory: **220 tools / 220 unique stable IDs**, distributed across 10 source modules. All 220 IDs were cross-checked against the 220 stable IDs in main's `docs/FINANCE_TOOL_MASTER_REGISTRY.md`; there were no missing or extra IDs.
 - Overall country-context classification: **0 Complete, 49 Partial, 2 Missing, 169 Not Applicable**.
-- Country relevance: `Currency / monetary display`: 38; `N/A`: 169; `Country tax / jurisdiction`: 11; `Regional workweek / public holidays`: 2; `Currency / monetary display`: 38.
+- Country relevance: `Currency / monetary display`: 38; `Country tax / jurisdiction`: 11; `Regional workweek / public holidays`: 2; `Not Applicable`: 169.
 - The site has a global Country/Region selector and a static 249-country/territory → 154-currency registry. **Selecting a country does not automatically apply its currency or load a calculator's jurisdiction dataset.** Currency preference is a separate setting; the UI has an explicit “Use suggested currency” action.
 - Currency presentation is already connected to **37 Finance tools + 5 additional monetary tools**. This is display/interpretation context, not FX conversion and not country-triggered.
 - Country-specific tax presets/profiles exist, but most require the user to select a separate preset/profile. They are not driven by the global country selector.
