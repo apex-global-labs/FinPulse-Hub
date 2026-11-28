@@ -174,7 +174,7 @@ test("Batch 1, Batch 2 and Overtime pilot tools × 6 locales render persisted tr
     for(const locale of LOCALES){
      const fields=tool.locales[locale].fields;
      await page.evaluate(locale=>window.FinPulseGlobalContext.setLocale(locale),locale);
-     await page.waitForFunction(()=>window.FinPulseToolRuntime?.loaded===true,{timeout:10000});
+     await page.waitForFunction(()=>window.FinPulseToolRuntime?.loaded===true,null,{timeout:10000});
      await page.waitForFunction(({locale,title})=>document.documentElement.lang===locale&&document.querySelector("#app .heading h2")?.textContent===title,{locale,title:fields.metadata.title},{timeout:10000});
      assert.equal(await page.locator("#app .heading h2").innerText(),fields.metadata.title,id+" / "+locale+" translated title");
      assert.equal(normalizeRendered(await page.locator("#app .heading p").innerText()),normalizeRendered(fields.metadata.description),id+" / "+locale+" translated description");
