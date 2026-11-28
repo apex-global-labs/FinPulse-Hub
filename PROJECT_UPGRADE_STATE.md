@@ -1,6 +1,6 @@
 # FinPulse Hub — Project Upgrade State
 
-**Last updated:** 2026-11-28 05:17 UTC  
+**Last updated:** 2026-11-28 05:20 UTC  
 **Repository:** apex-global-labs/FinPulse-Hub  
 **Production branch:** main  
 **Baseline main:** 240256f65f6cd69a154f1f81330d8f1002ef01d7  
@@ -44,7 +44,7 @@ Upgrade the existing 220-tool application with (1) seven-locale UI and tool-cont
 - Source/schema readiness audit exists at `docs/BATCH_51_60_SOURCE_SCHEMA_READINESS_AUDIT_2026-11-27.md`; all ten source records #51–60 are complete and stable-keyed. #53–60 locale records were previously Not Started.
 - Required fields: metadata, inputs/options, actions, results, explanations, errors, FAQs, guide, SEO, accessibility. Preserve exact stable keys, placeholders (notably `{field}`), formula semantics, numeric constraints and source step counts.
 - Status remains Draft; no translation activation.
-- Draft creation: 8 tools × 6 locales = 48 Draft records committed in `274474d3a6247b25d92fdda942d4bf7f5b2a1b3e`. Formula descriptions remain byte-for-byte equal to source; stable input/metric/breakdown/FAQ/error/guide/accessibility keys and `{field}` token parity have explicit test coverage. `npm run check` and `npm test` passed on latest PR #73 head `56532b40847465feeece108415425aacbf325511`; Finance CI `46110895589` and Lighthouse `46110895584` are running. Browser test now includes all eight Batch 1 tools in all six target locales. Draft translations are AI-generated and still require native-language review; they are not approved/published. Next: inspect browser, RTL/LTR, accessibility and numeric parity results.
+- Draft creation: 8 tools × 6 locales = 48 Draft records committed in `274474d3a6247b25d92fdda942d4bf7f5b2a1b3e`; action labels and Batch 1 integrity tests were subsequently committed. Current PR #73 head: `eeef5fe5a44d8c0cbad2ef2d1702818e1838bda0`. Independent audit: 48/48 Draft records, 0 formula mismatches, 0 stable-key mismatches, 0 `{field}` token mismatches, 0 empty field groups, 0 untranslated action labels. `npm run check` and `npm test` passed; Finance CI `46111131323` is still running desktop/mobile seven-locale Browser regression. Lighthouse/CLS `46111130196` passed. Browser tests include all eight Batch 1 tools across six target locales. Draft translations are AI-generated and require native-language review; they are not approved/published. Next: inspect browser, RTL/LTR, accessibility and numeric parity results.
 
 ## Batch progress
 | Batch | Scope | Status |
