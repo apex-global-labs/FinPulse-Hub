@@ -1,5 +1,7 @@
 name: Math Batch 71-77 Mobile Lighthouse
 on:
+  push:
+    branches: [feat/seven-language-translation-engine-phase-1]
   pull_request:
     branches: [main]
   workflow_dispatch:
