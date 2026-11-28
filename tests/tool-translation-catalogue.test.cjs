@@ -550,6 +550,7 @@ test("Batch 1 #53-60 drafts preserve all stable keys, placeholders, formulas and
   for(const locale of locales){
    const record=tool.locales[locale],fields=record.fields;
    assert.equal(record.status,"draft",id+"/"+locale+" remains inactive");
+   assert.ok(Object.values(fields.actions).every(label=>typeof label==="string"&&label.trim()&&!/^(Calculate|Recalculate|Clear|Reset|Copy|Download|Print)$/.test(label)),id+"/"+locale+" action labels localized");
    assert.equal(Object.keys(fields).length,10,id+"/"+locale+" has all ten field groups");
    for(const group of ["inputs","results.metrics","results.breakdown","faqs","errors","guide.steps","guide.sections","accessibility.controlLabels"]){
     const get=(o,p)=>p.split(".").reduce((v,k)=>v?.[k],o);
