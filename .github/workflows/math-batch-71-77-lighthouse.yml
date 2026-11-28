@@ -39,7 +39,7 @@ jobs:
           routes=(linear-equation quadratic-equation simultaneous-equations polynomial-calculator logarithm matrix-operations matrix-determinant)
           for route in "${routes[@]}"; do
             echo "Auditing $route"
-            npx lighthouse "http://127.0.0.1:4173/?tool=$route#tools" \
+            npx lighthouse "http://127.0.0.1:4173/?tool=$route" \
               --chrome-path="$CHROME_PATH" \
               --chrome-flags="--headless --no-sandbox --disable-dev-shm-usage" \
               --only-categories=performance,accessibility,seo \
@@ -62,6 +62,8 @@ jobs:
           const rows = files.map(file => {
             const report = JSON.parse(fs.readFileSync(path + '/' + file, 'utf8'));
             const a = report.audits;
+            const lcpItems = a['largest-contentful-paint-element']?.details?.items || [];
+            const lcpNode = lcpItems[0]?.items?.[0]?.node || lcpItems[0]?.node || null;
             return {
               route: file.replace('.json', ''),
               performance: Math.round(report.categories.performance.score * 100),
@@ -70,8 +72,9 @@ jobs:
               lcp_ms: a['largest-contentful-paint']?.numericValue ?? null,
               cls: a['cumulative-layout-shift']?.numericValue ?? null,
               tbt_ms: a['total-blocking-time']?.numericValue ?? null,
-              lcp_element: a['largest-contentful-paint-element']?.details?.items?.[0]?.node?.nodeLabel || '',
-              lcp_phases: a['largest-contentful-paint-element']?.details?.items?.[1]?.items || []
+              lcp_element: lcpNode?.nodeLabel || lcpNode?.snippet || '',
+              lcp_selector: lcpNode?.selector || '',
+              lcp_phases: lcpItems[1]?.items || []
             };
           });
           fs.writeFileSync(path + '/summary.json', JSON.stringify(rows, null, 2));
