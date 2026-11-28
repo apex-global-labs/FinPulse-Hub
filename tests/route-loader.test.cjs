@@ -78,6 +78,8 @@ function loadedScripts(search) {
   const context = {
     URLSearchParams,
     Promise,
+    setTimeout(callback) { callback(); return 0; },
+    requestAnimationFrame(callback) { callback(); return 0; },
     window: { location: { search } },
     document,
     console
