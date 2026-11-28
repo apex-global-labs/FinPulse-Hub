@@ -70,7 +70,7 @@ test("locale metadata preserves RTL languages without coupling locale to country
  Global.setLocale("ar");
  assert.equal(Global.get().locale,"ar");
  assert.equal(Global.get().countryCode,"IN");
- assert.equal(Global.get().currencyCode,"EUR");
+ assert.equal(Global.get().currencyCode,"INR");
  assert.match(Global.formatNumber(12345.67),/١٢/);
 });
 
@@ -88,7 +88,7 @@ test("homepage exposes accessible independent global settings and loads the modu
  assert.match(html,/id="global-currency"/);
  assert.match(html,/id="global-use-suggested"/);
  assert.ok(html.indexOf('src="global-context.js"')<html.indexOf('src="app.js"'));
- assert.match(html,/Monetary tools display and interpret entered amounts in this currency/);assert.match(html,/Tax-profile and US-specific retirement tools retain their required currencies/);
+ assert.match(html,/Selecting a country automatically applies its mapped primary currency/);assert.match(html,/Tax-profile and US-specific retirement tools retain their required currencies/);
 });
 
 test("syntax and GitHub Pages packaging include the global context module",()=>{
@@ -96,5 +96,5 @@ test("syntax and GitHub Pages packaging include the global context module",()=>{
  const deploy=fs.readFileSync(".github/workflows/deploy.yml","utf8");
  assert.match(pkg.scripts.check,/node --check global-context\.js/);
  assert.match(pkg.scripts.test,/tests\/global-context\.test\.cjs/);
- assert.match(deploy,/smart-ui\.js global-context\.js tax-data\.js/);
+ assert.match(deploy,/smart-ui\.js global-context\.js country-data-runtime\.js tax-data\.js/);
 });
