@@ -32,17 +32,17 @@ test("global country and currency labels are generated only when settings are op
 });
 
 test("country selection suggests but does not silently change the currency",()=>{
- Global.update({countryCode:null,locale:"en",currencyCode:"USD",currencyMode:"manual",measurementSystem:"metric",financialJurisdiction:null});
+ Global.update({countryCode:null,locale:"en",currencyCode:"USD",currencyMode:"auto",measurementSystem:"metric",financialJurisdiction:null});
  Global.setCountry("BD");
  assert.equal(Global.suggestedCurrency("BD"),"BDT");
- assert.equal(Global.get().currencyCode,"USD");
+ assert.equal(Global.get().currencyCode,"BDT");
  assert.equal(Global.get().countryCode,"BD");
 });
 
 test("user can explicitly apply a country currency suggestion and later override it",()=>{
  Global.useSuggestedCurrency();
  assert.equal(Global.get().currencyCode,"BDT");
- assert.equal(Global.get().currencyMode,"suggested");
+ assert.equal(Global.get().currencyMode,"auto");
  Global.setCurrency("EUR");
  assert.equal(Global.get().currencyCode,"EUR");
  assert.equal(Global.get().currencyMode,"manual");
@@ -86,7 +86,7 @@ test("homepage exposes accessible independent global settings and loads the modu
  assert.match(html,/id="global-currency"/);
  assert.match(html,/id="global-use-suggested"/);
  assert.ok(html.indexOf('src="global-context.js"')<html.indexOf('src="app.js"'));
- assert.match(html,/Monetary tools display and interpret entered amounts in this currency/);assert.match(html,/Tax-profile and US-specific retirement tools retain their required currencies/);
+ assert.match(html,/Currency follows the selected country while automatic mode is active/);assert.match(html,/Monetary tools display and interpret entered amounts in this currency/);assert.match(html,/Tax-profile and US-specific retirement tools retain their required currencies/);
 });
 
 test("syntax and GitHub Pages packaging include the global context module",()=>{
