@@ -115,3 +115,14 @@ Upgrade the existing 220-tool application with (1) seven-locale UI and tool-cont
 - Numeric parser test correction history: `599912c77fb871766ade3df84c039d29c0a6da95` fixed Math & Statistics browser-default locale parsing; `f52351ac1d6bc6142aaf864039be0912a06285c1` added per-tool display-locale selection; `92472c0834d769f531191e01ef0f4cbdafb1e113` corrected the test-file newline syntax defect. All final gates passed on the final commit above.
 - **Batch L1: COMPLETE (technical QA / Draft only).** The 48 #53–60 translation records remain `draft`; no locale is activated, approved, or published. Native-language editorial review remains outstanding.
 - Batch 2 may now resume at tool #61, subject to the existing source/schema and formula-integrity checks. No merge or production deployment is authorized.
+
+
+## Localization Batch 2 source extraction start — 2026-11-28 06:41 UTC
+
+- Began Batch 2 at catalogue tools #61–70 after Batch L1 technical gate acceptance.
+- Source extraction commit on PR #73: `2809c2098f141b4f4ce7ecf35cf7f6fa58660c56`.
+- Added complete English source records for all 10 tools from `math-tools.js`, `math-core.js`, and the existing guide/formula map; added audit note `docs/BATCH_61_70_SOURCE_EXTRACTION_AUDIT_2026-11-28.md`.
+- Source fields include metadata, input keys/labels, result headings/metrics/breakdowns, formulas and ordered steps, assumptions/limitations, notes/disclaimers, FAQs, SEO, error recovery, accessibility and guide content. Six locale records per tool remain `not-started`: 60/60 empty.
+- No calculation/runtime files, numeric defaults, formulas, input-domain metadata, IDs or routes were modified. This is editorial source extraction only.
+- Source-extraction commit triggered latest-head Finance CI `46117727460` (#1083) and Lighthouse/CLS `46117727360` (#728); both were still running at tracker update time. Browser/source-specific verification is pending.
+- Next: complete exact-head CI/Lighthouse, add or run explicit #61–70 source-to-runtime parity checks, then create six-locale Drafts only after source gate passes. No merge or deployment.
