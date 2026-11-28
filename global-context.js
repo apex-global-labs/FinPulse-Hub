@@ -21,7 +21,7 @@ function update(patch){state=normalize({...state,...patch});persist();publish();
 function getCountry(code){return getCountries().find(x=>x.code===code)||null}
 function suggestedCurrency(code){const c=getCountry(code);return c?c.primaryCurrency:null}
 function useSuggestedCurrency(){const code=suggestedCurrency(state.countryCode);if(!code)return get();return update({currencyCode:code,currencyMode:"suggested"})}
-function setCountry(countryCode){return update({countryCode})}
+function setCountry(countryCode){const suggestion=suggestedCurrency(countryCode);return update({countryCode,...(suggestion?{currencyCode:suggestion,currencyMode:"suggested"}:{})})}
 function setLocale(locale){return update({locale})}
 function setCurrency(currencyCode){return update({currencyCode,currencyMode:"manual"})}
 function setMeasurementSystem(measurementSystem){return update({measurementSystem})}
