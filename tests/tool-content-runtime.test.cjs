@@ -69,7 +69,7 @@ test("all first-ten locale records satisfy the runtime completeness contract whe
   }
  }
 });
-test("app waits for translation data and uses runtime fields for tool pages, formulas and results",()=>{
+test("English routes render without waiting for unapproved tool-content translations while other locales retain lazy loading",()=>{
  const fs=require("node:fs"),path=require("node:path"),root=path.join(__dirname,"..");
  const app=fs.readFileSync(path.join(root,"app.js"),"utf8");
  const html=fs.readFileSync(path.join(root,"index.html"),"utf8");
@@ -77,6 +77,10 @@ test("app waits for translation data and uses runtime fields for tool pages, for
  assert.ok(app.includes("FinPulseToolRuntime?.localizeDefinition(source,requestedLocale)"));
  assert.ok(app.includes("translated.metrics[index]?.label"));
  assert.ok(app.includes("translated?.steps||spec[1]"));
- assert.ok(app.includes("FinPulseToolRuntime?.load()"));
+ assert.ok(app.includes('function ensureLocaleData(locale){if(locale==="en")return Promise.resolve()'));
+ assert.ok(app.includes("ensureLocaleData(locale).then(()=>rerenderCurrentTool(d))"),"switching to a non-English locale must load translation data before rerendering");
+ assert.ok(app.includes("ensureLocaleData(initialLocale).then(()=>list())"),"initial route rendering should not wait for the directory mapping fetch");
+ assert.ok(app.includes('loadDirectoryMapping().then(()=>renderDirectory($("#search").value))'),"directory mapping should load independently from tool rendering");
+ assert.ok(app.includes("FinPulseToolRuntime?.load()"),"non-English locales must retain lazy tool-content loading");
  assert.ok(app.includes("escapeHtml(m[0])")&&app.includes("escapeHtml(m[1])"),"translated metric labels and values must be rendered as text");
 });
