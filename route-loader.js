@@ -55,6 +55,7 @@
   const scripts = mathBatchRoutes.has(requestedTool) ? mathScripts : fullScripts;
 
   if (mathBatchRoutes.has(requestedTool)) {
+    document.documentElement.classList.add("math-batch-route");
     const app = document.querySelector("#app");
     const meta = mathRouteMeta[requestedTool];
     if (app) {
