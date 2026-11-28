@@ -13,9 +13,6 @@
   ]);
 
   const mathScripts = [
-    "finance-core.js",
-    "math-core.js",
-    "math-tools.js",
     "advanced-math-core.js",
     "advanced-math-tools.js",
     "smart-ui.js",
