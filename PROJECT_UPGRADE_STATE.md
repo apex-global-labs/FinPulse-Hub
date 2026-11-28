@@ -83,3 +83,14 @@ Upgrade the existing 220-tool application with (1) seven-locale UI and tool-cont
 - Latest PR #73 head: `599912c77fb871766ade3df84c039d29c0a6da95`. New Finance CI run `46115994932` (#1076) and Lighthouse/CLS run `46115994929` (#721) are running on this exact head. Do not infer pass from the previous run.
 - Lighthouse/CLS run `46115532274` (#718) passed: mobile/desktop homepage and final tool route audits, CLS enforcement, and report upload all succeeded.
 - L1 remains **IN PROGRESS / NOT RELEASE-ACCEPTED** until the latest-head Finance CI and Lighthouse/CLS complete and all seven-locale browser, RTL/LTR, accessibility and numeric parity checks pass. No merge or deployment.
+
+
+## Latest-head browser parity diagnosis — 2026-11-28 06:25 UTC
+
+- Finance CI run `46115994932` completed **failure** on PR #73 head `599912c77fb871766ade3df84c039d29c0a6da95`. `npm run check`, `npm test`, and Frankfurter API passed; browser tests were **34 passed, 20 failed / 54 total**. Functional audit artifact uploaded successfully.
+- The previous three Russian numeric-parsing failures in Math & Statistics tools are now **passing**: `significant-figures`, `scientific-notation`, and `exponent`.
+- The remaining 19 child failures were on the first tested locale (Arabic) across app.js finance/Overtime tools. Example: `freelance / ar` expected five numeric values but parser returned five nulls. Source inspection confirms a mixed formatting contract: app.js uses `FinPulseGlobalContext.formatNumber/formatMoney` and therefore renders selected-locale digits/separators; Math & Statistics `math-tools.js` uses `Intl.NumberFormat(undefined)` and retains browser-default formatting. A single parser locale is incorrect for both groups.
+- Test-only correction committed on PR #73: `f52351ac1d6bc6142aaf864039be0912a06285c1`. The browser snapshot now selects the UI locale for app.js finance/Overtime tools and the browser-resolved locale for the 15 Math & Statistics tools. No runtime, calculation, formula, translation, or numeric defaults were changed.
+- New latest-head Finance CI run: `46116447943` (#1078). New candidate Lighthouse/CLS run: `46116447957` (#723). Both are running on exact head `f52351ac1d6bc6142aaf864039be0912a06285c1`.
+- The prior latest-head Lighthouse/CLS run `46115994929` (#721) completed successfully: all four mobile/desktop homepage/tool audits passed the CLS ≤ 0.10 budget. Scores: mobile home P95/A96/SEO100, mobile tool P81/A100/SEO100, desktop home P100/A100/SEO100, desktop tool P98/A100/SEO100. CLS values: 0.00011, 0.03039, 0, 0.00868 respectively. Mobile tool LCP was 5.13 s and remains a performance improvement opportunity.
+- Batch L1 remains **IN PROGRESS / NOT RELEASE-ACCEPTED** until Finance CI #1078 completes with all browser tests green and all seven-locale RTL/LTR, accessibility and numerical-parity assertions pass. No Batch 2, merge, or deployment.
