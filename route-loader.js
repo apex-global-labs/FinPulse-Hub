@@ -2,15 +2,16 @@
   "use strict";
 
   const requestedTool = new URLSearchParams(window.location.search).get("tool");
-  const mathBatchRoutes = new Set([
-    "linear-equation",
-    "quadratic-equation",
-    "simultaneous-equations",
-    "polynomial-calculator",
-    "logarithm",
-    "matrix-operations",
-    "matrix-determinant"
-  ]);
+  const mathRouteMeta = {
+    "linear-equation": { title: "Linear Equation Solver", description: "Solve ax + b = 0." },
+    "quadratic-equation": { title: "Quadratic Equation Solver", description: "Find real or complex roots of ax² + bx + c = 0." },
+    "simultaneous-equations": { title: "Simultaneous Equations Solver", description: "Solve two linear equations with two unknowns." },
+    "polynomial-calculator": { title: "Polynomial Calculator", description: "Evaluate a cubic-or-lower polynomial and its derivative." },
+    "logarithm": { title: "Logarithm Calculator", description: "Calculate a logarithm for a positive value and valid base." },
+    "matrix-operations": { title: "Matrix Operations Calculator", description: "Add, subtract or multiply two 2×2 matrices." },
+    "matrix-determinant": { title: "Matrix Determinant Calculator", description: "Calculate the determinant of a 2×2 matrix." }
+  };
+  const mathBatchRoutes = new Set(Object.keys(mathRouteMeta));
 
   const mathScripts = [
     "advanced-math-core.js",
@@ -52,6 +53,15 @@
   ];
 
   const scripts = mathBatchRoutes.has(requestedTool) ? mathScripts : fullScripts;
+
+  if (mathBatchRoutes.has(requestedTool)) {
+    const app = document.querySelector("#app");
+    const meta = mathRouteMeta[requestedTool];
+    if (app) {
+      app.innerHTML = '<div class="tool-page-layout" data-route-placeholder="true" aria-hidden="true"><div class="tool-primary-column"><div class="heading"><div><div class="kicker">MATH &amp; STATISTICS</div><h2>' + meta.title + '</h2><p>' + meta.description + '</p></div></div></div></div>';
+    }
+  }
+
   const pending = [];
 
   for (const src of scripts) {
