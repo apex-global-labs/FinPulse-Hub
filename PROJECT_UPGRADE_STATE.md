@@ -1,6 +1,6 @@
 # FinPulse Hub — Project Upgrade State
 
-**Last updated:** 2026-11-28 05:00 UTC  
+**Last updated:** 2026-11-28 05:12 UTC  
 **Repository:** apex-global-labs/FinPulse-Hub  
 **Production branch:** main  
 **Baseline main:** 240256f65f6cd69a154f1f81330d8f1002ef01d7  
@@ -34,23 +34,23 @@ Upgrade the existing 220-tool application with (1) seven-locale UI and tool-cont
 - PR: #77 — `feat/country-currency-tax-holiday-linkage-2026-11-28`
 - Base: main baseline above.
 - Resume point: `tests/global-currency-integration.test.cjs`, test "country context selects only supported existing tax profiles and leaves unsupported countries manual".
-- Evidence: Finance CI run 46109137877 failed at test #163. The test expected the user-facing phrase "No mapped tax profile is available"; current app copy used "No exact tax profile is mapped". The candidate has been changed to align the copy with the contract. Next: re-run Finance CI and Lighthouse/CLS on the new exact head, inspect all remaining failures, then browser-test Country → Currency, Tax Profile, Holiday fetch/fallback, manual override and stale-request behavior.
+- Evidence: original Finance CI run 46109137877 failed at test #163 due fallback copy mismatch. App copy was aligned. Re-run `46110215731` passed `npm run check`, `npm test`, Frankfurter API and Lighthouse/CLS but failed the 220-tool Browser audit because its generic fixture did not choose a tax profile for Income Tax/Salary. The fixture now explicitly selects a supported profile; latest head `feffe7654ba9020960d6c739cbbdad999d693062` has Finance CI `46110910866` and Lighthouse `46110910908` running. Next: inspect latest browser result and verify country-driven selection, holiday fallback and manual override.
 - No merge/deploy.
 
 ### Workstream B — Localization, Batch L1
 - PR: #73 — `feat/seven-language-translation-engine-phase-1`
-- Resume point: tool #53, `percentage-change`, source `math-tools.js`.
+- Resume point: tool #53, `percentage-change`, source `math-tools.js`. **Batch 1 Draft commit:** `274474d3a6247b25d92fdda942d4bf7f5b2a1b3e` (follow-up test commits: `38f4475caeadc2d01b0c8fce6f5340b71a45243b`, `56532b40847465feeece108415425aacbf325511`).
 - Batch 1 scope: #53–60 (8 tools × 6 target locales = 48 locale records): Percentage Change, Percent Error, Rounding, Significant Figures, Scientific Notation, Exponent, Square Root, Cube Root.
 - Source/schema readiness audit exists at `docs/BATCH_51_60_SOURCE_SCHEMA_READINESS_AUDIT_2026-11-27.md`; all ten source records #51–60 are complete and stable-keyed. #53–60 locale records were previously Not Started.
 - Required fields: metadata, inputs/options, actions, results, explanations, errors, FAQs, guide, SEO, accessibility. Preserve exact stable keys, placeholders (notably `{field}`), formula semantics, numeric constraints and source step counts.
 - Status remains Draft; no translation activation.
-- After Batch 1: validate JSON/schema completeness, exact key parity, placeholder parity, protected formula/numeric content, source calculation parity, seven-locale browser/RTL/LTR and accessibility tests, then latest-head Finance CI and Lighthouse/CLS.
+- Draft creation: 8 tools × 6 locales = 48 Draft records committed in `274474d3a6247b25d92fdda942d4bf7f5b2a1b3e`. Formula descriptions remain byte-for-byte equal to source; stable input/metric/breakdown/FAQ/error/guide/accessibility keys and `{field}` token parity have explicit test coverage. `npm run check` and `npm test` passed on latest PR #73 head `56532b40847465feeece108415425aacbf325511`; Finance CI `46110895589` and Lighthouse `46110895584` are running. Browser test now includes all eight Batch 1 tools in all six target locales. Draft translations are AI-generated and still require native-language review; they are not approved/published. Next: inspect browser, RTL/LTR, accessibility and numeric parity results.
 
 ## Batch progress
 | Batch | Scope | Status |
 |---|---|---|
-| C1 | Fix PR #77 test #163 and revalidate country integration | In progress |
-| L1 | #53–60, 48 locale Draft records | Not started |
+| C1 | Fix PR #77 test #163 and revalidate country integration | Browser regression re-run in progress; first re-run exposed test-fixture omission for tax-profile selection; fixture now selects a supported profile |
+| L1 | #53–60, 48 locale Draft records | Draft records created; stable-key/token/formula checks added; Finance CI unit suite passed; seven-locale Browser regression in progress |
 | Next | #61 onward, fixed inventory order | Blocked until L1 verification |
 
 ## Release and safety gates
