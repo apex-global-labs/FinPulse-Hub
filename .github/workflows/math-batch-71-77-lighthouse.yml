@@ -10,14 +10,12 @@ permissions:
 jobs:
   mobile-math-routes:
     runs-on: ubuntu-24.04
-    timeout-minutes: 20
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
-      - run: npm ci
       - name: Install Chromium and Lighthouse
         run: |
           npm install --no-save playwright@1.56.1 lighthouse@12.8.2
@@ -41,7 +39,7 @@ jobs:
           routes=(linear-equation quadratic-equation simultaneous-equations polynomial-calculator logarithm matrix-operations matrix-determinant)
           for route in "${routes[@]}"; do
             echo "Auditing $route"
-            npx lighthouse "http://127.0.0.1:4173/#/tools/$route" \
+            npx lighthouse "http://127.0.0.1:4173/?tool=$route#tools" \
               --chrome-path="$CHROME_PATH" \
               --only-categories=performance,accessibility,seo \
               --form-factor=mobile \
@@ -68,14 +66,19 @@ jobs:
               performance: Math.round(report.categories.performance.score * 100),
               accessibility: Math.round(report.categories.accessibility.score * 100),
               seo: Math.round(report.categories.seo.score * 100),
-              lcp_ms: a['largest-contentful-paint'].numericValue,
-              cls: a['cumulative-layout-shift'].numericValue,
-              lcp_element: a['largest-contentful-paint-element']?.details?.items?.[0]?.node?.snippet || ''
+              lcp_ms: a['largest-contentful-paint']?.numericValue ?? null,
+              cls: a['cumulative-layout-shift']?.numericValue ?? null,
+              tbt_ms: a['total-blocking-time']?.numericValue ?? null,
+              lcp_element: a['largest-contentful-paint-element']?.details?.items?.[0]?.node?.nodeLabel || '',
+              lcp_phases: a['largest-contentful-paint-element']?.details?.items?.[1]?.items || []
             };
           });
           fs.writeFileSync(path + '/summary.json', JSON.stringify(rows, null, 2));
           console.log(JSON.stringify(rows, null, 2));
-          if (rows.length !== 7) process.exitCode = 1;
+          if (rows.length !== 7) {
+            console.error('Expected 7 route reports; received ' + rows.length);
+            process.exitCode = 1;
+          }
           NODE
       - uses: actions/upload-artifact@v4
         if: always()
