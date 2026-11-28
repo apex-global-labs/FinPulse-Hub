@@ -60,6 +60,7 @@ const expectedFullScripts = [
 
 function loadedScripts(search) {
   const appended = [];
+  const appElement = { innerHTML: "" };
   const document = {
     createElement() {
       return { dataset: {} };
@@ -70,8 +71,8 @@ function loadedScripts(search) {
         script.onload();
       }
     },
-    querySelector() {
-      return null;
+    querySelector(selector) {
+      return selector === "#app" ? appElement : null;
     }
   };
   const context = {
@@ -82,19 +83,31 @@ function loadedScripts(search) {
     console
   };
   vm.runInNewContext(loader, context);
-  return appended;
+  return { scripts: appended, placeholder: appElement.innerHTML };
 }
 
 test("Math routes load only the math engines and shared runtime in dependency order", () => {
   for (const route of mathRoutes) {
-    assert.deepEqual(loadedScripts("?tool=" + route), expectedMathScripts, route);
+    const result = loadedScripts("?tool=" + route);
+    assert.deepEqual(result.scripts, expectedMathScripts, route);
+    const expectedTitle = {
+      "linear-equation": "Linear Equation Solver",
+      "quadratic-equation": "Quadratic Equation Solver",
+      "simultaneous-equations": "Simultaneous Equations Solver",
+      "polynomial-calculator": "Polynomial Calculator",
+      "logarithm": "Logarithm Calculator",
+      "matrix-operations": "Matrix Operations Calculator",
+      "matrix-determinant": "Matrix Determinant Calculator"
+    }[route];
+    assert.ok(result.placeholder.includes("<h2>" + expectedTitle + "</h2>"), route + " should pre-render its LCP heading");
+    assert.ok(result.placeholder.includes('aria-hidden="true"'), route + " placeholder must not duplicate accessible content");
   }
 });
 
 test("homepage and non-Math routes retain the complete legacy script set and order", () => {
-  assert.deepEqual(loadedScripts(""), expectedFullScripts);
-  assert.deepEqual(loadedScripts("?tool=triangle-area"), expectedFullScripts);
-  assert.deepEqual(loadedScripts("?tool=mortgage"), expectedFullScripts);
+  assert.deepEqual(loadedScripts("").scripts, expectedFullScripts);
+  assert.deepEqual(loadedScripts("?tool=triangle-area").scripts, expectedFullScripts);
+  assert.deepEqual(loadedScripts("?tool=mortgage").scripts, expectedFullScripts);
 });
 
 test("dynamic scripts are ordered and the HTML uses the route loader", () => {
