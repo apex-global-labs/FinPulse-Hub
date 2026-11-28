@@ -539,3 +539,26 @@ test("Batch 31-40 translations satisfy source-backed field-group completeness in
   }
  }
 });
+
+test("Batch 1 #53-60 drafts preserve all stable keys, placeholders, formulas and locale field groups",()=>{
+ const ids=["percentage-change","percent-error","rounding","significant-figures","scientific-notation","exponent","square-root","cube-root"];
+ const tokenCount=(value,token)=>String(value??"").split(token).length-1;
+ const flatten=value=>typeof value==="string"?[value]:Array.isArray(value)?value.flatMap(flatten):value&&typeof value==="object"?Object.values(value).flatMap(flatten):[];
+ for(const id of ids){
+  const tool=content.tools.find(x=>x.id===id),source=tool.source;
+  assert.equal(tool.sourceTranslationStatus,"draft",id+" source stays draft");
+  for(const locale of locales){
+   const record=tool.locales[locale],fields=record.fields;
+   assert.equal(record.status,"draft",id+"/"+locale+" remains inactive");
+   assert.equal(Object.keys(fields).length,10,id+"/"+locale+" has all ten field groups");
+   for(const group of ["inputs","results.metrics","results.breakdown","faqs","errors","guide.steps","guide.sections","accessibility.controlLabels"]){
+    const get=(o,p)=>p.split(".").reduce((v,k)=>v?.[k],o);
+    assert.deepEqual(get(fields,group).map(x=>x.key),get(source,group).map(x=>x.key),id+"/"+locale+" "+group+" stable key parity");
+   }
+   assert.equal(fields.explanations.formulaDescription,source.explanations.formula,id+"/"+locale+" formula text unchanged");
+   assert.deepEqual(fields.explanations.steps.map((_,i)=>i),source.explanations.steps.map((_,i)=>i),id+"/"+locale+" formula step count");
+   assert.equal(tokenCount(flatten(fields).join(" "),"{field}"),source.errors.reduce((n,e)=>n+tokenCount(e.message,"{field}"),0),id+"/"+locale+" placeholder token parity");
+   for(const group of ["metadata","inputs","actions","results","explanations","errors","faqs","guide","seo","accessibility"])assert.ok(fields[group],id+"/"+locale+" "+group+" complete");
+  }
+ }
+});
