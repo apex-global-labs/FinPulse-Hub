@@ -74,7 +74,7 @@ async function accessibilityAudit(page,id,locale){
   for(const id of new Set(ids))if(ids.filter(x=>x===id).length>1)issues.push("duplicate id: "+id);
   for(const el of document.querySelectorAll("[aria-labelledby],[aria-describedby]")){
    for(const attr of ["aria-labelledby","aria-describedby"]){
-    const refs=(el.getAttribute(attr)||"").split(/\\s+/).filter(Boolean);
+    const refs=(el.getAttribute(attr)||"").split(/\s+/).filter(Boolean);
     for(const ref of refs)if(!document.getElementById(ref))issues.push(attr+" references missing id: "+ref);
    }
   }
