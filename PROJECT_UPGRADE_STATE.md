@@ -1,6 +1,6 @@
 # FinPulse Hub — Project Upgrade State
 
-**Last updated:** 2026-11-28 05:12 UTC  
+**Last updated:** 2026-11-28 05:17 UTC  
 **Repository:** apex-global-labs/FinPulse-Hub  
 **Production branch:** main  
 **Baseline main:** 240256f65f6cd69a154f1f81330d8f1002ef01d7  
@@ -34,7 +34,7 @@ Upgrade the existing 220-tool application with (1) seven-locale UI and tool-cont
 - PR: #77 — `feat/country-currency-tax-holiday-linkage-2026-11-28`
 - Base: main baseline above.
 - Resume point: `tests/global-currency-integration.test.cjs`, test "country context selects only supported existing tax profiles and leaves unsupported countries manual".
-- Evidence: original Finance CI run 46109137877 failed at test #163 due fallback copy mismatch. App copy was aligned. Re-run `46110215731` passed `npm run check`, `npm test`, Frankfurter API and Lighthouse/CLS but failed the 220-tool Browser audit because its generic fixture did not choose a tax profile for Income Tax/Salary. The fixture now explicitly selects a supported profile; latest head `feffe7654ba9020960d6c739cbbdad999d693062` has Finance CI `46110910866` and Lighthouse `46110910908` running. Next: inspect latest browser result and verify country-driven selection, holiday fallback and manual override.
+- Evidence: original Finance CI run 46109137877 failed at test #163 due fallback copy mismatch. App copy was aligned. Re-run `46110215731` passed `npm run check`, `npm test`, Frankfurter API and Lighthouse/CLS but exposed a functional-audit fixture omission: it did not choose a tax profile for Income Tax/Salary. The fixture now explicitly selects a supported profile. Latest head `feffe7654ba9020960d6c739cbbdad999d693062`: Finance CI `46110910866` and Lighthouse `46110910908` both completed successfully. Browser functional audit: 15 tests passed, 0 failed; all 220 tools passed representative calculations at desktop and mobile viewports (440 executions).
 - No merge/deploy.
 
 ### Workstream B — Localization, Batch L1
@@ -49,7 +49,7 @@ Upgrade the existing 220-tool application with (1) seven-locale UI and tool-cont
 ## Batch progress
 | Batch | Scope | Status |
 |---|---|---|
-| C1 | Fix PR #77 test #163 and revalidate country integration | Browser regression re-run in progress; first re-run exposed test-fixture omission for tax-profile selection; fixture now selects a supported profile |
+| C1 | Fix PR #77 test #163 and revalidate country integration | Complete on candidate head `feffe765`; Finance CI + Lighthouse green; 15 browser audit tests passed, 0 failed; 220 tools × 2 viewports = 440 successful executions |
 | L1 | #53–60, 48 locale Draft records | Draft records created; stable-key/token/formula checks added; Finance CI unit suite passed; seven-locale Browser regression in progress |
 | Next | #61 onward, fixed inventory order | Blocked until L1 verification |
 
