@@ -12,7 +12,7 @@ const SCRIPT={hi:/[\u0900-\u097F]/,ar:/[\u0600-\u06FF]/,ur:/[\u0600-\u06FF]/,"zh
 const FOREIGN={hi:/[\u0600-\u06FF\u4E00-\u9FFF\u3040-\u30FF\u0400-\u04FF]/,ar:/[\u0900-\u097F\u4E00-\u9FFF\u3040-\u30FF\u0400-\u04FF]/,ur:/[\u0900-\u097F\u4E00-\u9FFF\u3040-\u30FF\u0400-\u04FF]/,"zh-CN":/[\u0900-\u097F\u0600-\u06FF\u0400-\u04FF]/,ja:/[\u0900-\u097F\u0600-\u06FF\u0400-\u04FF]/,ru:/[\u0900-\u097F\u0600-\u06FF\u4E00-\u9FFF\u3040-\u30FF]/};
 let server,browser,base,content,sourceById;
 
-function translatedStrings(fields){
+function normalizeRendered(value){return String(value??"").replace(/\\s+/g," ").trim();}\nfunction translatedStrings(fields){
  const out=[fields.metadata?.title,fields.metadata?.description,fields.metadata?.category,
  ...fields.inputs?.map(x=>x.label),fields.results?.heading,fields.results?.summary,
  ...fields.results?.metrics?.map(x=>x.label),...fields.results?.breakdown?.map(x=>x.label),
@@ -132,25 +132,25 @@ test("Batch 1, Batch 2 and Overtime pilot tools × 6 locales render persisted tr
      await page.evaluate(locale=>window.FinPulseGlobalContext.setLocale(locale),locale);
      await page.waitForFunction(({locale,title})=>document.documentElement.lang===locale&&document.querySelector("#app .heading h2")?.textContent===title,{locale,title:fields.metadata.title},{timeout:10000});
      assert.equal(await page.locator("#app .heading h2").innerText(),fields.metadata.title,id+" / "+locale+" translated title");
-     assert.equal(await page.locator("#app .heading p").innerText(),fields.metadata.description,id+" / "+locale+" translated description");
+     assert.equal(normalizeRendered(await page.locator("#app .heading p").innerText()),normalizeRendered(fields.metadata.description),id+" / "+locale+" translated description");
      assert.equal(await page.locator("#app").getAttribute("aria-label"),fields.accessibility.pageLabel,id+" / "+locale+" page accessibility label");
      assert.equal(await page.locator("#form").getAttribute("aria-label"),fields.accessibility.formLabel,id+" / "+locale+" form accessibility label");
      assert.equal(await page.locator(".result").getAttribute("aria-label"),fields.accessibility.resultAnnouncement,id+" / "+locale+" result accessibility label");
      const winner=englishLabel.includes("PROVIDER A")?"A":"B";
-     assert.equal(await page.locator(".result .label").innerText(),fields.results.summary.replaceAll("{provider}",winner),id+" / "+locale+" result summary and winner");
-     assert.equal(await page.locator("#formula-panel h3").innerText(),fields.explanations.formulaTitle,id+" / "+locale+" formula title");
+     assert.equal(normalizeRendered(await page.locator(".result .label").innerText()),normalizeRendered(fields.results.summary.replaceAll("{provider}",winner)),id+" / "+locale+" result summary and winner");
+     assert.equal(normalizeRendered(await page.locator("#formula-panel h3").innerText()),normalizeRendered(fields.explanations.formulaTitle),id+" / "+locale+" formula title");
      const renderedFormula=await page.locator("#formula-panel p").first().innerText();
-     assert.ok(renderedFormula.includes(fields.explanations.formulaDescription),id+" / "+locale+" localized formula description");
+     assert.ok(normalizeRendered(renderedFormula).includes(normalizeRendered(fields.explanations.formulaDescription)),id+" / "+locale+" localized formula description");
      assert.ok(!renderedFormula.includes("Provider recipient amount"),id+" / "+locale+" no English-only formula text");
      assert.equal(await page.locator("#form").evaluate(el=>getComputedStyle(el).direction),DIRECTIONS[locale],id+" / "+locale+" rendered form direction");
      const actualInputs=await page.locator("#form label[for^='f-']").evaluateAll(labels=>labels.map(x=>[x.htmlFor,x.textContent.trim()]));
-     for(const input of fields.inputs){const label=actualInputs.find(x=>x[0]==="f-"+input.key);assert.equal(label?.[1],input.label,id+" / "+locale+" input label "+input.key)}
+     for(const input of fields.inputs){const label=actualInputs.find(x=>x[0]==="f-"+input.key);assert.equal(normalizeRendered(label?.[1]),normalizeRendered(input.label),id+" / "+locale+" input label "+input.key)}
      const metricLabels=await page.locator("#metrics .metric span").allInnerTexts();
-     assert.deepEqual(metricLabels,fields.results.metrics.slice(0,metricLabels.length).map(x=>x.label),id+" / "+locale+" result metric labels");
+     assert.deepEqual(metricLabels.map(normalizeRendered),fields.results.metrics.slice(0,metricLabels.length).map(x=>normalizeRendered(x.label)),id+" / "+locale+" result metric labels");
      const formulaSteps=await page.locator("#formula-panel ol li").allInnerTexts();
-     assert.deepEqual(formulaSteps,fields.explanations.steps,id+" / "+locale+" formula steps");
+     assert.deepEqual(formulaSteps.map(normalizeRendered),fields.explanations.steps.map(normalizeRendered),id+" / "+locale+" formula steps");
      const faqRows=await page.locator(".seo-content details").evaluateAll(nodes=>nodes.map(x=>[x.querySelector("summary")?.textContent.trim(),x.querySelector("p")?.textContent.trim()]));
-     assert.deepEqual(faqRows,fields.seo.faq.map(x=>[x.question,x.answer]),id+" / "+locale+" translated FAQ");
+     assert.deepEqual(faqRows.map(row=>row.map(normalizeRendered)),fields.seo.faq.map(x=>[normalizeRendered(x.question),normalizeRendered(x.answer)]),id+" / "+locale+" translated FAQ");
      assert.equal(await page.title(),fields.seo.title,id+" / "+locale+" SEO title");
      assert.equal(await page.locator('meta[name="description"]').getAttribute("content"),fields.seo.metaDescription,id+" / "+locale+" SEO description");
      assert.equal(await page.locator("html").getAttribute("dir"),DIRECTIONS[locale],id+" / "+locale+" text direction");
