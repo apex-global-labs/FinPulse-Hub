@@ -31,11 +31,12 @@ test("global country and currency labels are generated only when settings are op
  assert.equal(displayNameConstructions,1);
 });
 
-test("country selection suggests but does not silently change the currency",()=>{
+test("country selection automatically applies the country currency when available",()=>{
  Global.update({countryCode:null,locale:"en",currencyCode:"USD",currencyMode:"manual",measurementSystem:"metric",financialJurisdiction:null});
  Global.setCountry("BD");
  assert.equal(Global.suggestedCurrency("BD"),"BDT");
- assert.equal(Global.get().currencyCode,"USD");
+ assert.equal(Global.get().currencyCode,"BDT");
+ assert.equal(Global.get().currencyMode,"suggested");
  assert.equal(Global.get().countryCode,"BD");
 });
 
@@ -47,7 +48,8 @@ test("user can explicitly apply a country currency suggestion and later override
  assert.equal(Global.get().currencyCode,"EUR");
  assert.equal(Global.get().currencyMode,"manual");
  Global.setCountry("IN");
- assert.equal(Global.get().currencyCode,"EUR");
+ assert.equal(Global.get().currencyCode,"INR");
+ assert.equal(Global.get().currencyMode,"suggested");
 });
 
 test("territories with multiple legal tender currencies preserve alternatives",()=>{
