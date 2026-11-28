@@ -57,6 +57,39 @@ function assertComplete(source,fields,id,locale){
  if(!SCRIPT[locale].test(joined))fail("expected locale script missing");
  if(FOREIGN[locale].test(joined))fail("foreign locale script contamination detected");
 }
+async function accessibilityAudit(page,id,locale){
+ const findings=await page.evaluate(()=>{
+  const issues=[];
+  const visible=el=>!!(el.offsetWidth||el.offsetHeight||el.getClientRects().length);
+  const controls=Array.from(document.querySelectorAll("#form input:not([type=hidden]),#form select,#form textarea")).filter(visible);
+  for(const control of controls){
+   const label=control.id&&document.querySelector('label[for="'+CSS.escape(control.id)+'"]');
+   if(!(label?.textContent.trim()||control.getAttribute("aria-label")||control.getAttribute("aria-labelledby")))issues.push("form control has no accessible name: "+(control.id||control.tagName));
+  }
+  for(const button of Array.from(document.querySelectorAll("button,[role=button]")).filter(visible)){
+   const name=(button.getAttribute("aria-label")||button.getAttribute("title")||button.innerText||"").trim();
+   if(!name)issues.push("button has no accessible name");
+  }
+  const ids=Array.from(document.querySelectorAll("[id]"),el=>el.id);
+  for(const id of new Set(ids))if(ids.filter(x=>x===id).length>1)issues.push("duplicate id: "+id);
+  for(const el of document.querySelectorAll("[aria-labelledby],[aria-describedby]")){
+   for(const attr of ["aria-labelledby","aria-describedby"]){
+    const refs=(el.getAttribute(attr)||"").split(/\\s+/).filter(Boolean);
+    for(const ref of refs)if(!document.getElementById(ref))issues.push(attr+" references missing id: "+ref);
+   }
+  }
+  for(const img of document.querySelectorAll("img"))if(!img.hasAttribute("alt"))issues.push("image missing alt text");
+  if(!document.documentElement.lang)issues.push("document language missing");
+  if(!document.documentElement.dir)issues.push("document direction missing");
+  if(!document.querySelector("#app[aria-label]"))issues.push("page landmark has no accessible label");
+  if(!document.querySelector("#form[aria-label]"))issues.push("form has no accessible label");
+  if(!document.querySelector(".result[aria-label]"))issues.push("result region has no accessible label");
+  const heading=Array.from(document.querySelectorAll("h1,h2,h3")).filter(visible);
+  if(!heading.length)issues.push("no visible heading");
+  return issues;
+ });
+ assert.deepEqual(findings,[],id+" / "+locale+" accessibility audit");
+}
 function numberSnapshot(text,locale){
  const formatLocale=locale==="ar"?"ar-u-nu-arab":locale==="ur"?"ur-u-nu-arabext":locale;
  const digitFormatter=new Intl.NumberFormat(formatLocale,{useGrouping:false});
@@ -130,6 +163,7 @@ test("Batch 1, Batch 2 and Overtime pilot tools × 6 locales render persisted tr
     const english=await snapshot(page,"en",id);
     const englishLabel=await page.locator(".result .label").innerText();
     assert.ok(english.numeric.length>0,id+" baseline calculation output");
+    await accessibilityAudit(page,id,"en");
     for(const locale of LOCALES){
      const fields=tool.locales[locale].fields;
      await page.evaluate(locale=>window.FinPulseGlobalContext.setLocale(locale),locale);
@@ -157,6 +191,7 @@ test("Batch 1, Batch 2 and Overtime pilot tools × 6 locales render persisted tr
      assert.equal(await page.title(),fields.seo.title,id+" / "+locale+" SEO title");
      assert.equal(await page.locator('meta[name="description"]').getAttribute("content"),fields.seo.metaDescription,id+" / "+locale+" SEO description");
      assert.equal(await page.locator("html").getAttribute("dir"),DIRECTIONS[locale],id+" / "+locale+" text direction");
+     await accessibilityAudit(page,id,locale);
      const localized=await snapshot(page,locale,id);
      assert.deepEqual(localized.values,english.values,id+" / "+locale+" numeric/currency input preservation");
      assert.equal(localized.currencyCode,english.currencyCode,id+" / "+locale+" display currency unchanged");
