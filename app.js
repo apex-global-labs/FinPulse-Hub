@@ -75,7 +75,7 @@ const D=[
 ...(window.FinPulseHealthTools?.registry||[]),
 ...(window.FinPulseHealthTools2?.registry||[])
 ];
-if(MATH_BATCH_ROUTE_IDS.has(requestedTool)){const mathTools=D.filter(tool=>tool.c==="Math & Statistics");D.splice(0,D.length,...mathTools)}
+if(MATH_BATCH_ROUTE_IDS.has(requestedTool)){const mathTools=D.filter(tool=>MATH_BATCH_ROUTE_IDS.has(tool.id));D.splice(0,D.length,...mathTools)}
 document.documentElement.classList.add(requestedTool?"tool-route":"home-route");let active=D.some(x=>x.id===requestedTool)?requestedTool:D[0].id,category="All",activeCurrency=window.FinPulseGlobalContext?.get().currencyCode||"USD",currencyRateDate="",currencyRateCache=new Map(),currencyRateRequestController=null,countryPresetNote="",activeChart=null,activeRenderedTool=null,activeRenderLocale=window.FinPulseI18n?.locale||"en";
 const GLOBAL_CURRENCY_TOOL_IDS=new Set(["mortgage","loan","emi","compound","tip","car","amortization","savings","freelance","margin","affordability","payoff","refinance","personal-loan","student-loan","simple-interest","retirement","inflation","cd","apy","tax","sales-tax","vat-gst","tax-refund","paycheck","payroll","overtime","discount","freelance-project","freelancer-net-income","markup","break-even","business-roi","cash-flow","rental-yield","emergency-fund","net-worth"]);
 const LIFESTYLE_CURRENCY_TOOL_IDS=new Set(["fuel-cost-calculator","electricity-bill-estimator","bill-split-calculator","unit-price-comparator","sales-commission-calculator"]);
