@@ -135,9 +135,9 @@ test("every canonical tool has six locale records with correct draft or pending 
     assert.ok(fields.faqs.every(x=>x.question&&x.answer)&&fields.errors.every(x=>x.message&&x.recoveryHint),tool.id+":"+locale+" FAQ and errors");
     for(const error of fields.errors){
      const sourceError=source.errors.find(x=>x.key===error.key);
-     const tokens=value=>(value.match(/\\{[^}]+\\}/g)||[]).sort().join("|");
+     const tokens=value=>(value.match(/\{[^}]+\}/g)||[]).sort().join("|");
      assert.equal(tokens(error.message),tokens(sourceError.message),tool.id+":"+locale+" exact error placeholder tokens "+error.key);
-     const numbers=value=>(value.match(/\\d[\\d,]*(?:\\.\\d+)?/g)||[]).map(x=>Number(x.replace(/,/g,"")));
+     const numbers=value=>(value.match(/\d[\d,]*(?:\.\d+)?/g)||[]).map(x=>Number(x.replace(/,/g,"")));
      assert.deepEqual(numbers(error.message+" "+error.recoveryHint),numbers(sourceError.message+" "+sourceError.recoveryHint),tool.id+":"+locale+" error numeric constraints "+error.key);
     }
     assert.ok(fields.explanations.steps.every(x=>!/(दर्ज किए गए मानों की वैधता|تحقق من صحة القيم المدخلة|درج کردہ اقدار کی درستگی|检查输入值是否有效|入力値が有効で|корректность введённых значений)/.test(x)),tool.id+":"+locale+" no generic non-tool-specific formula steps");
