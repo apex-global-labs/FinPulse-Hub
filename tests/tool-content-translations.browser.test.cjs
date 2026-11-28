@@ -156,7 +156,7 @@ test("Batch 1, Batch 2 and Overtime pilot tools × 6 locales render persisted tr
     await page.goto(base+"?tool="+id);
     await page.locator("#app .heading h2").waitFor();
     await page.waitForFunction(()=>window.FinPulseToolRuntime?.loaded===true);
-    if(MATH_BATCH_SEVEN.has(id))await page.addScriptTag({content:axe.source});
+    if(MATH_BATCH_SEVEN.has(id))await page.addScriptTag({url:base+"/node_modules/axe-core/axe.min.js"});
     if(id==="currency"){
      await page.locator("#f-amount").fill("100");
      await page.locator("#f-fee").fill("2");
