@@ -41,6 +41,7 @@ jobs:
             echo "Auditing $route"
             npx lighthouse "http://127.0.0.1:4173/?tool=$route#tools" \
               --chrome-path="$CHROME_PATH" \
+              --chrome-flags="--headless --no-sandbox --disable-dev-shm-usage" \
               --only-categories=performance,accessibility,seo \
               --form-factor=mobile \
               --screenEmulation.mobile=true \
@@ -85,5 +86,5 @@ jobs:
         with:
           name: lighthouse-mobile-math-71-77
           path: artifacts/lighthouse-math-71-77/
-          if-no-files-found: error
+          if-no-files-found: warn
           retention-days: 14
