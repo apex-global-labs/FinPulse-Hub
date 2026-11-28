@@ -141,7 +141,7 @@ test("Batch 1, Batch 2 and Overtime pilot tools × 6 locales render persisted tr
  for(const id of TOOL_IDS)for(const locale of LOCALES)testContent.tools.find(x=>x.id===id).locales[locale].status="approved";
  server=createServer(async(req,res)=>{
   const path=req.url.split("?")[0].replace(/^\/+/,"")||"index.html";
-  if(path==="translations/tool-content.json"){res.writeHead(200,{"content-type":"application/json; charset=utf-8"});res.end(JSON.stringify(testContent));return;}
+  if(path==="translations/tool-content-status.json"){const approved={};for(const tool of testContent.tools){const locales=Object.entries(tool.locales||{}).filter(([,record])=>["approved","published"].includes(record.status)).map(([locale])=>locale).sort();if(locales.length)approved[tool.id]=locales}res.writeHead(200,{"content-type":"application/json; charset=utf-8"});res.end(JSON.stringify({schemaVersion:1,approved}));return;}if(path==="translations/tool-content.json"){res.writeHead(200,{"content-type":"application/json; charset=utf-8"});res.end(JSON.stringify(testContent));return;}
   try{const data=await readFile(join(process.cwd(),path));res.writeHead(200,{"content-type":path.endsWith(".css")?"text/css":path.endsWith(".js")?"text/javascript":path.endsWith(".json")?"application/json":"text/html"});res.end(data)}
   catch{res.writeHead(404);res.end("not found")}
  });
@@ -155,7 +155,6 @@ test("Batch 1, Batch 2 and Overtime pilot tools × 6 locales render persisted tr
     const tool=sourceById.get(id);
     await page.goto(base+"?tool="+id);
     await page.locator("#app .heading h2").waitFor();
-    await page.waitForFunction(()=>window.FinPulseToolRuntime?.loaded===true);
     if(MATH_BATCH_SEVEN.has(id))await page.addScriptTag({url:base+"/node_modules/axe-core/axe.min.js"});
     if(id==="currency"){
      await page.locator("#f-amount").fill("100");
@@ -175,6 +174,7 @@ test("Batch 1, Batch 2 and Overtime pilot tools × 6 locales render persisted tr
     for(const locale of LOCALES){
      const fields=tool.locales[locale].fields;
      await page.evaluate(locale=>window.FinPulseGlobalContext.setLocale(locale),locale);
+     await page.waitForFunction(()=>window.FinPulseToolRuntime?.loaded===true,{timeout:10000});
      await page.waitForFunction(({locale,title})=>document.documentElement.lang===locale&&document.querySelector("#app .heading h2")?.textContent===title,{locale,title:fields.metadata.title},{timeout:10000});
      assert.equal(await page.locator("#app .heading h2").innerText(),fields.metadata.title,id+" / "+locale+" translated title");
      assert.equal(normalizeRendered(await page.locator("#app .heading p").innerText()),normalizeRendered(fields.metadata.description),id+" / "+locale+" translated description");
