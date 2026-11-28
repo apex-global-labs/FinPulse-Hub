@@ -1,0 +1,182 @@
+{
+  "schemaVersion": 1,
+  "description": "Canonical localization contract for every calculator page. Source English is authoritative; translations are display-only and must never alter calculation logic, IDs, units' canonical symbols, currency codes, tax jurisdiction keys or API payloads.",
+  "supportedLocales": [
+    "en",
+    "hi",
+    "ar",
+    "ur",
+    "zh-CN",
+    "ja",
+    "ru"
+  ],
+  "fieldGroups": {
+    "metadata": [
+      "title",
+      "description",
+      "category",
+      "subcategory"
+    ],
+    "inputs": [
+      "inputs[].label",
+      "inputs[].helpText",
+      "inputs[].placeholder",
+      "inputs[].options[].label",
+      "inputs[].validationMessage"
+    ],
+    "actions": [
+      "actions.calculate",
+      "actions.recalculate",
+      "actions.clear",
+      "actions.reset",
+      "actions.copy",
+      "actions.download",
+      "actions.print"
+    ],
+    "results": [
+      "results.heading",
+      "results.summary",
+      "results.metrics[].label",
+      "results.breakdown[].label",
+      "results.chart.title",
+      "results.chart.series[].label"
+    ],
+    "explanations": [
+      "explanations.formulaTitle",
+      "explanations.formulaDescription",
+      "explanations.steps[]",
+      "explanations.assumptions[]",
+      "explanations.notes[]",
+      "explanations.disclaimers[]",
+      "explanations.limitations[]"
+    ],
+    "errors": [
+      "errors[].message",
+      "errors[].recoveryHint"
+    ],
+    "faq": [
+      "faqs[].question",
+      "faqs[].answer"
+    ],
+    "guide": [
+      "guide.title",
+      "guide.introduction",
+      "guide.steps[].title",
+      "guide.steps[].body",
+      "guide.sections[].heading",
+      "guide.sections[].body"
+    ],
+    "seo": [
+      "seo.title",
+      "seo.metaDescription",
+      "seo.h1",
+      "seo.introduction",
+      "seo.faq[].question",
+      "seo.faq[].answer"
+    ],
+    "accessibility": [
+      "accessibility.pageLabel",
+      "accessibility.formLabel",
+      "accessibility.resultAnnouncement",
+      "accessibility.chartLabel",
+      "accessibility.controlLabels"
+    ]
+  },
+  "fieldRules": {
+    "stableKeys": "Every repeated input, option, metric, breakdown, error, FAQ and guide section has a stable source key; never use translated text as an identifier.",
+    "preserveTokens": [
+      "{value}",
+      "{currencyCode}",
+      "{unitSymbol}",
+      "{rateDate}",
+      "{jurisdictionName}",
+      "{count}",
+      "{provider}"
+    ],
+    "preserveTechnicalValues": [
+      "tool IDs",
+      "URL slugs",
+      "ISO currency codes",
+      "tax jurisdiction codes",
+      "mathematical formulas",
+      "numeric constants",
+      "API field names",
+      "canonical unit symbols"
+    ],
+    "htmlPolicy": "Prefer plain text. If rich text is required, allow only explicitly reviewed safe markup; never inject translated HTML with innerHTML.",
+    "direction": "Set document direction from locale. Keep formulas, numeric inputs, currency codes and LTR identifiers isolated where appropriate.",
+    "fallback": "If a translation is absent or not approved, display the English source string.",
+    "approval": "A locale field may be published only after linguistic review and domain review where finance, tax, health, law or safety meaning is involved."
+  },
+  "statuses": [
+    "not-started",
+    "draft",
+    "ai-reviewed-native-review-pending",
+    "linguistic-reviewed",
+    "domain-reviewed",
+    "approved",
+    "published"
+  ],
+  "localeRecord": {
+    "status": "not-started",
+    "fields": {
+      "metadata": {
+        "title": null,
+        "description": null,
+        "category": null,
+        "subcategory": null
+      },
+      "inputs": [],
+      "actions": {
+        "calculate": null,
+        "recalculate": null,
+        "clear": null,
+        "reset": null,
+        "copy": null,
+        "download": null,
+        "print": null
+      },
+      "results": {
+        "heading": null,
+        "summary": null,
+        "metrics": [],
+        "breakdown": [],
+        "chart": {
+          "title": null,
+          "series": []
+        }
+      },
+      "explanations": {
+        "formulaTitle": null,
+        "formulaDescription": null,
+        "assumptions": [],
+        "notes": [],
+        "disclaimers": [],
+        "limitations": [],
+        "steps": []
+      },
+      "errors": [],
+      "faqs": [],
+      "guide": {
+        "title": null,
+        "introduction": null,
+        "steps": [],
+        "sections": []
+      },
+      "seo": {
+        "title": null,
+        "metaDescription": null,
+        "h1": null,
+        "introduction": null,
+        "faq": []
+      },
+      "accessibility": {
+        "pageLabel": null,
+        "formLabel": null,
+        "resultAnnouncement": null,
+        "chartLabel": null,
+        "controlLabels": []
+      }
+    }
+  }
+}

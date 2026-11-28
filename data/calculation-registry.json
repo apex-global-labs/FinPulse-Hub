@@ -1,0 +1,5040 @@
+{
+  "schemaVersion": 1,
+  "generatedFrom": "translations/tool-catalogue.json",
+  "updatedAt": "2026-11-26",
+  "description": "Evidence-tracked metadata registry. It does not contain executable formulas or replace runtime calculation engines.",
+  "statusVocabulary": [
+    "module-mapped",
+    "function-mapped",
+    "extracted",
+    "parity-verified",
+    "regression-verified"
+  ],
+  "tools": [
+    {
+      "toolId": "currency",
+      "sourceModule": "app.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "mortgage",
+      "sourceModule": "app.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "loan",
+      "sourceModule": "app.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "emi",
+      "sourceModule": "app.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "compound",
+      "sourceModule": "app.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "percentage",
+      "sourceModule": "app.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "tip",
+      "sourceModule": "app.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "car",
+      "sourceModule": "app.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "amortization",
+      "sourceModule": "app.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "savings",
+      "sourceModule": "app.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "freelance",
+      "sourceModule": "app.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "margin",
+      "sourceModule": "app.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "affordability",
+      "sourceModule": "app.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "payoff",
+      "sourceModule": "app.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "refinance",
+      "sourceModule": "app.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "personal-loan",
+      "sourceModule": "app.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "student-loan",
+      "sourceModule": "app.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "simple-interest",
+      "sourceModule": "app.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "retirement",
+      "sourceModule": "app.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "401k",
+      "sourceModule": "app.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "ira",
+      "sourceModule": "app.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "inflation",
+      "sourceModule": "app.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "cd",
+      "sourceModule": "app.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "apy",
+      "sourceModule": "app.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "tax",
+      "sourceModule": "app.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "income-tax",
+      "sourceModule": "app.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "sales-tax",
+      "sourceModule": "app.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "vat-gst",
+      "sourceModule": "app.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "tax-refund",
+      "sourceModule": "app.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "salary",
+      "sourceModule": "app.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "paycheck",
+      "sourceModule": "app.js",
+      "runtimeFunction": "Core.paycheck",
+      "status": "regression-verified",
+      "calculation": {
+        "inputs": [
+          {
+            "key": "hourly",
+            "label": "Hourly pay rate",
+            "type": "number",
+            "defaultValue": 30,
+            "minimum": 0
+          },
+          {
+            "key": "regular",
+            "label": "Regular hours this pay period",
+            "type": "number",
+            "defaultValue": 80,
+            "minimum": 0
+          },
+          {
+            "key": "overtime",
+            "label": "Overtime hours this pay period",
+            "type": "number",
+            "defaultValue": 0,
+            "minimum": 0
+          },
+          {
+            "key": "multiplier",
+            "label": "Overtime pay multiplier",
+            "type": "number",
+            "defaultValue": 1.5,
+            "minimumExclusive": 0
+          },
+          {
+            "key": "bonus",
+            "label": "Bonus / commission this period",
+            "type": "number",
+            "defaultValue": 0,
+            "minimum": 0
+          },
+          {
+            "key": "tax",
+            "label": "Estimated withholding (%)",
+            "type": "percentage",
+            "defaultValue": 18,
+            "minimum": 0,
+            "maximum": 100
+          },
+          {
+            "key": "retirement",
+            "label": "Retirement deduction (%)",
+            "type": "percentage",
+            "defaultValue": 5,
+            "minimum": 0,
+            "maximum": 100
+          },
+          {
+            "key": "benefits",
+            "label": "Benefits / insurance deduction",
+            "type": "number",
+            "defaultValue": 100,
+            "minimum": 0
+          },
+          {
+            "key": "other",
+            "label": "Other deductions",
+            "type": "number",
+            "defaultValue": 25,
+            "minimum": 0
+          }
+        ],
+        "constraints": [
+          "All monetary, hour, bonus, rate and deduction inputs must be finite and nonnegative.",
+          "Overtime multiplier must be positive.",
+          "Tax and retirement percentages must not exceed 100; fixed benefits plus other deductions cannot exceed gross pay."
+        ],
+        "formula": "regularPay=hourlyRate*regularHours; overtimePay=hourlyRate*overtimeHours*overtimeMultiplier; gross=regularPay+overtimePay+bonus; tax=gross*taxRate/100; retirement=gross*retirementRate/100; net=gross-tax-retirement-benefits-other",
+        "dependencies": [],
+        "outputs": [
+          "regularPay",
+          "overtimePay",
+          "bonus",
+          "gross",
+          "tax",
+          "retirement",
+          "benefits",
+          "other",
+          "net",
+          "effectiveDeductions"
+        ],
+        "units": [
+          "Monetary values use the UI-selected currency where applicable; percentages are percentage points; hours and employee counts retain their entered units."
+        ],
+        "precision": "JavaScript Number arithmetic; UI formatting is separate from calculation precision.",
+        "rounding": "No calculation rounding unless explicitly described by the function; UI formatting is separate.",
+        "assumptions": [
+          "One-pay-period estimate; withholding and employment rules vary by location.",
+          "The entered deductions are treated as flat amounts or percentages exactly as supplied."
+        ],
+        "sourceReferences": [
+          "finance-core.js#Core.paycheck",
+          "app.js#paycheck",
+          "tests/formula.test.cjs#Paycheck calculator separates regular, overtime and deductions"
+        ]
+      }
+    },
+    {
+      "toolId": "payroll",
+      "sourceModule": "app.js",
+      "runtimeFunction": "Core.payroll",
+      "status": "regression-verified",
+      "calculation": {
+        "inputs": [
+          {
+            "key": "employees",
+            "label": "Number of employees",
+            "type": "integer",
+            "defaultValue": 8,
+            "minimumExclusive": 0
+          },
+          {
+            "key": "salary",
+            "label": "Average gross monthly pay per employee",
+            "type": "number",
+            "defaultValue": 4000,
+            "minimum": 0
+          },
+          {
+            "key": "tax",
+            "label": "Employer payroll tax / contribution (%)",
+            "type": "percentage",
+            "defaultValue": 7,
+            "minimum": 0,
+            "maximum": 100
+          },
+          {
+            "key": "benefits",
+            "label": "Monthly benefits per employee",
+            "type": "number",
+            "defaultValue": 250,
+            "minimum": 0
+          },
+          {
+            "key": "other",
+            "label": "Other monthly payroll costs",
+            "type": "number",
+            "defaultValue": 500,
+            "minimum": 0
+          }
+        ],
+        "constraints": [
+          "Average monthly gross pay, employer tax rate, benefits and other monthly costs must be finite and nonnegative.",
+          "Employee count must be a positive whole number.",
+          "Employer tax rate cannot exceed 100 percent."
+        ],
+        "formula": "grossMonthly=employees*averageMonthlyGross; employerTaxesMonthly=grossMonthly*employerTaxRate/100; benefitsMonthly=employees*benefitsPerEmployee; totalMonthly=grossMonthly+employerTaxesMonthly+benefitsMonthly+otherMonthlyCosts; totalAnnual=totalMonthly*12",
+        "dependencies": [],
+        "outputs": [
+          "employees",
+          "grossMonthly",
+          "employerTaxesMonthly",
+          "benefitsMonthly",
+          "otherMonthlyCosts",
+          "totalMonthly",
+          "totalAnnual"
+        ],
+        "units": [
+          "Monetary values use the UI-selected currency where applicable; percentages are percentage points; hours and employee counts retain their entered units."
+        ],
+        "precision": "JavaScript Number arithmetic; UI formatting is separate from calculation precision.",
+        "rounding": "No calculation rounding unless explicitly described by the function; UI formatting is separate.",
+        "assumptions": [
+          "Uses average monthly pay and user-entered employer cost assumptions.",
+          "Statutory payroll rules and local contributions are not inferred."
+        ],
+        "sourceReferences": [
+          "finance-core.js#Core.payroll",
+          "app.js#payroll",
+          "tests/formula.test.cjs#Payroll calculator estimates monthly and annual employer costs"
+        ]
+      }
+    },
+    {
+      "toolId": "overtime",
+      "sourceModule": "app.js",
+      "runtimeFunction": "Core.overtimePay",
+      "status": "regression-verified",
+      "calculation": {
+        "inputs": [
+          {
+            "key": "rate",
+            "label": "Hourly pay rate",
+            "type": "number",
+            "defaultValue": 25,
+            "minimum": 0
+          },
+          {
+            "key": "regular",
+            "label": "Regular hours",
+            "type": "number",
+            "defaultValue": 40,
+            "minimum": 0
+          },
+          {
+            "key": "overtime",
+            "label": "Overtime hours",
+            "type": "number",
+            "defaultValue": 8,
+            "minimum": 0
+          },
+          {
+            "key": "multiplier",
+            "label": "Overtime pay multiplier",
+            "type": "number",
+            "defaultValue": 1.5,
+            "minimumExclusive": 0
+          }
+        ],
+        "constraints": [
+          "Hourly rate and hour values must be finite and nonnegative.",
+          "Overtime multiplier must be positive."
+        ],
+        "formula": "regular=hourlyRate*regularHours; overtime=hourlyRate*overtimeHours*multiplier; gross=regular+overtime; totalHours=regularHours+overtimeHours; blendedRate=totalHours?gross/totalHours:0",
+        "dependencies": [],
+        "outputs": [
+          "regular",
+          "overtime",
+          "gross",
+          "totalHours",
+          "blendedRate"
+        ],
+        "units": [
+          "Monetary values use the UI-selected currency where applicable; percentages are percentage points; hours and employee counts retain their entered units."
+        ],
+        "precision": "JavaScript Number arithmetic; UI formatting is separate from calculation precision.",
+        "rounding": "No calculation rounding unless explicitly described by the function; UI formatting is separate.",
+        "assumptions": [
+          "Uses the entered overtime multiplier; legal overtime eligibility is not determined."
+        ],
+        "sourceReferences": [
+          "finance-core.js#Core.overtimePay",
+          "app.js#overtime",
+          "tests/formula.test.cjs#Overtime Pay Calculator"
+        ]
+      }
+    },
+    {
+      "toolId": "discount",
+      "sourceModule": "app.js",
+      "runtimeFunction": "Core.discountCalculator",
+      "status": "regression-verified",
+      "calculation": {
+        "inputs": [
+          {
+            "key": "price",
+            "label": "Original price",
+            "type": "number",
+            "defaultValue": 120,
+            "minimum": 0
+          },
+          {
+            "key": "discount",
+            "label": "First discount (%)",
+            "type": "percentage",
+            "defaultValue": 20,
+            "minimum": 0,
+            "maximum": 100
+          },
+          {
+            "key": "coupon",
+            "label": "Additional coupon (%)",
+            "type": "percentage",
+            "defaultValue": 5,
+            "minimum": 0,
+            "maximum": 100
+          },
+          {
+            "key": "tax",
+            "label": "Estimated sales tax (%)",
+            "type": "percentage",
+            "defaultValue": 8,
+            "minimum": 0,
+            "maximum": 100
+          },
+          {
+            "key": "shipping",
+            "label": "Shipping cost",
+            "type": "number",
+            "defaultValue": 5,
+            "minimum": 0
+          }
+        ],
+        "constraints": [
+          "Price, rates and shipping must be finite and nonnegative.",
+          "Discount, coupon and tax rates cannot exceed 100 percent."
+        ],
+        "formula": "firstDiscount=price*discountPct/100; afterFirst=price-firstDiscount; couponDiscount=afterFirst*couponPct/100; discountedSubtotal=afterFirst-couponDiscount; tax=discountedSubtotal*taxRate/100; total=discountedSubtotal+tax+shipping",
+        "dependencies": [],
+        "outputs": [
+          "originalPrice",
+          "firstDiscount",
+          "couponDiscount",
+          "totalDiscount",
+          "discountedSubtotal",
+          "tax",
+          "shipping",
+          "total",
+          "savings"
+        ],
+        "units": [
+          "Monetary values use the UI-selected currency where applicable; percentages are percentage points; hours and employee counts retain their entered units."
+        ],
+        "precision": "JavaScript Number arithmetic; UI formatting is separate from calculation precision.",
+        "rounding": "No calculation rounding unless explicitly described by the function; UI formatting is separate.",
+        "assumptions": [
+          "Coupon is applied after the first discount; tax is calculated on discounted subtotal; shipping is added after tax.",
+          "Store rules may differ."
+        ],
+        "sourceReferences": [
+          "finance-core.js#Core.discountCalculator",
+          "app.js#discount",
+          "tests/formula.test.cjs#Discount Calculator"
+        ]
+      }
+    },
+    {
+      "toolId": "exchange-fees",
+      "sourceModule": "app.js",
+      "runtimeFunction": "Core.exchangeFeeMarkup",
+      "status": "regression-verified",
+      "calculation": {
+        "inputs": [
+          {
+            "key": "amount",
+            "label": "Amount to send",
+            "type": "number",
+            "defaultValue": 1000,
+            "minimum": 0
+          },
+          {
+            "key": "rate",
+            "label": "Mid-market exchange rate",
+            "type": "number",
+            "defaultValue": 1.08,
+            "minimumExclusive": 0
+          },
+          {
+            "key": "markup",
+            "label": "Exchange-rate markup (%)",
+            "type": "percentage",
+            "defaultValue": 2,
+            "minimum": 0,
+            "maximum": 100
+          },
+          {
+            "key": "fee",
+            "label": "Transfer fee (%)",
+            "type": "percentage",
+            "defaultValue": 1,
+            "minimum": 0,
+            "maximum": 100
+          },
+          {
+            "key": "fixed",
+            "label": "Fixed transfer fee",
+            "type": "number",
+            "defaultValue": 5,
+            "minimum": 0
+          },
+          {
+            "key": "from",
+            "label": "Source currency",
+            "type": "currency",
+            "defaultValue": "USD",
+            "role": "display-only",
+            "runtimeArgument": false
+          },
+          {
+            "key": "to",
+            "label": "Recipient currency",
+            "type": "currency",
+            "defaultValue": "EUR",
+            "role": "display-only",
+            "runtimeArgument": false
+          }
+        ],
+        "constraints": [
+          "Send amount must be finite and nonnegative; mid-market rate must be finite and positive.",
+          "Markup, transfer-fee percentage and fixed fee must be finite and nonnegative.",
+          "Markup and transfer-fee percentages cannot exceed 100; total transfer fee must be less than amount sent unless both are zero."
+        ],
+        "formula": "fee=fixedFee+amount*transferFeePct/100; customerRate=midRate*(1-markupPct/100); convertedAmount=(amount-fee)*customerRate; marketValue=amount*midRate; fxSpreadCost=amount*(midRate-customerRate); totalCost=marketValue-convertedAmount; effectiveRate=amount?convertedAmount/amount:0",
+        "dependencies": [],
+        "outputs": [
+          "amount",
+          "midRate",
+          "customerRate",
+          "fee",
+          "convertedAmount",
+          "marketValue",
+          "fxSpreadCost",
+          "totalCost",
+          "effectiveRate"
+        ],
+        "units": [
+          "Monetary values use the UI-selected currency where applicable; percentages are percentage points; hours and employee counts retain their entered units."
+        ],
+        "precision": "JavaScript Number arithmetic; UI formatting is separate from calculation precision.",
+        "rounding": "No calculation rounding unless explicitly described by the function; UI formatting is separate.",
+        "assumptions": [
+          "Illustrative comparison from entered mid-market rate, markup and transfer fees; provider quotes and recipient-side charges may differ."
+        ],
+        "sourceReferences": [
+          "finance-core.js#Core.exchangeFeeMarkup",
+          "app.js#exchange-fees",
+          "tests/formula.test.cjs#Exchange Fee"
+        ]
+      }
+    },
+    {
+      "toolId": "transfer-compare",
+      "sourceModule": "app.js",
+      "runtimeFunction": "Core.internationalTransferCompare",
+      "status": "regression-verified",
+      "calculation": {
+        "inputs": [
+          {
+            "key": "amount",
+            "label": "Amount to send",
+            "type": "number",
+            "defaultValue": 1000,
+            "minimum": 0
+          },
+          {
+            "key": "rate",
+            "label": "Mid-market exchange rate",
+            "type": "number",
+            "defaultValue": 1.08,
+            "minimumExclusive": 0
+          },
+          {
+            "key": "aFixed",
+            "label": "Provider A fixed fee",
+            "type": "number",
+            "defaultValue": 5,
+            "minimum": 0
+          },
+          {
+            "key": "aFee",
+            "label": "Provider A transfer fee (%)",
+            "type": "percentage",
+            "defaultValue": 1,
+            "minimum": 0,
+            "maximum": 100
+          },
+          {
+            "key": "aMarkup",
+            "label": "Provider A rate markup (%)",
+            "type": "percentage",
+            "defaultValue": 2,
+            "minimum": 0,
+            "maximum": 100
+          },
+          {
+            "key": "bFixed",
+            "label": "Provider B fixed fee",
+            "type": "number",
+            "defaultValue": 2,
+            "minimum": 0
+          },
+          {
+            "key": "bFee",
+            "label": "Provider B transfer fee (%)",
+            "type": "percentage",
+            "defaultValue": 1.5,
+            "minimum": 0,
+            "maximum": 100
+          },
+          {
+            "key": "bMarkup",
+            "label": "Provider B rate markup (%)",
+            "type": "percentage",
+            "defaultValue": 1,
+            "minimum": 0,
+            "maximum": 100
+          },
+          {
+            "key": "from",
+            "label": "Source currency",
+            "type": "currency",
+            "defaultValue": "USD",
+            "role": "display-only",
+            "runtimeArgument": false
+          },
+          {
+            "key": "to",
+            "label": "Recipient currency",
+            "type": "currency",
+            "defaultValue": "EUR",
+            "role": "display-only",
+            "runtimeArgument": false
+          }
+        ],
+        "constraints": [
+          "Both provider fee structures use the same entered amount and mid-market rate.",
+          "Each provider fee structure is validated by exchangeFeeMarkup; amount, rate and fee constraints apply."
+        ],
+        "formula": "providerA=exchangeFeeMarkup(amount,midRate,aMarkup,aPct,aFixed); providerB=exchangeFeeMarkup(amount,midRate,bMarkup,bPct,bFixed); bestProvider=providerA.convertedAmount>=providerB.convertedAmount?'A':'B'; recipientDifference=abs(providerA.convertedAmount-providerB.convertedAmount)",
+        "dependencies": [
+          "exchangeFeeMarkup"
+        ],
+        "outputs": [
+          "providerA",
+          "providerB",
+          "bestProvider",
+          "recipientDifference"
+        ],
+        "units": [
+          "Monetary values use the UI-selected currency where applicable; percentages are percentage points; hours and employee counts retain their entered units."
+        ],
+        "precision": "JavaScript Number arithmetic; UI formatting is separate from calculation precision.",
+        "rounding": "No calculation rounding unless explicitly described by the function; UI formatting is separate.",
+        "assumptions": [
+          "Compares two hypothetical fee structures using one entered mid-market rate; confirm actual provider quotes, delivery time, recipient fees and exchange-rate guarantees."
+        ],
+        "sourceReferences": [
+          "finance-core.js#Core.internationalTransferCompare",
+          "app.js#transfer-compare",
+          "tests/formula.test.cjs#International Money Transfer"
+        ]
+      }
+    },
+    {
+      "toolId": "freelance-project",
+      "sourceModule": "app.js",
+      "runtimeFunction": "Core.freelanceProjectPricing",
+      "status": "regression-verified",
+      "calculation": {
+        "inputs": [
+          {
+            "key": "hours",
+            "label": "Estimated project hours",
+            "type": "number",
+            "defaultValue": 40,
+            "minimum": 0
+          },
+          {
+            "key": "rate",
+            "label": "Hourly billing rate",
+            "type": "number",
+            "defaultValue": 60,
+            "minimumExclusive": 0
+          },
+          {
+            "key": "expenses",
+            "label": "Project expenses",
+            "type": "number",
+            "defaultValue": 500,
+            "minimum": 0
+          },
+          {
+            "key": "contingency",
+            "label": "Contingency allowance (%)",
+            "type": "percentage",
+            "defaultValue": 10,
+            "minimum": 0,
+            "maximum": 100
+          },
+          {
+            "key": "margin",
+            "label": "Target gross margin (%)",
+            "type": "percentage",
+            "defaultValue": 25,
+            "minimum": 0,
+            "maximumExclusive": 90
+          }
+        ],
+        "constraints": [
+          "All inputs must be finite numbers",
+          "Hours, expenses, contingency and margin must be non-negative",
+          "Hourly rate must be greater than zero",
+          "Contingency must be at most 100%",
+          "Target gross margin must be below 90%"
+        ],
+        "formula": "labor=hours*hourlyRate; baseCost=labor+expenses; contingency=baseCost*contingencyPct/100; totalCost=baseCost+contingency; quotedPrice=totalCost/(1-targetMarginPct/100); profit=quotedPrice-totalCost",
+        "dependencies": [],
+        "outputs": [
+          "labor",
+          "baseCost",
+          "contingency",
+          "totalCost",
+          "quotedPrice",
+          "profit",
+          "targetMarginPct"
+        ],
+        "units": [
+          "hours",
+          "currency",
+          "percent"
+        ],
+        "precision": "JavaScript Number floating-point; no explicit rounding in calculation core",
+        "rounding": "No rounding in core; display formatting is handled by the UI",
+        "assumptions": [
+          "Contingency applies to labor plus expenses",
+          "Gross margin is profit divided by quoted price",
+          "Tax, payment fees, scope changes and market-rate validation are excluded"
+        ],
+        "sourceReferences": [
+          "app.js tool registration: freelance-project",
+          "finance-core.js function freelanceProjectPricing"
+        ]
+      }
+    },
+    {
+      "toolId": "freelancer-net-income",
+      "sourceModule": "app.js",
+      "runtimeFunction": "Core.freelancerNetIncome",
+      "status": "regression-verified",
+      "calculation": {
+        "inputs": [
+          {
+            "key": "revenue",
+            "label": "Gross freelance revenue",
+            "type": "number",
+            "defaultValue": 60000,
+            "minimum": 0
+          },
+          {
+            "key": "expenses",
+            "label": "Annual business expenses",
+            "type": "number",
+            "defaultValue": 12000,
+            "minimum": 0
+          },
+          {
+            "key": "tax",
+            "label": "Estimated tax reserve (%)",
+            "type": "percentage",
+            "defaultValue": 20,
+            "minimum": 0,
+            "maximum": 100
+          }
+        ],
+        "constraints": [
+          "All inputs must be finite and non-negative",
+          "Expenses cannot exceed revenue",
+          "Tax reserve must be from 0% through 100%"
+        ],
+        "formula": "profit=revenue-expenses; taxReserve=profit*taxPct/100; netIncome=profit-taxReserve; effectiveNetRate=(revenue!==0?netIncome/revenue*100:0)",
+        "dependencies": [],
+        "outputs": [
+          "revenue",
+          "expenses",
+          "profit",
+          "taxReserve",
+          "netIncome",
+          "effectiveNetRate"
+        ],
+        "units": [
+          "currency",
+          "percent"
+        ],
+        "precision": "JavaScript Number floating-point; no explicit rounding in calculation core",
+        "rounding": "No rounding in core; display formatting is handled by the UI",
+        "assumptions": [
+          "Reserve applies to profit after expenses, not gross revenue",
+          "Tax reserve is user-selected and not jurisdiction-specific"
+        ],
+        "sourceReferences": [
+          "app.js tool registration: freelancer-net-income",
+          "finance-core.js function freelancerNetIncome"
+        ]
+      }
+    },
+    {
+      "toolId": "markup",
+      "sourceModule": "app.js",
+      "runtimeFunction": "Core.markupCalculator",
+      "status": "regression-verified",
+      "calculation": {
+        "inputs": [
+          {
+            "key": "cost",
+            "label": "Unit cost",
+            "type": "number",
+            "defaultValue": 80,
+            "minimum": 0
+          },
+          {
+            "key": "markup",
+            "label": "Markup (%)",
+            "type": "percentage",
+            "defaultValue": 40,
+            "minimum": 0,
+            "maximum": 10000
+          }
+        ],
+        "constraints": [
+          "Inputs must be finite and non-negative",
+          "Markup percentage must not exceed 10,000%"
+        ],
+        "formula": "markupAmount=cost*markupPct/100; sellingPrice=cost+markupAmount; grossMargin=(sellingPrice>0?markupAmount/sellingPrice*100:0)",
+        "dependencies": [],
+        "outputs": [
+          "cost",
+          "markupPct",
+          "markupAmount",
+          "sellingPrice",
+          "grossMargin"
+        ],
+        "units": [
+          "currency",
+          "percent"
+        ],
+        "precision": "JavaScript Number floating-point; no explicit rounding in calculation core",
+        "rounding": "No rounding in core; display formatting is handled by the UI",
+        "assumptions": [
+          "Markup is a percentage of cost",
+          "Gross margin is profit divided by selling price",
+          "Tax, fees, overhead and market-price constraints are excluded"
+        ],
+        "sourceReferences": [
+          "app.js tool registration: markup",
+          "finance-core.js function markupCalculator"
+        ]
+      }
+    },
+    {
+      "toolId": "break-even",
+      "sourceModule": "app.js",
+      "runtimeFunction": "Core.breakEvenCalculator",
+      "status": "regression-verified",
+      "calculation": {
+        "inputs": [
+          {
+            "key": "fixed",
+            "label": "Total fixed costs",
+            "type": "number",
+            "defaultValue": 12000,
+            "minimum": 0
+          },
+          {
+            "key": "price",
+            "label": "Selling price per unit",
+            "type": "number",
+            "defaultValue": 50,
+            "minimum": 0
+          },
+          {
+            "key": "variable",
+            "label": "Variable cost per unit",
+            "type": "number",
+            "defaultValue": 20,
+            "minimum": 0
+          }
+        ],
+        "constraints": [
+          "Inputs must be finite and non-negative",
+          "Selling price must exceed variable cost per unit"
+        ],
+        "formula": "contribution=price-variable; exactUnits=(fixed===0?0:fixed/contribution); units=Math.ceil(exactUnits); revenue=units*price; variableCosts=units*variable; totalCosts=fixed+variableCosts",
+        "dependencies": [],
+        "outputs": [
+          "contribution",
+          "contributionMargin",
+          "unitsExact",
+          "units",
+          "revenue",
+          "variableCosts",
+          "totalCosts"
+        ],
+        "units": [
+          "currency per unit",
+          "currency",
+          "units",
+          "percent"
+        ],
+        "precision": "JavaScript Number floating-point; exact units may be fractional",
+        "rounding": "Whole units are rounded upward with Math.ceil",
+        "assumptions": [
+          "Selling price, variable cost and fixed costs are constant",
+          "Fractional units are not treated as sellable",
+          "Product mix, capacity, tax, financing and changing costs/prices are excluded"
+        ],
+        "sourceReferences": [
+          "app.js tool registration: break-even",
+          "finance-core.js function breakEvenCalculator"
+        ]
+      }
+    },
+    {
+      "toolId": "business-roi",
+      "sourceModule": "app.js",
+      "runtimeFunction": "Core.businessROI",
+      "status": "regression-verified",
+      "calculation": {
+        "inputs": [
+          {
+            "key": "investment",
+            "type": "number",
+            "minimumExclusive": 0
+          },
+          {
+            "key": "value",
+            "type": "number",
+            "minimum": 0
+          }
+        ],
+        "constraints": [
+          "All inputs must be finite numbers",
+          "Initial investment must be greater than zero",
+          "Ending value must be non-negative"
+        ],
+        "formula": "gain=value-investment; roi=gain/investment*100; returnMultiple=value/investment",
+        "dependencies": [],
+        "outputs": [
+          "initialInvestment",
+          "endingValue",
+          "gain",
+          "roi",
+          "returnMultiple"
+        ],
+        "units": [
+          "currency",
+          "percent",
+          "multiple"
+        ],
+        "precision": "JavaScript Number floating-point; no explicit rounding in calculation core",
+        "rounding": "No rounding in core; display formatting is handled by the UI",
+        "assumptions": [
+          "Initial investment must be greater than zero; ending value must be non-negative",
+          "Simple, non-annualized ROI does not account for cash-flow timing, holding period or future performance"
+        ],
+        "sourceReferences": [
+          "app.js tool registration: business-roi",
+          "finance-core.js function businessROI",
+          "tool-content.json source record: business-roi"
+        ]
+      }
+    },
+    {
+      "toolId": "cash-flow",
+      "sourceModule": "app.js",
+      "runtimeFunction": "Core.cashFlowProjection",
+      "status": "regression-verified",
+      "calculation": {
+        "inputs": [
+          {
+            "key": "opening",
+            "type": "number",
+            "minimum": 0
+          },
+          {
+            "key": "inflows",
+            "type": "number",
+            "minimum": 0
+          },
+          {
+            "key": "outflows",
+            "type": "number",
+            "minimum": 0
+          },
+          {
+            "key": "inflowGrowth",
+            "type": "percentage",
+            "minimum": 0,
+            "maximum": 100
+          },
+          {
+            "key": "outflowGrowth",
+            "type": "percentage",
+            "minimum": 0,
+            "maximum": 100
+          },
+          {
+            "key": "periods",
+            "type": "integer",
+            "allowedValues": [
+              3,
+              6,
+              12,
+              24
+            ]
+          }
+        ],
+        "constraints": [
+          "Opening cash, monthly inflows, monthly outflows and both growth rates must be finite non-negative numbers",
+          "Monthly inflow and outflow growth rates must not exceed 100%",
+          "Projection period must be exactly 3, 6, 12 or 24 months"
+        ],
+        "formula": "For month t=1..periods: inflow_t=inflows*(1+inflowGrowth/100)^(t-1); outflow_t=outflows*(1+outflowGrowth/100)^(t-1); closingCash_t=openingCash_t+inflow_t-outflow_t; openingCash_(t+1)=closingCash_t; endingCash=closingCash_periods; totalInflows=sum(inflow_t); totalOutflows=sum(outflow_t); netCashChange=endingCash-opening",
+        "dependencies": [],
+        "outputs": [
+          "endingCash",
+          "totalInflows",
+          "totalOutflows",
+          "netCashChange",
+          "rows",
+          "balances",
+          "monthlySchedule",
+          "yearlySchedule"
+        ],
+        "units": [
+          "currency",
+          "percent",
+          "months"
+        ],
+        "precision": "JavaScript Number floating-point; no explicit rounding in calculation core",
+        "rounding": "No rounding in core; display formatting is handled by the UI",
+        "assumptions": [
+          "Monthly inflows and outflows recur and compound using fixed user-entered growth rates",
+          "Growth is compounded from month 1 with exponent t−1",
+          "Timing within each month, tax, financing and seasonality are excluded",
+          "Negative projected cash balances are retained as scenario outputs"
+        ],
+        "sourceReferences": [
+          "app.js tool registration: cash-flow",
+          "finance-core.js function cashFlowProjection",
+          "tool-content.json source record: cash-flow"
+        ]
+      }
+    },
+    {
+      "toolId": "rental-yield",
+      "sourceModule": "app.js",
+      "runtimeFunction": "Core.rentalYieldCalculator",
+      "status": "regression-verified",
+      "calculation": {
+        "inputs": [
+          {
+            "key": "price",
+            "type": "number",
+            "minimumExclusive": 0
+          },
+          {
+            "key": "rent",
+            "type": "number",
+            "minimum": 0
+          },
+          {
+            "key": "vacancy",
+            "type": "percentage",
+            "minimum": 0,
+            "maximum": 100
+          },
+          {
+            "key": "costs",
+            "type": "number",
+            "minimum": 0
+          }
+        ],
+        "constraints": [
+          "All four inputs must be finite numbers",
+          "Property purchase price must be greater than zero",
+          "Monthly scheduled rent, vacancy allowance and annual operating costs must be non-negative",
+          "Vacancy allowance must not exceed 100%"
+        ],
+        "formula": "potentialAnnualRent=monthlyScheduledRent*12; effectiveRent=potentialAnnualRent*(1-vacancyAllowance/100); netOperatingIncome=effectiveRent-annualOperatingCosts; grossYield=potentialAnnualRent/purchasePrice*100; netYield=netOperatingIncome/purchasePrice*100; monthlyNetIncome=netOperatingIncome/12",
+        "dependencies": [],
+        "outputs": [
+          "potentialRent",
+          "effectiveRent",
+          "annualCosts",
+          "netOperatingIncome",
+          "grossYield",
+          "netYield",
+          "monthlyNetIncome",
+          "series",
+          "note"
+        ],
+        "units": [
+          "currency",
+          "percent"
+        ],
+        "precision": "JavaScript Number floating-point; no explicit rounding in calculation core",
+        "rounding": "No rounding in core; display formatting is handled by the UI",
+        "assumptions": [
+          "Monthly scheduled rent is annualized by multiplying by 12",
+          "Vacancy allowance is applied to potential annual rent",
+          "Entered annual operating costs are subtracted from rent after vacancy",
+          "Yield is unlevered and uses purchase price as denominator",
+          "Financing, acquisition costs, capital expenditure, income tax and appreciation are excluded"
+        ],
+        "sourceReferences": [
+          "app.js tool registration: rental-yield",
+          "finance-core.js function rentalYieldCalculator",
+          "translations/tool-content.json source record: rental-yield"
+        ]
+      }
+    },
+    {
+      "toolId": "emergency-fund",
+      "sourceModule": "app.js",
+      "runtimeFunction": "Core.emergencyFundCalculator",
+      "status": "regression-verified",
+      "calculation": {
+        "inputs": [
+          {
+            "key": "expenses",
+            "type": "number",
+            "minimumExclusive": 0
+          },
+          {
+            "key": "months",
+            "type": "number",
+            "minimumExclusive": 0,
+            "maximum": 24
+          },
+          {
+            "key": "current",
+            "type": "number",
+            "minimum": 0
+          }
+        ],
+        "constraints": [
+          "All inputs must be finite numbers",
+          "Essential monthly expenses must be greater than zero",
+          "Target coverage months must be greater than zero and must not exceed 24",
+          "Current emergency savings must be non-negative"
+        ],
+        "formula": "target=essentialMonthlyExpenses*targetCoverageMonths; gap=max(0,target-currentSavings); coverageMonths=currentSavings/essentialMonthlyExpenses; progressPct=min(100,currentSavings/target*100)",
+        "dependencies": [],
+        "outputs": [
+          "target",
+          "currentSavings",
+          "gap",
+          "coverageMonths",
+          "progressPct",
+          "series",
+          "note"
+        ],
+        "units": [
+          "currency",
+          "months",
+          "percent"
+        ],
+        "precision": "JavaScript Number floating-point; no explicit rounding in calculation core",
+        "rounding": "No rounding in core; display formatting is handled by the UI",
+        "assumptions": [
+          "Target fund equals essential monthly expenses multiplied by selected target coverage months",
+          "Current savings are compared directly with the target",
+          "Remaining gap is floored at zero when current savings meet or exceed the target",
+          "Progress is capped at 100 percent",
+          "This is an illustrative planning calculation and does not recommend a savings product"
+        ],
+        "sourceReferences": [
+          "app.js tool registration: emergency-fund",
+          "finance-core.js function emergencyFundCalculator",
+          "translations/tool-content.json source record: emergency-fund"
+        ]
+      }
+    },
+    {
+      "toolId": "net-worth",
+      "sourceModule": "app.js",
+      "runtimeFunction": "Core.netWorthCalculator",
+      "status": "regression-verified",
+      "calculation": {
+        "inputs": [
+          "cash",
+          "investments",
+          "property",
+          "vehicles",
+          "otherAssets",
+          "mortgage",
+          "loans",
+          "cards",
+          "otherDebt"
+        ],
+        "constraints": [
+          "All nine inputs must be finite, nonnegative numeric balance-sheet amounts; zero is valid."
+        ],
+        "formula": "totalAssets = cash + investments + property + vehicles + otherAssets; totalLiabilities = mortgage + loans + cards + otherDebt; netWorth = totalAssets - totalLiabilities.",
+        "dependencies": [],
+        "outputs": [
+          "totalAssets",
+          "totalLiabilities",
+          "netWorth",
+          "series"
+        ],
+        "units": [
+          "All monetary inputs and outputs use the same user-selected display currency; series order is assets, liabilities, net worth."
+        ],
+        "precision": "JavaScript Number arithmetic; no explicit rounding in calculation core.",
+        "rounding": "No rounding is applied by the calculation function; display formatting is handled by the UI.",
+        "assumptions": [
+          "Point-in-time estimate based solely on user-entered current balances; property and vehicle values are entered estimates; no automatic valuation or currency conversion occurs within this function."
+        ],
+        "sourceReferences": [
+          "app.js#net-worth tool definition and Core.netWorthCalculator argument mapping",
+          "finance-core.js#netWorthCalculator"
+        ]
+      }
+    },
+    {
+      "toolId": "basic-arithmetic",
+      "sourceModule": "math-tools.js",
+      "runtimeFunction": "FinPulseMath.arithmetic",
+      "status": "regression-verified",
+      "calculation": {
+        "inputs": [
+          "a",
+          "op",
+          "b"
+        ],
+        "constraints": [
+          "a and b must be finite numbers; op must be one of +, -, ×, ÷."
+        ],
+        "formula": "result = a+b, a-b, a*b, or a/b according to op; division by zero and unknown operations are rejected.",
+        "dependencies": [],
+        "outputs": [
+          "number"
+        ],
+        "units": [
+          "Dimensionless mathematical values; no currency or physical units are applied."
+        ],
+        "precision": "JavaScript Number arithmetic; no explicit decimal rounding.",
+        "rounding": "No explicit rounding.",
+        "assumptions": [
+          "Runtime implementation is the authoritative source for basic-arithmetic; display formatting is separate from the core result."
+        ],
+        "sourceReferences": [
+          "math-core.js#FinPulseMath.arithmetic",
+          "math-tools.js#basic-arithmetic",
+          "tests/math-batch-1.test.cjs"
+        ]
+      }
+    },
+    {
+      "toolId": "fraction",
+      "sourceModule": "math-tools.js",
+      "runtimeFunction": "FinPulseMath.fraction",
+      "status": "regression-verified",
+      "calculation": {
+        "inputs": [
+          "numerator",
+          "denominator"
+        ],
+        "constraints": [
+          "Numerator and denominator must be safe integers; denominator cannot be zero."
+        ],
+        "formula": "g=gcd(abs(numerator),abs(denominator)); simplified numerator and denominator are returned with value=numerator/denominator.",
+        "dependencies": [
+          "gcd"
+        ],
+        "outputs": [
+          "numerator",
+          "denominator",
+          "value"
+        ],
+        "units": [
+          "Dimensionless mathematical values; no currency or physical units are applied."
+        ],
+        "precision": "Integer reduction plus JavaScript Number quotient.",
+        "rounding": "No explicit rounding.",
+        "assumptions": [
+          "Runtime implementation is the authoritative source for fraction; display formatting is separate from the core result."
+        ],
+        "sourceReferences": [
+          "math-core.js#FinPulseMath.fraction",
+          "math-tools.js#fraction",
+          "tests/math-batch-1.test.cjs"
+        ]
+      }
+    },
+    {
+      "toolId": "mixed-number",
+      "sourceModule": "math-tools.js",
+      "runtimeFunction": "FinPulseMath.mixed",
+      "status": "regression-verified",
+      "calculation": {
+        "inputs": [
+          "whole",
+          "numerator",
+          "denominator"
+        ],
+        "constraints": [
+          "Whole number and numerator must be safe integers; denominator must be a positive safe integer; 0<=numerator<denominator."
+        ],
+        "formula": "improperNumerator=whole*denominator+(whole<0?-numerator:numerator); result=fraction(improperNumerator,denominator).",
+        "dependencies": [
+          "gcd"
+        ],
+        "outputs": [
+          "numerator",
+          "denominator",
+          "value"
+        ],
+        "units": [
+          "Dimensionless mathematical values; no currency or physical units are applied."
+        ],
+        "precision": "Integer arithmetic plus JavaScript Number quotient.",
+        "rounding": "No explicit rounding.",
+        "assumptions": [
+          "Runtime implementation is the authoritative source for mixed-number; display formatting is separate from the core result."
+        ],
+        "sourceReferences": [
+          "math-core.js#FinPulseMath.mixed",
+          "math-tools.js#mixed-number",
+          "tests/math-batch-1.test.cjs"
+        ]
+      }
+    },
+    {
+      "toolId": "decimal-fraction",
+      "sourceModule": "math-tools.js",
+      "runtimeFunction": "FinPulseMath.decimalFraction",
+      "status": "regression-verified",
+      "calculation": {
+        "inputs": [
+          "value",
+          "maxDen"
+        ],
+        "constraints": [
+          "Value must be finite; maxDen must be a positive safe integer no greater than 1,000,000; default maxDen=10,000."
+        ],
+        "formula": "Search denominators d=1..maxDen; choose numerator round(value*d) minimizing absolute approximation error; return the simplified best fraction.",
+        "dependencies": [],
+        "outputs": [
+          "numerator",
+          "denominator",
+          "value"
+        ],
+        "units": [
+          "Dimensionless mathematical values; no currency or physical units are applied."
+        ],
+        "precision": "Bounded denominator search; floating-point error threshold 1e-12 can stop early.",
+        "rounding": "Returns the best searched approximation; no decimal-place rounding.",
+        "assumptions": [
+          "Runtime implementation is the authoritative source for decimal-fraction; display formatting is separate from the core result."
+        ],
+        "sourceReferences": [
+          "math-core.js#FinPulseMath.decimalFraction",
+          "math-tools.js#decimal-fraction",
+          "tests/math-batch-1.test.cjs"
+        ]
+      }
+    },
+    {
+      "toolId": "ratio",
+      "sourceModule": "math-tools.js",
+      "runtimeFunction": "FinPulseMath.ratio",
+      "status": "regression-verified",
+      "calculation": {
+        "inputs": [
+          "a",
+          "b"
+        ],
+        "constraints": [
+          "Both terms must be nonnegative safe integers; both cannot be zero."
+        ],
+        "formula": "g=gcd(a,b); simplified ratio=(a/g):(b/g).",
+        "dependencies": [],
+        "outputs": [
+          "first",
+          "second"
+        ],
+        "units": [
+          "Dimensionless mathematical values; no currency or physical units are applied."
+        ],
+        "precision": "Safe integer arithmetic.",
+        "rounding": "No explicit rounding.",
+        "assumptions": [
+          "Runtime implementation is the authoritative source for ratio; display formatting is separate from the core result."
+        ],
+        "sourceReferences": [
+          "math-core.js#FinPulseMath.ratio",
+          "math-tools.js#ratio",
+          "tests/math-batch-1.test.cjs"
+        ]
+      }
+    },
+    {
+      "toolId": "proportion",
+      "sourceModule": "math-tools.js",
+      "runtimeFunction": "FinPulseMath.proportion",
+      "status": "regression-verified",
+      "calculation": {
+        "inputs": [
+          "a",
+          "b",
+          "c"
+        ],
+        "constraints": [
+          "A and B must be positive finite numbers; C must be finite and nonnegative; result must be finite."
+        ],
+        "formula": "x=c*b/a.",
+        "dependencies": [],
+        "outputs": [
+          "value"
+        ],
+        "units": [
+          "Dimensionless mathematical values; no currency or physical units are applied."
+        ],
+        "precision": "JavaScript Number arithmetic; result checked for finiteness.",
+        "rounding": "No explicit rounding.",
+        "assumptions": [
+          "Runtime implementation is the authoritative source for proportion; display formatting is separate from the core result."
+        ],
+        "sourceReferences": [
+          "math-core.js#FinPulseMath.proportion",
+          "math-tools.js#proportion",
+          "tests/math-batch-1.test.cjs"
+        ]
+      }
+    },
+    {
+      "toolId": "average",
+      "sourceModule": "math-tools.js",
+      "runtimeFunction": "FinPulseMath.average",
+      "status": "regression-verified",
+      "calculation": {
+        "inputs": [
+          "a",
+          "b",
+          "c"
+        ],
+        "constraints": [
+          "Input must be a non-empty array; every value must be finite."
+        ],
+        "formula": "mean=sum(values[i]/values.length) for all supplied values.",
+        "dependencies": [],
+        "outputs": [
+          "mean"
+        ],
+        "units": [
+          "Dimensionless mathematical values; no currency or physical units are applied."
+        ],
+        "precision": "JavaScript Number arithmetic; division is performed per term before summation.",
+        "rounding": "No explicit rounding.",
+        "assumptions": [
+          "Runtime implementation is the authoritative source for average; display formatting is separate from the core result."
+        ],
+        "sourceReferences": [
+          "math-core.js#FinPulseMath.average",
+          "math-tools.js#average",
+          "tests/math-batch-1.test.cjs"
+        ]
+      }
+    },
+    {
+      "toolId": "percentage-change",
+      "sourceModule": "math-tools.js",
+      "runtimeFunction": "FinPulseMath.percentageChange",
+      "status": "regression-verified",
+      "calculation": {
+        "inputs": [
+          "old",
+          "new"
+        ],
+        "constraints": [
+          "Both values must be finite; original value cannot be zero."
+        ],
+        "formula": "percentageChange=(newValue-oldValue)/abs(oldValue)*100.",
+        "dependencies": [],
+        "outputs": [
+          "percentageChange"
+        ],
+        "units": [
+          "Dimensionless mathematical values; no currency or physical units are applied."
+        ],
+        "precision": "JavaScript Number arithmetic.",
+        "rounding": "No explicit rounding.",
+        "assumptions": [
+          "Runtime implementation is the authoritative source for percentage-change; display formatting is separate from the core result."
+        ],
+        "sourceReferences": [
+          "math-core.js#FinPulseMath.percentageChange",
+          "math-tools.js#percentage-change",
+          "tests/math-batch-1.test.cjs"
+        ]
+      }
+    },
+    {
+      "toolId": "percent-error",
+      "sourceModule": "math-tools.js",
+      "runtimeFunction": "FinPulseMath.percentError",
+      "status": "regression-verified",
+      "calculation": {
+        "inputs": [
+          "actual",
+          "expected"
+        ],
+        "constraints": [
+          "Both values must be finite; expected value cannot be zero."
+        ],
+        "formula": "percentError=abs(actual-expected)/abs(expected)*100.",
+        "dependencies": [],
+        "outputs": [
+          "percentError"
+        ],
+        "units": [
+          "Dimensionless mathematical values; no currency or physical units are applied."
+        ],
+        "precision": "JavaScript Number arithmetic.",
+        "rounding": "Absolute error; no explicit rounding.",
+        "assumptions": [
+          "Runtime implementation is the authoritative source for percent-error; display formatting is separate from the core result."
+        ],
+        "sourceReferences": [
+          "math-core.js#FinPulseMath.percentError",
+          "math-tools.js#percent-error",
+          "tests/math-batch-1.test.cjs"
+        ]
+      }
+    },
+    {
+      "toolId": "rounding",
+      "sourceModule": "math-tools.js",
+      "runtimeFunction": "FinPulseMath.roundTo",
+      "status": "regression-verified",
+      "calculation": {
+        "inputs": [
+          "value",
+          "places",
+          "mode"
+        ],
+        "constraints": [
+          "Value must be finite; places must be an integer from 0 to 12; scaled value must remain finite; mode must be nearest, up or down."
+        ],
+        "formula": "scale=10^places; up uses ceil(value*scale)/scale; down uses floor(value*scale)/scale; nearest uses Math.round(value*scale+EPSILON)/scale (the positive epsilon preserves JavaScript tie-toward-positive-infinity behavior for negative halves).",
+        "dependencies": [],
+        "outputs": [
+          "roundedValue"
+        ],
+        "units": [
+          "Dimensionless mathematical values; no currency or physical units are applied."
+        ],
+        "precision": "JavaScript Number arithmetic; Number.EPSILON adjustment for nearest mode.",
+        "rounding": "Explicit mode-dependent rounding to 0–12 decimal places.",
+        "assumptions": [
+          "Runtime implementation is the authoritative source for rounding; display formatting is separate from the core result."
+        ],
+        "sourceReferences": [
+          "math-core.js#FinPulseMath.roundTo",
+          "math-tools.js#rounding",
+          "tests/math-batch-1.test.cjs"
+        ]
+      }
+    },
+    {
+      "toolId": "significant-figures",
+      "sourceModule": "math-tools.js",
+      "runtimeFunction": "FinPulseMath.significant",
+      "status": "regression-verified",
+      "calculation": {
+        "inputs": [
+          "value",
+          "figures"
+        ],
+        "constraints": [
+          "Value must be finite; figures must be an integer from 1 to 15."
+        ],
+        "formula": "For nonzero values, result=Number(value.toPrecision(figures)); zero returns zero.",
+        "dependencies": [],
+        "outputs": [
+          "roundedValue"
+        ],
+        "units": [
+          "Dimensionless mathematical values; no currency or physical units are applied."
+        ],
+        "precision": "JavaScript Number toPrecision conversion.",
+        "rounding": "Rounds to requested significant figures.",
+        "assumptions": [
+          "Runtime implementation is the authoritative source for significant-figures; display formatting is separate from the core result."
+        ],
+        "sourceReferences": [
+          "math-core.js#FinPulseMath.significant",
+          "math-tools.js#significant-figures",
+          "tests/math-batch-1.test.cjs"
+        ]
+      }
+    },
+    {
+      "toolId": "scientific-notation",
+      "sourceModule": "math-tools.js",
+      "runtimeFunction": "FinPulseMath.scientific",
+      "status": "regression-verified",
+      "calculation": {
+        "inputs": [
+          "value",
+          "figures"
+        ],
+        "constraints": [
+          "Value must be finite; figures must be an integer from 1 to 15."
+        ],
+        "formula": "result=value.toExponential(figures-1).",
+        "dependencies": [],
+        "outputs": [
+          "scientificNotation"
+        ],
+        "units": [
+          "Dimensionless mathematical values; no currency or physical units are applied."
+        ],
+        "precision": "JavaScript Number exponential string formatting.",
+        "rounding": "Formats to requested significant figures.",
+        "assumptions": [
+          "Runtime implementation is the authoritative source for scientific-notation; display formatting is separate from the core result."
+        ],
+        "sourceReferences": [
+          "math-core.js#FinPulseMath.scientific",
+          "math-tools.js#scientific-notation",
+          "tests/math-batch-1.test.cjs"
+        ]
+      }
+    },
+    {
+      "toolId": "exponent",
+      "sourceModule": "math-tools.js",
+      "runtimeFunction": "FinPulseMath.power",
+      "status": "regression-verified",
+      "calculation": {
+        "inputs": [
+          "base",
+          "exponent"
+        ],
+        "constraints": [
+          "Base and exponent must be finite; result must be finite."
+        ],
+        "formula": "result=base**exponent.",
+        "dependencies": [],
+        "outputs": [
+          "value"
+        ],
+        "units": [
+          "Dimensionless mathematical values; no currency or physical units are applied."
+        ],
+        "precision": "JavaScript Number exponentiation.",
+        "rounding": "No explicit rounding.",
+        "assumptions": [
+          "Runtime implementation is the authoritative source for exponent; display formatting is separate from the core result."
+        ],
+        "sourceReferences": [
+          "math-core.js#FinPulseMath.power",
+          "math-tools.js#exponent",
+          "tests/math-batch-1.test.cjs"
+        ]
+      }
+    },
+    {
+      "toolId": "square-root",
+      "sourceModule": "math-tools.js",
+      "runtimeFunction": "FinPulseMath.nthRoot(value, 2)",
+      "status": "regression-verified",
+      "calculation": {
+        "inputs": [
+          "value"
+        ],
+        "constraints": [
+          "Value must be finite and nonnegative; root index is fixed at 2."
+        ],
+        "formula": "squareRoot=sqrt(value) using the nthRoot implementation with n=2.",
+        "dependencies": [],
+        "outputs": [
+          "root"
+        ],
+        "units": [
+          "Dimensionless mathematical values; no currency or physical units are applied."
+        ],
+        "precision": "JavaScript Math.pow; result checked for finiteness.",
+        "rounding": "No explicit rounding.",
+        "assumptions": [
+          "Runtime implementation is the authoritative source for square-root; display formatting is separate from the core result."
+        ],
+        "sourceReferences": [
+          "math-core.js#FinPulseMath.nthRoot(value, 2)",
+          "math-tools.js#square-root",
+          "tests/math-batch-1.test.cjs"
+        ]
+      }
+    },
+    {
+      "toolId": "cube-root",
+      "sourceModule": "math-tools.js",
+      "runtimeFunction": "FinPulseMath.nthRoot(value, 3)",
+      "status": "regression-verified",
+      "calculation": {
+        "inputs": [
+          "value"
+        ],
+        "constraints": [
+          "Value must be finite; root index is fixed at 3; negative values are supported."
+        ],
+        "formula": "cubeRoot=cbrt(value) using signed Math.pow(abs(value),1/3) with n=3.",
+        "dependencies": [],
+        "outputs": [
+          "root"
+        ],
+        "units": [
+          "Dimensionless mathematical values; no currency or physical units are applied."
+        ],
+        "precision": "JavaScript Math.pow with sign restoration; result checked for finiteness.",
+        "rounding": "No explicit rounding.",
+        "assumptions": [
+          "Runtime implementation is the authoritative source for cube-root; display formatting is separate from the core result."
+        ],
+        "sourceReferences": [
+          "math-core.js#FinPulseMath.nthRoot(value, 3)",
+          "math-tools.js#cube-root",
+          "tests/math-batch-1.test.cjs"
+        ]
+      }
+    },
+    {
+      "toolId": "nth-root",
+      "sourceModule": "math-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "factorial",
+      "sourceModule": "math-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "gcd",
+      "sourceModule": "math-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "lcm",
+      "sourceModule": "math-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "prime-checker",
+      "sourceModule": "math-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "prime-factorization",
+      "sourceModule": "math-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "modulo",
+      "sourceModule": "math-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "pythagorean",
+      "sourceModule": "math-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "circle",
+      "sourceModule": "math-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "triangle-area",
+      "sourceModule": "math-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "linear-equation",
+      "sourceModule": "advanced-math-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "quadratic-equation",
+      "sourceModule": "advanced-math-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "simultaneous-equations",
+      "sourceModule": "advanced-math-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "polynomial-calculator",
+      "sourceModule": "advanced-math-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "logarithm",
+      "sourceModule": "advanced-math-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "matrix-operations",
+      "sourceModule": "advanced-math-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "matrix-determinant",
+      "sourceModule": "advanced-math-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "matrix-inverse",
+      "sourceModule": "advanced-math-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "complex-number",
+      "sourceModule": "advanced-math-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "sequence-calculator",
+      "sourceModule": "advanced-math-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "series-sum",
+      "sourceModule": "advanced-math-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "permutation",
+      "sourceModule": "advanced-math-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "combination",
+      "sourceModule": "advanced-math-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "probability",
+      "sourceModule": "advanced-math-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "mean-median-mode",
+      "sourceModule": "advanced-math-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "variance-standard-deviation",
+      "sourceModule": "advanced-math-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "z-score",
+      "sourceModule": "advanced-math-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "correlation",
+      "sourceModule": "advanced-math-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "linear-regression",
+      "sourceModule": "advanced-math-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "confidence-interval",
+      "sourceModule": "advanced-math-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "age-calculator",
+      "sourceModule": "date-time-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "date-difference",
+      "sourceModule": "date-time-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "add-days",
+      "sourceModule": "date-time-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "subtract-days",
+      "sourceModule": "date-time-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "business-days",
+      "sourceModule": "date-time-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "working-days",
+      "sourceModule": "date-time-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "iso-week",
+      "sourceModule": "date-time-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "day-of-year",
+      "sourceModule": "date-time-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "days-in-month",
+      "sourceModule": "date-time-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "leap-year",
+      "sourceModule": "date-time-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "calendar-month",
+      "sourceModule": "date-time-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "recurring-date",
+      "sourceModule": "date-time-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "term-duration",
+      "sourceModule": "date-time-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "time-duration",
+      "sourceModule": "date-time-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "time-difference",
+      "sourceModule": "date-time-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "add-time",
+      "sourceModule": "date-time-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "subtract-time",
+      "sourceModule": "date-time-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "countdown-timer",
+      "sourceModule": "date-time-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "event-countdown",
+      "sourceModule": "date-time-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "date-to-unix",
+      "sourceModule": "date-time-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "unix-to-date",
+      "sourceModule": "date-time-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "world-clock",
+      "sourceModule": "date-time-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "timezone-converter",
+      "sourceModule": "date-time-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "utc-offset",
+      "sourceModule": "date-time-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "meeting-time-planner",
+      "sourceModule": "date-time-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "length-converter",
+      "sourceModule": "unit-converter-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "mass-converter",
+      "sourceModule": "unit-converter-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "temperature-converter",
+      "sourceModule": "unit-converter-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "area-converter",
+      "sourceModule": "unit-converter-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "volume-converter",
+      "sourceModule": "unit-converter-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "speed-converter",
+      "sourceModule": "unit-converter-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "pressure-converter",
+      "sourceModule": "unit-converter-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "energy-converter",
+      "sourceModule": "unit-converter-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "power-converter",
+      "sourceModule": "unit-converter-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "frequency-converter",
+      "sourceModule": "unit-converter-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "angle-converter",
+      "sourceModule": "unit-converter-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "fuel-economy-converter",
+      "sourceModule": "unit-converter-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "density-converter",
+      "sourceModule": "unit-converter-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "cooking-measurement-converter",
+      "sourceModule": "unit-converter-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "data-storage-converter",
+      "sourceModule": "unit-converter-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "data-transfer-speed-converter",
+      "sourceModule": "unit-converter-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "download-time-estimator",
+      "sourceModule": "unit-converter-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "number-base-converter",
+      "sourceModule": "unit-converter-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "roman-numeral-converter",
+      "sourceModule": "unit-converter-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "paper-size-converter",
+      "sourceModule": "unit-converter-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "word-counter",
+      "sourceModule": "developer-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "character-counter",
+      "sourceModule": "developer-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "sentence-counter",
+      "sourceModule": "developer-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "paragraph-counter",
+      "sourceModule": "developer-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "reading-time-calculator",
+      "sourceModule": "developer-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "case-converter",
+      "sourceModule": "developer-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "text-reverser",
+      "sourceModule": "developer-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "duplicate-line-remover",
+      "sourceModule": "developer-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "text-compare-diff",
+      "sourceModule": "developer-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "whitespace-cleaner",
+      "sourceModule": "developer-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "line-sorter",
+      "sourceModule": "developer-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "text-to-slug-generator",
+      "sourceModule": "developer-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "html-entity-encoder-decoder",
+      "sourceModule": "developer-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "url-encoder-decoder",
+      "sourceModule": "developer-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "base64-encoder-decoder",
+      "sourceModule": "developer-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "json-formatter-validator",
+      "sourceModule": "developer-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "html-formatter",
+      "sourceModule": "developer-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "css-formatter",
+      "sourceModule": "developer-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "javascript-formatter",
+      "sourceModule": "developer-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "html-css-js-minifier",
+      "sourceModule": "developer-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "uuid-generator",
+      "sourceModule": "education-lifestyle-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "regex-tester",
+      "sourceModule": "education-lifestyle-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "color-code-converter",
+      "sourceModule": "education-lifestyle-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "unix-timestamp-unit-helper",
+      "sourceModule": "education-lifestyle-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "markdown-previewer",
+      "sourceModule": "education-lifestyle-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "gpa-calculator",
+      "sourceModule": "education-lifestyle-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "cgpa-calculator",
+      "sourceModule": "education-lifestyle-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "grade-calculator",
+      "sourceModule": "education-lifestyle-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "exam-percentage-calculator",
+      "sourceModule": "education-lifestyle-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "marks-required-calculator",
+      "sourceModule": "education-lifestyle-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "weighted-grade-calculator",
+      "sourceModule": "education-lifestyle-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "final-exam-grade-calculator",
+      "sourceModule": "education-lifestyle-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "semester-gpa-planner",
+      "sourceModule": "education-lifestyle-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "attendance-percentage-calculator",
+      "sourceModule": "education-lifestyle-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "study-time-planner",
+      "sourceModule": "education-lifestyle-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "reading-schedule-planner",
+      "sourceModule": "education-lifestyle-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "assignment-grade-tracker",
+      "sourceModule": "education-lifestyle-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "concrete-volume-calculator",
+      "sourceModule": "education-lifestyle-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "brick-quantity-estimator",
+      "sourceModule": "education-lifestyle-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "cement-sand-aggregate-estimator",
+      "sourceModule": "education-lifestyle-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "paint-quantity-calculator",
+      "sourceModule": "lifestyle-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "tile-quantity-calculator",
+      "sourceModule": "lifestyle-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "flooring-material-estimator",
+      "sourceModule": "lifestyle-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "roofing-area-calculator",
+      "sourceModule": "lifestyle-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "room-area-calculator",
+      "sourceModule": "lifestyle-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "wall-area-calculator",
+      "sourceModule": "lifestyle-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "gravel-volume-calculator",
+      "sourceModule": "lifestyle-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "fence-material-estimator",
+      "sourceModule": "lifestyle-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "fuel-cost-calculator",
+      "sourceModule": "lifestyle-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "electricity-bill-estimator",
+      "sourceModule": "lifestyle-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "bill-split-calculator",
+      "sourceModule": "lifestyle-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "unit-price-comparator",
+      "sourceModule": "lifestyle-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "sales-commission-calculator",
+      "sourceModule": "lifestyle-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "study-topic-organizer",
+      "sourceModule": "lifestyle-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "qr-code-generator",
+      "sourceModule": "lifestyle-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "sleep-duration-calculator",
+      "sourceModule": "health-activity-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "bedtime-planner",
+      "sourceModule": "health-activity-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "wake-up-time-planner",
+      "sourceModule": "health-activity-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "sleep-schedule-consistency-tracker",
+      "sourceModule": "health-activity-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "sleep-log-summary",
+      "sourceModule": "health-activity-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "running-pace-calculator",
+      "sourceModule": "health-activity-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "running-speed-calculator",
+      "sourceModule": "health-activity-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "distance-time-pace-calculator",
+      "sourceModule": "health-activity-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "race-finish-time-predictor",
+      "sourceModule": "health-activity-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "race-split-calculator",
+      "sourceModule": "health-activity-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "walking-pace-calculator",
+      "sourceModule": "health-activity-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "hiking-time-estimator",
+      "sourceModule": "health-activity-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "cycling-speed-calculator",
+      "sourceModule": "health-activity-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "cycling-time-distance-calculator",
+      "sourceModule": "health-activity-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "swimming-pace-calculator",
+      "sourceModule": "health-activity-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "swimming-interval-planner",
+      "sourceModule": "health-wellness-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "rowing-pace-calculator",
+      "sourceModule": "health-wellness-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "exercise-session-duration-calculator",
+      "sourceModule": "health-wellness-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "interval-training-timer",
+      "sourceModule": "health-wellness-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "rest-interval-planner",
+      "sourceModule": "health-wellness-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "workout-session-planner-time-only",
+      "sourceModule": "health-wellness-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "weekly-activity-minutes-tracker",
+      "sourceModule": "health-wellness-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "activity-goal-progress-tracker",
+      "sourceModule": "health-wellness-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "step-to-distance-converter",
+      "sourceModule": "health-wellness-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "distance-to-step-estimator",
+      "sourceModule": "health-wellness-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "elevation-gain-rate-calculator",
+      "sourceModule": "health-wellness-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "hiking-elevation-pace-calculator",
+      "sourceModule": "health-wellness-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "breathing-exercise-timer",
+      "sourceModule": "health-wellness-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "meditation-session-planner",
+      "sourceModule": "health-wellness-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    },
+    {
+      "toolId": "hydration-log-tracker",
+      "sourceModule": "health-wellness-tools.js",
+      "runtimeFunction": null,
+      "status": "module-mapped",
+      "calculation": {
+        "inputs": null,
+        "constraints": null,
+        "formula": null,
+        "dependencies": null,
+        "outputs": null,
+        "units": null,
+        "precision": null,
+        "rounding": null,
+        "assumptions": null,
+        "sourceReferences": []
+      }
+    }
+  ]
+}

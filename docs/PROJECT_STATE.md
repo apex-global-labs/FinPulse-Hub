@@ -108,3 +108,243 @@ The dedicated branch adds five Developer wrap-up tools, twelve Education & Study
 - GitHub Pages deployment [#44511324424](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44511324424) succeeded. Published artifact `github-pages` (artifact ID `14522372777`) was inspected: it contains 220 sitemap tool URLs, a homepage with the 220-tool counter, and `health-wellness-tools.js`.
 - Production Lighthouse [#44511405172](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/44511405172) succeeded. Mobile: Performance 95, Accessibility 100, Best Practices 96, SEO 100, CLS 0.000, LCP 1,539.8 ms, TBT 253 ms. Desktop: Performance 100, Accessibility 100, Best Practices 96, SEO 100, CLS 0.0094, LCP 384.3 ms, TBT 0 ms.
 - Verified portfolio: 220/220 unique tools; homepage counter, registry and canonical sitemap all align. Latest verified production commit: `63822f8f43e0e1eb21ca85d0969b7ecb05e52313`.
+
+
+## Multilingual release-gate audit — 2026-11-23
+
+- Scope: PR #73, branch `feat/seven-language-translation-engine-phase-1`; production branch `main` and GitHub Pages deployment were not modified.
+- First-ten calculation-step draft coverage: 10/10 tools across six target locales; 49 English source steps × 6 locales = 294 translated step strings. Automated catalogue tests assert source-aligned step counts and non-empty strings. All locale records remain `draft`; this is not linguistic or finance-domain approval.
+- Tool-page runtime: `tool-content-runtime.js` is loaded before `app.js`; tool definitions are localized only for records with status `approved` or `published` and complete required fields. Missing, incomplete, `draft`, `linguistic-reviewed` and other unapproved records preserve the complete English definition. Unit tests cover these fallback cases and simulate complete approved records without changing stored approval status.
+- Browser audit finding on commit `2f6cd2dffc0606a5c7b2ce41b5c53fd36a413edf`: Finance Calculator CI run [45136325981](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/45136325981) failed in the new seven-locale tool-page browser test because its local test server did not serve the `__axe.js` route. The job log reports 17 passing and 1 failing browser test; syntax, Node tests and live API check passed. Candidate Lighthouse run [45136325950](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/45136325950) succeeded, but does not replace browser acceptance.
+- Corrected the browser test server to serve the installed axe-core file and moved WCAG 2.1 A/AA auditing inside the first-ten tool × locale loop, so each actual route is audited after navigation. Fix commits: `697d64bc3df951d28f5cf343e8355974cc6856f4` and `cf1e6517e55b9b541a16a5b0125fee41c79814ef`.
+- **Validation status:** no CI workflow run is currently visible for the latest head `cf1e6517e55b9b541a16a5b0125fee41c79814ef`; therefore the test fix and expanded 70 route/locale accessibility audit are not yet verified by CI. Fresh Finance CI and Lighthouse runs are required before this branch can pass the gate.
+- **RTL/LTR status:** automated direction assertions cover English/Hindi/Chinese/Japanese/Russian as LTR and Arabic/Urdu as RTL. Real-device/native visual review remains outstanding; automated checks do not establish visual sign-off.
+- **Human-review policy:** written native-speaker and finance-domain sign-offs are not mandatory release gates. Optional expert feedback may still be collected as a quality improvement, but absence of such reviews does not block release.
+- **Translation status:** all current locale records remain `draft`; this audit does not silently promote them to `approved`/`published`. English fallback remains active for these records until a separate, explicit translation-activation decision and its validation are completed.
+- **Release decision:** PR #73 remains Draft and unmerged. No merge, Pages deployment or production release is authorized until fresh latest-head Finance CI (including browser/RTL/LTR checks) and Lighthouse/CLS checks pass.
+
+
+## Multilingual release-gate policy update — 2026-11-23
+
+- User decision: remove mandatory written native-speaker and finance-domain reviewer sign-offs from the release gate.
+- These human reviews are optional quality feedback, not mandatory acceptance criteria.
+- Mandatory automated gates remain: latest-head Finance CI, Playwright browser coverage across seven locales and first-ten tools, RTL/LTR direction checks, per-route accessibility checks, mobile/desktop Lighthouse and CLS budgets.
+- Current translations remain `draft`; this policy change does not automatically approve or publish them. English fallback continues until translation activation is explicitly authorized and validated.
+- PR #73 remains Draft/unmerged; no production deployment is authorized by this policy update.
+
+
+## Current multilingual candidate status — 2026-11-23
+
+- Candidate branch: `feat/seven-language-translation-engine-phase-1`; PR #73 remains Draft and unmerged.
+- Latest policy/documentation commits align the release process with the user's decision: written native-speaker and finance-domain sign-offs are optional, not mandatory.
+- Mandatory release gates are latest-head Finance CI (syntax, Node tests, live reference-rate API, Playwright), seven-locale RTL/LTR assertions, first-ten tool × locale accessibility checks (70 combinations), and mobile/desktop Lighthouse with CLS budgets.
+- Translation records remain `draft`; removing human sign-off does not auto-approve or publish translations. Runtime English fallback remains active for draft, missing and incomplete locale records.
+- The production branch `main` and GitHub Pages deployment have not been changed by this candidate work. The production verification date and commit above refer to the last verified production release, not the current candidate branch.
+- Do not merge or deploy until all mandatory automated gates pass on the exact latest PR head and the release decision is explicitly authorized.
+
+## Translation Engine — Batch 2 source extraction — 2026-11-23
+
+- Latest verified release-gate head: `e5e743cb3ed5235f46689fcdf0b659fb31c044c2`; Finance CI run `45145145252` and Candidate Lighthouse/CLS run `45145145355` both completed successfully on that exact head.
+- Finance CI: 334/334 Node tests, 1/1 live API test, 30/30 Browser tests; the 220-tool Desktop/Mobile functional audit passed 440/440 executions with zero runtime errors.
+- Candidate Lighthouse: Mobile homepage 96 Performance / 96 Accessibility / 100 SEO / CLS 0; Mobile tool 92 / 100 / 100 / CLS 0.0307; Desktop homepage 100 / 100 / 100 / CLS 0; Desktop tool 100 / 100 / 100 / CLS 0.0087. All four CLS results are within the 0.10 budget.
+- First-ten translation catalogue: all 10 tools have six target-locale records, all status `draft`; full English fallback remains active. No locale was promoted to `approved` or `published`.
+- Batch 2 source extraction: tools 11–20 are `freelance`, `margin`, `affordability`, `payoff`, `refinance`, `personal-loan`, `student-loan`, `simple-interest`, `retirement`, and `401k`. Source descriptions and stable input keys/labels have been extracted from `app.js` into `translations/tool-content.json`; 10/10 descriptions and 53 input labels are recorded. All six target locales remain `not-started`; translation drafting has not begun.
+- Extended catalogue regression test to require source extraction for the first 20 tools and unique stable input keys.
+- PR #73 remains Draft/unmerged; production `main` and GitHub Pages are unchanged. No translation activation, merge or deployment was performed.
+
+
+## Batch 2 complete source extraction — 2026-11-23
+
+- Latest-head prerequisite CI on commit `13c12604970cb9d46f7b94960d6ad0b3598416d7` completed successfully: Finance CI run [45147185955](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/45147185955) and Candidate Lighthouse/CLS run [45147186020](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/45147186020) both concluded `success`.
+- Finance CI log confirms 334/334 Node tests, 1/1 live API test and 30/30 Browser tests; the 220-tool functional audit artifact was uploaded successfully. Lighthouse/CLS job concluded successfully.
+- Batch 2 source fields were expanded for all 10 tools: `freelance`, `margin`, `affordability`, `payoff`, `refinance`, `personal-loan`, `student-loan`, `simple-interest`, `retirement`, and `401k`.
+- Extracted source now includes metadata, input labels, result heading/summary/metrics, available breakdown and chart labels, formulas, calculation steps, assumptions, notes/disclaimers/limitations, FAQs, validation errors/recovery hints, SEO metadata/FAQ and accessibility labels. The Simple Interest day-count selector retains the canonical options 365, 360 and 366.
+- Added `sourceCompletenessStatus: complete` to batch-two records while preserving the existing extraction status for compatibility. All six target locales remain `not-started`; no translation drafting or activation has occurred.
+- Added catalogue regression coverage for complete batch-two source fields, stable/unique keys, formula/step coverage, FAQ/error completeness, SEO/accessibility fields, and unchanged locale statuses.
+- The new source data and test commits are pending fresh Finance CI and Candidate Lighthouse/CLS validation on the latest branch head. PR #73 remains Draft/unmerged; production `main` and GitHub Pages remain unchanged.
+
+
+## Batch 2 source validation and six-locale draft start — 2026-11-23
+
+- Latest batch-two validation commit `71def693aecd4c7a17e7e5947baf9fb26fc4cd1d` passed Finance CI run [45149697274](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/45149697274) and Lighthouse/CLS run [45149696689](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/45149696689).
+- Finance CI log confirms `npm run check` success, `npm test` success with 335/335 Node tests, live reference API 1/1, Browser tests 30/30, and final 220-tool audit 440/440 executions (220 desktop + 220 mobile), zero failures and zero runtime errors. Audit artifact uploaded as ID `14805263531`.
+- Batch-two source extraction is marked structurally validated by this CI gate. The extracted source records cover metadata, input labels, result metrics/breakdown, formula and calculation steps, assumptions, notes/disclaimers/limitations, FAQs, validation errors, SEO and accessibility.
+- Started draft metadata translations for all six target locales (`hi`, `ar`, `ur`, `zh-CN`, `ja`, `ru`) across all 10 batch-two tools. All records remain `draft`; no locale has been approved or activated.
+- This is a **partial translation draft**, not a completed translation: currently localized fields are metadata title/description/category, SEO title/description/H1/introduction, and accessibility page label. Untranslated input/result labels and all remaining fields are null so the runtime must use the English source fallback. Follow-up work must translate and validate every remaining schema field, including inputs, results, formulas/steps, assumptions, notes, disclaimers, limitations, errors, FAQs, guides, SEO FAQs and accessibility labels.
+- Added regression assertions for all 10 tools × 6 locales to confirm draft status, translated metadata, stable input/result keys, and null English-fallback values for fields not yet translated.
+- Fresh Finance CI and Lighthouse/CLS runs are required for the new draft/test/docs commits. PR #73 remains Draft/unmerged; production `main` and GitHub Pages remain unchanged.
+
+
+## Batch 2 six-locale translation draft expansion — 2026-11-23
+
+- Confirmed corrected commit `4c3dc2e0e9873b75fc6ddd1b5f928488b2321205` Finance CI [45150958993](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/45150958993) and Lighthouse/CLS [45150958960](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/45150958960) both completed successfully.
+- Finance CI: 335/335 Node tests, 1/1 live API test, 30/30 Browser tests, 440/440 desktop/mobile executions across 220 tools, zero runtime errors. Functional audit artifact ID `14805579111`.
+- Lighthouse: Mobile homepage Performance 95 / Accessibility 96 / SEO 100 / CLS 0; Mobile tool 91 / 100 / 100 / CLS 0.0307; Desktop homepage 100 / 100 / 100 / CLS 0; Desktop tool 100 / 100 / 100 / CLS 0.0087.
+- Expanded batch-two draft records for all 10 tools × six locales. Localized fields currently include metadata, all input labels, all result metric and breakdown labels, action labels, common validation messages, chart labels where mapped, SEO title/meta/H1/introduction, and accessibility page/control labels.
+- Remaining fields deliberately retain null/English fallback until translated: formula descriptions, calculation steps, assumptions, notes, disclaimers, limitations, tool-specific validation messages, FAQs/SEO FAQs, guide copy, and unmapped chart text. This is **not yet a complete translation batch** and none of the locale records are approved or activated.
+- Simple Interest day-count option values remain unchanged and in source order `[365, 360, 366]`; only their display labels are localized.
+- Added regression assertions for batch-two stable input/result/breakdown/error/FAQ keys, translated label coverage, accessibility control-label parity, English fallback for untranslated FAQs/steps, and unchanged Simple Interest day-count values.
+- Fresh Finance CI and Lighthouse/CLS runs are required for the expanded translation content and updated tests. PR #73 remains Draft/unmerged; production `main` and GitHub Pages remain unchanged.
+
+
+## Multilingual candidate CI and Lighthouse verification — 2026-11-24
+
+- Exact tested candidate head: `fa96a01e5865e60c965bc956a6e5a422f64ee513` on `feat/seven-language-translation-engine-phase-1`, PR #73.
+- Finance Calculator CI [run #45174997930](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/45174997930) completed successfully. Job log confirms `npm run check` passed, `npm test` passed with 335/335 tests and 0 failures, live Frankfurter API check passed (1/1), and Playwright browser suite passed 30/30 with 0 failures.
+- Batch 2 browser test explicitly completed: all 10 tools × 7 locales = 70 route/locale axe-core WCAG 2.1 A/AA audits passed. The test verifies localized page title, description, first input label, translated calculation step, accessibility labels, SEO title and LTR/RTL direction. The test fixture temporarily simulates approved records in memory; persisted translation records remain `draft`.
+- Full 220-tool functional audit passed 440/440 executions: Desktop 220/220 and Mobile 220/220, with no failures and zero runtime errors. Artifact `220-tool-functional-audit` uploaded successfully (artifact ID `14819256288`).
+- Candidate Lighthouse and CLS [run #45174997999](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/45174997999) completed successfully. Four fresh audits:
+  - Mobile homepage: Performance 98, Accessibility 96, Best Practices 96, SEO 100; CLS 0.0001133.
+  - Mobile tool route (`hydration-log-tracker`): Performance 88, Accessibility 100, Best Practices 96, SEO 100; CLS 0.0303892.
+  - Desktop homepage: Performance 100, Accessibility 100, Best Practices 96, SEO 100; CLS 0.
+  - Desktop tool route: Performance 99, Accessibility 100, Best Practices 96, SEO 100; CLS 0.0086751.
+  All four CLS values satisfy the workflow's 0.10 budget. Lighthouse reports uploaded as artifact ID `14818039864`.
+- The Browser Test timeout seen on prior head `2f798baaab965463c8a7fc5ce944eea62ca468b0` was addressed by forcing a locale transition after injecting in-memory test fixtures. The resulting 30/30 and 70/70 outcomes above are from the exact newer tested head `fa96a01...`.
+- Translation content remains `draft`; this validation does not approve or activate any locale. No formula, calculation data or numeric option values were changed by this test correction.
+- PR #73 remains Draft/unmerged. Production `main` and GitHub Pages were not modified or deployed. These results validate the candidate CI gates only; no production-release claim is made.
+
+
+## Batch 2 translation completeness audit and Batch 3 kickoff — 2026-11-24
+
+- Re-audited the exact Batch 2 catalogue records for `freelance`, `margin`, `affordability`, `payoff`, `refinance`, `personal-loan`, `student-loan`, `simple-interest`, `retirement` and `401k`.
+- All 10 tools have six target-locale records (60/60), all correctly remain `draft`. Each locale has the full metadata, inputs, actions, results, explanations/formula/steps/assumptions/notes/disclaimers/limitations, errors, FAQs, guide, SEO and accessibility groups. Required text coverage audit: 501 required source-aligned strings per locale; no required string was empty and no required string was an exact English copy. Guide coverage: 162 non-empty translated strings per locale. The only null text fields found were chart titles for Student Loan and Simple Interest, where the source does not define a chart title; these are optional and do not block completeness.
+- No translation status was promoted; runtime English fallback remains active because all records remain `draft`. Formula implementations and numeric option values were not modified by this audit.
+- Batch 3 is now scoped to the next 20 canonical tools (tools 21–40): `ira`, `inflation`, `cd`, `apy`, `tax`, `income-tax`, `sales-tax`, `vat-gst`, `tax-refund`, `salary`, `paycheck`, `payroll`, `overtime`, `discount`, `exchange-fees`, `transfer-compare`, `freelance-project`, `freelancer-net-income`, `markup` and `break-even`.
+- Initial authoritative extraction is recorded in `docs/i18n/batch-03-source-extraction.json`: 20/20 titles/descriptions and 88 stable input key/label pairs captured from `app.js`. The same 20 descriptions and input records are now present in `translations/tool-content.json`; all source records explicitly remain `partial` until results, calculation explanations/steps, assumptions, error copy, FAQs, SEO and accessibility evidence are extracted and checked.
+- Income Tax and Salary use `FinPulseTaxEngine`; their jurisdiction/rate/source data is a protected calculation dataset and must not be translated or altered. Other calculation functions are traced by name in the Batch 3 extraction manifest for verbatim evidence capture from `finance-core.js`.
+- Batch 3 six-locale translations have deliberately not started yet: all 120 locale slots remain `not-started` with empty fields until the authoritative source extraction is complete. No placeholder or invented financial/tax guidance is being introduced.
+- Added a catalogue regression test to assert the exact 20-tool batch order, all 88 input labels, unique stable keys, partial extraction state, and no premature translation activation. New test commit: `4358fe7e03887673350af808fe8206d2011f580a`; Batch 3 source/catalogue commits: `c68410b`, `b1add4d`, `001fb18`, `a0acb1d`.
+- This is candidate-branch work only. PR #73 remains Draft/unmerged; production `main` and GitHub Pages are unchanged. Fresh Finance CI and Lighthouse/CLS validation are required for the new candidate head.
+
+
+## Batch 3 source evidence capture — 2026-11-24
+
+- Captured the exact runtime definition from `app.js` for all 20 Batch 3 tools, including result headings, metric/breakdown labels, chart configuration, notes and inline SEO/FAQ blocks where present.
+- Captured the exact calculation implementation for all 20 tools: 18 functions from `finance-core.js`, plus `FinPulseTaxEngine.estimate` for Income Tax and `estimate` + `payroll` for Salary. Source blob SHAs are recorded in `docs/i18n/batch-03-source-extraction.json`.
+- Tool-specific inline SEO/FAQ exists in the runtime definitions for only four Batch 3 tools: Freelance Project Pricing, Freelancer Net Income, Markup and Break-even. The other 16 do not provide inline FAQ/SEO copy. Shared accessibility labels are provided by the app template; per-tool page/form/result/chart labels need a clearly marked derived editorial record. Do not describe these missing fields as verbatim source extraction.
+- Ordered steps, formula explanations, assumptions, FAQs for the remaining tools, SEO copy, error recovery hints and accessibility labels are still pending source authoring/verification. Batch 3 remains `in-progress`; all 120 target-locale slots remain `not-started`. No Batch 3 translations have started and no translation has been activated.
+- Validation: Finance CI run #45350333245 failed at the existing Batch 3 manifest-status assertion (335/336 Node tests passed; one test expected manifest.status=`in-progress`). The manifest status was restored to `in-progress` in corrective commit `4eb7cfaa58d077548054462be5c46519a2a97a14`. Fresh CI for that corrective head has not yet been confirmed. Candidate Lighthouse run #45350333144 is still in progress on the preceding source-evidence commit `49a1b4074808ef6621e78b2c31b3ec18c240cda9`.
+- PR #73 remains Draft/unmerged. Production `main` and GitHub Pages remain unchanged.
+
+
+## Batch 31–60 source extraction and parity update — 2026-11-25
+
+- Source extraction commit: `1ecf5d633b64a3c62a14beb8f0e7fd4097a72ca8`. Added complete English source fields for tools 41–60 in `translations/tool-content.json`; tools 31–40 retained their previously extracted source records.
+- Structural completeness check: 30/30 expected tool records contain metadata, description, inputs, results, explanations, FAQs, SEO, errors, accessibility and guide content. All 180 target-locale slots across these 30 tools remain `not-started`; no translation was activated.
+- Runtime parity review for tools 31–40 is recorded in `docs/BATCH_31_60_SOURCE_PARITY_COMPLETENESS_AUDIT_2026-11-25.md`. It traces each tool to its app runtime definition and Finance Core function, including relevant validation boundaries.
+- The parity/completeness audit document was added in commit `b8fdb9341850a54678caed52d4e032905b4d46c3`.
+- Finance CI run #848 (ID `45576550639`) and Candidate Lighthouse/CLS run #493 (ID `45576550328`) were triggered for the source-data commit and were in progress at the time of this update. Do not claim pass until both finish and are checked against the tested commit.
+- Six-locale translation drafts, schema-validator execution, protected-data regression on the updated catalogue, seven-locale browser/RTL/LTR/accessibility validation and current-head Lighthouse/CLS remain pending.
+- PR #73 remains Draft/unmerged. No merge or production deployment was performed; production `main` and GitHub Pages remain unchanged.
+
+
+## Batch 31–60 CI and regression-gate update — 2026-11-25
+
+- Finance CI #849 on source extraction/audit commit `b8fdb9341850a54678caed52d4e032905b4d46c3`: Node tests 341/341 passed; Frankfurter API check 1/1 passed; Playwright functional audit 30/30 passed. The functional audit exercised 220 tools on desktop and mobile; Batch 2 seven-locale accessibility checks included 70 axe audits. Artifact ID `15004293603`.
+- Candidate Lighthouse/CLS #494 passed on the same commit; report artifact ID `15005225532`.
+- Added dedicated Batch 31–60 source completeness/protected-boundary regression tests and added the test file to the npm test script. Commit `2328f1416eb50a918c18274a215d4b5f91aa26fa` adds the tests; commit `6118b05dbbe3864856b027ef1662ad78bfb9702c` wires them into CI.
+- Current Finance CI #853 and Lighthouse/CLS #498 are in progress on `6118b05dbbe3864856b027ef1662ad78bfb9702c`; the newly added tests are not yet claimed as passing.
+- Batch 31–60 translation records remain untouched/not-started. No merge, activation or deployment.
+
+
+## Multilingual candidate — Batch 31–60 browser gate correction — 2026-11-25
+
+- On candidate commit `6118b05dbbe3864856b027ef1662ad78bfb9702c`, Finance CI #853: syntax/check passed; Node tests 345/345 passed; Frankfurter API 1/1 passed; browser suite failed 28/30 because Probability Calculator had no local bar-chart fallback when Chart.js CDN was unavailable.
+- Runtime fix `c04c748e5c78126f00d0133122310223841c7e06` adds an accessible native SVG bar chart as progressive enhancement. Test commit `f437aa2bc8a1a00a4c193500a00a94d1d5230481` blocks the CDN and asserts the fallback renders.
+- Lighthouse/CLS #498 passed on the pre-fix head only; new candidate-head CI and Lighthouse results are pending. No current release gate pass is claimed.
+- Batch 31–60 translation records remain untouched; all 180 target locale slots remain not-started. PR #73 remains Draft/unmerged; production main and GitHub Pages are unchanged.
+
+
+## Translation draft progress — Batch 31–60 — 2026-11-25
+
+- First tool `paycheck` has six target-locale draft records (hi, ar, ur, zh-CN, ja, ru), with metadata, inputs, results, explanations, FAQs, errors, guide, SEO and accessibility copy. Stable IDs/keys and `{field}` placeholders are regression-checked; the English formula source remains unchanged. Drafts are not approved or activated.
+- Regression tests now permit the paycheck draft while keeping the remaining 29 tools at `not-started`. Finance CI #865 on head `e861258132d6d94e4ec362e490e3ff458f175b22` has passed npm check and npm test; browser tests and Lighthouse/CLS #510 were still in progress at the time of this note.
+- Batch translation progress: 1/30 tools; 29 remain. No formula/calculation runtime, numeric defaults, currency codes, tax jurisdiction data, production main, merge or deployment changed.
+
+
+## Overtime translation draft — 2026-11-25
+
+- Overtime source/formula rechecked against `app.js` and `finance-core.js` (`Core.overtimePay`). The estimate uses the user's entered multiplier and does not determine legal eligibility or statutory multiplier.
+- Completed six-locale drafts (`hi`, `ar`, `ur`, `zh-CN`, `ja`, `ru`) across all nine content groups: metadata, inputs, results, explanations, errors, FAQs, guide, SEO and accessibility. Every locale remains `draft`; English fallback remains active.
+- Stable keys, formula source text and `{field}` tokens are preserved. No formula implementation, numeric defaults, currency codes or runtime behavior changed.
+- Added Overtime to six-locale browser/RTL-LTR tests and Batch 31–60 draft-boundary regression tests.
+- Candidate head `45d1c7c2d7602c0f4372ff68c1464dd04de81742`: Finance CI #875 passed (346/346 Node tests, API 1/1, browser 31/31); Candidate Lighthouse/CLS #520 passed (four routes, all CLS ≤ 0.10). Artifacts: browser `15009504709`; Lighthouse `15010098049`.
+- Batch 31–60 translation progress: **3/30** (paycheck, payroll, overtime); 27 remain. PR #73 remains Draft/unmerged. No activation, merge or production deployment.
+
+
+## Discount translation draft — 2026-11-25
+
+- Discount source and calculation reviewed against `app.js` and `finance-core.js` `discountCalculator`: first discount, then coupon on remaining price, tax on the discounted subtotal, then shipping.
+- Six locale drafts (`hi`, `ar`, `ur`, `zh-CN`, `ja`, `ru`) completed for metadata, inputs, results, explanations, errors, FAQs, guide, SEO and accessibility. Stable keys and `{field}` placeholders preserved; exact English formula remains in the guide calculation-method section.
+- All locale records remain `draft`; no formula/runtime/numeric/currency/tax data changed. English fallback remains active.
+- Discount added to source-completeness, draft-boundary, stable-key/token/formula and seven-locale browser/RTL-LTR tests.
+- Candidate commit `1f9747e54a4f43542ffda96715063d2a24eb2ad0`; fresh CI and Lighthouse/CLS verification pending.
+- Batch 31–60 translation progress: **4/30**; 26 remain. PR #73 remains Draft/unmerged; no activation, merge or deployment.
+
+
+## Exchange Fees translation draft — 2026-11-25
+
+- Exchange Fee & Markup source and \`exchangeFeeMarkup\` implementation reviewed. The model subtracts fixed plus percentage transfer fees, applies the customer rate after markup, and estimates FX spread/total cost relative to the entered mid-market rate. It is an illustrative calculation, not a live provider quote.
+- Six-locale drafts (\`hi\`, \`ar\`, \`ur\`, \`zh-CN\`, \`ja\`, \`ru\`) now cover all nine content groups. Stable keys, three \`{field}\` placeholders per locale and exact English formula text in the guide method section are preserved.
+- All locale records remain \`draft\`; English fallback remains active. No formula/runtime, numeric defaults, currency data or source English text was modified.
+- Added Exchange Fees to source-completeness/draft-boundary, catalogue, formula/token and seven-locale browser/RTL-LTR regression coverage. Validation results are pending; do not treat this draft as release-approved.
+- Batch 31–60 translation progress: **5/30**; 25 remain. PR #73 remains Draft/unmerged; no activation, merge or deployment.
+
+
+## Transfer Compare (#36) six-locale QA — 2026-11-25
+
+- Candidate head validated before this documentation-only note: `41861ec718e4ce996cf14b81e8d9609f9c03dae4`. PR #73 remains Draft/unmerged; no translation was approved or published, and production `main` / GitHub Pages were not changed.
+- Transfer Compare source extraction remains complete. Hindi, Arabic, Urdu, Simplified Chinese, Japanese and Russian records remain `draft`.
+- Formula review compared the translations with `finance-core.js`:
+  - Provider fee = fixed fee + send amount × transfer-fee percentage / 100.
+  - Customer rate = mid-market rate × (1 − exchange-rate markup / 100).
+  - Recipient amount = (send amount − provider fee) × customer rate.
+  - Recipient difference = absolute difference between provider recipient amounts.
+  - Effective rate = recipient amount / send amount when send amount is positive.
+- Replaced the incomplete prose-only Transfer Compare formula description with these calculation relationships in all six locales. The formula panel now renders that translated formula for Transfer Compare only; other tools retain their existing formula rendering.
+- Added the missing `percentage-limit` source error and all six locale translations. Added runtime mappings for combined transfer-fee, percentage-limit and mid-market-rate errors; negative and invalid-number errors now interpolate the translated input label.
+- Preserved the winning provider in translated result summaries with the `{provider}` token and registered that token in the content schema. Renamed “total fees” metrics to “transfer fees” to avoid implying that exchange-rate markup spread is included in the transfer-fee total.
+- Browser coverage now asserts translated formula content, winning Provider A and B labels, computed RTL/LTR direction, numeric/currency invariance across locale changes, and localized recovery for combined fees, markup above 100%, transfer-fee percentage above 100%, zero mid-market rate, negative amount and missing numeric amount.
+- Latest verified Finance CI run [#898 / run 45606746915](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/45606746915) passed on the candidate head: `npm run check`, Node tests 346/346, live API 1/1, Browser tests 34/34, and the 220-tool functional audit 440/440 (220 desktop + 220 mobile), with zero runtime errors.
+- Latest Candidate Lighthouse/CLS run [#545 / run 45606747056](https://github.com/apex-global-labs/FinPulse-Hub/actions/runs/45606747056) passed on the same candidate head:
+  - Mobile homepage: Performance 96, Accessibility 96, Best Practices 96, SEO 100; CLS 0.0001133.
+  - Mobile tool route: Performance 84, Accessibility 100, Best Practices 96, SEO 100; CLS 0.0303892.
+  - Desktop homepage: Performance 100, Accessibility 100, Best Practices 96, SEO 100; CLS 0.
+  - Desktop tool route: Performance 99, Accessibility 100, Best Practices 96, SEO 100; CLS 0.0086751.
+  - All four CLS values satisfy the 0.10 budget. Lighthouse audits the configured candidate tool route; the Transfer Compare-specific locale and error cases are covered by the Playwright browser test.
+- Remaining gate: linguistic/native-speaker and finance-domain review before any locale can move beyond Draft. Do not merge or deploy based solely on automated QA.
+
+
+## Mobile Math 71–77 LCP optimization — 2026-11-28
+
+- Tested code head: `d7c7c48871e835591dcddd53043a41cd66b1b086`. PR #73 remains Draft/open and unmerged. No production deployment was performed.
+- Baseline run #46137305204 measured LCP around 21.46 s on six routes (Matrix Operations 5.44 s); average across seven routes was 19.21 s. Lighthouse attributed most of the delay to rendering after JavaScript startup. The English page was also downloading the 2.2 MB `translations/tool-content.json` despite there being no approved tool-content locale records.
+- Performance changes:
+  - Added `route-loader.js`. Math 71–77 load only the two advanced-math modules and the shared UI/context/i18n runtime (7 runtime modules; 9 total script requests including route-class and route-loader). Other routes retain the full dependency set.
+  - Math route headings are pre-rendered before the calculator modules start; the module loader waits for an early paint, then loads scripts in dependency order.
+  - Math headings use a scoped compact mobile style, and the unrelated generic finance/health disclaimer is no longer rendered on Math & Statistics tools.
+  - Math routes scope the app registry to the seven requested tools and skip the full directory-mapping fetch.
+  - Tool-content loading is gated per tool and locale through generated `translations/tool-content-status.json`. `npm run sync:tool-content-status` regenerates it; `npm test` validates it against the source registry. The current manifest has zero approved locales, so no locale downloads the 2.2 MB tool-content payload while records remain Draft/Not Started. The smaller UI translation catalogue still loads for non-English locales; approved tool content loads only when the selected tool and locale are present in the manifest. Browser integration tests supply an approved test manifest to verify activation.
+  - Added route-loader and approval-manifest regression tests, added the new loader to syntax checks and the GitHub Pages artifact, and retained the full script dependency manifest as a non-executable HTML comment for legacy static dependency checks.
+- Final dedicated Mobile Lighthouse run #46141324097 passed the seven-route browser validation and all seven audits:
+
+| Route | LCP | Performance | Accessibility | SEO |
+|---|---:|---:|---:|---:|
+| Linear Equation | 1,712 ms | 100 | 100 | 100 |
+| Quadratic Equation | 1,711 ms | 100 | 100 | 100 |
+| Simultaneous Equations | 1,352 ms | 100 | 100 | 100 |
+| Polynomial Calculator | 1,352 ms | 100 | 100 | 100 |
+| Logarithm | 1,355 ms | 100 | 100 | 100 |
+| Matrix Operations | 1,710 ms | 100 | 100 | 100 |
+| Matrix Determinant | 1,866 ms | 99 | 100 | 100 |
+
+- Average LCP improved from 19.21 s to 1.58 s (about 91.8% lower); all seven routes are below 1.9 s and below the 2.5 s target. CLS ranged from 0.0318–0.0321; TBT ranged from 0–15 ms. Every Math route made 9 script requests and requested neither `tool-content.json` nor `tool-category-mapping.json`.
+- Final Finance CI run #46141324158 passed:
+  - `npm run check`: passed.
+  - `npm test`: 444 passed, 0 failed.
+  - Live Frankfurter reference-rate API verification: passed.
+  - Browser regression: 61 passed, 0 failed.
+  - Full functional audit: 220 unique tools × desktop/mobile = 440/440 executions passed; desktop 220/220, mobile 220/220; zero failures and zero runtime errors.
+  - Locale/accessibility batches: the three translation suites each passed their 70 WCAG 2.1 A/AA axe audits.
+- Candidate Lighthouse/CLS run #46141324071 also completed successfully and passed the configured CLS budget.
+- No merge, production deployment, or translation activation is authorized by this audit.

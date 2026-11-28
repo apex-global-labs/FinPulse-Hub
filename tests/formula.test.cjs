@@ -114,3 +114,33 @@ test("Batch 2 cash-flow monthly and yearly projections reconcile inflows outflow
 
 test("Batch 2 car loan, mortgage affordability and personal loan schedules reconcile",()=>{const car=F.carLoan(32000,5000,0,7,60,500,100),carBase=F.carLoan(32000,5000,0,7,60,500,0);assert.equal(car.monthlySchedule.length,car.months);assert.ok(car.totalInterest<carBase.totalInterest);const home=F.mortgageAffordability(8000,650,60000,6.25,30,300,120,0,36,28);assert.equal(home.monthlySchedule.length,360);assert.equal(home.yearlySchedule.length,30);near(home.monthlySchedule.at(-1).closingBalance,0,.02);const personal=F.personalLoan(15000,11.5,4,3,100),plain=F.personalLoan(15000,11.5,4,3,0);assert.equal(personal.monthlySchedule.length,personal.months);assert.ok(personal.totalInterest<plain.totalInterest);assert.ok(personal.effectiveAnnualCost>11.5);});
 test("Batch 2 loan and EMI tool schedules reconcile principal interest and payments",()=>{const loan=F.loan(15000,8,60,100),emi=F.emi(500000,10,60);assert.equal(loan.monthlySchedule.length,loan.months);assert.equal(emi.monthlySchedule.length,60);near(loan.monthlySchedule[0].payment,loan.basePayment+100);near(emi.monthlySchedule.reduce((a,r)=>a+r.principal,0),500000,.02);near(emi.totalPaid,emi.monthlySchedule.reduce((a,r)=>a+r.payment,0),.02);});
+
+
+test("Batch 31-36 zero and maximum-permitted boundaries match runtime contracts",()=>{
+ const paycheck=F.paycheck(0,0,0,1.5,0,0,0,0,0);
+ near(paycheck.gross,0);near(paycheck.net,0);
+ const payroll=F.payroll(1,0,100,0,0);
+ near(payroll.totalMonthly,0);near(payroll.totalAnnual,0);
+ const overtime=F.overtimePay(0,0,0,1.5);
+ near(overtime.gross,0);near(overtime.blendedRate,0);
+ const discount=F.discountCalculator(100,100,100,100,0);
+ near(discount.discountedSubtotal,0);near(discount.total,0);
+ const exchange=F.exchangeFeeMarkup(0,1.2,100,100,0);
+ near(exchange.fee,0);near(exchange.convertedAmount,0);near(exchange.effectiveRate,0);
+ const compare=F.internationalTransferCompare(0,1.2,0,0,0,0,0,0);
+ assert.equal(compare.bestProvider,"A");near(compare.recipientDifference,0);
+});
+
+test("Batch 31-36 reject non-finite, negative and out-of-contract boundary inputs",()=>{
+ for(const fn of [
+  ()=>F.paycheck(NaN,40,0,1.5,0,0,0,0,0),
+  ()=>F.paycheck(20,40,0,1.5,0,0,0,0,801),
+  ()=>F.payroll(1.5,1000,0,0,0),
+  ()=>F.payroll(1,1000,100.01,0,0),
+  ()=>F.overtimePay(20,-1,0,1.5),
+  ()=>F.discountCalculator(100,100.01,0,0,0),
+  ()=>F.exchangeFeeMarkup(100,1.2,0,100,0),
+  ()=>F.exchangeFeeMarkup(100,0,0,0,0),
+  ()=>F.internationalTransferCompare(100,1.2,0,100,0,0,0,0)
+ ]) assert.throws(fn);
+});
