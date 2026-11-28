@@ -31,12 +31,12 @@ jobs:
           mkdir -p lighthouse-reports
           CHROME_PATH="$(node -p "require('playwright').chromium.executablePath()")"
           npx lighthouse "http://127.0.0.1:4173/" --chrome-path="$CHROME_PATH" --chrome-flags="--headless --no-sandbox" --only-categories=performance,accessibility,best-practices,seo --output=json --output-path=./lighthouse-reports/mobile-home.report.json
-          npx lighthouse "http://127.0.0.1:4173/?tool=hydration-log-tracker" --chrome-path="$CHROME_PATH" --chrome-flags="--headless --no-sandbox" --only-categories=performance,accessibility,best-practices,seo --output=json --output-path=./lighthouse-reports/mobile-tool.report.json
+          npx lighthouse "http://127.0.0.1:4173/?tool=triangle-area" --chrome-path="$CHROME_PATH" --chrome-flags="--headless --no-sandbox" --only-categories=performance,accessibility,best-practices,seo --output=json --output-path=./lighthouse-reports/mobile-tool.report.json
       - name: Audit desktop homepage and final tool route
         run: |
           CHROME_PATH="$(node -p "require('playwright').chromium.executablePath()")"
           npx lighthouse "http://127.0.0.1:4173/" --chrome-path="$CHROME_PATH" --chrome-flags="--headless --no-sandbox" --preset=desktop --only-categories=performance,accessibility,best-practices,seo --output=json --output-path=./lighthouse-reports/desktop-home.report.json
-          npx lighthouse "http://127.0.0.1:4173/?tool=hydration-log-tracker" --chrome-path="$CHROME_PATH" --chrome-flags="--headless --no-sandbox" --preset=desktop --only-categories=performance,accessibility,best-practices,seo --output=json --output-path=./lighthouse-reports/desktop-tool.report.json
+          npx lighthouse "http://127.0.0.1:4173/?tool=triangle-area" --chrome-path="$CHROME_PATH" --chrome-flags="--headless --no-sandbox" --preset=desktop --only-categories=performance,accessibility,best-practices,seo --output=json --output-path=./lighthouse-reports/desktop-tool.report.json
       - name: Print scores and enforce CLS budget
         run: |
           node <<'NODE'
@@ -54,7 +54,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: finpulse-batch-11-lighthouse-reports
+          name: finpulse-batch-64-70-math-route-reports
           path: lighthouse-reports/*.report.json
           if-no-files-found: error
           retention-days: 30
