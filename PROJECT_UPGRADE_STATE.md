@@ -94,3 +94,12 @@ Upgrade the existing 220-tool application with (1) seven-locale UI and tool-cont
 - New latest-head Finance CI run: `46116447943` (#1078). New candidate Lighthouse/CLS run: `46116447957` (#723). Both are running on exact head `f52351ac1d6bc6142aaf864039be0912a06285c1`.
 - The prior latest-head Lighthouse/CLS run `46115994929` (#721) completed successfully: all four mobile/desktop homepage/tool audits passed the CLS ≤ 0.10 budget. Scores: mobile home P95/A96/SEO100, mobile tool P81/A100/SEO100, desktop home P100/A100/SEO100, desktop tool P98/A100/SEO100. CLS values: 0.00011, 0.03039, 0, 0.00868 respectively. Mobile tool LCP was 5.13 s and remains a performance improvement opportunity.
 - Batch L1 remains **IN PROGRESS / NOT RELEASE-ACCEPTED** until Finance CI #1078 completes with all browser tests green and all seven-locale RTL/LTR, accessibility and numerical-parity assertions pass. No Batch 2, merge, or deployment.
+
+
+## Test parser correction follow-up — 2026-11-28 06:29 UTC
+
+- Finance CI run `46116447943` on test commit `f52351ac1d6bc6142aaf864039be0912a06285c1` failed before browser assertions could run: a literal escaped newline introduced a JavaScript `SyntaxError: Invalid or unexpected token` in `tests/tool-content-translations.browser.test.cjs`. The underlying `npm test` suite still passed **420/420** and Frankfurter API passed **1/1**.
+- Corrected the test-file newline only; no application code or content changed. Fix commit: `92472c0834d769f531191e01ef0f4cbdafb1e113`.
+- Latest-head Finance CI: `46116821744`; latest-head Lighthouse/CLS: `46116821743`. Both are running on `92472c0834d769f531191e01ef0f4cbdafb1e113`.
+- Latest Lighthouse/CLS run `46116447957` completed successfully with CLS values 0.0000, 0.03039, 0.0000, 0.00868 for mobile home, mobile tool, desktop home and desktop tool respectively. Mobile performance varied to 78/75 (LCP 2.43 s / 5.13 s); desktop scores were 100/98. Accessibility 96/100/100/100; SEO 100 on all routes.
+- L1 remains blocked pending the latest-head Finance CI/browser run. No merge, deployment or Batch 2 start.
