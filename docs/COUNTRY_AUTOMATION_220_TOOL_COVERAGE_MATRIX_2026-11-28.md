@@ -8,7 +8,7 @@
 
 ## Executive result
 
-- Canonical inventory: **220 tools / 220 unique stable IDs**, distributed across 10 source modules.
+- Canonical inventory: **220 tools / 220 unique stable IDs**, distributed across 10 source modules. All 220 IDs were cross-checked against the 220 stable IDs in main's `docs/FINANCE_TOOL_MASTER_REGISTRY.md`; there were no missing or extra IDs.
 - Overall country-context classification: **0 Complete, 49 Partial, 26 Missing, 145 Not Applicable**.
 - Country relevance: `Currency / monetary display`: 38; `N/A`: 145; `Country tax / jurisdiction`: 11; `Regional date / time rules`: 6; `Regional measurement preference (optional)`: 20.
 - The site has a global Country/Region selector and a static 249-country/territory → 154-currency registry. **Selecting a country does not automatically apply its currency or load a calculator's jurisdiction dataset.** Currency preference is a separate setting; the UI has an explicit “Use suggested currency” action.
@@ -35,7 +35,7 @@
 - The measurement-system value exists in the context API but is not exposed as a selector in the current header and is not used to preselect unit-converter fields.
 
 ### Country-specific finance data
-- `tax-data.js`: 23 profiles (US federal filing statuses, UK, Canada provinces/territories including Québec, Bangladesh taxpayer categories); `checkedOn: 2026-11-18`; sources are recorded by jurisdiction family. `income-tax` and `salary` load a profile only after manual selection in a separate Country/region and tax-year dropdown.
+- `tax-data.js`: 23 profiles (4 US federal filing statuses, 2 UK profiles, 13 Canada province/territory profiles including Québec, 4 Bangladesh taxpayer categories); `checkedOn: 2026-11-18`; sources are recorded by jurisdiction family. `income-tax` and `salary` load a profile only after manual selection in a separate Country/region and tax-year dropdown.
 - `smart-ui.js`: Sales Tax and VAT/GST have country/region preset dropdowns; Inflation has four country estimates plus a custom option. These are manually selected, not auto-selected from global country. Preset metadata uses `checkedOn: 2026-11-18` and includes source URLs/notes.
 - Sales Tax US preset is explicitly a placeholder requiring local state/city rate; zero must not be treated as a tax-free claim. Canada presets are starting-point combined rates; exemptions and place-of-supply rules remain out of scope.
 - `tax-state-data.js` on main contains 50 state rows and a default `statewisenews.com` source with `checkedOn: 2026-11-18`; only a small number override that source URL. This is not equivalent to per-state official verification. PR #74's unmerged candidate documents a stricter boundary (8/50 no-income-tax states verified for automatic zero; 0/50 positive-rate schedules fully verified; unsupported states remain manual-only). **That PR #74 safeguard is not active on main.**
@@ -66,7 +66,7 @@
 | Time-zone / public-holiday-sensitive IDs | 6 |
 | Unit-converter tools with explicit units | 20 |
 | Country/territory rows / currency codes | 249 / 154 |
-| Tax profiles on main | 10 |
+| Tax profiles on main | 23 |
 | US state rows on main | 50 |
 | Target locale cells | 1320 |
 | Draft cells (each locale) | 46 |
