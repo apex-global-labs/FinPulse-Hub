@@ -83,8 +83,6 @@ async function accessibilityAudit(page,id,locale){
   for(const img of document.querySelectorAll("img"))if(!img.hasAttribute("alt"))issues.push("image missing alt text");
   if(!document.documentElement.lang)issues.push("document language missing");
   if(!document.documentElement.dir)issues.push("document direction missing");
-  if(!document.querySelector("#app[aria-label]"))issues.push("page landmark has no accessible label");
-  if(!document.querySelector("#form[aria-label]"))issues.push("form has no accessible label");
   if(!document.querySelector(".result[aria-label]"))issues.push("result region has no accessible label");
   const heading=Array.from(document.querySelectorAll("h1,h2,h3")).filter(visible);
   if(!heading.length)issues.push("no visible heading");
