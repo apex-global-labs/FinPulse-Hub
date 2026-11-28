@@ -38,6 +38,7 @@ test("every canonical tool has six locale records with correct draft or pending 
  const batchThreeDraftIds=["ira","inflation","cd","apy","paycheck","payroll","overtime","discount","exchange-fees","transfer-compare","freelance-project","freelancer-net-income","markup","break-even"];
  const batchFourPartialIds=["business-roi","cash-flow","rental-yield","emergency-fund","net-worth","basic-arithmetic","fraction","mixed-number","decimal-fraction","ratio"];
  const batchFiveDraftIds=["proportion","average","percentage-change","percent-error","rounding","significant-figures","scientific-notation","exponent","square-root","cube-root"];
+ const batchSixDraftIds=["nth-root","factorial","gcd"];
  for(const tool of content.tools){
   assert.deepEqual(Object.keys(tool.locales).sort(),locales.slice().sort());
   for(const locale of locales){
@@ -111,6 +112,27 @@ test("every canonical tool has six locale records with correct draft or pending 
      assert.ok(fields.metadata.title&&fields.metadata.description&&fields.metadata.category&&fields.metadata.subcategory,tool.id+":"+locale+" metadata");
      assert.ok(fields.guide.steps.every(x=>x.title&&x.body)&&fields.guide.sections.every(x=>x.heading&&x.body),tool.id+":"+locale+" guide text");
     }
+   }else if(batchSixDraftIds.includes(tool.id)){
+    const fields=tool.locales[locale].fields,source=tool.source;
+    assert.equal(tool.locales[locale].status,"draft",tool.id+":"+locale+" batch-six draft status");
+    assert.equal(tool.sourceTranslationStatus,"draft",tool.id+" batch-six source translation draft status");
+    assert.deepEqual(fields.inputs.map(x=>x.key),source.inputs.map(x=>x.key),tool.id+":"+locale+" input keys");
+    assert.deepEqual(fields.results.metrics.map(x=>x.key),source.results.metrics.map(x=>x.key),tool.id+":"+locale+" metric keys");
+    assert.deepEqual(fields.results.breakdown.map(x=>x.key),source.results.breakdown.map(x=>x.key),tool.id+":"+locale+" breakdown keys");
+    assert.deepEqual(fields.faqs.map(x=>x.key),source.faqs.map(x=>x.key),tool.id+":"+locale+" FAQ keys");
+    assert.deepEqual(fields.seo.faq.map(x=>x.key),source.seo.faq.map(x=>x.key),tool.id+":"+locale+" SEO FAQ keys");
+    assert.deepEqual(fields.errors.map(x=>x.key),source.errors.map(x=>x.key),tool.id+":"+locale+" error keys");
+    assert.deepEqual(fields.guide.steps.map(x=>x.key),source.guide.steps.map(x=>x.key),tool.id+":"+locale+" guide step keys");
+    assert.deepEqual(fields.guide.sections.map(x=>x.key),source.guide.sections.map(x=>x.key),tool.id+":"+locale+" guide section keys");
+    assert.deepEqual(fields.accessibility.controlLabels.map(x=>x.key),source.inputs.map(x=>x.key),tool.id+":"+locale+" accessibility keys");
+    assert.equal(fields.explanations.formulaDescription,source.explanations.formula,tool.id+":"+locale+" source formula preserved");
+    assert.equal(fields.explanations.steps.length,source.explanations.steps.length,tool.id+":"+locale+" explanation step count");
+    assert.ok(Object.keys(fields).length===10,tool.id+":"+locale+" all ten content groups");
+    assert.ok(fields.metadata.title&&fields.metadata.description&&fields.metadata.category&&fields.metadata.subcategory,tool.id+":"+locale+" metadata");
+    assert.ok(Object.values(fields.actions).every(x=>typeof x==="string"&&x.trim()),tool.id+":"+locale+" actions");
+    assert.ok(fields.guide.steps.every(x=>x.title&&x.body)&&fields.guide.sections.every(x=>x.heading&&x.body),tool.id+":"+locale+" guide text");
+    assert.ok(fields.faqs.every(x=>x.question&&x.answer)&&fields.errors.every(x=>x.message&&x.recoveryHint),tool.id+":"+locale+" FAQ and errors");
+    assert.ok(fields.seo.title&&fields.seo.metaDescription&&fields.seo.h1&&fields.seo.introduction,tool.id+":"+locale+" SEO");
    }else{
     assert.equal(tool.locales[locale].status,"not-started",tool.id+":"+locale);
     assert.deepEqual(tool.locales[locale].fields,{});
