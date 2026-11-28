@@ -20,9 +20,6 @@ const mathRoutes = [
 ];
 
 const expectedMathScripts = [
-  "finance-core.js",
-  "math-core.js",
-  "math-tools.js",
   "advanced-math-core.js",
   "advanced-math-tools.js",
   "smart-ui.js",
@@ -110,7 +107,7 @@ test("dynamic scripts are ordered and the HTML uses the route loader", () => {
 
 test("Math route app registry is scoped and does not fetch the full directory mapping", () => {
   assert.ok(app.includes("MATH_BATCH_ROUTE_IDS.has(requestedTool)"));
-  assert.ok(app.includes('D.filter(tool=>tool.c==="Math & Statistics")'));
+  assert.ok(app.includes('D.filter(tool=>MATH_BATCH_ROUTE_IDS.has(tool.id))'));
   assert.ok(app.includes("if(!MATH_BATCH_ROUTE_IDS.has(requestedTool))renderDirectoryAfterMapping()"));
   for (const registry of [
     "FinPulseMathTools",
