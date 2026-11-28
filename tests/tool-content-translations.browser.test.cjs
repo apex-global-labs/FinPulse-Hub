@@ -77,9 +77,9 @@ async function snapshot(page,locale){
  const captured=await page.evaluate(()=>{
   const numeric=[document.querySelector(".result .value")?.textContent||"",...Array.from(document.querySelectorAll("#metrics .metric strong"),x=>x.textContent)];
   const formula=(Array.from(document.querySelectorAll("#formula-panel p")).map(x=>x.textContent.trim()).find(x=>x.includes("="))||"").replace(/^[^:：]+[:：]\s*/,"");
-  return {numericRaw:numeric,currencyCode:window.FinPulseGlobalContext?.get().currencyCode||null,values:Array.from(document.querySelectorAll("#form [name]"),x=>[x.name,x.value]),formula};
+  return {numericRaw:numeric,numberLocale:new Intl.NumberFormat().resolvedOptions().locale,currencyCode:window.FinPulseGlobalContext?.get().currencyCode||null,values:Array.from(document.querySelectorAll("#form [name]"),x=>[x.name,x.value]),formula};
  });
- return {...captured,numeric:captured.numericRaw.map(value=>numberSnapshot(value,locale))};
+ return {...captured,numeric:captured.numericRaw.map(value=>numberSnapshot(value,captured.numberLocale))};
 }
 test("Batch 1, Batch 2 and Overtime pilot persisted tool records are complete and locale-consistent",async()=>{
  content=JSON.parse(await readFile(join(process.cwd(),"translations/tool-content.json"),"utf8"));
