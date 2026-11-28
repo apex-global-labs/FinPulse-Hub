@@ -1,0 +1,84 @@
+name: Math Batch 71-77 Mobile Lighthouse
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  mobile-math-routes:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Install Chromium and Lighthouse
+        run: |
+          npm install --no-save playwright@1.56.1 lighthouse@12.8.2
+          npx playwright install --with-deps chromium
+      - name: Start local static server
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/finpulse-server.log 2>&1 &
+          for i in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:4173/ > /dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/finpulse-server.log
+          exit 1
+      - name: Run mobile Lighthouse for Math tools 71-77
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts/lighthouse-math-71-77
+          CHROME_PATH="$(node -e "process.stdout.write(require('playwright').chromium.executablePath())")"
+          export CHROME_PATH
+          routes=(linear-equation quadratic-equation simultaneous-equations polynomial-calculator logarithm matrix-operations matrix-determinant)
+          for route in "${routes[@]}"; do
+            echo "Auditing $route"
+            npx lighthouse "http://127.0.0.1:4173/#/tools/$route" \
+              --chrome-path="$CHROME_PATH" \
+              --only-categories=performance,accessibility,seo \
+              --form-factor=mobile \
+              --screenEmulation.mobile=true \
+              --screenEmulation.width=390 \
+              --screenEmulation.height=844 \
+              --screenEmulation.deviceScaleFactor=1 \
+              --throttling-method=simulate \
+              --output=json \
+              --output-path="artifacts/lighthouse-math-71-77/$route.json" \
+              --quiet
+          done
+      - name: Summarize LCP and CLS
+        run: |
+          node - <<'NODE'
+          const fs = require('fs');
+          const path = 'artifacts/lighthouse-math-71-77';
+          const files = fs.readdirSync(path).filter(x => x.endsWith('.json'));
+          const rows = files.map(file => {
+            const report = JSON.parse(fs.readFileSync(path + '/' + file, 'utf8'));
+            const a = report.audits;
+            return {
+              route: file.replace('.json', ''),
+              performance: Math.round(report.categories.performance.score * 100),
+              accessibility: Math.round(report.categories.accessibility.score * 100),
+              seo: Math.round(report.categories.seo.score * 100),
+              lcp_ms: a['largest-contentful-paint'].numericValue,
+              cls: a['cumulative-layout-shift'].numericValue,
+              lcp_element: a['largest-contentful-paint-element']?.details?.items?.[0]?.node?.snippet || ''
+            };
+          });
+          fs.writeFileSync(path + '/summary.json', JSON.stringify(rows, null, 2));
+          console.log(JSON.stringify(rows, null, 2));
+          if (rows.length !== 7) process.exitCode = 1;
+          NODE
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lighthouse-mobile-math-71-77
+          path: artifacts/lighthouse-math-71-77/
+          if-no-files-found: error
+          retention-days: 14
