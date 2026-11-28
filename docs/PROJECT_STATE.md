@@ -317,11 +317,11 @@ The dedicated branch adds five Developer wrap-up tools, twelve Education & Study
 
 ## Mobile Math 71–77 LCP optimization — 2026-11-28
 
-- Candidate head: `d16b850e491242a4cb1a43102d09d61c10d813e1`. PR #73 remains Draft/open and unmerged. No production deployment was performed.
+- Candidate head: `ec8fc4e36f6a55655ac44d641904e87f1f082dcc`. PR #73 remains Draft/open and unmerged. No production deployment was performed.
 - Corrected the route Lighthouse URLs to use the actual `?tool=` router parameter without an initial `#tools` anchor. The anchor had caused the first run to measure the off-screen marquee instead of the tool content.
 - Valid baseline run #46137305204 found LCP around 21.46 s on six routes (Matrix Operations 5.44 s). Lighthouse attributed approximately 86–98% of LCP to render delay. Network evidence showed the English route was downloading the 2.2 MB `translations/tool-content.json` draft file despite zero approved/published locale records.
 - Performance changes:
-  - English startup no longer waits for or downloads the unapproved tool-content translation payload. Non-English locale selection still loads the translation runtime before rerendering and preserves entered form values.
+  - Tool-content loading is gated per tool and locale through generated `translations/tool-content-status.json`. `npm run sync:tool-content-status` regenerates it, and `npm test` validates it against the source registry. The current manifest has zero approved locales, so no locale downloads the 2.2 MB tool-content payload while records remain Draft/Not Started. The smaller UI translation catalogue still loads for non-English locales; approved tool content loads only when the selected tool and locale are present in the manifest. The browser integration test supplies an approved test manifest to verify that activation still works.
   - Added `route-loader.js`: Math routes 71–77 load only the advanced-math engines and shared UI/context/i18n runtime; other routes and the homepage retain the full script set.
   - Math routes now scope their registry to the seven requested tools and skip the full directory-mapping fetch.
   - Added route-loader regression tests, added the loader to syntax checks and the GitHub Pages artifact copy list, and added a seven-route browser validation step to the dedicated Lighthouse workflow.
@@ -339,5 +339,5 @@ The dedicated branch adds five Developer wrap-up tools, twelve Education & Study
 
 - Average LCP improved from 19.21 s at baseline to 1.84 s (about 90.4% lower). Final CLS was 0.0321 on all seven routes; TBT ranged from 0–4 ms. Each route made 9 script requests and requested neither `tool-content.json` nor `tool-category-mapping.json`.
 - Candidate Lighthouse run #46138744260 also passed: mobile homepage Performance 100 / LCP 1,698 ms / CLS 0.0001; mobile candidate tool route Performance 95 / LCP 2,868 ms / CLS 0.0326; desktop homepage Performance 100 / LCP 519 ms / CLS 0; desktop tool route Performance 100 / LCP 705 ms / CLS 0.0087.
-- Finance CI run #46138744284: `npm run check`, `npm test`, and live Frankfurter API verification passed. Full desktop/mobile Browser Regression was still running when this note was written; do not mark the full release gate green until that job completes.
+- Finance CI run #46139633285 on the current approval-manifest code: `npm run check`, `npm test` (including the manifest validator), and live Frankfurter API verification passed. Full desktop/mobile Browser Regression was still running when this note was written; do not mark the full release gate green until that job completes. The final-head Math Lighthouse rerun is #46139633343; the earlier successful 7-route metrics are from #46138744261 and the English route path is unchanged by the manifest gate.
 - No merge, production deployment, or translation activation is authorized by this audit.
