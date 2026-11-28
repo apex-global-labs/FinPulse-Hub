@@ -1,10 +1,10 @@
 const test=require("node:test");
 const assert=require("node:assert/strict");
-const Country=require("../country-data-runtime.js");
+global.window=global;
 const Global=require("../global-context.js");
-const Tax=require("../tax-data.js");
-
-// The runtime is tested with the same browser globals used by the static app.
+require("../tax-data.js");
+const Tax=global.FinPulseTaxData;
+const Country=require("../country-data-runtime.js");
 global.FinPulseGlobalContext=Global;
 global.FinPulseTaxData=Tax;
 test("country selection resolves a known currency without inventing an exchange rate",()=>{
