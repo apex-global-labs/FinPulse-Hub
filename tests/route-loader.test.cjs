@@ -61,7 +61,9 @@ const expectedFullScripts = [
 function loadedScripts(search) {
   const appended = [];
   const appElement = { innerHTML: "" };
+  const classes = [];
   const document = {
+    documentElement: { classList: { add(name) { classes.push(name); } } },
     createElement() {
       return { dataset: {} };
     },
@@ -85,7 +87,7 @@ function loadedScripts(search) {
     console
   };
   vm.runInNewContext(loader, context);
-  return { scripts: appended, placeholder: appElement.innerHTML };
+  return { scripts: appended, placeholder: appElement.innerHTML, classes };
 }
 
 test("Math routes load only the math engines and shared runtime in dependency order", () => {
@@ -103,6 +105,7 @@ test("Math routes load only the math engines and shared runtime in dependency or
     }[route];
     assert.ok(result.placeholder.includes("<h2>" + expectedTitle + "</h2>"), route + " should pre-render its LCP heading");
     assert.ok(result.placeholder.includes('aria-hidden="true"'), route + " placeholder must not duplicate accessible content");
+    assert.ok(result.classes.includes("math-batch-route"), route + " must receive the scoped Math layout class");
   }
 });
 
