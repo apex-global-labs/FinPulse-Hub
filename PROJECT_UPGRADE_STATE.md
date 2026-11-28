@@ -44,7 +44,7 @@ Upgrade the existing 220-tool application with (1) seven-locale UI and tool-cont
 - Source/schema readiness audit exists at `docs/BATCH_51_60_SOURCE_SCHEMA_READINESS_AUDIT_2026-11-27.md`; all ten source records #51–60 are complete and stable-keyed. #53–60 locale records were previously Not Started.
 - Required fields: metadata, inputs/options, actions, results, explanations, errors, FAQs, guide, SEO, accessibility. Preserve exact stable keys, placeholders (notably `{field}`), formula semantics, numeric constraints and source step counts.
 - Status remains Draft; no translation activation.
-- Draft creation: 8 tools × 6 locales = 48 Draft records committed in `274474d3a6247b25d92fdda942d4bf7f5b2a1b3e`; action labels and Batch 1 integrity tests were subsequently committed. Current PR #73 head: `eeef5fe5a44d8c0cbad2ef2d1702818e1838bda0`. Independent audit: 48/48 Draft records, 0 formula mismatches, 0 stable-key mismatches, 0 `{field}` token mismatches, 0 empty field groups, 0 untranslated action labels. `npm run check` and `npm test` passed; Finance CI `46111131323` is still running desktop/mobile seven-locale Browser regression. Lighthouse/CLS `46111130196` passed. Browser tests include all eight Batch 1 tools across six target locales. Draft translations are AI-generated and require native-language review; they are not approved/published. Next: inspect browser, RTL/LTR, accessibility and numeric parity results.
+- Draft creation: 8 tools × 6 locales = 48 Draft records committed in `274474d3a6247b25d92fdda942d4bf7f5b2a1b3e`; action labels and Batch 1 integrity tests were subsequently committed. Current PR #73 head: `eeef5fe5a44d8c0cbad2ef2d1702818e1838bda0`. Independent audit: 48/48 Draft records, 0 formula mismatches, 0 stable-key mismatches, 0 `{field}` token mismatches, 0 empty field groups, 0 untranslated action labels. `npm run check` and `npm test` passed. Finance CI `46111131323` completed with failure: browser suite reported 45 passed / 9 failed out of 54; all 9 failures were within the eight new Batch 1 tools and arose from exact string assertions comparing source strings containing repeated spaces against browser-rendered `innerText`/`allInnerTexts` values, which normalize/collapse whitespace. No calculation, locale-direction, API or runtime error was reported in these failures. Lighthouse/CLS `46111130196` passed. A test-only normalizer was added in commits `eb952c00b653fa98303b65a1617f321135cdd793` and `9bb5bf533b0a7fb95f576947b2f5e450bbaa158a`; latest PR #73 head must be re-read and its new Finance CI + Lighthouse runs verified before declaring L1 complete. Draft translations are AI-generated and require native-language review; they are not approved/published.
 
 ## Batch progress
 | Batch | Scope | Status |
@@ -61,3 +61,13 @@ Upgrade the existing 220-tool application with (1) seven-locale UI and tool-cont
 5. API failure or missing data must preserve manual entry.
 6. Keep candidate branches/PRs Draft. Do not merge, close or deploy without explicit user approval.
 7. Report exact commit SHA, test pass/fail counts, workflow run IDs, and any remaining blocker. Never claim CI success based on an earlier head.
+
+
+## User authorization and active execution — 2026-11-28 06:12 UTC
+
+- User explicitly authorized starting Batch 1 ("হ্যাঁ, শুরু করো").
+- No PR merge or production deployment is authorized by this confirmation; all work remains Draft.
+- Latest inspected PR #73 CI run `46111131323` completed **failure**: browser tests 45 passed, 9 failed (54 total). Failures were localized to Hindi text comparisons in #53–60 and caused by browser whitespace collapsing versus unnormalized expected strings. Test-only normalization was added; no translations, formula code, numeric data, or runtime behavior was modified.
+- Test fix commits: `eb952c00b653fa98303b65a1617f321135cdd793` (initial) and `9bb5bf533b0a7fb95f576947b2f5e450bbaa158a` (corrected normalizer).
+- Exact next action: inspect PR #73 latest head, ensure normalizer is syntactically correct, run Finance CI and Lighthouse/CLS on that exact head, then inspect full job logs/artifacts and update counts. If tests still fail, fix only evidence-backed issues.
+- Batch L1 remains **IN PROGRESS / NOT RELEASE-ACCEPTED** until latest-head CI, browser, RTL/LTR, accessibility and numerical parity gates pass.
