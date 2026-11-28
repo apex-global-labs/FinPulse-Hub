@@ -103,14 +103,15 @@ test("homepage and non-Math routes retain the complete legacy script set and ord
 test("dynamic scripts are ordered and the HTML uses the route loader", () => {
   assert.ok(loader.includes("script.async = false"));
   assert.ok(html.includes('<script src="route-loader.js" defer></script>'));
-  assert.ok(!html.includes('<script src="app.js" defer></script>'));
-  assert.ok(!html.includes('<script src="finance-core.js" defer></script>'));
+  const executableHtml = html.replace(/<!--[\\s\\S]*?-->/g, "");
+  assert.ok(!executableHtml.includes('<script src="app.js" defer></script>'));
+  assert.ok(!executableHtml.includes('<script src="finance-core.js" defer></script>'));
 });
 
 test("Math route app registry is scoped and does not fetch the full directory mapping", () => {
   assert.ok(app.includes("MATH_BATCH_ROUTE_IDS.has(requestedTool)"));
   assert.ok(app.includes('D.filter(tool=>tool.c==="Math & Statistics")'));
-  assert.ok(app.includes("if(!MATH_BATCH_ROUTE_IDS.has(requestedTool))loadDirectoryMapping()"));
+  assert.ok(app.includes("if(!MATH_BATCH_ROUTE_IDS.has(requestedTool))renderDirectoryAfterMapping()"));
   for (const registry of [
     "FinPulseMathTools",
     "FinPulseAdvancedMathTools",
