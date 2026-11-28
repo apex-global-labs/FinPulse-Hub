@@ -39,7 +39,7 @@ test("simultaneous equations: finite inputs, non-zero determinant and finite sol
  assert.throws(()=>M.simultaneous(1,2,3,2,4,6));assert.throws(()=>M.simultaneous(Infinity,1,2,3,4,5));
 });
 test("polynomial: finite inputs, non-zero coefficient set and finite outputs",()=>{
- assert.deepEqual(M.polynomial(1,-2,3,4,2),{value:14,derivative:7});
+ assert.deepEqual(M.polynomial(1,-2,3,4,2),{value:10,derivative:7});
  assert.throws(()=>M.polynomial(0,0,0,0,2));assert.throws(()=>M.polynomial(Infinity,1,2,3,4));
 });
 test("logarithm: finite positive value and base; base cannot equal one",()=>{
