@@ -80,7 +80,8 @@ async function snapshot(page,locale,toolId){
   const formula=(Array.from(document.querySelectorAll("#formula-panel p")).map(x=>x.textContent.trim()).find(x=>x.includes("="))||"").replace(/^[^:：]+[:：]\s*/,"");
   return {numericRaw:numeric,numberLocale:new Intl.NumberFormat().resolvedOptions().locale,currencyCode:window.FinPulseGlobalContext?.get().currencyCode||null,values:Array.from(document.querySelectorAll("#form [name]"),x=>[x.name,x.value]),formula};
  });
- const numericLocale=DEFAULT_NUMBER_FORMAT_TOOL_IDS.has(toolId)?captured.numberLocale:locale;\n return {...captured,numeric:captured.numericRaw.map(value=>numberSnapshot(value,numericLocale))};
+ const numericLocale=DEFAULT_NUMBER_FORMAT_TOOL_IDS.has(toolId)?captured.numberLocale:locale;
+ return {...captured,numeric:captured.numericRaw.map(value=>numberSnapshot(value,numericLocale))};
 }
 test("Batch 1, Batch 2 and Overtime pilot persisted tool records are complete and locale-consistent",async()=>{
  content=JSON.parse(await readFile(join(process.cwd(),"translations/tool-content.json"),"utf8"));
