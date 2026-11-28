@@ -12,7 +12,8 @@ const SCRIPT={hi:/[\u0900-\u097F]/,ar:/[\u0600-\u06FF]/,ur:/[\u0600-\u06FF]/,"zh
 const FOREIGN={hi:/[\u0600-\u06FF\u4E00-\u9FFF\u3040-\u30FF\u0400-\u04FF]/,ar:/[\u0900-\u097F\u4E00-\u9FFF\u3040-\u30FF\u0400-\u04FF]/,ur:/[\u0900-\u097F\u4E00-\u9FFF\u3040-\u30FF\u0400-\u04FF]/,"zh-CN":/[\u0900-\u097F\u0600-\u06FF\u0400-\u04FF]/,ja:/[\u0900-\u097F\u0600-\u06FF\u0400-\u04FF]/,ru:/[\u0900-\u097F\u0600-\u06FF\u4E00-\u9FFF\u3040-\u30FF]/};
 let server,browser,base,content,sourceById;
 
-function normalizeRendered(value){return String(value??"").replace(/\\s+/g," ").trim();}\nfunction translatedStrings(fields){
+function normalizeRendered(value){return String(value??"").replace(/\s+/g," ").trim();}
+function translatedStrings(fields){
  const out=[fields.metadata?.title,fields.metadata?.description,fields.metadata?.category,
  ...fields.inputs?.map(x=>x.label),fields.results?.heading,fields.results?.summary,
  ...fields.results?.metrics?.map(x=>x.label),...fields.results?.breakdown?.map(x=>x.label),
