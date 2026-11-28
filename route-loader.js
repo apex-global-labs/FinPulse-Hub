@@ -62,25 +62,42 @@
     }
   }
 
-  const pending = [];
+  function loadScripts() {
+    const pending = [];
 
-  for (const src of scripts) {
-    const script = document.createElement("script");
-    script.src = src;
-    script.async = false;
-    script.dataset.routeLoader = "true";
+    for (const src of scripts) {
+      const script = document.createElement("script");
+      script.src = src;
+      script.async = false;
+      script.dataset.routeLoader = "true";
 
-    pending.push(new Promise((resolve, reject) => {
-      script.onload = resolve;
-      script.onerror = () => reject(new Error("Unable to load " + src));
-    }));
+      pending.push(new Promise((resolve, reject) => {
+        script.onload = resolve;
+        script.onerror = () => reject(new Error("Unable to load " + src));
+      }));
 
-    document.body.appendChild(script);
+      document.body.appendChild(script);
+    }
+
+    Promise.all(pending).catch(error => {
+      console.error("FinPulse route scripts failed to load.", error);
+      const app = document.querySelector("#app");
+      if (app) app.textContent = "The calculator could not be loaded. Please refresh the page.";
+    });
   }
 
-  Promise.all(pending).catch(error => {
-    console.error("FinPulse route scripts failed to load.", error);
-    const app = document.querySelector("#app");
-    if (app) app.textContent = "The calculator could not be loaded. Please refresh the page.";
-  });
+  if (mathBatchRoutes.has(requestedTool)) {
+    let started = false;
+    const startOnce = () => {
+      if (started) return;
+      started = true;
+      loadScripts();
+    };
+    if (typeof requestAnimationFrame === "function") {
+      requestAnimationFrame(() => setTimeout(startOnce, 0));
+    }
+    setTimeout(startOnce, 100);
+  } else {
+    loadScripts();
+  }
 })();
