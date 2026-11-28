@@ -3,10 +3,12 @@ const assert=require("node:assert/strict");
 const {chromium}=require("playwright");
 const {createServer}=require("node:http");
 const {readFile}=require("node:fs/promises");
+const axe=require("axe-core");
 const {join}=require("node:path");
 
 const TOOL_IDS=["freelance","margin","affordability","payoff","refinance","personal-loan","student-loan","simple-interest","retirement","401k","overtime","discount","exchange-fees","transfer-compare","business-roi","cash-flow","rental-yield","emergency-fund","net-worth","basic-arithmetic","fraction","mixed-number","decimal-fraction","ratio","percentage-change","percent-error","rounding","significant-figures","scientific-notation","exponent","square-root","cube-root","lcm","prime-checker","prime-factorization","modulo","pythagorean","circle","triangle-area"];
 const LOCALES=["hi","ar","ur","zh-CN","ja","ru"];
+const MATH_BATCH_SEVEN=new Set(["lcm","prime-checker","prime-factorization","modulo","pythagorean","circle","triangle-area"]);
 const DIRECTIONS={hi:"ltr",ar:"rtl",ur:"rtl","zh-CN":"ltr",ja:"ltr",ru:"ltr"};
 const SCRIPT={hi:/[\u0900-\u097F]/,ar:/[\u0600-\u06FF]/,ur:/[\u0600-\u06FF]/,"zh-CN":/[\u4E00-\u9FFF]/,ja:/[\u3040-\u30FF\u4E00-\u9FFF]/,ru:/[\u0400-\u04FF]/};
 const FOREIGN={hi:/[\u0600-\u06FF\u4E00-\u9FFF\u3040-\u30FF\u0400-\u04FF]/,ar:/[\u0900-\u097F\u4E00-\u9FFF\u3040-\u30FF\u0400-\u04FF]/,ur:/[\u0900-\u097F\u4E00-\u9FFF\u3040-\u30FF\u0400-\u04FF]/,"zh-CN":/[\u0900-\u097F\u0600-\u06FF\u0400-\u04FF]/,ja:/[\u0900-\u097F\u0600-\u06FF\u0400-\u04FF]/,ru:/[\u0900-\u097F\u0600-\u06FF\u4E00-\u9FFF\u3040-\u30FF]/};
@@ -89,6 +91,13 @@ async function accessibilityAudit(page,id,locale){
   return issues;
  });
  assert.deepEqual(findings,[],id+" / "+locale+" accessibility audit");
+ if(MATH_BATCH_SEVEN.has(id)){
+  const violations=await page.evaluate(async()=>{
+   const result=await window.axe.run(document,{runOnly:{type:"tag",values:["wcag2a","wcag2aa","wcag21a","wcag21aa"]}});
+   return result.violations.map(item=>({id:item.id,impact:item.impact,nodes:item.nodes.map(node=>node.target.join(" "))}));
+  });
+  assert.deepEqual(violations,[],id+" / "+locale+" axe WCAG 2.1 AA audit");
+ }
 }
 function numberSnapshot(text,locale){
  const formatLocale=locale==="ar"?"ar-u-nu-arab":locale==="ur"?"ur-u-nu-arabext":locale;
@@ -149,6 +158,7 @@ test("Batch 1, Batch 2 and Overtime pilot tools × 6 locales render persisted tr
     await page.goto(base+"?tool="+id);
     await page.locator("#app .heading h2").waitFor();
     await page.waitForFunction(()=>window.FinPulseToolRuntime?.loaded===true);
+    if(MATH_BATCH_SEVEN.has(id))await page.addScriptTag({content:axe.source});
     if(id==="currency"){
      await page.locator("#f-amount").fill("100");
      await page.locator("#f-fee").fill("2");
